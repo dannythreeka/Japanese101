@@ -25,6 +25,9 @@ jobs:
       - name: Type check
         run: npx tsc --noEmit
 
+      - name: Validate data files
+        run: npm run validate:data
+
       - name: Unit tests
         run: npx vitest run
 

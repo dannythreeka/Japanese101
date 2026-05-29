@@ -1,9 +1,9 @@
 import { useState } from 'react'
-import type { VocabWord } from '../../types'
+import type { Word } from "../../types"
 import SpeakButton from '../../components/SpeakButton'
 
 interface FlashCardProps {
-  word: VocabWord
+  word: Word
   onKnow: () => void
   onDontKnow: () => void
 }

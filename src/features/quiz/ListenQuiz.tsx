@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { VocabWord } from '../../types'
+import type { Word } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { speakWithCallback } from '../../lib/tts'
 import { playSfx } from '../../lib/audio'
@@ -10,9 +10,9 @@ import { calculateXpGain, addXpToPet } from '../../lib/pet'
 import type { XpResult } from '../../lib/pet'
 import LevelUpModal from '../play/LevelUpModal'
 import SpeakButton from '../../components/SpeakButton'
-import rawVocab from '../../data/vocabulary.json'
+import { vocabData } from '../../data/loaders'
 
-const allWords: VocabWord[] = rawVocab as VocabWord[]
+const allWords: Word[] = vocabData()
 const TOTAL_ROUNDS = 10
 
 function shuffle<T>(arr: T[]): T[] {
@@ -24,18 +24,18 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-function pickChoices(correct: VocabWord, pool: VocabWord[]): VocabWord[] {
+function pickChoices(correct: Word, pool: Word[]): Word[] {
   const others = pool.filter((w) => w.id !== correct.id && w.emoji !== correct.emoji)
   const wrong = shuffle(others).slice(0, 3)
   return shuffle([correct, ...wrong])
 }
 
 interface QuizRound {
-  correct: VocabWord
-  choices: VocabWord[]
+  correct: Word
+  choices: Word[]
 }
 
-function makeRound(pool: VocabWord[]): QuizRound {
+function makeRound(pool: Word[]): QuizRound {
   const correct = pool[Math.floor(Math.random() * pool.length)]
   const choices = pickChoices(correct, pool)
   return { correct, choices }
@@ -71,7 +71,7 @@ export default function ListenQuiz() {
     return () => clearTimeout(timer)
   }, [round, playQuestion])
 
-  const handleChoice = async (chosen: VocabWord) => {
+  const handleChoice = async (chosen: Word) => {
     if (answered) return
     setAnswered(true)
     const isCorrect = chosen.id === round.correct.id

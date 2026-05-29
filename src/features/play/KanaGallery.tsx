@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { KanaItem } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { getOrCreatePet } from '../../db'
-import kanaList from '../../data/kana.json'
+import { kanaData } from '../../data/loaders'
 
-const ALL_KANA = kanaList as KanaItem[]
+const ALL_KANA = kanaData()
 
 const TYPE_LABEL: Record<string, string> = {
   seion: '清音',

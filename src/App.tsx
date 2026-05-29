@@ -6,6 +6,7 @@ import KanaMatchGame from './features/kana/KanaMatchGame'
 import FlashCardDeck from './features/flashcard/FlashCardDeck'
 import ListenQuiz from './features/quiz/ListenQuiz'
 import ParentDashboard from './features/parent/ParentDashboard'
+import KanaGallery from './features/play/KanaGallery'
 
 export default function App() {
   useEffect(() => { void loadVoices() }, [])
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="/play/kana" element={<KanaMatchGame />} />
         <Route path="/play/flashcard" element={<FlashCardDeck />} />
         <Route path="/play/quiz" element={<ListenQuiz />} />
+        <Route path="/play/gallery" element={<KanaGallery />} />
         {/* /play/kana-catch is wired in S3 */}
         <Route path="/parent" element={<ParentDashboard />} />
         {/* Legacy redirects */}

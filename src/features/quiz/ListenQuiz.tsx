@@ -3,19 +3,16 @@ import { useNavigate } from 'react-router-dom'
 import type { VocabWord } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { speakWithCallback } from '../../lib/tts'
+import { playSfx } from '../../lib/audio'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
 import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
+import { calculateXpGain, addXpToPet } from '../../lib/pet'
+import type { XpResult } from '../../lib/pet'
+import LevelUpModal from '../play/LevelUpModal'
 import SpeakButton from '../../components/SpeakButton'
 import rawVocab from '../../data/vocabulary.json'
 
-interface RawUnit {
-  unit: string
-  unit_zh: string
-  words: VocabWord[]
-}
-
-const allWords: VocabWord[] = (rawVocab as unknown as RawUnit[]).flatMap((u) => u.words)
-
+const allWords: VocabWord[] = rawVocab as VocabWord[]
 const TOTAL_ROUNDS = 10
 
 function shuffle<T>(arr: T[]): T[] {
@@ -55,6 +52,7 @@ export default function ListenQuiz() {
   const [correctId, setCorrectId] = useState<string | null>(null)
   const [wrongId, setWrongId] = useState<string | null>(null)
   const [showResults, setShowResults] = useState(false)
+  const [xpResult, setXpResult] = useState<XpResult | null>(null)
   const sessionSaved = useRef(false)
 
   const playQuestion = useCallback((kana: string) => {
@@ -83,6 +81,7 @@ export default function ListenQuiz() {
     if (isCorrect) {
       setCorrectId(chosen.id)
       speakWithCallback('やった！', () => {}, 0.9)
+      playSfx('correct')
       addStars(1)
       await saveProgress(updateAfterCorrect(record))
       const nextScore = score + 1
@@ -103,6 +102,7 @@ export default function ListenQuiz() {
       speakWithCallback('もういちど！', () => {
         setTimeout(() => playQuestion(round.correct.kana), 300)
       }, 0.9)
+      playSfx('wrong')
       await saveProgress(updateAfterIncorrect(record))
       setTimeout(() => {
         setAnswered(false)
@@ -123,12 +123,25 @@ export default function ListenQuiz() {
       correct: finalScore,
       total: TOTAL_ROUNDS,
     })
+    const xp = calculateXpGain(finalScore, TOTAL_ROUNDS)
+    const result = await addXpToPet(xp)
+    if (result.leveledUp) {
+      playSfx('levelup')
+      setXpResult(result)
+    }
     setShowResults(true)
   }
 
   if (showResults) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-6">
+        {xpResult?.leveledUp && (
+          <LevelUpModal
+            newLevel={xpResult.pet.level}
+            evolvedToStage={xpResult.evolvedToStage}
+            onClose={() => setXpResult(null)}
+          />
+        )}
         <h1 className="text-5xl font-bold text-pink-500">おわった！</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
         <p className="text-3xl text-gray-600">{score} / {TOTAL_ROUNDS} せいかい</p>
@@ -144,6 +157,7 @@ export default function ListenQuiz() {
             setCorrectId(null)
             setWrongId(null)
             setShowResults(false)
+            setXpResult(null)
             startSession()
           }}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"
@@ -189,10 +203,7 @@ export default function ListenQuiz() {
       <h1 className="text-4xl font-bold text-gray-800">どれ？</h1>
 
       <div className="flex items-center gap-4">
-        <SpeakButton
-          text={round.correct.kana}
-          size="lg"
-        />
+        <SpeakButton text={round.correct.kana} size="lg" />
         <span className="text-2xl text-gray-500">おとをきいて！</span>
       </div>
 

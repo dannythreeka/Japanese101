@@ -3,8 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import type { KanaItem } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { speak } from '../../lib/tts'
+import { playSfx } from '../../lib/audio'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
 import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
+import { calculateXpGain, addXpToPet } from '../../lib/pet'
+import type { XpResult } from '../../lib/pet'
+import LevelUpModal from '../play/LevelUpModal'
 import kanaList from '../../data/kana.json'
 import KanaCard from './KanaCard'
 
@@ -43,7 +47,9 @@ export default function KanaMatchGame() {
   const [wrongId, setWrongId] = useState<string | null>(null)
   const [cardAnim, setCardAnim] = useState('')
   const [showCompletion, setShowCompletion] = useState(false)
+  const [xpResult, setXpResult] = useState<XpResult | null>(null)
   const sessionSaved = useRef(false)
+  const correctKanaIds = useRef<string[]>([])
 
   useEffect(() => {
     startSession()
@@ -57,6 +63,7 @@ export default function KanaMatchGame() {
     setCurrentIdx(0)
     setScore(0)
     setShowCompletion(false)
+    correctKanaIds.current = []
   }, [filteredKana])
 
   useEffect(() => {
@@ -82,7 +89,9 @@ export default function KanaMatchGame() {
       setCorrectId(chosen.id)
       setCardAnim('animate-bounce-in')
       speak('すごい！')
+      playSfx('correct')
       addStars(1)
+      correctKanaIds.current = [...correctKanaIds.current, current.id]
       const updated = updateAfterCorrect(record)
       await saveProgress(updated)
       setScore((s) => s + 1)
@@ -90,6 +99,7 @@ export default function KanaMatchGame() {
     } else {
       setWrongId(chosen.id)
       speak('もういちど！')
+      playSfx('wrong')
       const updated = updateAfterIncorrect(record)
       await saveProgress(updated)
       setTimeout(() => {
@@ -120,6 +130,12 @@ export default function KanaMatchGame() {
       correct: finalScore,
       total: TOTAL_QUESTIONS,
     })
+    const xp = calculateXpGain(finalScore, TOTAL_QUESTIONS)
+    const result = await addXpToPet(xp, correctKanaIds.current)
+    if (result.leveledUp) {
+      playSfx('levelup')
+      setXpResult(result)
+    }
     setShowCompletion(true)
   }
 
@@ -134,6 +150,13 @@ export default function KanaMatchGame() {
   if (showCompletion) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-6">
+        {xpResult?.leveledUp && (
+          <LevelUpModal
+            newLevel={xpResult.pet.level}
+            evolvedToStage={xpResult.evolvedToStage}
+            onClose={() => setXpResult(null)}
+          />
+        )}
         <h1 className="text-5xl font-bold text-pink-500">おわった！</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
         <p className="text-3xl text-gray-600">{score} / {TOTAL_QUESTIONS} せいかい</p>
@@ -142,11 +165,13 @@ export default function KanaMatchGame() {
           aria-label="もういちどあそぶ"
           onClick={() => {
             sessionSaved.current = false
+            correctKanaIds.current = []
             const q = shuffle(filteredKana).slice(0, TOTAL_QUESTIONS)
             setQueue(q)
             setCurrentIdx(0)
             setScore(0)
             setShowCompletion(false)
+            setXpResult(null)
             startSession()
           }}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"

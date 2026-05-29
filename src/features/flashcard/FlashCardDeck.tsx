@@ -4,6 +4,10 @@ import type { VocabWord } from '../../types'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
 import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
 import { useAppStore } from '../../store/useAppStore'
+import { playSfx } from '../../lib/audio'
+import { calculateXpGain, addXpToPet } from '../../lib/pet'
+import type { XpResult } from '../../lib/pet'
+import LevelUpModal from '../play/LevelUpModal'
 import SpeakButton from '../../components/SpeakButton'
 import FlashCard from './FlashCard'
 import rawVocab from '../../data/vocabulary.json'
@@ -38,6 +42,8 @@ export default function FlashCardDeck() {
   const [unitId, setUnitId] = useState(unitIds[0])
   const [queue, setQueue] = useState<VocabWord[]>([])
   const [wordIdx, setWordIdx] = useState(0)
+  const [correctCount, setCorrectCount] = useState(0)
+  const [xpResult, setXpResult] = useState<XpResult | null>(null)
   const sessionSaved = useRef(false)
 
   const unitWords = ALL_WORDS.filter((w) => w.unit === unitId)
@@ -50,15 +56,18 @@ export default function FlashCardDeck() {
   useEffect(() => {
     setQueue([...unitWords])
     setWordIdx(0)
+    setCorrectCount(0)
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [unitId])
 
   const handleKnow = async () => {
     const word = queue[wordIdx]
     const record = await getOrCreateProgress(word.id, 'vocab')
+    playSfx('correct')
     await saveProgress(updateAfterCorrect(record))
+    setCorrectCount((c) => c + 1)
     if (wordIdx + 1 >= queue.length) {
-      await endRound(queue.length)
+      await endRound(correctCount + 1, unitWords.length)
     } else {
       setWordIdx((i) => i + 1)
     }
@@ -67,6 +76,7 @@ export default function FlashCardDeck() {
   const handleDontKnow = async () => {
     const word = queue[wordIdx]
     const record = await getOrCreateProgress(word.id, 'vocab')
+    playSfx('wrong')
     await saveProgress(updateAfterIncorrect(record))
     const newQueue = [...queue]
     newQueue.push(newQueue[wordIdx])
@@ -74,7 +84,7 @@ export default function FlashCardDeck() {
     setWordIdx((i) => i + 1)
   }
 
-  const endRound = async (total: number) => {
+  const endRound = async (correct: number, total: number) => {
     if (sessionSaved.current) return
     sessionSaved.current = true
     const duration = endSession()
@@ -83,11 +93,18 @@ export default function FlashCardDeck() {
       date: Date.now(),
       durationMs: duration,
       feature: 'flashcard',
-      correct: unitWords.length,
+      correct,
       total,
     })
+    const xp = calculateXpGain(correct, total)
+    const result = await addXpToPet(xp)
+    if (result.leveledUp) {
+      playSfx('levelup')
+      setXpResult(result)
+    }
     setWordIdx(0)
     setQueue([...unitWords])
+    setCorrectCount(0)
     sessionSaved.current = false
   }
 
@@ -95,6 +112,14 @@ export default function FlashCardDeck() {
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-4 p-4 pt-6">
+      {xpResult?.leveledUp && (
+        <LevelUpModal
+          newLevel={xpResult.pet.level}
+          evolvedToStage={xpResult.evolvedToStage}
+          onClose={() => setXpResult(null)}
+        />
+      )}
+
       <div className="w-full max-w-md flex items-center gap-3">
         <button
           type="button"
@@ -152,6 +177,7 @@ export default function FlashCardDeck() {
               sessionSaved.current = false
               setQueue([...unitWords])
               setWordIdx(0)
+              setCorrectCount(0)
             }}
             className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"
           >

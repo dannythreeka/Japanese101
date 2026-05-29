@@ -3,23 +3,11 @@ import { useNavigate } from 'react-router-dom'
 import { getOrCreatePet } from '../../db'
 import { useAppStore } from '../../store/useAppStore'
 import { preloadSfx, playSfx } from '../../lib/audio'
+import { xpProgress, xpToNextLevel } from '../../lib/pet'
+import PetAvatar from '../../components/PetAvatar'
 import type { PetState } from '../../types'
 
-const SPECIES_EMOJI: Record<PetState['species'], string> = {
-  fox: '🦊',
-  cat: '🐱',
-  dragon: '🐲',
-}
-
-const XP_PER_LEVEL = 100
-
-function xpToNextLevel(pet: PetState): number {
-  return XP_PER_LEVEL - (pet.xp % XP_PER_LEVEL)
-}
-
-function xpProgress(pet: PetState): number {
-  return (pet.xp % XP_PER_LEVEL) / XP_PER_LEVEL
-}
+const STAGE_LABEL = ['たまご', 'あかちゃん', 'こどものこ', 'おとな']
 
 export default function PlayScreen() {
   const navigate = useNavigate()
@@ -27,7 +15,7 @@ export default function PlayScreen() {
   const [pet, setPet] = useState<PetState | null>(null)
 
   useEffect(() => {
-    preloadSfx(['tap', 'correct'])
+    preloadSfx(['tap', 'correct', 'levelup'])
     getOrCreatePet().then(setPet)
   }, [])
 
@@ -37,7 +25,7 @@ export default function PlayScreen() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-8 pb-6 gap-6">
+    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-8 pb-6 gap-5">
 
       {/* Header */}
       <div className="w-full max-w-sm flex justify-between items-center">
@@ -54,36 +42,53 @@ export default function PlayScreen() {
 
       {/* Pet display */}
       <div className="flex flex-col items-center gap-3">
-        <div className="w-36 h-36 rounded-full bg-white shadow-xl flex items-center justify-center text-8xl select-none">
-          {pet ? SPECIES_EMOJI[pet.species] : '…'}
-        </div>
+        {pet ? (
+          <PetAvatar pet={pet} size="lg" />
+        ) : (
+          <div className="w-36 h-36 rounded-full bg-white shadow-xl flex items-center justify-center text-3xl text-gray-300">
+            …
+          </div>
+        )}
 
         {pet && (
           <>
             <div className="text-center">
               <p className="text-2xl font-bold text-gray-700">
-                レベル {pet.level}
+                {STAGE_LABEL[pet.evolutionStage] ?? ''} Lv. {pet.level}
               </p>
               <p className="text-lg text-gray-500">
-                つぎまで {xpToNextLevel(pet)} XP
+                つぎまで {xpToNextLevel(pet.xp)} XP
               </p>
             </div>
 
             {/* XP bar */}
-            <div className="w-48 h-3 bg-gray-200 rounded-full overflow-hidden">
+            <div className="w-52 h-3 bg-gray-200 rounded-full overflow-hidden">
               <div
                 className="h-full bg-emerald-400 rounded-full transition-all duration-500"
-                style={{ width: `${xpProgress(pet) * 100}%` }}
+                style={{ width: `${xpProgress(pet.xp) * 100}%` }}
               />
             </div>
           </>
         )}
       </div>
 
-      {/* Stars */}
-      <div className="flex items-center gap-2 bg-white/70 rounded-2xl px-5 py-2 shadow">
-        <span className="text-2xl">⭐</span>
-        <span className="text-2xl font-bold text-yellow-600">{totalStars}</span>
+      {/* Stars + gallery */}
+      <div className="flex items-center gap-3">
+        <div className="flex items-center gap-2 bg-white/70 rounded-2xl px-5 py-2 shadow">
+          <span className="text-2xl">⭐</span>
+          <span className="text-2xl font-bold text-yellow-600">{totalStars}</span>
+        </div>
+        <button
+          type="button"
+          aria-label="かなずかん"
+          onClick={() => handleGameNav('/play/gallery')}
+          className="flex items-center gap-2 bg-white/70 rounded-2xl px-5 py-2 shadow hover:bg-white transition-colors"
+        >
+          <span className="text-2xl">📖</span>
+          <span className="text-lg font-bold text-sky-700">
+            {pet ? `${pet.collection.length}/104` : '—'}
+          </span>
+        </button>
       </div>
 
       {/* Game buttons */}

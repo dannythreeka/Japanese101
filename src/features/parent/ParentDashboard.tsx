@@ -155,7 +155,7 @@ export default function ParentDashboard() {
         <button
           type="button"
           aria-label="ホームにもどる"
-          onClick={() => navigate('/kid')}
+          onClick={() => navigate('/play')}
           className="mt-4 px-6 py-3 rounded-2xl bg-gray-200 text-xl font-bold hover:bg-gray-300 transition-colors"
         >
           ← もどる
@@ -190,7 +190,7 @@ export default function ParentDashboard() {
           <button
             type="button"
             aria-label="ホームにもどる"
-            onClick={() => navigate('/kid')}
+            onClick={() => navigate('/play')}
             className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
           >
             ←

@@ -99,7 +99,7 @@ export default function FlashCardDeck() {
         <button
           type="button"
           aria-label="ホームにもどる"
-          onClick={() => navigate('/kid')}
+          onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
         >
           ←

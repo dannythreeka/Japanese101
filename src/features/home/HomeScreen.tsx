@@ -38,7 +38,7 @@ export default function HomeScreen() {
         <button
           type="button"
           aria-label="五十音をれんしゅうする"
-          onClick={() => navigate('/kid/kana')}
+          onClick={() => navigate('/play/kana')}
           className="w-full min-h-[120px] rounded-3xl shadow-lg bg-gradient-to-r from-pink-300 to-pink-400 text-white flex items-center gap-5 px-6 hover:scale-105 active:scale-95 transition-transform"
         >
           <span className="text-5xl">🔤</span>
@@ -51,7 +51,7 @@ export default function HomeScreen() {
         <button
           type="button"
           aria-label="たんごをれんしゅうする"
-          onClick={() => navigate('/kid/flashcard')}
+          onClick={() => navigate('/play/flashcard')}
           className="w-full min-h-[120px] rounded-3xl shadow-lg bg-gradient-to-r from-yellow-300 to-yellow-400 text-white flex items-center gap-5 px-6 hover:scale-105 active:scale-95 transition-transform"
         >
           <span className="text-5xl">📚</span>
@@ -64,7 +64,7 @@ export default function HomeScreen() {
         <button
           type="button"
           aria-label="きくれんしゅうをする"
-          onClick={() => navigate('/kid/quiz')}
+          onClick={() => navigate('/play/quiz')}
           className="w-full min-h-[120px] rounded-3xl shadow-lg bg-gradient-to-r from-blue-300 to-blue-400 text-white flex items-center gap-5 px-6 hover:scale-105 active:scale-95 transition-transform"
         >
           <span className="text-5xl">👂</span>

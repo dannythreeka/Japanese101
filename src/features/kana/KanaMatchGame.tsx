@@ -156,7 +156,7 @@ export default function KanaMatchGame() {
         <button
           type="button"
           aria-label="ホームにもどる"
-          onClick={() => navigate('/kid')}
+          onClick={() => navigate('/play')}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
           ホーム
@@ -174,7 +174,7 @@ export default function KanaMatchGame() {
         <button
           type="button"
           aria-label="ホームにもどる"
-          onClick={() => navigate('/kid')}
+          onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
         >
           ←

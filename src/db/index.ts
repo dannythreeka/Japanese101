@@ -1,9 +1,10 @@
 import Dexie, { type Table } from 'dexie'
-import type { ProgressRecord, SessionRecord } from '../types'
+import type { ProgressRecord, SessionRecord, PetState } from '../types'
 
 class AppDB extends Dexie {
   progress!: Table<ProgressRecord, string>
   sessions!: Table<SessionRecord, string>
+  pets!: Table<PetState, string>
 
   constructor() {
     super('Japanese101DB')
@@ -11,15 +12,31 @@ class AppDB extends Dexie {
       progress: 'id, type, nextReview, lastSeen',
       sessions: 'id, date, feature',
     })
+    this.version(2).stores({
+      progress: 'id, type, nextReview, lastSeen',
+      sessions: 'id, date, feature',
+      pets: 'petId',
+    })
   }
 }
 
 export const db = new AppDB()
 
-export async function getOrCreateProgress(id: string, type: ProgressRecord['type']): Promise<ProgressRecord> {
+export async function getOrCreateProgress(
+  id: string,
+  type: ProgressRecord['type'],
+): Promise<ProgressRecord> {
   const existing = await db.progress.get(id)
   if (existing) return existing
-  const fresh: ProgressRecord = { id, type, correct: 0, incorrect: 0, lastSeen: 0, nextReview: 0, streak: 0 }
+  const fresh: ProgressRecord = {
+    id,
+    type,
+    correct: 0,
+    incorrect: 0,
+    lastSeen: 0,
+    nextReview: 0,
+    streak: 0,
+  }
   await db.progress.put(fresh)
   return fresh
 }
@@ -43,4 +60,33 @@ export async function getRecentSessions(limit = 30): Promise<SessionRecord[]> {
 export async function getTotalStudyTime(): Promise<number> {
   const sessions = await db.sessions.toArray()
   return sessions.reduce((sum, s) => sum + s.durationMs, 0)
+}
+
+// ── Pet state ──────────────────────────────────────────────────────────────
+
+const DEFAULT_PET_ID = 'player'
+
+export async function getOrCreatePet(petId = DEFAULT_PET_ID): Promise<PetState> {
+  const existing = await db.pets.get(petId)
+  if (existing) return existing
+  const fresh: PetState = {
+    petId,
+    species: 'fox',
+    level: 1,
+    xp: 0,
+    evolutionStage: 0,
+    unlockedCosmetics: [],
+    collection: [],
+    lastPlayed: new Date().toISOString(),
+  }
+  await db.pets.put(fresh)
+  return fresh
+}
+
+export async function savePetState(pet: PetState): Promise<void> {
+  await db.pets.put(pet)
+}
+
+export async function getPetState(petId = DEFAULT_PET_ID): Promise<PetState | null> {
+  return (await db.pets.get(petId)) ?? null
 }

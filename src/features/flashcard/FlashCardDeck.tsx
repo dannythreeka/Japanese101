@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { VocabWord } from '../../types'
+import type { Word } from '../../types'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
 import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
 import { useAppStore } from '../../store/useAppStore'
@@ -10,9 +10,9 @@ import type { XpResult } from '../../lib/pet'
 import LevelUpModal from '../play/LevelUpModal'
 import SpeakButton from '../../components/SpeakButton'
 import FlashCard from './FlashCard'
-import rawVocab from '../../data/vocabulary.json'
+import { vocabData } from '../../data/loaders'
 
-const ALL_WORDS = rawVocab as VocabWord[]
+const ALL_WORDS = vocabData()
 
 const UNIT_LABELS: Record<string, string> = {
   topic_animals: '動物',
@@ -34,13 +34,13 @@ const UNIT_JAPANESE: Record<string, string> = {
   topic_daily: 'にちじょう',
 }
 
-const unitIds = [...new Set(ALL_WORDS.map((w) => w.unit))]
+const unitIds = [...new Set(ALL_WORDS.map((w) => w.unit).filter((u): u is string => u !== undefined))]
 
 export default function FlashCardDeck() {
   const navigate = useNavigate()
   const { startSession, endSession } = useAppStore()
   const [unitId, setUnitId] = useState(unitIds[0])
-  const [queue, setQueue] = useState<VocabWord[]>([])
+  const [queue, setQueue] = useState<Word[]>([])
   const [wordIdx, setWordIdx] = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
   const [xpResult, setXpResult] = useState<XpResult | null>(null)

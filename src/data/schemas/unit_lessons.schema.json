@@ -1,0 +1,106 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://japanese101-pet/schemas/unit_lessons.schema.json",
+  "title": "UnitLessons",
+  "type": "object",
+  "required": ["lessons"],
+  "properties": {
+    "lessons": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/UnitLesson" }
+    }
+  },
+  "definitions": {
+    "UnitLesson": {
+      "type": "object",
+      "required": [
+        "unit_id", "source_ref", "unit_name_zh", "learning_concept",
+        "sub_goals", "target_kana_pairs", "teaching_structure",
+        "suggested_game_modes", "concept_words"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "unit_id":            { "type": "string", "pattern": "^[a-z0-9_]+$" },
+        "source_ref":         {
+          "type": "object",
+          "required": ["publisher", "grade"],
+          "properties": {
+            "publisher": { "type": "string" },
+            "grade":     { "type": "string" },
+            "page_hint": { "type": "string" }
+          }
+        },
+        "unit_name_zh":       { "type": "string", "minLength": 1 },
+        "learning_concept":   { "type": "string", "minLength": 1 },
+        "sub_goals":          { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+        "target_kana_pairs":  {
+          "type": "array",
+          "items": {
+            "type": "array",
+            "items": { "type": "string" },
+            "minItems": 2,
+            "maxItems": 5
+          },
+          "minItems": 1
+        },
+        "teaching_structure": {
+          "type": "array",
+          "items": { "type": "string", "enum": ["recognize","minimal_pair","produce","listen_pick","write"] }
+        },
+        "suggested_game_modes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["kana_catch_listen","kana_catch_minimal_pair","kana_catch_word_to_image","dakuten_drag"]
+          }
+        },
+        "concept_words": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/ConceptWord" },
+          "minItems": 1
+        },
+        "dakuten_drag_items": {
+          "type": "array",
+          "items": { "$ref": "#/definitions/DakutenDragItem" }
+        },
+        "_review": {
+          "type": "object",
+          "required": ["reviewed_by", "no_copyrighted_content"],
+          "properties": {
+            "reviewed_by":            { "type": "string" },
+            "no_copyrighted_content": { "type": "boolean" },
+            "notes":                  { "type": "string" }
+          }
+        }
+      }
+    },
+    "ConceptWord": {
+      "type": "object",
+      "required": ["id", "word", "meaning_zh"],
+      "additionalProperties": false,
+      "properties": {
+        "id":         { "type": "string", "pattern": "^w_[a-z0-9_]+$" },
+        "word":       { "type": "string", "minLength": 1 },
+        "meaning_zh": { "type": "string", "minLength": 1 },
+        "pair_with":  { "type": "string", "pattern": "^w_[a-z0-9_]+$" }
+      }
+    },
+    "DakutenDragItem": {
+      "type": "object",
+      "required": ["base", "target", "meaning_zh", "mark_at", "mark"],
+      "additionalProperties": true,
+      "properties": {
+        "base":       { "type": "string", "minLength": 1 },
+        "target":     { "type": "string", "minLength": 1 },
+        "meaning_zh": { "type": "string", "minLength": 1 },
+        "mark_at":    {
+          "type": "array",
+          "items": { "type": "integer", "minimum": 0 },
+          "minItems": 1
+        },
+        "mark":       { "type": "string", "enum": ["dakuten", "handakuten"] },
+        "_note":      { "type": "string" }
+      }
+    }
+  }
+}

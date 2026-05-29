@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { KanaItem } from '../../types'
+import type { Kana } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { speak } from '../../lib/tts'
 import { playSfx } from '../../lib/audio'
@@ -9,10 +9,10 @@ import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
 import { calculateXpGain, addXpToPet } from '../../lib/pet'
 import type { XpResult } from '../../lib/pet'
 import LevelUpModal from '../play/LevelUpModal'
-import kanaList from '../../data/kana.json'
+import { kanaData } from '../../data/loaders'
 import KanaCard from './KanaCard'
 
-const ALL_KANA = kanaList as KanaItem[]
+const ALL_KANA = kanaData()
 const TOTAL_QUESTIONS = 10
 
 function shuffle<T>(arr: T[]): T[] {
@@ -24,7 +24,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-function pickWrongChoices(correct: KanaItem, pool: KanaItem[], count: number): KanaItem[] {
+function pickWrongChoices(correct: Kana, pool: Kana[], count: number): Kana[] {
   const others = pool.filter((k) => k.id !== correct.id)
   return shuffle(others).slice(0, count)
 }
@@ -33,15 +33,15 @@ export default function KanaMatchGame() {
   const navigate = useNavigate()
   const { kanaDifficulty, kanaMode, addStars, startSession, endSession } = useAppStore()
 
-  const filteredKana = useMemo<KanaItem[]>(() => {
+  const filteredKana = useMemo<Kana[]>(() => {
     if (kanaDifficulty === 'all') return ALL_KANA
     return ALL_KANA.filter((k) => k.difficulty === kanaDifficulty)
   }, [kanaDifficulty])
 
-  const [queue, setQueue] = useState<KanaItem[]>([])
+  const [queue, setQueue] = useState<Kana[]>([])
   const [currentIdx, setCurrentIdx] = useState(0)
   const [score, setScore] = useState(0)
-  const [choices, setChoices] = useState<KanaItem[]>([])
+  const [choices, setChoices] = useState<Kana[]>([])
   const [answered, setAnswered] = useState(false)
   const [correctId, setCorrectId] = useState<string | null>(null)
   const [wrongId, setWrongId] = useState<string | null>(null)
@@ -78,7 +78,7 @@ export default function KanaMatchGame() {
     setCardAnim('')
   }, [queue, currentIdx, filteredKana])
 
-  const handleChoice = async (chosen: KanaItem) => {
+  const handleChoice = async (chosen: Kana) => {
     if (answered) return
     setAnswered(true)
     const current = queue[currentIdx]

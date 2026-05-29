@@ -1,106 +1,941 @@
-[
-  { "id": "a", "hiragana": "あ", "katakana": "ア", "romaji": "a", "row": "vowel", "type": "seion", "difficulty": 1 },
-  { "id": "i", "hiragana": "い", "katakana": "イ", "romaji": "i", "row": "vowel", "type": "seion", "difficulty": 1 },
-  { "id": "u", "hiragana": "う", "katakana": "ウ", "romaji": "u", "row": "vowel", "type": "seion", "difficulty": 1 },
-  { "id": "e", "hiragana": "え", "katakana": "エ", "romaji": "e", "row": "vowel", "type": "seion", "difficulty": 1 },
-  { "id": "o", "hiragana": "お", "katakana": "オ", "romaji": "o", "row": "vowel", "type": "seion", "difficulty": 1 },
-  { "id": "ka", "hiragana": "か", "katakana": "カ", "romaji": "ka", "row": "k", "type": "seion", "difficulty": 1 },
-  { "id": "ki", "hiragana": "き", "katakana": "キ", "romaji": "ki", "row": "k", "type": "seion", "difficulty": 1 },
-  { "id": "ku", "hiragana": "く", "katakana": "ク", "romaji": "ku", "row": "k", "type": "seion", "difficulty": 1 },
-  { "id": "ke", "hiragana": "け", "katakana": "ケ", "romaji": "ke", "row": "k", "type": "seion", "difficulty": 1 },
-  { "id": "ko", "hiragana": "こ", "katakana": "コ", "romaji": "ko", "row": "k", "type": "seion", "difficulty": 1 },
-  { "id": "sa", "hiragana": "さ", "katakana": "サ", "romaji": "sa", "row": "s", "type": "seion", "difficulty": 1 },
-  { "id": "shi", "hiragana": "し", "katakana": "シ", "romaji": "shi", "row": "s", "type": "seion", "difficulty": 1 },
-  { "id": "su", "hiragana": "す", "katakana": "ス", "romaji": "su", "row": "s", "type": "seion", "difficulty": 1 },
-  { "id": "se", "hiragana": "せ", "katakana": "セ", "romaji": "se", "row": "s", "type": "seion", "difficulty": 1 },
-  { "id": "so", "hiragana": "そ", "katakana": "ソ", "romaji": "so", "row": "s", "type": "seion", "difficulty": 1 },
-  { "id": "ta", "hiragana": "た", "katakana": "タ", "romaji": "ta", "row": "t", "type": "seion", "difficulty": 1 },
-  { "id": "chi", "hiragana": "ち", "katakana": "チ", "romaji": "chi", "row": "t", "type": "seion", "difficulty": 1 },
-  { "id": "tsu", "hiragana": "つ", "katakana": "ツ", "romaji": "tsu", "row": "t", "type": "seion", "difficulty": 1 },
-  { "id": "te", "hiragana": "て", "katakana": "テ", "romaji": "te", "row": "t", "type": "seion", "difficulty": 1 },
-  { "id": "to", "hiragana": "と", "katakana": "ト", "romaji": "to", "row": "t", "type": "seion", "difficulty": 1 },
-  { "id": "na", "hiragana": "な", "katakana": "ナ", "romaji": "na", "row": "n", "type": "seion", "difficulty": 1 },
-  { "id": "ni", "hiragana": "に", "katakana": "ニ", "romaji": "ni", "row": "n", "type": "seion", "difficulty": 1 },
-  { "id": "nu", "hiragana": "ぬ", "katakana": "ヌ", "romaji": "nu", "row": "n", "type": "seion", "difficulty": 1 },
-  { "id": "ne", "hiragana": "ね", "katakana": "ネ", "romaji": "ne", "row": "n", "type": "seion", "difficulty": 1 },
-  { "id": "no", "hiragana": "の", "katakana": "ノ", "romaji": "no", "row": "n", "type": "seion", "difficulty": 1 },
-  { "id": "ha", "hiragana": "は", "katakana": "ハ", "romaji": "ha", "row": "h", "type": "seion", "difficulty": 1 },
-  { "id": "hi", "hiragana": "ひ", "katakana": "ヒ", "romaji": "hi", "row": "h", "type": "seion", "difficulty": 1 },
-  { "id": "fu", "hiragana": "ふ", "katakana": "フ", "romaji": "fu", "row": "h", "type": "seion", "difficulty": 1 },
-  { "id": "he", "hiragana": "へ", "katakana": "ヘ", "romaji": "he", "row": "h", "type": "seion", "difficulty": 1 },
-  { "id": "ho", "hiragana": "ほ", "katakana": "ホ", "romaji": "ho", "row": "h", "type": "seion", "difficulty": 1 },
-  { "id": "ma", "hiragana": "ま", "katakana": "マ", "romaji": "ma", "row": "m", "type": "seion", "difficulty": 1 },
-  { "id": "mi", "hiragana": "み", "katakana": "ミ", "romaji": "mi", "row": "m", "type": "seion", "difficulty": 1 },
-  { "id": "mu", "hiragana": "む", "katakana": "ム", "romaji": "mu", "row": "m", "type": "seion", "difficulty": 1 },
-  { "id": "me", "hiragana": "め", "katakana": "メ", "romaji": "me", "row": "m", "type": "seion", "difficulty": 1 },
-  { "id": "mo", "hiragana": "も", "katakana": "モ", "romaji": "mo", "row": "m", "type": "seion", "difficulty": 1 },
-  { "id": "ya", "hiragana": "や", "katakana": "ヤ", "romaji": "ya", "row": "y", "type": "seion", "difficulty": 1 },
-  { "id": "yu", "hiragana": "ゆ", "katakana": "ユ", "romaji": "yu", "row": "y", "type": "seion", "difficulty": 1 },
-  { "id": "yo", "hiragana": "よ", "katakana": "ヨ", "romaji": "yo", "row": "y", "type": "seion", "difficulty": 1 },
-  { "id": "ra", "hiragana": "ら", "katakana": "ラ", "romaji": "ra", "row": "r", "type": "seion", "difficulty": 1 },
-  { "id": "ri", "hiragana": "り", "katakana": "リ", "romaji": "ri", "row": "r", "type": "seion", "difficulty": 1 },
-  { "id": "ru", "hiragana": "る", "katakana": "ル", "romaji": "ru", "row": "r", "type": "seion", "difficulty": 1 },
-  { "id": "re", "hiragana": "れ", "katakana": "レ", "romaji": "re", "row": "r", "type": "seion", "difficulty": 1 },
-  { "id": "ro", "hiragana": "ろ", "katakana": "ロ", "romaji": "ro", "row": "r", "type": "seion", "difficulty": 1 },
-  { "id": "wa", "hiragana": "わ", "katakana": "ワ", "romaji": "wa", "row": "w", "type": "seion", "difficulty": 1 },
-  { "id": "wo", "hiragana": "を", "katakana": "ヲ", "romaji": "wo", "row": "w", "type": "seion", "difficulty": 1 },
-  { "id": "n", "hiragana": "ん", "katakana": "ン", "romaji": "n", "row": "vowel", "type": "seion", "difficulty": 1 },
-  { "id": "ga", "hiragana": "が", "katakana": "ガ", "romaji": "ga", "row": "g", "type": "dakuon", "difficulty": 2 },
-  { "id": "gi", "hiragana": "ぎ", "katakana": "ギ", "romaji": "gi", "row": "g", "type": "dakuon", "difficulty": 2 },
-  { "id": "gu", "hiragana": "ぐ", "katakana": "グ", "romaji": "gu", "row": "g", "type": "dakuon", "difficulty": 2 },
-  { "id": "ge", "hiragana": "げ", "katakana": "ゲ", "romaji": "ge", "row": "g", "type": "dakuon", "difficulty": 2 },
-  { "id": "go", "hiragana": "ご", "katakana": "ゴ", "romaji": "go", "row": "g", "type": "dakuon", "difficulty": 2 },
-  { "id": "za", "hiragana": "ざ", "katakana": "ザ", "romaji": "za", "row": "z", "type": "dakuon", "difficulty": 2 },
-  { "id": "ji", "hiragana": "じ", "katakana": "ジ", "romaji": "ji", "row": "z", "type": "dakuon", "difficulty": 2 },
-  { "id": "zu", "hiragana": "ず", "katakana": "ズ", "romaji": "zu", "row": "z", "type": "dakuon", "difficulty": 2 },
-  { "id": "ze", "hiragana": "ぜ", "katakana": "ゼ", "romaji": "ze", "row": "z", "type": "dakuon", "difficulty": 2 },
-  { "id": "zo", "hiragana": "ぞ", "katakana": "ゾ", "romaji": "zo", "row": "z", "type": "dakuon", "difficulty": 2 },
-  { "id": "da", "hiragana": "だ", "katakana": "ダ", "romaji": "da", "row": "d", "type": "dakuon", "difficulty": 2 },
-  { "id": "ji_d", "hiragana": "ぢ", "katakana": "ヂ", "romaji": "ji", "row": "d", "type": "dakuon", "difficulty": 2 },
-  { "id": "zu_d", "hiragana": "づ", "katakana": "ヅ", "romaji": "zu", "row": "d", "type": "dakuon", "difficulty": 2 },
-  { "id": "de", "hiragana": "で", "katakana": "デ", "romaji": "de", "row": "d", "type": "dakuon", "difficulty": 2 },
-  { "id": "do", "hiragana": "ど", "katakana": "ド", "romaji": "do", "row": "d", "type": "dakuon", "difficulty": 2 },
-  { "id": "ba", "hiragana": "ば", "katakana": "バ", "romaji": "ba", "row": "b", "type": "dakuon", "difficulty": 2 },
-  { "id": "bi", "hiragana": "び", "katakana": "ビ", "romaji": "bi", "row": "b", "type": "dakuon", "difficulty": 2 },
-  { "id": "bu", "hiragana": "ぶ", "katakana": "ブ", "romaji": "bu", "row": "b", "type": "dakuon", "difficulty": 2 },
-  { "id": "be", "hiragana": "べ", "katakana": "ベ", "romaji": "be", "row": "b", "type": "dakuon", "difficulty": 2 },
-  { "id": "bo", "hiragana": "ぼ", "katakana": "ボ", "romaji": "bo", "row": "b", "type": "dakuon", "difficulty": 2 },
-  { "id": "pa", "hiragana": "ぱ", "katakana": "パ", "romaji": "pa", "row": "p", "type": "handakuon", "difficulty": 2 },
-  { "id": "pi", "hiragana": "ぴ", "katakana": "ピ", "romaji": "pi", "row": "p", "type": "handakuon", "difficulty": 2 },
-  { "id": "pu", "hiragana": "ぷ", "katakana": "プ", "romaji": "pu", "row": "p", "type": "handakuon", "difficulty": 2 },
-  { "id": "pe", "hiragana": "ぺ", "katakana": "ペ", "romaji": "pe", "row": "p", "type": "handakuon", "difficulty": 2 },
-  { "id": "po", "hiragana": "ぽ", "katakana": "ポ", "romaji": "po", "row": "p", "type": "handakuon", "difficulty": 2 },
-  { "id": "kya", "hiragana": "きゃ", "katakana": "キャ", "romaji": "kya", "row": "ky", "type": "youon", "difficulty": 3 },
-  { "id": "kyu", "hiragana": "きゅ", "katakana": "キュ", "romaji": "kyu", "row": "ky", "type": "youon", "difficulty": 3 },
-  { "id": "kyo", "hiragana": "きょ", "katakana": "キョ", "romaji": "kyo", "row": "ky", "type": "youon", "difficulty": 3 },
-  { "id": "sha", "hiragana": "しゃ", "katakana": "シャ", "romaji": "sha", "row": "sh", "type": "youon", "difficulty": 3 },
-  { "id": "shu", "hiragana": "しゅ", "katakana": "シュ", "romaji": "shu", "row": "sh", "type": "youon", "difficulty": 3 },
-  { "id": "sho", "hiragana": "しょ", "katakana": "ショ", "romaji": "sho", "row": "sh", "type": "youon", "difficulty": 3 },
-  { "id": "cha", "hiragana": "ちゃ", "katakana": "チャ", "romaji": "cha", "row": "ch", "type": "youon", "difficulty": 3 },
-  { "id": "chu", "hiragana": "ちゅ", "katakana": "チュ", "romaji": "chu", "row": "ch", "type": "youon", "difficulty": 3 },
-  { "id": "cho", "hiragana": "ちょ", "katakana": "チョ", "romaji": "cho", "row": "ch", "type": "youon", "difficulty": 3 },
-  { "id": "nya", "hiragana": "にゃ", "katakana": "ニャ", "romaji": "nya", "row": "ny", "type": "youon", "difficulty": 3 },
-  { "id": "nyu", "hiragana": "にゅ", "katakana": "ニュ", "romaji": "nyu", "row": "ny", "type": "youon", "difficulty": 3 },
-  { "id": "nyo", "hiragana": "にょ", "katakana": "ニョ", "romaji": "nyo", "row": "ny", "type": "youon", "difficulty": 3 },
-  { "id": "hya", "hiragana": "ひゃ", "katakana": "ヒャ", "romaji": "hya", "row": "hy", "type": "youon", "difficulty": 3 },
-  { "id": "hyu", "hiragana": "ひゅ", "katakana": "ヒュ", "romaji": "hyu", "row": "hy", "type": "youon", "difficulty": 3 },
-  { "id": "hyo", "hiragana": "ひょ", "katakana": "ヒョ", "romaji": "hyo", "row": "hy", "type": "youon", "difficulty": 3 },
-  { "id": "mya", "hiragana": "みゃ", "katakana": "ミャ", "romaji": "mya", "row": "my", "type": "youon", "difficulty": 3 },
-  { "id": "myu", "hiragana": "みゅ", "katakana": "ミュ", "romaji": "myu", "row": "my", "type": "youon", "difficulty": 3 },
-  { "id": "myo", "hiragana": "みょ", "katakana": "ミョ", "romaji": "myo", "row": "my", "type": "youon", "difficulty": 3 },
-  { "id": "rya", "hiragana": "りゃ", "katakana": "リャ", "romaji": "rya", "row": "ry", "type": "youon", "difficulty": 3 },
-  { "id": "ryu", "hiragana": "りゅ", "katakana": "リュ", "romaji": "ryu", "row": "ry", "type": "youon", "difficulty": 3 },
-  { "id": "ryo", "hiragana": "りょ", "katakana": "リョ", "romaji": "ryo", "row": "ry", "type": "youon", "difficulty": 3 },
-  { "id": "gya", "hiragana": "ぎゃ", "katakana": "ギャ", "romaji": "gya", "row": "gy", "type": "youon", "difficulty": 3 },
-  { "id": "gyu", "hiragana": "ぎゅ", "katakana": "ギュ", "romaji": "gyu", "row": "gy", "type": "youon", "difficulty": 3 },
-  { "id": "gyo", "hiragana": "ぎょ", "katakana": "ギョ", "romaji": "gyo", "row": "gy", "type": "youon", "difficulty": 3 },
-  { "id": "ja", "hiragana": "じゃ", "katakana": "ジャ", "romaji": "ja", "row": "ja", "type": "youon", "difficulty": 3 },
-  { "id": "ju", "hiragana": "じゅ", "katakana": "ジュ", "romaji": "ju", "row": "ja", "type": "youon", "difficulty": 3 },
-  { "id": "jo", "hiragana": "じょ", "katakana": "ジョ", "romaji": "jo", "row": "ja", "type": "youon", "difficulty": 3 },
-  { "id": "bya", "hiragana": "びゃ", "katakana": "ビャ", "romaji": "bya", "row": "by", "type": "youon", "difficulty": 3 },
-  { "id": "byu", "hiragana": "びゅ", "katakana": "ビュ", "romaji": "byu", "row": "by", "type": "youon", "difficulty": 3 },
-  { "id": "byo", "hiragana": "びょ", "katakana": "ビョ", "romaji": "byo", "row": "by", "type": "youon", "difficulty": 3 },
-  { "id": "pya", "hiragana": "ぴゃ", "katakana": "ピャ", "romaji": "pya", "row": "py", "type": "youon", "difficulty": 3 },
-  { "id": "pyu", "hiragana": "ぴゅ", "katakana": "ピュ", "romaji": "pyu", "row": "py", "type": "youon", "difficulty": 3 },
-  { "id": "pyo", "hiragana": "ぴょ", "katakana": "ピョ", "romaji": "pyo", "row": "py", "type": "youon", "difficulty": 3 }
-]
+{
+  "$schema": "./schemas/kana.schema.json",
+  "kana": [
+    {
+      "id": "a",
+      "hiragana": "あ",
+      "katakana": "ア",
+      "romaji": "a",
+      "row": "vowel",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "i",
+      "hiragana": "い",
+      "katakana": "イ",
+      "romaji": "i",
+      "row": "vowel",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "u",
+      "hiragana": "う",
+      "katakana": "ウ",
+      "romaji": "u",
+      "row": "vowel",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "e",
+      "hiragana": "え",
+      "katakana": "エ",
+      "romaji": "e",
+      "row": "vowel",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "o",
+      "hiragana": "お",
+      "katakana": "オ",
+      "romaji": "o",
+      "row": "vowel",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ka",
+      "hiragana": "か",
+      "katakana": "カ",
+      "romaji": "ka",
+      "row": "k",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ki",
+      "hiragana": "き",
+      "katakana": "キ",
+      "romaji": "ki",
+      "row": "k",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ku",
+      "hiragana": "く",
+      "katakana": "ク",
+      "romaji": "ku",
+      "row": "k",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ke",
+      "hiragana": "け",
+      "katakana": "ケ",
+      "romaji": "ke",
+      "row": "k",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ko",
+      "hiragana": "こ",
+      "katakana": "コ",
+      "romaji": "ko",
+      "row": "k",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "sa",
+      "hiragana": "さ",
+      "katakana": "サ",
+      "romaji": "sa",
+      "row": "s",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "shi",
+      "hiragana": "し",
+      "katakana": "シ",
+      "romaji": "shi",
+      "row": "s",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "su",
+      "hiragana": "す",
+      "katakana": "ス",
+      "romaji": "su",
+      "row": "s",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "se",
+      "hiragana": "せ",
+      "katakana": "セ",
+      "romaji": "se",
+      "row": "s",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "so",
+      "hiragana": "そ",
+      "katakana": "ソ",
+      "romaji": "so",
+      "row": "s",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ta",
+      "hiragana": "た",
+      "katakana": "タ",
+      "romaji": "ta",
+      "row": "t",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "chi",
+      "hiragana": "ち",
+      "katakana": "チ",
+      "romaji": "chi",
+      "row": "t",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "tsu",
+      "hiragana": "つ",
+      "katakana": "ツ",
+      "romaji": "tsu",
+      "row": "t",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "te",
+      "hiragana": "て",
+      "katakana": "テ",
+      "romaji": "te",
+      "row": "t",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "to",
+      "hiragana": "と",
+      "katakana": "ト",
+      "romaji": "to",
+      "row": "t",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "na",
+      "hiragana": "な",
+      "katakana": "ナ",
+      "romaji": "na",
+      "row": "n",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ni",
+      "hiragana": "に",
+      "katakana": "ニ",
+      "romaji": "ni",
+      "row": "n",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "nu",
+      "hiragana": "ぬ",
+      "katakana": "ヌ",
+      "romaji": "nu",
+      "row": "n",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ne",
+      "hiragana": "ね",
+      "katakana": "ネ",
+      "romaji": "ne",
+      "row": "n",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "no",
+      "hiragana": "の",
+      "katakana": "ノ",
+      "romaji": "no",
+      "row": "n",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ha",
+      "hiragana": "は",
+      "katakana": "ハ",
+      "romaji": "ha",
+      "row": "h",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "hi",
+      "hiragana": "ひ",
+      "katakana": "ヒ",
+      "romaji": "hi",
+      "row": "h",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "fu",
+      "hiragana": "ふ",
+      "katakana": "フ",
+      "romaji": "fu",
+      "row": "h",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "he",
+      "hiragana": "へ",
+      "katakana": "ヘ",
+      "romaji": "he",
+      "row": "h",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ho",
+      "hiragana": "ほ",
+      "katakana": "ホ",
+      "romaji": "ho",
+      "row": "h",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ma",
+      "hiragana": "ま",
+      "katakana": "マ",
+      "romaji": "ma",
+      "row": "m",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "mi",
+      "hiragana": "み",
+      "katakana": "ミ",
+      "romaji": "mi",
+      "row": "m",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "mu",
+      "hiragana": "む",
+      "katakana": "ム",
+      "romaji": "mu",
+      "row": "m",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "me",
+      "hiragana": "め",
+      "katakana": "メ",
+      "romaji": "me",
+      "row": "m",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "mo",
+      "hiragana": "も",
+      "katakana": "モ",
+      "romaji": "mo",
+      "row": "m",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ya",
+      "hiragana": "や",
+      "katakana": "ヤ",
+      "romaji": "ya",
+      "row": "y",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "yu",
+      "hiragana": "ゆ",
+      "katakana": "ユ",
+      "romaji": "yu",
+      "row": "y",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "yo",
+      "hiragana": "よ",
+      "katakana": "ヨ",
+      "romaji": "yo",
+      "row": "y",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ra",
+      "hiragana": "ら",
+      "katakana": "ラ",
+      "romaji": "ra",
+      "row": "r",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ri",
+      "hiragana": "り",
+      "katakana": "リ",
+      "romaji": "ri",
+      "row": "r",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ru",
+      "hiragana": "る",
+      "katakana": "ル",
+      "romaji": "ru",
+      "row": "r",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "re",
+      "hiragana": "れ",
+      "katakana": "レ",
+      "romaji": "re",
+      "row": "r",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ro",
+      "hiragana": "ろ",
+      "katakana": "ロ",
+      "romaji": "ro",
+      "row": "r",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "wa",
+      "hiragana": "わ",
+      "katakana": "ワ",
+      "romaji": "wa",
+      "row": "w",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "wo",
+      "hiragana": "を",
+      "katakana": "ヲ",
+      "romaji": "wo",
+      "row": "w",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "n",
+      "hiragana": "ん",
+      "katakana": "ン",
+      "romaji": "n",
+      "row": "n_single",
+      "type": "seion",
+      "difficulty": 1
+    },
+    {
+      "id": "ga",
+      "hiragana": "が",
+      "katakana": "ガ",
+      "romaji": "ga",
+      "row": "g",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "gi",
+      "hiragana": "ぎ",
+      "katakana": "ギ",
+      "romaji": "gi",
+      "row": "g",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "gu",
+      "hiragana": "ぐ",
+      "katakana": "グ",
+      "romaji": "gu",
+      "row": "g",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "ge",
+      "hiragana": "げ",
+      "katakana": "ゲ",
+      "romaji": "ge",
+      "row": "g",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "go",
+      "hiragana": "ご",
+      "katakana": "ゴ",
+      "romaji": "go",
+      "row": "g",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "za",
+      "hiragana": "ざ",
+      "katakana": "ザ",
+      "romaji": "za",
+      "row": "z",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "ji",
+      "hiragana": "じ",
+      "katakana": "ジ",
+      "romaji": "ji",
+      "row": "z",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "zu",
+      "hiragana": "ず",
+      "katakana": "ズ",
+      "romaji": "zu",
+      "row": "z",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "ze",
+      "hiragana": "ぜ",
+      "katakana": "ゼ",
+      "romaji": "ze",
+      "row": "z",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "zo",
+      "hiragana": "ぞ",
+      "katakana": "ゾ",
+      "romaji": "zo",
+      "row": "z",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "da",
+      "hiragana": "だ",
+      "katakana": "ダ",
+      "romaji": "da",
+      "row": "d",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "dji",
+      "hiragana": "ぢ",
+      "katakana": "ヂ",
+      "romaji": "dji",
+      "row": "d",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "dzu",
+      "hiragana": "づ",
+      "katakana": "ヅ",
+      "romaji": "dzu",
+      "row": "d",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "de",
+      "hiragana": "で",
+      "katakana": "デ",
+      "romaji": "de",
+      "row": "d",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "do",
+      "hiragana": "ど",
+      "katakana": "ド",
+      "romaji": "do",
+      "row": "d",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "ba",
+      "hiragana": "ば",
+      "katakana": "バ",
+      "romaji": "ba",
+      "row": "b",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "bi",
+      "hiragana": "び",
+      "katakana": "ビ",
+      "romaji": "bi",
+      "row": "b",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "bu",
+      "hiragana": "ぶ",
+      "katakana": "ブ",
+      "romaji": "bu",
+      "row": "b",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "be",
+      "hiragana": "べ",
+      "katakana": "ベ",
+      "romaji": "be",
+      "row": "b",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "bo",
+      "hiragana": "ぼ",
+      "katakana": "ボ",
+      "romaji": "bo",
+      "row": "b",
+      "type": "dakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "pa",
+      "hiragana": "ぱ",
+      "katakana": "パ",
+      "romaji": "pa",
+      "row": "p",
+      "type": "handakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "pi",
+      "hiragana": "ぴ",
+      "katakana": "ピ",
+      "romaji": "pi",
+      "row": "p",
+      "type": "handakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "pu",
+      "hiragana": "ぷ",
+      "katakana": "プ",
+      "romaji": "pu",
+      "row": "p",
+      "type": "handakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "pe",
+      "hiragana": "ぺ",
+      "katakana": "ペ",
+      "romaji": "pe",
+      "row": "p",
+      "type": "handakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "po",
+      "hiragana": "ぽ",
+      "katakana": "ポ",
+      "romaji": "po",
+      "row": "p",
+      "type": "handakuon",
+      "difficulty": 2
+    },
+    {
+      "id": "kya",
+      "hiragana": "きゃ",
+      "katakana": "キャ",
+      "romaji": "kya",
+      "row": "ky",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "kyu",
+      "hiragana": "きゅ",
+      "katakana": "キュ",
+      "romaji": "kyu",
+      "row": "ky",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "kyo",
+      "hiragana": "きょ",
+      "katakana": "キョ",
+      "romaji": "kyo",
+      "row": "ky",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "sha",
+      "hiragana": "しゃ",
+      "katakana": "シャ",
+      "romaji": "sha",
+      "row": "sh",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "shu",
+      "hiragana": "しゅ",
+      "katakana": "シュ",
+      "romaji": "shu",
+      "row": "sh",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "sho",
+      "hiragana": "しょ",
+      "katakana": "ショ",
+      "romaji": "sho",
+      "row": "sh",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "cha",
+      "hiragana": "ちゃ",
+      "katakana": "チャ",
+      "romaji": "cha",
+      "row": "ch",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "chu",
+      "hiragana": "ちゅ",
+      "katakana": "チュ",
+      "romaji": "chu",
+      "row": "ch",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "cho",
+      "hiragana": "ちょ",
+      "katakana": "チョ",
+      "romaji": "cho",
+      "row": "ch",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "nya",
+      "hiragana": "にゃ",
+      "katakana": "ニャ",
+      "romaji": "nya",
+      "row": "ny",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "nyu",
+      "hiragana": "にゅ",
+      "katakana": "ニュ",
+      "romaji": "nyu",
+      "row": "ny",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "nyo",
+      "hiragana": "にょ",
+      "katakana": "ニョ",
+      "romaji": "nyo",
+      "row": "ny",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "hya",
+      "hiragana": "ひゃ",
+      "katakana": "ヒャ",
+      "romaji": "hya",
+      "row": "hy",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "hyu",
+      "hiragana": "ひゅ",
+      "katakana": "ヒュ",
+      "romaji": "hyu",
+      "row": "hy",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "hyo",
+      "hiragana": "ひょ",
+      "katakana": "ヒョ",
+      "romaji": "hyo",
+      "row": "hy",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "mya",
+      "hiragana": "みゃ",
+      "katakana": "ミャ",
+      "romaji": "mya",
+      "row": "my",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "myu",
+      "hiragana": "みゅ",
+      "katakana": "ミュ",
+      "romaji": "myu",
+      "row": "my",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "myo",
+      "hiragana": "みょ",
+      "katakana": "ミョ",
+      "romaji": "myo",
+      "row": "my",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "rya",
+      "hiragana": "りゃ",
+      "katakana": "リャ",
+      "romaji": "rya",
+      "row": "ry",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "ryu",
+      "hiragana": "りゅ",
+      "katakana": "リュ",
+      "romaji": "ryu",
+      "row": "ry",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "ryo",
+      "hiragana": "りょ",
+      "katakana": "リョ",
+      "romaji": "ryo",
+      "row": "ry",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "gya",
+      "hiragana": "ぎゃ",
+      "katakana": "ギャ",
+      "romaji": "gya",
+      "row": "gy",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "gyu",
+      "hiragana": "ぎゅ",
+      "katakana": "ギュ",
+      "romaji": "gyu",
+      "row": "gy",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "gyo",
+      "hiragana": "ぎょ",
+      "katakana": "ギョ",
+      "romaji": "gyo",
+      "row": "gy",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "ja",
+      "hiragana": "じゃ",
+      "katakana": "ジャ",
+      "romaji": "ja",
+      "row": "ja",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "ju",
+      "hiragana": "じゅ",
+      "katakana": "ジュ",
+      "romaji": "ju",
+      "row": "ja",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "jo",
+      "hiragana": "じょ",
+      "katakana": "ジョ",
+      "romaji": "jo",
+      "row": "ja",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "bya",
+      "hiragana": "びゃ",
+      "katakana": "ビャ",
+      "romaji": "bya",
+      "row": "by",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "byu",
+      "hiragana": "びゅ",
+      "katakana": "ビュ",
+      "romaji": "byu",
+      "row": "by",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "byo",
+      "hiragana": "びょ",
+      "katakana": "ビョ",
+      "romaji": "byo",
+      "row": "by",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "pya",
+      "hiragana": "ぴゃ",
+      "katakana": "ピャ",
+      "romaji": "pya",
+      "row": "py",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "pyu",
+      "hiragana": "ぴゅ",
+      "katakana": "ピュ",
+      "romaji": "pyu",
+      "row": "py",
+      "type": "youon",
+      "difficulty": 3
+    },
+    {
+      "id": "pyo",
+      "hiragana": "ぴょ",
+      "katakana": "ピョ",
+      "romaji": "pyo",
+      "row": "py",
+      "type": "youon",
+      "difficulty": 3
+    }
+  ]
+}

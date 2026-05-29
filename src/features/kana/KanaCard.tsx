@@ -1,8 +1,8 @@
-import type { KanaItem, KanaMode } from '../../types'
+import type { Kana, KanaMode } from '../../types'
 import SpeakButton from '../../components/SpeakButton'
 
 interface KanaCardProps {
-  item: KanaItem
+  item: Kana
   mode: KanaMode
   showRomaji?: boolean
   className?: string

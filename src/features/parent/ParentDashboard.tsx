@@ -155,7 +155,7 @@ export default function ParentDashboard() {
         <button
           type="button"
           aria-label="ホームにもどる"
-          onClick={() => navigate('/kid')}
+          onClick={() => navigate('/play')}
           className="mt-4 px-6 py-3 rounded-2xl bg-gray-200 text-xl font-bold hover:bg-gray-300 transition-colors"
         >
           ← もどる
@@ -175,11 +175,11 @@ export default function ParentDashboard() {
     katakana: 'カタカナ',
     both: 'りょうほう',
   }
-  const difficulties: KanaDifficulty[] = ['level_1', 'level_2', 'level_3', 'all']
-  const difficultyLabels: Record<KanaDifficulty, string> = {
-    level_1: 'レベル1',
-    level_2: 'レベル2',
-    level_3: 'レベル3',
+  const difficulties: KanaDifficulty[] = [1, 2, 3, 'all']
+  const difficultyLabels: Record<string, string> = {
+    1: 'レベル1(清音)',
+    2: 'レベル2(濁音)',
+    3: 'レベル3(拗音)',
     all: 'ぜんぶ',
   }
 
@@ -190,7 +190,7 @@ export default function ParentDashboard() {
           <button
             type="button"
             aria-label="ホームにもどる"
-            onClick={() => navigate('/kid')}
+            onClick={() => navigate('/play')}
             className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
           >
             ←

@@ -5,9 +5,10 @@ import { useAppStore } from '../../store/useAppStore'
 import { speak } from '../../lib/tts'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
 import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
-import kanaData from '../../data/kana_data.json'
+import kanaList from '../../data/kana.json'
 import KanaCard from './KanaCard'
 
+const ALL_KANA = kanaList as KanaItem[]
 const TOTAL_QUESTIONS = 10
 
 function shuffle<T>(arr: T[]): T[] {
@@ -29,9 +30,8 @@ export default function KanaMatchGame() {
   const { kanaDifficulty, kanaMode, addStars, startSession, endSession } = useAppStore()
 
   const filteredKana = useMemo<KanaItem[]>(() => {
-    const list = kanaData.kana_list as KanaItem[]
-    if (kanaDifficulty === 'all') return list
-    return list.filter((k) => k.difficulty_level === kanaDifficulty)
+    if (kanaDifficulty === 'all') return ALL_KANA
+    return ALL_KANA.filter((k) => k.difficulty === kanaDifficulty)
   }, [kanaDifficulty])
 
   const [queue, setQueue] = useState<KanaItem[]>([])
@@ -62,7 +62,7 @@ export default function KanaMatchGame() {
   useEffect(() => {
     if (queue.length === 0 || currentIdx >= queue.length) return
     const current = queue[currentIdx]
-    const pool = filteredKana.length >= 4 ? filteredKana : (kanaData.kana_list as KanaItem[])
+    const pool = filteredKana.length >= 4 ? filteredKana : ALL_KANA
     const wrong = pickWrongChoices(current, pool, 3)
     setChoices(shuffle([current, ...wrong]))
     setAnswered(false)
@@ -86,9 +86,7 @@ export default function KanaMatchGame() {
       const updated = updateAfterCorrect(record)
       await saveProgress(updated)
       setScore((s) => s + 1)
-      setTimeout(() => {
-        advance(currentIdx)
-      }, 1200)
+      setTimeout(() => { advance(currentIdx) }, 1200)
     } else {
       setWrongId(chosen.id)
       speak('もういちど！')
@@ -104,7 +102,7 @@ export default function KanaMatchGame() {
   const advance = (idx: number) => {
     const next = idx + 1
     if (next >= TOTAL_QUESTIONS || next >= queue.length) {
-      finishSession(score + 1)
+      void finishSession(score + 1)
     } else {
       setCurrentIdx(next)
     }
@@ -158,7 +156,7 @@ export default function KanaMatchGame() {
         <button
           type="button"
           aria-label="ホームにもどる"
-          onClick={() => navigate('/kid')}
+          onClick={() => navigate('/play')}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
           ホーム
@@ -176,7 +174,7 @@ export default function KanaMatchGame() {
         <button
           type="button"
           aria-label="ホームにもどる"
-          onClick={() => navigate('/kid')}
+          onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
         >
           ←

@@ -8,30 +8,39 @@ import SpeakButton from '../../components/SpeakButton'
 import FlashCard from './FlashCard'
 import rawVocab from '../../data/vocabulary.json'
 
-interface RawUnit {
-  unit: string
-  unit_zh: string
-  words: VocabWord[]
+const ALL_WORDS = rawVocab as VocabWord[]
+
+const UNIT_LABELS: Record<string, string> = {
+  topic_animals: '動物',
+  topic_food: '食物',
+  topic_colors: '顏色',
+  topic_numbers: '數字',
+  topic_body: '身體',
+  topic_feelings: '心情',
+  topic_daily: '日常',
 }
 
-const allUnits = rawVocab as unknown as RawUnit[]
+const UNIT_JAPANESE: Record<string, string> = {
+  topic_animals: 'どうぶつ',
+  topic_food: 'たべもの',
+  topic_colors: 'いろ',
+  topic_numbers: 'かず',
+  topic_body: 'からだ',
+  topic_feelings: 'きもち',
+  topic_daily: 'にちじょう',
+}
 
-const units = allUnits.map((u, i) => ({
-  unit_id: String(i),
-  unit_title: u.unit,
-  unit_zh: u.unit_zh,
-  words: u.words,
-}))
+const unitIds = [...new Set(ALL_WORDS.map((w) => w.unit))]
 
 export default function FlashCardDeck() {
   const navigate = useNavigate()
   const { startSession, endSession } = useAppStore()
-  const [unitIdx, setUnitIdx] = useState(0)
+  const [unitId, setUnitId] = useState(unitIds[0])
   const [queue, setQueue] = useState<VocabWord[]>([])
   const [wordIdx, setWordIdx] = useState(0)
   const sessionSaved = useRef(false)
 
-  const currentUnit = units[unitIdx]
+  const unitWords = ALL_WORDS.filter((w) => w.unit === unitId)
 
   useEffect(() => {
     startSession()
@@ -39,16 +48,17 @@ export default function FlashCardDeck() {
   }, [startSession])
 
   useEffect(() => {
-    setQueue([...currentUnit.words])
+    setQueue([...unitWords])
     setWordIdx(0)
-  }, [unitIdx, currentUnit.words])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [unitId])
 
   const handleKnow = async () => {
     const word = queue[wordIdx]
     const record = await getOrCreateProgress(word.id, 'vocab')
     await saveProgress(updateAfterCorrect(record))
     if (wordIdx + 1 >= queue.length) {
-      await endRound(wordIdx + 1)
+      await endRound(queue.length)
     } else {
       setWordIdx((i) => i + 1)
     }
@@ -73,11 +83,11 @@ export default function FlashCardDeck() {
       date: Date.now(),
       durationMs: duration,
       feature: 'flashcard',
-      correct: currentUnit.words.length,
+      correct: unitWords.length,
       total,
     })
     setWordIdx(0)
-    setQueue([...currentUnit.words])
+    setQueue([...unitWords])
     sessionSaved.current = false
   }
 
@@ -95,8 +105,8 @@ export default function FlashCardDeck() {
           ←
         </button>
         <div className="flex-1 flex items-center gap-2">
-          <span className="text-2xl font-bold text-pink-500">{currentUnit.unit_zh}</span>
-          <SpeakButton text={currentUnit.unit_title} size="sm" />
+          <span className="text-2xl font-bold text-pink-500">{UNIT_LABELS[unitId] ?? unitId}</span>
+          <SpeakButton text={UNIT_JAPANESE[unitId] ?? unitId} size="sm" />
         </div>
         <span className="text-2xl font-bold text-gray-600">
           {Math.min(wordIdx + 1, queue.length)}/{queue.length}
@@ -105,22 +115,22 @@ export default function FlashCardDeck() {
 
       <div className="w-full max-w-md overflow-x-auto pb-2">
         <div className="flex gap-2">
-          {units.map((unit, idx) => (
+          {unitIds.map((uid) => (
             <button
-              key={unit.unit_id}
+              key={uid}
               type="button"
-              aria-label={unit.unit_zh}
+              aria-label={UNIT_LABELS[uid] ?? uid}
               onClick={() => {
                 sessionSaved.current = false
-                setUnitIdx(idx)
+                setUnitId(uid)
               }}
               className={`px-4 py-2 rounded-2xl text-xl font-bold whitespace-nowrap transition-all ${
-                idx === unitIdx
+                uid === unitId
                   ? 'bg-pink-400 text-white shadow-md'
                   : 'bg-white text-gray-600 hover:bg-pink-100'
               }`}
             >
-              {unit.unit_zh}
+              {UNIT_LABELS[uid] ?? uid}
             </button>
           ))}
         </div>
@@ -140,7 +150,7 @@ export default function FlashCardDeck() {
             aria-label="もういちど"
             onClick={() => {
               sessionSaved.current = false
-              setQueue([...currentUnit.words])
+              setQueue([...unitWords])
               setWordIdx(0)
             }}
             className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"

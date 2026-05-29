@@ -175,11 +175,11 @@ export default function ParentDashboard() {
     katakana: 'カタカナ',
     both: 'りょうほう',
   }
-  const difficulties: KanaDifficulty[] = ['level_1', 'level_2', 'level_3', 'all']
-  const difficultyLabels: Record<KanaDifficulty, string> = {
-    level_1: 'レベル1',
-    level_2: 'レベル2',
-    level_3: 'レベル3',
+  const difficulties: KanaDifficulty[] = [1, 2, 3, 'all']
+  const difficultyLabels: Record<string, string> = {
+    1: 'レベル1(清音)',
+    2: 'レベル2(濁音)',
+    3: 'レベル3(拗音)',
     all: 'ぜんぶ',
   }
 

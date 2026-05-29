@@ -1,33 +1,34 @@
 import { create } from 'zustand'
-import type { KanaMode, KanaDifficulty } from '../types'
+import type { KanaMode, KanaDifficulty, AgeMode } from '../types'
 
 interface AppState {
-  // kid settings
   kanaMode: KanaMode
   kanaDifficulty: KanaDifficulty
+  ageMode: AgeMode
   sessionStartTime: number | null
   totalStars: number
-
-  // parent
   parentUnlocked: boolean
 
   setKanaMode: (mode: KanaMode) => void
   setKanaDifficulty: (level: KanaDifficulty) => void
+  setAgeMode: (mode: AgeMode) => void
   startSession: () => void
-  endSession: () => number   // returns duration ms
+  endSession: () => number
   addStars: (n: number) => void
   setParentUnlocked: (v: boolean) => void
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
   kanaMode: 'hiragana',
-  kanaDifficulty: 'level_1',
+  kanaDifficulty: 1,
+  ageMode: 'young',
   sessionStartTime: null,
   totalStars: Number(localStorage.getItem('totalStars') ?? 0),
   parentUnlocked: false,
 
   setKanaMode: (mode) => set({ kanaMode: mode }),
   setKanaDifficulty: (level) => set({ kanaDifficulty: level }),
+  setAgeMode: (mode) => set({ ageMode: mode }),
 
   startSession: () => set({ sessionStartTime: Date.now() }),
 

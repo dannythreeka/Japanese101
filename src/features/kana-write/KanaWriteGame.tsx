@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import kanaData from '../../data/kana.json'
+import { kanaData } from '../../data/loaders'
 import type { Kana } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
@@ -13,7 +13,7 @@ import {
   computeWritingScore, scoreToStars,
 } from './kanaWriteEngine'
 
-const ALL_KANA = kanaData as Kana[]
+const ALL_KANA: Kana[] = kanaData()
 const CANVAS_SIZE = 280
 const STROKE_WIDTH = 10
 const STROKE_COLOR = '#1a1a1a'

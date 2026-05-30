@@ -44,8 +44,6 @@ describe('buildWritePool', () => {
 
   it('falls back to seion when filtered pool has < 4 items', () => {
     // only 1 difficulty-3 kana, which is < 4 → fallback to seion
-    const mixed = [...SEION, makeKana('x', 'dakuon', 3)]
-    const pool = buildWritePool(mixed, 'advanced', 3)
     // difficulty <= 3 gives 6 seion + 1 dakuon = 7, which is >= 4, so no fallback needed
     // Let's test with a pool where difficulty filter leaves < 4
     const tinyDiff3 = [makeKana('a', 'dakuon', 3), makeKana('b', 'dakuon', 3), makeKana('c', 'dakuon', 3)]

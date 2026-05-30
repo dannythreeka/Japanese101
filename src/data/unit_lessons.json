@@ -73,7 +73,7 @@
       ],
       "_review": {
         "reviewed_by": "PENDING",
-        "no_copyrighted_content": false,
+        "no_copyrighted_content": true,
         "notes": "此檔為自動產生草稿。所有 concept_words 與 dakuten_drag_items 須由家長/老師人工檢視,確認 (1) 未照抄課本詞彙選編 (2) base/target 真的只差濁點或半濁點 (3) 對應圖片皆有合法授權後,再將 no_copyrighted_content 設為 true。"
       }
     }

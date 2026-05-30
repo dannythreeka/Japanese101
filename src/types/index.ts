@@ -156,7 +156,7 @@ export interface SessionRecord {
   id: string
   date: number
   durationMs: number
-  feature: 'kana' | 'flashcard' | 'quiz' | 'kana_catch'
+  feature: 'kana' | 'flashcard' | 'quiz' | 'kana_catch' | 'dakuten_drag'
   correct: number
   total: number
 }

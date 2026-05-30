@@ -5,6 +5,7 @@ interface AppState {
   kanaMode: KanaMode
   kanaDifficulty: KanaDifficulty
   ageMode: AgeMode
+  disabledUnits: string[]
   sessionStartTime: number | null
   totalStars: number
   parentUnlocked: boolean
@@ -12,6 +13,7 @@ interface AppState {
   setKanaMode: (mode: KanaMode) => void
   setKanaDifficulty: (level: KanaDifficulty) => void
   setAgeMode: (mode: AgeMode) => void
+  toggleUnit: (unitId: string) => void
   startSession: () => void
   endSession: () => number
   addStars: (n: number) => void
@@ -21,14 +23,26 @@ interface AppState {
 export const useAppStore = create<AppState>((set, get) => ({
   kanaMode: 'hiragana',
   kanaDifficulty: 1,
-  ageMode: 'young',
+  ageMode: (localStorage.getItem('ageMode') as AgeMode | null) ?? 'young',
+  disabledUnits: JSON.parse(localStorage.getItem('disabledUnits') ?? '[]') as string[],
   sessionStartTime: null,
   totalStars: Number(localStorage.getItem('totalStars') ?? 0),
   parentUnlocked: false,
 
   setKanaMode: (mode) => set({ kanaMode: mode }),
   setKanaDifficulty: (level) => set({ kanaDifficulty: level }),
-  setAgeMode: (mode) => set({ ageMode: mode }),
+  setAgeMode: (mode) => {
+    localStorage.setItem('ageMode', mode)
+    set({ ageMode: mode })
+  },
+  toggleUnit: (unitId: string) => {
+    const current = get().disabledUnits
+    const next = current.includes(unitId)
+      ? current.filter(id => id !== unitId)
+      : [...current, unitId]
+    localStorage.setItem('disabledUnits', JSON.stringify(next))
+    set({ disabledUnits: next })
+  },
 
   startSession: () => set({ sessionStartTime: Date.now() }),
 

@@ -11,7 +11,7 @@ const STAGE_LABEL = ['たまご', 'あかちゃん', 'こどものこ', 'おと�
 
 export default function PlayScreen() {
   const navigate = useNavigate()
-  const { totalStars, ageMode } = useAppStore()
+  const { totalStars } = useAppStore()
   const [pet, setPet] = useState<PetState | null>(null)
 
   useEffect(() => {
@@ -119,15 +119,13 @@ export default function PlayScreen() {
           🎧 きくクイズ
         </button>
 
-        {ageMode === 'advanced' && (
-          <button
-            type="button"
-            onClick={() => handleGameNav('/play/kana-catch')}
-            className="w-full py-5 rounded-3xl bg-orange-400 text-white text-2xl font-bold shadow-lg hover:bg-orange-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
-          >
-            🫧 かな つかまえろ！
-          </button>
-        )}
+        <button
+          type="button"
+          onClick={() => handleGameNav('/play/kana-catch')}
+          className="w-full py-5 rounded-3xl bg-orange-400 text-white text-2xl font-bold shadow-lg hover:bg-orange-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
+        >
+          🫧 かな つかまえろ！
+        </button>
       </div>
     </div>
   )

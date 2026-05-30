@@ -1,90 +1,47 @@
-# S4 KanaCatch 子模式 B/C + SRS 出題 + 課程選擇器 — HANDOFF
+# S5 Dakuten Drag 遊戲（produce 教學步驟）— HANDOFF
 
 ## 對應 SPEC
-- §5.1 Kana Catch 子模式 B `kana_catch_minimal_pair`
-- §5.1 Kana Catch 子模式 C `kana_catch_word_to_image`
-- §5.3 學習邏輯（SRS 出題優先）
-- §6 S4 交付
+- §5.2 Dakuten Drag — produce 步驟
+- §5.3 SRS 學習進度追蹤
 
 ---
 
 ## 本階段做了什麼
 
-### 架構重構（KanaCatchEngine.ts）
-- Engine 不再內建出題邏輯；改由 `cb.nextQuestion()` 回呼取得每題的 `QuestionConfig`
-- 新增 `BubbleItem`（id + display text + 可選 romaji）統一表示泡泡內容，與資料型別解耦
-- 泡泡顯示文字自動縮放字體（長詞 2+ 字自動變小），支援完整假名詞（例「かざん」）
-- 新增 `onNewQuestion(q)` 回呼讓 React 知道當前問題（replay 按鈕、中央圖片用）
-
 ### 新建檔案
+
 | 檔案 | 說明 |
 |------|------|
-| `src/features/kana-catch/questionGenerators.ts` | 三個出題生成器 + SRS 加權選題 + buildPool/buildParams 移至此處 |
-| `src/features/kana-catch/questionGenerators.test.ts` | 31 個單元測試：buildPool/buildParams/三種生成器 |
-| `src/features/kana-catch/KanaCatchSetup.tsx` | 模式選擇 + 課程選擇 UI |
-| `public/assets/img/svg/w_kasa.svg` | 傘 SVG（代表圖，待家長確認風格） |
-| `public/assets/img/svg/w_kazan.svg` | 火山 SVG（代表圖，待家長確認風格） |
-| `public/assets/img/svg/w_tsuki.svg` | 月亮 SVG（代表圖，待家長確認風格） |
+| `src/features/dakuten-drag/DakutenDragEngine.ts` | 純遊戲邏輯：buildQuestions / shuffleQuestions / checkAnswer / getProgressId |
+| `src/features/dakuten-drag/DakutenDragEngine.test.ts` | 15 個單元測試 |
+| `src/features/dakuten-drag/DakutenDragGame.tsx` | React 遊戲畫面 |
 
 ### 修改檔案
+
 | 檔案 | 變更 |
 |------|------|
-| `src/features/kana-catch/KanaCatchEngine.ts` | 重構為通用引擎，移除 Kana 耦合 |
-| `src/features/kana-catch/KanaCatchEngine.test.ts` | 更新 import 來源 |
-| `src/features/kana-catch/KanaCatchGame.tsx` | 加入 setup 狀態機、三子模式切換、SRS 加載 |
-| `src/data/vocabulary.json` | 8 個光村詞彙加入 emoji 欄位（供子模式 C 中央顯示） |
+| `src/App.tsx` | 新增路由 `/play/dakuten-drag` |
+| `src/features/play/PlayScreen.tsx` | 新增「✏️ だくてん ドラッグ」按鈕（紫色） |
+| `src/types/index.ts` | `SessionRecord.feature` 加入 `'dakuten_drag'` |
 
 ---
 
-## 三種子模式說明
+## 遊戲玩法說明
 
-### 子模式 A（listen）— 不變，繼續運作
-- TTS 念單一假名，泡泡顯示假名，幼齡顯示羅馬拼音提示
+1. 從第一個有 `dakuten_drag_items` 的課程載入題目，自動隨機排序
+2. 每題顯示：
+   - 目標詞的中文意思（大字，紫色）
+   - 🔊 按鈕（TTS 自動播放目標詞，可重播）
+   - 問題文字：「どれに ゛/゜ を つける？」（顯示對應符號）
+   - 原始假名的可點按方塊（大按鍵，觸控友善）
+3. 點按正確方塊 → 方塊變綠、顯示加了濁點的目標字、TTS 再唸一次，900ms 後進下一題
+4. 點按錯誤方塊 → 方塊紅色晃動（animate-shake）、SRS 記錄答錯，可立即重試
+5. 全部答完 → 結算畫面顯示星星、XP 獎勵
 
-### 子模式 B（minimal_pair）
-- 從 `unit_lessons.target_kana_pairs` 取所有最小對比假名（例 か↔が、き↔ぎ）
-- SRS 優先選「最近答錯」或「久未複習」的假名
-- 泡泡顯示假名，TTS 念目標音，孩子辨識「有沒有濁點」
-
-### 子模式 C（word_to_image）
-- 從 `unit_lessons.concept_words` 取詞，中央顯示 emoji（例 ☂️ かさ）
-- 泡泡顯示詞的假名（例「かさ」「かざん」「つき」）
-- TTS 念目標詞，孩子抓住與圖符合的詞
-
-### SRS 出題加權
-- 每次遊戲開始先讀取 IndexedDB 全部進度（`loadProgressMap()`）
-- `srsWeightedPick()` 優先從 `nextReview ≤ now` 的項目出題
-- 所有答完才重複，確保複習效率
-
----
-
-## SVG 圖示風格說明（待家長確認）
-
-依 KICKOFF §3 規則生成 3 張代表圖：
-- `w_kasa.svg` — 藍色圓頂傘 + 木質握把
-- `w_kazan.svg` — 灰色火山 + 橘黃岩漿噴發
-- `w_tsuki.svg` — 深藍夜空 + 黃色新月 + 星星
-
-**請確認：**
-- [ ] 風格是否適合 6 歲兒童？（圓潤、高對比、可辨識）
-- [ ] 確認後，後續 5 張（w_tsugi、w_mato、w_mado、w_kami、w_kani）會以相同風格補齊
-
----
-
-## 需要家長決定
-
-- [ ] **Q1：SVG 風格確認**：請確認上述 3 張 SVG 風格是否合適，確認後批量補齊其餘 5 張
-- [ ] **Q2：`unit_lessons.json` 版權確認**：請審查並將 `_review.no_copyrighted_content` 由 `false` 改為 `true`（S0 遺留待辦）
-
----
-
-## 給家長的手動驗證腳本
-
-1. 開啟 App → 主畫面點「🫧 かな つかまえろ！」
-2. **子模式 A（きく）**：點「🎵 きく」→ 聽音點字，確認正確泡泡爆開、錯誤無懲罰
-3. **子模式 B（くらべる）**：點「🔤 くらべる」→ 選「柿子與鑰匙」→ 泡泡中含清音和濁音，辨認正確音
-4. **子模式 C（ことばをみつけろ）**：點「🖼️ ことばをみつけろ」→ 選「柿子與鑰匙」→ 中央出現 emoji，選對應日文詞
-5. 完成 10 題後出現結算，可選「モードをかえる」換模式或「もういちど！」重玩
+### SRS 進度追蹤
+- 每道題以 `ddi_${item.base}` 為 ID，type = `'vocab'`
+- 答對：`updateAfterCorrect`；答錯：`updateAfterIncorrect`
+- 目前版本每次隨機排序（不依 SRS 加權出題），因題庫只有 4 題，加權意義不大
 
 ---
 
@@ -93,22 +50,27 @@
 ```
 ✅ validate:data   — 3 檔案全通過
 ✅ tsc --noEmit    — 0 errors
-✅ vitest run      — 4 files, 47 tests passed（含 31 個新的生成器測試）
-✅ npm run build   — 437 kB JS, PWA precache 14 entries（含 3 個 SVG）
+✅ vitest run      — 5 files, 62 tests passed（新增 15 個 DakutenDragEngine 測試）
+✅ npm run build   — 443 kB JS, PWA precache 19 entries
 ```
 
 ---
 
-## 我自己決定的事
+## 給家長的手動驗證腳本
 
-1. **emoji 欄位**：為光村 8 個詞彙加入 emoji，讓子模式 C 在 SVG 完成前仍可遊玩
-2. **出題最大泡泡數**：showRomaji=true（幼齡）取 3 泡，showRomaji=false（進階）取 5 泡 — 與子模式 A 一致
-3. **引擎 `maxBubbles` 改由生成器控制**：生成器決定 items 數量，引擎不需知道上限
+1. 開啟 App → 主畫面點「✏️ だくてん ドラッグ」（紫色按鈕）
+2. 聽到 TTS 唸出目標詞（例「ぶた」）
+3. 畫面顯示中文意思（例「豬」）和基礎假名方塊（例「ふ」「た」）
+4. 問題提示「どれに ゛ を つける？」
+5. 點按「ふ」→ 正確：方塊變綠顯示「ぶ゛」，TTS 再唸，進下一題
+6. 點按「た」→ 錯誤：方塊晃動，可重試
+7. 全部 4 題後出現結算畫面
 
 ---
 
 ## 已知限制與下階段建議
 
-- 其餘 5 張 SVG（w_tsugi、w_mato、w_mado、w_kami、w_kani）待家長確認風格後補充
-- 目前只有 1 個 unit lesson；S5 加入更多 unit 後選擇器會自動出現更多選項
-- S5：Dakuten Drag 遊戲（produce 步驟）
+- 目前 `dakuten_drag_items` 第一題（くき→かき）為佔位資料，不是真正的濁音對；請家長確認後替換
+- 題庫只有 4 題（來自單一課程）；S6 或之後可新增更多課程或題目
+- 遊戲名稱含「ドラッグ」但目前互動方式為「點按」；若家長希望實作真正的拖拉操作可在 S6 後追加
+- S6：家長儀表板（進度、正確率、學習時間、PIN 鎖、年齡模式、課程開關）

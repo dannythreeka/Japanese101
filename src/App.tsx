@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { loadVoices } from './lib/tts'
 import PlayScreen from './features/play/PlayScreen'
 import KanaMatchGame from './features/kana/KanaMatchGame'
@@ -14,7 +14,7 @@ export default function App() {
   useEffect(() => { void loadVoices() }, [])
 
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/* Pet app routes */}
         <Route path="/" element={<Navigate to="/play" replace />} />
@@ -33,6 +33,6 @@ export default function App() {
         <Route path="/kid/quiz" element={<Navigate to="/play/quiz" replace />} />
         <Route path="*" element={<Navigate to="/play" replace />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }

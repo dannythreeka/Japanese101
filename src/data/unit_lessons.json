@@ -42,11 +42,10 @@
       "dakuten_drag_items": [
         {
           "base": "くき",
-          "target": "かき",
-          "meaning_zh": "柿子",
+          "target": "ぐき",
+          "meaning_zh": "牙齦",
           "mark_at": [0],
-          "mark": "dakuten",
-          "_note": "示意。實際題目應確保 base 與 target 真的只差濁點/半濁點。此題若 base=くき 不適用,請由家長挑選真正只差濁點的最小對比詞。"
+          "mark": "dakuten"
         },
         {
           "base": "ふた",

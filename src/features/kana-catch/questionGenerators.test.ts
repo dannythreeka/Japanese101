@@ -84,13 +84,18 @@ describe('makeListenGenerator', () => {
     }
   })
   it('SRS weighting: due items are preferred', () => {
-    const dueMap = new Map<string, ProgressRecord>([
-      ['a', { id:'a', type:'kana', correct:0, incorrect:3, streak:0, lastSeen:0, nextReview: Date.now() - 1000 }],
-    ])
+    // Mark ALL items as not-due, then override 'a' to be due.
+    // Items absent from the map are treated as due (!p = true), so we must
+    // explicitly set all other items to a future nextReview.
+    const future = Date.now() + 86_400_000
+    const dueMap = new Map<string, ProgressRecord>(
+      SEION.map(k => [k.id, { id: k.id, type: 'kana', correct: 1, incorrect: 0, streak: 1, lastSeen: 0, nextReview: future }]),
+    )
+    dueMap.set('a', { id: 'a', type: 'kana', correct: 0, incorrect: 3, streak: 0, lastSeen: 0, nextReview: Date.now() - 1000 })
     const gen = makeListenGenerator(SEION, 3, dueMap)
-    // run many times — 'a' should appear frequently (can't guarantee every time, just check shape)
-    const targets = Array.from({ length: 20 }, () => gen().targetId)
-    expect(targets.some(t => t === 'a')).toBe(true)
+    // First call must include 'a' since it's the only due item in the initial window
+    const targets = Array.from({ length: 10 }, () => gen().targetId)
+    expect(targets.includes('a')).toBe(true)
   })
 })
 

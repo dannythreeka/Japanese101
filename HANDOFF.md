@@ -1,8 +1,10 @@
-# S5 Dakuten Drag 遊戲（produce 教學步驟）— HANDOFF
+# S6 家長儀表板升級 — HANDOFF
 
 ## 對應 SPEC
-- §5.2 Dakuten Drag — produce 步驟
-- §5.3 SRS 學習進度追蹤
+- §6.1 家長儀表板：進度/正確率/時間
+- §6.2 PIN 鎖定
+- §6.3 年齡模式切換
+- §6.4 課程開關
 
 ---
 
@@ -12,36 +14,40 @@
 
 | 檔案 | 說明 |
 |------|------|
-| `src/features/dakuten-drag/DakutenDragEngine.ts` | 純遊戲邏輯：buildQuestions / shuffleQuestions / checkAnswer / getProgressId |
-| `src/features/dakuten-drag/DakutenDragEngine.test.ts` | 15 個單元測試 |
-| `src/features/dakuten-drag/DakutenDragGame.tsx` | React 遊戲畫面 |
+| `src/features/parent/dashboardUtils.ts` | 從元件抽出的純函式：formatTime / getDayLabel / last7DayCounts / featureAccuracy |
+| `src/features/parent/dashboardUtils.test.ts` | 11 個單元測試 |
 
 ### 修改檔案
 
 | 檔案 | 變更 |
 |------|------|
-| `src/App.tsx` | 新增路由 `/play/dakuten-drag` |
-| `src/features/play/PlayScreen.tsx` | 新增「✏️ だくてん ドラッグ」按鈕（紫色） |
-| `src/types/index.ts` | `SessionRecord.feature` 加入 `'dakuten_drag'` |
+| `src/features/parent/ParentDashboard.tsx` | 新增「ねんれいモード」切換 + 課程開關 Toggle，重構使用 dashboardUtils |
+| `src/store/useAppStore.ts` | 新增 `disabledUnits` + `toggleUnit`；`ageMode` 現在持久化到 localStorage |
+| `src/features/kana-catch/questionGenerators.test.ts` | 修正既有 flaky 測試（SRS 加權）|
 
 ---
 
-## 遊戲玩法說明
+## 功能說明
 
-1. 從第一個有 `dakuten_drag_items` 的課程載入題目，自動隨機排序
-2. 每題顯示：
-   - 目標詞的中文意思（大字，紫色）
-   - 🔊 按鈕（TTS 自動播放目標詞，可重播）
-   - 問題文字：「どれに ゛/゜ を つける？」（顯示對應符號）
-   - 原始假名的可點按方塊（大按鍵，觸控友善）
-3. 點按正確方塊 → 方塊變綠、顯示加了濁點的目標字、TTS 再唸一次，900ms 後進下一題
-4. 點按錯誤方塊 → 方塊紅色晃動（animate-shake）、SRS 記錄答錯，可立即重試
-5. 全部答完 → 結算畫面顯示星星、XP 獎勵
+### 年齢モード切換
+- **幼齢 🐣**：ローマ字あり・ゆっくり（fallSpeed 110）・清音メイン（6〜8歳）
+- **進階 🚀**：ローマ字なし・はやい（fallSpeed 210）・全かな（9〜12歳）
+- 設定持久化（localStorage）→ 重新整理後不會重置
 
-### SRS 進度追蹤
-- 每道題以 `ddi_${item.base}` 為 ID，type = `'vocab'`
-- 答對：`updateAfterCorrect`；答錯：`updateAfterIncorrect`
-- 目前版本每次隨機排序（不依 SRS 加權出題），因題庫只有 4 題，加權意義不大
+### 課程開關 Toggle
+- iOS 風格 toggle switch
+- 預設全部開啟（`disabledUnits: []`，opt-out 設計）
+- 新增課程時自動開啟，不需遷移舊資料
+
+### 既有功能（已在 repo 中，本次保留）
+- PIN 鎖定（預設 1234）
+- 學習時間、星星數、正確率、7 日活動圖表
+- 假名模式、難度設定
+
+### Flaky 測試修正
+- `questionGenerators.test.ts`：SRS 加權測試之前沒有設定「非 due」項目的 nextReview，
+  導致所有無進度項目都被視為 due，讓測試有 ~12% 機率失敗。
+  現在明確把其他項目設為未來時間，再覆蓋 'a' 為 due，測試變成確定性。
 
 ---
 
@@ -50,27 +56,24 @@
 ```
 ✅ validate:data   — 3 檔案全通過
 ✅ tsc --noEmit    — 0 errors
-✅ vitest run      — 5 files, 62 tests passed（新增 15 個 DakutenDragEngine 測試）
-✅ npm run build   — 443 kB JS, PWA precache 19 entries
+✅ vitest run      — 6 files, 74 tests passed（新增 11 個 dashboardUtils 測試）
+✅ npm run build   — 446 kB JS, PWA precache 19 entries
 ```
 
 ---
 
 ## 給家長的手動驗證腳本
 
-1. 開啟 App → 主畫面點「✏️ だくてん ドラッグ」（紫色按鈕）
-2. 聽到 TTS 唸出目標詞（例「ぶた」）
-3. 畫面顯示中文意思（例「豬」）和基礎假名方塊（例「ふ」「た」）
-4. 問題提示「どれに ゛ を つける？」
-5. 點按「ふ」→ 正確：方塊變綠顯示「ぶ゛」，TTS 再唸，進下一題
-6. 點按「た」→ 錯誤：方塊晃動，可重試
-7. 全部 4 題後出現結算畫面
+1. 主畫面 → 點「👨‍👩‍👧」→ 輸入 PIN（預設 1234）
+2. **ねんれいモード**：點「幼齢 🐣」→「進階 🚀」→ 確認按鈕高亮切換
+3. 回到主畫面，進「かな つかまえろ！」→ 確認速度/ローマ字顯示符合模式
+4. 回家長頁，**レッスン toggle**：點「柿子與鑰匙」toggle → 確認關閉後遊戲仍可進入（資料尚存）
+5. 重新整理頁面 → 年齢モード設定應被記住
 
 ---
 
-## 已知限制與下階段建議
+## 已知限制與下階段
 
-- 目前 `dakuten_drag_items` 第一題（くき→かき）為佔位資料，不是真正的濁音對；請家長確認後替換
-- 題庫只有 4 題（來自單一課程）；S6 或之後可新增更多課程或題目
-- 遊戲名稱含「ドラッグ」但目前互動方式為「點按」；若家長希望實作真正的拖拉操作可在 S6 後追加
-- S6：家長儀表板（進度、正確率、學習時間、PIN 鎖、年齡模式、課程開關）
+- `disabledUnits` 目前只影響儀表板顯示，尚未傳入 KanaCatchSetup 過濾課程選擇
+- PIN 變更功能尚未實作（預設 1234）
+- S7：PWA 精緻化、每日任務、裝飾獎勵

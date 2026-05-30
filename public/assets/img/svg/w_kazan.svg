@@ -1,0 +1,13 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- sky gradient background -->
+  <rect width="100" height="100" fill="#bfdbfe" rx="8"/>
+  <!-- mountain body -->
+  <polygon points="50,22 82,82 18,82" fill="#78716c" stroke="#44403c" stroke-width="2"/>
+  <!-- snow cap -->
+  <polygon points="50,22 62,45 38,45" fill="white" stroke="#e7e5e4" stroke-width="1"/>
+  <!-- lava flow -->
+  <path d="M 44 22 Q 40 10 46 6 Q 51 10 50 16 Q 56 8 60 11 Q 64 16 56 22 Z" fill="#f97316"/>
+  <path d="M 47 23 Q 44 14 50 10 Q 54 15 51 23 Z" fill="#fbbf24"/>
+  <!-- ground line -->
+  <ellipse cx="50" cy="82" rx="38" ry="7" fill="#a8a29e"/>
+</svg>

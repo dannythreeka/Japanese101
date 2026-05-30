@@ -1,4 +1,3 @@
-import type { Kana, AgeMode, KanaDifficulty } from '../../types'
 import { speak } from '../../lib/tts'
 
 export const CANVAS_W = 360
@@ -7,25 +6,41 @@ export const CANVAS_H = 380
 const BUBBLE_R = 46
 const BURST_MS = 450
 
+// ── Public types ──────────────────────────────────────────────────────────────
+
+export interface BubbleItem {
+  id: string
+  display: string    // text shown on bubble (single kana or full word kana)
+  romaji?: string    // optional hint rendered below display text
+}
+
+export interface QuestionConfig {
+  items: BubbleItem[]    // correct + distractors (pre-shuffled by generator)
+  targetId: string       // which item is correct
+  ttsText: string        // what to speak via TTS
+  centerContent?: string // emoji/text shown in React UI for submode C (not in canvas)
+}
+
 export interface EngineCallbacks {
-  onCorrect(kanaId: string): void
-  onMiss(kanaId: string): void
+  nextQuestion(): QuestionConfig
+  onNewQuestion(q: QuestionConfig): void
+  onCorrect(itemId: string): void
+  onMiss(itemId: string): void
   onComplete(correct: number, total: number): void
-  onTargetChange(target: Kana): void
 }
 
 export interface EngineParams {
-  pool: Kana[]
   fallSpeed: number
-  maxBubbles: number
   showRomaji: boolean
   roundLength: number
 }
 
+// ── Internal types ────────────────────────────────────────────────────────────
+
 type BState = 'falling' | 'burst' | 'gone'
 
 interface Bubble {
-  kana: Kana
+  item: BubbleItem
   isCorrect: boolean
   x: number
   y: number
@@ -34,48 +49,7 @@ interface Bubble {
   animT: number
 }
 
-function shuffled<T>(arr: T[]): T[] {
-  const a = [...arr]
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
-  }
-  return a
-}
-
-// Pure helpers — exported for unit tests
-export function pickQuestion(
-  pool: Kana[],
-  maxBubbles: number,
-): { correct: Kana; choices: Kana[] } {
-  const correct = pool[Math.floor(Math.random() * pool.length)]
-  const count = Math.min(maxBubbles - 1, pool.length - 1)
-  const others = shuffled(pool.filter(k => k.id !== correct.id)).slice(0, count)
-  return { correct, choices: shuffled([correct, ...others]) }
-}
-
-export function buildPool(
-  allKana: Kana[],
-  ageMode: AgeMode,
-  kanaDifficulty: KanaDifficulty,
-): Kana[] {
-  let base: Kana[]
-  if (ageMode === 'young' && (kanaDifficulty === 1 || kanaDifficulty === 'all')) {
-    base = allKana.filter(k => k.type === 'seion')
-  } else if (kanaDifficulty === 'all') {
-    base = allKana
-  } else {
-    base = allKana.filter(k => k.difficulty <= (kanaDifficulty as number))
-  }
-  const seionFallback = allKana.filter(k => k.type === 'seion')
-  return base.length >= 4 ? base : seionFallback
-}
-
-export function buildParams(ageMode: AgeMode): Omit<EngineParams, 'pool'> {
-  return ageMode === 'young'
-    ? { fallSpeed: 110, maxBubbles: 3, showRomaji: true,  roundLength: 10 }
-    : { fallSpeed: 210, maxBubbles: 5, showRomaji: false, roundLength: 10 }
-}
+// ── Engine ────────────────────────────────────────────────────────────────────
 
 export class KanaCatchEngine {
   private canvas: HTMLCanvasElement
@@ -114,15 +88,14 @@ export class KanaCatchEngine {
 
   private spawnQuestion(): void {
     this.waiting = false
-    const { correct, choices } = pickQuestion(this.params.pool, this.params.maxBubbles)
-    this.cb.onTargetChange(correct)
-
-    const sectionW = CANVAS_W / choices.length
-    this.bubbles = choices.map((kana, i) => {
+    const q = this.cb.nextQuestion()
+    this.cb.onNewQuestion(q)
+    const sectionW = CANVAS_W / q.items.length
+    this.bubbles = q.items.map((item, i) => {
       const cx = sectionW * i + sectionW / 2 + (Math.random() - 0.5) * sectionW * 0.25
       return {
-        kana,
-        isCorrect: kana.id === correct.id,
+        item,
+        isCorrect: item.id === q.targetId,
         x: Math.max(BUBBLE_R + 4, Math.min(CANVAS_W - BUBBLE_R - 4, cx)),
         y: -BUBBLE_R - i * 18,
         vy: this.params.fallSpeed + (Math.random() - 0.5) * 30,
@@ -130,7 +103,7 @@ export class KanaCatchEngine {
         animT: 0,
       }
     })
-    this.pending = setTimeout(() => speak(correct.hiragana), 350)
+    this.pending = setTimeout(() => speak(q.ttsText), 350)
   }
 
   private readonly loop = (ts: number): void => {
@@ -148,7 +121,7 @@ export class KanaCatchEngine {
         b.y += b.vy * dt
         if (b.y > CANVAS_H + BUBBLE_R) {
           b.state = 'gone'
-          if (b.isCorrect) { this.onQuestionEnd(false, b.kana.id); return }
+          if (b.isCorrect) { this.onQuestionEnd(false, b.item.id); return }
         }
       } else if (b.state === 'burst') {
         b.animT += dt * 1000
@@ -157,11 +130,11 @@ export class KanaCatchEngine {
     }
   }
 
-  private onQuestionEnd(caught: boolean, kanaId: string): void {
+  private onQuestionEnd(caught: boolean, itemId: string): void {
     this.waiting = true
     this.questionNum++
-    if (caught) { this.correctCount++; this.cb.onCorrect(kanaId) }
-    else { this.cb.onMiss(kanaId) }
+    if (caught) { this.correctCount++; this.cb.onCorrect(itemId) }
+    else { this.cb.onMiss(itemId) }
     const done = this.questionNum >= this.params.roundLength
     const delay = caught ? BURST_MS + 60 : 350
     if (done) {
@@ -205,16 +178,19 @@ export class KanaCatchEngine {
     ctx.lineWidth = 3
     ctx.stroke()
 
+    // display text — auto-scale for longer words
+    const len = b.item.display.length
+    const fontSize = len <= 2 ? Math.round(BUBBLE_R * 0.85) : Math.round(BUBBLE_R * (1.5 / len))
     ctx.fillStyle = '#1e3a5f'
-    ctx.font = `bold ${Math.round(BUBBLE_R * 0.85)}px sans-serif`
+    ctx.font = `bold ${fontSize}px sans-serif`
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
-    ctx.fillText(b.kana.hiragana, 0, -2)
+    ctx.fillText(b.item.display, 0, b.item.romaji && this.params.showRomaji ? -6 : -2)
 
-    if (this.params.showRomaji && b.state === 'falling') {
+    if (b.item.romaji && this.params.showRomaji && b.state === 'falling') {
       ctx.fillStyle = 'rgba(30,58,95,0.55)'
-      ctx.font = `${Math.round(BUBBLE_R * 0.30)}px sans-serif`
-      ctx.fillText(b.kana.romaji, 0, Math.round(BUBBLE_R * 0.52))
+      ctx.font = `${Math.round(BUBBLE_R * 0.28)}px sans-serif`
+      ctx.fillText(b.item.romaji, 0, Math.round(BUBBLE_R * 0.50))
     }
     ctx.restore()
     ctx.globalAlpha = 1
@@ -232,7 +208,7 @@ export class KanaCatchEngine {
         if (b.isCorrect) {
           b.state = 'burst'
           b.animT = 0
-          this.onQuestionEnd(true, b.kana.id)
+          this.onQuestionEnd(true, b.item.id)
         }
         // wrong tap: no penalty per SPEC §5.1
         break

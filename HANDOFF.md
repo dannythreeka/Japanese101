@@ -1,10 +1,8 @@
-# S6 家長儀表板升級 — HANDOFF
+# S7 每日任務 + 裝飾獎勵 — HANDOFF
 
 ## 對應 SPEC
-- §6.1 家長儀表板：進度/正確率/時間
-- §6.2 PIN 鎖定
-- §6.3 年齡模式切換
-- §6.4 課程開關
+- §7.1 每日任務（Daily Missions）
+- §7.2 裝飾獎勵（Cosmetics）
 
 ---
 
@@ -14,40 +12,48 @@
 
 | 檔案 | 說明 |
 |------|------|
-| `src/features/parent/dashboardUtils.ts` | 從元件抽出的純函式：formatTime / getDayLabel / last7DayCounts / featureAccuracy |
-| `src/features/parent/dashboardUtils.test.ts` | 11 個單元測試 |
+| `src/lib/cosmetics.ts` | 5 件裝飾定義 + getNewlyUnlocked / getActiveCosmetic |
+| `src/lib/cosmetics.test.ts` | 9 個單元測試 |
+| `src/lib/dailyTasks.ts` | 每日任務定義、進度計算、完成記錄 |
+| `src/lib/dailyTasks.test.ts` | 15 個單元測試 |
+| `src/components/DailyTasksPanel.tsx` | PlayScreen 上的任務面板 UI |
 
 ### 修改檔案
 
 | 檔案 | 變更 |
 |------|------|
-| `src/features/parent/ParentDashboard.tsx` | 新增「ねんれいモード」切換 + 課程開關 Toggle，重構使用 dashboardUtils |
-| `src/store/useAppStore.ts` | 新增 `disabledUnits` + `toggleUnit`；`ageMode` 現在持久化到 localStorage |
-| `src/features/kana-catch/questionGenerators.test.ts` | 修正既有 flaky 測試（SRS 加權）|
+| `src/lib/pet.ts` | addXpToPet 升級時解鎖新裝飾 |
+| `src/components/PetAvatar.tsx` | 在寵物頭頂顯示最高等級的裝飾 |
+| `src/features/play/PlayScreen.tsx` | 遊戲按鈕上方加入 DailyTasksPanel |
 
 ---
 
 ## 功能說明
 
-### 年齢モード切換
-- **幼齢 🐣**：ローマ字あり・ゆっくり（fallSpeed 110）・清音メイン（6〜8歳）
-- **進階 🚀**：ローマ字なし・はやい（fallSpeed 210）・全かな（9〜12歳）
-- 設定持久化（localStorage）→ 重新整理後不會重置
+### 裝飾解鎖系統
+| ID | Emoji | 解鎖等級 |
+|----|-------|----------|
+| bow | 🎀 | Lv 3 |
+| flower | 🌸 | Lv 5 |
+| tophat | 🎩 | Lv 7 |
+| graduation | 🎓 | Lv 10 |
+| crown | 👑 | Lv 15 |
 
-### 課程開關 Toggle
-- iOS 風格 toggle switch
-- 預設全部開啟（`disabledUnits: []`，opt-out 設計）
-- 新增課程時自動開啟，不需遷移舊資料
+- 自動裝備最高等級已解鎖裝飾（顯示在寵物頭頂）
+- 裝飾 ID 儲存在 IndexedDB `PetState.unlockedCosmetics`
 
-### 既有功能（已在 repo 中，本次保留）
-- PIN 鎖定（預設 1234）
-- 學習時間、星星數、正確率、7 日活動圖表
-- 假名模式、難度設定
+### 每日任務
+- 每天 2 個任務，依日期旋轉（5 組配對，每 5 天一循環）
+- 進度即時由 IndexedDB sessions 計算（不需額外 DB table）
+- 第一次完成 → 獎勵 +5 ⭐，記錄在 `localStorage` 防止重複領取
+- 完成記錄 key：`completedTasks_YYYY-MM-DD`（每天自動歸零）
 
-### Flaky 測試修正
-- `questionGenerators.test.ts`：SRS 加權測試之前沒有設定「非 due」項目的 nextReview，
-  導致所有無進度項目都被視為 due，讓測試有 ~12% 機率失敗。
-  現在明確把其他項目設為未來時間，再覆蓋 'a' 為 due，測試變成確定性。
+### 任務類型
+| 任務 | 測量方式 |
+|------|----------|
+| 10/20問正解 | 今天所有場次 `correct` 加總 |
+| 玩2種遊戲 | 今天出現的不同 `feature` 數量 |
+| 玩特定遊戲 | 今天是否有該 `feature` 的場次 |
 
 ---
 
@@ -56,24 +62,25 @@
 ```
 ✅ validate:data   — 3 檔案全通過
 ✅ tsc --noEmit    — 0 errors
-✅ vitest run      — 6 files, 74 tests passed（新增 11 個 dashboardUtils 測試）
-✅ npm run build   — 446 kB JS, PWA precache 19 entries
+✅ vitest run      — 8 files, 98 tests passed（新增 24 個測試）
+✅ npm run build   — 450 kB JS, PWA precache 19 entries
 ```
 
 ---
 
 ## 給家長的手動驗證腳本
 
-1. 主畫面 → 點「👨‍👩‍👧」→ 輸入 PIN（預設 1234）
-2. **ねんれいモード**：點「幼齢 🐣」→「進階 🚀」→ 確認按鈕高亮切換
-3. 回到主畫面，進「かな つかまえろ！」→ 確認速度/ローマ字顯示符合模式
-4. 回家長頁，**レッスン toggle**：點「柿子與鑰匙」toggle → 確認關閉後遊戲仍可進入（資料尚存）
-5. 重新整理頁面 → 年齢モード設定應被記住
+1. 主畫面應看到「きょうのミッション」面板，顯示 2 個今日任務
+2. 玩任何遊戲答幾題後返回 → 任務進度條更新
+3. 完成一個任務 → 看到「+5⭐」星星動畫，進度條變綠
+4. 重新整理後，已完成任務顯示 ✅，不會再次發放星星
+5. **裝飾**：在 `/parent` → 設定中手動調高角色等級（目前只能透過遊玩升級，Lv 3 得 🎀）
 
 ---
 
-## 已知限制與下階段
+## 已知限制與後續建議
 
-- `disabledUnits` 目前只影響儀表板顯示，尚未傳入 KanaCatchSetup 過濾課程選擇
-- PIN 變更功能尚未實作（預設 1234）
-- S7：PWA 精緻化、每日任務、裝飾獎勵
+- 裝飾目前自動裝備最高等級，之後可讓孩子在設定中選擇
+- 每日任務完成記錄存 localStorage（不是學習進度，不需 IndexedDB）
+- 角色等級目前需長期遊玩才能解鎖裝飾（Lv 3 ≈ 300 XP ≈ 30 題）
+- 測試用戶可在 parent 面板調整設定後體驗完整流程

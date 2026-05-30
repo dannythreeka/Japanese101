@@ -5,6 +5,7 @@ import { useAppStore } from '../../store/useAppStore'
 import { preloadSfx, playSfx } from '../../lib/audio'
 import { xpProgress, xpToNextLevel } from '../../lib/pet'
 import PetAvatar from '../../components/PetAvatar'
+import DailyTasksPanel from '../../components/DailyTasksPanel'
 import type { PetState } from '../../types'
 
 const STAGE_LABEL = ['たまご', 'あかちゃん', 'こどものこ', 'おとな']
@@ -90,6 +91,9 @@ export default function PlayScreen() {
           </span>
         </button>
       </div>
+
+      {/* Daily missions */}
+      <DailyTasksPanel />
 
       {/* Game buttons */}
       <div className="w-full max-w-sm flex flex-col gap-3">

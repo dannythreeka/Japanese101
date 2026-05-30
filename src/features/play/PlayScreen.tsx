@@ -126,6 +126,14 @@ export default function PlayScreen() {
         >
           🫧 かな つかまえろ！
         </button>
+
+        <button
+          type="button"
+          onClick={() => handleGameNav('/play/dakuten-drag')}
+          className="w-full py-5 rounded-3xl bg-violet-400 text-white text-2xl font-bold shadow-lg hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
+        >
+          ✏️ だくてん ドラッグ
+        </button>
       </div>
     </div>
   )

@@ -9,6 +9,7 @@ import ParentDashboard from './features/parent/ParentDashboard'
 import KanaGallery from './features/play/KanaGallery'
 import KanaCatchGame from './features/kana-catch/KanaCatchGame'
 import DakutenDragGame from './features/dakuten-drag/DakutenDragGame'
+import KanaWriteGame from './features/kana-write/KanaWriteGame'
 
 export default function App() {
   useEffect(() => { void loadVoices() }, [])
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/play/gallery" element={<KanaGallery />} />
         <Route path="/play/kana-catch" element={<KanaCatchGame />} />
         <Route path="/play/dakuten-drag" element={<DakutenDragGame />} />
+        <Route path="/play/kana-write" element={<KanaWriteGame />} />
         <Route path="/parent" element={<ParentDashboard />} />
         {/* Legacy redirects */}
         <Route path="/kid" element={<Navigate to="/play" replace />} />

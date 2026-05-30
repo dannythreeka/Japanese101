@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- stack of paper sheets -->
+  <!-- sheet 3 (back) -->
+  <rect x="28" y="22" width="52" height="64" fill="#fef9c3" rx="3" stroke="#ca8a04" stroke-width="2"/>
+  <!-- sheet 2 -->
+  <rect x="24" y="18" width="52" height="64" fill="#fefce8" rx="3" stroke="#ca8a04" stroke-width="2"/>
+  <!-- sheet 1 (front) -->
+  <rect x="20" y="14" width="52" height="64" fill="white" rx="3" stroke="#78716c" stroke-width="2.5"/>
+  <!-- lines on front sheet -->
+  <line x1="30" y1="30" x2="62" y2="30" stroke="#d1d5db" stroke-width="2" stroke-linecap="round"/>
+  <line x1="30" y1="40" x2="62" y2="40" stroke="#d1d5db" stroke-width="2" stroke-linecap="round"/>
+  <line x1="30" y1="50" x2="62" y2="50" stroke="#d1d5db" stroke-width="2" stroke-linecap="round"/>
+  <line x1="30" y1="60" x2="50" y2="60" stroke="#d1d5db" stroke-width="2" stroke-linecap="round"/>
+</svg>

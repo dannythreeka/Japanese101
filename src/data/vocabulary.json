@@ -12,6 +12,7 @@
       "meaning_zh": "傘",
       "category": "everyday_object",
       "unit": "mitsumura_g1_kaki_to_kagi",
+      "emoji": "☂️",
       "image": {
         "src": "/assets/img/svg/w_kasa.svg",
         "license": "self-created"
@@ -29,6 +30,7 @@
       "meaning_zh": "火山",
       "category": "nature",
       "unit": "mitsumura_g1_kaki_to_kagi",
+      "emoji": "🌋",
       "image": {
         "src": "/assets/img/svg/w_kazan.svg",
         "license": "self-created"
@@ -46,6 +48,7 @@
       "meaning_zh": "月亮",
       "category": "nature",
       "unit": "mitsumura_g1_kaki_to_kagi",
+      "emoji": "🌙",
       "image": {
         "src": "/assets/img/svg/w_tsuki.svg",
         "license": "self-created"
@@ -63,6 +66,7 @@
       "meaning_zh": "下一個",
       "category": "abstract",
       "unit": "mitsumura_g1_kaki_to_kagi",
+      "emoji": "➡️",
       "image": {
         "src": "/assets/img/svg/w_tsugi.svg",
         "license": "self-created"
@@ -80,6 +84,7 @@
       "meaning_zh": "箭靶",
       "category": "everyday_object",
       "unit": "mitsumura_g1_kaki_to_kagi",
+      "emoji": "🎯",
       "image": {
         "src": "/assets/img/svg/w_mato.svg",
         "license": "self-created"
@@ -97,6 +102,7 @@
       "meaning_zh": "窗戶",
       "category": "everyday_object",
       "unit": "mitsumura_g1_kaki_to_kagi",
+      "emoji": "🪟",
       "image": {
         "src": "/assets/img/svg/w_mado.svg",
         "license": "self-created"
@@ -114,6 +120,7 @@
       "meaning_zh": "紙",
       "category": "everyday_object",
       "unit": "mitsumura_g1_kaki_to_kagi",
+      "emoji": "📄",
       "image": {
         "src": "/assets/img/svg/w_kami.svg",
         "license": "self-created"
@@ -131,6 +138,7 @@
       "meaning_zh": "螃蟹",
       "category": "animal",
       "unit": "mitsumura_g1_kaki_to_kagi",
+      "emoji": "🦀",
       "image": {
         "src": "/assets/img/svg/w_kani.svg",
         "license": "self-created"

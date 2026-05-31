@@ -30,14 +30,110 @@
         "dakuten_drag"
       ],
       "concept_words": [
-        { "id": "w_kasa",   "word": "かさ",   "meaning_zh": "傘",     "pair_with": "w_kazan" },
-        { "id": "w_kazan",  "word": "かざん", "meaning_zh": "火山",   "pair_with": "w_kasa"  },
-        { "id": "w_tsuki",  "word": "つき",   "meaning_zh": "月亮",   "pair_with": "w_tsugi" },
-        { "id": "w_tsugi",  "word": "つぎ",   "meaning_zh": "下一個", "pair_with": "w_tsuki" },
-        { "id": "w_mato",   "word": "まと",   "meaning_zh": "箭靶",   "pair_with": "w_mado"  },
-        { "id": "w_mado",   "word": "まど",   "meaning_zh": "窗戶",   "pair_with": "w_mato"  },
-        { "id": "w_kami",   "word": "かみ",   "meaning_zh": "紙",     "pair_with": "w_kani"  },
-        { "id": "w_kani",   "word": "かに",   "meaning_zh": "螃蟹",   "pair_with": "w_kami"  }
+        {
+          "id": "w_kasa",
+          "word": "かさ",
+          "meaning_zh": "傘",
+          "pair_with": "w_kazan",
+          "kotodama_scene": {
+            "scene_id": "rainy_to_sunny",
+            "initial_state": "下著雨的灰色天空,地上有水窪",
+            "success_state": "雨停了、太陽出來,傘在草地上收起來放好",
+            "asset_hint": "雨雲、雨滴粒子、傘、太陽、草地、小水窪",
+            "anim_hint": "雲層散開 → 雨滴停 → 傘從打開漸變收起 → 太陽從雲後升起"
+          }
+        },
+        {
+          "id": "w_kazan",
+          "word": "かざん",
+          "meaning_zh": "火山",
+          "pair_with": "w_kasa",
+          "kotodama_scene": {
+            "scene_id": "quiet_to_erupting_mountain",
+            "initial_state": "安靜的山,藍天白雲",
+            "success_state": "山頂噴出煙與小火花,地面微微震動",
+            "asset_hint": "山的輪廓、藍天、白雲、煙、火花粒子、地面",
+            "anim_hint": "山先輕微震動 → 山頂噴出煙柱 → 小紅色火花粒子飄散"
+          }
+        },
+        {
+          "id": "w_tsuki",
+          "word": "つき",
+          "meaning_zh": "月亮",
+          "pair_with": "w_tsugi",
+          "kotodama_scene": {
+            "scene_id": "day_to_night_with_moon",
+            "initial_state": "白天的藍色天空",
+            "success_state": "天空變成深藍夜空,月亮高掛、有幾顆星星",
+            "asset_hint": "天空(漸層)、月亮、星星、雲",
+            "anim_hint": "天色從藍漸變為深藍 → 月亮從畫面下方緩緩升起 → 星星一顆顆亮起"
+          }
+        },
+        {
+          "id": "w_tsugi",
+          "word": "つぎ",
+          "meaning_zh": "下一個",
+          "pair_with": "w_tsuki",
+          "kotodama_scene": {
+            "scene_id": "book_page_turn",
+            "initial_state": "一本攤開的書,左右兩頁有不同的小插圖",
+            "success_state": "書頁翻過去,新的一頁出現",
+            "asset_hint": "書本(攤開)、書頁、頁上的簡單插圖、翻頁動作",
+            "anim_hint": "右側頁面從右往左翻過去 → 新頁面內容淡入"
+          }
+        },
+        {
+          "id": "w_mato",
+          "word": "まと",
+          "meaning_zh": "箭靶",
+          "pair_with": "w_mado",
+          "kotodama_scene": {
+            "scene_id": "empty_field_with_target",
+            "initial_state": "一片空曠的草地",
+            "success_state": "草地上豎起一個紅白同心圓箭靶,中間插著一支箭",
+            "asset_hint": "草地、藍天、箭靶(紅白同心圓)、箭、雲",
+            "anim_hint": "箭靶從地面升起 → 一支箭從畫面外飛入射中靶心 → 靶心閃光"
+          }
+        },
+        {
+          "id": "w_mado",
+          "word": "まど",
+          "meaning_zh": "窗戶",
+          "pair_with": "w_mato",
+          "kotodama_scene": {
+            "scene_id": "wall_to_open_window",
+            "initial_state": "一面平整的牆",
+            "success_state": "牆上出現一扇打開的窗戶,可看到外面的藍天與雲,窗簾被風吹起",
+            "asset_hint": "牆面、窗框、藍天、雲、窗簾、風的線條",
+            "anim_hint": "窗框先在牆上浮現 → 窗戶向兩側打開 → 窗簾被風吹起飄動"
+          }
+        },
+        {
+          "id": "w_kami",
+          "word": "かみ",
+          "meaning_zh": "紙",
+          "pair_with": "w_kani",
+          "kotodama_scene": {
+            "scene_id": "scroll_unrolls_to_paper",
+            "initial_state": "桌面上有一個捲起來的卷軸",
+            "success_state": "卷軸展開成一張白紙,上面浮現幾筆毛筆字",
+            "asset_hint": "桌面、卷軸、展開的紙、毛筆字筆觸",
+            "anim_hint": "卷軸從中間向兩側展開 → 紙完全攤開後 → 幾道墨筆觸依序浮現"
+          }
+        },
+        {
+          "id": "w_kani",
+          "word": "かに",
+          "meaning_zh": "螃蟹",
+          "pair_with": "w_kami",
+          "kotodama_scene": {
+            "scene_id": "sand_to_crab_appears",
+            "initial_state": "一片沙灘,有幾顆貝殼",
+            "success_state": "沙裡爬出一隻紅色小螃蟹,在沙上橫著走幾步",
+            "asset_hint": "沙灘、貝殼、紅色小螃蟹、沙的揚塵",
+            "anim_hint": "沙堆隆起 → 螃蟹從沙裡冒出 → 揚起一些沙塵 → 橫著走兩步停下舉起鉗子"
+          }
+        }
       ],
       "dakuten_drag_items": [
         {

@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://japanese101-pet/schemas/rhythm_tracks.schema.json",
+  "title": "RhythmTracks",
+  "type": "object",
+  "required": ["tracks"],
+  "properties": {
+    "tracks": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Track" }
+    }
+  },
+  "definitions": {
+    "Track": {
+      "type": "object",
+      "required": ["id", "name_zh", "bpm", "sequence", "category"],
+      "additionalProperties": false,
+      "properties": {
+        "id":       { "type": "string", "pattern": "^track_[a-z0-9_]+$" },
+        "name_zh":  { "type": "string", "minLength": 1 },
+        "bpm":      { "type": "integer", "minimum": 40, "maximum": 160 },
+        "sequence": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 },
+          "minItems": 4,
+          "description": "節奏曲目的字序,每個字佔一拍。可以是單一假名或詞"
+        },
+        "category": {
+          "type": "string",
+          "enum": ["kana", "minimal_pair", "word", "mixed"]
+        },
+        "unit_id":      { "type": "string", "description": "可選:綁定特定 unit" },
+        "bgm_src":      { "type": "string", "description": "可選:背景音樂檔案路徑(自製)" },
+        "bgm_license":  { "type": "string", "enum": ["CC0", "self-created", "public_domain"] }
+      }
+    }
+  }
+}

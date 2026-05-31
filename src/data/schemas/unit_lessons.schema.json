@@ -51,7 +51,15 @@
           "type": "array",
           "items": {
             "type": "string",
-            "enum": ["kana_catch_listen","kana_catch_minimal_pair","kana_catch_word_to_image","dakuten_drag"]
+            "enum": [
+              "kana_catch_listen",
+              "kana_catch_minimal_pair",
+              "kana_catch_word_to_image",
+              "dakuten_drag",
+              "kotodama_summon",
+              "karaoke_rhythm",
+              "echo_record"
+            ]
           }
         },
         "concept_words": {
@@ -79,10 +87,24 @@
       "required": ["id", "word", "meaning_zh"],
       "additionalProperties": false,
       "properties": {
-        "id":         { "type": "string", "pattern": "^w_[a-z0-9_]+$" },
-        "word":       { "type": "string", "minLength": 1 },
-        "meaning_zh": { "type": "string", "minLength": 1 },
-        "pair_with":  { "type": "string", "pattern": "^w_[a-z0-9_]+$" }
+        "id":              { "type": "string", "pattern": "^w_[a-z0-9_]+$" },
+        "word":            { "type": "string", "minLength": 1 },
+        "meaning_zh":      { "type": "string", "minLength": 1 },
+        "pair_with":       { "type": "string", "pattern": "^w_[a-z0-9_]+$" },
+        "kotodama_scene":  { "$ref": "#/definitions/KotodamaScene" }
+      }
+    },
+    "KotodamaScene": {
+      "type": "object",
+      "description": "ことだま召喚遊戲使用:孩子說對此詞時觸發的視覺事件",
+      "required": ["scene_id", "initial_state", "success_state", "asset_hint"],
+      "additionalProperties": false,
+      "properties": {
+        "scene_id":      { "type": "string", "pattern": "^[a-z0-9_]+$", "description": "場景 SVG 的識別碼,可被多個詞共用" },
+        "initial_state": { "type": "string", "minLength": 1, "description": "說話前的場景樣貌(一句話描述)" },
+        "success_state": { "type": "string", "minLength": 1, "description": "說對後的場景樣貌(一句話描述)" },
+        "asset_hint":    { "type": "string", "minLength": 1, "description": "場景需包含的視覺元素,給 SVG 繪製者參考" },
+        "anim_hint":     { "type": "string", "description": "可選:成功時的過場動畫提示" }
       }
     },
     "DakutenDragItem": {

@@ -1,10 +1,11 @@
 import { create } from 'zustand'
-import type { KanaMode, KanaDifficulty, AgeMode } from '../types'
+import type { KanaMode, KanaDifficulty, AgeMode, MicMode } from '../types'
 
 interface AppState {
   kanaMode: KanaMode
   kanaDifficulty: KanaDifficulty
   ageMode: AgeMode
+  micMode: MicMode
   disabledUnits: string[]
   sessionStartTime: number | null
   totalStars: number
@@ -13,6 +14,7 @@ interface AppState {
   setKanaMode: (mode: KanaMode) => void
   setKanaDifficulty: (level: KanaDifficulty) => void
   setAgeMode: (mode: AgeMode) => void
+  setMicMode: (mode: MicMode) => void
   toggleUnit: (unitId: string) => void
   startSession: () => void
   endSession: () => number
@@ -24,6 +26,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   kanaMode: 'hiragana',
   kanaDifficulty: 1,
   ageMode: (localStorage.getItem('ageMode') as AgeMode | null) ?? 'young',
+  micMode: (localStorage.getItem('micMode') as MicMode | null) ?? 'off',
   disabledUnits: JSON.parse(localStorage.getItem('disabledUnits') ?? '[]') as string[],
   sessionStartTime: null,
   totalStars: Number(localStorage.getItem('totalStars') ?? 0),
@@ -34,6 +37,10 @@ export const useAppStore = create<AppState>((set, get) => ({
   setAgeMode: (mode) => {
     localStorage.setItem('ageMode', mode)
     set({ ageMode: mode })
+  },
+  setMicMode: (mode) => {
+    localStorage.setItem('micMode', mode)
+    set({ micMode: mode })
   },
   toggleUnit: (unitId: string) => {
     const current = get().disabledUnits

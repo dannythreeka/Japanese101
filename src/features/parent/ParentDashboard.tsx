@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord } from '../../types'
+import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
+import { requestMicPermission } from '../../lib/mic'
 import { getAllProgress, getRecentSessions, getTotalStudyTime } from '../../db'
 import { lessonData } from '../../data/loaders'
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils'
@@ -18,9 +19,13 @@ function getStoredPin(): string {
 export default function ParentDashboard() {
   const navigate = useNavigate()
   const {
-    kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars,
-    setKanaMode, setKanaDifficulty, setAgeMode, toggleUnit,
+    kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars, micMode,
+    setKanaMode, setKanaDifficulty, setAgeMode, toggleUnit, setMicMode,
   } = useAppStore()
+
+  const [showMicModal, setShowMicModal] = useState(false)
+  const [pendingMicMode, setPendingMicMode] = useState<Exclude<MicMode, 'off'>>('offline')
+  const [micPermError, setMicPermError] = useState(false)
 
   const [pinInput, setPinInput] = useState('')
   const [pinError, setPinError] = useState(false)
@@ -277,9 +282,96 @@ export default function ParentDashboard() {
                 </div>
               </div>
             </div>
+
+            {/* マイク設定 */}
+            <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
+              <h2 className="text-2xl font-bold text-gray-700">マイク設定（ことだま）</h2>
+              <p className="text-lg text-gray-500">
+                「ことだま召喚」ゲームで子どもが声を使えるようになります。
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                {(['off', 'offline', 'enhanced'] as const).map(mode => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => {
+                      if (mode !== 'off' && micMode === 'off') {
+                        setPendingMicMode(mode)
+                        setMicPermError(false)
+                        setShowMicModal(true)
+                      } else {
+                        setMicMode(mode)
+                      }
+                    }}
+                    className={`px-5 py-2 rounded-2xl text-xl font-bold transition-all ${
+                      micMode === mode
+                        ? 'bg-indigo-500 text-white shadow-md'
+                        : 'bg-gray-100 text-gray-600 hover:bg-indigo-100'
+                    }`}
+                  >
+                    {mode === 'off' ? 'オフ' : mode === 'offline' ? 'オフライン' : '高精度'}
+                  </button>
+                ))}
+              </div>
+              <p className="text-base text-gray-400">
+                {micMode === 'off'
+                  ? 'ことだまゲームは利用できません'
+                  : micMode === 'offline'
+                  ? '音量検知のみ · 外部送信なし'
+                  : '音声認識あり · インターネット必要'}
+              </p>
+              <p className="text-sm text-gray-400">🔒 音声データはデバイス内のみで処理されます。</p>
+            </div>
           </>
         )}
       </div>
+
+      {/* Mic permission modal */}
+      {showMicModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-6">
+          <div className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-800">マイクの許可について</h3>
+            <p className="text-lg text-gray-600">
+              ことだまゲームのために、マイクへのアクセスを許可します。
+            </p>
+            <ul className="text-base text-gray-500 list-disc pl-5 flex flex-col gap-1">
+              <li>音声はデバイス内でのみ処理されます</li>
+              <li>外部サーバーには送信されません</li>
+              <li>録音はデフォルトで保存されません</li>
+            </ul>
+            {micPermError && (
+              <p className="text-base text-red-500 font-medium">
+                マイクの許可が得られませんでした。ブラウザの設定を確認してください。
+              </p>
+            )}
+            <div className="flex gap-3 mt-1">
+              <button
+                type="button"
+                onClick={() => { setShowMicModal(false); setMicPermError(false) }}
+                className="flex-1 py-3 rounded-2xl bg-gray-100 text-xl font-bold hover:bg-gray-200 transition-colors"
+              >
+                キャンセル
+              </button>
+              <button
+                type="button"
+                onClick={async () => {
+                  const granted = await requestMicPermission()
+                  if (granted) {
+                    setMicMode(pendingMicMode)
+                    setShowMicModal(false)
+                    setMicPermError(false)
+                  } else {
+                    setMicPermError(true)
+                  }
+                }}
+                className="flex-1 py-3 rounded-2xl bg-indigo-500 text-white text-xl font-bold hover:bg-indigo-600 transition-colors"
+              >
+                許可する
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

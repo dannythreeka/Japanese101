@@ -12,7 +12,7 @@ const STAGE_LABEL = ['たまご', 'あかちゃん', 'こどものこ', 'おと�
 
 export default function PlayScreen() {
   const navigate = useNavigate()
-  const { totalStars } = useAppStore()
+  const { totalStars, micMode } = useAppStore()
   const [pet, setPet] = useState<PetState | null>(null)
 
   useEffect(() => {
@@ -146,6 +146,16 @@ export default function PlayScreen() {
         >
           ✍️ かな かいてみよう
         </button>
+
+        {micMode !== 'off' && (
+          <button
+            type="button"
+            onClick={() => handleGameNav('/play/kotodama')}
+            className="w-full py-5 rounded-3xl bg-indigo-400 text-white text-2xl font-bold shadow-lg hover:bg-indigo-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
+          >
+            ✨ ことだま しょうかん
+          </button>
+        )}
       </div>
     </div>
   )

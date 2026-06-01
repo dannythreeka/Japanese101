@@ -61,12 +61,22 @@ export type GameModeId =
   | 'kana_catch_minimal_pair'
   | 'kana_catch_word_to_image'
   | 'dakuten_drag'
+  | 'kotodama_summon'
+
+export interface KotodamaScene {
+  scene_id: string
+  initial_state: string
+  success_state: string
+  asset_hint: string
+  anim_hint: string
+}
 
 export interface ConceptWord {
   id: string
   word: string
   meaning_zh: string
   pair_with?: string
+  kotodama_scene?: KotodamaScene
 }
 
 export interface DakutenDragItem {
@@ -156,7 +166,7 @@ export interface SessionRecord {
   id: string
   date: number
   durationMs: number
-  feature: 'kana' | 'flashcard' | 'quiz' | 'kana_catch' | 'dakuten_drag' | 'kana_write'
+  feature: 'kana' | 'flashcard' | 'quiz' | 'kana_catch' | 'dakuten_drag' | 'kana_write' | 'kotodama'
   correct: number
   total: number
 }
@@ -166,3 +176,4 @@ export interface SessionRecord {
 export type KanaMode = 'hiragana' | 'katakana' | 'both'
 export type KanaDifficulty = 1 | 2 | 3 | 'all'
 export type AgeMode = 'young' | 'advanced'
+export type MicMode = 'off' | 'offline' | 'enhanced'

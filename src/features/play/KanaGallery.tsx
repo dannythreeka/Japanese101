@@ -32,13 +32,13 @@ export default function KanaGallery() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            aria-label="もどる"
+            aria-label="返回"
             onClick={() => navigate('/play')}
             className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
           >
             ←
           </button>
-          <h1 className="text-3xl font-bold text-sky-700">かな ずかん</h1>
+          <h1 className="text-3xl font-bold text-sky-700">假名圖鑑</h1>
           <span className="ml-auto text-xl font-bold text-gray-500">
             {collected.size} / {ALL_KANA.length}
           </span>

@@ -252,12 +252,12 @@ export default function KanaWriteGame() {
     return (
       <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center justify-center px-4 gap-6">
         <p className="text-5xl">✏️</p>
-        <p className="text-3xl font-bold text-emerald-700">おわり！</p>
+        <p className="text-3xl font-bold text-emerald-700">完成！</p>
         <div className="text-6xl font-bold text-yellow-500">
           {'⭐'.repeat(Math.round(totalStars / Math.max(maxStars, 1) * 3))}
         </div>
         <p className="text-xl text-gray-600">
-          {results.filter(r => r.stars >= 2).length} / {results.length} もんせいかい
+          {results.filter(r => r.stars >= 2).length} / {results.length} 答對
         </p>
         {xpGained > 0 && (
           <p className="text-lg text-emerald-600 font-semibold">+{xpGained} XP ✨</p>
@@ -276,7 +276,7 @@ export default function KanaWriteGame() {
           onClick={() => navigate('/play')}
           className="mt-2 px-8 py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 transition-colors"
         >
-          もどる
+          返回
         </button>
       </div>
     )
@@ -285,7 +285,7 @@ export default function KanaWriteGame() {
   if (!currentKana) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-200 to-emerald-100">
-        <p className="text-2xl text-gray-400">よみこみちゅう…</p>
+        <p className="text-2xl text-gray-400">載入中…</p>
       </div>
     )
   }
@@ -323,7 +323,7 @@ export default function KanaWriteGame() {
         <span className="text-6xl">{emoji}</span>
         <button
           type="button"
-          aria-label="もういちどきく"
+          aria-label="再聽一次"
           onClick={() => speak(currentKana.hiragana)}
           className="flex items-center gap-2 bg-white/70 rounded-2xl px-4 py-2 shadow hover:bg-white transition-colors"
         >
@@ -355,7 +355,7 @@ export default function KanaWriteGame() {
         {phase === 'result' && (
           <div className="absolute inset-0 rounded-2xl flex items-end justify-center pb-3 pointer-events-none">
             <span className="text-sm text-orange-600 bg-white/80 rounded-full px-3 py-1">
-              だいだい色 = お手本
+              橙色 = 範本
             </span>
           </div>
         )}
@@ -369,7 +369,7 @@ export default function KanaWriteGame() {
             onClick={handleClear}
             className="flex-1 py-3 rounded-2xl bg-gray-200 text-gray-700 text-lg font-bold shadow hover:bg-gray-300 transition-colors"
           >
-            けす
+            清除
           </button>
           <button
             type="button"
@@ -377,7 +377,7 @@ export default function KanaWriteGame() {
             disabled={strokes.current.length === 0}
             className="flex-[2] py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
-            かくにん ✓
+            確認 ✓
           </button>
         </div>
       ) : (
@@ -386,13 +386,13 @@ export default function KanaWriteGame() {
           onClick={() => { void handleNext() }}
           className="w-full max-w-sm py-4 rounded-2xl bg-sky-500 text-white text-xl font-bold shadow hover:bg-sky-600 transition-colors"
         >
-          {isLast ? 'おわり 🎉' : 'つぎ →'}
+          {isLast ? '完成 🎉' : '下一個 →'}
         </button>
       )}
 
       {/* Hint for young mode */}
       {ageMode === 'young' && phase === 'draw' && (
-        <p className="text-sm text-gray-400">うすい文字をなぞってみよう！</p>
+        <p className="text-sm text-gray-400">試著描繪淡色的字！</p>
       )}
     </div>
   )

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord } from '../../types'
+import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
+import { requestMicPermission } from '../../lib/mic'
 import { getAllProgress, getRecentSessions, getTotalStudyTime } from '../../db'
 import { lessonData } from '../../data/loaders'
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils'
@@ -18,9 +19,13 @@ function getStoredPin(): string {
 export default function ParentDashboard() {
   const navigate = useNavigate()
   const {
-    kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars,
-    setKanaMode, setKanaDifficulty, setAgeMode, toggleUnit,
+    kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars, micMode,
+    setKanaMode, setKanaDifficulty, setAgeMode, toggleUnit, setMicMode,
   } = useAppStore()
+
+  const [showMicModal, setShowMicModal] = useState(false)
+  const [pendingMicMode, setPendingMicMode] = useState<Exclude<MicMode, 'off'>>('offline')
+  const [micPermError, setMicPermError] = useState(false)
 
   const [pinInput, setPinInput] = useState('')
   const [pinError, setPinError] = useState(false)
@@ -67,8 +72,8 @@ export default function ParentDashboard() {
   if (!unlocked) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-6 bg-gradient-to-br from-purple-50 to-blue-50">
-        <h1 className="text-4xl font-bold text-purple-700">家長エリア</h1>
-        <p className="text-2xl text-gray-600">PINを入力してください</p>
+        <h1 className="text-4xl font-bold text-purple-700">家長區域</h1>
+        <p className="text-2xl text-gray-600">請輸入PIN碼</p>
 
         <div className="flex gap-3 mb-2">
           {[0, 1, 2, 3].map(i => (
@@ -80,7 +85,7 @@ export default function ParentDashboard() {
           ))}
         </div>
 
-        {pinError && <p className="text-2xl text-red-500 animate-shake">まちがいです</p>}
+        {pinError && <p className="text-2xl text-red-500 animate-shake">密碼錯誤</p>}
 
         <div className="grid grid-cols-3 gap-3">
           {['1', '2', '3', '4', '5', '6', '7', '8', '9'].map(d => (
@@ -100,9 +105,9 @@ export default function ParentDashboard() {
           <div className="w-20 h-20" />
         </div>
 
-        <button type="button" aria-label="ホームにもどる" onClick={() => navigate('/play')}
+        <button type="button" aria-label="回首頁" onClick={() => navigate('/play')}
           className="mt-4 px-6 py-3 rounded-2xl bg-gray-200 text-xl font-bold hover:bg-gray-300 transition-colors">
-          ← もどる
+          ← 返回
         </button>
       </div>
     )
@@ -115,16 +120,16 @@ export default function ParentDashboard() {
 
   const kanaModes: KanaMode[] = ['hiragana', 'katakana', 'both']
   const kanaModeLabels: Record<KanaMode, string> = {
-    hiragana: 'ひらがな',
-    katakana: 'カタカナ',
-    both: 'りょうほう',
+    hiragana: '平假名',
+    katakana: '片假名',
+    both: '兩者皆有',
   }
   const difficulties: KanaDifficulty[] = [1, 2, 3, 'all']
   const difficultyLabels: Record<string, string> = {
-    1: 'レベル1(清音)',
-    2: 'レベル2(濁音)',
-    3: 'レベル3(拗音)',
-    all: 'ぜんぶ',
+    1: '第1級（清音）',
+    2: '第2級（濁音）',
+    3: '第3級（拗音）',
+    all: '全部',
   }
 
   return (
@@ -132,37 +137,37 @@ export default function ParentDashboard() {
       <div className="max-w-lg mx-auto flex flex-col gap-6">
 
         <div className="flex items-center gap-3">
-          <button type="button" aria-label="ホームにもどる" onClick={() => navigate('/play')}
+          <button type="button" aria-label="回首頁" onClick={() => navigate('/play')}
             className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
             ←
           </button>
-          <h1 className="text-4xl font-bold text-purple-700">家長ダッシュボード</h1>
+          <h1 className="text-4xl font-bold text-purple-700">家長儀表板</h1>
         </div>
 
         {loading ? (
-          <p className="text-2xl text-gray-500 text-center py-8">よみこみちゅう…</p>
+          <p className="text-2xl text-gray-500 text-center py-8">載入中…</p>
         ) : (
           <>
             {/* Stats cards */}
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col items-center gap-2">
                 <span className="text-3xl">⏱</span>
-                <span className="text-2xl font-bold text-gray-700">がくしゅうじかん</span>
+                <span className="text-2xl font-bold text-gray-700">學習時間</span>
                 <span className="text-3xl font-bold text-blue-600">{formatTime(studyTime)}</span>
               </div>
               <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col items-center gap-2">
                 <span className="text-3xl">⭐</span>
-                <span className="text-2xl font-bold text-gray-700">ほしのかず</span>
+                <span className="text-2xl font-bold text-gray-700">獲得星數</span>
                 <span className="text-3xl font-bold text-yellow-500">{totalStars}</span>
               </div>
             </div>
 
             {/* Accuracy */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
-              <h2 className="text-2xl font-bold text-gray-700">せいかいりつ</h2>
+              <h2 className="text-2xl font-bold text-gray-700">正確率</h2>
               {[
-                { label: '五十音', acc: kanaAcc, color: 'bg-pink-400' },
-                { label: 'たんご', acc: vocabAcc, color: 'bg-blue-400' },
+                { label: '平假名', acc: kanaAcc, color: 'bg-pink-400' },
+                { label: '詞彙', acc: vocabAcc, color: 'bg-blue-400' },
               ].map(({ label, acc, color }) => (
                 <div key={label} className="flex items-center gap-3">
                   <span className="text-xl text-gray-600 w-24">{label}</span>
@@ -176,7 +181,7 @@ export default function ParentDashboard() {
 
             {/* 7-day chart */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
-              <h2 className="text-2xl font-bold text-gray-700">この1しゅうかん</h2>
+              <h2 className="text-2xl font-bold text-gray-700">本週</h2>
               <div className="flex items-end gap-2 h-24">
                 {dayCounts.map(day => (
                   <div key={day.label} className="flex-1 flex flex-col items-center gap-1">
@@ -190,11 +195,11 @@ export default function ParentDashboard() {
 
             {/* Settings */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-5">
-              <h2 className="text-2xl font-bold text-gray-700">せってい</h2>
+              <h2 className="text-2xl font-bold text-gray-700">設定</h2>
 
               {/* Age mode */}
               <div>
-                <p className="text-xl text-gray-600 mb-2">ねんれいモード</p>
+                <p className="text-xl text-gray-600 mb-2">年齡模式</p>
                 <div className="flex gap-3">
                   {(['young', 'advanced'] as const).map(mode => (
                     <button key={mode} type="button" onClick={() => setAgeMode(mode)}
@@ -209,14 +214,14 @@ export default function ParentDashboard() {
                 </div>
                 <p className="text-lg text-gray-400 mt-2">
                   {ageMode === 'young'
-                    ? 'ローマ字あり・ゆっくり・清音メイン（6〜8歳向け）'
-                    : 'ローマ字なし・はやい・全かな（9〜12歳向け）'}
+                    ? '含羅馬字・節奏較慢・以清音為主（適合6〜8歲）'
+                    : '不含羅馬字・節奏較快・全部假名（適合9〜12歲）'}
                 </p>
               </div>
 
               {/* Kana mode */}
               <div>
-                <p className="text-xl text-gray-600 mb-2">かなのモード</p>
+                <p className="text-xl text-gray-600 mb-2">假名模式</p>
                 <div className="flex gap-2 flex-wrap">
                   {kanaModes.map(mode => (
                     <button key={mode} type="button" aria-label={kanaModeLabels[mode]}
@@ -234,7 +239,7 @@ export default function ParentDashboard() {
 
               {/* Difficulty */}
               <div>
-                <p className="text-xl text-gray-600 mb-2">むずかしさ</p>
+                <p className="text-xl text-gray-600 mb-2">難易度</p>
                 <div className="flex gap-2 flex-wrap">
                   {difficulties.map(diff => (
                     <button key={diff} type="button" aria-label={difficultyLabels[diff]}
@@ -252,7 +257,7 @@ export default function ParentDashboard() {
 
               {/* Unit toggle */}
               <div>
-                <p className="text-xl text-gray-600 mb-2">レッスン</p>
+                <p className="text-xl text-gray-600 mb-2">課程</p>
                 <div className="flex flex-col divide-y divide-gray-100">
                   {LESSONS.map(lesson => {
                     const enabled = !disabledUnits.includes(lesson.unit_id)
@@ -261,7 +266,7 @@ export default function ParentDashboard() {
                         <span className="flex-1 text-lg text-gray-700">{lesson.unit_name_zh}</span>
                         <button
                           type="button"
-                          aria-label={enabled ? 'オフにする' : 'オンにする'}
+                          aria-label={enabled ? '關閉' : '開啟'}
                           onClick={() => toggleUnit(lesson.unit_id)}
                           className={`relative w-14 h-8 rounded-full transition-colors duration-200 ${
                             enabled ? 'bg-emerald-400' : 'bg-gray-300'
@@ -277,9 +282,96 @@ export default function ParentDashboard() {
                 </div>
               </div>
             </div>
+
+            {/* マイク設定 */}
+            <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
+              <h2 className="text-2xl font-bold text-gray-700">麥克風設定（言靈）</h2>
+              <p className="text-lg text-gray-500">
+                在「言靈召喚」遊戲中讓孩子可以使用語音功能。
+              </p>
+              <div className="flex gap-2 flex-wrap">
+                {(['off', 'offline', 'enhanced'] as const).map(mode => (
+                  <button
+                    key={mode}
+                    type="button"
+                    onClick={() => {
+                      if (mode !== 'off' && micMode === 'off') {
+                        setPendingMicMode(mode)
+                        setMicPermError(false)
+                        setShowMicModal(true)
+                      } else {
+                        setMicMode(mode)
+                      }
+                    }}
+                    className={`px-5 py-2 rounded-2xl text-xl font-bold transition-all ${
+                      micMode === mode
+                        ? 'bg-indigo-500 text-white shadow-md'
+                        : 'bg-gray-100 text-gray-600 hover:bg-indigo-100'
+                    }`}
+                  >
+                    {mode === 'off' ? '關閉' : mode === 'offline' ? '離線模式' : '高精度'}
+                  </button>
+                ))}
+              </div>
+              <p className="text-base text-gray-400">
+                {micMode === 'off'
+                  ? '言靈遊戲不可使用'
+                  : micMode === 'offline'
+                  ? '僅偵測音量 · 不傳送至外部'
+                  : '語音識別 · 需要網路連線'}
+              </p>
+              <p className="text-sm text-gray-400">🔒 語音資料僅在設備內部處理。</p>
+            </div>
           </>
         )}
       </div>
+
+      {/* Mic permission modal */}
+      {showMicModal && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-6">
+          <div className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
+            <h3 className="text-2xl font-bold text-gray-800">關於麥克風授權</h3>
+            <p className="text-lg text-gray-600">
+              為了言靈遊戲，請允許使用麥克風。
+            </p>
+            <ul className="text-base text-gray-500 list-disc pl-5 flex flex-col gap-1">
+              <li>語音僅在設備內部處理</li>
+              <li>不傳送至外部伺服器</li>
+              <li>預設不儲存錄音</li>
+            </ul>
+            {micPermError && (
+              <p className="text-base text-red-500 font-medium">
+                無法取得麥克風授權，請確認瀏覽器設定。
+              </p>
+            )}
+            <div className="flex gap-3 mt-1">
+              <button
+                type="button"
+                onClick={() => { setShowMicModal(false); setMicPermError(false) }}
+                className="flex-1 py-3 rounded-2xl bg-gray-100 text-xl font-bold hover:bg-gray-200 transition-colors"
+              >
+                取消
+              </button>
+              <button
+                type="button"
+                onClick={async () => {
+                  const granted = await requestMicPermission()
+                  if (granted) {
+                    setMicMode(pendingMicMode)
+                    setShowMicModal(false)
+                    setMicPermError(false)
+                  } else {
+                    setMicPermError(true)
+                  }
+                }}
+                className="flex-1 py-3 rounded-2xl bg-indigo-500 text-white text-xl font-bold hover:bg-indigo-600 transition-colors"
+              >
+                允許
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

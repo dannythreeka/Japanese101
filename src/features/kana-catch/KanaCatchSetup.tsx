@@ -15,9 +15,9 @@ interface ModeInfo {
 }
 
 const MODES: ModeInfo[] = [
-  { mode: 'listen',       icon: '🎵', label: 'きく',           desc: '音を聞いて仮名を探そう',     needsUnit: false },
-  { mode: 'minimal_pair', icon: '🔤', label: 'くらべる',        desc: '濁点がある？ない？',          needsUnit: true  },
-  { mode: 'word_to_image',icon: '🖼️', label: 'ことばをみつけろ', desc: '絵に合う言葉をキャッチ！',   needsUnit: true  },
+  { mode: 'listen',       icon: '🎵', label: '聆聽',   desc: '聽聲音找假名',       needsUnit: false },
+  { mode: 'minimal_pair', icon: '🔤', label: '比較',   desc: '有濁點嗎？',         needsUnit: true  },
+  { mode: 'word_to_image',icon: '🖼️', label: '找詞語', desc: '找出符合圖片的詞語！', needsUnit: true  },
 ]
 
 export default function KanaCatchSetup({ lessons, onStart }: Props) {
@@ -26,14 +26,14 @@ export default function KanaCatchSetup({ lessons, onStart }: Props) {
   return (
     <div className="min-h-screen flex flex-col items-center gap-6 p-4 pt-8 bg-gradient-to-b from-orange-50 to-white">
       <div className="w-full max-w-sm flex items-center gap-3">
-        <button type="button" aria-label="ホームにもどる" onClick={() => navigate('/play')}
+        <button type="button" aria-label="回首頁" onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
           ←
         </button>
-        <h1 className="text-2xl font-bold text-orange-600">かな つかまえろ！</h1>
+        <h1 className="text-2xl font-bold text-orange-600">接住假名！</h1>
       </div>
 
-      <p className="text-xl text-gray-600">どのモードであそぶ？</p>
+      <p className="text-xl text-gray-600">選擇遊戲模式？</p>
 
       <div className="w-full max-w-sm flex flex-col gap-4">
         {MODES.map(({ mode, icon, label, desc, needsUnit }) => {

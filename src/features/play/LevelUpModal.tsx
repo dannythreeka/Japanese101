@@ -1,4 +1,4 @@
-const STAGE_MSG = ['', 'しんかした！', 'さらにつよくなった！', 'さいきょう！']
+const STAGE_MSG = ['', '進化了！', '變得更強了！', '最強！']
 
 interface Props {
   newLevel: number
@@ -17,11 +17,11 @@ export default function LevelUpModal({ newLevel, evolvedToStage, onClose }: Prop
         onClick={(e) => e.stopPropagation()}
       >
         <span className="text-6xl animate-star-pop">🎉</span>
-        <h2 className="text-3xl font-bold text-purple-600">レベルアップ！</h2>
+        <h2 className="text-3xl font-bold text-purple-600">升級了！</h2>
         <p className="text-4xl font-bold text-yellow-500">Lv. {newLevel}</p>
         {evolvedToStage !== null && (
           <p className="text-2xl text-pink-500 font-bold">
-            {STAGE_MSG[evolvedToStage] ?? 'しんか！'}
+            {STAGE_MSG[evolvedToStage] ?? '進化了！'}
           </p>
         )}
         <button
@@ -29,7 +29,7 @@ export default function LevelUpModal({ newLevel, evolvedToStage, onClose }: Prop
           onClick={onClose}
           className="mt-2 px-8 py-3 rounded-2xl bg-purple-500 text-white text-2xl font-bold hover:bg-purple-600 transition-colors"
         >
-          やった！
+          太棒了！
         </button>
       </div>
     </div>

@@ -70,6 +70,9 @@ export default function KanaWriteGame() {
   const [currentStars, setCurrentStars] = useState<0 | 1 | 2 | 3>(0)
   const [results, setResults] = useState<RoundResult[]>([])
   const [xpGained, setXpGained] = useState(0)
+  const [hasStrokes, setHasStrokes] = useState(false)
+  const [isAnimating, setIsAnimating] = useState(false)
+  const animFrameRef = useRef<number | null>(null)
 
   // Build round once on mount
   useEffect(() => {
@@ -101,6 +104,12 @@ export default function KanaWriteGame() {
 
   // Reset canvas when switching kana
   useEffect(() => {
+    if (animFrameRef.current !== null) {
+      cancelAnimationFrame(animFrameRef.current)
+      animFrameRef.current = null
+    }
+    setIsAnimating(false)
+    setHasStrokes(false)
     strokes.current = []
     currentStroke.current = []
     isDrawing.current = false
@@ -110,6 +119,9 @@ export default function KanaWriteGame() {
       ctx?.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE)
     }
     redrawMain()
+    return () => {
+      if (animFrameRef.current !== null) cancelAnimationFrame(animFrameRef.current)
+    }
   }, [currentIdx, redrawMain])
 
   // Speak kana on new character
@@ -129,6 +141,11 @@ export default function KanaWriteGame() {
 
   function handlePointerDown(e: React.PointerEvent<HTMLCanvasElement>) {
     if (phase !== 'draw') return
+    if (animFrameRef.current !== null) {
+      cancelAnimationFrame(animFrameRef.current)
+      animFrameRef.current = null
+      setIsAnimating(false)
+    }
     e.currentTarget.setPointerCapture(e.pointerId)
     isDrawing.current = true
     currentStroke.current = [getPos(e)]
@@ -164,13 +181,93 @@ export default function KanaWriteGame() {
     if (currentStroke.current.length > 0) {
       strokes.current.push([...currentStroke.current])
       currentStroke.current = []
+      setHasStrokes(true)
     }
   }
 
   function handleClear() {
     strokes.current = []
     currentStroke.current = []
+    setHasStrokes(false)
     redrawMain()
+  }
+
+  function runDemo() {
+    if (!currentKana || phase !== 'draw') return
+    if (animFrameRef.current !== null) {
+      cancelAnimationFrame(animFrameRef.current)
+      animFrameRef.current = null
+    }
+    strokes.current = []
+    currentStroke.current = []
+    setHasStrokes(false)
+    setIsAnimating(true)
+
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    // Pre-render character in indigo for the reveal
+    const off = new OffscreenCanvas(CANVAS_SIZE, CANVAS_SIZE)
+    const offCtx = off.getContext('2d')!
+    renderRefChar(offCtx, currentKana.hiragana, '#4f46e5')
+    const pixData = offCtx.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE).data
+
+    const DEMO_MS = 2200
+    const startTime = performance.now()
+    const char = currentKana.hiragana
+
+    const frame = (now: number) => {
+      const raw = Math.min((now - startTime) / DEMO_MS, 1)
+      // ease-in-out
+      const t = raw < 0.5 ? 2 * raw * raw : 1 - Math.pow(-2 * raw + 2, 2) / 2
+
+      ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE)
+
+      // Faint ghost of the full character
+      ctx.save()
+      renderRefChar(ctx, char, 'rgba(200,200,200,0.18)')
+      ctx.restore()
+
+      // Clip-reveal top portion of pre-rendered character (top → bottom)
+      const revealY = t * CANVAS_SIZE
+      ctx.save()
+      ctx.beginPath()
+      ctx.rect(0, 0, CANVAS_SIZE, revealY)
+      ctx.clip()
+      ctx.drawImage(off, 0, 0)
+      ctx.restore()
+
+      // Brush cursor — centred on the stroke pixels at the current scan row
+      if (raw < 1) {
+        const scanY = Math.min(Math.floor(revealY), CANVAS_SIZE - 1)
+        let sumX = 0, count = 0
+        for (let x = 0; x < CANVAS_SIZE; x++) {
+          if (pixData[(scanY * CANVAS_SIZE + x) * 4 + 3] > 50) { sumX += x; count++ }
+        }
+        const brushX = count > 0 ? sumX / count : CANVAS_SIZE / 2
+        const brushY = Math.min(revealY, CANVAS_SIZE - 12)
+        ctx.beginPath()
+        ctx.arc(brushX, brushY, 14, 0, Math.PI * 2)
+        ctx.fillStyle = 'rgba(99,102,241,0.20)'
+        ctx.fill()
+        ctx.beginPath()
+        ctx.arc(brushX, brushY, 7, 0, Math.PI * 2)
+        ctx.fillStyle = 'rgba(99,102,241,0.80)'
+        ctx.fill()
+      }
+
+      if (raw < 1) {
+        animFrameRef.current = requestAnimationFrame(frame)
+      } else {
+        animFrameRef.current = null
+        setIsAnimating(false)
+        redrawMain()
+      }
+    }
+
+    animFrameRef.current = requestAnimationFrame(frame)
   }
 
   // ── Check answer ────────────────────────────────────────────────────────────
@@ -368,15 +465,24 @@ export default function KanaWriteGame() {
         <div className="flex gap-3 w-full max-w-sm">
           <button
             type="button"
+            onClick={runDemo}
+            disabled={isAnimating}
+            className="flex-1 py-3 rounded-2xl bg-indigo-100 text-indigo-700 text-lg font-bold shadow hover:bg-indigo-200 disabled:opacity-40 transition-colors"
+          >
+            {t('kanaWriteDemo')}
+          </button>
+          <button
+            type="button"
             onClick={handleClear}
-            className="flex-1 py-3 rounded-2xl bg-gray-200 text-gray-700 text-lg font-bold shadow hover:bg-gray-300 transition-colors"
+            disabled={isAnimating}
+            className="flex-1 py-3 rounded-2xl bg-gray-200 text-gray-700 text-lg font-bold shadow hover:bg-gray-300 disabled:opacity-40 transition-colors"
           >
             {t('kanaWriteClear')}
           </button>
           <button
             type="button"
             onClick={() => { void handleCheck() }}
-            disabled={strokes.current.length === 0}
+            disabled={!hasStrokes}
             className="flex-[2] py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
           >
             {t('kanaWriteCheck')}

@@ -26,7 +26,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   kanaMode: 'hiragana',
   kanaDifficulty: 1,
   ageMode: (localStorage.getItem('ageMode') as AgeMode | null) ?? 'young',
-  micMode: (localStorage.getItem('micMode') as MicMode | null) ?? 'off',
+  micMode: (localStorage.getItem('micMode') as MicMode | null) ?? 'offline',
   disabledUnits: JSON.parse(localStorage.getItem('disabledUnits') ?? '[]') as string[],
   sessionStartTime: null,
   totalStars: Number(localStorage.getItem('totalStars') ?? 0),

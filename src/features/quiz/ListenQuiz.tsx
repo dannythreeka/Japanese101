@@ -11,6 +11,7 @@ import type { XpResult } from '../../lib/pet'
 import LevelUpModal from '../play/LevelUpModal'
 import SpeakButton from '../../components/SpeakButton'
 import { vocabData } from '../../data/loaders'
+import { useT } from '../../hooks/useT'
 
 const allWords: Word[] = vocabData()
 const TOTAL_ROUNDS = 10
@@ -44,7 +45,7 @@ function makeRound(pool: Word[]): QuizRound {
 export default function ListenQuiz() {
   const navigate = useNavigate()
   const { addStars, startSession, endSession } = useAppStore()
-
+  const t = useT()
   const [round, setRound] = useState<QuizRound>(() => makeRound(allWords))
   const [roundNum, setRoundNum] = useState(1)
   const [score, setScore] = useState(0)
@@ -142,12 +143,12 @@ export default function ListenQuiz() {
             onClose={() => setXpResult(null)}
           />
         )}
-        <h1 className="text-5xl font-bold text-pink-500">完成了！</h1>
+        <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
-        <p className="text-3xl text-gray-600">{score} / {TOTAL_ROUNDS} 答對</p>
+        <p className="text-3xl text-gray-600">{score} / {TOTAL_ROUNDS} {t('correct')}</p>
         <button
           type="button"
-          aria-label="再玩一次"
+          aria-label={t('playAgainAria')}
           onClick={() => {
             sessionSaved.current = false
             setRound(makeRound(allWords))
@@ -162,15 +163,15 @@ export default function ListenQuiz() {
           }}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
-          再玩一次！
+          {t('playAgain')}
         </button>
         <button
           type="button"
-          aria-label="回首頁"
+          aria-label={t('homeAria')}
           onClick={() => navigate('/play')}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
-          首頁
+          {t('home')}
         </button>
       </div>
     )
@@ -183,7 +184,7 @@ export default function ListenQuiz() {
       <div className="w-full max-w-md flex items-center gap-3">
         <button
           type="button"
-          aria-label="返回首頁"
+          aria-label={t('homeAria')}
           onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
         >
@@ -200,11 +201,11 @@ export default function ListenQuiz() {
         </span>
       </div>
 
-      <h1 className="text-4xl font-bold text-gray-800">哪一個？</h1>
+      <h1 className="text-4xl font-bold text-gray-800">{t('listenQuizWhich')}</h1>
 
       <div className="flex items-center gap-4">
         <SpeakButton text={round.correct.kana} size="lg" />
-        <span className="text-2xl text-gray-500">聆聽聲音！</span>
+        <span className="text-2xl text-gray-500">{t('listenQuizListen')}</span>
       </div>
 
       <div className="w-full max-w-md grid grid-cols-2 gap-4 mt-2">

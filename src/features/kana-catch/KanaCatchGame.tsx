@@ -18,6 +18,7 @@ import {
   makeListenGenerator, makeMinimalPairGenerator, makeWordToImageGenerator,
 } from './questionGenerators'
 import KanaCatchSetup from './KanaCatchSetup'
+import { useT } from '../../hooks/useT'
 
 const ALL_KANA  = kanaData()
 const ALL_VOCAB = vocabData()
@@ -28,6 +29,7 @@ type GameState = 'setup' | 'playing' | 'results'
 export default function KanaCatchGame() {
   const navigate = useNavigate()
   const { ageMode, kanaDifficulty, addStars, startSession, endSession } = useAppStore()
+  const t = useT()
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const sessionSaved = useRef(false)
   const correctIds = useRef<string[]>([])
@@ -141,20 +143,20 @@ export default function KanaCatchGame() {
           <LevelUpModal newLevel={xpResult.pet.level} evolvedToStage={xpResult.evolvedToStage}
             onClose={() => setXpResult(null)} />
         )}
-        <h1 className="text-5xl font-bold text-pink-500">完成了！</h1>
+        <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
-        <p className="text-3xl text-gray-600">{score} / {baseParams.roundLength} 答對</p>
-        <button type="button" aria-label="再玩一次" onClick={handleRestart}
+        <p className="text-3xl text-gray-600">{score} / {baseParams.roundLength} {t('correct')}</p>
+        <button type="button" aria-label={t('playAgainAria')} onClick={handleRestart}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform">
-          再玩一次！
+          {t('playAgain')}
         </button>
-        <button type="button" aria-label="選擇模式" onClick={() => setGameState('setup')}
+        <button type="button" aria-label={t('kanaCatchChangeMode')} onClick={() => setGameState('setup')}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-orange-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
-          換模式
+          {t('kanaCatchChangeMode')}
         </button>
-        <button type="button" aria-label="回首頁" onClick={() => navigate('/play')}
+        <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
-          首頁
+          {t('home')}
         </button>
       </div>
     )
@@ -165,7 +167,7 @@ export default function KanaCatchGame() {
   return (
     <div className="min-h-screen flex flex-col items-center gap-3 p-4 pt-6 bg-gradient-to-b from-orange-50 to-white">
       <div className="w-full max-w-sm flex items-center gap-3">
-        <button type="button" aria-label="返回" onClick={() => setGameState('setup')}
+        <button type="button" aria-label={t('backAria')} onClick={() => setGameState('setup')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
           ←
         </button>
@@ -180,7 +182,7 @@ export default function KanaCatchGame() {
       {subMode === 'word_to_image' && currentQ?.centerContent ? (
         <div className="flex flex-col items-center gap-1">
           <span className="text-7xl select-none">{currentQ.centerContent}</span>
-          <button type="button" aria-label="再聽一次"
+          <button type="button" aria-label={t('listenAgainAria')}
             onClick={() => currentQ && speak(currentQ.ttsText)}
             className="w-11 h-11 rounded-full bg-orange-100 text-xl flex items-center justify-center hover:bg-orange-200">
             🔊
@@ -188,8 +190,8 @@ export default function KanaCatchGame() {
         </div>
       ) : (
         <div className="flex items-center gap-3">
-          <p className="text-2xl font-bold text-gray-700">聆聽聲音！</p>
-          <button type="button" aria-label="再聽一次"
+          <p className="text-2xl font-bold text-gray-700">{t('kanaCatchListen2')}</p>
+          <button type="button" aria-label={t('listenAgainAria')}
             onClick={() => currentQ && speak(currentQ.ttsText)}
             className="w-12 h-12 rounded-full bg-orange-100 text-2xl flex items-center justify-center hover:bg-orange-200 transition-colors">
             🔊

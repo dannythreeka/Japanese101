@@ -11,6 +11,7 @@ import { calculateXpGain, addXpToPet } from '../../lib/pet'
 import type { XpResult } from '../../lib/pet'
 import LevelUpModal from '../play/LevelUpModal'
 import PetAvatar from '../../components/PetAvatar'
+import { useT } from '../../hooks/useT'
 import { buildQuestions, shuffleQuestions, checkAnswer, getProgressId } from './DakutenDragEngine'
 import type { DragQuestion } from './DakutenDragEngine'
 
@@ -26,6 +27,7 @@ type Phase = 'playing' | 'results'
 export default function DakutenDragGame() {
   const navigate = useNavigate()
   const { addStars, startSession, endSession } = useAppStore()
+  const t = useT()
   const sessionSaved = useRef(false)
 
   const [pet, setPet] = useState<PetState | null>(null)
@@ -153,9 +155,9 @@ export default function DakutenDragGame() {
   if (questions.length === 0) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-4 p-6">
-        <p className="text-2xl text-gray-500">無資料</p>
+        <p className="text-2xl text-gray-500">{t('noData')}</p>
         <button type="button" onClick={() => navigate('/play')}
-          className="px-6 py-3 rounded-2xl bg-blue-400 text-white text-xl font-bold">首頁</button>
+          className="px-6 py-3 rounded-2xl bg-blue-400 text-white text-xl font-bold">{t('home')}</button>
       </div>
     )
   }
@@ -167,16 +169,16 @@ export default function DakutenDragGame() {
           <LevelUpModal newLevel={xpResult.pet.level} evolvedToStage={xpResult.evolvedToStage}
             onClose={() => setXpResult(null)} />
         )}
-        <h1 className="text-5xl font-bold text-pink-500">完成了！</h1>
+        <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
-        <p className="text-3xl text-gray-600">{score} / {questions.length} 答對</p>
-        <button type="button" aria-label="再玩一次" onClick={handleRestart}
+        <p className="text-3xl text-gray-600">{score} / {questions.length} {t('correct')}</p>
+        <button type="button" aria-label={t('playAgainAria')} onClick={handleRestart}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform">
-          再玩一次！
+          {t('playAgain')}
         </button>
-        <button type="button" aria-label="回首頁" onClick={() => navigate('/play')}
+        <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
-          首頁
+          {t('home')}
         </button>
       </div>
     )
@@ -191,7 +193,7 @@ export default function DakutenDragGame() {
 
       {/* Progress header */}
       <div className="w-full max-w-sm flex items-center gap-3">
-        <button type="button" aria-label="返回" onClick={() => navigate('/play')}
+        <button type="button" aria-label={t('backAria')} onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
           ←
         </button>
@@ -207,7 +209,7 @@ export default function DakutenDragGame() {
       {/* Meaning + TTS */}
       <div className="flex flex-col items-center gap-3">
         <div className="text-6xl font-bold text-violet-700">{current.item.meaning_zh}</div>
-        <button type="button" aria-label="再聽一次"
+        <button type="button" aria-label={t('listenAgainAria')}
           onClick={() => speak(current.item.target)}
           className="w-14 h-14 rounded-full bg-violet-100 text-3xl flex items-center justify-center hover:bg-violet-200 transition-colors shadow">
           🔊
@@ -216,9 +218,9 @@ export default function DakutenDragGame() {
 
       {/* Instruction */}
       <p className="text-2xl text-gray-600 text-center">
-        哪個要加{' '}
+        {t('dakutenQuestion').split('{mark}')[0]}
         <span className="text-4xl font-bold text-red-500 mx-1">{markSymbol}</span>
-        {' '}？
+        {t('dakutenQuestion').split('{mark}')[1]}
       </p>
 
       {/* Kana tiles — drop targets */}
@@ -255,7 +257,7 @@ export default function DakutenDragGame() {
       <div className="flex flex-col items-center gap-2 mt-2">
         <button
           type="button"
-          aria-label={`拖動${markSymbol}到正確的文字上`}
+          aria-label={t('dakutenDragAria').replace('{mark}', markSymbol)}
           onPointerDown={handlePointerDown}
           onPointerMove={handlePointerMove}
           onPointerUp={handlePointerUp}
@@ -272,7 +274,7 @@ export default function DakutenDragGame() {
           {markSymbol}
         </button>
         {!dragPos && (
-          <p className="text-lg text-gray-400">拖動並放置！</p>
+          <p className="text-lg text-gray-400">{t('dakutenDragHint')}</p>
         )}
       </div>
 

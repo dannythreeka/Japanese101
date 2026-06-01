@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../../store/useAppStore'
+import { useT } from '../../hooks/useT'
 import { getOrCreatePet } from '../../db'
 import { kanaData } from '../../data/loaders'
 
@@ -18,6 +19,7 @@ const KANA_TYPES = ['seion', 'dakuon', 'handakuon', 'youon'] as const
 export default function KanaGallery() {
   const navigate = useNavigate()
   const { kanaMode } = useAppStore()
+  const t = useT()
   const [collected, setCollected] = useState<Set<string>>(new Set())
 
   useEffect(() => {
@@ -32,13 +34,13 @@ export default function KanaGallery() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            aria-label="返回"
+            aria-label={t('backAria')}
             onClick={() => navigate('/play')}
             className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
           >
             ←
           </button>
-          <h1 className="text-3xl font-bold text-sky-700">假名圖鑑</h1>
+          <h1 className="text-3xl font-bold text-sky-700">{t('galleryTitle')}</h1>
           <span className="ml-auto text-xl font-bold text-gray-500">
             {collected.size} / {ALL_KANA.length}
           </span>

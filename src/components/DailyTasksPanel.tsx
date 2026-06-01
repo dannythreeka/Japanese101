@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useAppStore } from '../store/useAppStore'
+import { useT } from '../hooks/useT'
 import { getRecentSessions } from '../db'
 import {
   getTodayTasks, filterTodaySessions, computeProgress,
@@ -50,6 +51,7 @@ function TaskRow({ task, progress, completed, justRewarded }: TaskRowProps) {
 
 export default function DailyTasksPanel() {
   const { addStars } = useAppStore()
+  const t = useT()
   const [tasks] = useState(() => getTodayTasks())
   const [todaySessions, setTodaySessions] = useState<SessionRecord[]>([])
   const [completedToday, setCompletedToday] = useState<string[]>(() => getCompletedToday())
@@ -79,7 +81,7 @@ export default function DailyTasksPanel() {
 
   return (
     <div className="w-full max-w-sm bg-white/80 rounded-3xl shadow-md p-4 flex flex-col gap-4">
-      <p className="text-lg font-bold text-gray-500 text-center">今日任務</p>
+      <p className="text-lg font-bold text-gray-500 text-center">{t('dailyTasks')}</p>
       {tasks.map(task => (
         <TaskRow
           key={task.id}

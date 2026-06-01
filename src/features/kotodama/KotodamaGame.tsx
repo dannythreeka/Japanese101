@@ -7,6 +7,7 @@ import { saveSession } from '../../db'
 import { addXpToPet } from '../../lib/pet'
 import { buildKotodamaRound } from './KotodamaEngine'
 import { SCENE_REGISTRY } from './scenes'
+import { useT } from '../../hooks/useT'
 import {
   createMicSession,
   DEFAULT_CONFIG,
@@ -21,16 +22,16 @@ type GamePhase = 'initial' | 'listening' | 'success' | 'done'
 const ROUNDS = 3
 const MAX_ATTEMPTS = 5
 
-const OUTCOME_MSG: Record<MicOutcome, string> = {
-  silent:  '聲音太小了，再試試！',
-  weak:    '請說得更清楚！',
-  good:    '太棒了！成功！',
-  perfect: '完美！！',
-}
-
 export default function KotodamaGame() {
   const navigate = useNavigate()
   const { micMode, ageMode, addStars, startSession, endSession } = useAppStore()
+  const t = useT()
+  const outcomeMsg: Record<MicOutcome, string> = {
+    silent:  t('outcomeSilent'),
+    weak:    t('outcomeWeak'),
+    good:    t('outcomeGood'),
+    perfect: t('outcomePerfect'),
+  }
 
   // Redirect if mic is disabled
   useEffect(() => {
@@ -147,7 +148,7 @@ export default function KotodamaGame() {
     return (
       <div className="min-h-screen bg-gradient-to-b from-indigo-100 to-purple-100 flex flex-col items-center justify-center gap-6 px-4 py-8">
         <div className="text-6xl">🎉</div>
-        <h2 className="text-4xl font-bold text-indigo-700">完成了！</h2>
+        <h2 className="text-4xl font-bold text-indigo-700">{t('kotodamaDone')}</h2>
         <div className="flex items-center gap-2">
           <span className="text-5xl">⭐</span>
           <span className="text-5xl font-bold text-yellow-500">×{total}</span>
@@ -167,7 +168,7 @@ export default function KotodamaGame() {
             onClick={() => navigate('/play')}
             className="px-8 py-4 rounded-3xl bg-gray-200 text-2xl font-bold hover:bg-gray-300 transition-colors"
           >
-            ← 返回
+            {t('kotodamaBack')}
           </button>
           <button
             type="button"
@@ -181,7 +182,7 @@ export default function KotodamaGame() {
             }}
             className="px-8 py-4 rounded-3xl bg-indigo-400 text-white text-2xl font-bold hover:bg-indigo-500 transition-colors shadow-lg"
           >
-            再玩一次
+            {t('kotodamaAgain')}
           </button>
         </div>
       </div>
@@ -204,7 +205,7 @@ export default function KotodamaGame() {
       <div className="w-full max-w-sm flex justify-between items-center">
         <button
           type="button"
-          aria-label="返回"
+          aria-label={t('kotodamaBackAria')}
           onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-white/70 text-xl flex items-center justify-center shadow hover:bg-white transition-colors"
         >
@@ -228,7 +229,7 @@ export default function KotodamaGame() {
           <SceneComponent success={isSuccess} />
         ) : (
           <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400 text-xl">
-            無場景
+            {t('kotodamaNoScene')}
           </div>
         )}
       </div>
@@ -245,19 +246,19 @@ export default function KotodamaGame() {
       <div className="h-10 flex items-center justify-center">
         {isSuccess && (
           <span className="text-3xl font-bold text-emerald-500 animate-bounce">
-            {outcome ? OUTCOME_MSG[outcome] : '成功！'}
+            {outcome ? outcomeMsg[outcome] : t('kotodamaSuccess')}
           </span>
         )}
         {showRetry && !maxAttemptsReached && (
           <span className="text-2xl font-bold text-orange-500">
-            {outcome ? OUTCOME_MSG[outcome] : ''}
+            {outcome ? outcomeMsg[outcome] : ''}
           </span>
         )}
         {maxAttemptsReached && !isSuccess && (
-          <span className="text-2xl text-gray-400">前往下一個詞語…</span>
+          <span className="text-2xl text-gray-400">{t('kotodamaNextWord')}</span>
         )}
         {!isSuccess && !showRetry && !maxAttemptsReached && !isListening && attempts > 0 && (
-          <span className="text-xl text-gray-400">再試一次！</span>
+          <span className="text-xl text-gray-400">{t('kotodamaTryAgain')}</span>
         )}
       </div>
 
@@ -266,7 +267,7 @@ export default function KotodamaGame() {
         <div className="flex flex-col items-center gap-3">
           <button
             type="button"
-            aria-label={isListening ? '錄音中' : '唸言靈'}
+            aria-label={isListening ? t('kotodamaRecordAria') : t('kotodamaSayAria')}
             onPointerDown={(e) => {
               e.currentTarget.setPointerCapture(e.pointerId)
               void startListening()
@@ -284,11 +285,11 @@ export default function KotodamaGame() {
             🎤
           </button>
           <p className="text-xl text-indigo-600 font-medium text-center">
-            {isListening ? '請說…' : '按住並說出來！'}
+            {isListening ? t('kotodamaSaying') : t('kotodamaInstruct')}
           </p>
           {attempts > 0 && !isListening && (
             <p className="text-base text-gray-400">
-              剩餘 {MAX_ATTEMPTS - attempts} 次
+              {t('kotodamaRemain').replace('{n}', String(MAX_ATTEMPTS - attempts))}
             </p>
           )}
         </div>

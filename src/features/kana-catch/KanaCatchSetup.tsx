@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import type { KanaCatchSubMode, UnitLesson } from '../../types'
+import { useT } from '../../hooks/useT'
 
 interface Props {
   lessons: UnitLesson[]
@@ -8,35 +9,38 @@ interface Props {
 
 interface ModeInfo {
   mode: KanaCatchSubMode
-  label: string
   icon: string
-  desc: string
+  labelKey: 'kanaCatchListen' | 'kanaCatchCompare' | 'kanaCatchWord'
+  descKey: 'kanaCatchListenDesc' | 'kanaCatchCompareDesc' | 'kanaCatchWordDesc'
   needsUnit: boolean
 }
 
 const MODES: ModeInfo[] = [
-  { mode: 'listen',       icon: '🎵', label: '聆聽',   desc: '聽聲音找假名',       needsUnit: false },
-  { mode: 'minimal_pair', icon: '🔤', label: '比較',   desc: '有濁點嗎？',         needsUnit: true  },
-  { mode: 'word_to_image',icon: '🖼️', label: '找詞語', desc: '找出符合圖片的詞語！', needsUnit: true  },
+  { mode: 'listen',       icon: '🎵', labelKey: 'kanaCatchListen',  descKey: 'kanaCatchListenDesc',  needsUnit: false },
+  { mode: 'minimal_pair', icon: '🔤', labelKey: 'kanaCatchCompare', descKey: 'kanaCatchCompareDesc', needsUnit: true  },
+  { mode: 'word_to_image',icon: '🖼️', labelKey: 'kanaCatchWord',    descKey: 'kanaCatchWordDesc',    needsUnit: true  },
 ]
 
 export default function KanaCatchSetup({ lessons, onStart }: Props) {
   const navigate = useNavigate()
+  const t = useT()
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-6 p-4 pt-8 bg-gradient-to-b from-orange-50 to-white">
       <div className="w-full max-w-sm flex items-center gap-3">
-        <button type="button" aria-label="回首頁" onClick={() => navigate('/play')}
+        <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
           ←
         </button>
-        <h1 className="text-2xl font-bold text-orange-600">接住假名！</h1>
+        <h1 className="text-2xl font-bold text-orange-600">{t('kanaCatchTitle')}</h1>
       </div>
 
-      <p className="text-xl text-gray-600">選擇遊戲模式？</p>
+      <p className="text-xl text-gray-600">{t('kanaCatchPrompt')}</p>
 
       <div className="w-full max-w-sm flex flex-col gap-4">
-        {MODES.map(({ mode, icon, label, desc, needsUnit }) => {
+        {MODES.map(({ mode, icon, labelKey, descKey, needsUnit }) => {
+          const label = t(labelKey)
+          const desc = t(descKey)
           // modes that need a unit are only available if lessons provide that mode
           const availableLessons = needsUnit
             ? lessons.filter(l => l.suggested_game_modes.includes(

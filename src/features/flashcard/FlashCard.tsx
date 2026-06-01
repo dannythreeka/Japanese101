@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import type { Word } from "../../types"
 import SpeakButton from '../../components/SpeakButton'
+import { useT } from '../../hooks/useT'
 
 interface FlashCardProps {
   word: Word
@@ -10,6 +11,7 @@ interface FlashCardProps {
 
 export default function FlashCard({ word, onKnow, onDontKnow }: FlashCardProps) {
   const [flipped, setFlipped] = useState(false)
+  const t = useT()
 
   const handleCardClick = () => {
     setFlipped((f) => !f)
@@ -29,7 +31,7 @@ export default function FlashCard({ word, onKnow, onDontKnow }: FlashCardProps) 
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') handleCardClick()
           }}
-          aria-label={flipped ? '翻到背面' : '翻到正面'}
+          aria-label={flipped ? t('flashcardFlipBack') : t('flashcardFlipFront')}
           style={{
             transition: 'transform 0.5s',
             transformStyle: 'preserve-3d',
@@ -67,19 +69,19 @@ export default function FlashCard({ word, onKnow, onDontKnow }: FlashCardProps) 
         <div className="flex gap-4 w-full">
           <button
             type="button"
-            aria-label="記住了"
+            aria-label={t('flashcardKnowAria')}
             onClick={onKnow}
             className="flex-1 min-h-20 rounded-2xl bg-green-400 text-white text-2xl font-bold shadow-lg hover:bg-green-500 hover:scale-105 transition-all"
           >
-            記住了！✓
+            {t('flashcardKnow')}
           </button>
           <button
             type="button"
-            aria-label="再看一次"
+            aria-label={t('flashcardAgainAria')}
             onClick={onDontKnow}
             className="flex-1 min-h-20 rounded-2xl bg-red-400 text-white text-2xl font-bold shadow-lg hover:bg-red-500 hover:scale-105 transition-all"
           >
-            再看一次 ✗
+            {t('flashcardAgain')}
           </button>
         </div>
       )}

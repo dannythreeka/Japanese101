@@ -6,6 +6,7 @@ import { requestMicPermission } from '../../lib/mic'
 import { getAllProgress, getRecentSessions, getTotalStudyTime } from '../../db'
 import { lessonData } from '../../data/loaders'
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils'
+import { useT } from '../../hooks/useT'
 
 const LESSONS = lessonData()
 
@@ -35,6 +36,8 @@ export default function ParentDashboard() {
   const [progressRecords, setProgressRecords] = useState<ProgressRecord[]>([])
   const [sessions, setSessions] = useState<SessionRecord[]>([])
   const [loading, setLoading] = useState(false)
+
+  const t = useT()
 
   useEffect(() => {
     if (!unlocked) return
@@ -72,8 +75,8 @@ export default function ParentDashboard() {
   if (!unlocked) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-6 bg-gradient-to-br from-purple-50 to-blue-50">
-        <h1 className="text-4xl font-bold text-purple-700">家長區域</h1>
-        <p className="text-2xl text-gray-600">請輸入PIN碼</p>
+        <h1 className="text-4xl font-bold text-purple-700">{t('parentArea')}</h1>
+        <p className="text-2xl text-gray-600">{t('parentEnterPin')}</p>
 
         <div className="flex gap-3 mb-2">
           {[0, 1, 2, 3].map(i => (
@@ -85,7 +88,7 @@ export default function ParentDashboard() {
           ))}
         </div>
 
-        {pinError && <p className="text-2xl text-red-500 animate-shake">密碼錯誤</p>}
+        {pinError && <p className="text-2xl text-red-500 animate-shake">{t('parentPinError')}</p>}
 
         <div className="grid grid-cols-3 gap-3">
           {['1', '2', '3', '4', '5', '6', '7', '8', '9'].map(d => (
@@ -94,7 +97,7 @@ export default function ParentDashboard() {
               {d}
             </button>
           ))}
-          <button type="button" aria-label="削除" onClick={handlePinDelete}
+          <button type="button" aria-label="⌫" onClick={handlePinDelete}
             className="w-20 h-20 rounded-2xl bg-gray-100 text-2xl font-bold shadow-md hover:bg-gray-200 transition-all">
             ⌫
           </button>
@@ -105,9 +108,9 @@ export default function ParentDashboard() {
           <div className="w-20 h-20" />
         </div>
 
-        <button type="button" aria-label="回首頁" onClick={() => navigate('/play')}
+        <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
           className="mt-4 px-6 py-3 rounded-2xl bg-gray-200 text-xl font-bold hover:bg-gray-300 transition-colors">
-          ← 返回
+          {t('back')}
         </button>
       </div>
     )
@@ -120,16 +123,16 @@ export default function ParentDashboard() {
 
   const kanaModes: KanaMode[] = ['hiragana', 'katakana', 'both']
   const kanaModeLabels: Record<KanaMode, string> = {
-    hiragana: '平假名',
-    katakana: '片假名',
-    both: '兩者皆有',
+    hiragana: t('parentHiragana'),
+    katakana: t('parentKatakana'),
+    both: t('parentBoth'),
   }
   const difficulties: KanaDifficulty[] = [1, 2, 3, 'all']
   const difficultyLabels: Record<string, string> = {
-    1: '第1級（清音）',
-    2: '第2級（濁音）',
-    3: '第3級（拗音）',
-    all: '全部',
+    1: t('parentDiff1'),
+    2: t('parentDiff2'),
+    3: t('parentDiff3'),
+    all: t('parentDiffAll'),
   }
 
   return (
@@ -137,37 +140,37 @@ export default function ParentDashboard() {
       <div className="max-w-lg mx-auto flex flex-col gap-6">
 
         <div className="flex items-center gap-3">
-          <button type="button" aria-label="回首頁" onClick={() => navigate('/play')}
+          <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
             className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
             ←
           </button>
-          <h1 className="text-4xl font-bold text-purple-700">家長儀表板</h1>
+          <h1 className="text-4xl font-bold text-purple-700">{t('parentDashboard')}</h1>
         </div>
 
         {loading ? (
-          <p className="text-2xl text-gray-500 text-center py-8">載入中…</p>
+          <p className="text-2xl text-gray-500 text-center py-8">{t('parentLoading')}</p>
         ) : (
           <>
             {/* Stats cards */}
             <div className="grid grid-cols-2 gap-4">
               <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col items-center gap-2">
                 <span className="text-3xl">⏱</span>
-                <span className="text-2xl font-bold text-gray-700">學習時間</span>
+                <span className="text-2xl font-bold text-gray-700">{t('parentStudyTime')}</span>
                 <span className="text-3xl font-bold text-blue-600">{formatTime(studyTime)}</span>
               </div>
               <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col items-center gap-2">
                 <span className="text-3xl">⭐</span>
-                <span className="text-2xl font-bold text-gray-700">獲得星數</span>
+                <span className="text-2xl font-bold text-gray-700">{t('parentStars')}</span>
                 <span className="text-3xl font-bold text-yellow-500">{totalStars}</span>
               </div>
             </div>
 
             {/* Accuracy */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
-              <h2 className="text-2xl font-bold text-gray-700">正確率</h2>
+              <h2 className="text-2xl font-bold text-gray-700">{t('parentAccuracy')}</h2>
               {[
-                { label: '平假名', acc: kanaAcc, color: 'bg-pink-400' },
-                { label: '詞彙', acc: vocabAcc, color: 'bg-blue-400' },
+                { label: t('parentKanaLabel'), acc: kanaAcc, color: 'bg-pink-400' },
+                { label: t('parentVocabLabel'), acc: vocabAcc, color: 'bg-blue-400' },
               ].map(({ label, acc, color }) => (
                 <div key={label} className="flex items-center gap-3">
                   <span className="text-xl text-gray-600 w-24">{label}</span>
@@ -181,7 +184,7 @@ export default function ParentDashboard() {
 
             {/* 7-day chart */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
-              <h2 className="text-2xl font-bold text-gray-700">本週</h2>
+              <h2 className="text-2xl font-bold text-gray-700">{t('parentWeekly')}</h2>
               <div className="flex items-end gap-2 h-24">
                 {dayCounts.map(day => (
                   <div key={day.label} className="flex-1 flex flex-col items-center gap-1">
@@ -195,11 +198,11 @@ export default function ParentDashboard() {
 
             {/* Settings */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-5">
-              <h2 className="text-2xl font-bold text-gray-700">設定</h2>
+              <h2 className="text-2xl font-bold text-gray-700">{t('parentSettings')}</h2>
 
               {/* Age mode */}
               <div>
-                <p className="text-xl text-gray-600 mb-2">年齡模式</p>
+                <p className="text-xl text-gray-600 mb-2">{t('parentAgeMode')}</p>
                 <div className="flex gap-3">
                   {(['young', 'advanced'] as const).map(mode => (
                     <button key={mode} type="button" onClick={() => setAgeMode(mode)}
@@ -208,20 +211,18 @@ export default function ParentDashboard() {
                           ? 'bg-emerald-400 text-white shadow-md'
                           : 'bg-gray-100 text-gray-600 hover:bg-emerald-100'
                       }`}>
-                      {mode === 'young' ? '幼齢 🐣' : '進階 🚀'}
+                      {mode === 'young' ? t('parentYoung') : t('parentAdvanced')}
                     </button>
                   ))}
                 </div>
                 <p className="text-lg text-gray-400 mt-2">
-                  {ageMode === 'young'
-                    ? '含羅馬字・節奏較慢・以清音為主（適合6〜8歲）'
-                    : '不含羅馬字・節奏較快・全部假名（適合9〜12歲）'}
+                  {ageMode === 'young' ? t('parentAgeModeYoung') : t('parentAgeModeAdv')}
                 </p>
               </div>
 
               {/* Kana mode */}
               <div>
-                <p className="text-xl text-gray-600 mb-2">假名模式</p>
+                <p className="text-xl text-gray-600 mb-2">{t('parentKanaMode')}</p>
                 <div className="flex gap-2 flex-wrap">
                   {kanaModes.map(mode => (
                     <button key={mode} type="button" aria-label={kanaModeLabels[mode]}
@@ -239,7 +240,7 @@ export default function ParentDashboard() {
 
               {/* Difficulty */}
               <div>
-                <p className="text-xl text-gray-600 mb-2">難易度</p>
+                <p className="text-xl text-gray-600 mb-2">{t('parentDifficulty')}</p>
                 <div className="flex gap-2 flex-wrap">
                   {difficulties.map(diff => (
                     <button key={diff} type="button" aria-label={difficultyLabels[diff]}
@@ -257,7 +258,7 @@ export default function ParentDashboard() {
 
               {/* Unit toggle */}
               <div>
-                <p className="text-xl text-gray-600 mb-2">課程</p>
+                <p className="text-xl text-gray-600 mb-2">{t('parentLessons')}</p>
                 <div className="flex flex-col divide-y divide-gray-100">
                   {LESSONS.map(lesson => {
                     const enabled = !disabledUnits.includes(lesson.unit_id)
@@ -266,7 +267,7 @@ export default function ParentDashboard() {
                         <span className="flex-1 text-lg text-gray-700">{lesson.unit_name_zh}</span>
                         <button
                           type="button"
-                          aria-label={enabled ? '關閉' : '開啟'}
+                          aria-label={enabled ? t('parentToggleOff') : t('parentToggleOn')}
                           onClick={() => toggleUnit(lesson.unit_id)}
                           className={`relative w-14 h-8 rounded-full transition-colors duration-200 ${
                             enabled ? 'bg-emerald-400' : 'bg-gray-300'
@@ -283,12 +284,10 @@ export default function ParentDashboard() {
               </div>
             </div>
 
-            {/* マイク設定 */}
+            {/* Mic settings */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
-              <h2 className="text-2xl font-bold text-gray-700">麥克風設定（言靈）</h2>
-              <p className="text-lg text-gray-500">
-                在「言靈召喚」遊戲中讓孩子可以使用語音功能。
-              </p>
+              <h2 className="text-2xl font-bold text-gray-700">{t('parentMicTitle')}</h2>
+              <p className="text-lg text-gray-500">{t('parentMicDesc')}</p>
               <div className="flex gap-2 flex-wrap">
                 {(['off', 'offline', 'enhanced'] as const).map(mode => (
                   <button
@@ -309,18 +308,18 @@ export default function ParentDashboard() {
                         : 'bg-gray-100 text-gray-600 hover:bg-indigo-100'
                     }`}
                   >
-                    {mode === 'off' ? '關閉' : mode === 'offline' ? '離線模式' : '高精度'}
+                    {mode === 'off' ? t('parentMicOff') : mode === 'offline' ? t('parentMicOffline') : t('parentMicHigh')}
                   </button>
                 ))}
               </div>
               <p className="text-base text-gray-400">
                 {micMode === 'off'
-                  ? '言靈遊戲不可使用'
+                  ? t('parentMicStatusOff')
                   : micMode === 'offline'
-                  ? '僅偵測音量 · 不傳送至外部'
-                  : '語音識別 · 需要網路連線'}
+                  ? t('parentMicStatusOfl')
+                  : t('parentMicStatusEnh')}
               </p>
-              <p className="text-sm text-gray-400">🔒 語音資料僅在設備內部處理。</p>
+              <p className="text-sm text-gray-400">{t('parentMicPrivacy')}</p>
             </div>
           </>
         )}
@@ -330,19 +329,15 @@ export default function ParentDashboard() {
       {showMicModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-6">
           <div className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-800">關於麥克風授權</h3>
-            <p className="text-lg text-gray-600">
-              為了言靈遊戲，請允許使用麥克風。
-            </p>
+            <h3 className="text-2xl font-bold text-gray-800">{t('parentMicModalTitle')}</h3>
+            <p className="text-lg text-gray-600">{t('parentMicModalDesc')}</p>
             <ul className="text-base text-gray-500 list-disc pl-5 flex flex-col gap-1">
-              <li>語音僅在設備內部處理</li>
-              <li>不傳送至外部伺服器</li>
-              <li>預設不儲存錄音</li>
+              <li>{t('parentMicBullet1')}</li>
+              <li>{t('parentMicBullet2')}</li>
+              <li>{t('parentMicBullet3')}</li>
             </ul>
             {micPermError && (
-              <p className="text-base text-red-500 font-medium">
-                無法取得麥克風授權，請確認瀏覽器設定。
-              </p>
+              <p className="text-base text-red-500 font-medium">{t('parentMicError')}</p>
             )}
             <div className="flex gap-3 mt-1">
               <button
@@ -350,7 +345,7 @@ export default function ParentDashboard() {
                 onClick={() => { setShowMicModal(false); setMicPermError(false) }}
                 className="flex-1 py-3 rounded-2xl bg-gray-100 text-xl font-bold hover:bg-gray-200 transition-colors"
               >
-                取消
+                {t('parentMicCancel')}
               </button>
               <button
                 type="button"
@@ -366,7 +361,7 @@ export default function ParentDashboard() {
                 }}
                 className="flex-1 py-3 rounded-2xl bg-indigo-500 text-white text-xl font-bold hover:bg-indigo-600 transition-colors"
               >
-                允許
+                {t('parentMicAllow')}
               </button>
             </div>
           </div>

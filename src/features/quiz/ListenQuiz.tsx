@@ -142,12 +142,12 @@ export default function ListenQuiz() {
             onClose={() => setXpResult(null)}
           />
         )}
-        <h1 className="text-5xl font-bold text-pink-500">おわった！</h1>
+        <h1 className="text-5xl font-bold text-pink-500">完成了！</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
-        <p className="text-3xl text-gray-600">{score} / {TOTAL_ROUNDS} せいかい</p>
+        <p className="text-3xl text-gray-600">{score} / {TOTAL_ROUNDS} 答對</p>
         <button
           type="button"
-          aria-label="もういちどあそぶ"
+          aria-label="再玩一次"
           onClick={() => {
             sessionSaved.current = false
             setRound(makeRound(allWords))
@@ -162,15 +162,15 @@ export default function ListenQuiz() {
           }}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
-          もういちど！
+          再玩一次！
         </button>
         <button
           type="button"
-          aria-label="ホームにもどる"
+          aria-label="回首頁"
           onClick={() => navigate('/play')}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
-          ホーム
+          首頁
         </button>
       </div>
     )
@@ -183,7 +183,7 @@ export default function ListenQuiz() {
       <div className="w-full max-w-md flex items-center gap-3">
         <button
           type="button"
-          aria-label="ホームにもどる"
+          aria-label="返回首頁"
           onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
         >
@@ -200,11 +200,11 @@ export default function ListenQuiz() {
         </span>
       </div>
 
-      <h1 className="text-4xl font-bold text-gray-800">どれ？</h1>
+      <h1 className="text-4xl font-bold text-gray-800">哪一個？</h1>
 
       <div className="flex items-center gap-4">
         <SpeakButton text={round.correct.kana} size="lg" />
-        <span className="text-2xl text-gray-500">おとをきいて！</span>
+        <span className="text-2xl text-gray-500">聆聽聲音！</span>
       </div>
 
       <div className="w-full max-w-md grid grid-cols-2 gap-4 mt-2">

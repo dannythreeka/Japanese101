@@ -123,7 +123,7 @@ export default function FlashCardDeck() {
       <div className="w-full max-w-md flex items-center gap-3">
         <button
           type="button"
-          aria-label="ホームにもどる"
+          aria-label="返回首頁"
           onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
         >
@@ -169,10 +169,10 @@ export default function FlashCardDeck() {
         />
       ) : (
         <div className="flex flex-col items-center gap-6 mt-12">
-          <p className="text-4xl font-bold text-green-500">よくできました！</p>
+          <p className="text-4xl font-bold text-green-500">做得很好！</p>
           <button
             type="button"
-            aria-label="もういちど"
+            aria-label="再玩一次"
             onClick={() => {
               sessionSaved.current = false
               setQueue([...unitWords])
@@ -181,7 +181,7 @@ export default function FlashCardDeck() {
             }}
             className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"
           >
-            もういちど！
+            再玩一次！
           </button>
         </div>
       )}

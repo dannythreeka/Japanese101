@@ -8,7 +8,7 @@ import PetAvatar from '../../components/PetAvatar'
 import DailyTasksPanel from '../../components/DailyTasksPanel'
 import type { PetState } from '../../types'
 
-const STAGE_LABEL = ['たまご', 'あかちゃん', 'こどものこ', 'おとな']
+const STAGE_LABEL = ['蛋', '寶寶', '小孩', '成年']
 
 export default function PlayScreen() {
   const navigate = useNavigate()
@@ -31,10 +31,10 @@ export default function PlayScreen() {
 
       {/* Header */}
       <div className="w-full max-w-sm flex justify-between items-center">
-        <span className="text-3xl font-bold text-emerald-700">にほんご101</span>
+        <span className="text-3xl font-bold text-emerald-700">日語101</span>
         <button
           type="button"
-          aria-label="家長エリア"
+          aria-label="家長區域"
           onClick={() => navigate('/parent')}
           className="w-12 h-12 rounded-full bg-white/70 text-xl flex items-center justify-center shadow hover:bg-white transition-colors"
         >
@@ -59,7 +59,7 @@ export default function PlayScreen() {
                 {STAGE_LABEL[pet.evolutionStage] ?? ''} Lv. {pet.level}
               </p>
               <p className="text-lg text-gray-500">
-                つぎまで {xpToNextLevel(pet.xp)} XP
+                升級還需 {xpToNextLevel(pet.xp)} XP
               </p>
             </div>
 
@@ -82,7 +82,7 @@ export default function PlayScreen() {
         </div>
         <button
           type="button"
-          aria-label="かなずかん"
+          aria-label="假名圖鑑"
           onClick={() => handleGameNav('/play/gallery')}
           className="flex items-center gap-2 bg-white/70 rounded-2xl px-5 py-2 shadow hover:bg-white transition-colors"
         >
@@ -98,14 +98,14 @@ export default function PlayScreen() {
 
       {/* Game buttons */}
       <div className="w-full max-w-sm flex flex-col gap-3">
-        <p className="text-center text-xl text-gray-500 font-medium">あそぼう！</p>
+        <p className="text-center text-xl text-gray-500 font-medium">來玩吧！</p>
 
         <button
           type="button"
           onClick={() => handleGameNav('/play/kana')}
           className="w-full py-5 rounded-3xl bg-pink-400 text-white text-2xl font-bold shadow-lg hover:bg-pink-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
         >
-          🎮 かな マッチ
+          🎮 假名配對
         </button>
 
         <button
@@ -113,7 +113,7 @@ export default function PlayScreen() {
           onClick={() => handleGameNav('/play/flashcard')}
           className="w-full py-5 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:bg-blue-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
         >
-          🃏 フラッシュカード
+          🃏 記憶卡片
         </button>
 
         <button
@@ -121,7 +121,7 @@ export default function PlayScreen() {
           onClick={() => handleGameNav('/play/quiz')}
           className="w-full py-5 rounded-3xl bg-purple-400 text-white text-2xl font-bold shadow-lg hover:bg-purple-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
         >
-          🎧 きくクイズ
+          🎧 聽力問答
         </button>
 
         <button
@@ -129,7 +129,7 @@ export default function PlayScreen() {
           onClick={() => handleGameNav('/play/kana-catch')}
           className="w-full py-5 rounded-3xl bg-orange-400 text-white text-2xl font-bold shadow-lg hover:bg-orange-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
         >
-          🫧 かな つかまえろ！
+          🫧 接住假名！
         </button>
 
         <button
@@ -137,7 +137,7 @@ export default function PlayScreen() {
           onClick={() => handleGameNav('/play/dakuten-drag')}
           className="w-full py-5 rounded-3xl bg-violet-400 text-white text-2xl font-bold shadow-lg hover:bg-violet-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
         >
-          ✏️ だくてん ドラッグ
+          ✏️ 濁點拖拉
         </button>
 
         <button
@@ -145,7 +145,7 @@ export default function PlayScreen() {
           onClick={() => handleGameNav('/play/kana-write')}
           className="w-full py-5 rounded-3xl bg-teal-400 text-white text-2xl font-bold shadow-lg hover:bg-teal-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
         >
-          ✍️ かな かいてみよう
+          ✍️ 寫假名練習
         </button>
 
         <button
@@ -159,10 +159,10 @@ export default function PlayScreen() {
           }}
           className="w-full py-5 rounded-3xl bg-indigo-400 text-white text-2xl font-bold shadow-lg hover:bg-indigo-500 hover:scale-[1.02] active:scale-[0.98] transition-all"
         >
-          ✨ ことだま しょうかん
+          ✨ 言靈召喚
           {micMode === 'off' && (
             <span className="block text-base font-medium opacity-80 mt-0.5">
-              🔒 ほごしゃ設定でオンにできます
+              🔒 家長設定可開啟
             </span>
           )}
         </button>
@@ -174,13 +174,13 @@ export default function PlayScreen() {
           <div className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
             <div className="text-5xl text-center">✨🎤</div>
             <h3 className="text-2xl font-bold text-indigo-700 text-center">
-              ことだま しょうかん
+              言靈召喚
             </h3>
             <p className="text-lg text-gray-600 text-center">
-              声を出して日本語を唱えると、シーンが変わる魔法のゲームです！
+              大聲唸出日語，場景就會改變的魔法遊戲！
             </p>
             <p className="text-base text-gray-500 text-center">
-              遊ぶには、ほごしゃがマイクをオンにする必要があります。
+              需要家長在設定中開啟麥克風。
             </p>
             <div className="flex gap-3 mt-1">
               <button
@@ -188,14 +188,14 @@ export default function PlayScreen() {
                 onClick={() => setShowMicSetup(false)}
                 className="flex-1 py-3 rounded-2xl bg-gray-100 text-xl font-bold hover:bg-gray-200 transition-colors"
               >
-                もどる
+                返回
               </button>
               <button
                 type="button"
                 onClick={() => { setShowMicSetup(false); navigate('/parent') }}
                 className="flex-1 py-3 rounded-2xl bg-indigo-500 text-white text-xl font-bold hover:bg-indigo-600 transition-colors"
               >
-                ほごしゃ →
+                家長設定 →
               </button>
             </div>
           </div>

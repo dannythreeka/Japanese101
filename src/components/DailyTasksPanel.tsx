@@ -79,7 +79,7 @@ export default function DailyTasksPanel() {
 
   return (
     <div className="w-full max-w-sm bg-white/80 rounded-3xl shadow-md p-4 flex flex-col gap-4">
-      <p className="text-lg font-bold text-gray-500 text-center">きょうのミッション</p>
+      <p className="text-lg font-bold text-gray-500 text-center">今日任務</p>
       {tasks.map(task => (
         <TaskRow
           key={task.id}

@@ -29,7 +29,7 @@ export default function FlashCard({ word, onKnow, onDontKnow }: FlashCardProps) 
           onKeyDown={(e) => {
             if (e.key === 'Enter' || e.key === ' ') handleCardClick()
           }}
-          aria-label={flipped ? 'カードをうらにする' : 'カードをおもてにする'}
+          aria-label={flipped ? '翻到背面' : '翻到正面'}
           style={{
             transition: 'transform 0.5s',
             transformStyle: 'preserve-3d',
@@ -67,19 +67,19 @@ export default function FlashCard({ word, onKnow, onDontKnow }: FlashCardProps) 
         <div className="flex gap-4 w-full">
           <button
             type="button"
-            aria-label="わかった"
+            aria-label="記住了"
             onClick={onKnow}
             className="flex-1 min-h-20 rounded-2xl bg-green-400 text-white text-2xl font-bold shadow-lg hover:bg-green-500 hover:scale-105 transition-all"
           >
-            わかった！✓
+            記住了！✓
           </button>
           <button
             type="button"
-            aria-label="もういちど"
+            aria-label="再看一次"
             onClick={onDontKnow}
             className="flex-1 min-h-20 rounded-2xl bg-red-400 text-white text-2xl font-bold shadow-lg hover:bg-red-500 hover:scale-105 transition-all"
           >
-            もういちど ✗
+            再看一次 ✗
           </button>
         </div>
       )}

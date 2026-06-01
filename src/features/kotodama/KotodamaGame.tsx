@@ -22,10 +22,10 @@ const ROUNDS = 3
 const MAX_ATTEMPTS = 5
 
 const OUTCOME_MSG: Record<MicOutcome, string> = {
-  silent: 'もっとおおきくよんでね！',
-  weak:   'もっとはっきりよんでね！',
-  good:   'すごい！せいこう！',
-  perfect: 'かんぺき！！',
+  silent:  '聲音太小了，再試試！',
+  weak:    '請說得更清楚！',
+  good:    '太棒了！成功！',
+  perfect: '完美！！',
 }
 
 export default function KotodamaGame() {
@@ -147,7 +147,7 @@ export default function KotodamaGame() {
     return (
       <div className="min-h-screen bg-gradient-to-b from-indigo-100 to-purple-100 flex flex-col items-center justify-center gap-6 px-4 py-8">
         <div className="text-6xl">🎉</div>
-        <h2 className="text-4xl font-bold text-indigo-700">おわった！</h2>
+        <h2 className="text-4xl font-bold text-indigo-700">完成了！</h2>
         <div className="flex items-center gap-2">
           <span className="text-5xl">⭐</span>
           <span className="text-5xl font-bold text-yellow-500">×{total}</span>
@@ -167,7 +167,7 @@ export default function KotodamaGame() {
             onClick={() => navigate('/play')}
             className="px-8 py-4 rounded-3xl bg-gray-200 text-2xl font-bold hover:bg-gray-300 transition-colors"
           >
-            ← もどる
+            ← 返回
           </button>
           <button
             type="button"
@@ -181,7 +181,7 @@ export default function KotodamaGame() {
             }}
             className="px-8 py-4 rounded-3xl bg-indigo-400 text-white text-2xl font-bold hover:bg-indigo-500 transition-colors shadow-lg"
           >
-            もういちど
+            再玩一次
           </button>
         </div>
       </div>
@@ -204,7 +204,7 @@ export default function KotodamaGame() {
       <div className="w-full max-w-sm flex justify-between items-center">
         <button
           type="button"
-          aria-label="もどる"
+          aria-label="返回"
           onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-white/70 text-xl flex items-center justify-center shadow hover:bg-white transition-colors"
         >
@@ -228,7 +228,7 @@ export default function KotodamaGame() {
           <SceneComponent success={isSuccess} />
         ) : (
           <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-400 text-xl">
-            シーンなし
+            無場景
           </div>
         )}
       </div>
@@ -245,7 +245,7 @@ export default function KotodamaGame() {
       <div className="h-10 flex items-center justify-center">
         {isSuccess && (
           <span className="text-3xl font-bold text-emerald-500 animate-bounce">
-            {outcome ? OUTCOME_MSG[outcome] : 'せいこう！'}
+            {outcome ? OUTCOME_MSG[outcome] : '成功！'}
           </span>
         )}
         {showRetry && !maxAttemptsReached && (
@@ -254,10 +254,10 @@ export default function KotodamaGame() {
           </span>
         )}
         {maxAttemptsReached && !isSuccess && (
-          <span className="text-2xl text-gray-400">つぎのことばへ…</span>
+          <span className="text-2xl text-gray-400">前往下一個詞語…</span>
         )}
         {!isSuccess && !showRetry && !maxAttemptsReached && !isListening && attempts > 0 && (
-          <span className="text-xl text-gray-400">もう一度どうぞ！</span>
+          <span className="text-xl text-gray-400">再試一次！</span>
         )}
       </div>
 
@@ -266,7 +266,7 @@ export default function KotodamaGame() {
         <div className="flex flex-col items-center gap-3">
           <button
             type="button"
-            aria-label={isListening ? '録音中' : 'ことだまを唱える'}
+            aria-label={isListening ? '錄音中' : '唸言靈'}
             onPointerDown={(e) => {
               e.currentTarget.setPointerCapture(e.pointerId)
               void startListening()
@@ -284,11 +284,11 @@ export default function KotodamaGame() {
             🎤
           </button>
           <p className="text-xl text-indigo-600 font-medium text-center">
-            {isListening ? 'よんでね…' : 'おしながら よんでね！'}
+            {isListening ? '請說…' : '按住並說出來！'}
           </p>
           {attempts > 0 && !isListening && (
             <p className="text-base text-gray-400">
-              のこり {MAX_ATTEMPTS - attempts} かい
+              剩餘 {MAX_ATTEMPTS - attempts} 次
             </p>
           )}
         </div>

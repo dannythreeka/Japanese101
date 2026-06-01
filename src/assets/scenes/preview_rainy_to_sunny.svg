@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" width="640" height="280">
+  <defs>
+    <linearGradient id="rainySky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#9bb5c8"/>
+      <stop offset="100%" stop-color="#b8ceda"/>
+    </linearGradient>
+    <linearGradient id="sunnySky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5bb8f5"/>
+      <stop offset="100%" stop-color="#a8dff8"/>
+    </linearGradient>
+    <clipPath id="lClip"><rect x="12" y="12" width="278" height="220" rx="16"/></clipPath>
+    <clipPath id="rClip"><rect x="350" y="12" width="278" height="220" rx="16"/></clipPath>
+  </defs>
+
+  <!-- Card -->
+  <rect width="640" height="280" rx="20" fill="#f0ece8"/>
+
+  <!-- ── LEFT: INITIAL (rain) ────────────────────────────── -->
+  <g clip-path="url(#lClip)">
+    <!-- Sky -->
+    <rect x="12" y="12" width="278" height="220" rx="16" fill="url(#rainySky)"/>
+    <!-- Ground -->
+    <rect x="12" y="188" width="278" height="44" fill="#72b472"/>
+    <!-- Dark cloud left -->
+    <ellipse cx="95" cy="58" rx="52" ry="30" fill="#8c9fae"/>
+    <ellipse cx="65"  cy="68" rx="34" ry="24" fill="#8c9fae"/>
+    <ellipse cx="128" cy="68" rx="34" ry="24" fill="#8c9fae"/>
+    <!-- Dark cloud right -->
+    <ellipse cx="220" cy="72" rx="42" ry="24" fill="#96a8b6"/>
+    <ellipse cx="196" cy="80" rx="28" ry="18" fill="#96a8b6"/>
+    <ellipse cx="246" cy="80" rx="26" ry="18" fill="#96a8b6"/>
+    <!-- Rain lines -->
+    <g stroke="#7ab0cc" stroke-width="2.5" stroke-linecap="round">
+      <line x1="45"  y1="104" x2="40"  y2="126"/>
+      <line x1="68"  y1="98"  x2="63"  y2="120"/>
+      <line x1="91"  y1="106" x2="86"  y2="128"/>
+      <line x1="114" y1="100" x2="109" y2="122"/>
+      <line x1="137" y1="105" x2="132" y2="127"/>
+      <line x1="160" y1="98"  x2="155" y2="120"/>
+      <line x1="183" y1="106" x2="178" y2="128"/>
+      <line x1="206" y1="110" x2="201" y2="132"/>
+      <line x1="229" y1="103" x2="224" y2="125"/>
+      <line x1="252" y1="107" x2="247" y2="129"/>
+      <line x1="57"  y1="130" x2="52"  y2="152"/>
+      <line x1="80"  y1="124" x2="75"  y2="146"/>
+      <line x1="125" y1="128" x2="120" y2="150"/>
+      <line x1="170" y1="125" x2="165" y2="147"/>
+      <line x1="215" y1="132" x2="210" y2="154"/>
+      <line x1="240" y1="126" x2="235" y2="148"/>
+    </g>
+    <!-- Puddle -->
+    <ellipse cx="205" cy="196" rx="28" ry="7" fill="#8abcda" opacity="0.65"/>
+    <!-- Open umbrella -->
+    <path d="M110,170 Q151,130 192,170" fill="#e05858" stroke="#c03030" stroke-width="2.5"/>
+    <path d="M110,170 Q151,163 192,170" fill="#e05858"/>
+    <!-- Ribs -->
+    <g stroke="#b82828" stroke-width="1.5">
+      <line x1="151" y1="134" x2="110" y2="170"/>
+      <line x1="151" y1="134" x2="192" y2="170"/>
+      <line x1="151" y1="134" x2="151" y2="170"/>
+      <line x1="151" y1="134" x2="130" y2="167"/>
+      <line x1="151" y1="134" x2="172" y2="167"/>
+    </g>
+    <!-- Handle -->
+    <line x1="151" y1="170" x2="151" y2="200" stroke="#7a4810" stroke-width="3.5" stroke-linecap="round"/>
+    <path d="M151,200 Q151,213 138,213" fill="none" stroke="#7a4810" stroke-width="3.5" stroke-linecap="round"/>
+  </g>
+  <text x="151" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#557" font-weight="600">初期 · かさ</text>
+
+  <!-- ── ARROW ───────────────────────────────────────────── -->
+  <text x="320" y="128" text-anchor="middle" font-family="sans-serif" font-size="42" fill="#a0b0c0">→</text>
+  <text x="320" y="150" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#90a0b0">「かさ!」</text>
+
+  <!-- ── RIGHT: SUCCESS (sunny) ─────────────────────────── -->
+  <g clip-path="url(#rClip)">
+    <!-- Sky -->
+    <rect x="350" y="12" width="278" height="220" rx="16" fill="url(#sunnySky)"/>
+    <!-- Ground -->
+    <rect x="350" y="188" width="278" height="44" fill="#5cc85c"/>
+    <!-- Sun -->
+    <g fill="#f9d72f">
+      <circle cx="460" cy="72" r="32"/>
+      <line x1="460" y1="24" x2="460" y2="14" stroke="#f9d72f" stroke-width="5" stroke-linecap="round"/>
+      <line x1="497" y1="35" x2="504" y2="28" stroke="#f9d72f" stroke-width="5" stroke-linecap="round"/>
+      <line x1="510" y1="72" x2="520" y2="72" stroke="#f9d72f" stroke-width="5" stroke-linecap="round"/>
+      <line x1="497" y1="109" x2="504" y2="116" stroke="#f9d72f" stroke-width="5" stroke-linecap="round"/>
+      <line x1="460" y1="120" x2="460" y2="130" stroke="#f9d72f" stroke-width="5" stroke-linecap="round"/>
+      <line x1="423" y1="109" x2="416" y2="116" stroke="#f9d72f" stroke-width="5" stroke-linecap="round"/>
+      <line x1="410" y1="72" x2="400" y2="72" stroke="#f9d72f" stroke-width="5" stroke-linecap="round"/>
+      <line x1="423" y1="35" x2="416" y2="28" stroke="#f9d72f" stroke-width="5" stroke-linecap="round"/>
+    </g>
+    <!-- White cloud -->
+    <ellipse cx="560" cy="70" rx="38" ry="22" fill="white"/>
+    <ellipse cx="536" cy="78" rx="24" ry="18" fill="white"/>
+    <ellipse cx="582" cy="78" rx="24" ry="18" fill="white"/>
+    <!-- Closed umbrella (rolled up, leaning) -->
+    <g transform="rotate(-20 530 185)">
+      <ellipse cx="530" cy="162" rx="9" ry="30" fill="#e05858"/>
+      <line x1="530" y1="190" x2="530" y2="205" stroke="#7a4810" stroke-width="3.5" stroke-linecap="round"/>
+      <path d="M530,205 Q530,215 520,215" fill="none" stroke="#7a4810" stroke-width="3.5" stroke-linecap="round"/>
+    </g>
+    <!-- Tiny remaining puddle -->
+    <ellipse cx="510" cy="196" rx="14" ry="4" fill="#8abcda" opacity="0.30"/>
+    <!-- Sparkle -->
+    <g fill="#ffe055" stroke="#ffa800" stroke-width="0.8">
+      <polygon points="395,50 397,44 399,50 405,50 400,54 402,60 397,56 392,60 394,54 389,50" transform="scale(0.7) translate(155,25)"/>
+    </g>
+  </g>
+  <text x="489" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#255544" font-weight="600">せいこう ✨ かさ</text>
+
+  <!-- Scene label -->
+  <text x="320" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#889aaa">rainy_to_sunny · Style Preview</text>
+</svg>

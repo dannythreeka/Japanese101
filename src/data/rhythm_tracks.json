@@ -1,0 +1,39 @@
+{
+  "$schema": "./schemas/rhythm_tracks.schema.json",
+  "_meta": {
+    "note": "節奏曲目資料。bpm 越低越適合幼齡。sequence 每個元素佔一拍。背景音樂為可選,若無 BGM 仍可玩(只有節拍器聲)。",
+    "bgm_strategy": "MVP 階段建議用節拍器聲(metronome tick),不需 BGM。若日後加 BGM,須自製或 CC0,絕不使用受版權保護的兒歌或卡通配樂。"
+  },
+  "tracks": [
+    {
+      "id": "track_aiueo_basic",
+      "name_zh": "あいうえお 基本練習",
+      "bpm": 70,
+      "sequence": ["あ", "い", "う", "え", "お", "あ", "い", "う", "え", "お"],
+      "category": "kana"
+    },
+    {
+      "id": "track_aiueo_advanced",
+      "name_zh": "あいうえお 進階",
+      "bpm": 100,
+      "sequence": ["あ", "い", "う", "え", "お", "か", "き", "く", "け", "こ", "あ", "か", "い", "き", "う", "く"],
+      "category": "kana"
+    },
+    {
+      "id": "track_kaki_kagi_pair",
+      "name_zh": "かきとかぎ 最小對比",
+      "bpm": 70,
+      "sequence": ["か", "が", "き", "ぎ", "か", "き", "が", "ぎ"],
+      "category": "minimal_pair",
+      "unit_id": "mitsumura_g1_kaki_to_kagi"
+    },
+    {
+      "id": "track_kaki_kagi_words",
+      "name_zh": "かきとかぎ 詞彙節奏",
+      "bpm": 80,
+      "sequence": ["か", "さ", "か", "ざ", "ん", "つ", "き", "つ", "ぎ", "ま", "と", "ま", "ど"],
+      "category": "word",
+      "unit_id": "mitsumura_g1_kaki_to_kagi"
+    }
+  ]
+}

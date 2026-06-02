@@ -1,0 +1,99 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://japanese101-pet/schemas/levels.schema.json",
+  "title": "Levels",
+  "type": "object",
+  "required": ["regions", "levels"],
+  "properties": {
+    "regions": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Region" }
+    },
+    "levels": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Level" }
+    }
+  },
+  "definitions": {
+    "Region": {
+      "type": "object",
+      "required": ["region_id", "name_zh", "order", "asset_hint", "level_ids"],
+      "additionalProperties": false,
+      "properties": {
+        "region_id":  { "type": "string", "pattern": "^region_[a-z0-9_]+$" },
+        "name_zh":    { "type": "string", "minLength": 1 },
+        "order":      { "type": "integer", "minimum": 0 },
+        "asset_hint": { "type": "string", "minLength": 1 },
+        "level_ids":  { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+      }
+    },
+    "Level": {
+      "type": "object",
+      "required": [
+        "level_id", "level_number", "level_type", "region_id",
+        "title_zh", "challenges", "xp_reward", "stars_criteria"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "level_id":        { "type": "string", "pattern": "^lv_[a-z0-9_]+$" },
+        "level_number":    { "type": "integer", "minimum": 1 },
+        "level_type":      { "type": "string", "enum": ["tutorial", "lesson", "boss"] },
+        "region_id":       { "type": "string" },
+        "title_zh":        { "type": "string", "minLength": 1 },
+        "subtitle_zh":     { "type": "string" },
+        "story_intro_zh":  { "type": "string" },
+        "unit_id":         { "type": "string", "description": "lesson 關卡必填;tutorial/boss 可選" },
+        "challenges":      {
+          "type": "array",
+          "items": { "$ref": "#/definitions/Challenge" },
+          "minItems": 1
+        },
+        "boss_review_units": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "僅 boss 關使用:複習哪幾課的內容"
+        },
+        "scene_hint":      { "type": "string" },
+        "xp_reward":       { "type": "integer", "minimum": 0 },
+        "stars_criteria":  { "$ref": "#/definitions/StarsCriteria" }
+      }
+    },
+    "Challenge": {
+      "type": "object",
+      "required": ["challenge_id", "game_mode"],
+      "additionalProperties": false,
+      "properties": {
+        "challenge_id":    { "type": "string", "minLength": 1 },
+        "game_mode":       {
+          "type": "string",
+          "enum": [
+            "kana_catch_listen",
+            "kana_catch_minimal_pair",
+            "kana_catch_word_to_image",
+            "dakuten_drag",
+            "kotodama_summon",
+            "karaoke_rhythm",
+            "echo_record",
+            "write_canvas"
+          ]
+        },
+        "config_overrides": {
+          "type": "object",
+          "description": "覆蓋遊戲預設 config 的部分欄位"
+        },
+        "required_for_completion": { "type": "boolean", "default": true }
+      }
+    },
+    "StarsCriteria": {
+      "type": "object",
+      "required": ["accuracy_threshold"],
+      "additionalProperties": false,
+      "properties": {
+        "one":                { "type": "string", "enum": ["complete"] },
+        "two":                { "type": "string", "enum": ["one_challenge_above_accuracy"] },
+        "three":              { "type": "string", "enum": ["all_challenges_above_accuracy"] },
+        "accuracy_threshold": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    }
+  }
+}

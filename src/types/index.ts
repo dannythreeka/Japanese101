@@ -62,6 +62,9 @@ export type GameModeId =
   | 'kana_catch_word_to_image'
   | 'dakuten_drag'
   | 'kotodama_summon'
+  | 'karaoke_rhythm'
+  | 'echo_record'
+  | 'write_canvas'
 
 export interface KotodamaScene {
   scene_id: string

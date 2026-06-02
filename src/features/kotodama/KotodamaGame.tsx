@@ -37,8 +37,14 @@ export default function KotodamaGame() {
 
   // Redirect if mic is disabled
   useEffect(() => {
-    if (micMode === 'off') navigate('/play', { replace: true })
-  }, [micMode, navigate])
+    if (micMode === 'off') {
+      if (adventure.session) {
+        adventure.cancelChallenge()
+      } else {
+        navigate('/play', { replace: true })
+      }
+    }
+  }, [micMode]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const [words] = useState(() => buildKotodamaRound(undefined, ROUNDS))
   const [roundIndex, setRoundIndex] = useState(0)
@@ -219,7 +225,7 @@ export default function KotodamaGame() {
         <button
           type="button"
           aria-label={t('kotodamaBackAria')}
-          onClick={() => navigate('/play')}
+          onClick={() => adventure.isActive ? adventure.cancelChallenge() : navigate('/play')}
           className="w-12 h-12 rounded-full bg-white/70 text-xl flex items-center justify-center shadow hover:bg-white transition-colors"
         >
           ←

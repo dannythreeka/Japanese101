@@ -37,6 +37,7 @@ interface AppState {
   initAdventureSession: (levelId: string) => void
   launchChallenge: (challengeId: string, gameMode: string, overrides: Record<string, unknown>) => void
   recordChallengeResult: (challengeId: string, accuracy: number, xpGained: number) => void
+  cancelAdventureChallenge: () => void
   clearAdventureSession: () => void
 }
 
@@ -114,6 +115,12 @@ export const useAppStore = create<AppState>((set, get) => ({
         results: { ...current.results, [challengeId]: { accuracy, xpGained } },
       },
     })
+  },
+
+  cancelAdventureChallenge: () => {
+    const current = get().adventureSession
+    if (!current) return
+    set({ adventureSession: { ...current, pending: null } })
   },
 
   clearAdventureSession: () => set({ adventureSession: null }),

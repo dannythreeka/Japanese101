@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { KanaItem } from '../../types'
+import type { Kana } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { speak } from '../../lib/tts'
 import { playSfx } from '../../lib/audio'
@@ -9,10 +9,11 @@ import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
 import { calculateXpGain, addXpToPet } from '../../lib/pet'
 import type { XpResult } from '../../lib/pet'
 import LevelUpModal from '../play/LevelUpModal'
-import kanaList from '../../data/kana.json'
+import { kanaData } from '../../data/loaders'
 import KanaCard from './KanaCard'
+import { useT } from '../../hooks/useT'
 
-const ALL_KANA = kanaList as KanaItem[]
+const ALL_KANA = kanaData()
 const TOTAL_QUESTIONS = 10
 
 function shuffle<T>(arr: T[]): T[] {
@@ -24,7 +25,7 @@ function shuffle<T>(arr: T[]): T[] {
   return a
 }
 
-function pickWrongChoices(correct: KanaItem, pool: KanaItem[], count: number): KanaItem[] {
+function pickWrongChoices(correct: Kana, pool: Kana[], count: number): Kana[] {
   const others = pool.filter((k) => k.id !== correct.id)
   return shuffle(others).slice(0, count)
 }
@@ -32,16 +33,17 @@ function pickWrongChoices(correct: KanaItem, pool: KanaItem[], count: number): K
 export default function KanaMatchGame() {
   const navigate = useNavigate()
   const { kanaDifficulty, kanaMode, addStars, startSession, endSession } = useAppStore()
+  const t = useT()
 
-  const filteredKana = useMemo<KanaItem[]>(() => {
+  const filteredKana = useMemo<Kana[]>(() => {
     if (kanaDifficulty === 'all') return ALL_KANA
     return ALL_KANA.filter((k) => k.difficulty === kanaDifficulty)
   }, [kanaDifficulty])
 
-  const [queue, setQueue] = useState<KanaItem[]>([])
+  const [queue, setQueue] = useState<Kana[]>([])
   const [currentIdx, setCurrentIdx] = useState(0)
   const [score, setScore] = useState(0)
-  const [choices, setChoices] = useState<KanaItem[]>([])
+  const [choices, setChoices] = useState<Kana[]>([])
   const [answered, setAnswered] = useState(false)
   const [correctId, setCorrectId] = useState<string | null>(null)
   const [wrongId, setWrongId] = useState<string | null>(null)
@@ -78,7 +80,7 @@ export default function KanaMatchGame() {
     setCardAnim('')
   }, [queue, currentIdx, filteredKana])
 
-  const handleChoice = async (chosen: KanaItem) => {
+  const handleChoice = async (chosen: Kana) => {
     if (answered) return
     setAnswered(true)
     const current = queue[currentIdx]
@@ -142,7 +144,7 @@ export default function KanaMatchGame() {
   if (queue.length === 0) {
     return (
       <div className="min-h-screen flex items-center justify-center">
-        <p className="text-2xl text-gray-500">よみこみちゅう…</p>
+        <p className="text-2xl text-gray-500">載入中…</p>
       </div>
     )
   }
@@ -157,12 +159,12 @@ export default function KanaMatchGame() {
             onClose={() => setXpResult(null)}
           />
         )}
-        <h1 className="text-5xl font-bold text-pink-500">おわった！</h1>
+        <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
-        <p className="text-3xl text-gray-600">{score} / {TOTAL_QUESTIONS} せいかい</p>
+        <p className="text-3xl text-gray-600">{score} / {TOTAL_QUESTIONS} {t('correct')}</p>
         <button
           type="button"
-          aria-label="もういちどあそぶ"
+          aria-label={t('playAgainAria')}
           onClick={() => {
             sessionSaved.current = false
             correctKanaIds.current = []
@@ -176,15 +178,15 @@ export default function KanaMatchGame() {
           }}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
-          もういちど！
+          {t('playAgain')}
         </button>
         <button
           type="button"
-          aria-label="ホームにもどる"
+          aria-label={t('homeAria')}
           onClick={() => navigate('/play')}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
-          ホーム
+          {t('home')}
         </button>
       </div>
     )
@@ -198,7 +200,7 @@ export default function KanaMatchGame() {
       <div className="w-full max-w-md flex items-center gap-3">
         <button
           type="button"
-          aria-label="ホームにもどる"
+          aria-label={t('homeAria')}
           onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
         >
@@ -224,7 +226,7 @@ export default function KanaMatchGame() {
         />
       </div>
 
-      <p className="text-3xl font-bold text-gray-700">どのよみかた？</p>
+      <p className="text-3xl font-bold text-gray-700">{t('kanaMatchWhich')}</p>
 
       <div className="w-full max-w-md grid grid-cols-2 gap-4">
         {choices.map((choice) => {

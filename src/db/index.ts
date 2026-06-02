@@ -1,10 +1,12 @@
 import Dexie, { type Table } from 'dexie'
 import type { ProgressRecord, SessionRecord, PetState } from '../types'
+import type { AdventureProgress } from '../types/adventure'
 
 class AppDB extends Dexie {
   progress!: Table<ProgressRecord, string>
   sessions!: Table<SessionRecord, string>
   pets!: Table<PetState, string>
+  adventureProgress!: Table<AdventureProgress, string>
 
   constructor() {
     super('Japanese101DB')
@@ -16,6 +18,12 @@ class AppDB extends Dexie {
       progress: 'id, type, nextReview, lastSeen',
       sessions: 'id, date, feature',
       pets: 'petId',
+    })
+    this.version(3).stores({
+      progress: 'id, type, nextReview, lastSeen',
+      sessions: 'id, date, feature',
+      pets: 'petId',
+      adventureProgress: 'id',
     })
   }
 }
@@ -89,4 +97,30 @@ export async function savePetState(pet: PetState): Promise<void> {
 
 export async function getPetState(petId = DEFAULT_PET_ID): Promise<PetState | null> {
   return (await db.pets.get(petId)) ?? null
+}
+
+// ── Adventure progress ──────────────────────────────────────────────────────
+
+const ADVENTURE_ID = 'player'
+
+export async function getAdventureProgress(): Promise<AdventureProgress | null> {
+  return (await db.adventureProgress.get(ADVENTURE_ID)) ?? null
+}
+
+export async function saveAdventureProgress(p: AdventureProgress): Promise<void> {
+  await db.adventureProgress.put(p)
+}
+
+export async function getOrCreateAdventureProgress(firstLevelId: string): Promise<AdventureProgress> {
+  const existing = await db.adventureProgress.get(ADVENTURE_ID)
+  if (existing) return existing
+  const fresh: AdventureProgress = {
+    id: ADVENTURE_ID,
+    current_level_id: firstLevelId,
+    completed_levels: {},
+    unlocked_regions: [],
+    collected_medals: [],
+  }
+  await db.adventureProgress.put(fresh)
+  return fresh
 }

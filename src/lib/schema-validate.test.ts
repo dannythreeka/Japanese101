@@ -1,17 +1,25 @@
 import { describe, it, expect } from 'vitest'
-import kanaList from '../data/kana.json'
-import vocabList from '../data/vocabulary.json'
-import type { KanaItem, VocabWord } from '../types'
+import {
+  loadKana, loadVocabulary, loadUnitLessons,
+  getLessonById, getWordById, getKanaByHiragana,
+  kanaData, vocabData,
+} from '../data/loaders'
 
-describe('kana.json schema', () => {
-  it('is a non-empty array', () => {
-    expect(Array.isArray(kanaList)).toBe(true)
-    expect((kanaList as unknown[]).length).toBeGreaterThan(0)
+describe('kana data', () => {
+  it('loadKana resolves non-empty array', async () => {
+    const list = await loadKana()
+    expect(Array.isArray(list)).toBe(true)
+    expect(list.length).toBeGreaterThan(0)
   })
 
-  it('every item has required fields with correct types', () => {
-    const list = kanaList as KanaItem[]
-    for (const item of list) {
+  it('kanaData() returns same sync result', () => {
+    const list = kanaData()
+    expect(Array.isArray(list)).toBe(true)
+    expect(list.length).toBeGreaterThan(0)
+  })
+
+  it('every kana has required fields with correct types', () => {
+    for (const item of kanaData()) {
       expect(typeof item.id).toBe('string')
       expect(typeof item.hiragana).toBe('string')
       expect(typeof item.katakana).toBe('string')
@@ -23,65 +31,107 @@ describe('kana.json schema', () => {
   })
 
   it('has no duplicate ids', () => {
-    const ids = (kanaList as KanaItem[]).map((k) => k.id)
+    const ids = kanaData().map((k) => k.id)
     expect(new Set(ids).size).toBe(ids.length)
   })
 
   it('covers all 5 vowels', () => {
-    const ids = new Set((kanaList as KanaItem[]).map((k) => k.id))
+    const ids = new Set(kanaData().map((k) => k.id))
     for (const v of ['a', 'i', 'u', 'e', 'o']) {
       expect(ids.has(v)).toBe(true)
     }
   })
 
   it('difficulty 2 items are all dakuon or handakuon', () => {
-    const d2 = (kanaList as KanaItem[]).filter((k) => k.difficulty === 2)
-    for (const item of d2) {
+    for (const item of kanaData().filter((k) => k.difficulty === 2)) {
       expect(['dakuon', 'handakuon']).toContain(item.type)
     }
   })
 
   it('difficulty 3 items are all youon', () => {
-    const d3 = (kanaList as KanaItem[]).filter((k) => k.difficulty === 3)
-    for (const item of d3) {
+    for (const item of kanaData().filter((k) => k.difficulty === 3)) {
       expect(item.type).toBe('youon')
     }
   })
-})
 
-describe('vocabulary.json schema', () => {
-  it('is a non-empty flat array', () => {
-    expect(Array.isArray(vocabList)).toBe(true)
-    expect((vocabList as unknown[]).length).toBeGreaterThan(0)
+  it('getKanaByHiragana("か") returns the ka entry', () => {
+    const ka = getKanaByHiragana('か')
+    expect(ka).not.toBeNull()
+    expect(ka?.romaji).toBe('ka')
   })
 
-  it('every item has required fields', () => {
-    const list = vocabList as VocabWord[]
-    for (const word of list) {
+  it('getKanaByHiragana("X") returns null', () => {
+    expect(getKanaByHiragana('X')).toBeNull()
+  })
+})
+
+describe('vocabulary data', () => {
+  it('loadVocabulary resolves non-empty array', async () => {
+    const list = await loadVocabulary()
+    expect(Array.isArray(list)).toBe(true)
+    expect(list.length).toBeGreaterThan(0)
+  })
+
+  it('vocabData() returns same sync result', () => {
+    const list = vocabData()
+    expect(Array.isArray(list)).toBe(true)
+    expect(list.length).toBeGreaterThan(0)
+  })
+
+  it('every word has required fields', () => {
+    for (const word of vocabData()) {
       expect(typeof word.id).toBe('string')
       expect(typeof word.kana).toBe('string')
       expect(typeof word.romaji).toBe('string')
       expect(typeof word.meaning_zh).toBe('string')
-      expect(typeof word.unit).toBe('string')
       expect(typeof word.image).toBe('object')
       expect(typeof word.image.license).toBe('string')
       expect(typeof word.audio).toBe('object')
-      expect(['tts_generated', 'recorded']).toContain(word.audio.origin)
+      expect(typeof word.audio.license).toBe('string')
     }
   })
 
   it('has no duplicate ids', () => {
-    const ids = (vocabList as VocabWord[]).map((w) => w.id)
+    const ids = vocabData().map((w) => w.id)
     expect(new Set(ids).size).toBe(ids.length)
   })
 
-  it('all unit codes are known', () => {
-    const known = new Set([
-      'topic_animals', 'topic_food', 'topic_colors',
-      'topic_numbers', 'topic_body', 'topic_feelings', 'topic_daily',
-    ])
-    for (const word of vocabList as VocabWord[]) {
-      expect(known.has(word.unit)).toBe(true)
+  it('getWordById returns word with correct kana', () => {
+    const word = getWordById('w_kasa')
+    expect(word).not.toBeNull()
+    expect(word?.kana).toBe('かさ')
+  })
+
+  it('getWordById returns null for unknown id', () => {
+    expect(getWordById('w_does_not_exist')).toBeNull()
+  })
+})
+
+describe('unit_lessons data', () => {
+  it('loadUnitLessons resolves non-empty array', async () => {
+    const list = await loadUnitLessons()
+    expect(Array.isArray(list)).toBe(true)
+    expect(list.length).toBeGreaterThan(0)
+  })
+
+  it('every lesson has required fields', async () => {
+    const list = await loadUnitLessons()
+    for (const lesson of list) {
+      expect(typeof lesson.unit_id).toBe('string')
+      expect(typeof lesson.unit_name_zh).toBe('string')
+      expect(typeof lesson.learning_concept).toBe('string')
+      expect(Array.isArray(lesson.sub_goals)).toBe(true)
+      expect(Array.isArray(lesson.concept_words)).toBe(true)
     }
+  })
+
+  it('getLessonById returns correct lesson', () => {
+    const lesson = getLessonById('mitsumura_g1_kaki_to_kagi')
+    expect(lesson).not.toBeNull()
+    expect(lesson?.unit_id).toBe('mitsumura_g1_kaki_to_kagi')
+  })
+
+  it('getLessonById returns null for unknown id', () => {
+    expect(getLessonById('does_not_exist')).toBeNull()
   })
 })

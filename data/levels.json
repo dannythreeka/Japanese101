@@ -1,0 +1,143 @@
+{
+  "$schema": "./schemas/levels.schema.json",
+  "_meta": {
+    "note": "範例關卡資料。新手村只用基礎五十音(無 unit);第 2 關起對應 unit_lessons.json 各課;每 5 關插入一個 boss 複習關。",
+    "naming": "level_id 規則:lv_<NN>_<slug>;lesson 關 slug 用 unit_id 後半;boss 用 boss_<N>"
+  },
+  "regions": [
+    {
+      "region_id": "region_tutorial",
+      "name_zh": "新手村",
+      "order": 0,
+      "asset_hint": "雲端上的小村,只有一個發光的圓圈,中央有夥伴的蛋",
+      "level_ids": ["lv_01_tutorial"]
+    },
+    {
+      "region_id": "region_meadow",
+      "name_zh": "平原",
+      "order": 1,
+      "asset_hint": "綠色草原、藍天白雲、遠方山影、幾棵孤立的樹",
+      "level_ids": ["lv_02_kaki_kagi", "lv_03_lesson2", "lv_04_lesson3", "lv_05_lesson4", "lv_06_boss_1"]
+    },
+    {
+      "region_id": "region_forest",
+      "name_zh": "森林",
+      "order": 2,
+      "asset_hint": "茂密森林、樹冠、林間光束、小動物剪影",
+      "level_ids": ["lv_07_lesson5", "lv_08_lesson6", "lv_09_lesson7", "lv_10_lesson8", "lv_11_boss_2"]
+    }
+  ],
+  "levels": [
+    {
+      "level_id": "lv_01_tutorial",
+      "level_number": 1,
+      "level_type": "tutorial",
+      "region_id": "region_tutorial",
+      "title_zh": "新手村:夥伴的蛋",
+      "subtitle_zh": "認識你的夥伴,學會基本操作",
+      "story_intro_zh": "在雲端的小村,有一顆等待已久的蛋。輕輕喚一聲,它就會醒來...",
+      "scene_hint": "中央是發光的大蛋,周圍是灰色靜止的小雲。完成挑戰後蛋孵化、雲變彩色。",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen_basic",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": { "roundLength": 5, "fallSpeed": 60, "maxBubbles": 3 }
+        },
+        {
+          "challenge_id": "c2_kotodama_basic",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "roundLength": 3, "targetWords": ["w_tamago"] },
+          "required_for_completion": false
+        }
+      ],
+      "xp_reward": 100,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      }
+    },
+    {
+      "level_id": "lv_02_kaki_kagi",
+      "level_number": 2,
+      "level_type": "lesson",
+      "region_id": "region_meadow",
+      "unit_id": "mitsumura_g1_kaki_to_kagi",
+      "title_zh": "第一課:柿子與鑰匙",
+      "subtitle_zh": "濁音半濁音入門",
+      "story_intro_zh": "平原上的一切都被吸走了顏色。你聽,風裡好像有奇怪的聲音——是「か」還是「が」呢?",
+      "scene_hint": "平原場景,使用 unit_lessons 中本課 concept_words 的 kotodama_scene 為主視覺背景。",
+      "challenges": [
+        {
+          "challenge_id": "c1_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "unitId": "mitsumura_g1_kaki_to_kagi", "roundLength": 8 }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "unitId": "mitsumura_g1_kaki_to_kagi", "roundLength": 6 }
+        },
+        {
+          "challenge_id": "c3_dakuten_drag",
+          "game_mode": "dakuten_drag",
+          "config_overrides": { "unitId": "mitsumura_g1_kaki_to_kagi", "roundLength": 6 }
+        },
+        {
+          "challenge_id": "c4_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "unitId": "mitsumura_g1_kaki_to_kagi", "roundLength": 4 }
+        }
+      ],
+      "xp_reward": 150,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      }
+    },
+    {
+      "level_id": "lv_06_boss_1",
+      "level_number": 6,
+      "level_type": "boss",
+      "region_id": "region_meadow",
+      "title_zh": "大魔王 1:平原的しずか影",
+      "subtitle_zh": "複習第 1–4 課",
+      "story_intro_zh": "通往森林的路被黑色的影子擋住了。用你學過的言靈把它驅散吧!",
+      "boss_review_units": [
+        "mitsumura_g1_kaki_to_kagi"
+      ],
+      "scene_hint": "黑暗背景、中央是しずかの影(黑色雲狀有兩顆白眼)、周圍漂浮前 4 課學過的詞彙泡泡。",
+      "challenges": [
+        {
+          "challenge_id": "wave1_listen",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "roundLength": 5, "fallSpeed": 100, "maxBubbles": 4 }
+        },
+        {
+          "challenge_id": "wave2_dakuten",
+          "game_mode": "dakuten_drag",
+          "config_overrides": { "roundLength": 3 }
+        },
+        {
+          "challenge_id": "wave3_speak",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "roundLength": 3 }
+        }
+      ],
+      "xp_reward": 500,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      }
+    }
+  ],
+  "_review": {
+    "reviewed_by": "PENDING",
+    "notes": "範例資料,實際內容需依現有遊戲實作能力調整 config_overrides。new_handed 新手村中的 'w_tamago'(蛋)需在 vocabulary.json 加上對應條目。"
+  }
+}

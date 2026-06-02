@@ -1,38 +1,45 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "VocabularyList",
-  "type": "array",
-  "items": {
-    "type": "object",
-    "required": ["id", "kana", "romaji", "meaning_zh", "category", "unit", "image", "audio"],
-    "properties": {
-      "id": { "type": "string" },
-      "kana": { "type": "string" },
-      "romaji": { "type": "string" },
-      "meaning_zh": { "type": "string" },
-      "category": { "type": "string" },
-      "unit": { "type": "string" },
-      "emoji": { "type": "string" },
-      "image": {
-        "type": "object",
-        "required": ["src", "license", "source_url"],
-        "properties": {
-          "src": { "type": "string" },
-          "license": { "type": "string" },
-          "source_url": { "type": "string" }
-        },
-        "additionalProperties": false
-      },
-      "audio": {
-        "type": "object",
-        "required": ["src", "origin"],
-        "properties": {
-          "src": { "type": "string" },
-          "origin": { "type": "string", "enum": ["tts_generated", "recorded"] }
-        },
-        "additionalProperties": false
+  "$id": "https://japanese101-pet/schemas/vocabulary.schema.json",
+  "title": "Vocabulary",
+  "type": "object",
+  "required": ["words"],
+  "properties": {
+    "words": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/Word" }
+    }
+  },
+  "definitions": {
+    "Word": {
+      "type": "object",
+      "required": ["id", "kana", "romaji", "meaning_zh", "category", "image", "audio"],
+      "additionalProperties": false,
+      "properties": {
+        "id":         { "type": "string", "pattern": "^w_[a-z0-9_]+$" },
+        "kana":       { "type": "string", "minLength": 1 },
+        "romaji":     { "type": "string", "pattern": "^[a-z ]+$" },
+        "meaning_zh": { "type": "string", "minLength": 1 },
+        "category":   { "type": "string" },
+        "unit":       { "type": "string", "description": "可選:課本進度索引代碼" },
+        "emoji":      { "type": "string", "description": "可選:代表單字的 emoji" },
+        "image":      { "$ref": "#/definitions/Asset" },
+        "audio":      { "$ref": "#/definitions/Asset" }
       }
     },
-    "additionalProperties": false
+    "Asset": {
+      "type": "object",
+      "required": ["src", "license"],
+      "additionalProperties": false,
+      "properties": {
+        "src":        { "type": "string" },
+        "license":    {
+          "type": "string",
+          "enum": ["CC0","CC-BY","CC-BY-SA","self-created","tts_generated","public_domain"]
+        },
+        "source_url": { "type": "string", "format": "uri" },
+        "origin":     { "type": "string", "description": "tts_generated / recorded / drawn" }
+      }
+    }
   }
 }

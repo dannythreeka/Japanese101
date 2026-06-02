@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { VocabWord } from '../../types'
+import type { Word } from '../../types'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
 import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
 import { useAppStore } from '../../store/useAppStore'
@@ -10,9 +10,10 @@ import type { XpResult } from '../../lib/pet'
 import LevelUpModal from '../play/LevelUpModal'
 import SpeakButton from '../../components/SpeakButton'
 import FlashCard from './FlashCard'
-import rawVocab from '../../data/vocabulary.json'
+import { useT } from '../../hooks/useT'
+import { vocabData } from '../../data/loaders'
 
-const ALL_WORDS = rawVocab as VocabWord[]
+const ALL_WORDS = vocabData()
 
 const UNIT_LABELS: Record<string, string> = {
   topic_animals: '動物',
@@ -34,13 +35,14 @@ const UNIT_JAPANESE: Record<string, string> = {
   topic_daily: 'にちじょう',
 }
 
-const unitIds = [...new Set(ALL_WORDS.map((w) => w.unit))]
+const unitIds = [...new Set(ALL_WORDS.map((w) => w.unit).filter((u): u is string => u !== undefined))]
 
 export default function FlashCardDeck() {
   const navigate = useNavigate()
   const { startSession, endSession } = useAppStore()
+  const t = useT()
   const [unitId, setUnitId] = useState(unitIds[0])
-  const [queue, setQueue] = useState<VocabWord[]>([])
+  const [queue, setQueue] = useState<Word[]>([])
   const [wordIdx, setWordIdx] = useState(0)
   const [correctCount, setCorrectCount] = useState(0)
   const [xpResult, setXpResult] = useState<XpResult | null>(null)
@@ -123,7 +125,7 @@ export default function FlashCardDeck() {
       <div className="w-full max-w-md flex items-center gap-3">
         <button
           type="button"
-          aria-label="ホームにもどる"
+          aria-label={t('homeAria')}
           onClick={() => navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
         >
@@ -169,10 +171,10 @@ export default function FlashCardDeck() {
         />
       ) : (
         <div className="flex flex-col items-center gap-6 mt-12">
-          <p className="text-4xl font-bold text-green-500">よくできました！</p>
+          <p className="text-4xl font-bold text-green-500">{t('flashcardGreat')}</p>
           <button
             type="button"
-            aria-label="もういちど"
+            aria-label={t('playAgainAria')}
             onClick={() => {
               sessionSaved.current = false
               setQueue([...unitWords])
@@ -181,7 +183,7 @@ export default function FlashCardDeck() {
             }}
             className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"
           >
-            もういちど！
+            {t('playAgain')}
           </button>
         </div>
       )}

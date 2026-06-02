@@ -1,5 +1,6 @@
 import type { PetState } from '../types'
 import { getOrCreatePet, savePetState } from '../db'
+import { getNewlyUnlocked } from './cosmetics'
 
 export const XP_PER_LEVEL = 100
 export const XP_PER_CORRECT = 10
@@ -50,11 +51,14 @@ export async function addXpToPet(
   const newLevel = getLevel(newXp)
   const newStage = getEvolutionStage(newLevel)
   const newCollection = [...new Set([...pet.collection, ...newKanaIds])]
+  const newCosmeticIds = getNewlyUnlocked(oldLevel, newLevel).map(c => c.id)
+  const newCosmetics = [...new Set([...pet.unlockedCosmetics, ...newCosmeticIds])]
 
   const updated: PetState = {
     ...pet,
     xp: newXp,
     level: newLevel,
+    unlockedCosmetics: newCosmetics,
     evolutionStage: newStage,
     collection: newCollection,
     lastPlayed: new Date().toISOString(),

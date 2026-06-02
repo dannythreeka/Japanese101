@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" width="640" height="280">
+  <defs>
+    <linearGradient id="daySky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5bb8f5"/>
+      <stop offset="100%" stop-color="#a8dff8"/>
+    </linearGradient>
+    <linearGradient id="nightSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1a40"/>
+      <stop offset="60%" stop-color="#1a2f60"/>
+      <stop offset="100%" stop-color="#2a4888"/>
+    </linearGradient>
+    <clipPath id="ld"><rect x="12" y="12" width="278" height="220" rx="16"/></clipPath>
+    <clipPath id="rd"><rect x="350" y="12" width="278" height="220" rx="16"/></clipPath>
+  </defs>
+
+  <rect width="640" height="280" rx="20" fill="#f0ece8"/>
+
+  <!-- ── LEFT: INITIAL (daytime) ────────────────────────── -->
+  <g clip-path="url(#ld)">
+    <rect x="12" y="12" width="278" height="220" rx="16" fill="url(#daySky)"/>
+    <!-- Ground / hills -->
+    <ellipse cx="80"  cy="232" rx="120" ry="50" fill="#5cc85c"/>
+    <ellipse cx="230" cy="238" rx="100" ry="45" fill="#66c866"/>
+    <!-- Sun -->
+    <circle cx="200" cy="70" r="34" fill="#f9d72f"/>
+    <g stroke="#f9d72f" stroke-width="5" stroke-linecap="round">
+      <line x1="200" y1="22" x2="200" y2="12"/>
+      <line x1="237" y1="33" x2="244" y2="26"/>
+      <line x1="248" y1="70" x2="258" y2="70"/>
+      <line x1="237" y1="107" x2="244" y2="114"/>
+      <line x1="200" y1="118" x2="200" y2="128"/>
+      <line x1="163" y1="107" x2="156" y2="114"/>
+      <line x1="152" y1="70" x2="142" y2="70"/>
+      <line x1="163" y1="33" x2="156" y2="26"/>
+    </g>
+    <!-- White cloud -->
+    <ellipse cx="75" cy="90" rx="42" ry="24" fill="white"/>
+    <ellipse cx="50" cy="99" rx="28" ry="20" fill="white"/>
+    <ellipse cx="100" cy="99" rx="26" ry="19" fill="white"/>
+    <!-- Small cloud -->
+    <ellipse cx="235" cy="120" rx="26" ry="14" fill="white" opacity="0.8"/>
+    <ellipse cx="216" cy="127" rx="18" ry="11" fill="white" opacity="0.8"/>
+    <ellipse cx="254" cy="127" rx="16" ry="11" fill="white" opacity="0.8"/>
+  </g>
+  <text x="151" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#557" font-weight="600">初期 · つき</text>
+
+  <!-- ── ARROW ── -->
+  <text x="320" y="128" text-anchor="middle" font-family="sans-serif" font-size="42" fill="#a0b0c0">→</text>
+  <text x="320" y="150" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#90a0b0">「つき!」</text>
+
+  <!-- ── RIGHT: SUCCESS (nighttime) ─────────────────────── -->
+  <g clip-path="url(#rd)">
+    <rect x="350" y="12" width="278" height="220" rx="16" fill="url(#nightSky)"/>
+    <!-- Dark hills -->
+    <ellipse cx="420" cy="232" rx="120" ry="50" fill="#1a3822"/>
+    <ellipse cx="568" cy="238" rx="100" ry="45" fill="#1e3e28"/>
+    <!-- Moon (crescent) -->
+    <circle cx="500" cy="75" r="34" fill="#f5e060"/>
+    <circle cx="514" cy="68" r="30" fill="#1e3060"/>
+    <!-- Moon glow -->
+    <circle cx="500" cy="75" r="40" fill="#f5e060" opacity="0.12"/>
+    <!-- Stars -->
+    <g fill="#ffe880">
+      <circle cx="370" cy="35" r="2.5"/>
+      <circle cx="395" cy="55" r="2"/>
+      <circle cx="412" cy="28" r="3"/>
+      <circle cx="440" cy="48" r="2.5"/>
+      <circle cx="460" cy="32" r="2"/>
+      <circle cx="555" cy="42" r="2.5"/>
+      <circle cx="572" cy="28" r="3"/>
+      <circle cx="590" cy="50" r="2"/>
+      <circle cx="608" cy="35" r="2.5"/>
+      <circle cx="383" cy="80" r="1.8"/>
+      <circle cx="420" cy="70" r="1.8"/>
+      <circle cx="560" cy="68" r="1.8"/>
+      <circle cx="598" cy="72" r="2"/>
+    </g>
+    <!-- Star twinkle on brightest ones -->
+    <g stroke="#ffe880" stroke-width="1" fill="none" opacity="0.7">
+      <line x1="412" y1="23" x2="412" y2="18"/>
+      <line x1="412" y1="33" x2="412" y2="38"/>
+      <line x1="407" y1="28" x2="402" y2="28"/>
+      <line x1="417" y1="28" x2="422" y2="28"/>
+      <line x1="572" y1="23" x2="572" y2="18"/>
+      <line x1="572" y1="33" x2="572" y2="38"/>
+      <line x1="567" y1="28" x2="562" y2="28"/>
+      <line x1="577" y1="28" x2="582" y2="28"/>
+    </g>
+    <!-- Faint cloud in night -->
+    <ellipse cx="390" cy="130" rx="30" ry="14" fill="#2a4070" opacity="0.6"/>
+    <ellipse cx="370" cy="137" rx="20" ry="10" fill="#2a4070" opacity="0.6"/>
+    <ellipse cx="410" cy="137" rx="18" ry="10" fill="#2a4070" opacity="0.6"/>
+  </g>
+  <text x="489" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#8899ee" font-weight="600">せいこう 🌙 つき</text>
+
+  <text x="320" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#889aaa">day_to_night_with_moon · Style Preview</text>
+</svg>

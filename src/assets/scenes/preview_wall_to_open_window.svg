@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" width="640" height="280">
+  <defs>
+    <linearGradient id="windowSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5bb8f5"/>
+      <stop offset="100%" stop-color="#a8dff8"/>
+    </linearGradient>
+    <clipPath id="lWall"><rect x="12" y="12" width="278" height="220" rx="16"/></clipPath>
+    <clipPath id="rWall"><rect x="350" y="12" width="278" height="220" rx="16"/></clipPath>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="640" height="280" rx="20" fill="#f0ece8"/>
+
+  <!-- ── LEFT: INITIAL (flat beige wall) ─────────────────── -->
+  <g clip-path="url(#lWall)">
+    <!-- Wall fill -->
+    <rect x="12" y="12" width="278" height="220" rx="16" fill="#e8ddd0"/>
+    <!-- Subtle wall texture / mortar lines -->
+    <g stroke="#d0c4b4" stroke-width="1" opacity="0.7">
+      <!-- Horizontal mortar lines -->
+      <line x1="12" y1="50"  x2="290" y2="50"/>
+      <line x1="12" y1="90"  x2="290" y2="90"/>
+      <line x1="12" y1="130" x2="290" y2="130"/>
+      <line x1="12" y1="170" x2="290" y2="170"/>
+      <line x1="12" y1="210" x2="290" y2="210"/>
+      <!-- Vertical brick offsets row 1 -->
+      <line x1="80"  y1="12"  x2="80"  y2="50"/>
+      <line x1="180" y1="12"  x2="180" y2="50"/>
+      <line x1="270" y1="12"  x2="270" y2="50"/>
+      <!-- Row 2 (offset) -->
+      <line x1="30"  y1="50"  x2="30"  y2="90"/>
+      <line x1="130" y1="50"  x2="130" y2="90"/>
+      <line x1="230" y1="50"  x2="230" y2="90"/>
+      <!-- Row 3 -->
+      <line x1="80"  y1="90"  x2="80"  y2="130"/>
+      <line x1="180" y1="90"  x2="180" y2="130"/>
+      <line x1="270" y1="90"  x2="270" y2="130"/>
+      <!-- Row 4 -->
+      <line x1="30"  y1="130" x2="30"  y2="170"/>
+      <line x1="130" y1="130" x2="130" y2="170"/>
+      <line x1="230" y1="130" x2="230" y2="170"/>
+      <!-- Row 5 -->
+      <line x1="80"  y1="170" x2="80"  y2="210"/>
+      <line x1="180" y1="170" x2="180" y2="210"/>
+      <line x1="270" y1="170" x2="270" y2="210"/>
+      <!-- Row 6 -->
+      <line x1="30"  y1="210" x2="30"  y2="232"/>
+      <line x1="130" y1="210" x2="130" y2="232"/>
+      <line x1="230" y1="210" x2="230" y2="232"/>
+    </g>
+    <!-- Floor -->
+    <rect x="12" y="210" width="278" height="22" fill="#c8b89a"/>
+    <!-- Baseboard -->
+    <rect x="12" y="208" width="278" height="5" fill="#b8a888"/>
+  </g>
+  <text x="151" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#557" font-weight="600">初期 · まど</text>
+
+  <!-- ── ARROW ── -->
+  <text x="320" y="128" text-anchor="middle" font-family="sans-serif" font-size="42" fill="#a0b0c0">→</text>
+  <text x="320" y="150" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#90a0b0">「まど!」</text>
+
+  <!-- ── RIGHT: SUCCESS (window open in wall) ─────────────── -->
+  <g clip-path="url(#rWall)">
+    <!-- Wall fill -->
+    <rect x="350" y="12" width="278" height="220" rx="16" fill="#e8ddd0"/>
+    <!-- Same brick texture -->
+    <g stroke="#d0c4b4" stroke-width="1" opacity="0.7">
+      <line x1="350" y1="50"  x2="628" y2="50"/>
+      <line x1="350" y1="90"  x2="628" y2="90"/>
+      <line x1="350" y1="170" x2="628" y2="170"/>
+      <line x1="350" y1="210" x2="628" y2="210"/>
+      <!-- Verticals avoiding window area (approx 420-560, 90-170) -->
+      <line x1="418"  y1="12"  x2="418"  y2="50"/>
+      <line x1="518" y1="12"  x2="518" y2="50"/>
+      <line x1="618" y1="12"  x2="618" y2="50"/>
+      <line x1="368"  y1="50"  x2="368"  y2="90"/>
+      <line x1="468" y1="50"  x2="468" y2="90"/>
+      <line x1="568" y1="50"  x2="568" y2="90"/>
+      <!-- skip window rows 90-170 for verticals in window zone -->
+      <line x1="368"  y1="90"  x2="368"  y2="170"/>
+      <line x1="618" y1="90"  x2="618" y2="170"/>
+      <line x1="418" y1="170" x2="418" y2="210"/>
+      <line x1="518" y1="170" x2="518" y2="210"/>
+      <line x1="618" y1="170" x2="618" y2="210"/>
+      <line x1="368"  y1="210" x2="368"  y2="232"/>
+      <line x1="468" y1="210" x2="468" y2="232"/>
+      <line x1="568" y1="210" x2="568" y2="232"/>
+    </g>
+    <!-- Floor -->
+    <rect x="350" y="210" width="278" height="22" fill="#c8b89a"/>
+    <rect x="350" y="208" width="278" height="5" fill="#b8a888"/>
+    <!-- Window opening — sky visible through it -->
+    <rect x="420" y="88" width="140" height="84" fill="url(#windowSky)"/>
+    <!-- White cloud through window -->
+    <ellipse cx="490" cy="112" rx="34" ry="18" fill="white"/>
+    <ellipse cx="470" cy="120" rx="22" ry="15" fill="white"/>
+    <ellipse cx="510" cy="119" rx="20" ry="14" fill="white"/>
+    <!-- Window frame border -->
+    <rect x="420" y="88" width="140" height="84" fill="none" stroke="#c8b89a" stroke-width="8"/>
+    <!-- Window sill -->
+    <rect x="414" y="168" width="152" height="10" rx="3" fill="#d0c4b0"/>
+    <rect x="414" y="84" width="152" height="10" rx="3" fill="#d0c4b0"/>
+    <!-- Window side frames -->
+    <rect x="414" y="84" width="10" height="94" rx="2" fill="#d0c4b0"/>
+    <rect x="556" y="84" width="10" height="94" rx="2" fill="#d0c4b0"/>
+    <!-- Window divider (cross bar) -->
+    <rect x="486" y="84" width="8" height="94" fill="#d0c4b0"/>
+    <rect x="414" y="128" width="152" height="8" fill="#d0c4b0"/>
+    <!-- Left panel — open outward (foreshortened trapezoid) -->
+    <polygon points="424,92 424,168 408,174 408,86" fill="#e0d4c0" stroke="#b8aa90" stroke-width="1.5"/>
+    <!-- Left panel inner face -->
+    <polygon points="424,92 424,168 418,166 418,94" fill="#d0c4b0"/>
+    <!-- Right panel — open outward (other side) -->
+    <polygon points="556,92 556,168 572,174 572,86" fill="#e0d4c0" stroke="#b8aa90" stroke-width="1.5"/>
+    <polygon points="556,92 556,168 562,166 562,94" fill="#d0c4b0"/>
+    <!-- Curtain left (draped at left edge) -->
+    <path d="M350,88 Q370,100 362,128 Q370,155 358,172" fill="#f0a0a0" opacity="0.75" stroke="#e08080" stroke-width="1"/>
+    <path d="M350,88 L350,172 L358,172 Q370,155 362,128 Q370,100 350,88" fill="#f0a0a0" opacity="0.75"/>
+    <!-- Curtain right -->
+    <path d="M628,88 Q608,100 616,128 Q608,155 620,172" fill="#f0a0a0" opacity="0.75" stroke="#e08080" stroke-width="1"/>
+    <path d="M628,88 L628,172 L620,172 Q608,155 616,128 Q608,100 628,88" fill="#f0a0a0" opacity="0.75"/>
+    <!-- Curtain rod -->
+    <rect x="350" y="82" width="278" height="7" rx="3" fill="#b8976a"/>
+    <circle cx="350" cy="86" r="5" fill="#a07850"/>
+    <circle cx="628" cy="86" r="5" fill="#a07850"/>
+    <!-- Sunlight ray on floor -->
+    <polygon points="420,172 560,172 545,210 435,210" fill="#fff8c0" opacity="0.25"/>
+  </g>
+  <text x="489" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#335577" font-weight="600">せいこう 🪟 まど</text>
+
+  <!-- Scene label -->
+  <text x="320" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#889aaa">wall_to_open_window · Style Preview</text>
+</svg>

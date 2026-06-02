@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { KanaItem } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
+import { useT } from '../../hooks/useT'
 import { getOrCreatePet } from '../../db'
-import kanaList from '../../data/kana.json'
+import { kanaData } from '../../data/loaders'
 
-const ALL_KANA = kanaList as KanaItem[]
+const ALL_KANA = kanaData()
 
 const TYPE_LABEL: Record<string, string> = {
   seion: '清音',
@@ -19,6 +19,7 @@ const KANA_TYPES = ['seion', 'dakuon', 'handakuon', 'youon'] as const
 export default function KanaGallery() {
   const navigate = useNavigate()
   const { kanaMode } = useAppStore()
+  const t = useT()
   const [collected, setCollected] = useState<Set<string>>(new Set())
 
   useEffect(() => {
@@ -33,13 +34,13 @@ export default function KanaGallery() {
         <div className="flex items-center gap-3">
           <button
             type="button"
-            aria-label="もどる"
+            aria-label={t('backAria')}
             onClick={() => navigate('/play')}
             className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors"
           >
             ←
           </button>
-          <h1 className="text-3xl font-bold text-sky-700">かな ずかん</h1>
+          <h1 className="text-3xl font-bold text-sky-700">{t('galleryTitle')}</h1>
           <span className="ml-auto text-xl font-bold text-gray-500">
             {collected.size} / {ALL_KANA.length}
           </span>

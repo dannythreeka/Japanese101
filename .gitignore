@@ -22,4 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-japanese101-pet-handoff.zip
+
+# Uploaded zip files (may contain copyrighted source materials)
+*.zip

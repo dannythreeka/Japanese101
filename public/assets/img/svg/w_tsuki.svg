@@ -1,0 +1,14 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- night sky -->
+  <circle cx="50" cy="50" r="48" fill="#1e1b4b" rx="8"/>
+  <!-- full circle for moon -->
+  <circle cx="46" cy="50" r="28" fill="#fef08a"/>
+  <!-- bite out for crescent -->
+  <circle cx="58" cy="44" r="22" fill="#1e1b4b"/>
+  <!-- stars -->
+  <circle cx="22" cy="22" r="2.5" fill="#fef9c3"/>
+  <circle cx="78" cy="28" r="2"   fill="#fef9c3"/>
+  <circle cx="18" cy="68" r="1.5" fill="#fef9c3"/>
+  <circle cx="82" cy="72" r="2"   fill="#fef9c3"/>
+  <circle cx="70" cy="15" r="1.5" fill="#fef9c3"/>
+</svg>

@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 280" width="640" height="280">
+  <defs>
+    <linearGradient id="beachSkyL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5bb8f5"/>
+      <stop offset="100%" stop-color="#a8dff8"/>
+    </linearGradient>
+    <linearGradient id="beachSkyR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5bb8f5"/>
+      <stop offset="100%" stop-color="#a8dff8"/>
+    </linearGradient>
+    <linearGradient id="sandGradL" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8d09a"/>
+      <stop offset="100%" stop-color="#c8a870"/>
+    </linearGradient>
+    <linearGradient id="sandGradR" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8d09a"/>
+      <stop offset="100%" stop-color="#c8a870"/>
+    </linearGradient>
+    <clipPath id="lCrab"><rect x="12" y="12" width="278" height="220" rx="16"/></clipPath>
+    <clipPath id="rCrab"><rect x="350" y="12" width="278" height="220" rx="16"/></clipPath>
+  </defs>
+
+  <!-- Card background -->
+  <rect width="640" height="280" rx="20" fill="#f0ece8"/>
+
+  <!-- ── LEFT: INITIAL (sandy beach, shells, no crab) ─────── -->
+  <g clip-path="url(#lCrab)">
+    <!-- Sky -->
+    <rect x="12" y="12" width="278" height="220" rx="16" fill="url(#beachSkyL)"/>
+    <!-- Ocean strip at horizon -->
+    <rect x="12" y="150" width="278" height="20" fill="#3a90d8" opacity="0.7"/>
+    <rect x="12" y="162" width="278" height="8" fill="#5aaae8" opacity="0.5"/>
+    <!-- Sand -->
+    <rect x="12" y="166" width="278" height="66" fill="url(#sandGradL)"/>
+    <!-- Sand ripple lines -->
+    <g stroke="#d4bc88" stroke-width="1.2" stroke-linecap="round" opacity="0.65">
+      <path d="M20,182 Q70,178 120,182 Q170,186 220,182 Q255,180 280,183" fill="none"/>
+      <path d="M18,198 Q68,193 118,198 Q168,203 218,198 Q253,195 280,199" fill="none"/>
+      <path d="M25,214 Q80,209 130,214 Q180,219 230,214" fill="none"/>
+    </g>
+    <!-- White cloud -->
+    <ellipse cx="100" cy="58" rx="44" ry="24" fill="white"/>
+    <ellipse cx="76"  cy="68" rx="28" ry="20" fill="white"/>
+    <ellipse cx="124" cy="68" rx="26" ry="19" fill="white"/>
+    <!-- Small cloud -->
+    <ellipse cx="228" cy="78" rx="28" ry="15" fill="white" opacity="0.85"/>
+    <ellipse cx="208" cy="85" rx="18" ry="12" fill="white" opacity="0.85"/>
+    <ellipse cx="248" cy="85" rx="16" ry="12" fill="white" opacity="0.85"/>
+    <!-- Sun -->
+    <circle cx="252" cy="44" r="22" fill="#f9d72f"/>
+    <!-- Shell 1 (spiral oval) -->
+    <ellipse cx="85" cy="190" rx="12" ry="8" fill="#e8c890" stroke="#c0a060" stroke-width="1.5"/>
+    <path d="M81,188 Q87,186 92,190 Q88,194 83,192" fill="none" stroke="#c0a060" stroke-width="1" opacity="0.65"/>
+    <!-- Shell 2 (cone) -->
+    <polygon points="142,182 134,200 150,200" fill="#d4a878" stroke="#b88848" stroke-width="1.5"/>
+    <line x1="142" y1="182" x2="142" y2="200" stroke="#b88848" stroke-width="1" opacity="0.5"/>
+    <!-- Shell 3 (round) -->
+    <circle cx="202" cy="206" r="7" fill="#e0c898" stroke="#c0a060" stroke-width="1.5"/>
+    <ellipse cx="202" cy="206" rx="5" ry="3" fill="none" stroke="#c0a060" stroke-width="0.8" opacity="0.5"/>
+    <!-- Pebbles -->
+    <ellipse cx="55"  cy="210" rx="4" ry="3" fill="#c8a870" opacity="0.6"/>
+    <ellipse cx="168" cy="196" rx="3" ry="2" fill="#c8a870" opacity="0.6"/>
+    <ellipse cx="242" cy="208" rx="5" ry="3" fill="#c8a870" opacity="0.6"/>
+    <!-- Ocean wave foam -->
+    <path d="M12,158 Q50,153 90,158 Q130,163 170,158 Q210,153 250,158 Q270,161 290,158" fill="none" stroke="white" stroke-width="2.5" opacity="0.6"/>
+  </g>
+  <text x="151" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#557" font-weight="600">初期 · かに</text>
+
+  <!-- ── ARROW ── -->
+  <text x="320" y="128" text-anchor="middle" font-family="sans-serif" font-size="42" fill="#a0b0c0">→</text>
+  <text x="320" y="150" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#90a0b0">「かに!」</text>
+
+  <!-- ── RIGHT: SUCCESS (crab emerges from sand) ──────────── -->
+  <g clip-path="url(#rCrab)">
+    <!-- Sky -->
+    <rect x="350" y="12" width="278" height="220" rx="16" fill="url(#beachSkyR)"/>
+    <!-- Ocean strip -->
+    <rect x="350" y="150" width="278" height="20" fill="#3a90d8" opacity="0.7"/>
+    <rect x="350" y="162" width="278" height="8"  fill="#5aaae8" opacity="0.5"/>
+    <!-- Sand -->
+    <rect x="350" y="166" width="278" height="66" fill="url(#sandGradR)"/>
+    <!-- Sand ripple lines -->
+    <g stroke="#d4bc88" stroke-width="1.2" stroke-linecap="round" opacity="0.65">
+      <path d="M358,182 Q408,178 458,182 Q508,186 558,182 Q593,180 618,183" fill="none"/>
+      <path d="M356,198 Q406,193 456,198 Q506,203 556,198 Q591,195 618,199" fill="none"/>
+      <path d="M363,214 Q418,209 468,214 Q518,219 568,214" fill="none"/>
+    </g>
+    <!-- White cloud -->
+    <ellipse cx="438" cy="58" rx="44" ry="24" fill="white"/>
+    <ellipse cx="414" cy="68" rx="28" ry="20" fill="white"/>
+    <ellipse cx="462" cy="68" rx="26" ry="19" fill="white"/>
+    <!-- Small cloud -->
+    <ellipse cx="566" cy="78" rx="28" ry="15" fill="white" opacity="0.85"/>
+    <ellipse cx="546" cy="85" rx="18" ry="12" fill="white" opacity="0.85"/>
+    <ellipse cx="586" cy="85" rx="16" ry="12" fill="white" opacity="0.85"/>
+    <!-- Sun -->
+    <circle cx="590" cy="44" r="22" fill="#f9d72f"/>
+    <!-- Shells (matching, offset +338) -->
+    <ellipse cx="423" cy="190" rx="12" ry="8" fill="#e8c890" stroke="#c0a060" stroke-width="1.5"/>
+    <path d="M419,188 Q425,186 430,190 Q426,194 421,192" fill="none" stroke="#c0a060" stroke-width="1" opacity="0.65"/>
+    <polygon points="480,182 472,200 488,200" fill="#d4a878" stroke="#b88848" stroke-width="1.5"/>
+    <line x1="480" y1="182" x2="480" y2="200" stroke="#b88848" stroke-width="1" opacity="0.5"/>
+    <circle cx="540" cy="206" r="7" fill="#e0c898" stroke="#c0a060" stroke-width="1.5"/>
+    <ellipse cx="540" cy="206" rx="5" ry="3" fill="none" stroke="#c0a060" stroke-width="0.8" opacity="0.5"/>
+    <!-- Pebbles -->
+    <ellipse cx="393" cy="210" rx="4" ry="3" fill="#c8a870" opacity="0.6"/>
+    <ellipse cx="506" cy="196" rx="3" ry="2" fill="#c8a870" opacity="0.6"/>
+    <ellipse cx="580" cy="208" rx="5" ry="3" fill="#c8a870" opacity="0.6"/>
+    <!-- Ocean wave foam -->
+    <path d="M350,158 Q388,153 428,158 Q468,163 508,158 Q548,153 588,158 Q608,161 628,158" fill="none" stroke="white" stroke-width="2.5" opacity="0.6"/>
+    <!-- Sand disturbance hole -->
+    <ellipse cx="489" cy="180" rx="26" ry="10" fill="#b89860" opacity="0.8"/>
+    <ellipse cx="489" cy="180" rx="19" ry="7" fill="#a08050" opacity="0.6"/>
+    <!-- ── CRAB body (centered ~489, body top ~148) ── -->
+    <ellipse cx="489" cy="163" rx="30" ry="20" fill="#e05030"/>
+    <!-- Shell dome highlight -->
+    <ellipse cx="489" cy="160" rx="20" ry="13" fill="#c84020" opacity="0.45"/>
+    <!-- Eyes on stalks -->
+    <line x1="478" y1="147" x2="474" y2="136" stroke="#c84020" stroke-width="3" stroke-linecap="round"/>
+    <line x1="500" y1="147" x2="504" y2="136" stroke="#c84020" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="474" cy="134" r="5" fill="#1a1a1a"/>
+    <circle cx="504" cy="134" r="5" fill="#1a1a1a"/>
+    <circle cx="473" cy="133" r="2" fill="white"/>
+    <circle cx="503" cy="133" r="2" fill="white"/>
+    <!-- Mouth -->
+    <path d="M482,170 Q489,175 496,170" fill="none" stroke="#a83018" stroke-width="2" stroke-linecap="round"/>
+    <!-- Left big claw (raised up-left) -->
+    <path d="M462,158 Q445,142 436,130" stroke="#c84020" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <ellipse cx="432" cy="126" rx="11" ry="8" fill="#e05030" transform="rotate(-30 432 126)"/>
+    <path d="M424,120 Q434,114 440,124" fill="none" stroke="#c84020" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M424,120 Q430,128 440,124" fill="none" stroke="#c84020" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Right big claw (raised up-right) -->
+    <path d="M516,158 Q533,142 542,130" stroke="#c84020" stroke-width="8" stroke-linecap="round" fill="none"/>
+    <ellipse cx="546" cy="126" rx="11" ry="8" fill="#e05030" transform="rotate(30 546 126)"/>
+    <path d="M554,120 Q544,114 538,124" fill="none" stroke="#c84020" stroke-width="2.5" stroke-linecap="round"/>
+    <path d="M554,120 Q548,128 538,124" fill="none" stroke="#c84020" stroke-width="2.5" stroke-linecap="round"/>
+    <!-- Walking legs left -->
+    <line x1="468" y1="170" x2="452" y2="180" stroke="#c84020" stroke-width="4" stroke-linecap="round"/>
+    <line x1="466" y1="175" x2="448" y2="190" stroke="#c84020" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="464" y1="180" x2="447" y2="198" stroke="#c84020" stroke-width="3" stroke-linecap="round"/>
+    <line x1="452" y1="180" x2="446" y2="184" stroke="#c84020" stroke-width="2"/>
+    <line x1="448" y1="190" x2="441" y2="193" stroke="#c84020" stroke-width="2"/>
+    <line x1="447" y1="198" x2="440" y2="201" stroke="#c84020" stroke-width="2"/>
+    <!-- Walking legs right -->
+    <line x1="510" y1="170" x2="526" y2="180" stroke="#c84020" stroke-width="4" stroke-linecap="round"/>
+    <line x1="512" y1="175" x2="530" y2="190" stroke="#c84020" stroke-width="3.5" stroke-linecap="round"/>
+    <line x1="514" y1="180" x2="531" y2="198" stroke="#c84020" stroke-width="3" stroke-linecap="round"/>
+    <line x1="526" y1="180" x2="532" y2="184" stroke="#c84020" stroke-width="2"/>
+    <line x1="530" y1="190" x2="537" y2="193" stroke="#c84020" stroke-width="2"/>
+    <line x1="531" y1="198" x2="538" y2="201" stroke="#c84020" stroke-width="2"/>
+    <!-- Sand particles flying -->
+    <g fill="#d4bc80" opacity="0.9">
+      <circle cx="462" cy="172" r="3"/>
+      <circle cx="455" cy="163" r="2.5"/>
+      <circle cx="518" cy="170" r="3"/>
+      <circle cx="525" cy="160" r="2.5"/>
+      <circle cx="489" cy="156" r="2"/>
+      <circle cx="472" cy="153" r="1.8"/>
+      <circle cx="506" cy="154" r="1.8"/>
+    </g>
+    <!-- Sand dust lines -->
+    <g stroke="#d4bc80" stroke-width="1.5" stroke-linecap="round" opacity="0.7">
+      <line x1="458" y1="178" x2="450" y2="172"/>
+      <line x1="520" y1="178" x2="528" y2="172"/>
+      <line x1="470" y1="190" x2="462" y2="196"/>
+      <line x1="508" y1="190" x2="516" y2="196"/>
+    </g>
+  </g>
+  <text x="489" y="248" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#882200" font-weight="600">せいこう 🦀 かに</text>
+
+  <!-- Scene label -->
+  <text x="320" y="270" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#889aaa">sand_to_crab_appears · Style Preview</text>
+</svg>

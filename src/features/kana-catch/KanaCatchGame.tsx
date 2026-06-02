@@ -152,7 +152,13 @@ export default function KanaCatchGame() {
   }, [adventure.pending, gameState, handleStart])
 
   if (gameState === 'setup') {
-    return <KanaCatchSetup lessons={LESSONS} onStart={handleStart} />
+    return (
+      <KanaCatchSetup
+        lessons={LESSONS}
+        onStart={handleStart}
+        onBack={adventure.session ? adventure.cancelChallenge : undefined}
+      />
+    )
   }
 
   if (gameState === 'results') {
@@ -197,7 +203,8 @@ export default function KanaCatchGame() {
   return (
     <div className="min-h-screen flex flex-col items-center gap-3 p-4 pt-6 bg-gradient-to-b from-orange-50 to-white">
       <div className="w-full max-w-sm flex items-center gap-3">
-        <button type="button" aria-label={t('backAria')} onClick={() => setGameState('setup')}
+        <button type="button" aria-label={t('backAria')}
+          onClick={() => adventure.isActive ? adventure.cancelChallenge() : setGameState('setup')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
           ←
         </button>

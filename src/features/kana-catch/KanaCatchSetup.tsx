@@ -5,6 +5,7 @@ import { useT } from '../../hooks/useT'
 interface Props {
   lessons: UnitLesson[]
   onStart(mode: KanaCatchSubMode, unitId?: string): void
+  onBack?(): void
 }
 
 interface ModeInfo {
@@ -21,14 +22,14 @@ const MODES: ModeInfo[] = [
   { mode: 'word_to_image',icon: '🖼️', labelKey: 'kanaCatchWord',    descKey: 'kanaCatchWordDesc',    needsUnit: true  },
 ]
 
-export default function KanaCatchSetup({ lessons, onStart }: Props) {
+export default function KanaCatchSetup({ lessons, onStart, onBack }: Props) {
   const navigate = useNavigate()
   const t = useT()
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-6 p-4 pt-8 bg-gradient-to-b from-orange-50 to-white">
       <div className="w-full max-w-sm flex items-center gap-3">
-        <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
+        <button type="button" aria-label={t('homeAria')} onClick={() => onBack ? onBack() : navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
           ←
         </button>

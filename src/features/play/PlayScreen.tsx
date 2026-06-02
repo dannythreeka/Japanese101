@@ -33,7 +33,14 @@ export default function PlayScreen() {
 
       {/* Header */}
       <div className="w-full max-w-sm flex justify-between items-center">
-        <span className="text-3xl font-bold text-emerald-700">{t('appTitle')}</span>
+        <button
+          type="button"
+          aria-label={t('homeAria')}
+          onClick={() => navigate('/')}
+          className="px-3 py-2 rounded-full bg-white/70 text-sm font-bold text-emerald-700 shadow hover:bg-white transition-colors"
+        >
+          {t('mapBack')}
+        </button>
         <div className="flex items-center gap-2">
           <button
             type="button"

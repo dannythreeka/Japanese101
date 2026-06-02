@@ -212,7 +212,8 @@ export default function DakutenDragGame() {
 
       {/* Progress header */}
       <div className="w-full max-w-sm flex items-center gap-3">
-        <button type="button" aria-label={t('backAria')} onClick={() => navigate('/play')}
+        <button type="button" aria-label={t('backAria')}
+          onClick={() => adventure.isActive ? adventure.cancelChallenge() : navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
           ←
         </button>

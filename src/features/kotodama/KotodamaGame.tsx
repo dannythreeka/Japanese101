@@ -56,6 +56,10 @@ export default function KotodamaGame() {
   const sessionRef = useRef<MicSession | null>(null)
   const autoStopRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const savedRef   = useRef(false)
+  const waveBarRefs = useRef<(HTMLDivElement | null)[]>([])
+  const rmsRafRef = useRef<number | null>(null)
+
+  const BAR_FACTORS = [0.45, 0.75, 1.0, 0.75, 0.45, 0.65, 0.85, 0.65, 0.45]
 
   // Keep advance logic in a ref to avoid stale closures in setTimeout
   const advanceRef = useRef<() => void>(() => undefined)
@@ -103,6 +107,30 @@ export default function KotodamaGame() {
       total: words.length,
     })
     void addXpToPet(total * 10)
+  }, [phase]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  // Drive waveform bars directly via DOM refs — bypass React re-renders at 60fps
+  useEffect(() => {
+    const resetBars = () => waveBarRefs.current.forEach(el => { if (el) el.style.height = '6px' })
+    if (phase !== 'listening') {
+      if (rmsRafRef.current !== null) { cancelAnimationFrame(rmsRafRef.current); rmsRafRef.current = null }
+      resetBars()
+      return
+    }
+    const MIN_H = 6
+    const MAX_H = 56
+    const sample = () => {
+      const rms = sessionRef.current?.getRms() ?? 0
+      waveBarRefs.current.forEach((el, i) => {
+        if (!el) return
+        el.style.height = `${Math.min(MAX_H, MIN_H + rms * 400 * (BAR_FACTORS[i] ?? 1))}px`
+      })
+      rmsRafRef.current = requestAnimationFrame(sample)
+    }
+    rmsRafRef.current = requestAnimationFrame(sample)
+    return () => {
+      if (rmsRafRef.current !== null) { cancelAnimationFrame(rmsRafRef.current); rmsRafRef.current = null }
+    }
   }, [phase]) // eslint-disable-line react-hooks/exhaustive-deps
 
   const stopListening = useCallback(() => {
@@ -281,6 +309,21 @@ export default function KotodamaGame() {
         )}
       </div>
 
+      {/* Waveform — visible only while listening */}
+      <div
+        aria-hidden="true"
+        className={`flex items-end justify-center gap-1.5 h-16 transition-opacity duration-200 ${isListening ? 'opacity-100' : 'opacity-0'}`}
+      >
+        {BAR_FACTORS.map((_, i) => (
+          <div
+            key={i}
+            ref={el => { waveBarRefs.current[i] = el }}
+            style={{ height: '6px', transition: 'height 55ms ease-out' }}
+            className="w-2.5 rounded-full bg-indigo-500"
+          />
+        ))}
+      </div>
+
       {/* Mic button */}
       {!isSuccess && !maxAttemptsReached && (
         <div className="flex flex-col items-center gap-3">
@@ -299,7 +342,8 @@ export default function KotodamaGame() {
                 ? 'bg-red-400 scale-110 shadow-red-300/60 shadow-2xl'
                 : 'bg-indigo-400 hover:bg-indigo-500 hover:scale-105 active:scale-95'
             }`}
-            style={isListening ? { animation: 'pulse 1s ease-in-out infinite' } : {}}
+            style={{}}
+
           >
             🎤
           </button>

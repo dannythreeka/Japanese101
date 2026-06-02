@@ -27,6 +27,7 @@ export interface MicSessionResult {
 
 export interface MicSession {
   stop(): MicSessionResult
+  getRms(): number
 }
 
 /** Pure: convert Uint8Array (getByteTimeDomainData, 0-255) to 0-1 RMS */
@@ -106,6 +107,7 @@ export async function createMicSession(
   let rafId: number | null = null
   let speechMatch = false
   let stopped = false
+  let currentRms = 0
 
   if (micMode === 'enhanced' && speechTarget) {
     const SR = getSpeechRecognitionCtor()
@@ -127,7 +129,8 @@ export async function createMicSession(
     const dt = ts - lastTs
     lastTs = ts
     analyser.getByteTimeDomainData(buf)
-    if (calcRms(buf) > config.rmsThreshold) voicedMs += dt
+    currentRms = calcRms(buf)
+    if (currentRms > config.rmsThreshold) voicedMs += dt
     rafId = requestAnimationFrame(tick)
   }
   rafId = requestAnimationFrame(tick)
@@ -141,5 +144,6 @@ export async function createMicSession(
       void ctx.close()
       return { outcome: determineOutcome(voicedMs, config, speechMatch), voicedMs }
     },
+    getRms(): number { return stopped ? 0 : currentRms },
   }
 }

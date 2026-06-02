@@ -14,6 +14,7 @@ import KanaWriteGame from './features/kana-write/KanaWriteGame'
 import KotodamaGame from './features/kotodama/KotodamaGame'
 import AdventureMap from './features/adventure/AdventureMap'
 import LevelEntry from './features/adventure/LevelEntry'
+import LevelComplete from './features/adventure/LevelComplete'
 
 export default function App() {
   useEffect(() => { void loadVoices() }, [])
@@ -25,6 +26,7 @@ export default function App() {
         <Route path="/" element={<HomeScreen />} />
         <Route path="/adventure" element={<AdventureMap />} />
         <Route path="/adventure/level/:levelId" element={<LevelEntry />} />
+        <Route path="/adventure/level/:levelId/complete" element={<LevelComplete />} />
         {/* Free play routes */}
         <Route path="/play" element={<PlayScreen />} />
         <Route path="/play/kana" element={<KanaMatchGame />} />

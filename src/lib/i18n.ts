@@ -190,7 +190,22 @@ export const T = {
   levelXpLabel:         { ja: 'XP',                        zh: 'XP' },
   levelChallengeRequired: { ja: 'ひっす',                  zh: '必要' },
   levelChallengeOptional: { ja: 'おまけ',                  zh: '選玩' },
-  levelComingSoon:      { ja: '（S6.6 でつなぎます）',     zh: '（S6.6 接入）' },
+  levelFinishBtn:       { ja: 'かんせい！',                zh: '完成關卡！' },
+  levelChallengePlay:   { ja: 'あそぶ',                   zh: '開始玩' },
+  levelChallengeDone:   { ja: 'クリア ✓',                 zh: '完成 ✓' },
+
+  // ── AdventureReturn (games → adventure) ─────────────────────────────────
+  adventureReturn:      { ja: '冒険に もどる',             zh: '回冒險' },
+
+  // ── LevelComplete ────────────────────────────────────────────────────────
+  levelCompleteTitle:   { ja: 'かんせい！',                zh: '關卡完成！' },
+  levelCompleteStars:   { ja: '{n} ほし',                  zh: '{n} 星' },
+  levelCompleteXp:      { ja: '+{n} XP',                   zh: '+{n} XP' },
+  levelCompleteBonus:   { ja: 'クリアボーナス！',          zh: '通關獎勵！' },
+  levelCompletePerfect: { ja: '3 ほし！すごい！',          zh: '3 星！太棒了！' },
+  levelCompleteBack:    { ja: '← ちずにもどる',            zh: '← 回地圖' },
+  levelCompleteBackAria:{ ja: 'ちずにもどる',              zh: '回地圖' },
+  levelCompleteNext:    { ja: 'つぎのかんへ →',            zh: '前往下一關 →' },
 } as const
 
 export type TKey = keyof typeof T

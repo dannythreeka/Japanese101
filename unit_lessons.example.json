@@ -1,0 +1,81 @@
+{
+  "$schema": "./unit_lessons.schema.json",
+  "lessons": [
+    {
+      "unit_id": "mitsumura_g1_kaki_to_kagi",
+      "source_ref": {
+        "publisher": "光村圖書",
+        "grade": "小1",
+        "page_hint": "p.40-41"
+      },
+      "unit_name_zh": "柿子與鑰匙(濁音半濁音入門)",
+      "learning_concept": "濁音(゛)與半濁音(゜)會改變發音與意義,一個小點點就能讓字變身、詞變身",
+      "sub_goals": [
+        "聽辨清音/濁音/半濁音的差異",
+        "看辨字形上有無濁點/半濁點",
+        "理解一個點點會改變整個詞的意思",
+        "能在正確位置加上濁點寫出詞"
+      ],
+      "target_kana_pairs": [
+        ["か", "が"],
+        ["き", "ぎ"],
+        ["さ", "ざ"],
+        ["と", "ど"],
+        ["ふ", "ぶ", "ぷ"]
+      ],
+      "teaching_structure": ["recognize", "minimal_pair", "produce"],
+      "suggested_game_modes": [
+        "kana_catch_minimal_pair",
+        "kana_catch_word_to_image",
+        "dakuten_drag"
+      ],
+      "concept_words": [
+        { "id": "w_kasa",   "word": "かさ",   "meaning_zh": "傘",     "pair_with": "w_kazan" },
+        { "id": "w_kazan",  "word": "かざん", "meaning_zh": "火山",   "pair_with": "w_kasa"  },
+        { "id": "w_tsuki",  "word": "つき",   "meaning_zh": "月亮",   "pair_with": "w_tsugi" },
+        { "id": "w_tsugi",  "word": "つぎ",   "meaning_zh": "下一個", "pair_with": "w_tsuki" },
+        { "id": "w_mato",   "word": "まと",   "meaning_zh": "箭靶",   "pair_with": "w_mado"  },
+        { "id": "w_mado",   "word": "まど",   "meaning_zh": "窗戶",   "pair_with": "w_mato"  },
+        { "id": "w_kami",   "word": "かみ",   "meaning_zh": "紙",     "pair_with": "w_kani"  },
+        { "id": "w_kani",   "word": "かに",   "meaning_zh": "螃蟹",   "pair_with": "w_kami"  }
+      ],
+      "dakuten_drag_items": [
+        {
+          "base": "くき",
+          "target": "かき",
+          "meaning_zh": "柿子",
+          "mark_at": [0],
+          "mark": "dakuten",
+          "_note": "示意。實際題目應確保 base 與 target 真的只差濁點/半濁點。此題若 base=くき 不適用,請由家長挑選真正只差濁點的最小對比詞。"
+        },
+        {
+          "base": "ふた",
+          "target": "ぶた",
+          "meaning_zh": "豬",
+          "mark_at": [0],
+          "mark": "dakuten"
+        },
+        {
+          "base": "はん",
+          "target": "ぱん",
+          "meaning_zh": "麵包",
+          "mark_at": [0],
+          "mark": "handakuten"
+        },
+        {
+          "base": "ふうせん",
+          "target": "ぷうせん",
+          "meaning_zh": "(示意題,實際請替換為真實只差半濁點的詞)",
+          "mark_at": [0],
+          "mark": "handakuten",
+          "_note": "此筆為佔位,家長定稿時請替換"
+        }
+      ],
+      "_review": {
+        "reviewed_by": "PENDING",
+        "no_copyrighted_content": false,
+        "notes": "此檔為自動產生草稿。所有 concept_words 與 dakuten_drag_items 須由家長/老師人工檢視,確認 (1) 未照抄課本詞彙選編 (2) base/target 真的只差濁點或半濁點 (3) 對應圖片皆有合法授權後,再將 no_copyrighted_content 設為 true。"
+      }
+    }
+  ]
+}

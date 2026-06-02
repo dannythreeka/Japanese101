@@ -1,0 +1,89 @@
+{
+  "$schema": "./schemas/vocabulary.schema.json",
+  "_meta": {
+    "note": "image.src 指向 /assets/img/svg/<id>.svg。Claude Code 在 S0/S4 階段需依此清單生成簡筆 SVG,並將每個 SVG 自畫;license 標 self-created。",
+    "audio_strategy": "MVP 階段使用 Web Speech API 即時合成 ja-JP;不預錄音檔。audio.src 可先填空字串,程式以 word.kana 呼叫 TTS。"
+  },
+  "words": [
+    {
+      "id": "w_kasa",
+      "kana": "かさ",
+      "romaji": "kasa",
+      "meaning_zh": "傘",
+      "category": "everyday_object",
+      "unit": "mitsumura_g1_kaki_to_kagi",
+      "image": { "src": "/assets/img/svg/w_kasa.svg", "license": "self-created" },
+      "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" }
+    },
+    {
+      "id": "w_kazan",
+      "kana": "かざん",
+      "romaji": "kazan",
+      "meaning_zh": "火山",
+      "category": "nature",
+      "unit": "mitsumura_g1_kaki_to_kagi",
+      "image": { "src": "/assets/img/svg/w_kazan.svg", "license": "self-created" },
+      "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" }
+    },
+    {
+      "id": "w_tsuki",
+      "kana": "つき",
+      "romaji": "tsuki",
+      "meaning_zh": "月亮",
+      "category": "nature",
+      "unit": "mitsumura_g1_kaki_to_kagi",
+      "image": { "src": "/assets/img/svg/w_tsuki.svg", "license": "self-created" },
+      "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" }
+    },
+    {
+      "id": "w_tsugi",
+      "kana": "つぎ",
+      "romaji": "tsugi",
+      "meaning_zh": "下一個",
+      "category": "abstract",
+      "unit": "mitsumura_g1_kaki_to_kagi",
+      "image": { "src": "/assets/img/svg/w_tsugi.svg", "license": "self-created" },
+      "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" }
+    },
+    {
+      "id": "w_mato",
+      "kana": "まと",
+      "romaji": "mato",
+      "meaning_zh": "箭靶",
+      "category": "everyday_object",
+      "unit": "mitsumura_g1_kaki_to_kagi",
+      "image": { "src": "/assets/img/svg/w_mato.svg", "license": "self-created" },
+      "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" }
+    },
+    {
+      "id": "w_mado",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning_zh": "窗戶",
+      "category": "everyday_object",
+      "unit": "mitsumura_g1_kaki_to_kagi",
+      "image": { "src": "/assets/img/svg/w_mado.svg", "license": "self-created" },
+      "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" }
+    },
+    {
+      "id": "w_kami",
+      "kana": "かみ",
+      "romaji": "kami",
+      "meaning_zh": "紙",
+      "category": "everyday_object",
+      "unit": "mitsumura_g1_kaki_to_kagi",
+      "image": { "src": "/assets/img/svg/w_kami.svg", "license": "self-created" },
+      "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" }
+    },
+    {
+      "id": "w_kani",
+      "kana": "かに",
+      "romaji": "kani",
+      "meaning_zh": "螃蟹",
+      "category": "animal",
+      "unit": "mitsumura_g1_kaki_to_kagi",
+      "image": { "src": "/assets/img/svg/w_kani.svg", "license": "self-created" },
+      "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" }
+    }
+  ]
+}

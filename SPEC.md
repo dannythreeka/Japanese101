@@ -54,6 +54,27 @@
 
 ---
 
+## 2.A 世界觀 — ことだまの島 物語
+
+### 設定
+雲之上漂浮著一座「**ことだまの島**(言靈之島)」,曾經充滿聲音與色彩。但黑色的「**しずか**(寂靜)」降臨後,全島的聲音與顏色被吸走,變得灰暗安靜。
+
+孩子是被選中的「**ことだま使いの卵**(言靈使者的雛鳥)」,與夥伴(寵物)一起,用聽、讀、寫、說四種力量,逐一喚回島嶼各地的聲音與顏色。
+
+### 為何選擇這個世界觀
+1. **與四種能力遊戲完美縫合**:聽辨/看讀/書寫/發聲 = 四種「喚醒之力」
+2. **複用 kotodama_scene**:現有資料層的「灰暗 → 彩色」對比天生就是「喚醒」的視覺語言
+3. **大魔王有合理身分**:「**しずかの影**(寂靜之影)」,擋住通往下個區域的路
+4. **寵物進化有故事理由**:「ことだま」的力量讓夥伴成長
+
+### 不變更的設計原則(冒險模式同樣適用)
+- 沒有 ❌、沒有「失敗」「錯誤」字眼
+- 沒過 = 「這個地方還沒醒」「夥伴還在睡」「咒語還不夠強」
+- 大魔王關連續錯太多 → 自動降低難度(對孩子不可見)
+- 「自由練習」永遠可用,不影響冒險進度
+
+---
+
 ## 3. 技術架構(硬性約束)
 
 延續現有 repo(React + TS + Vite + Tailwind + Vercel),新增:
@@ -280,7 +301,8 @@ interface PetState {
 **TypeScript 型別:**
 ```ts
 type TeachingStep = 'recognize' | 'minimal_pair' | 'produce' | 'listen_pick' | 'write';
-type GameModeId   = 'kana_catch_minimal_pair' | 'kana_catch_word_to_image' | 'dakuten_drag';
+type GameModeId   = 'kana_catch_listen' | 'kana_catch_minimal_pair' | 'kana_catch_word_to_image'
+                  | 'dakuten_drag' | 'kotodama_summon' | 'karaoke_rhythm' | 'echo_record' | 'write_canvas';
 
 interface UnitLesson {
   unit_id: string;
@@ -308,6 +330,71 @@ interface DakutenDragItem {
 - 任何 schema 變更須向後相容或同步更新兩 app 的型別。
 - 所有 JSON 須通過 JSON Schema 驗證(Gemini 須附 schema)。
 - **每一筆 `unit_lessons` 在合併進 main 前,須由家長人工 review 並在 PR 勾選「無侵權內容」確認框。**
+
+### 4.5 levels.json — 冒險關卡資料（Adventure 系統）
+
+檔案位置:`data/levels.json`；Schema 位置:`schemas/levels.schema.json`。
+
+```ts
+interface Region {
+  region_id: string;    // 例:"region_tutorial"、"region_meadow"
+  name_zh: string;      // 例:新手村、平原
+  order: number;        // 0, 1, 2, ...
+  asset_hint: string;   // 給 SVG 繪製者的提示
+  level_ids: string[];  // 該區域的關卡清單
+}
+
+interface Level {
+  level_id: string;             // 例:"lv_01_tutorial"、"lv_06_boss_1"
+  level_number: number;         // 1, 2, 3, ...
+  level_type: 'tutorial' | 'lesson' | 'boss';
+  region_id: string;
+  title_zh: string;
+  subtitle_zh?: string;
+  story_intro_zh?: string;      // 關卡開場一句話
+  unit_id?: string;             // 對應 unit_lessons.json；boss/tutorial 可為空
+  challenges: Challenge[];      // 該關的小遊戲清單
+  boss_review_units?: string[]; // 僅 boss 關:複習哪幾課
+  scene_hint?: string;          // 場景視覺提示,給 SVG 繪製者
+  xp_reward: number;            // 完成獎勵
+  stars_criteria: StarsCriteria;
+}
+
+interface Challenge {
+  challenge_id: string;
+  game_mode: GameModeId;
+  config_overrides?: Record<string, unknown>;  // 覆蓋該遊戲的預設 config
+  required_for_completion?: boolean;           // 預設 true
+}
+
+interface StarsCriteria {
+  one: 'complete';
+  two: 'one_challenge_above_accuracy';
+  three: 'all_challenges_above_accuracy';
+  accuracy_threshold: number;  // 預設 0.7
+}
+```
+
+**大魔王節奏(已確認):每 5 關一個週期 — 4 關內容 + 1 關大魔王。**
+- `lv_06_boss_1` 複習 L2–L5；`lv_11_boss_2` 複習 L7–L10；以此類推。
+
+### 4.6 AdventureProgress（IndexedDB,不進 repo）
+
+```ts
+interface AdventureProgress {
+  current_level_id: string;    // 下一個要玩的關
+  completed_levels: {
+    [level_id: string]: {
+      completed_at: string;    // ISO 日期
+      stars: 1 | 2 | 3;
+      best_accuracy: number;
+      times_played: number;
+    };
+  };
+  unlocked_regions: string[];
+  collected_medals: string[];  // 大魔王勳章 ID 清單
+}
+```
 
 ---
 
@@ -580,6 +667,144 @@ interface EchoConfig {
 
 ---
 
+## 5.A 冒險模式(Adventure Mode)
+
+### 首頁（`/`）— 雙入口
+
+孩子每次打開 App 看到的第一個畫面。
+
+```
+   ╔══════════════════════════╗
+   ║    [夥伴的大頭像]         ║
+   ║                          ║
+   ║   ⚔  繼續冒險(主)        ║
+   ║                          ║
+   ║   🎯  自由練習(次)        ║
+   ║                          ║
+   ║   ⚙ (家長,角落)           ║
+   ╚══════════════════════════╝
+```
+
+- **繼續冒險 / 開始冒險**(同一按鈕,文案依進度切換)
+  - 第一次:`開始冒險`,進入「故事開場 → 新手村」
+  - 之後:`繼續冒險`,直接進地圖,鏡頭聚焦下一個未完成關卡
+- **自由練習**:進入現有 `/play` UI;每完成一 round 給「練習 XP」(冒險 XP 的 30%),不推進地圖
+- **家長設定**:小尺寸齒輪放角落,點擊跳 PIN → `/parent`
+
+**路由表更新:**
+
+| 路由 | 用途 |
+|---|---|
+| `/` | 首頁(雙入口)— **新增** |
+| `/adventure` | 地圖總覽 — **新增** |
+| `/adventure/level/:level_id` | 進入某一關 — **新增** |
+| `/play`(現有) | 自由練習主畫面 |
+| `/parent` | 家長端 |
+
+### 地圖（`/adventure`）
+
+橫向可滑動的島嶼地圖;已喚醒區域彩色,未喚醒區域灰階。
+
+- **已完成關卡**:亮的旗幟/燈籠,可重玩
+- **下一關**:閃爍脈動的圓點
+- **未解鎖關卡**:鎖頭圖案,點擊 → 抖一下 + 提示「先完成上一關」
+- **大魔王關**:特殊地標(鳥居/洞穴/塔),壓在跨區域邊界上
+- 寵物在地圖上跟著你走,完成一關後「跑」到下一關位置
+
+```
+🌫(新手村)══🌳(L2)══🌳(L3)══🌳(L4)══🌳(L5)══[⛩ Boss1]══🌳(L7)══...
+   區域 0      ←────── 區域 1:平原 ──────→         ←── 區域 2:森林
+```
+
+### 關卡內部（`/adventure/level/:id`）
+
+```
+[1. 開場動畫]
+   - 場景以灰階呈現(取自 kotodama_scene 對應 unit)
+   - 旁白氣泡:「這裡好安靜...讓我們把聲音找回來!」
+
+[2. 挑戰清單頁]
+   - 列出本關 3–5 個小遊戲,每個一張卡片
+   - 標示「⚪ 未完成」/「✅ 完成」,進度條 0/N
+
+[3. 完成一個小遊戲]
+   - 結算:XP + 夥伴動畫 + 對應場景元素恢復顏色
+   - 場景元素 ↔ 遊戲類型對應:
+     | 遊戲 | 恢復元素 |
+     |---|---|
+     | kana_catch_* | 天空/雲 |
+     | write_canvas | 樹/草/山 |
+     | kotodama_summon | 太陽/月亮 |
+     | karaoke_rhythm | 風/動物 |
+     | echo_record | 細節裝飾(花、石頭) |
+     | dakuten_drag | 文字/招牌 |
+
+[4. 全部完成]
+   - 場景全彩爆發 + 夥伴歡呼
+   - 結算:總 XP、星星評分(1–3)、寵物 XP + 進化檢查
+   - 「回地圖」按鈕,地圖上該關亮起
+```
+
+**星星評分(每關):**
+
+| 星星 | 條件 |
+|---|---|
+| ⭐ 1 | 完成所有 `required_for_completion: true` 的挑戰 |
+| ⭐ 2 | 1 + 任一挑戰正確率 ≥ `accuracy_threshold`(預設 0.7) |
+| ⭐ 3 | 1 + 所有挑戰正確率 ≥ 門檻 |
+
+**重要**:星星不是「過關門檻」,只是「優秀紀錄」。沒拿到星星仍可進下一關,且不顯示為「失敗」。
+
+### 大魔王關（`level_type: "boss"`）
+
+跟一般關完全不同:黑暗場景,中央是「**しずかの影**」——黑色雲狀、兩顆發白光的眼睛,周圍漂浮著前幾課學過詞彙的「破碎發音泡泡」。
+
+**三波挑戰:**
+
+| 波次 | 內容 | 題數 |
+|---|---|---|
+| 1 | 從 `boss_review_units` 隨機抽聽辨/讀題 | 5 |
+| 2 | 隨機抽寫字題 + 拖濁點題 | 3 |
+| 3 | 從前幾課 `concept_words` 用「說」喚醒 | 3 |
+
+- 每答對一題 → しずか影縮小一點(可見進度)
+- 答錯不擴大影、不扣血(維持無懲罰原則)
+- 第 3 波連續錯 3 題 → 系統悄悄降低難度(題目更基礎、干擾選項更少)
+- **絕不顯示「你失敗了」**
+
+**獎勵:**
+- 大量 XP(一般關 3 倍)
+- 一枚「**ことだま勳章**」進入收藏冊
+- 解鎖下一個區域的關卡
+
+---
+
+## 5.B XP / 經驗值規則(整體經濟設計)
+
+| 來源 | XP |
+|---|---|
+| 冒險:完成一個小遊戲 | 10–30(依難度) |
+| 冒險:完成整關 | +50(bonus) |
+| 冒險:整關 3 星 | 額外 +30 |
+| 大魔王:完成 | 200 |
+| **自由練習:完成一 round** | **冒險的 30%** |
+| 重玩已完成關(第 1 次) | 50% |
+| 重玩已完成關(第 2 次) | 25% |
+| 重玩已完成關(第 3 次起) | 10% |
+
+**寵物進化門檻:**
+
+| 等級 | XP 門檻 | 里程碑 |
+|---|---|---|
+| Lv 1 → 2 | 300 | 完成新手村 + 第 1 課即可達到(確保孩子早看到成就感) |
+| Lv 2 → 3 | 1000 | 約完成大魔王 1 |
+| Lv 3 → 4 | 2500 | |
+| 之後每升一級 | +2000 | |
+
+**Claude Code 實作時可微調數值,但必須確保「完成新手村就會經歷一次進化」。**
+
+---
+
 ## 6. 交付階段(每階段獨立可驗收)
 
 | 階段 | 內容 | 產出 |
@@ -591,6 +816,10 @@ interface EchoConfig {
 | S4 | 假名抓抓樂 — 子模式 B `minimal_pair`、子模式 C `word_to_image` + SRS 出題 + 課程選擇器(由 unit_lessons 驅動) | 課本進度可選 |
 | S5 | 拖濁點(Dakuten Drag)遊戲 | produce 步驟可玩 |
 | S6 | 家長端:進度/正確率/時長、PIN、模式設定、unit 啟用切換 | 家長儀表板 |
+| **S6.5(新):冒險骨架** | 路由 `/`(雙入口)、`/adventure`(地圖)、`/adventure/level/:id`、levels 資料層、進度 IndexedDB、地圖 UI 骨架(無動畫先做結構) | 地圖可顯示、可點關卡 |
+| **S6.6(新):關卡內部** | 挑戰清單頁、串接既有小遊戲、完成流程、星星評分、場景元素上色、結算頁 | 完整關卡流程可走通 |
+| **S6.7(新):新手村 + 第 1 課** | 把 levels.json 填上具體內容,讓孩子可實際走完前兩關(真實驗證點) | 可給孩子試玩 |
+| **S6.8(新):大魔王關** | 三波戰鬥邏輯、しずか影 SVG、難度救援機制、勳章系統 | 第一個完整冒險循環封閉 |
 | S7 | 每日任務 + 裝飾獎勵(Cosmetics) | 打卡遊玩動機 |
 | S8 | かな書き練習(Canvas 寫字 + 像素相似度判分) | 「寫」能力可玩 |
 | **S9 ことだま 基礎** | Mic 權限流程 + 家長端隱私設定 + Tier 2/3 引擎 + ことだま 主遊戲 + 場景 SVG(先 3 個範例給家長確認風格) | 主「說」遊戲可玩 |
@@ -649,6 +878,22 @@ interface EchoConfig {
 - [ ] 離線:斷網仍可玩(PWA)
 - [ ] 無障礙:按鈕有 aria-label、可鍵盤操作、按鈕 ≥ 64px、對比 AA
 - [ ] 邊界:空/壞 JSON、IndexedDB 不可用(隱私模式)、連點快點不亂、孩子亂點不崩
+**Adventure Mode(S6.5–S6.8):**
+- [ ] 首次進入 App → 看到「開始冒險」,點擊 → 開場動畫 → 新手村
+- [ ] 完成新手村 → 地圖第 2 關解鎖、寵物獲得 XP、可能觸發第一次進化
+- [ ] 進地圖 → 鏡頭自動聚焦下一個未完成關卡
+- [ ] 點未解鎖關卡 → 抖一下不進入,顯示提示「先完成上一關」
+- [ ] 點已完成關卡 → 詢問是否重玩
+- [ ] 關卡內任一小遊戲完成 → 場景對應元素變彩色、進度 +1
+- [ ] 整關完成 → 結算頁顯示星星(1/2/3)、XP、進化檢查
+- [ ] 大魔王關:三波結構正確、答錯不擴大影、連續錯 3 題後難度悄悄降低
+- [ ] 自由練習完成 round → 給予冒險 30% XP、不解鎖新關卡、不推進地圖
+- [ ] 重玩已完成關 → XP 依次衰減(50% → 25% → 10%)
+- [ ] 家長端可看到當前進度、星星總數、勳章數
+- [ ] 永遠不出現「失敗」「錯誤」字眼(含大魔王關)
+- [ ] 離線可玩、進度存 IndexedDB
+- [ ] 既有 `/play` 自由練習功能完整保留,無 regression
+
 - 覆蓋率:`/src/lib`、`/src/store` ≥ 80%。
 
 ---

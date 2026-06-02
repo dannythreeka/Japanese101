@@ -2,6 +2,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { PetState, KanaCatchSubMode } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
+import { useAdventureChallenge } from '../../hooks/useAdventureChallenge'
 import { kanaData, vocabData, lessonData } from '../../data/loaders'
 import { playSfx } from '../../lib/audio'
 import { speak } from '../../lib/tts'
@@ -26,13 +27,21 @@ const LESSONS   = lessonData()
 
 type GameState = 'setup' | 'playing' | 'results'
 
+const KANA_CATCH_MODE: Record<string, KanaCatchSubMode> = {
+  kana_catch_listen:        'listen',
+  kana_catch_minimal_pair:  'minimal_pair',
+  kana_catch_word_to_image: 'word_to_image',
+}
+
 export default function KanaCatchGame() {
   const navigate = useNavigate()
   const { ageMode, kanaDifficulty, addStars, startSession, endSession } = useAppStore()
+  const adventure = useAdventureChallenge()
   const t = useT()
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const sessionSaved = useRef(false)
   const correctIds = useRef<string[]>([])
+  const adventureAutoStarted = useRef(false)
 
   const [gameState, setGameState] = useState<GameState>('setup')
   const [currentQ, setCurrentQ] = useState<QuestionConfig | null>(null)
@@ -132,11 +141,22 @@ export default function KanaCatchGame() {
     setGameKey(k => k + 1)
   }, [startSession])
 
+  // Auto-start when launched from adventure mode
+  useEffect(() => {
+    if (adventureAutoStarted.current || !adventure.pending || gameState !== 'setup') return
+    const subMode = KANA_CATCH_MODE[adventure.pending.gameMode]
+    if (!subMode) return
+    adventureAutoStarted.current = true
+    const uid = adventure.pending.configOverrides.unitId
+    handleStart(subMode, typeof uid === 'string' ? uid : undefined)
+  }, [adventure.pending, gameState, handleStart])
+
   if (gameState === 'setup') {
     return <KanaCatchSetup lessons={LESSONS} onStart={handleStart} />
   }
 
   if (gameState === 'results') {
+    const accuracy = baseParams.roundLength > 0 ? score / baseParams.roundLength : 0
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-6">
         {xpResult?.leveledUp && (
@@ -146,18 +166,28 @@ export default function KanaCatchGame() {
         <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
         <p className="text-3xl text-gray-600">{score} / {baseParams.roundLength} {t('correct')}</p>
-        <button type="button" aria-label={t('playAgainAria')} onClick={handleRestart}
-          className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform">
-          {t('playAgain')}
-        </button>
-        <button type="button" aria-label={t('kanaCatchChangeMode')} onClick={() => setGameState('setup')}
-          className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-orange-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
-          {t('kanaCatchChangeMode')}
-        </button>
-        <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
-          className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
-          {t('home')}
-        </button>
+        {adventure.isActive ? (
+          <button type="button"
+            onClick={() => adventure.submitResult(accuracy, calculateXpGain(score, baseParams.roundLength))}
+            className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-indigo-500 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
+            {t('adventureReturn')}
+          </button>
+        ) : (
+          <>
+            <button type="button" aria-label={t('playAgainAria')} onClick={handleRestart}
+              className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform">
+              {t('playAgain')}
+            </button>
+            <button type="button" aria-label={t('kanaCatchChangeMode')} onClick={() => setGameState('setup')}
+              className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-orange-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
+              {t('kanaCatchChangeMode')}
+            </button>
+            <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
+              className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
+              {t('home')}
+            </button>
+          </>
+        )}
       </div>
     )
   }

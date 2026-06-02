@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { PetState } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
+import { useAdventureChallenge } from '../../hooks/useAdventureChallenge'
 import { lessonData } from '../../data/loaders'
 import { playSfx } from '../../lib/audio'
 import { speak } from '../../lib/tts'
@@ -17,8 +18,11 @@ import type { DragQuestion } from './DakutenDragEngine'
 
 const LESSONS = lessonData()
 
-function loadShuffledQuestions(): DragQuestion[] {
-  const lesson = LESSONS.find(l => (l.dakuten_drag_items?.length ?? 0) > 0)
+function loadShuffledQuestions(unitId?: string): DragQuestion[] {
+  const lesson = unitId
+    ? (LESSONS.find(l => l.unit_id === unitId && (l.dakuten_drag_items?.length ?? 0) > 0)
+       ?? LESSONS.find(l => (l.dakuten_drag_items?.length ?? 0) > 0))
+    : LESSONS.find(l => (l.dakuten_drag_items?.length ?? 0) > 0)
   return lesson ? shuffleQuestions(buildQuestions(lesson)) : []
 }
 
@@ -27,11 +31,15 @@ type Phase = 'playing' | 'results'
 export default function DakutenDragGame() {
   const navigate = useNavigate()
   const { addStars, startSession, endSession } = useAppStore()
+  const adventure = useAdventureChallenge()
   const t = useT()
   const sessionSaved = useRef(false)
 
+  const advUnitId = adventure.pending?.configOverrides.unitId
   const [pet, setPet] = useState<PetState | null>(null)
-  const [questions, setQuestions] = useState<DragQuestion[]>(() => loadShuffledQuestions())
+  const [questions, setQuestions] = useState<DragQuestion[]>(() =>
+    loadShuffledQuestions(typeof advUnitId === 'string' ? advUnitId : undefined)
+  )
   const [currentIdx, setCurrentIdx] = useState(0)
   const [score, setScore] = useState(0)
   const [phase, setPhase] = useState<Phase>('playing')
@@ -163,6 +171,7 @@ export default function DakutenDragGame() {
   }
 
   if (phase === 'results') {
+    const accuracy = questions.length > 0 ? score / questions.length : 0
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-6 bg-gradient-to-b from-violet-100 to-pink-50">
         {xpResult?.leveledUp && (
@@ -172,14 +181,24 @@ export default function DakutenDragGame() {
         <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
         <p className="text-3xl text-gray-600">{score} / {questions.length} {t('correct')}</p>
-        <button type="button" aria-label={t('playAgainAria')} onClick={handleRestart}
-          className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform">
-          {t('playAgain')}
-        </button>
-        <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
-          className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
-          {t('home')}
-        </button>
+        {adventure.isActive ? (
+          <button type="button"
+            onClick={() => adventure.submitResult(accuracy, calculateXpGain(score, questions.length))}
+            className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-indigo-500 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
+            {t('adventureReturn')}
+          </button>
+        ) : (
+          <>
+            <button type="button" aria-label={t('playAgainAria')} onClick={handleRestart}
+              className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform">
+              {t('playAgain')}
+            </button>
+            <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}
+              className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-blue-400 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
+              {t('home')}
+            </button>
+          </>
+        )}
       </div>
     )
   }

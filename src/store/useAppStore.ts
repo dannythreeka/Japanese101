@@ -2,6 +2,16 @@ import { create } from 'zustand'
 import type { KanaMode, KanaDifficulty, AgeMode, MicMode } from '../types'
 import type { UiLang } from '../lib/i18n'
 
+export interface AdventureSession {
+  levelId: string
+  pending: {
+    challengeId: string
+    gameMode: string
+    configOverrides: Record<string, unknown>
+  } | null
+  results: Record<string, { accuracy: number; xpGained: number }>
+}
+
 interface AppState {
   kanaMode: KanaMode
   kanaDifficulty: KanaDifficulty
@@ -12,6 +22,7 @@ interface AppState {
   sessionStartTime: number | null
   totalStars: number
   parentUnlocked: boolean
+  adventureSession: AdventureSession | null
 
   setKanaMode: (mode: KanaMode) => void
   setKanaDifficulty: (level: KanaDifficulty) => void
@@ -23,6 +34,10 @@ interface AppState {
   endSession: () => number
   addStars: (n: number) => void
   setParentUnlocked: (v: boolean) => void
+  initAdventureSession: (levelId: string) => void
+  launchChallenge: (challengeId: string, gameMode: string, overrides: Record<string, unknown>) => void
+  recordChallengeResult: (challengeId: string, accuracy: number, xpGained: number) => void
+  clearAdventureSession: () => void
 }
 
 export const useAppStore = create<AppState>((set, get) => ({
@@ -35,6 +50,7 @@ export const useAppStore = create<AppState>((set, get) => ({
   sessionStartTime: null,
   totalStars: Number(localStorage.getItem('totalStars') ?? 0),
   parentUnlocked: false,
+  adventureSession: null,
 
   setKanaMode: (mode) => set({ kanaMode: mode }),
   setKanaDifficulty: (level) => set({ kanaDifficulty: level }),
@@ -75,4 +91,30 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
 
   setParentUnlocked: (v) => set({ parentUnlocked: v }),
+
+  initAdventureSession: (levelId) => {
+    const current = get().adventureSession
+    if (current?.levelId === levelId) return  // keep existing results for replay
+    set({ adventureSession: { levelId, pending: null, results: {} } })
+  },
+
+  launchChallenge: (challengeId, gameMode, overrides) => {
+    const current = get().adventureSession
+    if (!current) return
+    set({ adventureSession: { ...current, pending: { challengeId, gameMode, configOverrides: overrides } } })
+  },
+
+  recordChallengeResult: (challengeId, accuracy, xpGained) => {
+    const current = get().adventureSession
+    if (!current) return
+    set({
+      adventureSession: {
+        ...current,
+        pending: null,
+        results: { ...current.results, [challengeId]: { accuracy, xpGained } },
+      },
+    })
+  },
+
+  clearAdventureSession: () => set({ adventureSession: null }),
 }))

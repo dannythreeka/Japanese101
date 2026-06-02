@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../../store/useAppStore'
+import { useAdventureChallenge } from '../../hooks/useAdventureChallenge'
 import { speak } from '../../lib/tts'
 import { playSfx } from '../../lib/audio'
 import { saveSession } from '../../db'
@@ -25,6 +26,7 @@ const MAX_ATTEMPTS = 5
 export default function KotodamaGame() {
   const navigate = useNavigate()
   const { micMode, ageMode, addStars, startSession, endSession } = useAppStore()
+  const adventure = useAdventureChallenge()
   const t = useT()
   const outcomeMsg: Record<MicOutcome, string> = {
     silent:  t('outcomeSilent'),
@@ -145,6 +147,7 @@ export default function KotodamaGame() {
   // ── Done screen ────────────────────────────────────────────
   if (phase === 'done') {
     const total = roundStars.reduce((a, b) => a + b, 0)
+    const accuracy = words.length > 0 ? roundStars.filter(s => s > 0).length / words.length : 0
     return (
       <div className="min-h-screen bg-gradient-to-b from-indigo-100 to-purple-100 flex flex-col items-center justify-center gap-6 px-4 py-8">
         <div className="text-6xl">🎉</div>
@@ -163,13 +166,23 @@ export default function KotodamaGame() {
           ))}
         </div>
         <div className="flex gap-4 mt-2">
-          <button
-            type="button"
-            onClick={() => navigate('/play')}
-            className="px-8 py-4 rounded-3xl bg-gray-200 text-2xl font-bold hover:bg-gray-300 transition-colors"
-          >
-            {t('kotodamaBack')}
-          </button>
+          {adventure.isActive ? (
+            <button
+              type="button"
+              onClick={() => adventure.submitResult(accuracy, total * 10)}
+              className="px-8 py-4 rounded-3xl bg-indigo-500 text-white text-2xl font-bold hover:bg-indigo-600 transition-colors"
+            >
+              {t('adventureReturn')}
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={() => navigate('/play')}
+              className="px-8 py-4 rounded-3xl bg-gray-200 text-2xl font-bold hover:bg-gray-300 transition-colors"
+            >
+              {t('kotodamaBack')}
+            </button>
+          )}
           <button
             type="button"
             onClick={() => {

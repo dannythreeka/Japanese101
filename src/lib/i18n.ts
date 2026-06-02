@@ -165,6 +165,32 @@ export const T = {
   parentMicError:       { ja: 'マイクの許可が得られませんでした。ブラウザの設定を確認してください。', zh: '無法取得麥克風授權，請確認瀏覽器設定。' },
   parentMicCancel:      { ja: 'キャンセル',                zh: '取消' },
   parentMicAllow:       { ja: '許可する',                  zh: '允許' },
+
+  // ── HomeScreen ──────────────────────────────────────────────────────────
+  homeStartAdventure:   { ja: 'ぼうけんを はじめよう！',   zh: '開始冒險！' },
+  homeContinueAdventure:{ ja: 'ぼうけんを つづける',       zh: '繼續冒險' },
+  homeFreePlay:         { ja: 'じゆう れんしゅう',         zh: '自由練習' },
+  homeSettingsAria:     { ja: 'おやのせってい',            zh: '家長設定' },
+
+  // ── AdventureMap ────────────────────────────────────────────────────────
+  mapTitle:             { ja: 'ことだまの島',              zh: '言靈之島' },
+  mapLockedHint:        { ja: 'まえのかんを クリアしてね', zh: '請先完成前一關' },
+  mapReplayPrompt:      { ja: 'もういちど あそぶ？',       zh: '重玩這一關？' },
+  mapBossLabel:         { ja: 'だいまおう',                zh: '大魔王' },
+  mapBack:              { ja: '← ホーム',                  zh: '← 首頁' },
+  mapBackAria:          { ja: 'ホームにもどる',            zh: '返回首頁' },
+  mapRegionLocked:      { ja: '（まだひらかない）',        zh: '（尚未開放）' },
+
+  // ── LevelEntry ──────────────────────────────────────────────────────────
+  levelBack:            { ja: '← ちず',                   zh: '← 地圖' },
+  levelBackAria:        { ja: 'ちずにもどる',              zh: '返回地圖' },
+  levelChallengesTitle: { ja: 'チャレンジ',                zh: '挑戰清單' },
+  levelStartBtn:        { ja: 'はじめる！',                zh: '開始！' },
+  levelStarsLabel:      { ja: 'ほし',                      zh: '星星' },
+  levelXpLabel:         { ja: 'XP',                        zh: 'XP' },
+  levelChallengeRequired: { ja: 'ひっす',                  zh: '必要' },
+  levelChallengeOptional: { ja: 'おまけ',                  zh: '選玩' },
+  levelComingSoon:      { ja: '（S6.6 でつなぎます）',     zh: '（S6.6 接入）' },
 } as const
 
 export type TKey = keyof typeof T

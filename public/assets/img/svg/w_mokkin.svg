@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#fef9f0" rx="8"/>
+  <!-- xylophone bars (7 bars in rainbow order) -->
+  <rect x="10" y="42" width="10" height="44" fill="#dc2626" rx="3" stroke="#991b1b" strokeWidth="1.5"/>
+  <rect x="23" y="46" width="10" height="40" fill="#f97316" rx="3" stroke="#ea580c" strokeWidth="1.5"/>
+  <rect x="36" y="50" width="10" height="36" fill="#fbbf24" rx="3" stroke="#d97706" strokeWidth="1.5"/>
+  <rect x="49" y="54" width="10" height="32" fill="#4ade80" rx="3" stroke="#16a34a" strokeWidth="1.5"/>
+  <rect x="62" y="58" width="10" height="28" fill="#60a5fa" rx="3" stroke="#2563eb" strokeWidth="1.5"/>
+  <rect x="75" y="62" width="10" height="24" fill="#818cf8" rx="3" stroke="#4338ca" strokeWidth="1.5"/>
+  <rect x="88" y="66" width="10" height="20" fill="#c084fc" rx="3" stroke="#7e22ce" strokeWidth="1.5"/>
+  <!-- frame -->
+  <path d="M10,86 L98,86" stroke="#8b6340" strokeWidth="4" strokeLinecap="round"/>
+  <!-- mallets -->
+  <line x1="30" y1="14" x2="38" y2="46" stroke="#8b6340" strokeWidth="3" strokeLinecap="round"/>
+  <circle cx="28" cy="12" r="8" fill="#f97316" stroke="#ea580c" strokeWidth="1.5"/>
+  <line x1="68" y1="14" x2="60" y2="50" stroke="#8b6340" strokeWidth="3" strokeLinecap="round"/>
+  <circle cx="70" cy="12" r="8" fill="#60a5fa" stroke="#2563eb" strokeWidth="1.5"/>
+</svg>

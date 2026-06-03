@@ -1,0 +1,18 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#fff0f0" rx="8"/>
+  <!-- strawberry -->
+  <path d="M50,25 Q30,30 26,55 Q24,70 50,82 Q76,70 74,55 Q70,30 50,25Z" fill="#e53935" stroke="#b71c1c" strokeWidth="2.5"/>
+  <!-- seeds -->
+  <ellipse cx="40" cy="50" rx="2" ry="2.5" fill="white" transform="rotate(-10 40 50)"/>
+  <ellipse cx="52" cy="44" rx="2" ry="2.5" fill="white" transform="rotate(5 52 44)"/>
+  <ellipse cx="62" cy="55" rx="2" ry="2.5" fill="white" transform="rotate(15 62 55)"/>
+  <ellipse cx="46" cy="62" rx="2" ry="2.5" fill="white" transform="rotate(-5 46 62)"/>
+  <ellipse cx="58" cy="65" rx="2" ry="2.5" fill="white" transform="rotate(10 58 65)"/>
+  <ellipse cx="38" cy="66" rx="2" ry="2.5" fill="white" transform="rotate(-15 38 66)"/>
+  <!-- leaves -->
+  <path d="M50,25 Q44,14 38,16 Q40,22 48,26" fill="#4caf50" stroke="#388e3c" strokeWidth="1.5"/>
+  <path d="M50,25 Q50,12 55,13 Q54,20 51,26" fill="#4caf50" stroke="#388e3c" strokeWidth="1.5"/>
+  <path d="M50,25 Q56,14 62,16 Q60,22 52,26" fill="#4caf50" stroke="#388e3c" strokeWidth="1.5"/>
+  <!-- shine -->
+  <path d="M37,38 Q42,33 48,36" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+</svg>

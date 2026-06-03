@@ -1,0 +1,15 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#fff8f0" rx="8"/>
+  <!-- stamp body -->
+  <rect x="14" y="20" width="72" height="65" fill="white" stroke="#d4c0a0" strokeWidth="2.5" rx="3"/>
+  <!-- perforated edge simulation -->
+  <rect x="20" y="26" width="60" height="53" fill="#fef3c7" stroke="#d97706" strokeWidth="1.5" rx="2"/>
+  <!-- mount fuji illustration -->
+  <polygon points="50,30 26,72 74,72" fill="#87ceeb"/>
+  <polygon points="50,30 38,50 62,50" fill="white"/>
+  <rect x="26" y="72" width="48" height="6" fill="#5cb85c"/>
+  <!-- denomination -->
+  <text x="50" y="86" fontSize="7" textAnchor="middle" fill="#d97706" fontFamily="serif">¥84</text>
+  <!-- corner circles (perforations) -->
+  {[14,86].flatMap(x=>[20,85].map(y=>`M${x},${y}`)).map((d,i)=><circle key={i} cx={[14,86,14,86][i]} cy={[20,20,85,85][i]} r="3" fill="#f5f0e8"/>)}
+</svg>

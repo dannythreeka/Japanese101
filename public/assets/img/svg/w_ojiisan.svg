@@ -1,0 +1,24 @@
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100" height="100" fill="#f0f4f0" rx="8"/>
+  <ellipse cx="50" cy="72" rx="20" ry="22" fill="#6b7280" stroke="#4b5563" strokeWidth="2.5"/>
+  <circle cx="50" cy="36" r="18" fill="#fcd5b0" stroke="#e8b88a" strokeWidth="2"/>
+  <!-- white hair bald top with sides -->
+  <ellipse cx="36" cy="34" rx="8" ry="12" fill="#e8e8e8" stroke="#d0d0d0" strokeWidth="1.5"/>
+  <ellipse cx="64" cy="34" rx="8" ry="12" fill="#e8e8e8" stroke="#d0d0d0" strokeWidth="1.5"/>
+  <path d="M36,22 Q50,14 64,22" fill="#e8e8e8" stroke="#d0d0d0" strokeWidth="2"/>
+  <!-- glasses -->
+  <circle cx="42" cy="34" r="7" fill="none" stroke="#4b5563" strokeWidth="2"/>
+  <circle cx="58" cy="34" r="7" fill="none" stroke="#4b5563" strokeWidth="2"/>
+  <line x1="49" y1="34" x2="51" y2="34" stroke="#4b5563" strokeWidth="2"/>
+  <line x1="28" y1="32" x2="35" y2="33" stroke="#4b5563" strokeWidth="2"/>
+  <line x1="65" y1="33" x2="72" y2="32" stroke="#4b5563" strokeWidth="2"/>
+  <!-- smile -->
+  <path d="M43,43 Q50,47 57,43" fill="none" stroke="#c87040" strokeWidth="1.5" strokeLinecap="round"/>
+  <!-- cane -->
+  <path d="M76,54 L82,95" stroke="#8b6340" strokeWidth="4" strokeLinecap="round"/>
+  <path d="M82,95 Q86,99 90,95" fill="none" stroke="#8b6340" strokeWidth="3" strokeLinecap="round"/>
+  <!-- arms -->
+  <path d="M30,62 Q16,56 12,64" fill="none" stroke="#6b7280" strokeWidth="7" strokeLinecap="round"/>
+  <circle cx="12" cy="64" r="7" fill="#fcd5b0" stroke="#e8b88a" strokeWidth="2"/>
+  <path d="M70,60 Q76,62 82,58" fill="none" stroke="#6b7280" strokeWidth="6" strokeLinecap="round"/>
+</svg>

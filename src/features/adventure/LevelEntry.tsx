@@ -167,6 +167,10 @@ export default function LevelEntry() {
                 </span>
                 {done ? (
                   <span className="text-emerald-600 font-bold text-sm">{t('levelChallengeDone')}</span>
+                ) : ch.game_mode === 'echo_record' ? (
+                  <span className="text-xs text-gray-400 px-3 py-1.5 rounded-lg bg-gray-100">
+                    {t('comingSoon')}
+                  </span>
                 ) : status !== 'locked' ? (
                   <button
                     type="button"

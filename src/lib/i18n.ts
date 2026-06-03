@@ -196,6 +196,7 @@ export const T = {
 
   // ── AdventureReturn (games → adventure) ─────────────────────────────────
   adventureReturn:      { ja: '冒険に もどる',             zh: '回冒險' },
+  comingSoon:           { ja: 'もうすぐ！',                zh: '即將推出' },
 
   // ── LevelComplete ────────────────────────────────────────────────────────
   levelCompleteTitle:   { ja: 'かんせい！',                zh: '關卡完成！' },

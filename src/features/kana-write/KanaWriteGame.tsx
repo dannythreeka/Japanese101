@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { kanaData } from '../../data/loaders'
 import type { Kana } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
+import { useAdventureChallenge } from '../../hooks/useAdventureChallenge'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
 import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
 import { calculateXpGain, addXpToPet } from '../../lib/pet'
@@ -56,6 +57,7 @@ function renderRefChar(
 export default function KanaWriteGame() {
   const navigate = useNavigate()
   const { ageMode, kanaDifficulty } = useAppStore()
+  const adventure = useAdventureChallenge()
   const t = useT()
 
   const canvasRef = useRef<HTMLCanvasElement>(null)
@@ -74,11 +76,23 @@ export default function KanaWriteGame() {
   const [isAnimating, setIsAnimating] = useState(false)
   const animFrameRef = useRef<number | null>(null)
 
-  // Build round once on mount
+  // Build round — use adventure kanaPool override when launched from a level
   useEffect(() => {
+    const pending = adventure.pending
+    if (pending?.gameMode === 'write_canvas') {
+      const poolChars = pending.configOverrides.kanaPool
+      const roundLen = pending.configOverrides.roundLength
+      if (Array.isArray(poolChars)) {
+        const filtered = ALL_KANA.filter(k => (poolChars as string[]).includes(k.hiragana))
+        const len = typeof roundLen === 'number' ? roundLen : ROUND_SIZE
+        setRound(pickRound(filtered.length > 0 ? filtered : ALL_KANA, len))
+        return
+      }
+    }
     const pool = buildWritePool(ALL_KANA, ageMode, kanaDifficulty)
     setRound(pickRound(pool, ROUND_SIZE))
-  }, [ageMode, kanaDifficulty])
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   const currentKana = round[currentIdx] ?? null
 
@@ -348,6 +362,8 @@ export default function KanaWriteGame() {
   if (phase === 'done') {
     const totalStars = results.reduce((sum, r) => sum + r.stars, 0)
     const maxStars = results.length * 3
+    const correct = results.filter(r => r.stars >= 2).length
+    const accuracy = results.length > 0 ? correct / results.length : 0
     return (
       <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center justify-center px-4 gap-6">
         <p className="text-5xl">✏️</p>
@@ -356,7 +372,7 @@ export default function KanaWriteGame() {
           {'⭐'.repeat(Math.round(totalStars / Math.max(maxStars, 1) * 3))}
         </div>
         <p className="text-xl text-gray-600">
-          {results.filter(r => r.stars >= 2).length} / {results.length} {t('correct')}
+          {correct} / {results.length} {t('correct')}
         </p>
         {xpGained > 0 && (
           <p className="text-lg text-emerald-600 font-semibold">+{xpGained} XP ✨</p>
@@ -370,13 +386,23 @@ export default function KanaWriteGame() {
             </div>
           ))}
         </div>
-        <button
-          type="button"
-          onClick={() => navigate('/play')}
-          className="mt-2 px-8 py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 transition-colors"
-        >
-          {t('kanaWriteReturn')}
-        </button>
+        {adventure.isActive ? (
+          <button
+            type="button"
+            onClick={() => adventure.submitResult(accuracy, xpGained)}
+            className="mt-2 px-8 py-3 rounded-2xl bg-indigo-500 text-white text-xl font-bold shadow hover:bg-indigo-600 transition-colors"
+          >
+            {t('adventureReturn')}
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={() => navigate('/play')}
+            className="mt-2 px-8 py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 transition-colors"
+          >
+            {t('kanaWriteReturn')}
+          </button>
+        )}
       </div>
     )
   }
@@ -398,7 +424,7 @@ export default function KanaWriteGame() {
       <div className="w-full max-w-sm flex justify-between items-center">
         <button
           type="button"
-          onClick={() => navigate('/play')}
+          onClick={() => adventure.isActive ? adventure.cancelChallenge() : navigate('/play')}
           className="text-2xl text-gray-500 hover:text-gray-700"
         >
           ←

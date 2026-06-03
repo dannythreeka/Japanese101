@@ -1,176 +1,316 @@
 {
-  "$schema": "./unit_lessons.schema.json",
+  "$schema": "../schemas/unit_lessons.schema.json",
+  "_meta": {
+    "note": "Beta 階段 4 課,對應冒險模式 L2-L5。直接從上傳 JSON 萃取教學概念與課本選詞;每個 concept_word 必有對應 vocabulary.json 條目。",
+    "review_status": "已由家長確認:採用課本選詞;教學概念與場景設計為原創。"
+  },
   "lessons": [
     {
-      "unit_id": "mitsumura_g1_kaki_to_kagi",
-      "source_ref": {
-        "publisher": "光村圖書",
-        "grade": "小1",
-        "page_hint": "p.40-41"
-      },
-      "unit_name_zh": "柿子與鑰匙(濁音半濁音入門)",
-      "learning_concept": "濁音(゛)與半濁音(゜)會改變發音與意義,一個小點點就能讓字變身、詞變身",
+      "unit_id": "mitsumura_g1_u2_aiueo",
+      "source_ref": { "publisher": "光村圖書", "grade": "小1上", "page_hint": "p.20-23" },
+      "unit_name_zh": "配著歌唱 あいうえお(母音入門)",
+      "learning_concept": "認識五個母音 あいうえお 的發音、嘴形與書寫;每個音都有以它開頭的代表詞",
       "sub_goals": [
-        "聽辨清音/濁音/半濁音的差異",
+        "聽辨五個母音的差別",
+        "看到字能念出對應的音",
+        "練習書寫五個母音(此為寫字遊戲重點)",
+        "把每個母音與一個代表詞連結"
+      ],
+      "target_kana_pairs": [
+        ["あ"], ["い"], ["う"], ["え"], ["お"]
+      ],
+      "teaching_structure": ["recognize", "listen_pick", "write"],
+      "suggested_game_modes": [
+        "kana_catch_listen",
+        "write_canvas",
+        "kotodama_summon",
+        "echo_record"
+      ],
+      "concept_words": [
+        {
+          "id": "w_ajisai", "word": "あじさい", "meaning_zh": "繡球花",
+          "kotodama_scene": {
+            "scene_id": "ajisai_blooms",
+            "initial_state": "灰色雨中,枝頭有花苞",
+            "success_state": "雨停,繡球花一朵朵綻放,呈藍紫色",
+            "asset_hint": "雨絲、葉子、繡球花花球(藍紫)、地面水窪",
+            "anim_hint": "雨絲停 → 花苞依序展開為球狀繡球花 → 陽光從雲縫灑下"
+          }
+        },
+        {
+          "id": "w_ichigo", "word": "いちご", "meaning_zh": "草莓",
+          "kotodama_scene": {
+            "scene_id": "ichigo_appears",
+            "initial_state": "綠色草叢,看不見果實",
+            "success_state": "草叢中冒出幾顆紅色草莓",
+            "asset_hint": "草叢、葉子、紅色草莓帶白點與小綠葉",
+            "anim_hint": "草搖動 → 紅色果實一顆顆從葉下露出"
+          }
+        },
+        {
+          "id": "w_uma", "word": "うま", "meaning_zh": "馬",
+          "kotodama_scene": {
+            "scene_id": "uma_runs_in",
+            "initial_state": "空曠草原,遠方有山",
+            "success_state": "一匹馬從畫面外跑入,停在中央甩動鬃毛",
+            "asset_hint": "草原、山、馬(棕色,有鬃毛與尾巴)",
+            "anim_hint": "馬從右側畫面外奔入 → 揚起塵土 → 停在中央昂首甩鬃"
+          }
+        },
+        {
+          "id": "w_ebi", "word": "えび", "meaning_zh": "蝦子",
+          "kotodama_scene": {
+            "scene_id": "ebi_swims",
+            "initial_state": "海底,有海草與石頭,水是灰色",
+            "success_state": "水變藍,一隻紅色蝦子從石頭後游出",
+            "asset_hint": "海草、石頭、紅色蝦子、氣泡",
+            "anim_hint": "水色由灰轉藍 → 氣泡浮上 → 蝦子從石頭後游出彈跳"
+          }
+        },
+        {
+          "id": "w_onigiri", "word": "おにぎり", "meaning_zh": "飯糰",
+          "kotodama_scene": {
+            "scene_id": "onigiri_appears",
+            "initial_state": "桌面有空盤子",
+            "success_state": "盤子上出現一顆三角形飯糰,有海苔片",
+            "asset_hint": "盤子、三角飯糰(白色,黑色海苔)",
+            "anim_hint": "盤子發光 → 飯糰從盤上方落下 → 黑色海苔貼上"
+          }
+        }
+      ]
+    },
+
+    {
+      "unit_id": "mitsumura_g1_u4_dakuten",
+      "source_ref": { "publisher": "光村圖書", "grade": "小1上", "page_hint": "p.40-41" },
+      "unit_name_zh": "かき 與 かぎ(濁音半濁音)",
+      "learning_concept": "濁音(゛)與半濁音(゜)會改變發音與意義;一個小點點就能讓字變身、詞變身",
+      "sub_goals": [
+        "聽辨清音/濁音/半濁音",
         "看辨字形上有無濁點/半濁點",
         "理解一個點點會改變整個詞的意思",
         "能在正確位置加上濁點寫出詞"
       ],
       "target_kana_pairs": [
-        ["か", "が"],
-        ["き", "ぎ"],
-        ["さ", "ざ"],
-        ["と", "ど"],
-        ["ふ", "ぶ", "ぷ"]
+        ["か", "が"], ["き", "ぎ"], ["さ", "ざ"], ["と", "ど"], ["ふ", "ぶ", "ぷ"]
       ],
       "teaching_structure": ["recognize", "minimal_pair", "produce"],
       "suggested_game_modes": [
         "kana_catch_minimal_pair",
         "kana_catch_word_to_image",
-        "dakuten_drag"
+        "dakuten_drag",
+        "kotodama_summon",
+        "echo_record"
       ],
       "concept_words": [
         {
-          "id": "w_kasa",
-          "word": "かさ",
-          "meaning_zh": "傘",
-          "pair_with": "w_kazan",
+          "id": "w_kaki", "word": "かき", "meaning_zh": "柿子", "pair_with": "w_kagi",
           "kotodama_scene": {
-            "scene_id": "rainy_to_sunny",
-            "initial_state": "下著雨的灰色天空,地上有水窪",
-            "success_state": "雨停了、太陽出來,傘在草地上收起來放好",
-            "asset_hint": "雨雲、雨滴粒子、傘、太陽、草地、小水窪",
-            "anim_hint": "雲層散開 → 雨滴停 → 傘從打開漸變收起 → 太陽從雲後升起"
+            "scene_id": "kaki_on_tree",
+            "initial_state": "光禿禿的樹",
+            "success_state": "樹上長出橘紅色柿子",
+            "asset_hint": "樹幹、樹枝、橘紅柿子",
+            "anim_hint": "樹枝抽芽 → 橘紅果實依序長出"
           }
         },
         {
-          "id": "w_kazan",
-          "word": "かざん",
-          "meaning_zh": "火山",
-          "pair_with": "w_kasa",
+          "id": "w_kagi", "word": "かぎ", "meaning_zh": "鑰匙", "pair_with": "w_kaki",
           "kotodama_scene": {
-            "scene_id": "quiet_to_erupting_mountain",
-            "initial_state": "安靜的山,藍天白雲",
-            "success_state": "山頂噴出煙與小火花,地面微微震動",
-            "asset_hint": "山的輪廓、藍天、白雲、煙、火花粒子、地面",
-            "anim_hint": "山先輕微震動 → 山頂噴出煙柱 → 小紅色火花粒子飄散"
+            "scene_id": "kagi_unlocks",
+            "initial_state": "緊閉的木箱,上有鎖頭",
+            "success_state": "鑰匙轉動,鎖打開,箱子彈出光芒",
+            "asset_hint": "木箱、金色鎖頭、金色鑰匙、光線",
+            "anim_hint": "鑰匙插入鎖頭 → 旋轉 → 鎖開 → 箱蓋打開,金色光芒射出"
           }
         },
         {
-          "id": "w_tsuki",
-          "word": "つき",
-          "meaning_zh": "月亮",
-          "pair_with": "w_tsugi",
+          "id": "w_saru", "word": "さる", "meaning_zh": "猴子", "pair_with": "w_zaru",
           "kotodama_scene": {
-            "scene_id": "day_to_night_with_moon",
-            "initial_state": "白天的藍色天空",
-            "success_state": "天空變成深藍夜空,月亮高掛、有幾顆星星",
-            "asset_hint": "天空(漸層)、月亮、星星、雲",
-            "anim_hint": "天色從藍漸變為深藍 → 月亮從畫面下方緩緩升起 → 星星一顆顆亮起"
+            "scene_id": "saru_swings",
+            "initial_state": "森林,空蕩的樹藤",
+            "success_state": "一隻棕色猴子抓著樹藤盪過畫面",
+            "asset_hint": "森林背景、樹藤、棕色猴子",
+            "anim_hint": "猴子從左盪入 → 停在中央揮手 → 繼續盪向右"
           }
         },
         {
-          "id": "w_tsugi",
-          "word": "つぎ",
-          "meaning_zh": "下一個",
-          "pair_with": "w_tsuki",
+          "id": "w_zaru", "word": "ざる", "meaning_zh": "竹篩", "pair_with": "w_saru",
           "kotodama_scene": {
-            "scene_id": "book_page_turn",
-            "initial_state": "一本攤開的書,左右兩頁有不同的小插圖",
-            "success_state": "書頁翻過去,新的一頁出現",
-            "asset_hint": "書本(攤開)、書頁、頁上的簡單插圖、翻頁動作",
-            "anim_hint": "右側頁面從右往左翻過去 → 新頁面內容淡入"
+            "scene_id": "zaru_catches",
+            "initial_state": "廚房桌面",
+            "success_state": "竹篩從畫面上方落下,接住正在掉落的蔬菜",
+            "asset_hint": "桌面、咖啡色竹篩(編織紋)、紅蘿蔔",
+            "anim_hint": "竹篩從上落下 → 在桌面上接住小蔬菜 → 微微震動"
           }
         },
         {
-          "id": "w_mato",
-          "word": "まと",
-          "meaning_zh": "箭靶",
-          "pair_with": "w_mado",
+          "id": "w_mato", "word": "まと", "meaning_zh": "標靶", "pair_with": "w_mado",
           "kotodama_scene": {
-            "scene_id": "empty_field_with_target",
-            "initial_state": "一片空曠的草地",
-            "success_state": "草地上豎起一個紅白同心圓箭靶,中間插著一支箭",
-            "asset_hint": "草地、藍天、箭靶(紅白同心圓)、箭、雲",
-            "anim_hint": "箭靶從地面升起 → 一支箭從畫面外飛入射中靶心 → 靶心閃光"
+            "scene_id": "mato_appears",
+            "initial_state": "空曠的草地",
+            "success_state": "草地上豎起紅白同心圓標靶,一支箭射中靶心",
+            "asset_hint": "草地、藍天、紅白標靶、箭",
+            "anim_hint": "標靶從地面升起 → 箭從左飛入射中靶心 → 靶心閃光"
           }
         },
         {
-          "id": "w_mado",
-          "word": "まど",
-          "meaning_zh": "窗戶",
-          "pair_with": "w_mato",
+          "id": "w_mado", "word": "まど", "meaning_zh": "窗戶", "pair_with": "w_mato",
           "kotodama_scene": {
-            "scene_id": "wall_to_open_window",
-            "initial_state": "一面平整的牆",
-            "success_state": "牆上出現一扇打開的窗戶,可看到外面的藍天與雲,窗簾被風吹起",
-            "asset_hint": "牆面、窗框、藍天、雲、窗簾、風的線條",
-            "anim_hint": "窗框先在牆上浮現 → 窗戶向兩側打開 → 窗簾被風吹起飄動"
-          }
-        },
-        {
-          "id": "w_kami",
-          "word": "かみ",
-          "meaning_zh": "紙",
-          "pair_with": "w_kani",
-          "kotodama_scene": {
-            "scene_id": "scroll_unrolls_to_paper",
-            "initial_state": "桌面上有一個捲起來的卷軸",
-            "success_state": "卷軸展開成一張白紙,上面浮現幾筆毛筆字",
-            "asset_hint": "桌面、卷軸、展開的紙、毛筆字筆觸",
-            "anim_hint": "卷軸從中間向兩側展開 → 紙完全攤開後 → 幾道墨筆觸依序浮現"
-          }
-        },
-        {
-          "id": "w_kani",
-          "word": "かに",
-          "meaning_zh": "螃蟹",
-          "pair_with": "w_kami",
-          "kotodama_scene": {
-            "scene_id": "sand_to_crab_appears",
-            "initial_state": "一片沙灘,有幾顆貝殼",
-            "success_state": "沙裡爬出一隻紅色小螃蟹,在沙上橫著走幾步",
-            "asset_hint": "沙灘、貝殼、紅色小螃蟹、沙的揚塵",
-            "anim_hint": "沙堆隆起 → 螃蟹從沙裡冒出 → 揚起一些沙塵 → 橫著走兩步停下舉起鉗子"
+            "scene_id": "mado_opens",
+            "initial_state": "灰色的牆面",
+            "success_state": "牆上出現一扇打開的窗戶,可看到外面藍天白雲,窗簾被風吹起",
+            "asset_hint": "牆面、白色窗框、藍天、雲、窗簾",
+            "anim_hint": "窗框在牆上浮現 → 窗戶向兩側打開 → 窗簾被風吹起飄動"
           }
         }
       ],
       "dakuten_drag_items": [
-        {
-          "base": "くき",
-          "target": "ぐき",
-          "meaning_zh": "牙齦",
-          "mark_at": [0],
-          "mark": "dakuten"
-        },
-        {
-          "base": "ふた",
-          "target": "ぶた",
-          "meaning_zh": "豬",
-          "mark_at": [0],
-          "mark": "dakuten"
-        },
-        {
-          "base": "はん",
-          "target": "ぱん",
-          "meaning_zh": "麵包",
-          "mark_at": [0],
-          "mark": "handakuten"
-        },
-        {
-          "base": "ふうせん",
-          "target": "ぷうせん",
-          "meaning_zh": "(示意題,實際請替換為真實只差半濁點的詞)",
-          "mark_at": [0],
-          "mark": "handakuten",
-          "_note": "此筆為佔位,家長定稿時請替換"
-        }
+        { "base": "かき", "target": "かぎ", "meaning_zh": "鑰匙", "mark_at": [1], "mark": "dakuten" },
+        { "base": "さる", "target": "ざる", "meaning_zh": "竹篩", "mark_at": [0], "mark": "dakuten" },
+        { "base": "まと", "target": "まど", "meaning_zh": "窗戶", "mark_at": [1], "mark": "dakuten" },
+        { "base": "こんふ", "target": "こんぶ", "meaning_zh": "昆布", "mark_at": [2], "mark": "dakuten" },
+        { "base": "おんふ", "target": "おんぷ", "meaning_zh": "音符", "mark_at": [2], "mark": "handakuten" }
+      ]
+    },
+
+    {
+      "unit_id": "mitsumura_g1_u6_sokuon",
+      "source_ref": { "publisher": "光村圖書", "grade": "小1上", "page_hint": "p.44-45" },
+      "unit_name_zh": "ねこ 與 ねっこ(促音)",
+      "learning_concept": "小さい『っ』表示一個短停頓(促音);有沒有小っ會讓詞變成不同意思",
+      "sub_goals": [
+        "聽辨有無促音的差別(ねこ vs ねっこ)",
+        "看辨字形上有無小っ",
+        "理解促音改變詞意",
+        "練習在正確位置寫上小っ"
       ],
-      "_review": {
-        "reviewed_by": "PENDING",
-        "no_copyrighted_content": true,
-        "notes": "此檔為自動產生草稿。所有 concept_words 與 dakuten_drag_items 須由家長/老師人工檢視,確認 (1) 未照抄課本詞彙選編 (2) base/target 真的只差濁點或半濁點 (3) 對應圖片皆有合法授權後,再將 no_copyrighted_content 設為 true。"
-      }
+      "target_kana_pairs": [
+        ["ねこ", "ねっこ"]
+      ],
+      "teaching_structure": ["recognize", "minimal_pair", "listen_pick"],
+      "suggested_game_modes": [
+        "kana_catch_word_to_image",
+        "kana_catch_minimal_pair",
+        "kotodama_summon",
+        "echo_record"
+      ],
+      "concept_words": [
+        {
+          "id": "w_neko", "word": "ねこ", "meaning_zh": "貓", "pair_with": "w_nekko",
+          "kotodama_scene": {
+            "scene_id": "neko_walks",
+            "initial_state": "空蕩的房間",
+            "success_state": "一隻貓緩緩走入畫面,坐下舔毛",
+            "asset_hint": "房間、橘色虎斑貓、地毯",
+            "anim_hint": "貓從左側慢步走入 → 停在中央坐下 → 舔前掌"
+          }
+        },
+        {
+          "id": "w_nekko", "word": "ねっこ", "meaning_zh": "樹根", "pair_with": "w_neko",
+          "kotodama_scene": {
+            "scene_id": "nekko_emerges",
+            "initial_state": "平整的土地,上方有樹幹但看不到根",
+            "success_state": "地面裂開,棕色樹根盤旋而出,延伸到畫面外",
+            "asset_hint": "樹幹、土地、棕色樹根(盤繞)",
+            "anim_hint": "地面震動裂開 → 樹根從地下伸出 → 盤旋延展"
+          }
+        },
+        {
+          "id": "w_batta", "word": "ばった", "meaning_zh": "蚱蜢",
+          "kotodama_scene": {
+            "scene_id": "batta_jumps",
+            "initial_state": "靜止的草叢",
+            "success_state": "一隻綠色蚱蜢從草叢跳出,在空中停留一瞬",
+            "asset_hint": "草叢、綠色蚱蜢、跳躍弧線",
+            "anim_hint": "草搖 → 蚱蜢跳出 → 在頂點停一拍 → 落下"
+          }
+        },
+        {
+          "id": "w_kakekko", "word": "かけっこ", "meaning_zh": "賽跑",
+          "kotodama_scene": {
+            "scene_id": "kakekko_run",
+            "initial_state": "灰色操場",
+            "success_state": "兩個孩子剪影並肩衝過終點線",
+            "asset_hint": "操場、紅色終點線、兩個孩子剪影",
+            "anim_hint": "兩個剪影從左跑入 → 並肩衝線 → 終點線飄動"
+          }
+        }
+      ]
+    },
+
+    {
+      "unit_id": "mitsumura_g1_u7_chouon",
+      "source_ref": { "publisher": "光村圖書", "grade": "小1上", "page_hint": "p.48-49" },
+      "unit_name_zh": "おばさん 與 おばあさん(長音)",
+      "learning_concept": "把音拉長一拍會變成不同的詞;a 段長音多用『あ』、o 段長音多用『う』",
+      "sub_goals": [
+        "聽辨短音與長音(おばさん vs おばあさん)",
+        "認識家人稱呼詞",
+        "理解 a 段長音寫『あ』、o 段長音寫『う』的規則",
+        "練習書寫長音詞"
+      ],
+      "target_kana_pairs": [
+        ["おばさん", "おばあさん"]
+      ],
+      "teaching_structure": ["recognize", "minimal_pair", "listen_pick"],
+      "suggested_game_modes": [
+        "kana_catch_word_to_image",
+        "kana_catch_minimal_pair",
+        "kotodama_summon",
+        "echo_record"
+      ],
+      "concept_words": [
+        {
+          "id": "w_obasan", "word": "おばさん", "meaning_zh": "阿姨", "pair_with": "w_obaasan",
+          "kotodama_scene": {
+            "scene_id": "obasan_arrives",
+            "initial_state": "客廳沙發,空蕩",
+            "success_state": "一位中年女士走入坐下,微笑揮手",
+            "asset_hint": "客廳、沙發、阿姨剪影(較年輕)",
+            "anim_hint": "從右側走入 → 坐下 → 揮手"
+          }
+        },
+        {
+          "id": "w_obaasan", "word": "おばあさん", "meaning_zh": "奶奶", "pair_with": "w_obasan",
+          "kotodama_scene": {
+            "scene_id": "obaasan_arrives",
+            "initial_state": "客廳沙發,空蕩",
+            "success_state": "一位老奶奶柱著拐杖走入坐下,微笑",
+            "asset_hint": "客廳、沙發、奶奶剪影(白髮、拐杖)",
+            "anim_hint": "拄拐杖緩步走入 → 坐下 → 微笑"
+          }
+        },
+        {
+          "id": "w_okaasan", "word": "おかあさん", "meaning_zh": "媽媽",
+          "kotodama_scene": {
+            "scene_id": "okaasan_arrives",
+            "initial_state": "廚房,空蕩",
+            "success_state": "媽媽走入廚房圍上圍裙",
+            "asset_hint": "廚房、媽媽剪影、圍裙",
+            "anim_hint": "走入 → 拿起圍裙穿上"
+          }
+        },
+        {
+          "id": "w_otousan", "word": "おとうさん", "meaning_zh": "爸爸",
+          "kotodama_scene": {
+            "scene_id": "otousan_arrives",
+            "initial_state": "玄關,空蕩",
+            "success_state": "爸爸從外面回家,放下公事包",
+            "asset_hint": "玄關、爸爸剪影、公事包",
+            "anim_hint": "從門口走入 → 放下公事包 → 揮手"
+          }
+        },
+        {
+          "id": "w_yuuyake", "word": "ゆうやけ", "meaning_zh": "晚霞",
+          "kotodama_scene": {
+            "scene_id": "yuuyake_sky",
+            "initial_state": "白天的藍天",
+            "success_state": "天空變成橘紅色晚霞,遠方山影",
+            "asset_hint": "天空(藍→橘紅漸層)、雲、遠山",
+            "anim_hint": "天色從藍漸變橘紅 → 雲被染紅 → 太陽落到地平線"
+          }
+        }
+      ]
     }
   ]
 }

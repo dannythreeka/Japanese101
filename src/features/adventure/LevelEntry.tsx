@@ -5,6 +5,7 @@ import { levelsData } from '../../data/loaders'
 import { useAppStore } from '../../store/useAppStore'
 import { useT } from '../../hooks/useT'
 import { getFirstLevelId, getLevelStatus } from './adventureEngine'
+import { SCENE_REGISTRY } from '../kotodama/scenes'
 import type { Level, AdventureProgress } from '../../types/adventure'
 import type { GameModeId } from '../../types'
 
@@ -58,6 +59,7 @@ export default function LevelEntry() {
 
   const status = getLevelStatus(level, progress)
   const completedRecord = progress.completed_levels[level.level_id]
+  const BossScene = level.level_type === 'boss' ? SCENE_REGISTRY['shizuka_kage'] : null
   const sessionResults = (adventureSession && adventureSession.levelId === levelId) ? adventureSession.results : {}
 
   const requiredChallenges = level.challenges.filter((c) => c.required_for_completion !== false)
@@ -86,6 +88,13 @@ export default function LevelEntry() {
           {t('levelBack')}
         </button>
       </div>
+
+      {/* Boss scene illustration */}
+      {BossScene && (
+        <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-lg">
+          <BossScene success={status === 'completed'} />
+        </div>
+      )}
 
       {/* Level header */}
       <div className="w-full max-w-sm bg-white/80 rounded-2xl p-5 shadow flex flex-col gap-2">

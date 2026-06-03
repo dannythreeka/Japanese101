@@ -7,6 +7,7 @@ import { playSfx } from '../../lib/audio'
 import { saveSession } from '../../db'
 import { addXpToPet } from '../../lib/pet'
 import { buildKotodamaRound } from './KotodamaEngine'
+import { lessonData } from '../../data/loaders'
 import { SCENE_REGISTRY } from './scenes'
 import { useT } from '../../hooks/useT'
 import {
@@ -22,6 +23,7 @@ type GamePhase = 'initial' | 'listening' | 'success' | 'done'
 
 const ROUNDS = 3
 const MAX_ATTEMPTS = 5
+const ALL_LESSONS = lessonData()
 
 export default function KotodamaGame() {
   const navigate = useNavigate()
@@ -46,7 +48,16 @@ export default function KotodamaGame() {
     }
   }, [micMode]) // eslint-disable-line react-hooks/exhaustive-deps
 
-  const [words] = useState(() => buildKotodamaRound(undefined, ROUNDS))
+  const [words] = useState(() => {
+    const ov = adventure.pending?.configOverrides
+    const pool = ov?.unitPool
+    const count = typeof ov?.roundLength === 'number' ? ov.roundLength : ROUNDS
+    if (Array.isArray(pool)) {
+      const filtered = ALL_LESSONS.filter(l => (pool as string[]).includes(l.unit_id))
+      return buildKotodamaRound(filtered.length > 0 ? filtered : undefined, count)
+    }
+    return buildKotodamaRound(undefined, count)
+  })
   const [roundIndex, setRoundIndex] = useState(0)
   const [phase, setPhase] = useState<GamePhase>('initial')
   const [outcome, setOutcome] = useState<MicOutcome | null>(null)

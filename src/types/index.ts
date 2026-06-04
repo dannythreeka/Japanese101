@@ -32,6 +32,7 @@ export interface Word {
   category: string
   unit?: string
   emoji?: string
+  source?: 'mitsumura_content' | 'mitsumura_qr' | 'extended'
   image: Asset
   audio: Asset
 }

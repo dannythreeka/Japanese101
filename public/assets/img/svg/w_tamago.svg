@@ -1,15 +1,1 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" fill="#fffde7" rx="8"/>
-  <!-- egg -->
-  <path d="M50,15 Q72,15 78,42 Q82,65 50,82 Q18,65 22,42 Q28,15 50,15Z" fill="#fef9c3" stroke="#fde047" strokeWidth="3"/>
-  <!-- shine -->
-  <path d="M36,28 Q44,22 52,26" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round"/>
-  <!-- face -->
-  <circle cx="40" cy="50" r="4" fill="#2a1a0a"/>
-  <circle cx="60" cy="50" r="4" fill="#2a1a0a"/>
-  <circle cx="41" cy="49" r="1.5" fill="white"/>
-  <circle cx="61" cy="49" r="1.5" fill="white"/>
-  <path d="M40,60 Q50,66 60,60" fill="none" stroke="#c87040" strokeWidth="2" strokeLinecap="round"/>
-  <!-- sparkle -->
-  <text x="76" y="30" fontSize="14" fill="#fbbf24">✦</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><ellipse cx="50" cy="52" rx="22" ry="28" fill="#FFFBF2" stroke="#2E2E2E" stroke-width="3.5"/><ellipse cx="42" cy="40" rx="3" ry="6" fill="#FFF" opacity="0.8"/></svg>

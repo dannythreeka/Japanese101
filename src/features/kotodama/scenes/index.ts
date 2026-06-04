@@ -28,6 +28,13 @@ import OkaasanArrivesScene from './OkaasanArrivesScene'
 import OtousanArrivesScene from './OtousanArrivesScene'
 import YuuyakeSkyScene from './YuuyakeSkyScene'
 
+// ── u8 おもち/おもちゃ ────────────────────────────────────────────────────────
+import OmochiRoundScene from './OmochiRoundScene'
+import OmochaAppearsScene from './OmochaAppearsScene'
+import JitenshaRidesScene from './JitenshaRidesScene'
+import ChouFliesScene from './ChouFliesScene'
+import KyouryuuRoarsScene from './KyouryuuRoarsScene'
+
 // ── boss ─────────────────────────────────────────────────────────────────────
 import ShizukaKageScene from './ShizukaKageScene'
 
@@ -56,6 +63,12 @@ export const SCENE_REGISTRY: Record<string, ComponentType<{ success: boolean }>>
   okaasan_arrives:  OkaasanArrivesScene,
   otousan_arrives:  OtousanArrivesScene,
   yuuyake_sky:      YuuyakeSkyScene,
+  // u8
+  omochi_round:     OmochiRoundScene,
+  omocha_appears:   OmochaAppearsScene,
+  jitensha_rides:   JitenshaRidesScene,
+  chou_flies:       ChouFliesScene,
+  kyouryuu_roars:   KyouryuuRoarsScene,
   // boss
   shizuka_kage:     ShizukaKageScene,
 }

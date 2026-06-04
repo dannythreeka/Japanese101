@@ -1,8 +1,8 @@
 {
   "$schema": "../schemas/levels.schema.json",
   "_meta": {
-    "note": "Beta 階段完整 6 關(L1-L6),對應冒險模式第一週期(4 內容課 + 1 大魔王)。",
-    "boss_period": "每 5 關週期:L1 新手村 + L2-L5 內容 + L6 大魔王"
+    "note": "Beta v0.2 — 7 關第一週期(5+1 拗音擴增版)。打破原本 4+1 節奏,把母音/濁音/促音/長音/拗音 5 個核心 phonics 對立都納入,大魔王複習前 5 課。",
+    "boss_period": "本週期 5 內容課 + 1 大魔王。注意:此週期是 5+1 例外(因為核心 phonics 有 5 個);第二週期起恢復 4+1 節奏。"
   },
   "regions": [
     {
@@ -17,13 +17,7 @@
       "name_zh": "平原",
       "order": 1,
       "asset_hint": "綠色草原、藍天白雲、遠方山影、幾棵孤立的樹,陽光灑落",
-      "level_ids": [
-        "lv_02_aiueo",
-        "lv_03_kaki_kagi",
-        "lv_04_neko_nekko",
-        "lv_05_obasan",
-        "lv_06_boss_1"
-      ]
+      "level_ids": ["lv_02_aiueo", "lv_03_kaki_kagi", "lv_04_neko_nekko", "lv_05_obasan", "lv_06_omocha", "lv_07_boss_1"]
     }
   ],
   "levels": [
@@ -40,35 +34,17 @@
         {
           "challenge_id": "c1_listen_basic",
           "game_mode": "kana_catch_listen",
-          "config_overrides": {
-            "roundLength": 5,
-            "fallSpeed": 50,
-            "maxBubbles": 3,
-            "kanaPool": ["あ","い","う","え","お"],
-            "showRomajiHint": true,
-            "showImageHint": true,
-            "comboEnabled": false
-          }
+          "config_overrides": { "roundLength": 5, "fallSpeed": 50, "maxBubbles": 3, "kanaPool": ["あ","い","う","え","お"], "showRomajiHint": true, "showImageHint": true, "comboEnabled": false }
         },
         {
           "challenge_id": "c2_kotodama_tamago",
           "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "targetWords": ["w_tamago"],
-            "roundLength": 1,
-            "showRomajiHint": true,
-            "autoPlayPronunciationOnLoad": true
-          },
+          "config_overrides": { "targetWords": ["w_tamago"], "roundLength": 1, "showRomajiHint": true, "autoPlayPronunciationOnLoad": true },
           "required_for_completion": false
         }
       ],
       "xp_reward": 100,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.6
-      }
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.6 }
     },
 
     {
@@ -85,49 +61,32 @@
         {
           "challenge_id": "c1_listen_vowels",
           "game_mode": "kana_catch_listen",
-          "config_overrides": {
-            "roundLength": 8,
-            "fallSpeed": 60,
-            "maxBubbles": 4,
-            "kanaPool": ["あ","い","う","え","お"],
-            "showRomajiHint": true,
-            "showImageHint": false
-          }
+          "config_overrides": { "roundLength": 8, "fallSpeed": 60, "maxBubbles": 4, "kanaPool": ["あ","い","う","え","お"], "showRomajiHint": true }
         },
         {
           "challenge_id": "c2_write_vowels",
           "game_mode": "write_canvas",
-          "config_overrides": {
-            "kanaPool": ["あ","い","う","え","お"],
-            "roundLength": 5,
-            "showStrokeOrder": true
-          }
+          "config_overrides": { "kanaPool": ["あ","い","う","え","お"], "roundLength": 5, "showStrokeOrder": true }
         },
         {
-          "challenge_id": "c3_kotodama",
+          "challenge_id": "c3_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "unitId": "mitsumura_g1_u2_aiueo", "roundLength": 6 }
+        },
+        {
+          "challenge_id": "c4_kotodama",
           "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u2_aiueo",
-            "roundLength": 5,
-            "showRomajiHint": true
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u2_aiueo", "roundLength": 5, "showRomajiHint": true }
         },
         {
-          "challenge_id": "c4_echo",
+          "challenge_id": "c5_echo",
           "game_mode": "echo_record",
-          "config_overrides": {
-            "wordPool": ["w_ajisai","w_ichigo","w_uma","w_ebi","w_onigiri"]
-          },
+          "config_overrides": { "wordPool": ["w_ajisai","w_ichigo","w_uma","w_ebi","w_onigiri"] },
           "required_for_completion": false
         }
       ],
       "xp_reward": 150,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
     },
 
     {
@@ -144,47 +103,32 @@
         {
           "challenge_id": "c1_minimal_pair",
           "game_mode": "kana_catch_minimal_pair",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u4_dakuten",
-            "roundLength": 8,
-            "fallSpeed": 70,
-            "maxBubbles": 4
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 8, "fallSpeed": 70, "maxBubbles": 4 }
         },
         {
           "challenge_id": "c2_word_to_image",
           "game_mode": "kana_catch_word_to_image",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u4_dakuten",
-            "roundLength": 6
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 8 }
         },
         {
           "challenge_id": "c3_dakuten_drag",
           "game_mode": "dakuten_drag",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u4_dakuten",
-            "roundLength": 5,
-            "showImageHint": true,
-            "showRomajiHint": false
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 6, "showImageHint": true }
         },
         {
           "challenge_id": "c4_kotodama",
           "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u4_dakuten",
-            "roundLength": 4
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 5 }
+        },
+        {
+          "challenge_id": "c5_echo",
+          "game_mode": "echo_record",
+          "config_overrides": { "wordPool": ["w_kaki","w_kagi","w_saru","w_zaru","w_mato","w_mado"] },
+          "required_for_completion": false
         }
       ],
       "xp_reward": 180,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
     },
 
     {
@@ -201,44 +145,27 @@
         {
           "challenge_id": "c1_word_to_image",
           "game_mode": "kana_catch_word_to_image",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u6_sokuon",
-            "roundLength": 6,
-            "fallSpeed": 65
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u6_sokuon", "roundLength": 8, "fallSpeed": 65 }
         },
         {
           "challenge_id": "c2_minimal_pair",
           "game_mode": "kana_catch_minimal_pair",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u6_sokuon",
-            "roundLength": 6
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u6_sokuon", "roundLength": 6 }
         },
         {
           "challenge_id": "c3_kotodama",
           "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u6_sokuon",
-            "roundLength": 4
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u6_sokuon", "roundLength": 4 }
         },
         {
           "challenge_id": "c4_echo",
           "game_mode": "echo_record",
-          "config_overrides": {
-            "wordPool": ["w_neko","w_nekko","w_batta","w_kakekko"]
-          },
+          "config_overrides": { "wordPool": ["w_neko","w_nekko","w_batta","w_kakekko","w_kitte"] },
           "required_for_completion": false
         }
       ],
       "xp_reward": 180,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
     },
 
     {
@@ -255,100 +182,106 @@
         {
           "challenge_id": "c1_word_to_image",
           "game_mode": "kana_catch_word_to_image",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u7_chouon",
-            "roundLength": 6
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u7_chouon", "roundLength": 8 }
         },
         {
           "challenge_id": "c2_minimal_pair",
           "game_mode": "kana_catch_minimal_pair",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u7_chouon",
-            "roundLength": 5
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u7_chouon", "roundLength": 5 }
         },
         {
           "challenge_id": "c3_kotodama",
           "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u7_chouon",
-            "roundLength": 5
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u7_chouon", "roundLength": 5 }
         },
         {
           "challenge_id": "c4_echo",
           "game_mode": "echo_record",
-          "config_overrides": {
-            "wordPool": ["w_obasan","w_obaasan","w_okaasan","w_otousan","w_yuuyake"]
-          },
+          "config_overrides": { "wordPool": ["w_obasan","w_obaasan","w_okaasan","w_otousan","w_yuuyake"] },
           "required_for_completion": false
         }
       ],
       "xp_reward": 180,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
     },
 
     {
-      "level_id": "lv_06_boss_1",
+      "level_id": "lv_06_omocha",
       "level_number": 6,
+      "level_type": "lesson",
+      "region_id": "region_meadow",
+      "unit_id": "mitsumura_g1_u8_youon",
+      "title_zh": "第五課:おもち 與 おもちゃ",
+      "subtitle_zh": "拗音(小ゃゅょ)的秘密",
+      "story_intro_zh": "「おもち」是麻糬,「おもちゃ」是玩具——多了一個小ゃ就完全不一樣!還有更多小ゃゅょ等你來認識。",
+      "scene_hint": "平原邊的小遊樂場,使用本課 concept_words 的場景(麻糬、玩具盒、腳踏車、蝴蝶、恐龍)。",
+      "challenges": [
+        {
+          "challenge_id": "c1_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "unitId": "mitsumura_g1_u8_youon", "roundLength": 8 }
+        },
+        {
+          "challenge_id": "c2_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "unitId": "mitsumura_g1_u8_youon", "roundLength": 6 }
+        },
+        {
+          "challenge_id": "c3_write",
+          "game_mode": "write_canvas",
+          "config_overrides": { "kanaPool": ["ゃ","ゅ","ょ"], "roundLength": 3, "showStrokeOrder": true }
+        },
+        {
+          "challenge_id": "c4_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "unitId": "mitsumura_g1_u8_youon", "roundLength": 5 }
+        },
+        {
+          "challenge_id": "c5_echo",
+          "game_mode": "echo_record",
+          "config_overrides": { "wordPool": ["w_omochi","w_omocha","w_jitensha","w_kyouryuu","w_chou"] },
+          "required_for_completion": false
+        }
+      ],
+      "xp_reward": 200,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
+    },
+
+    {
+      "level_id": "lv_07_boss_1",
+      "level_number": 7,
       "level_type": "boss",
       "region_id": "region_meadow",
       "title_zh": "大魔王 1:平原的しずか影",
-      "subtitle_zh": "複習第 1–4 課",
-      "story_intro_zh": "通往森林的路被黑色影子擋住了。用你學過的所有言靈,把它驅散!",
+      "subtitle_zh": "複習第 1–5 課:母音、濁音、促音、長音、拗音",
+      "story_intro_zh": "通往森林的路被黑色影子擋住了。把你學過的五種言靈集合起來,驅散它!",
       "boss_review_units": [
         "mitsumura_g1_u2_aiueo",
         "mitsumura_g1_u4_dakuten",
         "mitsumura_g1_u6_sokuon",
-        "mitsumura_g1_u7_chouon"
+        "mitsumura_g1_u7_chouon",
+        "mitsumura_g1_u8_youon"
       ],
-      "scene_hint": "黑暗背景,中央是しずかの影(黑色雲狀,兩顆白眼),周圍漂浮前 4 課學過的詞彙泡泡;影子受到攻擊會縮小。",
+      "scene_hint": "黑暗背景,中央是しずかの影(黑色雲狀,兩顆白眼),周圍漂浮前 5 課學過的詞彙泡泡;影子受到攻擊會縮小。三波攻擊各對應不同 phonics 類型。",
       "challenges": [
         {
-          "challenge_id": "wave1_listen",
+          "challenge_id": "wave1_minimal_pair",
           "game_mode": "kana_catch_minimal_pair",
-          "config_overrides": {
-            "unitPool": ["mitsumura_g1_u4_dakuten","mitsumura_g1_u6_sokuon","mitsumura_g1_u7_chouon"],
-            "roundLength": 5,
-            "fallSpeed": 90,
-            "maxBubbles": 5
-          }
+          "config_overrides": { "unitPool": ["mitsumura_g1_u4_dakuten","mitsumura_g1_u6_sokuon","mitsumura_g1_u7_chouon","mitsumura_g1_u8_youon"], "roundLength": 6, "fallSpeed": 95, "maxBubbles": 5 }
         },
         {
-          "challenge_id": "wave2_dakuten_and_write",
+          "challenge_id": "wave2_dakuten_drag",
           "game_mode": "dakuten_drag",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u4_dakuten",
-            "roundLength": 3
-          }
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 3 }
         },
         {
-          "challenge_id": "wave3_speak",
+          "challenge_id": "wave3_kotodama",
           "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitPool": [
-              "mitsumura_g1_u2_aiueo",
-              "mitsumura_g1_u4_dakuten",
-              "mitsumura_g1_u6_sokuon",
-              "mitsumura_g1_u7_chouon"
-            ],
-            "roundLength": 3
-          }
+          "config_overrides": { "unitPool": ["mitsumura_g1_u2_aiueo","mitsumura_g1_u4_dakuten","mitsumura_g1_u6_sokuon","mitsumura_g1_u7_chouon","mitsumura_g1_u8_youon"], "roundLength": 4 }
         }
       ],
-      "xp_reward": 500,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
+      "xp_reward": 600,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
     }
   ]
 }

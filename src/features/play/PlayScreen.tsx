@@ -190,9 +190,10 @@ export default function PlayScreen() {
       {/* Mic setup prompt */}
       {showMicSetup && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-6">
-          <div className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
+          <div role="dialog" aria-modal="true" aria-labelledby="kotodama-modal-title"
+            className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
             <div className="text-5xl text-center">✨🎤</div>
-            <h3 className="text-2xl font-bold text-indigo-700 text-center">
+            <h3 id="kotodama-modal-title" className="text-2xl font-bold text-indigo-700 text-center">
               {t('kotodamaModalTitle')}
             </h3>
             <p className="text-lg text-gray-600 text-center">

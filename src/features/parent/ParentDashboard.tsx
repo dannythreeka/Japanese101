@@ -3,10 +3,12 @@ import { useNavigate } from 'react-router-dom'
 import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { requestMicPermission } from '../../lib/mic'
-import { getAllProgress, getRecentSessions, getTotalStudyTime } from '../../db'
-import { lessonData } from '../../data/loaders'
+import { getAllProgress, getRecentSessions, getTotalStudyTime, getOrCreateAdventureProgress } from '../../db'
+import { lessonData, levelsData } from '../../data/loaders'
+import { getFirstLevelId } from '../adventure/adventureEngine'
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils'
 import { useT } from '../../hooks/useT'
+import type { AdventureProgress } from '../../types/adventure'
 
 const LESSONS = lessonData()
 
@@ -35,6 +37,7 @@ export default function ParentDashboard() {
   const [studyTime, setStudyTime] = useState(0)
   const [progressRecords, setProgressRecords] = useState<ProgressRecord[]>([])
   const [sessions, setSessions] = useState<SessionRecord[]>([])
+  const [adventureProgress, setAdventureProgress] = useState<AdventureProgress | null>(null)
   const [loading, setLoading] = useState(false)
 
   const t = useT()
@@ -42,14 +45,18 @@ export default function ParentDashboard() {
   useEffect(() => {
     if (!unlocked) return
     setLoading(true)
-    Promise.all([getTotalStudyTime(), getAllProgress(), getRecentSessions(100)]).then(
-      ([time, recs, sess]) => {
-        setStudyTime(time)
-        setProgressRecords(recs)
-        setSessions(sess)
-        setLoading(false)
-      }
-    )
+    Promise.all([
+      getTotalStudyTime(),
+      getAllProgress(),
+      getRecentSessions(100),
+      getOrCreateAdventureProgress(getFirstLevelId()),
+    ]).then(([time, recs, sess, adv]) => {
+      setStudyTime(time)
+      setProgressRecords(recs)
+      setSessions(sess)
+      setAdventureProgress(adv)
+      setLoading(false)
+    })
   }, [unlocked])
 
   const handlePinDigit = (digit: string) => {
@@ -121,6 +128,16 @@ export default function ParentDashboard() {
   const dayCounts = last7DayCounts(sessions)
   const maxCount = Math.max(...dayCounts.map(d => d.count), 1)
 
+  const { levels: allLevels } = levelsData()
+  const completedCount = adventureProgress ? Object.keys(adventureProgress.completed_levels).length : 0
+  const totalLevels = allLevels.length
+  const adventureStars = adventureProgress
+    ? Object.values(adventureProgress.completed_levels).reduce((sum, r) => sum + r.stars, 0)
+    : 0
+  const bossDefeated = adventureProgress
+    ? Object.keys(adventureProgress.completed_levels).some(id => allLevels.find(l => l.level_id === id)?.level_type === 'boss')
+    : false
+
   const kanaModes: KanaMode[] = ['hiragana', 'katakana', 'both']
   const kanaModeLabels: Record<KanaMode, string> = {
     hiragana: t('parentHiragana'),
@@ -162,6 +179,28 @@ export default function ParentDashboard() {
                 <span className="text-3xl">⭐</span>
                 <span className="text-2xl font-bold text-gray-700">{t('parentStars')}</span>
                 <span className="text-3xl font-bold text-yellow-500">{totalStars}</span>
+              </div>
+            </div>
+
+            {/* Adventure progress */}
+            <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-3">
+              <h2 className="text-2xl font-bold text-gray-700">{t('parentAdventureTitle')}</h2>
+              <div className="flex items-center justify-between">
+                <span className="text-xl text-gray-600">{t('parentLevelsLabel')}</span>
+                <span className="text-2xl font-bold text-indigo-600">{completedCount} / {totalLevels}</span>
+              </div>
+              <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                <div
+                  className="h-full bg-indigo-400 rounded-full transition-all"
+                  style={{ width: totalLevels > 0 ? `${(completedCount / totalLevels) * 100}%` : '0%' }}
+                />
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="text-xl text-gray-600">{t('parentAdventureStars')}</span>
+                <span className="text-2xl font-bold text-amber-500">★ {adventureStars}</span>
+              </div>
+              <div className={`text-base font-semibold px-3 py-2 rounded-xl ${bossDefeated ? 'bg-emerald-50 text-emerald-700' : 'bg-gray-50 text-gray-400'}`}>
+                {bossDefeated ? t('parentBossDefeated') : t('parentBossNotYet')}
               </div>
             </div>
 
@@ -328,8 +367,9 @@ export default function ParentDashboard() {
       {/* Mic permission modal */}
       {showMicModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-6">
-          <div className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-800">{t('parentMicModalTitle')}</h3>
+          <div role="dialog" aria-modal="true" aria-labelledby="mic-modal-title"
+            className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
+            <h3 id="mic-modal-title" className="text-2xl font-bold text-gray-800">{t('parentMicModalTitle')}</h3>
             <p className="text-lg text-gray-600">{t('parentMicModalDesc')}</p>
             <ul className="text-base text-gray-500 list-disc pl-5 flex flex-col gap-1">
               <li>{t('parentMicBullet1')}</li>

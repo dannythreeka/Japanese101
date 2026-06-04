@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { getOrCreatePet } from '../../db'
-import { getOrCreateAdventureProgress } from '../../db'
+import { getOrCreatePet, getOrCreateAdventureProgress, getProfile, getActiveProfileId, ensureDefaultProfile, updateProfileLastPlayed } from '../../db'
 import { useAppStore } from '../../store/useAppStore'
 import { xpProgress, xpToNextLevel } from '../../lib/pet'
 import PetAvatar from '../../components/PetAvatar'
@@ -9,6 +8,7 @@ import { useT } from '../../hooks/useT'
 import { getFirstLevelId } from '../adventure/adventureEngine'
 import type { PetState } from '../../types'
 import type { AdventureProgress } from '../../types/adventure'
+import type { Profile } from '../../types/profile'
 
 export default function HomeScreen() {
   const navigate = useNavigate()
@@ -16,15 +16,21 @@ export default function HomeScreen() {
   const t = useT()
   const [pet, setPet] = useState<PetState | null>(null)
   const [adventureProgress, setAdventureProgress] = useState<AdventureProgress | null>(null)
+  const [activeProfile, setActiveProfile] = useState<Profile | null>(null)
 
   useEffect(() => {
     const firstId = getFirstLevelId()
+    const profileId = getActiveProfileId()
     Promise.all([
-      getOrCreatePet(),
-      getOrCreateAdventureProgress(firstId),
-    ]).then(([p, adv]) => {
+      ensureDefaultProfile(),
+      getOrCreatePet(profileId),
+      getOrCreateAdventureProgress(firstId, profileId),
+      getProfile(profileId),
+    ]).then(([, p, adv, prof]) => {
       setPet(p)
       setAdventureProgress(adv)
+      setActiveProfile(prof)
+      void updateProfileLastPlayed(profileId)
     })
   }, [])
 
@@ -61,6 +67,21 @@ export default function HomeScreen() {
           </button>
         </div>
       </div>
+
+      {/* Active player indicator */}
+      {activeProfile && (
+        <button
+          type="button"
+          aria-label={t('profileSwitchAria')}
+          onClick={() => navigate('/profiles')}
+          className="flex items-center gap-2 px-4 py-2 rounded-full bg-white/60 hover:bg-white/90 shadow transition-all active:scale-95"
+          style={{ minHeight: 48 }}
+        >
+          <span className="text-2xl leading-none">{activeProfile.avatar_emoji}</span>
+          <span className="text-sm font-bold text-gray-700">{activeProfile.name}</span>
+          <span className="text-xs text-gray-400 ml-1">{t('profileSwitch')}</span>
+        </button>
+      )}
 
       {/* Pet + XP */}
       <div className="flex flex-col items-center gap-3">

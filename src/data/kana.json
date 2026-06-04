@@ -8,7 +8,8 @@
       "romaji": "a",
       "row": "vowel",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🍎"
     },
     {
       "id": "i",
@@ -17,7 +18,8 @@
       "romaji": "i",
       "row": "vowel",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🐝"
     },
     {
       "id": "u",
@@ -26,7 +28,8 @@
       "romaji": "u",
       "row": "vowel",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🐟"
     },
     {
       "id": "e",
@@ -35,7 +38,8 @@
       "romaji": "e",
       "row": "vowel",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🦒"
     },
     {
       "id": "o",
@@ -44,7 +48,8 @@
       "romaji": "o",
       "row": "vowel",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌊"
     },
     {
       "id": "ka",
@@ -53,7 +58,8 @@
       "romaji": "ka",
       "row": "k",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🦀"
     },
     {
       "id": "ki",
@@ -62,7 +68,8 @@
       "romaji": "ki",
       "row": "k",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🔑"
     },
     {
       "id": "ku",
@@ -71,7 +78,8 @@
       "romaji": "ku",
       "row": "k",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "☁️"
     },
     {
       "id": "ke",
@@ -80,7 +88,8 @@
       "romaji": "ke",
       "row": "k",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🎂"
     },
     {
       "id": "ko",
@@ -89,7 +98,8 @@
       "romaji": "ko",
       "row": "k",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🐨"
     },
     {
       "id": "sa",
@@ -98,7 +108,8 @@
       "romaji": "sa",
       "row": "s",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌸"
     },
     {
       "id": "shi",
@@ -107,7 +118,8 @@
       "romaji": "shi",
       "row": "s",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🍄"
     },
     {
       "id": "su",
@@ -116,7 +128,8 @@
       "romaji": "su",
       "row": "s",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🍉"
     },
     {
       "id": "se",
@@ -125,7 +138,8 @@
       "romaji": "se",
       "row": "s",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "📚"
     },
     {
       "id": "so",
@@ -134,7 +148,8 @@
       "romaji": "so",
       "row": "s",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌌"
     },
     {
       "id": "ta",
@@ -143,7 +158,8 @@
       "romaji": "ta",
       "row": "t",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🥁"
     },
     {
       "id": "chi",
@@ -152,7 +168,8 @@
       "romaji": "chi",
       "row": "t",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌍"
     },
     {
       "id": "tsu",
@@ -161,7 +178,8 @@
       "romaji": "tsu",
       "row": "t",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌙"
     },
     {
       "id": "te",
@@ -170,7 +188,8 @@
       "romaji": "te",
       "row": "t",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "✋"
     },
     {
       "id": "to",
@@ -179,7 +198,8 @@
       "romaji": "to",
       "row": "t",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🐅"
     },
     {
       "id": "na",
@@ -188,7 +208,8 @@
       "romaji": "na",
       "row": "n",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🍆"
     },
     {
       "id": "ni",
@@ -197,7 +218,8 @@
       "romaji": "ni",
       "row": "n",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌈"
     },
     {
       "id": "nu",
@@ -206,7 +228,8 @@
       "romaji": "nu",
       "row": "n",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🍜"
     },
     {
       "id": "ne",
@@ -215,7 +238,8 @@
       "romaji": "ne",
       "row": "n",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🐱"
     },
     {
       "id": "no",
@@ -224,7 +248,8 @@
       "romaji": "no",
       "row": "n",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌾"
     },
     {
       "id": "ha",
@@ -233,7 +258,8 @@
       "romaji": "ha",
       "row": "h",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌺"
     },
     {
       "id": "hi",
@@ -242,7 +268,8 @@
       "romaji": "hi",
       "row": "h",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "☀️"
     },
     {
       "id": "fu",
@@ -251,7 +278,8 @@
       "romaji": "fu",
       "row": "h",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌬️"
     },
     {
       "id": "he",
@@ -260,7 +288,8 @@
       "romaji": "he",
       "row": "h",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🐍"
     },
     {
       "id": "ho",
@@ -269,7 +298,8 @@
       "romaji": "ho",
       "row": "h",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "⭐"
     },
     {
       "id": "ma",
@@ -278,7 +308,8 @@
       "romaji": "ma",
       "row": "m",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🐴"
     },
     {
       "id": "mi",
@@ -287,7 +318,8 @@
       "romaji": "mi",
       "row": "m",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "👂"
     },
     {
       "id": "mu",
@@ -296,7 +328,8 @@
       "romaji": "mu",
       "row": "m",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🦟"
     },
     {
       "id": "me",
@@ -305,7 +338,8 @@
       "romaji": "me",
       "row": "m",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "👁️"
     },
     {
       "id": "mo",
@@ -314,7 +348,8 @@
       "romaji": "mo",
       "row": "m",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🍑"
     },
     {
       "id": "ya",
@@ -323,7 +358,8 @@
       "romaji": "ya",
       "row": "y",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🏹"
     },
     {
       "id": "yu",
@@ -332,7 +368,8 @@
       "romaji": "yu",
       "row": "y",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🛁"
     },
     {
       "id": "yo",
@@ -341,7 +378,8 @@
       "romaji": "yo",
       "row": "y",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🌃"
     },
     {
       "id": "ra",
@@ -350,7 +388,8 @@
       "romaji": "ra",
       "row": "r",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🦁"
     },
     {
       "id": "ri",
@@ -359,7 +398,8 @@
       "romaji": "ri",
       "row": "r",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🎀"
     },
     {
       "id": "ru",
@@ -368,7 +408,8 @@
       "romaji": "ru",
       "row": "r",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🔵"
     },
     {
       "id": "re",
@@ -377,7 +418,8 @@
       "romaji": "re",
       "row": "r",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🧱"
     },
     {
       "id": "ro",
@@ -386,7 +428,8 @@
       "romaji": "ro",
       "row": "r",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🤖"
     },
     {
       "id": "wa",
@@ -395,7 +438,8 @@
       "romaji": "wa",
       "row": "w",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🐊"
     },
     {
       "id": "wo",
@@ -404,7 +448,8 @@
       "romaji": "wo",
       "row": "w",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🎁"
     },
     {
       "id": "n",
@@ -413,7 +458,8 @@
       "romaji": "n",
       "row": "n_single",
       "type": "seion",
-      "difficulty": 1
+      "difficulty": 1,
+      "emoji_hint": "🎵"
     },
     {
       "id": "ga",

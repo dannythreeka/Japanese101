@@ -1,62 +1,77 @@
-import { useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { getOrCreateAdventureProgress } from '../../db'
-import { useT } from '../../hooks/useT'
-import { getSortedLevels, getLevelStatus, getFirstLevelId } from './adventureEngine'
-import { levelsData } from '../../data/loaders'
-import type { Level, LevelStatus, AdventureProgress } from '../../types/adventure'
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getOrCreateAdventureProgress } from '../../db';
+import { useT } from '../../hooks/useT';
+import { playSfx } from '../../lib/audio';
+import {
+  getSortedLevels,
+  getLevelStatus,
+  getFirstLevelId,
+} from './adventureEngine';
+import { levelsData } from '../../data/loaders';
+import type {
+  Level,
+  LevelStatus,
+  AdventureProgress,
+} from '../../types/adventure';
 
 function levelNodeClass(status: LevelStatus, isBoss: boolean): string {
-  const base = 'w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg transition-all select-none border-4'
-  if (status === 'completed') return `${base} bg-amber-400 border-amber-600 text-white`
+  const base =
+    'w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg transition-all select-none border-4';
+  if (status === 'completed')
+    return `${base} bg-amber-400 border-amber-600 text-white cursor-pointer hover:scale-110`;
   if (status === 'next') {
-    const bossStyle = isBoss ? 'bg-purple-600 border-purple-800' : 'bg-indigo-500 border-indigo-700'
-    return `${base} ${bossStyle} text-white animate-pulse cursor-pointer`
+    const bossStyle = isBoss
+      ? 'bg-purple-600 border-purple-800'
+      : 'bg-indigo-500 border-indigo-700';
+    return `${base} ${bossStyle} text-white animate-pulse cursor-pointer`;
   }
-  return `${base} bg-gray-300 border-gray-400 text-gray-500 cursor-not-allowed opacity-60`
+  return `${base} bg-gray-300 border-gray-400 text-gray-500 cursor-not-allowed opacity-60`;
 }
 
 function levelEmoji(level: Level, status: LevelStatus): string {
-  if (level.level_type === 'boss') return '👹'
-  if (level.level_type === 'tutorial') return '⭐'
-  if (status === 'completed') return '✓'
-  return String(level.level_number)
+  if (level.level_type === 'boss') return '👹';
+  if (level.level_type === 'tutorial') return '⭐';
+  if (status === 'completed') return '✓';
+  return String(level.level_number);
 }
 
 function starsDisplay(stars: 1 | 2 | 3): string {
-  return '★'.repeat(stars) + '☆'.repeat(3 - stars)
+  return '★'.repeat(stars) + '☆'.repeat(3 - stars);
 }
 
 export default function AdventureMap() {
-  const navigate = useNavigate()
-  const t = useT()
-  const scrollRef = useRef<HTMLDivElement>(null)
-  const currentNodeRef = useRef<HTMLButtonElement | null>(null)
-  const [progress, setProgress] = useState<AdventureProgress | null>(null)
+  const navigate = useNavigate();
+  const t = useT();
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const currentNodeRef = useRef<HTMLButtonElement | null>(null);
+  const [progress, setProgress] = useState<AdventureProgress | null>(null);
 
-  const levels = getSortedLevels()
-  const { regions } = levelsData()
+  const levels = getSortedLevels();
+  const { regions } = levelsData();
 
   useEffect(() => {
-    getOrCreateAdventureProgress(getFirstLevelId()).then(setProgress)
-  }, [])
+    getOrCreateAdventureProgress(getFirstLevelId()).then(setProgress);
+  }, []);
 
   useEffect(() => {
     if (progress && currentNodeRef.current) {
-      currentNodeRef.current.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' })
+      currentNodeRef.current.scrollIntoView({
+        behavior: 'smooth',
+        inline: 'center',
+        block: 'nearest',
+      });
     }
-  }, [progress])
+  }, [progress]);
 
   function handleLevelClick(level: Level, status: LevelStatus) {
     if (status === 'locked') {
-      alert(t('mapLockedHint'))
-      return
+      alert(t('mapLockedHint'));
+      return;
     }
-    if (status === 'completed') {
-      const ok = window.confirm(t('mapReplayPrompt'))
-      if (!ok) return
-    }
-    navigate(`/adventure/level/${level.level_id}`)
+    // B2: completed levels are directly replayable — no confirm prompt
+    playSfx('tap');
+    navigate(`/adventure/level/${level.level_id}`);
   }
 
   if (!progress) {
@@ -64,7 +79,7 @@ export default function AdventureMap() {
       <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex items-center justify-center">
         <span className="text-emerald-700 text-lg">{t('loading')}</span>
       </div>
-    )
+    );
   }
 
   return (
@@ -90,10 +105,12 @@ export default function AdventureMap() {
       >
         <div className="flex items-center gap-0 min-w-max pb-8">
           {regions.map((region, rIdx) => {
-            const regionLevels = levels.filter((l) => l.region_id === region.region_id)
+            const regionLevels = levels.filter(
+              (l) => l.region_id === region.region_id,
+            );
             const regionUnlocked = regionLevels.some(
               (l) => getLevelStatus(l, progress) !== 'locked',
-            )
+            );
 
             return (
               <div key={region.region_id} className="flex items-center gap-0">
@@ -112,10 +129,11 @@ export default function AdventureMap() {
 
                 {/* Level nodes for this region */}
                 {regionLevels.map((level, lIdx) => {
-                  const status = getLevelStatus(level, progress)
-                  const isBoss = level.level_type === 'boss'
-                  const completedRecord = progress.completed_levels[level.level_id]
-                  const isCurrentNode = status === 'next'
+                  const status = getLevelStatus(level, progress);
+                  const isBoss = level.level_type === 'boss';
+                  const completedRecord =
+                    progress.completed_levels[level.level_id];
+                  const isCurrentNode = status === 'next';
 
                   return (
                     <div key={level.level_id} className="flex items-center">
@@ -156,13 +174,13 @@ export default function AdventureMap() {
                         </span>
                       </div>
                     </div>
-                  )
+                  );
                 })}
               </div>
-            )
+            );
           })}
         </div>
       </div>
     </div>
-  )
+  );
 }

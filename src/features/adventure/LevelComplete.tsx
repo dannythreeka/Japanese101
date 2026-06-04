@@ -1,81 +1,141 @@
-import { useEffect, useRef, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { getOrCreateAdventureProgress } from '../../db'
-import { levelsData } from '../../data/loaders'
-import { addXpToPet } from '../../lib/pet'
-import { useAppStore } from '../../store/useAppStore'
-import { useT } from '../../hooks/useT'
-import { computeStars, completeLevel, getFirstLevelId } from './adventureEngine'
-import PetAvatar from '../../components/PetAvatar'
-import LevelUpModal from '../play/LevelUpModal'
-import type { Level } from '../../types/adventure'
-import type { PetState } from '../../types'
-import type { XpResult } from '../../lib/pet'
+import { useEffect, useRef, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getOrCreateAdventureProgress } from '../../db';
+import { levelsData } from '../../data/loaders';
+import { addXpToPet } from '../../lib/pet';
+import { useAppStore } from '../../store/useAppStore';
+import { useT } from '../../hooks/useT';
+import {
+  computeStars,
+  completeLevel,
+  getFirstLevelId,
+} from './adventureEngine';
+import { playSfx } from '../../lib/audio';
+import PetAvatar from '../../components/PetAvatar';
+import LevelUpModal from '../play/LevelUpModal';
+import type { Level } from '../../types/adventure';
+import type { PetState } from '../../types';
+import type { XpResult } from '../../lib/pet';
 
-const COMPLETION_BONUS = 50
-const PERFECT_BONUS = 30
+const COMPLETION_BONUS = 50;
+const PERFECT_BONUS = 30;
+
+/** B2: scale down XP for replays to reward first-time completion more */
+function replayXpScale(timesPlayed: number): number {
+  if (timesPlayed === 0) return 1.0; // first time
+  if (timesPlayed === 1) return 0.5; // first replay
+  if (timesPlayed === 2) return 0.25; // second replay
+  return 0.1; // third+ replay
+}
 
 export default function LevelComplete() {
-  const { levelId } = useParams<{ levelId: string }>()
-  const navigate = useNavigate()
-  const t = useT()
-  const { adventureSession, clearAdventureSession } = useAppStore()
-  const [pet, setPet] = useState<PetState | null>(null)
-  const [xpResult, setXpResult] = useState<XpResult | null>(null)
-  const [stars, setStars] = useState<1 | 2 | 3>(1)
-  const [bonusXp, setBonusXp] = useState(0)
-  const [level, setLevel] = useState<Level | null>(null)
-  const [hasNextLevel, setHasNextLevel] = useState(false)
-  const savedRef = useRef(false)
+  const { levelId } = useParams<{ levelId: string }>();
+  const navigate = useNavigate();
+  const t = useT();
+  const { adventureSession, clearAdventureSession } = useAppStore();
+  const [pet, setPet] = useState<PetState | null>(null);
+  const [xpResult, setXpResult] = useState<XpResult | null>(null);
+  const [stars, setStars] = useState<1 | 2 | 3>(1);
+  const [bonusXp, setBonusXp] = useState(0);
+  const [level, setLevel] = useState<Level | null>(null);
+  const [hasNextLevel, setHasNextLevel] = useState(false);
+  const [isTransitioning, setIsTransitioning] = useState(false);
+  const savedRef = useRef(false);
 
   useEffect(() => {
-    if (savedRef.current) return
-    savedRef.current = true
+    if (savedRef.current) return;
+    savedRef.current = true;
 
-    const { levels } = levelsData()
-    const found = levels.find((l) => l.level_id === levelId) ?? null
-    setLevel(found)
-    if (!found) return
+    const { levels } = levelsData();
+    const found = levels.find((l) => l.level_id === levelId) ?? null;
+    setLevel(found);
+    if (!found) return;
 
-    const results = (adventureSession && adventureSession.levelId === levelId) ? adventureSession.results : {}
-    const earnedStars = computeStars(found, results)
-    setStars(earnedStars)
+    const results =
+      adventureSession && adventureSession.levelId === levelId
+        ? adventureSession.results
+        : {};
+    const earnedStars = computeStars(found, results);
+    setStars(earnedStars);
 
-    const bonus = COMPLETION_BONUS + (earnedStars === 3 ? PERFECT_BONUS : 0)
-    setBonusXp(bonus)
+    const bestAccuracy = Object.values(results).reduce(
+      (max, r) => Math.max(max, r.accuracy),
+      0,
+    );
 
-    const bestAccuracy = Object.values(results).reduce((max, r) => Math.max(max, r.accuracy), 0)
+    // B2: load progress first so we can scale XP for replays
+    getOrCreateAdventureProgress(getFirstLevelId()).then(async (progress) => {
+      const timesPlayed =
+        progress.completed_levels[found.level_id]?.times_played ?? 0;
+      const rawBonus =
+        COMPLETION_BONUS + (earnedStars === 3 ? PERFECT_BONUS : 0);
+      const scaledBonus = Math.round(rawBonus * replayXpScale(timesPlayed));
+      setBonusXp(scaledBonus);
 
-    Promise.all([
-      getOrCreateAdventureProgress(getFirstLevelId()),
-      addXpToPet(bonus),
-    ]).then(async ([progress, xpRes]) => {
-      setPet(xpRes.pet)
-      if (xpRes.leveledUp) setXpResult(xpRes)
+      const [xpRes, updated] = await Promise.all([
+        addXpToPet(scaledBonus),
+        completeLevel(progress, found, earnedStars, bestAccuracy),
+      ]);
+      setPet(xpRes.pet);
+      if (xpRes.leveledUp) setXpResult(xpRes);
 
-      const updated = await completeLevel(progress, found, earnedStars, bestAccuracy)
-      const sortedIds = levelsData().levels
-        .sort((a, b) => a.level_number - b.level_number)
-        .map((l) => l.level_id)
-      const idx = sortedIds.indexOf(found.level_id)
-      setHasNextLevel(idx >= 0 && idx < sortedIds.length - 1 && updated.current_level_id !== found.level_id)
-    })
-  }, [levelId, adventureSession]) // eslint-disable-line react-hooks/exhaustive-deps
+      const sortedIds = levelsData()
+        .levels.sort((a, b) => a.level_number - b.level_number)
+        .map((l) => l.level_id);
+      const idx = sortedIds.indexOf(found.level_id);
+      setHasNextLevel(
+        idx >= 0 &&
+          idx < sortedIds.length - 1 &&
+          updated.current_level_id !== found.level_id,
+      );
+    });
+  }, [levelId, adventureSession]); // eslint-disable-line react-hooks/exhaustive-deps
 
   function goToMap() {
-    clearAdventureSession()
-    navigate('/adventure')
+    clearAdventureSession();
+    navigate('/adventure');
   }
 
+  // B3: short transition animation before navigating to next level
   function goToNext() {
-    clearAdventureSession()
-    navigate('/adventure')
+    if (isTransitioning) return;
+    playSfx('levelup');
+    setIsTransitioning(true);
+    setTimeout(() => {
+      clearAdventureSession();
+      navigate('/adventure');
+    }, 1100);
   }
 
-  const starsDisplay = '★'.repeat(stars) + '☆'.repeat(3 - stars)
+  const starsDisplay = '★'.repeat(stars) + '☆'.repeat(3 - stars);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-200 to-sky-100 flex flex-col items-center justify-center px-4 gap-6">
+      {/* B3: full-screen transition overlay */}
+      {isTransitioning && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-indigo-500/95 pointer-events-none">
+          <div className="text-7xl font-black text-white animate-bounce drop-shadow-lg">
+            クリア！
+          </div>
+          <div
+            className="text-5xl animate-spin"
+            style={{ animationDuration: '0.6s' }}
+          >
+            ⭐
+          </div>
+          <div className="flex gap-3 text-4xl">
+            <span className="animate-bounce" style={{ animationDelay: '0.1s' }}>
+              ★
+            </span>
+            <span className="animate-bounce" style={{ animationDelay: '0.2s' }}>
+              ★
+            </span>
+            <span className="animate-bounce" style={{ animationDelay: '0.3s' }}>
+              ★
+            </span>
+          </div>
+        </div>
+      )}
       {xpResult?.leveledUp && (
         <LevelUpModal
           newLevel={xpResult.pet.level}
@@ -85,16 +145,22 @@ export default function LevelComplete() {
       )}
 
       {/* Title */}
-      <h1 className="text-4xl font-bold text-indigo-700">{t('levelCompleteTitle')}</h1>
+      <h1 className="text-4xl font-bold text-indigo-700">
+        {t('levelCompleteTitle')}
+      </h1>
 
       {/* Stars */}
       <div className="flex flex-col items-center gap-1">
-        <span className="text-5xl text-amber-400 tracking-widest">{starsDisplay}</span>
+        <span className="text-5xl text-amber-400 tracking-widest">
+          {starsDisplay}
+        </span>
         <span className="text-lg font-bold text-amber-600">
           {t('levelCompleteStars').replace('{n}', String(stars))}
         </span>
         {stars === 3 && (
-          <span className="text-sm text-indigo-600 font-semibold">{t('levelCompletePerfect')}</span>
+          <span className="text-sm text-indigo-600 font-semibold">
+            {t('levelCompletePerfect')}
+          </span>
         )}
       </div>
 
@@ -114,7 +180,9 @@ export default function LevelComplete() {
       </div>
 
       {/* Level name */}
-      {level && <p className="text-base text-gray-600 text-center">{level.title_zh}</p>}
+      {level && (
+        <p className="text-base text-gray-600 text-center">{level.title_zh}</p>
+      )}
 
       {/* Actions */}
       <div className="w-full max-w-sm flex flex-col gap-3 mt-2">
@@ -137,5 +205,5 @@ export default function LevelComplete() {
         </button>
       </div>
     </div>
-  )
+  );
 }

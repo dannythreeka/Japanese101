@@ -13,19 +13,59 @@
   "definitions": {
     "KanaEntry": {
       "type": "object",
-      "required": ["id", "hiragana", "katakana", "romaji", "row", "type", "difficulty"],
+      "required": [
+        "id",
+        "hiragana",
+        "katakana",
+        "romaji",
+        "row",
+        "type",
+        "difficulty"
+      ],
       "additionalProperties": false,
       "properties": {
-        "id":        { "type": "string", "pattern": "^[a-z_]+$" },
-        "hiragana":  { "type": "string", "minLength": 1, "maxLength": 2 },
-        "katakana":  { "type": "string", "minLength": 1, "maxLength": 2 },
-        "romaji":    { "type": "string", "pattern": "^[a-z]+$" },
-        "row":       {
+        "id": { "type": "string", "pattern": "^[a-z_]+$" },
+        "hiragana": { "type": "string", "minLength": 1, "maxLength": 2 },
+        "katakana": { "type": "string", "minLength": 1, "maxLength": 2 },
+        "romaji": { "type": "string", "pattern": "^[a-z]+$" },
+        "row": {
           "type": "string",
-          "enum": ["vowel","k","s","t","n","h","m","y","r","w","n_single","g","z","d","b","p","ky","sh","ch","ny","hy","my","ry","gy","ja","by","py"]
+          "enum": [
+            "vowel",
+            "k",
+            "s",
+            "t",
+            "n",
+            "h",
+            "m",
+            "y",
+            "r",
+            "w",
+            "n_single",
+            "g",
+            "z",
+            "d",
+            "b",
+            "p",
+            "ky",
+            "sh",
+            "ch",
+            "ny",
+            "hy",
+            "my",
+            "ry",
+            "gy",
+            "ja",
+            "by",
+            "py"
+          ]
         },
-        "type":      { "type": "string", "enum": ["seion","dakuon","handakuon","youon"] },
-        "difficulty":{ "type": "integer", "minimum": 1, "maximum": 3 }
+        "type": {
+          "type": "string",
+          "enum": ["seion", "dakuon", "handakuon", "youon"]
+        },
+        "difficulty": { "type": "integer", "minimum": 1, "maximum": 3 },
+        "emoji_hint": { "type": "string" }
       }
     }
   }

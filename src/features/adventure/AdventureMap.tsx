@@ -295,4 +295,3 @@ export default function AdventureMap() {
     </div>
   );
 }
-

@@ -592,13 +592,24 @@ export default function ParentDashboard() {
               ) : (
                 <div className="flex flex-col divide-y divide-gray-100">
                   {profiles.map((p) => (
-                    <div key={p.profile_id} className="flex items-center gap-3 py-3">
-                      <span className="text-3xl">{getAvatarEmoji(p.avatar_id)}</span>
-                      <span className="flex-1 text-lg text-gray-700 font-medium">{p.name}</span>
+                    <div
+                      key={p.profile_id}
+                      className="flex items-center gap-3 py-3"
+                    >
+                      <span className="text-3xl">
+                        {getAvatarEmoji(p.avatar_id)}
+                      </span>
+                      <span className="flex-1 text-lg text-gray-700 font-medium">
+                        {p.name}
+                      </span>
                       <button
                         type="button"
                         onClick={() => {
-                          if (window.confirm(`「${p.name}」のしんちょくをリセットしますか？`)) {
+                          if (
+                            window.confirm(
+                              `「${p.name}」のしんちょくをリセットしますか？`,
+                            )
+                          ) {
                             resetProfileProgress(p.profile_id).then(() => {
                               alert('リセットしました');
                             });
@@ -611,9 +622,13 @@ export default function ParentDashboard() {
                       <button
                         type="button"
                         onClick={() => {
-                          if (window.confirm(`「${p.name}」をさくじょしますか？`)) {
+                          if (
+                            window.confirm(`「${p.name}」をさくじょしますか？`)
+                          ) {
                             deleteProfile(p.profile_id).then(() => {
-                              setProfiles((ps) => ps.filter((x) => x.profile_id !== p.profile_id));
+                              setProfiles((ps) =>
+                                ps.filter((x) => x.profile_id !== p.profile_id),
+                              );
                             });
                           }
                         }}

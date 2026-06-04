@@ -198,6 +198,13 @@ export const T = {
   adventureReturn:      { ja: '冒険に もどる',             zh: '回冒險' },
   comingSoon:           { ja: 'もうすぐ！',                zh: '即將推出' },
 
+  // ── Parent: adventure progress section ──────────────────────────────────
+  parentAdventureTitle:   { ja: '冒険 しんちょく',                   zh: '冒險進度' },
+  parentLevelsLabel:      { ja: 'クリアしたかん',                    zh: '通關數' },
+  parentAdventureStars:   { ja: '冒険ほし',                          zh: '冒險星星' },
+  parentBossDefeated:     { ja: 'だいまおうを たおした！',           zh: '擊敗大魔王！' },
+  parentBossNotYet:       { ja: 'だいまおうは まだ…',               zh: '大魔王尚未登場…' },
+
   // ── LevelComplete ────────────────────────────────────────────────────────
   levelCompleteTitle:   { ja: 'かんせい！',                zh: '關卡完成！' },
   levelCompleteStars:   { ja: '{n} ほし',                  zh: '{n} 星' },

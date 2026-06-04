@@ -267,7 +267,7 @@ export default function DakutenDragGame() {
                   : 'bg-white border-violet-300 text-violet-800',
               ].join(' ')}
             >
-              {isSuccess ? `${current.targetChars[i]}${markSymbol}` : char}
+              {isSuccess ? current.targetChars[i] : char}
             </div>
           )
         })}

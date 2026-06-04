@@ -112,11 +112,18 @@ export default function LevelEntry() {
               {t('mapBossLabel')}
             </span>
           )}
-          <h1 className="text-xl font-bold text-gray-800">{level.title_zh}</h1>
+          <h1 className="text-xl font-bold text-gray-800">{level.title_ja ?? level.title_zh}</h1>
         </div>
-        {level.subtitle_zh && <p className="text-sm text-gray-500">{level.subtitle_zh}</p>}
+        {(level.subtitle_ja ?? level.subtitle_zh) && (
+          <p className="text-sm text-gray-500">{level.subtitle_ja ?? level.subtitle_zh}</p>
+        )}
+        {level.story_intro_ja && (
+          <p className="text-base text-indigo-700 border-l-2 border-indigo-300 pl-3 mt-1">
+            {level.story_intro_ja}
+          </p>
+        )}
         {level.story_intro_zh && (
-          <p className="text-sm text-indigo-700 italic border-l-2 border-indigo-300 pl-3 mt-1">
+          <p className="text-xs text-gray-400 pl-3 mt-0.5">
             {level.story_intro_zh}
           </p>
         )}

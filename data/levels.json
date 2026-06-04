@@ -1,52 +1,74 @@
 {
-  "$schema": "../schemas/levels.schema.json",
+  "$schema": "./levels.schema.json",
   "_meta": {
-    "note": "Beta v0.2 — 7 關第一週期(5+1 拗音擴增版)。打破原本 4+1 節奏,把母音/濁音/促音/長音/拗音 5 個核心 phonics 對立都納入,大魔王複習前 5 課。",
-    "boss_period": "本週期 5 內容課 + 1 大魔王。注意:此週期是 5+1 例外(因為核心 phonics 有 5 個);第二週期起恢復 4+1 節奏。"
+    "note": "Beta v0.3 — 11關兩階段(L0入門 + L1-L5羈絆之村 + L6-L10進化之村)。完全平假名習得路徑。",
+    "boss_period": "第一階段 L0+L1-L4 清音 + L5大魔王1。第二階段 L6-L9特殊音 + L10大魔王2。"
   },
   "regions": [
     {
-      "region_id": "region_tutorial",
-      "name_zh": "新手村",
-      "order": 0,
-      "asset_hint": "雲端上的小村落,中央有發光的圓圈與一顆蛋,周圍是柔軟的雲朵",
+      "region_id": "region_tamago",
+      "name_zh": "謎之蛋",
+      "name_ja": "なぞのたまご",
+      "order": 1,
+      "asset_hint": "glowing egg in darkness",
       "level_ids": [
-        "lv_01_tutorial"
+        "lv_00_tamago"
       ]
     },
     {
-      "region_id": "region_meadow",
-      "name_zh": "平原",
-      "order": 1,
-      "asset_hint": "綠色草原、藍天白雲、遠方山影、幾棵孤立的樹,陽光灑落",
+      "region_id": "region_kizuna",
+      "name_zh": "羈絆之村",
+      "name_ja": "きずなの里",
+      "order": 2,
+      "asset_hint": "bright village with meadows",
       "level_ids": [
-        "lv_02_aiueo",
-        "lv_03_kaki_kagi",
-        "lv_04_neko_nekko",
-        "lv_05_obasan",
-        "lv_06_omocha",
-        "lv_07_boss_1"
+        "lv_01_hajimari",
+        "lv_02_seseragi",
+        "lv_03_soyokaze",
+        "lv_04_yuugure",
+        "lv_05_kessen"
+      ]
+    },
+    {
+      "region_id": "region_shinka",
+      "name_zh": "進化之村",
+      "name_ja": "しんかの里",
+      "order": 3,
+      "asset_hint": "mystical village with evolution altar",
+      "level_ids": [
+        "lv_06_kouzan",
+        "lv_07_hanebashi",
+        "lv_08_kodama",
+        "lv_09_nejire",
+        "lv_10_saidan"
       ]
     }
   ],
   "levels": [
     {
-      "level_id": "lv_01_tutorial",
-      "level_number": 1,
+      "level_id": "lv_00_tamago",
+      "level_number": 0,
       "level_type": "tutorial",
-      "region_id": "region_tutorial",
-      "title_zh": "新手村:夥伴的蛋",
-      "subtitle_zh": "認識你的夥伴,學會基本操作",
-      "story_intro_zh": "在雲端的小村,有一顆等待已久的蛋。輕輕喚一聲,它就會醒來...",
-      "scene_hint": "中央是發光的大蛋,周圍是灰色靜止的小雲。完成挑戰後蛋孵化、雲變彩色、夥伴出現。",
+      "region_id": "region_tamago",
+      "title_zh": "謎之蛋:認識夥伴",
+      "title_ja": "謎の卵",
+      "subtitle_zh": "認識五個母音",
+      "subtitle_ja": "あ・い・う・え・お",
+      "story_intro_zh": "在冒險島的深處,有一顆等待已久的蛋。輕輕喚一聲,它就會醒來…",
+      "story_intro_ja": "ぼうけんの島のおくに、ふしぎな光をはなつたまごがあった。やさしく声をかけると、何かが目をさます…",
+      "xp_reward": 80,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.6
+      },
+      "scene_hint": "中央是發光的大蛋,周圍灰色靜止。完成後蛋裂開,夥伴探頭。",
       "challenges": [
         {
           "challenge_id": "c1_listen_basic",
           "game_mode": "kana_catch_listen",
           "config_overrides": {
-            "roundLength": 5,
-            "fallSpeed": 50,
-            "maxBubbles": 3,
             "kanaPool": [
               "あ",
               "い",
@@ -54,6 +76,9 @@
               "え",
               "お"
             ],
+            "maxBubbles": 3,
+            "roundLength": 5,
+            "fallSpeed": 50,
             "showRomajiHint": true,
             "showImageHint": true,
             "comboEnabled": false,
@@ -63,6 +88,7 @@
         {
           "challenge_id": "c2_kotodama_tamago",
           "game_mode": "kotodama_summon",
+          "required_for_completion": false,
           "config_overrides": {
             "targetWords": [
               "w_tamago"
@@ -70,120 +96,356 @@
             "roundLength": 1,
             "showRomajiHint": true,
             "autoPlayPronunciationOnLoad": true
-          },
-          "required_for_completion": false
+          }
         }
-      ],
-      "xp_reward": 100,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.6
-      }
+      ]
     },
     {
-      "level_id": "lv_02_aiueo",
-      "level_number": 2,
+      "level_id": "lv_01_hajimari",
+      "level_number": 1,
       "level_type": "lesson",
-      "region_id": "region_meadow",
-      "unit_id": "mitsumura_g1_u2_aiueo",
-      "title_zh": "第一課:あいうえお",
-      "subtitle_zh": "配著歌唱五個母音",
-      "story_intro_zh": "平原上,五個母音的聲音迷失在風裡。把它們找回來吧!",
-      "scene_hint": "平原場景,以本課 concept_words 的場景元素(繡球花、草莓、馬、蝦、飯糰)依完成度逐步上色。",
-      "challenges": [
-        {
-          "challenge_id": "c1_listen_vowels",
-          "game_mode": "kana_catch_listen",
-          "config_overrides": {
-            "roundLength": 8,
-            "fallSpeed": 60,
-            "maxBubbles": 4,
-            "kanaPool": [
-              "あ",
-              "い",
-              "う",
-              "え",
-              "お"
-            ],
-            "showRomajiHint": true
-          }
-        },
-        {
-          "challenge_id": "c2_write_vowels",
-          "game_mode": "write_canvas",
-          "config_overrides": {
-            "kanaPool": [
-              "あ",
-              "い",
-              "う",
-              "え",
-              "お"
-            ],
-            "roundLength": 5,
-            "showStrokeOrder": true
-          }
-        },
-        {
-          "challenge_id": "c3_word_to_image",
-          "game_mode": "kana_catch_word_to_image",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u2_aiueo",
-            "roundLength": 6
-          }
-        },
-        {
-          "challenge_id": "c4_kotodama",
-          "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u2_aiueo",
-            "roundLength": 5,
-            "showRomajiHint": true
-          }
-        },
-        {
-          "challenge_id": "c5_echo",
-          "game_mode": "echo_record",
-          "config_overrides": {
-            "wordPool": [
-              "w_ajisai",
-              "w_ichigo",
-              "w_uma",
-              "w_ebi",
-              "w_onigiri"
-            ]
-          },
-          "required_for_completion": false
-        }
-      ],
-      "xp_reward": 150,
+      "region_id": "region_kizuna",
+      "title_zh": "起始之森",
+      "title_ja": "はじまりの森",
+      "subtitle_zh": "あ・か・さ行的試煉",
+      "subtitle_ja": "最初の試練:あ・か・さの行",
+      "story_intro_zh": "旅人抱著蛋踏入森林。あ行・か行・さ行的精靈正在等待…",
+      "story_intro_ja": "たまごを抱えた旅人が森へ入った。あ行・か行・さ行のせいれいがまちかまえている…",
+      "unit_id": "adv_l1_hajimari",
+      "xp_reward": 120,
       "stars_criteria": {
         "one": "complete",
         "two": "one_challenge_above_accuracy",
         "three": "all_challenges_above_accuracy",
         "accuracy_threshold": 0.7
-      }
+      },
+      "scene_hint": "森林場景,あ行か行さ行的假名精靈藏在樹葉間。",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": {
+            "kanaPool": [
+              "あ",
+              "い",
+              "う",
+              "え",
+              "お",
+              "か",
+              "き",
+              "く",
+              "け",
+              "こ",
+              "さ",
+              "し",
+              "す",
+              "せ",
+              "そ"
+            ],
+            "maxBubbles": 4,
+            "roundLength": 8,
+            "fallSpeed": 55,
+            "showRomajiHint": true
+          }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": {
+            "unitId": "adv_l1_hajimari",
+            "maxBubbles": 4,
+            "roundLength": 6
+          }
+        }
+      ]
     },
     {
-      "level_id": "lv_03_kaki_kagi",
+      "level_id": "lv_02_seseragi",
+      "level_number": 2,
+      "level_type": "lesson",
+      "region_id": "region_kizuna",
+      "title_zh": "潺潺之川",
+      "title_ja": "せせらぎの川",
+      "subtitle_zh": "清流的指引:た・な行",
+      "subtitle_ja": "清流の導き:た・なの行",
+      "story_intro_zh": "穿過森林,旅人來到一條清澈的小川。た行・な行的音符在水面跳動…",
+      "story_intro_ja": "森をぬけると、きれいな川がながれていた。た行・な行のおとが、みずのうえではねている…",
+      "unit_id": "adv_l2_seseragi",
+      "xp_reward": 140,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      },
+      "scene_hint": "溪流場景,た行な行的假名在水面上漂浮。",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": {
+            "kanaPool": [
+              "た",
+              "ち",
+              "つ",
+              "て",
+              "と",
+              "な",
+              "に",
+              "ぬ",
+              "ね",
+              "の"
+            ],
+            "maxBubbles": 4,
+            "roundLength": 8,
+            "fallSpeed": 60,
+            "showRomajiHint": true
+          }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": {
+            "unitId": "adv_l2_seseragi",
+            "maxBubbles": 4,
+            "roundLength": 6
+          }
+        }
+      ]
+    },
+    {
+      "level_id": "lv_03_soyokaze",
       "level_number": 3,
       "level_type": "lesson",
-      "region_id": "region_meadow",
+      "region_id": "region_kizuna",
+      "title_zh": "微風之丘",
+      "title_ja": "そよ風の丘",
+      "subtitle_zh": "風的低語:は・ま行",
+      "subtitle_ja": "風のささやき:は・まの行",
+      "story_intro_zh": "旅人爬上小丘,微風拂來。は行・ま行的聲音隨風飄過…",
+      "story_intro_ja": "おかのうえにあがると、やさしい風がふいてきた。は行・ま行のこえが、風にのってきこえてくる…",
+      "unit_id": "adv_l3_soyokaze",
+      "xp_reward": 160,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      },
+      "scene_hint": "小丘場景,は行ま行的假名在微風中飄舞。",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": {
+            "kanaPool": [
+              "は",
+              "ひ",
+              "ふ",
+              "へ",
+              "ほ",
+              "ま",
+              "み",
+              "む",
+              "め",
+              "も"
+            ],
+            "maxBubbles": 4,
+            "roundLength": 8,
+            "fallSpeed": 60,
+            "showRomajiHint": true
+          }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": {
+            "unitId": "adv_l3_soyokaze",
+            "maxBubbles": 4,
+            "roundLength": 6
+          }
+        }
+      ]
+    },
+    {
+      "level_id": "lv_04_yuugure",
+      "level_number": 4,
+      "level_type": "lesson",
+      "region_id": "region_kizuna",
+      "title_zh": "黃昏之道",
+      "title_ja": "夕暮れの道",
+      "subtitle_zh": "最後的直線:や・ら・わ行",
+      "subtitle_ja": "最後の直線:や・ら・わの行",
+      "story_intro_zh": "夕陽西下,旅人踏上最後一段路。や行・ら行・わをん,集齊全部平假名的力量！",
+      "story_intro_ja": "ゆうやけの中、旅人は最後の道をあるいた。や行・ら行・わをん—ひらがなのちからをすべてあつめよう！",
+      "unit_id": "adv_l4_yuugure",
+      "xp_reward": 180,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      },
+      "scene_hint": "夕陽場景,や行ら行わをんの假名在晚霞中閃爍。",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": {
+            "kanaPool": [
+              "や",
+              "ゆ",
+              "よ",
+              "ら",
+              "り",
+              "る",
+              "れ",
+              "ろ",
+              "わ",
+              "を",
+              "ん"
+            ],
+            "maxBubbles": 4,
+            "roundLength": 8,
+            "fallSpeed": 65,
+            "showRomajiHint": true
+          }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": {
+            "unitId": "adv_l4_yuugure",
+            "maxBubbles": 4,
+            "roundLength": 6
+          }
+        }
+      ]
+    },
+    {
+      "level_id": "lv_05_kessen",
+      "level_number": 5,
+      "level_type": "boss",
+      "region_id": "region_kizuna",
+      "title_zh": "平原決戰:しずか影",
+      "title_ja": "平原の決戦",
+      "subtitle_zh": "大魔王降臨:全平假名複習",
+      "subtitle_ja": "大魔王降臨:平原のしずか影",
+      "story_intro_zh": "大魔王「しずか影」擋在去路上！集合學過的全部平假名，驅散黑暗！",
+      "story_intro_ja": "大まおう「しずか影」が平原にあらわれた！今まで習ったすべてのひらがなの力を集めて、くらやみをはらおう！",
+      "boss_review_units": [
+        "adv_l1_hajimari",
+        "adv_l2_seseragi",
+        "adv_l3_soyokaze",
+        "adv_l4_yuugure"
+      ],
+      "xp_reward": 300,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.75
+      },
+      "scene_hint": "暗夜平原,しずか影(黑雲形,兩顆白眼)懸在中央。三波攻擊各對應不同清音範圍。",
+      "challenges": [
+        {
+          "challenge_id": "wave1_listen_all",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": {
+            "kanaPool": [
+              "あ",
+              "い",
+              "う",
+              "え",
+              "お",
+              "か",
+              "き",
+              "く",
+              "け",
+              "こ",
+              "さ",
+              "し",
+              "す",
+              "せ",
+              "そ",
+              "た",
+              "ち",
+              "つ",
+              "て",
+              "と",
+              "な",
+              "に",
+              "ぬ",
+              "ね",
+              "の",
+              "は",
+              "ひ",
+              "ふ",
+              "へ",
+              "ほ",
+              "ま",
+              "み",
+              "む",
+              "め",
+              "も",
+              "や",
+              "ゆ",
+              "よ",
+              "ら",
+              "り",
+              "る",
+              "れ",
+              "ろ",
+              "わ",
+              "を",
+              "ん"
+            ],
+            "maxBubbles": 5,
+            "roundLength": 10,
+            "fallSpeed": 75,
+            "showRomajiHint": false
+          }
+        },
+        {
+          "challenge_id": "wave2_word_review",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": {
+            "unitId": "adv_l1_hajimari",
+            "maxBubbles": 4,
+            "roundLength": 8
+          }
+        }
+      ]
+    },
+    {
+      "level_id": "lv_06_kouzan",
+      "level_number": 6,
+      "level_type": "lesson",
+      "region_id": "region_shinka",
+      "title_zh": "霧之礦山",
+      "title_ja": "霧の鉱山",
+      "subtitle_zh": "濁音謎語:かき 與 かぎ",
+      "subtitle_ja": "濁る音の謎:かき と かぎ",
+      "story_intro_zh": "旅人帶著剛孵化的寵物進入迷霧礦山。那個小點點藏著秘密音符…",
+      "story_intro_ja": "かおを出したばかりのペットをつれて、旅人は霧の鉱山へ入った。あの小さな点に、秘密のおとが隠されている…",
       "unit_id": "mitsumura_g1_u4_dakuten",
-      "title_zh": "第二課:かき 與 かぎ",
-      "subtitle_zh": "濁音與半濁音入門",
-      "story_intro_zh": "風裡有奇怪的聲音——是「か」還是「が」呢?那個小點點藏著秘密。",
-      "scene_hint": "平原場景,使用本課 concept_words 的場景(柿子樹、鑰匙箱、猴子、竹篩、標靶、窗戶)。",
+      "xp_reward": 180,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      },
+      "scene_hint": "礦山場景。寵物身上開始有淡淡氣流。",
       "challenges": [
         {
           "challenge_id": "c1_minimal_pair",
           "game_mode": "kana_catch_minimal_pair",
           "config_overrides": {
             "unitId": "mitsumura_g1_u4_dakuten",
+            "maxBubbles": 4,
             "roundLength": 8,
-            "fallSpeed": 70,
-            "maxBubbles": 4
+            "fallSpeed": 70
           }
         },
         {
@@ -202,257 +464,171 @@
             "roundLength": 6,
             "showImageHint": true
           }
-        },
-        {
-          "challenge_id": "c4_kotodama",
-          "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u4_dakuten",
-            "roundLength": 5
-          }
-        },
-        {
-          "challenge_id": "c5_echo",
-          "game_mode": "echo_record",
-          "config_overrides": {
-            "wordPool": [
-              "w_kaki",
-              "w_kagi",
-              "w_saru",
-              "w_zaru",
-              "w_mato",
-              "w_mado"
-            ]
-          },
-          "required_for_completion": false
         }
-      ],
-      "xp_reward": 180,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
+      ]
     },
     {
-      "level_id": "lv_04_neko_nekko",
-      "level_number": 4,
+      "level_id": "lv_07_hanebashi",
+      "level_number": 7,
       "level_type": "lesson",
-      "region_id": "region_meadow",
+      "region_id": "region_shinka",
+      "title_zh": "跳橋之谷",
+      "title_ja": "はね橋の谷",
+      "subtitle_zh": "跳躍的腳步:ねこ 與 ねっこ",
+      "subtitle_ja": "跳ねる足音:ねこ と ねっこ",
+      "story_intro_zh": "寵物步伐輕盈地跳過吊橋。促音就像跳躍的節拍,差一點就完全不同！",
+      "story_intro_ja": "ペットが軽やかにはね橋をわたった。促音はジャンプのリズムみたい—小さい「っ」で、ことばが変わる！",
       "unit_id": "mitsumura_g1_u6_sokuon",
-      "title_zh": "第三課:ねこ 與 ねっこ",
-      "subtitle_zh": "促音(小っ)的秘密",
-      "story_intro_zh": "「ねこ」是貓,「ねっこ」是樹根。中間多了一個小停頓,意思就完全不一樣!",
-      "scene_hint": "平原邊緣的小樹林,使用本課 concept_words 的場景(貓、樹根、蚱蜢、賽跑)。",
-      "challenges": [
-        {
-          "challenge_id": "c1_word_to_image",
-          "game_mode": "kana_catch_word_to_image",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u6_sokuon",
-            "roundLength": 8,
-            "fallSpeed": 65
-          }
-        },
-        {
-          "challenge_id": "c2_minimal_pair",
-          "game_mode": "kana_catch_minimal_pair",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u6_sokuon",
-            "roundLength": 6
-          }
-        },
-        {
-          "challenge_id": "c3_kotodama",
-          "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u6_sokuon",
-            "roundLength": 4
-          }
-        },
-        {
-          "challenge_id": "c4_echo",
-          "game_mode": "echo_record",
-          "config_overrides": {
-            "wordPool": [
-              "w_neko",
-              "w_nekko",
-              "w_batta",
-              "w_kakekko",
-              "w_kitte"
-            ]
-          },
-          "required_for_completion": false
-        }
-      ],
-      "xp_reward": 180,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
-    },
-    {
-      "level_id": "lv_05_obasan",
-      "level_number": 5,
-      "level_type": "lesson",
-      "region_id": "region_meadow",
-      "unit_id": "mitsumura_g1_u7_chouon",
-      "title_zh": "第四課:おばさん 與 おばあさん",
-      "subtitle_zh": "長音與家人稱呼",
-      "story_intro_zh": "把音拉長一拍,阿姨就變成奶奶。家人的稱呼裡,藏著長音的規則。",
-      "scene_hint": "平原邊的小屋,使用本課 concept_words 的場景(家人逐一出現、晚霞)。",
-      "challenges": [
-        {
-          "challenge_id": "c1_word_to_image",
-          "game_mode": "kana_catch_word_to_image",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u7_chouon",
-            "roundLength": 8
-          }
-        },
-        {
-          "challenge_id": "c2_minimal_pair",
-          "game_mode": "kana_catch_minimal_pair",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u7_chouon",
-            "roundLength": 5
-          }
-        },
-        {
-          "challenge_id": "c3_kotodama",
-          "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u7_chouon",
-            "roundLength": 5
-          }
-        },
-        {
-          "challenge_id": "c4_echo",
-          "game_mode": "echo_record",
-          "config_overrides": {
-            "wordPool": [
-              "w_obasan",
-              "w_obaasan",
-              "w_okaasan",
-              "w_otousan",
-              "w_yuuyake"
-            ]
-          },
-          "required_for_completion": false
-        }
-      ],
-      "xp_reward": 180,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
-    },
-    {
-      "level_id": "lv_06_omocha",
-      "level_number": 6,
-      "level_type": "lesson",
-      "region_id": "region_meadow",
-      "unit_id": "mitsumura_g1_u8_youon",
-      "title_zh": "第五課:おもち 與 おもちゃ",
-      "subtitle_zh": "拗音(小ゃゅょ)的秘密",
-      "story_intro_zh": "「おもち」是麻糬,「おもちゃ」是玩具——多了一個小ゃ就完全不一樣!還有更多小ゃゅょ等你來認識。",
-      "scene_hint": "平原邊的小遊樂場,使用本課 concept_words 的場景(麻糬、玩具盒、腳踏車、蝴蝶、恐龍)。",
-      "challenges": [
-        {
-          "challenge_id": "c1_word_to_image",
-          "game_mode": "kana_catch_word_to_image",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u8_youon",
-            "roundLength": 8
-          }
-        },
-        {
-          "challenge_id": "c2_minimal_pair",
-          "game_mode": "kana_catch_minimal_pair",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u8_youon",
-            "roundLength": 6
-          }
-        },
-        {
-          "challenge_id": "c3_write",
-          "game_mode": "write_canvas",
-          "config_overrides": {
-            "kanaPool": [
-              "ゃ",
-              "ゅ",
-              "ょ"
-            ],
-            "roundLength": 3,
-            "showStrokeOrder": true
-          }
-        },
-        {
-          "challenge_id": "c4_kotodama",
-          "game_mode": "kotodama_summon",
-          "config_overrides": {
-            "unitId": "mitsumura_g1_u8_youon",
-            "roundLength": 5
-          }
-        },
-        {
-          "challenge_id": "c5_echo",
-          "game_mode": "echo_record",
-          "config_overrides": {
-            "wordPool": [
-              "w_omochi",
-              "w_omocha",
-              "w_jitensha",
-              "w_kyouryuu",
-              "w_chou"
-            ]
-          },
-          "required_for_completion": false
-        }
-      ],
       "xp_reward": 200,
       "stars_criteria": {
         "one": "complete",
         "two": "one_challenge_above_accuracy",
         "three": "all_challenges_above_accuracy",
         "accuracy_threshold": 0.7
-      }
+      },
+      "scene_hint": "吊橋場景。寵物長出小翅膀。",
+      "challenges": [
+        {
+          "challenge_id": "c1_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": {
+            "unitId": "mitsumura_g1_u6_sokuon",
+            "maxBubbles": 4,
+            "roundLength": 8,
+            "fallSpeed": 75
+          }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": {
+            "unitId": "mitsumura_g1_u6_sokuon",
+            "roundLength": 8
+          }
+        }
+      ]
     },
     {
-      "level_id": "lv_07_boss_1",
-      "level_number": 7,
+      "level_id": "lv_08_kodama",
+      "level_number": 8,
+      "level_type": "lesson",
+      "region_id": "region_shinka",
+      "title_zh": "回聲洞窟",
+      "title_ja": "こだまの洞窟",
+      "subtitle_zh": "迴響的歌聲:おばさん 與 おばあさん",
+      "subtitle_ja": "響く歌声:おばさん と おばあさん",
+      "story_intro_zh": "洞窟裡有奇妙的回聲。長音拉長了一拍,聲音就完全不同了！",
+      "story_intro_ja": "洞窟の中に不思議なこだまが聞こえた。長音は一拍のびるだけで、ことばがまるで変わる！",
+      "unit_id": "mitsumura_g1_u7_chouon",
+      "xp_reward": 220,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      },
+      "scene_hint": "洞窟場景。寵物體型變大,額頭出現符號。",
+      "challenges": [
+        {
+          "challenge_id": "c1_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": {
+            "unitId": "mitsumura_g1_u7_chouon",
+            "maxBubbles": 4,
+            "roundLength": 8,
+            "fallSpeed": 80
+          }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": {
+            "unitId": "mitsumura_g1_u7_chouon",
+            "roundLength": 8
+          }
+        }
+      ]
+    },
+    {
+      "level_id": "lv_09_nejire",
+      "level_number": 9,
+      "level_type": "lesson",
+      "region_id": "region_shinka",
+      "title_zh": "扭轉之城",
+      "title_ja": "ねじれのお城",
+      "subtitle_zh": "小小變化:おもち 與 おもちゃ",
+      "subtitle_ja": "小さな変化:おもち と おもちゃ",
+      "story_intro_zh": "城堡裡的一切都扭曲了。拗音是一個小「ゃゅょ」,讓音節縮成另一個音！",
+      "story_intro_ja": "お城の中では、すべてがねじれていた。拗音は小さな「ゃゅょ」—二つの音が一つになる不思議な魔法！",
+      "unit_id": "mitsumura_g1_u8_youon",
+      "xp_reward": 240,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.7
+      },
+      "scene_hint": "扭曲城堡場景。寵物全身散發進化前兆光芒。",
+      "challenges": [
+        {
+          "challenge_id": "c1_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": {
+            "unitId": "mitsumura_g1_u8_youon",
+            "maxBubbles": 4,
+            "roundLength": 8,
+            "fallSpeed": 85
+          }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": {
+            "unitId": "mitsumura_g1_u8_youon",
+            "roundLength": 8
+          }
+        }
+      ]
+    },
+    {
+      "level_id": "lv_10_saidan",
+      "level_number": 10,
       "level_type": "boss",
-      "region_id": "region_meadow",
-      "title_zh": "大魔王 1:平原的しずか影",
-      "subtitle_zh": "複習第 1–5 課:母音、濁音、促音、長音、拗音",
-      "story_intro_zh": "通往森林的路被黑色影子擋住了。把你學過的五種言靈集合起來,驅散它!",
+      "region_id": "region_shinka",
+      "title_zh": "進化祭壇:ゆらぎ影",
+      "title_ja": "しんかの祭壇",
+      "subtitle_zh": "驅散黑暗:特殊音綜合決戰",
+      "subtitle_ja": "闇を払う光:すべてを懸けた決戦",
+      "story_intro_zh": "大魔王「ゆらぎ影」在祭壇等待！用全部特殊音的力量讓寵物終極進化！",
+      "story_intro_ja": "大まおう「ゆらぎ影」が祭壇に待ちかまえていた！濁音・促音・長音・拗音—すべての力でペットを進化させよう！",
       "boss_review_units": [
-        "mitsumura_g1_u2_aiueo",
         "mitsumura_g1_u4_dakuten",
         "mitsumura_g1_u6_sokuon",
         "mitsumura_g1_u7_chouon",
         "mitsumura_g1_u8_youon"
       ],
-      "scene_hint": "黑暗背景,中央是しずかの影(黑色雲狀,兩顆白眼),周圍漂浮前 5 課學過的詞彙泡泡;影子受到攻擊會縮小。三波攻擊各對應不同 phonics 類型。",
+      "xp_reward": 600,
+      "stars_criteria": {
+        "one": "complete",
+        "two": "one_challenge_above_accuracy",
+        "three": "all_challenges_above_accuracy",
+        "accuracy_threshold": 0.75
+      },
+      "scene_hint": "祭壇場景,ゆらぎ影(波浪狀黑影)懸在祭壇上方。三波攻擊。",
       "challenges": [
         {
           "challenge_id": "wave1_minimal_pair",
           "game_mode": "kana_catch_minimal_pair",
           "config_overrides": {
+            "maxBubbles": 5,
+            "roundLength": 6,
+            "fallSpeed": 95,
             "unitPool": [
               "mitsumura_g1_u4_dakuten",
               "mitsumura_g1_u6_sokuon",
               "mitsumura_g1_u7_chouon",
               "mitsumura_g1_u8_youon"
-            ],
-            "roundLength": 6,
-            "fallSpeed": 95,
-            "maxBubbles": 5
+            ]
           }
         },
         {
@@ -467,24 +643,17 @@
           "challenge_id": "wave3_kotodama",
           "game_mode": "kotodama_summon",
           "config_overrides": {
+            "roundLength": 4,
             "unitPool": [
               "mitsumura_g1_u2_aiueo",
               "mitsumura_g1_u4_dakuten",
               "mitsumura_g1_u6_sokuon",
               "mitsumura_g1_u7_chouon",
               "mitsumura_g1_u8_youon"
-            ],
-            "roundLength": 4
+            ]
           }
         }
-      ],
-      "xp_reward": 600,
-      "stars_criteria": {
-        "one": "complete",
-        "two": "one_challenge_above_accuracy",
-        "three": "all_challenges_above_accuracy",
-        "accuracy_threshold": 0.7
-      }
+      ]
     }
   ]
 }

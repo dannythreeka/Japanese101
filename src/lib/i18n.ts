@@ -179,7 +179,7 @@ export const T = {
   homeSettingsAria:     { ja: 'おやのせってい',            zh: '家長設定' },
 
   // ── AdventureMap ────────────────────────────────────────────────────────
-  mapTitle:             { ja: 'ことだまの島',              zh: '言靈之島' },
+  mapTitle:             { ja: 'ぼうけんの島',               zh: '冒險之島' },
   mapLockedHint:        { ja: 'まえのかんを クリアしてね', zh: '請先完成前一關' },
   mapReplayPrompt:      { ja: 'もういちど あそぶ？',       zh: '重玩這一關？' },
   mapBossLabel:         { ja: 'だいまおう',                zh: '大魔王' },

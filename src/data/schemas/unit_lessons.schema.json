@@ -38,8 +38,9 @@
           "items": {
             "type": "array",
             "items": { "type": "string" },
-            "minItems": 2,
-            "maxItems": 5
+            "minItems": 1,
+            "maxItems": 5,
+            "description": "minItems=1 allows single kana (e.g. vowel units); minItems=2 for true minimal-pair sets"
           },
           "minItems": 1
         },
@@ -58,7 +59,8 @@
               "dakuten_drag",
               "kotodama_summon",
               "karaoke_rhythm",
-              "echo_record"
+              "echo_record",
+              "write_canvas"
             ]
           }
         },

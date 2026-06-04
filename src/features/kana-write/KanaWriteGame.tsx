@@ -13,6 +13,7 @@ import {
   KANA_EMOJI, ROUND_SIZE, buildWritePool, pickRound,
   computeWritingScore, scoreToStars,
 } from './kanaWriteEngine'
+import { HIRAGANA_STROKES } from '../../data/hiragana-strokes'
 import { useT } from '../../hooks/useT'
 
 const ALL_KANA: Kana[] = kanaData()
@@ -75,6 +76,8 @@ export default function KanaWriteGame() {
   const [hasStrokes, setHasStrokes] = useState(false)
   const [isAnimating, setIsAnimating] = useState(false)
   const animFrameRef = useRef<number | null>(null)
+  // For stroke-order SVG overlay demo
+  const [strokeOverlay, setStrokeOverlay] = useState<{ paths: string[]; step: number } | null>(null)
 
   // Build round — use adventure kanaPool override when launched from a level
   useEffect(() => {
@@ -114,6 +117,13 @@ export default function KanaWriteGame() {
     ctx.save()
     drawStrokes(ctx, strokes.current)
     ctx.restore()
+
+    // Orange template overlay in result phase
+    if (phase === 'result' && currentKana) {
+      ctx.save()
+      renderRefChar(ctx, currentKana.hiragana, 'rgba(255,120,30,0.55)')
+      ctx.restore()
+    }
   }, [ageMode, currentKana, phase])
 
   // Reset canvas when switching kana
@@ -206,6 +216,32 @@ export default function KanaWriteGame() {
     redrawMain()
   }
 
+  // Advance stroke-order overlay one step per interval
+  useEffect(() => {
+    if (!strokeOverlay) return
+    const { paths, step } = strokeOverlay
+    if (step >= paths.length) {
+      // All strokes drawn — fade out overlay after a brief pause
+      const t = setTimeout(() => setStrokeOverlay(null), 600)
+      return () => clearTimeout(t)
+    }
+    const STROKE_MS = 550
+    const t = setTimeout(
+      () => setStrokeOverlay(prev => prev ? { ...prev, step: prev.step + 1 } : null),
+      STROKE_MS,
+    )
+    return () => clearTimeout(t)
+  }, [strokeOverlay])
+
+  // When overlay finishes, mark animation done
+  useEffect(() => {
+    if (strokeOverlay === null && isAnimating) {
+      setIsAnimating(false)
+      redrawMain()
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [strokeOverlay])
+
   function runDemo() {
     if (!currentKana || phase !== 'draw') return
     if (animFrameRef.current !== null) {
@@ -217,34 +253,42 @@ export default function KanaWriteGame() {
     setHasStrokes(false)
     setIsAnimating(true)
 
+    const strokePaths = HIRAGANA_STROKES[currentKana.hiragana]
+    if (strokePaths && strokePaths.length > 0) {
+      // Draw ghost on canvas then show SVG stroke overlay
+      const canvas = canvasRef.current
+      if (canvas) {
+        const ctx = canvas.getContext('2d')
+        if (ctx) {
+          ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE)
+          renderRefChar(ctx, currentKana.hiragana, 'rgba(200,200,200,0.18)')
+        }
+      }
+      setStrokeOverlay({ paths: strokePaths, step: 0 })
+      return
+    }
+
+    // Fallback: clip-reveal for characters without stroke data
     const canvas = canvasRef.current
     if (!canvas) return
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    // Pre-render character in indigo for the reveal
     const off = new OffscreenCanvas(CANVAS_SIZE, CANVAS_SIZE)
     const offCtx = off.getContext('2d')!
     renderRefChar(offCtx, currentKana.hiragana, '#4f46e5')
     const pixData = offCtx.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE).data
-
     const DEMO_MS = 2200
     const startTime = performance.now()
     const char = currentKana.hiragana
 
     const frame = (now: number) => {
       const raw = Math.min((now - startTime) / DEMO_MS, 1)
-      // ease-in-out
       const t = raw < 0.5 ? 2 * raw * raw : 1 - Math.pow(-2 * raw + 2, 2) / 2
-
       ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE)
-
-      // Faint ghost of the full character
       ctx.save()
       renderRefChar(ctx, char, 'rgba(200,200,200,0.18)')
       ctx.restore()
-
-      // Clip-reveal top portion of pre-rendered character (top → bottom)
       const revealY = t * CANVAS_SIZE
       ctx.save()
       ctx.beginPath()
@@ -252,8 +296,6 @@ export default function KanaWriteGame() {
       ctx.clip()
       ctx.drawImage(off, 0, 0)
       ctx.restore()
-
-      // Brush cursor — centred on the stroke pixels at the current scan row
       if (raw < 1) {
         const scanY = Math.min(Math.floor(revealY), CANVAS_SIZE - 1)
         let sumX = 0, count = 0
@@ -271,7 +313,6 @@ export default function KanaWriteGame() {
         ctx.fillStyle = 'rgba(99,102,241,0.80)'
         ctx.fill()
       }
-
       if (raw < 1) {
         animFrameRef.current = requestAnimationFrame(frame)
       } else {
@@ -280,7 +321,6 @@ export default function KanaWriteGame() {
         redrawMain()
       }
     }
-
     animFrameRef.current = requestAnimationFrame(frame)
   }
 
@@ -305,14 +345,6 @@ export default function KanaWriteGame() {
     const score = computeWritingScore(userImageData, refImageData, 18)
     const stars = scoreToStars(score)
     setCurrentStars(stars)
-
-    // Draw orange reference overlay on main canvas
-    const ctx = canvasRef.current?.getContext('2d')
-    if (ctx && currentKana) {
-      ctx.save()
-      renderRefChar(ctx, currentKana.hiragana, 'rgba(255,120,30,0.55)')
-      ctx.restore()
-    }
 
     // SRS update
     const isCorrect = stars >= 2
@@ -477,6 +509,56 @@ export default function KanaWriteGame() {
           onPointerUp={handlePointerUp}
           onPointerCancel={handlePointerUp}
         />
+
+        {/* Stroke-order SVG overlay (みほん) */}
+        {strokeOverlay && (
+          <svg
+            viewBox="0 0 109 109"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            style={{
+              position: 'absolute',
+              inset: 0,
+              width: CANVAS_SIZE,
+              height: CANVAS_SIZE,
+              pointerEvents: 'none',
+            }}
+          >
+            {strokeOverlay.paths.slice(0, strokeOverlay.step + 1).map((d, i) => {
+              const isActive = i === strokeOverlay.step
+              return (
+                <path
+                  key={i}
+                  d={d}
+                  fill="none"
+                  stroke={isActive ? '#4f46e5' : '#818cf8'}
+                  strokeWidth={isActive ? 5 : 4}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  style={isActive ? {
+                    strokeDasharray: 400,
+                    strokeDashoffset: 400,
+                    animation: 'draw-stroke 0.5s ease-out forwards',
+                  } : undefined}
+                />
+              )
+            })}
+            {/* Stroke number badge for current stroke */}
+            {strokeOverlay.step < strokeOverlay.paths.length && (
+              <text
+                x="97" y="14"
+                fontSize="12"
+                fontWeight="bold"
+                fill="#4f46e5"
+                textAnchor="middle"
+                dominantBaseline="middle"
+              >
+                {strokeOverlay.step + 1}/{strokeOverlay.paths.length}
+              </text>
+            )}
+          </svg>
+        )}
+
         {phase === 'result' && (
           <div className="absolute inset-0 rounded-2xl flex items-end justify-center pb-3 pointer-events-none">
             <span className="text-sm text-orange-600 bg-white/80 rounded-full px-3 py-1">

@@ -46,7 +46,6 @@ export default function KanaCatchGame() {
   const [gameState, setGameState] = useState<GameState>('setup')
   const [currentQ, setCurrentQ] = useState<QuestionConfig | null>(null)
   const [score, setScore] = useState(0)
-  const [questionNum, setQuestionNum] = useState(0)
   const [bounce, setBounce] = useState(false)
   const [xpResult, setXpResult] = useState<XpResult | null>(null)
   const [pet, setPet] = useState<PetState | null>(null)
@@ -124,7 +123,7 @@ export default function KanaCatchGame() {
       }
       const engine = new KanaCatchEngine(canvas, effectiveParams, {
         nextQuestion: nextQ,
-        onNewQuestion: (q) => { setCurrentQ(q); setQuestionNum(n => n + 1) },
+        onNewQuestion: (q) => { setCurrentQ(q) },
         onCorrect: (id) => { void handleCorrect(id) },
         onMiss:    (id) => { void handleMiss(id) },
         onComplete: (c, t) => { void handleComplete(c, t) },
@@ -138,7 +137,7 @@ export default function KanaCatchGame() {
   const handleStart = useCallback((mode: KanaCatchSubMode, uid?: string) => {
     sessionSaved.current = false
     correctIds.current = []
-    setScore(0); setQuestionNum(0); setCurrentQ(null); setXpResult(null)
+    setScore(0); setCurrentQ(null); setXpResult(null)
     setSubMode(mode); setUnitId(uid)
     startSession()
     setGameState('playing')
@@ -148,7 +147,7 @@ export default function KanaCatchGame() {
   const handleRestart = useCallback(() => {
     sessionSaved.current = false
     correctIds.current = []
-    setScore(0); setQuestionNum(0); setCurrentQ(null); setXpResult(null)
+    setScore(0); setCurrentQ(null); setXpResult(null)
     startSession()
     setGameState('playing')
     setGameKey(k => k + 1)
@@ -166,7 +165,7 @@ export default function KanaCatchGame() {
       setPooledPairs(poolLessons.flatMap(l => l.target_kana_pairs))
       setPooledWords(poolLessons.flatMap(l => l.concept_words))
     }
-    const override: { roundLength?: number; fallSpeed?: number; maxBubbles?: number } = {}
+    const override: { roundLength?: number; fallSpeed?: number; maxBubbles?: number; highlightCorrectAnswer?: boolean } = {}
     if (typeof ov.roundLength === 'number') override.roundLength = ov.roundLength
     if (typeof ov.fallSpeed === 'number') override.fallSpeed = ov.fallSpeed
     if (typeof ov.maxBubbles === 'number') override.maxBubbles = ov.maxBubbles

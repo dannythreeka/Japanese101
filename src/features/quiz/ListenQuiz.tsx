@@ -1,121 +1,146 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import type { Word } from '../../types'
-import { useAppStore } from '../../store/useAppStore'
-import { speakWithCallback } from '../../lib/tts'
-import { playSfx } from '../../lib/audio'
-import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
-import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
-import { calculateXpGain, addXpToPet } from '../../lib/pet'
-import type { XpResult } from '../../lib/pet'
-import LevelUpModal from '../play/LevelUpModal'
-import SpeakButton from '../../components/SpeakButton'
-import { vocabData } from '../../data/loaders'
-import { useT } from '../../hooks/useT'
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import type { Word } from '../../types';
+import { useAppStore } from '../../store/useAppStore';
+import { speakWithCallback } from '../../lib/tts';
+import { playSfx } from '../../lib/audio';
+import { getOrCreateProgress, saveProgress, saveSession } from '../../db';
+import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs';
+import { calculateXpGain, addXpToPet } from '../../lib/pet';
+import type { XpResult } from '../../lib/pet';
+import LevelUpModal from '../play/LevelUpModal';
+import SpeakButton from '../../components/SpeakButton';
+import { vocabData } from '../../data/loaders';
+import { useT } from '../../hooks/useT';
 
-const allWords: Word[] = vocabData()
-const TOTAL_ROUNDS = 10
+const allWords: Word[] = vocabData();
+const TOTAL_ROUNDS = 10;
 
 function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr]
+  const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1))
-    ;[a[i], a[j]] = [a[j], a[i]]
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
-  return a
+  return a;
 }
 
 function pickChoices(correct: Word, pool: Word[]): Word[] {
-  const others = pool.filter((w) => w.id !== correct.id && w.emoji !== correct.emoji)
-  const wrong = shuffle(others).slice(0, 3)
-  return shuffle([correct, ...wrong])
+  // Filter by id only; emoji-uniqueness check is skipped because most words
+  // have no emoji field and undefined !== undefined would wrongly exclude all.
+  const others = pool.filter((w) => w.id !== correct.id);
+  const wrong = shuffle(others).slice(0, 3);
+  return shuffle([correct, ...wrong]);
 }
 
 interface QuizRound {
-  correct: Word
-  choices: Word[]
+  correct: Word;
+  choices: Word[];
 }
 
 function makeRound(pool: Word[]): QuizRound {
-  const correct = pool[Math.floor(Math.random() * pool.length)]
-  const choices = pickChoices(correct, pool)
-  return { correct, choices }
+  const correct = pool[Math.floor(Math.random() * pool.length)];
+  const choices = pickChoices(correct, pool);
+  return { correct, choices };
 }
 
 export default function ListenQuiz() {
-  const navigate = useNavigate()
-  const { addStars, startSession, endSession } = useAppStore()
-  const t = useT()
-  const [round, setRound] = useState<QuizRound>(() => makeRound(allWords))
-  const [roundNum, setRoundNum] = useState(1)
-  const [score, setScore] = useState(0)
-  const [answered, setAnswered] = useState(false)
-  const [correctId, setCorrectId] = useState<string | null>(null)
-  const [wrongId, setWrongId] = useState<string | null>(null)
-  const [showResults, setShowResults] = useState(false)
-  const [xpResult, setXpResult] = useState<XpResult | null>(null)
-  const sessionSaved = useRef(false)
+  const navigate = useNavigate();
+  const { addStars, startSession, endSession } = useAppStore();
+  const t = useT();
+  const [round, setRound] = useState<QuizRound>(() => makeRound(allWords));
+  const [roundNum, setRoundNum] = useState(1);
+  const [score, setScore] = useState(0);
+  const [answered, setAnswered] = useState(false);
+  const [correctId, setCorrectId] = useState<string | null>(null);
+  const [wrongId, setWrongId] = useState<string | null>(null);
+  const [showResults, setShowResults] = useState(false);
+  const [xpResult, setXpResult] = useState<XpResult | null>(null);
+  const sessionSaved = useRef(false);
+
+  // Guard: render error state when vocabulary pool is too small
+  if (round.choices.length === 0) {
+    console.error(
+      'ListenQuiz: insufficient vocabulary data (need \u2265 4 words)',
+    );
+    return (
+      <div className="min-h-screen flex flex-col items-center justify-center gap-4 p-6">
+        <p className="text-2xl text-gray-500">{t('noData')}</p>
+        <button
+          type="button"
+          onClick={() => navigate('/play')}
+          className="px-6 py-3 rounded-2xl bg-blue-400 text-white text-xl font-bold"
+        >
+          {t('home')}
+        </button>
+      </div>
+    );
+  }
 
   const playQuestion = useCallback((kana: string) => {
-    speakWithCallback(kana, () => {}, 0.8)
-  }, [])
+    speakWithCallback(kana, () => {}, 0.8);
+  }, []);
 
   useEffect(() => {
-    startSession()
-    return () => {}
-  }, [startSession])
+    startSession();
+    return () => {};
+  }, [startSession]);
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      playQuestion(round.correct.kana)
-    }, 500)
-    return () => clearTimeout(timer)
-  }, [round, playQuestion])
+      playQuestion(round.correct.kana);
+    }, 500);
+    return () => clearTimeout(timer);
+  }, [round, playQuestion]);
 
   const handleChoice = async (chosen: Word) => {
-    if (answered) return
-    setAnswered(true)
-    const isCorrect = chosen.id === round.correct.id
+    if (answered) return;
+    setAnswered(true);
+    const isCorrect = chosen.id === round.correct.id;
 
-    const record = await getOrCreateProgress(round.correct.id, 'vocab')
+    const record = await getOrCreateProgress(round.correct.id, 'vocab');
 
     if (isCorrect) {
-      setCorrectId(chosen.id)
-      speakWithCallback('やった！', () => {}, 0.9)
-      playSfx('correct')
-      addStars(1)
-      await saveProgress(updateAfterCorrect(record))
-      const nextScore = score + 1
-      setScore(nextScore)
+      setCorrectId(chosen.id);
+      speakWithCallback('やった！', () => {}, 0.9);
+      playSfx('correct');
+      addStars(1);
+      await saveProgress(updateAfterCorrect(record));
+      const nextScore = score + 1;
+      setScore(nextScore);
       setTimeout(() => {
         if (roundNum >= TOTAL_ROUNDS) {
-          void finishSession(nextScore)
+          void finishSession(nextScore);
         } else {
-          setRound(makeRound(allWords))
-          setRoundNum((r) => r + 1)
-          setAnswered(false)
-          setCorrectId(null)
-          setWrongId(null)
+          setRound(makeRound(allWords));
+          setRoundNum((r) => r + 1);
+          setAnswered(false);
+          setCorrectId(null);
+          setWrongId(null);
         }
-      }, 1500)
+      }, 1500);
     } else {
-      setWrongId(chosen.id)
-      speakWithCallback('もういちど！', () => {
-        setTimeout(() => playQuestion(round.correct.kana), 300)
-      }, 0.9)
-      playSfx('wrong')
-      await saveProgress(updateAfterIncorrect(record))
+      setWrongId(chosen.id);
+      speakWithCallback(
+        'もういちど！',
+        () => {
+          setTimeout(() => playQuestion(round.correct.kana), 300);
+        },
+        0.9,
+      );
+      playSfx('wrong');
+      await saveProgress(updateAfterIncorrect(record));
       setTimeout(() => {
-        setAnswered(false)
-        setWrongId(null)
-      }, 800)
+        setAnswered(false);
+        setWrongId(null);
+      }, 800);
     }
-  }
+  };
 
   const finishSession = async (finalScore: number) => {
-    if (sessionSaved.current) return
-    sessionSaved.current = true
-    const duration = endSession()
+    if (sessionSaved.current) return;
+    sessionSaved.current = true;
+    const duration = endSession();
     await saveSession({
       id: `quiz-${Date.now()}`,
       date: Date.now(),
@@ -123,15 +148,15 @@ export default function ListenQuiz() {
       feature: 'quiz',
       correct: finalScore,
       total: TOTAL_ROUNDS,
-    })
-    const xp = calculateXpGain(finalScore, TOTAL_ROUNDS)
-    const result = await addXpToPet(xp)
+    });
+    const xp = calculateXpGain(finalScore, TOTAL_ROUNDS);
+    const result = await addXpToPet(xp);
     if (result.leveledUp) {
-      playSfx('levelup')
-      setXpResult(result)
+      playSfx('levelup');
+      setXpResult(result);
     }
-    setShowResults(true)
-  }
+    setShowResults(true);
+  };
 
   if (showResults) {
     return (
@@ -145,21 +170,23 @@ export default function ListenQuiz() {
         )}
         <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
-        <p className="text-3xl text-gray-600">{score} / {TOTAL_ROUNDS} {t('correct')}</p>
+        <p className="text-3xl text-gray-600">
+          {score} / {TOTAL_ROUNDS} {t('correct')}
+        </p>
         <button
           type="button"
           aria-label={t('playAgainAria')}
           onClick={() => {
-            sessionSaved.current = false
-            setRound(makeRound(allWords))
-            setRoundNum(1)
-            setScore(0)
-            setAnswered(false)
-            setCorrectId(null)
-            setWrongId(null)
-            setShowResults(false)
-            setXpResult(null)
-            startSession()
+            sessionSaved.current = false;
+            setRound(makeRound(allWords));
+            setRoundNum(1);
+            setScore(0);
+            setAnswered(false);
+            setCorrectId(null);
+            setWrongId(null);
+            setShowResults(false);
+            setXpResult(null);
+            startSession();
           }}
           className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-green-400 text-white text-3xl font-bold shadow-lg hover:scale-105 transition-transform"
         >
@@ -174,10 +201,10 @@ export default function ListenQuiz() {
           {t('home')}
         </button>
       </div>
-    )
+    );
   }
 
-  const progress = ((roundNum - 1) / TOTAL_ROUNDS) * 100
+  const progress = ((roundNum - 1) / TOTAL_ROUNDS) * 100;
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-6 p-4 pt-6">
@@ -201,7 +228,9 @@ export default function ListenQuiz() {
         </span>
       </div>
 
-      <h1 className="text-4xl font-bold text-gray-800">{t('listenQuizWhich')}</h1>
+      <h1 className="text-4xl font-bold text-gray-800">
+        {t('listenQuizWhich')}
+      </h1>
 
       <div className="flex items-center gap-4">
         <SpeakButton text={round.correct.kana} size="lg" />
@@ -211,27 +240,42 @@ export default function ListenQuiz() {
       <div className="w-full max-w-md grid grid-cols-2 gap-4 mt-2">
         {round.choices.map((choice) => {
           let btnClass =
-            'w-full h-24 rounded-3xl text-5xl shadow-md transition-all duration-150 flex items-center justify-center border-4 '
+            'w-full h-24 rounded-3xl text-5xl shadow-md transition-all duration-150 flex items-center justify-center border-4 ';
           if (correctId === choice.id) {
-            btnClass += 'border-green-400 bg-green-100 animate-bounce-in'
+            btnClass += 'border-green-400 bg-green-100 animate-bounce-in';
           } else if (wrongId === choice.id) {
-            btnClass += 'border-red-400 bg-red-100 animate-shake'
+            btnClass += 'border-red-400 bg-red-100 animate-shake';
           } else {
-            btnClass += 'border-transparent bg-white hover:bg-yellow-50 hover:scale-105'
+            btnClass +=
+              'border-transparent bg-white hover:bg-yellow-50 hover:scale-105';
           }
           return (
             <button
               key={choice.id}
               type="button"
               aria-label={choice.meaning_zh}
-              onClick={() => { void handleChoice(choice) }}
+              onClick={() => {
+                void handleChoice(choice);
+              }}
               className={btnClass}
             >
-              {choice.emoji}
+              {choice.image?.src ? (
+                <img
+                  src={choice.image.src}
+                  alt={choice.meaning_zh}
+                  className="w-14 h-14 object-contain"
+                />
+              ) : choice.emoji ? (
+                <span>{choice.emoji}</span>
+              ) : (
+                <span className="text-xl font-bold text-gray-700 px-1 text-center leading-tight">
+                  {choice.meaning_zh}
+                </span>
+              )}
             </button>
-          )
+          );
         })}
       </div>
     </div>
-  )
+  );
 }

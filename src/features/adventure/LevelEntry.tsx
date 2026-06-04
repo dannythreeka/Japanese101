@@ -54,6 +54,9 @@ export default function LevelEntry() {
     })
   }, [levelId, initAdventureSession])
 
+  // Must be before early return — hooks cannot be called conditionally
+  useEffect(() => () => { if (navTimerRef.current) clearTimeout(navTimerRef.current) }, [])
+
   if (!level || !progress) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex items-center justify-center">
@@ -83,8 +86,6 @@ export default function LevelEntry() {
       navigate(`/adventure/level/${levelId}/complete`)
     }, 1000)
   }
-
-  useEffect(() => () => { if (navTimerRef.current) clearTimeout(navTimerRef.current) }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-6 pb-8 gap-4">

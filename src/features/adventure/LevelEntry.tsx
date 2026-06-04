@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getOrCreateAdventureProgress } from '../../db'
 import { levelsData } from '../../data/loaders'
 import { useAppStore } from '../../store/useAppStore'
 import { useT } from '../../hooks/useT'
 import { getFirstLevelId, getLevelStatus } from './adventureEngine'
+import { SCENE_REGISTRY } from '../kotodama/scenes'
 import type { Level, AdventureProgress } from '../../types/adventure'
 import type { GameModeId } from '../../types'
 
@@ -37,6 +38,8 @@ export default function LevelEntry() {
   const { adventureSession, initAdventureSession, launchChallenge } = useAppStore()
   const [level, setLevel] = useState<Level | null>(null)
   const [progress, setProgress] = useState<AdventureProgress | null>(null)
+  const [transitioning, setTransitioning] = useState(false)
+  const navTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const { levels } = levelsData()
@@ -58,6 +61,7 @@ export default function LevelEntry() {
 
   const status = getLevelStatus(level, progress)
   const completedRecord = progress.completed_levels[level.level_id]
+  const BossScene = level.level_type === 'boss' ? SCENE_REGISTRY['shizuka_kage'] : null
   const sessionResults = (adventureSession && adventureSession.levelId === levelId) ? adventureSession.results : {}
 
   const requiredChallenges = level.challenges.filter((c) => c.required_for_completion !== false)
@@ -70,8 +74,14 @@ export default function LevelEntry() {
   }
 
   function finishLevel() {
-    navigate(`/adventure/level/${levelId}/complete`)
+    if (transitioning) return
+    setTransitioning(true)
+    navTimerRef.current = setTimeout(() => {
+      navigate(`/adventure/level/${levelId}/complete`)
+    }, 1000)
   }
+
+  useEffect(() => () => { if (navTimerRef.current) clearTimeout(navTimerRef.current) }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-6 pb-8 gap-4">
@@ -86,6 +96,13 @@ export default function LevelEntry() {
           {t('levelBack')}
         </button>
       </div>
+
+      {/* Boss scene illustration */}
+      {BossScene && (
+        <div className="w-full max-w-sm rounded-2xl overflow-hidden shadow-lg">
+          <BossScene success={status === 'completed'} />
+        </div>
+      )}
 
       {/* Level header */}
       <div className="w-full max-w-sm bg-white/80 rounded-2xl p-5 shadow flex flex-col gap-2">
@@ -167,6 +184,10 @@ export default function LevelEntry() {
                 </span>
                 {done ? (
                   <span className="text-emerald-600 font-bold text-sm">{t('levelChallengeDone')}</span>
+                ) : ch.game_mode === 'echo_record' ? (
+                  <span className="text-xs text-gray-400 px-3 py-1.5 rounded-lg bg-gray-100">
+                    {t('comingSoon')}
+                  </span>
                 ) : status !== 'locked' ? (
                   <button
                     type="button"
@@ -204,6 +225,14 @@ export default function LevelEntry() {
           </button>
         )}
       </div>
+
+      {/* クリア! transition overlay */}
+      {transitioning && (
+        <div className="fixed inset-0 bg-indigo-500/90 flex flex-col items-center justify-center gap-5 z-50 pointer-events-none">
+          <p className="text-7xl font-bold text-white animate-bounce-in">{t('levelClearAnim')}</p>
+          <p className="text-5xl animate-star-pop" style={{ animationDelay: '0.15s', opacity: 0 }}>⭐⭐⭐</p>
+        </div>
+      )}
     </div>
   )
 }

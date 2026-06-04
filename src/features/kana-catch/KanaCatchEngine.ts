@@ -33,6 +33,7 @@ export interface EngineParams {
   fallSpeed: number
   showRomaji: boolean
   roundLength: number
+  highlightCorrectAnswer?: boolean
 }
 
 // ── Internal types ────────────────────────────────────────────────────────────
@@ -119,9 +120,9 @@ export class KanaCatchEngine {
     for (const b of this.bubbles) {
       if (b.state === 'falling') {
         b.y += b.vy * dt
-        if (b.y > CANVAS_H + BUBBLE_R) {
-          b.state = 'gone'
-          if (b.isCorrect) { this.onQuestionEnd(false, b.item.id); return }
+        if (b.y + BUBBLE_R > CANVAS_H) {
+          b.y = CANVAS_H - BUBBLE_R
+          b.vy = -Math.abs(b.vy)
         }
       } else if (b.state === 'burst') {
         b.animT += dt * 1000
@@ -135,7 +136,7 @@ export class KanaCatchEngine {
     this.questionNum++
     if (caught) { this.correctCount++; this.cb.onCorrect(itemId) }
     else { this.cb.onMiss(itemId) }
-    const done = this.questionNum >= this.params.roundLength
+    const done = caught && this.correctCount >= this.params.roundLength
     const delay = caught ? BURST_MS + 60 : 350
     if (done) {
       cancelAnimationFrame(this.raf)
@@ -165,7 +166,7 @@ export class KanaCatchEngine {
       ctx.scale(1 + t * 2.5, 1 + t * 2.5)
     }
     const grad = ctx.createRadialGradient(-BUBBLE_R * 0.3, -BUBBLE_R * 0.3, 4, 0, 0, BUBBLE_R)
-    if (b.isCorrect) {
+    if (b.isCorrect && this.params.highlightCorrectAnswer) {
       grad.addColorStop(0, '#fef9c3'); grad.addColorStop(1, '#fbbf24')
     } else {
       grad.addColorStop(0, '#dbeafe'); grad.addColorStop(1, '#60a5fa')

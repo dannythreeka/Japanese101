@@ -26,8 +26,9 @@ function getHowl(key: SfxKey): Howl {
   return h
 }
 
-let globalVolume = 1.0
-let sfxEnabled = true
+const _storedVol = parseFloat(localStorage.getItem('sfxVolume') ?? '1')
+let globalVolume = isNaN(_storedVol) ? 1 : Math.max(0, Math.min(1, _storedVol))
+let sfxEnabled = localStorage.getItem('sfxEnabled') !== 'false'
 
 export function playSfx(key: SfxKey): void {
   if (!sfxEnabled) return
@@ -49,16 +50,22 @@ export function preloadSfx(keys: SfxKey[]): void {
 
 export function setSfxEnabled(enabled: boolean): void {
   sfxEnabled = enabled
+  localStorage.setItem('sfxEnabled', String(enabled))
   if (!enabled) Howler.stop()
 }
 
 export function setGlobalVolume(volume: number): void {
   globalVolume = Math.max(0, Math.min(1, volume))
+  localStorage.setItem('sfxVolume', String(globalVolume))
   Howler.volume(globalVolume)
 }
 
 export function isSfxEnabled(): boolean {
   return sfxEnabled
+}
+
+export function getGlobalVolume(): number {
+  return globalVolume
 }
 
 // ── BGM layer ──────────────────────────────────────────────────────────────

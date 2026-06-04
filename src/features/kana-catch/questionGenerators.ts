@@ -44,8 +44,8 @@ export function buildPool(allKana: Kana[], ageMode: AgeMode, kanaDifficulty: Kan
 
 export function buildParams(ageMode: AgeMode): { fallSpeed: number; showRomaji: boolean; roundLength: number } {
   return ageMode === 'young'
-    ? { fallSpeed: 110, showRomaji: true,  roundLength: 10 }
-    : { fallSpeed: 210, showRomaji: false, roundLength: 10 }
+    ? { fallSpeed: 40, showRomaji: true,  roundLength: 10 }
+    : { fallSpeed: 55, showRomaji: false, roundLength: 10 }
 }
 
 // ── Submode A: listen ─────────────────────────────────────────────────────────

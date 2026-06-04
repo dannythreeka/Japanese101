@@ -16,6 +16,9 @@ export default function LevelUpModal({ newLevel, evolvedToStage, onClose }: Prop
       onClick={onClose}
     >
       <div
+        role="dialog"
+        aria-modal="true"
+        aria-label={t('levelUpLevel')}
         className="bg-white rounded-3xl p-8 flex flex-col items-center gap-4 shadow-2xl animate-bounce-in max-w-xs mx-4"
         onClick={(e) => e.stopPropagation()}
       >

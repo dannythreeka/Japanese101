@@ -46,14 +46,22 @@ export default function LevelComplete() {
 
     const bestAccuracy = Object.values(results).reduce((max, r) => Math.max(max, r.accuracy), 0)
 
-    Promise.all([
-      getOrCreateAdventureProgress(getFirstLevelId()),
-      addXpToPet(bonus),
-    ]).then(async ([progress, xpRes]) => {
+    getOrCreateAdventureProgress(getFirstLevelId()).then(async (progress) => {
+      const existingRecord = progress.completed_levels[found.level_id]
+      const playCount = existingRecord?.times_played ?? 0
+      let decayedBonus = bonus
+      if (playCount >= 3) decayedBonus = Math.round(bonus * 0.1)
+      else if (playCount === 2) decayedBonus = Math.round(bonus * 0.25)
+      else if (playCount === 1) decayedBonus = Math.round(bonus * 0.5)
+      setBonusXp(decayedBonus)
+
+      const [xpRes, updated] = await Promise.all([
+        addXpToPet(decayedBonus),
+        completeLevel(progress, found, earnedStars, bestAccuracy),
+      ])
       setPet(xpRes.pet)
       if (xpRes.leveledUp) setXpResult(xpRes)
 
-      const updated = await completeLevel(progress, found, earnedStars, bestAccuracy)
       const sortedIds = levelsData().levels
         .sort((a, b) => a.level_number - b.level_number)
         .map((l) => l.level_id)

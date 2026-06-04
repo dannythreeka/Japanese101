@@ -26,7 +26,7 @@ function shuffle<T>(arr: T[]): T[] {
 }
 
 function pickChoices(correct: Word, pool: Word[]): Word[] {
-  const others = pool.filter((w) => w.id !== correct.id && w.emoji !== correct.emoji)
+  const others = pool.filter((w) => w.id !== correct.id)
   const wrong = shuffle(others).slice(0, 3)
   return shuffle([correct, ...wrong])
 }
@@ -211,7 +211,7 @@ export default function ListenQuiz() {
       <div className="w-full max-w-md grid grid-cols-2 gap-4 mt-2">
         {round.choices.map((choice) => {
           let btnClass =
-            'w-full h-24 rounded-3xl text-5xl shadow-md transition-all duration-150 flex items-center justify-center border-4 '
+            'w-full h-28 rounded-3xl shadow-md transition-all duration-150 flex flex-col items-center justify-center gap-1 border-4 '
           if (correctId === choice.id) {
             btnClass += 'border-green-400 bg-green-100 animate-bounce-in'
           } else if (wrongId === choice.id) {
@@ -227,7 +227,12 @@ export default function ListenQuiz() {
               onClick={() => { void handleChoice(choice) }}
               className={btnClass}
             >
-              {choice.emoji}
+              <img
+                src={choice.image.src}
+                alt={choice.meaning_zh}
+                className="w-16 h-16 object-contain"
+              />
+              <span className="text-xs text-gray-500">{choice.meaning_zh}</span>
             </button>
           )
         })}

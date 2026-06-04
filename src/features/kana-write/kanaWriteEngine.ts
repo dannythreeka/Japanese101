@@ -1,13 +1,13 @@
 import type { Kana, AgeMode, KanaDifficulty } from '../../types'
 
 export const KANA_EMOJI: Record<string, string> = {
-  a:   '🍎', // apple
-  i:   '🐝', // bee
-  u:   '🐟', // fish (uo)
+  a:   '🐜', // ari (ant)
+  i:   '🐶', // inu (dog)
+  u:   '🐴', // uma (horse)
   e:   '🦒', // giraffe
   o:   '🌊', // ocean
   ka:  '🦀', // kani (crab)
-  ki:  '🔑', // kagi (key)
+  ki:  '👂', // kiku (to listen)
   ku:  '☁️', // kumo (cloud)
   ke:  '🎂', // keeki (cake)
   ko:  '🐨', // koala

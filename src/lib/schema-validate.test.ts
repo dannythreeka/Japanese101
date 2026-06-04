@@ -97,9 +97,9 @@ describe('vocabulary data', () => {
   })
 
   it('getWordById returns word with correct kana', () => {
-    const word = getWordById('w_kasa')
+    const word = getWordById('w_ajisai')
     expect(word).not.toBeNull()
-    expect(word?.kana).toBe('かさ')
+    expect(word?.kana).toBe('あじさい')
   })
 
   it('getWordById returns null for unknown id', () => {
@@ -126,9 +126,9 @@ describe('unit_lessons data', () => {
   })
 
   it('getLessonById returns correct lesson', () => {
-    const lesson = getLessonById('mitsumura_g1_kaki_to_kagi')
+    const lesson = getLessonById('mitsumura_g1_u4_dakuten')
     expect(lesson).not.toBeNull()
-    expect(lesson?.unit_id).toBe('mitsumura_g1_kaki_to_kagi')
+    expect(lesson?.unit_id).toBe('mitsumura_g1_u4_dakuten')
   })
 
   it('getLessonById returns null for unknown id', () => {

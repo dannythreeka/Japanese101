@@ -28,6 +28,9 @@ import OkaasanArrivesScene from './OkaasanArrivesScene'
 import OtousanArrivesScene from './OtousanArrivesScene'
 import YuuyakeSkyScene from './YuuyakeSkyScene'
 
+// ── boss ─────────────────────────────────────────────────────────────────────
+import ShizukaKageScene from './ShizukaKageScene'
+
 export const SCENE_REGISTRY: Record<string, ComponentType<{ success: boolean }>> = {
   // u2
   ajisai_blooms:    AjisaiBloumsScene,
@@ -53,4 +56,6 @@ export const SCENE_REGISTRY: Record<string, ComponentType<{ success: boolean }>>
   okaasan_arrives:  OkaasanArrivesScene,
   otousan_arrives:  OtousanArrivesScene,
   yuuyake_sky:      YuuyakeSkyScene,
+  // boss
+  shizuka_kage:     ShizukaKageScene,
 }

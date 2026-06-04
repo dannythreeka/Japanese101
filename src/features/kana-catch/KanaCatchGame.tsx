@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { PetState, KanaCatchSubMode } from '../../types'
+import type { PetState, KanaCatchSubMode, ConceptWord } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { useAdventureChallenge } from '../../hooks/useAdventureChallenge'
 import { kanaData, vocabData, lessonData } from '../../data/loaders'
@@ -13,7 +13,7 @@ import type { XpResult } from '../../lib/pet'
 import LevelUpModal from '../play/LevelUpModal'
 import PetAvatar from '../../components/PetAvatar'
 import { KanaCatchEngine, CANVAS_W, CANVAS_H } from './KanaCatchEngine'
-import type { QuestionConfig } from './KanaCatchEngine'
+import type { QuestionConfig, EngineParams } from './KanaCatchEngine'
 import {
   buildPool, buildParams, loadProgressMap,
   makeListenGenerator, makeMinimalPairGenerator, makeWordToImageGenerator,
@@ -53,9 +53,19 @@ export default function KanaCatchGame() {
   const [gameKey, setGameKey] = useState(0)
   const [subMode, setSubMode] = useState<KanaCatchSubMode>('listen')
   const [unitId, setUnitId] = useState<string | undefined>()
+  const [pooledPairs, setPooledPairs] = useState<string[][] | null>(null)
+  const [pooledWords, setPooledWords] = useState<ConceptWord[] | null>(null)
+  const [paramsOverride, setParamsOverride] = useState<{
+    roundLength?: number; fallSpeed?: number; maxBubbles?: number
+  }>({})
 
   const baseParams = useMemo(() => buildParams(ageMode), [ageMode])
   const kanaPool   = useMemo(() => buildPool(ALL_KANA, ageMode, kanaDifficulty), [ageMode, kanaDifficulty])
+  const effectiveParams = useMemo((): EngineParams => ({
+    fallSpeed:   paramsOverride.fallSpeed   ?? baseParams.fallSpeed,
+    showRomaji:  baseParams.showRomaji,
+    roundLength: paramsOverride.roundLength ?? baseParams.roundLength,
+  }), [baseParams, paramsOverride])
 
   useEffect(() => { getOrCreatePet().then(setPet) }, [])
 
@@ -100,16 +110,18 @@ export default function KanaCatchGame() {
       const pMap = await loadProgressMap()
       if (!active) return
       const lesson = LESSONS.find(l => l.unit_id === unitId)
+      const activePairs = pooledPairs ?? lesson?.target_kana_pairs
+      const activeWords = pooledWords ?? lesson?.concept_words
+      const maxB = paramsOverride.maxBubbles ?? (effectiveParams.showRomaji ? 3 : 5)
       let nextQ: () => QuestionConfig
-      const max = baseParams.showRomaji ? 3 : 5
-      if (subMode === 'minimal_pair' && lesson) {
-        nextQ = makeMinimalPairGenerator(lesson.target_kana_pairs, ALL_KANA, max, pMap)
-      } else if (subMode === 'word_to_image' && lesson) {
-        nextQ = makeWordToImageGenerator(lesson.concept_words, ALL_VOCAB, max, pMap)
+      if (subMode === 'minimal_pair' && activePairs) {
+        nextQ = makeMinimalPairGenerator(activePairs, ALL_KANA, maxB, pMap)
+      } else if (subMode === 'word_to_image' && activeWords) {
+        nextQ = makeWordToImageGenerator(activeWords, ALL_VOCAB, maxB, pMap)
       } else {
-        nextQ = makeListenGenerator(kanaPool, max, pMap)
+        nextQ = makeListenGenerator(kanaPool, maxB, pMap)
       }
-      const engine = new KanaCatchEngine(canvas, baseParams, {
+      const engine = new KanaCatchEngine(canvas, effectiveParams, {
         nextQuestion: nextQ,
         onNewQuestion: (q) => { setCurrentQ(q); setQuestionNum(n => n + 1) },
         onCorrect: (id) => { void handleCorrect(id) },
@@ -120,7 +132,7 @@ export default function KanaCatchGame() {
       return () => engine.destroy()
     })()
     return () => { active = false }
-  }, [gameState, gameKey, subMode, unitId, baseParams, kanaPool, handleCorrect, handleMiss, handleComplete])
+  }, [gameState, gameKey, subMode, unitId, pooledPairs, pooledWords, effectiveParams, paramsOverride, kanaPool, handleCorrect, handleMiss, handleComplete])
 
   const handleStart = useCallback((mode: KanaCatchSubMode, uid?: string) => {
     sessionSaved.current = false
@@ -144,11 +156,22 @@ export default function KanaCatchGame() {
   // Auto-start when launched from adventure mode
   useEffect(() => {
     if (adventureAutoStarted.current || !adventure.pending || gameState !== 'setup') return
-    const subMode = KANA_CATCH_MODE[adventure.pending.gameMode]
-    if (!subMode) return
+    const mode = KANA_CATCH_MODE[adventure.pending.gameMode]
+    if (!mode) return
     adventureAutoStarted.current = true
-    const uid = adventure.pending.configOverrides.unitId
-    handleStart(subMode, typeof uid === 'string' ? uid : undefined)
+    const ov = adventure.pending.configOverrides
+    if (Array.isArray(ov.unitPool)) {
+      const poolLessons = LESSONS.filter(l => (ov.unitPool as string[]).includes(l.unit_id))
+      setPooledPairs(poolLessons.flatMap(l => l.target_kana_pairs))
+      setPooledWords(poolLessons.flatMap(l => l.concept_words))
+    }
+    const override: { roundLength?: number; fallSpeed?: number; maxBubbles?: number } = {}
+    if (typeof ov.roundLength === 'number') override.roundLength = ov.roundLength
+    if (typeof ov.fallSpeed === 'number') override.fallSpeed = ov.fallSpeed
+    if (typeof ov.maxBubbles === 'number') override.maxBubbles = ov.maxBubbles
+    setParamsOverride(override)
+    const uid = ov.unitId
+    handleStart(mode, typeof uid === 'string' ? uid : undefined)
   }, [adventure.pending, gameState, handleStart])
 
   if (gameState === 'setup') {
@@ -162,7 +185,7 @@ export default function KanaCatchGame() {
   }
 
   if (gameState === 'results') {
-    const accuracy = baseParams.roundLength > 0 ? score / baseParams.roundLength : 0
+    const accuracy = effectiveParams.roundLength > 0 ? score / effectiveParams.roundLength : 0
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-6">
         {xpResult?.leveledUp && (
@@ -171,10 +194,10 @@ export default function KanaCatchGame() {
         )}
         <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
-        <p className="text-3xl text-gray-600">{score} / {baseParams.roundLength} {t('correct')}</p>
+        <p className="text-3xl text-gray-600">{score} / {effectiveParams.roundLength} {t('correct')}</p>
         {adventure.isActive ? (
           <button type="button"
-            onClick={() => adventure.submitResult(accuracy, calculateXpGain(score, baseParams.roundLength))}
+            onClick={() => adventure.submitResult(accuracy, calculateXpGain(score, effectiveParams.roundLength))}
             className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-indigo-500 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
             {t('adventureReturn')}
           </button>
@@ -198,7 +221,7 @@ export default function KanaCatchGame() {
     )
   }
 
-  const progress = Math.max(0, ((questionNum - 1) / baseParams.roundLength) * 100)
+  const progress = Math.max(0, ((questionNum - 1) / effectiveParams.roundLength) * 100)
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-3 p-4 pt-6 bg-gradient-to-b from-orange-50 to-white">
@@ -212,7 +235,7 @@ export default function KanaCatchGame() {
           <div className="h-full bg-orange-400 rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
         </div>
         <span className="text-2xl font-bold text-gray-600 min-w-14 text-right">
-          {Math.max(0, questionNum - 1)}/{baseParams.roundLength}
+          {Math.max(0, questionNum - 1)}/{effectiveParams.roundLength}
         </span>
       </div>
 

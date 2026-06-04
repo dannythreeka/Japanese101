@@ -1,13 +1,26 @@
 import type { PetState } from '../types'
 import { getActiveCosmetic } from '../lib/cosmetics'
 
+// 7 stages per species: 0=egg, 1=hatchling, 2-6=evolution stages
 const SPECIES_EMOJI: Record<PetState['species'], string[]> = {
-  fox:    ['🥚', '🦊', '🦊', '🦊'],
-  cat:    ['🥚', '🐱', '🐱', '🐱'],
-  dragon: ['🥚', '🐲', '🐲', '🐲'],
+  fox:    ['🥚', '🐣', '🦊', '🦊', '🦊', '🦊', '🦊'],
+  cat:    ['🥚', '🐣', '🐱', '🐱', '🐱', '🐱', '🐱'],
+  dragon: ['🥚', '🐣', '🐲', '🐲', '🐲', '🐲', '🐲'],
 }
 
-const STAGE_AURA = ['', '', '✨', '👑']
+// stage 0-1: no aura; 2: wind; 3: sparkle; 4: crown; 5: star; 6: fire
+const STAGE_AURA = ['', '', '💨', '✨', '👑', '🌟', '🔥']
+
+// Background ring colours per stage
+const STAGE_RING = [
+  'bg-gray-100',       // 0 egg
+  'bg-yellow-50',      // 1 hatchling
+  'bg-emerald-50',     // 2 wind
+  'bg-sky-50',         // 3 wings
+  'bg-purple-50',      // 4 symbol
+  'bg-amber-50',       // 5 glow
+  'bg-gradient-to-br from-yellow-100 to-pink-100',  // 6 ultimate
+]
 
 const SIZE: Record<string, string> = {
   sm: 'w-16 h-16 text-5xl',
@@ -28,13 +41,15 @@ interface Props {
 }
 
 export default function PetAvatar({ pet, size = 'md', animate = false }: Props) {
-  const emoji = SPECIES_EMOJI[pet.species][pet.evolutionStage] ?? '🦊'
-  const aura = STAGE_AURA[pet.evolutionStage] ?? ''
+  const stage = Math.min(pet.evolutionStage, 6)
+  const emoji = SPECIES_EMOJI[pet.species][stage] ?? '🦊'
+  const aura = STAGE_AURA[stage] ?? ''
+  const ring = STAGE_RING[stage] ?? 'bg-white'
   const cosmetic = getActiveCosmetic(pet.unlockedCosmetics)
 
   return (
     <div
-      className={`${SIZE[size]} rounded-full bg-white shadow-xl flex items-center justify-center select-none relative ${animate ? 'animate-bounce-in' : ''}`}
+      className={`${SIZE[size]} rounded-full ${ring} shadow-xl flex items-center justify-center select-none relative ${animate ? 'animate-bounce-in' : ''}`}
     >
       <span>{emoji}</span>
       {cosmetic && (

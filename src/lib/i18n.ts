@@ -115,6 +115,10 @@ export const T = {
   levelUpLevel:         { ja: 'レベルアップ！', zh: '升級了！' },
   levelUpPraise:        { ja: 'すごいね！',     zh: '太棒了！' },
 
+  // ── Evolution animation overlay ───────────────────────────────────────────
+  evolutionAnim:        { ja: 'しんか！！',                     zh: '進化了！！' },
+  evolutionNewForm:     { ja: 'あたらしい すがたに なった！',   zh: '進化成新形態！' },
+
   // ── DailyTasksPanel ─────────────────────────────────────────────────────
   dailyTasks:           { ja: 'きょうの ミッション', zh: '今日任務' },
 

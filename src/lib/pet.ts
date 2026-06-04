@@ -1,6 +1,7 @@
 import type { PetState } from '../types'
 import { getOrCreatePet, savePetState } from '../db'
 import { getNewlyUnlocked } from './cosmetics'
+import { computeEvolutionStageFromLevels } from './petEvolution'
 
 export const XP_PER_LEVEL = 100
 export const XP_PER_CORRECT = 10
@@ -10,10 +11,8 @@ export function getLevel(xp: number): number {
   return Math.floor(xp / XP_PER_LEVEL) + 1
 }
 
-export function getEvolutionStage(level: number): 0 | 1 | 2 | 3 {
-  if (level >= 20) return 3
-  if (level >= 10) return 2
-  if (level >= 5) return 1
+/** @deprecated Evolution is now level-triggered via applyLevelEvolution */
+export function getEvolutionStage(_level: number): 0 {
   return 0
 }
 
@@ -45,11 +44,9 @@ export async function addXpToPet(
 ): Promise<XpResult> {
   const pet = await getOrCreatePet()
   const oldLevel = pet.level
-  const oldStage = pet.evolutionStage
 
   const newXp = pet.xp + xpGain
   const newLevel = getLevel(newXp)
-  const newStage = getEvolutionStage(newLevel)
   const newCollection = [...new Set([...pet.collection, ...newKanaIds])]
   const newCosmeticIds = getNewlyUnlocked(oldLevel, newLevel).map(c => c.id)
   const newCosmetics = [...new Set([...pet.unlockedCosmetics, ...newCosmeticIds])]
@@ -59,7 +56,7 @@ export async function addXpToPet(
     xp: newXp,
     level: newLevel,
     unlockedCosmetics: newCosmetics,
-    evolutionStage: newStage,
+    // evolutionStage is managed by applyLevelEvolution, not XP
     collection: newCollection,
     lastPlayed: new Date().toISOString(),
   }
@@ -70,6 +67,20 @@ export async function addXpToPet(
     pet: updated,
     xpGained: xpGain,
     leveledUp: newLevel > oldLevel,
-    evolvedToStage: newStage > oldStage ? newStage : null,
+    evolvedToStage: null,
   }
+}
+
+export interface EvolutionResult {
+  pet: PetState
+  newStage: number | null
+}
+
+export async function applyLevelEvolution(completedLevelIds: string[]): Promise<EvolutionResult> {
+  const pet = await getOrCreatePet()
+  const targetStage = computeEvolutionStageFromLevels(completedLevelIds)
+  if (targetStage <= pet.evolutionStage) return { pet, newStage: null }
+  const updated: PetState = { ...pet, evolutionStage: targetStage }
+  await savePetState(updated)
+  return { pet: updated, newStage: targetStage }
 }

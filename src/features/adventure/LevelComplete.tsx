@@ -2,12 +2,13 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getOrCreateAdventureProgress } from '../../db'
 import { levelsData } from '../../data/loaders'
-import { addXpToPet } from '../../lib/pet'
+import { addXpToPet, applyLevelEvolution } from '../../lib/pet'
 import { useAppStore } from '../../store/useAppStore'
 import { useT } from '../../hooks/useT'
 import { computeStars, completeLevel, getFirstLevelId } from './adventureEngine'
 import PetAvatar from '../../components/PetAvatar'
 import LevelUpModal from '../play/LevelUpModal'
+import { getStageInfo } from '../../lib/petEvolution'
 import type { Level } from '../../types/adventure'
 import type { PetState } from '../../types'
 import type { XpResult } from '../../lib/pet'
@@ -26,6 +27,8 @@ export default function LevelComplete() {
   const [bonusXp, setBonusXp] = useState(0)
   const [level, setLevel] = useState<Level | null>(null)
   const [hasNextLevel, setHasNextLevel] = useState(false)
+  const [evolvedToStage, setEvolvedToStage] = useState<number | null>(null)
+  const [showEvolutionAnim, setShowEvolutionAnim] = useState(false)
   const savedRef = useRef(false)
 
   useEffect(() => {
@@ -62,6 +65,13 @@ export default function LevelComplete() {
       setPet(xpRes.pet)
       if (xpRes.leveledUp) setXpResult(xpRes)
 
+      const evoRes = await applyLevelEvolution(Object.keys(updated.completed_levels))
+      if (evoRes.newStage !== null) {
+        setPet(evoRes.pet)
+        setEvolvedToStage(evoRes.newStage)
+        setShowEvolutionAnim(true)
+      }
+
       const sortedIds = levelsData().levels
         .sort((a, b) => a.level_number - b.level_number)
         .map((l) => l.level_id)
@@ -69,6 +79,12 @@ export default function LevelComplete() {
       setHasNextLevel(idx >= 0 && idx < sortedIds.length - 1 && updated.current_level_id !== found.level_id)
     })
   }, [levelId, adventureSession]) // eslint-disable-line react-hooks/exhaustive-deps
+
+  useEffect(() => {
+    if (!showEvolutionAnim) return
+    const timer = setTimeout(() => setShowEvolutionAnim(false), 2500)
+    return () => clearTimeout(timer)
+  }, [showEvolutionAnim])
 
   function goToMap() {
     clearAdventureSession()
@@ -122,7 +138,21 @@ export default function LevelComplete() {
       </div>
 
       {/* Level name */}
-      {level && <p className="text-base text-gray-600 text-center">{level.title_zh}</p>}
+      {level && <p className="text-base text-gray-600 text-center">{level.title_ja ?? level.title_zh}</p>}
+
+      {/* Evolution animation overlay — unskippable, auto-dismiss 2.5s */}
+      {showEvolutionAnim && evolvedToStage !== null && (
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 pointer-events-none gap-4">
+          <span className="text-9xl animate-bounce-in">
+            {pet ? (
+              <PetAvatar pet={pet} size="lg" animate />
+            ) : null}
+          </span>
+          <p className="text-5xl font-black text-yellow-300 tracking-widest">{t('evolutionAnim')}</p>
+          <p className="text-xl font-bold text-white">{getStageInfo(evolvedToStage).name_ja}</p>
+          <p className="text-base text-yellow-100">{t('evolutionNewForm')}</p>
+        </div>
+      )}
 
       {/* Actions */}
       <div className="w-full max-w-sm flex flex-col gap-3 mt-2">

@@ -367,8 +367,9 @@ export default function ParentDashboard() {
       {/* Mic permission modal */}
       {showMicModal && (
         <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-6">
-          <div className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
-            <h3 className="text-2xl font-bold text-gray-800">{t('parentMicModalTitle')}</h3>
+          <div role="dialog" aria-modal="true" aria-labelledby="mic-modal-title"
+            className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-4 shadow-2xl">
+            <h3 id="mic-modal-title" className="text-2xl font-bold text-gray-800">{t('parentMicModalTitle')}</h3>
             <p className="text-lg text-gray-600">{t('parentMicModalDesc')}</p>
             <ul className="text-base text-gray-500 list-disc pl-5 flex flex-col gap-1">
               <li>{t('parentMicBullet1')}</li>

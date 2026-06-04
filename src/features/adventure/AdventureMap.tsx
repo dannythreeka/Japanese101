@@ -4,6 +4,7 @@ import { getOrCreateAdventureProgress } from '../../db'
 import { useT } from '../../hooks/useT'
 import { getSortedLevels, getLevelStatus, getFirstLevelId, ensureValidProgress } from './adventureEngine'
 import { levelsData } from '../../data/loaders'
+import IslandMapBg from './IslandMapBg'
 import type { Level, LevelStatus, AdventureProgress } from '../../types/adventure'
 
 function levelNodeClass(status: LevelStatus, isBoss: boolean): string {
@@ -57,16 +58,20 @@ export default function AdventureMap() {
 
   if (!progress) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex items-center justify-center">
-        <span className="text-emerald-700 text-lg">{t('loading')}</span>
+      <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <IslandMapBg />
+        <span className="relative z-10 text-emerald-700 text-lg bg-white/60 px-4 py-2 rounded-full">{t('loading')}</span>
       </div>
     )
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col">
+    <div className="relative min-h-screen flex flex-col overflow-hidden">
+      {/* Island SVG background */}
+      <IslandMapBg />
+
       {/* Top bar */}
-      <div className="flex items-center gap-3 px-4 pt-6 pb-3">
+      <div className="relative z-10 flex items-center gap-3 px-4 pt-6 pb-3">
         <button
           type="button"
           aria-label={t('mapBackAria')}
@@ -75,13 +80,13 @@ export default function AdventureMap() {
         >
           {t('mapBack')}
         </button>
-        <h1 className="text-2xl font-bold text-emerald-700">{t('mapTitle')}</h1>
+        <h1 className="text-2xl font-bold text-emerald-800 drop-shadow">{t('mapTitle')}</h1>
       </div>
 
       {/* Horizontal scroll map */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-x-auto overflow-y-hidden px-6 py-4"
+        className="relative z-10 flex-1 overflow-x-auto overflow-y-hidden px-6 py-4"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         <div className="flex items-center gap-0 min-w-max pb-8">

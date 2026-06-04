@@ -54,6 +54,7 @@ export default function KanaCatchGame() {
   const [unitId, setUnitId] = useState<string | undefined>()
   const [pooledPairs, setPooledPairs] = useState<string[][] | null>(null)
   const [pooledWords, setPooledWords] = useState<ConceptWord[] | null>(null)
+  const [kanaPoolOverride, setKanaPoolOverride] = useState<typeof ALL_KANA | null>(null)
   const [paramsOverride, setParamsOverride] = useState<{
     roundLength?: number; fallSpeed?: number; maxBubbles?: number; highlightCorrectAnswer?: boolean
   }>({})
@@ -119,7 +120,7 @@ export default function KanaCatchGame() {
       } else if (subMode === 'word_to_image' && activeWords) {
         nextQ = makeWordToImageGenerator(activeWords, ALL_VOCAB, maxB, pMap)
       } else {
-        nextQ = makeListenGenerator(kanaPool, maxB, pMap)
+        nextQ = makeListenGenerator(kanaPoolOverride ?? kanaPool, maxB, pMap)
       }
       const engine = new KanaCatchEngine(canvas, effectiveParams, {
         nextQuestion: nextQ,
@@ -132,7 +133,7 @@ export default function KanaCatchGame() {
       return () => engine.destroy()
     })()
     return () => { active = false }
-  }, [gameState, gameKey, subMode, unitId, pooledPairs, pooledWords, effectiveParams, paramsOverride, kanaPool, handleCorrect, handleMiss, handleComplete])
+  }, [gameState, gameKey, subMode, unitId, pooledPairs, pooledWords, effectiveParams, paramsOverride, kanaPool, kanaPoolOverride, handleCorrect, handleMiss, handleComplete])
 
   const handleStart = useCallback((mode: KanaCatchSubMode, uid?: string) => {
     sessionSaved.current = false
@@ -164,6 +165,11 @@ export default function KanaCatchGame() {
       const poolLessons = LESSONS.filter(l => (ov.unitPool as string[]).includes(l.unit_id))
       setPooledPairs(poolLessons.flatMap(l => l.target_kana_pairs))
       setPooledWords(poolLessons.flatMap(l => l.concept_words))
+    }
+    if (Array.isArray(ov.kanaPool)) {
+      const hiraganaSet = new Set(ov.kanaPool as string[])
+      const filtered = ALL_KANA.filter(k => hiraganaSet.has(k.hiragana))
+      if (filtered.length >= 2) setKanaPoolOverride(filtered)
     }
     const override: { roundLength?: number; fallSpeed?: number; maxBubbles?: number; highlightCorrectAnswer?: boolean } = {}
     if (typeof ov.roundLength === 'number') override.roundLength = ov.roundLength

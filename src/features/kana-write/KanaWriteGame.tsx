@@ -78,6 +78,7 @@ export default function KanaWriteGame() {
   const animFrameRef = useRef<number | null>(null)
   // For stroke-order SVG overlay demo
   const [strokeOverlay, setStrokeOverlay] = useState<{ paths: string[]; step: number } | null>(null)
+  const [userSnapshot, setUserSnapshot] = useState<string | null>(null)
 
   // Build round — use adventure kanaPool override when launched from a level
   useEffect(() => {
@@ -118,12 +119,6 @@ export default function KanaWriteGame() {
     drawStrokes(ctx, strokes.current)
     ctx.restore()
 
-    // Orange template overlay in result phase
-    if (phase === 'result' && currentKana) {
-      ctx.save()
-      renderRefChar(ctx, currentKana.hiragana, 'rgba(255,120,30,0.55)')
-      ctx.restore()
-    }
   }, [ageMode, currentKana, phase])
 
   // Reset canvas when switching kana
@@ -134,6 +129,7 @@ export default function KanaWriteGame() {
     }
     setIsAnimating(false)
     setHasStrokes(false)
+    setUserSnapshot(null)
     strokes.current = []
     currentStroke.current = []
     isDrawing.current = false
@@ -335,6 +331,16 @@ export default function KanaWriteGame() {
     drawStrokes(ctxU, strokes.current)
     const userImageData = ctxU.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE)
 
+    // Capture user drawing for result panel display
+    const snapshotCanvas = document.createElement('canvas')
+    snapshotCanvas.width = CANVAS_SIZE
+    snapshotCanvas.height = CANVAS_SIZE
+    const snapshotCtx = snapshotCanvas.getContext('2d')
+    if (snapshotCtx) {
+      drawStrokes(snapshotCtx, strokes.current)
+      setUserSnapshot(snapshotCanvas.toDataURL('image/png'))
+    }
+
     const offRef = new OffscreenCanvas(CANVAS_SIZE, CANVAS_SIZE)
     const ctxR = offRef.getContext('2d')!
     ctxR.save()
@@ -496,77 +502,94 @@ export default function KanaWriteGame() {
         </div>
       )}
 
-      {/* Canvas */}
-      <div className="relative">
-        <canvas
-          ref={canvasRef}
-          width={CANVAS_SIZE}
-          height={CANVAS_SIZE}
-          className="rounded-2xl bg-white shadow-xl border-4 border-white touch-none"
-          style={{ width: CANVAS_SIZE, height: CANVAS_SIZE, cursor: phase === 'draw' ? 'crosshair' : 'default' }}
-          onPointerDown={handlePointerDown}
-          onPointerMove={handlePointerMove}
-          onPointerUp={handlePointerUp}
-          onPointerCancel={handlePointerUp}
-        />
-
-        {/* Stroke-order SVG overlay (みほん) */}
-        {strokeOverlay && (
-          <svg
-            viewBox="0 0 109 109"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: CANVAS_SIZE,
-              height: CANVAS_SIZE,
-              pointerEvents: 'none',
-            }}
-          >
-            {strokeOverlay.paths.slice(0, strokeOverlay.step + 1).map((d, i) => {
-              const isActive = i === strokeOverlay.step
-              return (
-                <path
-                  key={i}
-                  d={d}
-                  fill="none"
-                  stroke={isActive ? '#4f46e5' : '#818cf8'}
-                  strokeWidth={isActive ? 5 : 4}
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  style={isActive ? {
-                    strokeDasharray: 400,
-                    strokeDashoffset: 400,
-                    animation: 'draw-stroke 0.5s ease-out forwards',
-                  } : undefined}
-                />
-              )
-            })}
-            {/* Stroke number badge for current stroke */}
-            {strokeOverlay.step < strokeOverlay.paths.length && (
-              <text
-                x="97" y="14"
-                fontSize="12"
-                fontWeight="bold"
-                fill="#4f46e5"
-                textAnchor="middle"
-                dominantBaseline="middle"
-              >
-                {strokeOverlay.step + 1}/{strokeOverlay.paths.length}
-              </text>
-            )}
-          </svg>
-        )}
-
-        {phase === 'result' && (
-          <div className="absolute inset-0 rounded-2xl flex items-end justify-center pb-3 pointer-events-none">
-            <span className="text-sm text-orange-600 bg-white/80 rounded-full px-3 py-1">
-              {t('kanaWriteOrange')}
-            </span>
+      {/* Canvas / Result panels */}
+      {phase === 'result' && userSnapshot ? (
+        <div className="flex items-start gap-4">
+          <div className="flex flex-col items-center gap-1.5">
+            <span className="text-sm font-bold text-gray-600">{t('kanaWriteOteho')}</span>
+            <div
+              className="rounded-2xl bg-white shadow-xl border-4 border-sky-200 flex items-center justify-center"
+              style={{ width: 140, height: 140 }}
+            >
+              <span style={{ fontSize: Math.round(140 * 0.72), fontFamily: 'serif', color: '#1d4ed8', lineHeight: 1 }}>
+                {currentKana.hiragana}
+              </span>
+            </div>
           </div>
-        )}
-      </div>
+          <div className="flex flex-col items-center gap-1.5">
+            <span className="text-sm font-bold text-gray-600">{t('kanaWriteKiminoj')}</span>
+            <img
+              src={userSnapshot}
+              alt={currentKana.romaji}
+              className="rounded-2xl bg-white shadow-xl border-4 border-orange-400"
+              style={{ width: 140, height: 140 }}
+              draggable={false}
+            />
+          </div>
+        </div>
+      ) : (
+        <div className="relative">
+          <canvas
+            ref={canvasRef}
+            width={CANVAS_SIZE}
+            height={CANVAS_SIZE}
+            className="rounded-2xl bg-white shadow-xl border-4 border-white touch-none"
+            style={{ width: CANVAS_SIZE, height: CANVAS_SIZE, cursor: phase === 'draw' ? 'crosshair' : 'default' }}
+            onPointerDown={handlePointerDown}
+            onPointerMove={handlePointerMove}
+            onPointerUp={handlePointerUp}
+            onPointerCancel={handlePointerUp}
+          />
+
+          {/* Stroke-order SVG overlay (みほん) */}
+          {strokeOverlay && (
+            <svg
+              viewBox="0 0 109 109"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              style={{
+                position: 'absolute',
+                inset: 0,
+                width: CANVAS_SIZE,
+                height: CANVAS_SIZE,
+                pointerEvents: 'none',
+              }}
+            >
+              {strokeOverlay.paths.slice(0, strokeOverlay.step + 1).map((d, i) => {
+                const isActive = i === strokeOverlay.step
+                return (
+                  <path
+                    key={i}
+                    d={d}
+                    fill="none"
+                    stroke={isActive ? '#4f46e5' : '#818cf8'}
+                    strokeWidth={isActive ? 5 : 4}
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    style={isActive ? {
+                      strokeDasharray: 400,
+                      strokeDashoffset: 400,
+                      animation: 'draw-stroke 0.5s ease-out forwards',
+                    } : undefined}
+                  />
+                )
+              })}
+              {strokeOverlay.step < strokeOverlay.paths.length && (
+                <text
+                  x="97" y="14"
+                  fontSize="12"
+                  fontWeight="bold"
+                  fill="#4f46e5"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                >
+                  {strokeOverlay.step + 1}/{strokeOverlay.paths.length}
+                </text>
+              )}
+            </svg>
+          )}
+        </div>
+      )}
 
       {/* Action buttons */}
       {phase === 'draw' ? (

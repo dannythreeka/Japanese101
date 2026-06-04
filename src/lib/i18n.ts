@@ -211,6 +211,35 @@ export const T = {
   parentBossDefeated:     { ja: 'だいまおうを たおした！',           zh: '擊敗大魔王！' },
   parentBossNotYet:       { ja: 'だいまおうは まだ…',               zh: '大魔王尚未登場…' },
 
+  // ── Profiles ─────────────────────────────────────────────────────────────
+  profileWho:           { ja: 'だれですか？',               zh: '選擇玩家' },
+  profileAddNew:        { ja: 'あたらしい プレイヤー',      zh: '新增玩家' },
+  profileAddNewAria:    { ja: 'あたらしいプレイヤーをつくる', zh: '新增玩家' },
+  profileCreateTitle:   { ja: 'なまえを つけよう！',        zh: '建立角色' },
+  profileNameLabel:     { ja: 'なまえ（ひらがな）',         zh: '名字（平假名）' },
+  profileNamePlaceholder: { ja: 'ひらがなで どうぞ',       zh: '請用平假名' },
+  profileAvatarLabel:   { ja: 'アバターを えらぼう',        zh: '選擇頭像' },
+  profileSave:          { ja: 'つくる！',                   zh: '建立！' },
+  profileSwitch:        { ja: 'ほかのプレイヤー',           zh: '切換玩家' },
+  profileSwitchAria:    { ja: 'ほかのプレイヤーにかえる',   zh: '切換到其他玩家' },
+  profileParentBtn:     { ja: '⚙ おやのせってい',           zh: '⚙ 家長設定' },
+  profileParentBtnAria: { ja: 'おやのせっていをひらく',     zh: '開啟家長設定' },
+  profileNameEmpty:     { ja: 'なまえを いれてね',          zh: '請輸入名字' },
+
+  // ── Parent: profile management ────────────────────────────────────────────
+  parentProfilesTitle:     { ja: 'プレイヤー かんり',          zh: '玩家管理' },
+  parentProfileReset:      { ja: 'リセット',                   zh: '重置進度' },
+  parentProfileResetAria:  { ja: 'このプレイヤーのしんちょくをリセット', zh: '重置此玩家的進度' },
+  parentProfileDelete:     { ja: 'さくじょ',                   zh: '刪除' },
+  parentProfileDeleteAria: { ja: 'このプレイヤーをさくじょ',   zh: '刪除此玩家' },
+  parentProfileConfirmReset:  { ja: 'ほんとうに リセットする？',  zh: '確定重置進度嗎？' },
+  parentProfileConfirmDelete: { ja: 'ほんとうに さくじょする？', zh: '確定刪除此玩家嗎？' },
+  parentProfileConfirmYes:    { ja: 'はい',                     zh: '確定' },
+  parentProfileConfirmNo:     { ja: 'やめる',                   zh: '取消' },
+  parentProfileActive:        { ja: 'いまのプレイヤー',          zh: '目前玩家' },
+  parentProfileXp:            { ja: 'XP',                       zh: 'XP' },
+  parentProfileLevels:        { ja: 'クリアしたかん',            zh: '通關數' },
+
   // ── LevelComplete ────────────────────────────────────────────────────────
   levelClearAnim:       { ja: 'クリア！',                  zh: '過關！' },
   levelCompleteTitle:   { ja: 'かんせい！',                zh: '關卡完成！' },

@@ -3,13 +3,14 @@ import { useNavigate } from 'react-router-dom'
 import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { requestMicPermission } from '../../lib/mic'
-import { getAllProgress, getRecentSessions, getTotalStudyTime, getOrCreateAdventureProgress } from '../../db'
+import { getAllProgress, getRecentSessions, getTotalStudyTime, getOrCreateAdventureProgress, getAllProfiles, deleteProfile, resetProfileProgress, getActiveProfileId, setActiveProfileId } from '../../db'
 import { setSfxEnabled, setGlobalVolume, isSfxEnabled, getGlobalVolume } from '../../lib/audio'
 import { lessonData, levelsData } from '../../data/loaders'
 import { getFirstLevelId } from '../adventure/adventureEngine'
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils'
 import { useT } from '../../hooks/useT'
 import type { AdventureProgress } from '../../types/adventure'
+import type { Profile } from '../../types/profile'
 
 const LESSONS = lessonData()
 
@@ -44,6 +45,9 @@ export default function ParentDashboard() {
   const [adventureProgress, setAdventureProgress] = useState<AdventureProgress | null>(null)
   const [loading, setLoading] = useState(false)
 
+  const [profiles, setProfiles] = useState<Profile[]>([])
+  const [confirmAction, setConfirmAction] = useState<{ type: 'reset' | 'delete'; profileId: string } | null>(null)
+
   const t = useT()
 
   useEffect(() => {
@@ -54,14 +58,32 @@ export default function ParentDashboard() {
       getAllProgress(),
       getRecentSessions(100),
       getOrCreateAdventureProgress(getFirstLevelId()),
-    ]).then(([time, recs, sess, adv]) => {
+      getAllProfiles(),
+    ]).then(([time, recs, sess, adv, profs]) => {
       setStudyTime(time)
       setProgressRecords(recs)
       setSessions(sess)
       setAdventureProgress(adv)
+      setProfiles(profs)
       setLoading(false)
     })
   }, [unlocked])
+
+  async function handleResetProfile(profileId: string) {
+    await resetProfileProgress(profileId)
+    setConfirmAction(null)
+  }
+
+  async function handleDeleteProfile(profileId: string) {
+    await deleteProfile(profileId)
+    const remaining = profiles.filter(p => p.profile_id !== profileId)
+    setProfiles(remaining)
+    if (getActiveProfileId() === profileId) {
+      const next = remaining[0]
+      if (next) setActiveProfileId(next.profile_id)
+    }
+    setConfirmAction(null)
+  }
 
   const handlePinDigit = (digit: string) => {
     if (pinInput.length >= 4) return
@@ -207,6 +229,47 @@ export default function ParentDashboard() {
                 {bossDefeated ? t('parentBossDefeated') : t('parentBossNotYet')}
               </div>
             </div>
+
+            {/* Profile management */}
+            {profiles.length > 0 && (
+              <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
+                <h2 className="text-2xl font-bold text-gray-700">{t('parentProfilesTitle')}</h2>
+                <div className="flex flex-col gap-3">
+                  {profiles.map(profile => {
+                    const isActive = getActiveProfileId() === profile.profile_id
+                    return (
+                      <div key={profile.profile_id} className="flex items-center gap-3 py-2 border-b border-gray-100 last:border-0">
+                        <span className="text-3xl leading-none">{profile.avatar_emoji}</span>
+                        <div className="flex-1 min-w-0">
+                          <p className="text-lg font-bold text-gray-700">{profile.name}</p>
+                          {isActive && (
+                            <p className="text-xs text-emerald-600 font-semibold">{t('parentProfileActive')}</p>
+                          )}
+                        </div>
+                        <button
+                          type="button"
+                          aria-label={`${t('parentProfileResetAria')} ${profile.name}`}
+                          onClick={() => setConfirmAction({ type: 'reset', profileId: profile.profile_id })}
+                          className="px-3 py-2 rounded-xl bg-amber-100 text-amber-700 text-sm font-bold hover:bg-amber-200 transition-colors"
+                          style={{ minHeight: 44, minWidth: 44 }}
+                        >
+                          {t('parentProfileReset')}
+                        </button>
+                        <button
+                          type="button"
+                          aria-label={`${t('parentProfileDeleteAria')} ${profile.name}`}
+                          onClick={() => setConfirmAction({ type: 'delete', profileId: profile.profile_id })}
+                          className="px-3 py-2 rounded-xl bg-red-100 text-red-600 text-sm font-bold hover:bg-red-200 transition-colors"
+                          style={{ minHeight: 44, minWidth: 44 }}
+                        >
+                          {t('parentProfileDelete')}
+                        </button>
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            )}
 
             {/* Accuracy */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
@@ -404,6 +467,42 @@ export default function ParentDashboard() {
           </>
         )}
       </div>
+
+      {/* Profile confirm modal */}
+      {confirmAction && (
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-6">
+          <div role="dialog" aria-modal="true"
+            className="bg-white rounded-3xl p-6 max-w-sm w-full flex flex-col gap-5 shadow-2xl">
+            <p className="text-xl font-bold text-gray-700 text-center">
+              {confirmAction.type === 'reset' ? t('parentProfileConfirmReset') : t('parentProfileConfirmDelete')}
+            </p>
+            <div className="flex gap-3">
+              <button
+                type="button"
+                onClick={() => setConfirmAction(null)}
+                className="flex-1 py-4 rounded-2xl bg-gray-100 text-xl font-bold hover:bg-gray-200 transition-colors"
+              >
+                {t('parentProfileConfirmNo')}
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  if (confirmAction.type === 'reset') {
+                    void handleResetProfile(confirmAction.profileId)
+                  } else {
+                    void handleDeleteProfile(confirmAction.profileId)
+                  }
+                }}
+                className={`flex-1 py-4 rounded-2xl text-white text-xl font-bold transition-colors ${
+                  confirmAction.type === 'reset' ? 'bg-amber-500 hover:bg-amber-600' : 'bg-red-500 hover:bg-red-600'
+                }`}
+              >
+                {t('parentProfileConfirmYes')}
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Mic permission modal */}
       {showMicModal && (

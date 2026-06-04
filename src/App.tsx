@@ -15,6 +15,8 @@ import KotodamaGame from './features/kotodama/KotodamaGame'
 import AdventureMap from './features/adventure/AdventureMap'
 import LevelEntry from './features/adventure/LevelEntry'
 import LevelComplete from './features/adventure/LevelComplete'
+import ProfileSelector from './features/profiles/ProfileSelector'
+import ProfileCreate from './features/profiles/ProfileCreate'
 
 export default function App() {
   useEffect(() => { void loadVoices() }, [])
@@ -22,6 +24,9 @@ export default function App() {
   return (
     <HashRouter>
       <Routes>
+        {/* Profiles */}
+        <Route path="/profiles" element={<ProfileSelector />} />
+        <Route path="/profiles/new" element={<ProfileCreate />} />
         {/* Home + Adventure */}
         <Route path="/" element={<HomeScreen />} />
         <Route path="/adventure" element={<AdventureMap />} />

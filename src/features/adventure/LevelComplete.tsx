@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { getOrCreateAdventureProgress } from '../../db';
 import { levelsData } from '../../data/loaders';
-import { addXpToPet } from '../../lib/pet';
+import { addXpToPet, evolveToStage } from '../../lib/pet';
 import { useAppStore } from '../../store/useAppStore';
 import { useT } from '../../hooks/useT';
 import {
@@ -11,8 +11,10 @@ import {
   getFirstLevelId,
 } from './adventureEngine';
 import { playSfx } from '../../lib/audio';
+import { getStageForLevel } from '../../data/petStages';
 import PetAvatar from '../../components/PetAvatar';
 import LevelUpModal from '../play/LevelUpModal';
+import EvolutionScreen from './EvolutionScreen';
 import type { Level } from '../../types/adventure';
 import type { PetState } from '../../types';
 import type { XpResult } from '../../lib/pet';
@@ -40,6 +42,10 @@ export default function LevelComplete() {
   const [level, setLevel] = useState<Level | null>(null);
   const [hasNextLevel, setHasNextLevel] = useState(false);
   const [isTransitioning, setIsTransitioning] = useState(false);
+  const [evolvingFromStage, setEvolvingFromStage] = useState<number | null>(
+    null,
+  );
+  const [evolvingToStage, setEvolvingToStage] = useState<number | null>(null);
   const savedRef = useRef(false);
 
   useEffect(() => {
@@ -79,6 +85,18 @@ export default function LevelComplete() {
       setPet(xpRes.pet);
       if (xpRes.leveledUp) setXpResult(xpRes);
 
+      // PR5: check if this level triggers an evolution
+      if (found.level_id) {
+        const stageSpec = getStageForLevel(found.level_id);
+        if (stageSpec && xpRes.pet.evolutionStage < stageSpec.stage) {
+          const oldStage = xpRes.pet.evolutionStage;
+          const evolved = await evolveToStage(stageSpec.stage);
+          setPet(evolved);
+          setEvolvingFromStage(oldStage);
+          setEvolvingToStage(stageSpec.stage);
+        }
+      }
+
       const sortedIds = levelsData()
         .levels.sort((a, b) => a.level_number - b.level_number)
         .map((l) => l.level_id);
@@ -111,6 +129,17 @@ export default function LevelComplete() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-200 to-sky-100 flex flex-col items-center justify-center px-4 gap-6">
+      {/* PR5: Evolution screen (shown before level complete UI) */}
+      {evolvingToStage !== null && evolvingFromStage !== null && (
+        <EvolutionScreen
+          fromStage={evolvingFromStage}
+          toStage={evolvingToStage}
+          onComplete={() => {
+            setEvolvingToStage(null);
+            setEvolvingFromStage(null);
+          }}
+        />
+      )}
       {/* B3: full-screen transition overlay */}
       {isTransitioning && (
         <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-indigo-500/95 pointer-events-none">

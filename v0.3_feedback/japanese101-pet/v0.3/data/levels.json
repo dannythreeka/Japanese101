@@ -1,0 +1,435 @@
+{
+  "$schema": "../schemas/levels.schema.json",
+  "_meta": {
+    "version": "v0.3",
+    "note": "重組為兩階段冒險敘事:第一階段(きずなの里 L1-L5)學完全平假名;第二階段(しんかの里 L6-L10)學特殊音變形。加上 L0 初心者入門。共 11 關。",
+    "world_name": "ぼうけんの島",
+    "story": "旅人帶著謎の卵踏上ぼうけんの島,通過 10 個守護者的考驗,讓蛋孵化、夥伴進化"
+  },
+  "regions": [
+    {
+      "region_id": "region_tutorial",
+      "name_zh": "初心者之村",
+      "order": 0,
+      "asset_hint": "雲端上的小村落,中央有發光的圓圈與一顆裂開的蛋,周圍是柔軟的雲朵",
+      "level_ids": ["lv_00_tamago"]
+    },
+    {
+      "region_id": "region_kizuna",
+      "name_zh": "きずなの里(羈絆之村)",
+      "order": 1,
+      "asset_hint": "綠色草原島嶼俯瞰,森林/河流/丘陵/夕陽道五個地標,環繞中央村莊",
+      "level_ids": ["lv_01_hajimari", "lv_02_seseragi", "lv_03_soyokaze", "lv_04_yuugure", "lv_05_kessen"]
+    },
+    {
+      "region_id": "region_shinka",
+      "name_zh": "しんかの里(進化之村)",
+      "order": 2,
+      "asset_hint": "稍神秘氛圍的島嶼,礦山(霧)/吊橋谷/洞穴/扭曲城堡/祭壇五個地標環繞",
+      "level_ids": ["lv_06_kouzan", "lv_07_hanebashi", "lv_08_kodama", "lv_09_nejire", "lv_10_saidan"]
+    }
+  ],
+  "levels": [
+    {
+      "level_id": "lv_00_tamago",
+      "level_number": 0,
+      "level_type": "tutorial",
+      "region_id": "region_tutorial",
+      "title_zh": "初心者:謎の卵",
+      "title_jp": "しょしんしゃ:なぞのたまご",
+      "subtitle_jp": "あ・い・う・え・おの れんしゅう",
+      "story_intro_jp": "ぼうけんの しまへ ようこそ! ここに ふしぎな たまごが あります。あいうえおを よびかけて、たまごを あたためよう。",
+      "story_intro_zh": "歡迎來到冒險之島!這裡有一顆神秘的蛋。對著它呼喚あいうえお,把蛋暖起來吧!",
+      "scene_hint": "中央是發光的大蛋,周圍是灰色雲朵。完成挑戰後雲變彩色、蛋出現裂紋(預示孵化)。",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": { "roundLength": 5, "fallSpeed": 40, "maxBubbles": 3, "kanaPool": ["あ","い","う","え","お"], "showRomajiHint": true, "showImageHint": true, "comboEnabled": false, "highlightCorrectAnswer": true, "bubblesBounce": true },
+          "required_for_completion": false
+        },
+        {
+          "challenge_id": "c2_catch",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "roundLength": 5, "fallSpeed": 40, "kanaPool": ["あ","い","う","え","お"], "highlightCorrectAnswer": true, "bubblesBounce": true },
+          "required_for_completion": false
+        },
+        {
+          "challenge_id": "c3_write",
+          "game_mode": "write_canvas",
+          "config_overrides": { "kanaPool": ["あ","い","う","え","お"], "roundLength": 5, "showStrokeOrder": true, "modelAnimationSpeedMs": 1200 },
+          "required_for_completion": false
+        },
+        {
+          "challenge_id": "c4_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "targetWords": ["w_tamago"], "roundLength": 1, "showRomajiHint": true, "autoPlayPronunciationOnLoad": true },
+          "required_for_completion": false
+        }
+      ],
+      "xp_reward": 100,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.6 }
+    },
+
+    {
+      "level_id": "lv_01_hajimari",
+      "level_number": 1,
+      "level_type": "lesson",
+      "region_id": "region_kizuna",
+      "title_jp": "はじまりの森",
+      "subtitle_jp": "さいしょの しれん:あ・か・さの ぎょう",
+      "story_intro_jp": "もりの まもりびとが まっている。あいうえお、かきくけこ、さしすせそを かきあつめよう!",
+      "story_intro_zh": "森林的守護者在等你。把あ行、か行、さ行的假名收集起來吧!",
+      "scene_hint": "綠色森林,有 15 個發光圓圈代表 15 個假名,完成時逐一點亮",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": { "roundLength": 10, "fallSpeed": 50, "kanaPool": ["あ","い","う","え","お","か","き","く","け","こ","さ","し","す","せ","そ"], "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "wordPool": ["w_ari","w_inu","w_umi","w_eki","w_oni","w_kasa","w_kiku","w_kumo","w_sakura","w_shima","w_suika","w_sora"], "roundLength": 8 }
+        },
+        {
+          "challenge_id": "c3_write",
+          "game_mode": "write_canvas",
+          "config_overrides": { "kanaPool": ["あ","か","さ"], "roundLength": 3, "showStrokeOrder": true }
+        }
+      ],
+      "xp_reward": 200,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
+    },
+
+    {
+      "level_id": "lv_02_seseragi",
+      "level_number": 2,
+      "level_type": "lesson",
+      "region_id": "region_kizuna",
+      "title_jp": "せせらぎの川",
+      "subtitle_jp": "せいりゅうの みちびき:た・なの ぎょう",
+      "story_intro_jp": "つめたい かわの ながれで、たちつてと、なにぬねのを みつけよう。",
+      "story_intro_zh": "在冰涼的小溪流中,找到た行和な行的假名。",
+      "scene_hint": "蜿蜒小溪、卵石、河邊野花、青蛙",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": { "roundLength": 10, "fallSpeed": 50, "kanaPool": ["た","ち","つ","て","と","な","に","ぬ","ね","の"], "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "wordPool": ["w_tako","w_chizu","w_tsuki","w_tegami","w_tokei","w_natsu","w_niji","w_nuno","w_neko","w_nohara"], "roundLength": 8 }
+        },
+        {
+          "challenge_id": "c3_write",
+          "game_mode": "write_canvas",
+          "config_overrides": { "kanaPool": ["た","な"], "roundLength": 2, "showStrokeOrder": true }
+        }
+      ],
+      "xp_reward": 200,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
+    },
+
+    {
+      "level_id": "lv_03_soyokaze",
+      "level_number": 3,
+      "level_type": "lesson",
+      "region_id": "region_kizuna",
+      "title_jp": "そよ風の丘",
+      "subtitle_jp": "かぜの ささやき:は・まの ぎょう",
+      "story_intro_jp": "おかの うえで かぜが ささやく。はひふへほ、まみむめもを ききとろう。",
+      "story_intro_zh": "丘陵上的風在低語。仔細聽は行和ま行的假名吧。",
+      "scene_hint": "草原小丘、藍天、雲、風的線條、花朵",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": { "roundLength": 10, "fallSpeed": 50, "kanaPool": ["は","ひ","ふ","へ","ほ","ま","み","む","め","も"], "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "wordPool": ["w_hana","w_hito","w_fune","w_heya","w_hoshi","w_mame","w_mizu","w_mushi","w_megane","w_momo"], "roundLength": 8 }
+        },
+        {
+          "challenge_id": "c3_write",
+          "game_mode": "write_canvas",
+          "config_overrides": { "kanaPool": ["は","ま"], "roundLength": 2, "showStrokeOrder": true }
+        }
+      ],
+      "xp_reward": 200,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
+    },
+
+    {
+      "level_id": "lv_04_yuugure",
+      "level_number": 4,
+      "level_type": "lesson",
+      "region_id": "region_kizuna",
+      "title_jp": "夕暮れの道",
+      "subtitle_jp": "さいごの ちょくせん:や・ら・わの ぎょう",
+      "story_intro_jp": "ゆうやけの みちで さいごの ぎょうを みつけよう。やゆよ、らりるれろ、わをん!",
+      "story_intro_zh": "在夕陽路上找到最後幾行假名:や行、ら行、わをん!",
+      "scene_hint": "夕陽橘紅色天空、彎曲小徑、剪影樹木、月亮初升",
+      "challenges": [
+        {
+          "challenge_id": "c1_listen",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": { "roundLength": 12, "fallSpeed": 55, "kanaPool": ["や","ゆ","よ","ら","り","る","れ","ろ","わ","を","ん"], "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "wordPool": ["w_yama","w_yuki","w_yoru","w_rakuda","w_risu","w_rusu","w_remon","w_rousoku","w_wani","w_hon"], "roundLength": 8 }
+        },
+        {
+          "challenge_id": "c3_write",
+          "game_mode": "write_canvas",
+          "config_overrides": { "kanaPool": ["や","ら","わ"], "roundLength": 3, "showStrokeOrder": true }
+        }
+      ],
+      "xp_reward": 200,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 }
+    },
+
+    {
+      "level_id": "lv_05_kessen",
+      "level_number": 5,
+      "level_type": "boss",
+      "region_id": "region_kizuna",
+      "title_jp": "平原の決戦",
+      "subtitle_jp": "だいまおう こうりん:へいげんの しずか影",
+      "story_intro_jp": "へいげんに くらい かげが あらわれた。いままで まなんだ ぜんぶの ひらがなで、しずか影を おいはらおう!",
+      "story_intro_zh": "平原上出現黑暗的影子。用你學會的所有平假名,把しずか影驅散!",
+      "boss_review_units": [],
+      "scene_hint": "黑暗背景中央有しずか影(黑色雲狀、白眼),周圍漂浮全平假名泡泡;三波擊敗後影散去,光柱射出",
+      "challenges": [
+        {
+          "challenge_id": "wave1",
+          "game_mode": "kana_catch_listen",
+          "config_overrides": { "roundLength": 8, "fallSpeed": 70, "maxBubbles": 5, "kanaPool": "ALL_HIRAGANA_SEION", "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "wave2",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "wordPool": "ALL_REGION_KIZUNA", "roundLength": 6 }
+        },
+        {
+          "challenge_id": "wave3_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "wordPool": ["w_tamago","w_sakura","w_yuki","w_hoshi"], "roundLength": 4 }
+        }
+      ],
+      "xp_reward": 600,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 },
+      "pet_evolution_on_clear": "stage_1_chick"
+    },
+
+    {
+      "level_id": "lv_06_kouzan",
+      "level_number": 6,
+      "level_type": "lesson",
+      "region_id": "region_shinka",
+      "unit_id": "mitsumura_g1_u4_dakuten",
+      "title_jp": "霧の鉱山",
+      "subtitle_jp": "にごる おとの なぞ:かき と かぎ",
+      "story_intro_jp": "きりの こうざんで、ちいさな てんてんが おとを かえる。かきと かぎは、なにが ちがう?",
+      "story_intro_zh": "在霧之礦山,小小的點點會改變聲音。かき和かぎ,有什麼不一樣?",
+      "scene_hint": "礦山入口、霧氣、金色礦石、洞穴。完成後礦石發光、霧散",
+      "challenges": [
+        {
+          "challenge_id": "c1_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 8, "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "c2_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 8 }
+        },
+        {
+          "challenge_id": "c3_dakuten_drag",
+          "game_mode": "dakuten_drag",
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 6 }
+        },
+        {
+          "challenge_id": "c4_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 5 }
+        },
+        {
+          "challenge_id": "c5_echo",
+          "game_mode": "echo_record",
+          "config_overrides": { "wordPool": ["w_kaki","w_kagi","w_saru","w_zaru","w_mato","w_mado"] },
+          "required_for_completion": false
+        }
+      ],
+      "xp_reward": 250,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 },
+      "pet_evolution_on_clear": "stage_2_wind"
+    },
+
+    {
+      "level_id": "lv_07_hanebashi",
+      "level_number": 7,
+      "level_type": "lesson",
+      "region_id": "region_shinka",
+      "unit_id": "mitsumura_g1_u6_sokuon",
+      "title_jp": "はね橋の谷",
+      "subtitle_jp": "はねる あしおと:ねこ と ねっこ",
+      "story_intro_jp": "たにに かかる はねばし。ちいさな『っ』が おとを はねさせる。ねこと ねっこの ちがいに きづこう!",
+      "story_intro_zh": "山谷上的吊橋。小小的『っ』讓聲音跳起來。發現ねこ和ねっこ的不同!",
+      "scene_hint": "山谷、吊橋、繩索、流水、跳躍的動物剪影",
+      "challenges": [
+        {
+          "challenge_id": "c1_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "unitId": "mitsumura_g1_u6_sokuon", "roundLength": 8, "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "c2_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "unitId": "mitsumura_g1_u6_sokuon", "roundLength": 6 }
+        },
+        {
+          "challenge_id": "c3_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "unitId": "mitsumura_g1_u6_sokuon", "roundLength": 4 }
+        },
+        {
+          "challenge_id": "c4_echo",
+          "game_mode": "echo_record",
+          "config_overrides": { "wordPool": ["w_neko","w_nekko","w_batta","w_kakekko"] },
+          "required_for_completion": false
+        }
+      ],
+      "xp_reward": 250,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 },
+      "pet_evolution_on_clear": "stage_3_jump"
+    },
+
+    {
+      "level_id": "lv_08_kodama",
+      "level_number": 8,
+      "level_type": "lesson",
+      "region_id": "region_shinka",
+      "unit_id": "mitsumura_g1_u7_chouon",
+      "title_jp": "こだまの洞窟",
+      "subtitle_jp": "ひびく うたごえ:おばさん と おばあさん",
+      "story_intro_jp": "どうくつの なかで、おとが ひびき、ながく つづく。おばさんと おばあさん、なにが ちがう?",
+      "story_intro_zh": "洞穴中,聲音迴響並延長。おばさん和おばあさん,有什麼不同?",
+      "scene_hint": "洞穴內部、鐘乳石、發光礦物、回聲波紋",
+      "challenges": [
+        {
+          "challenge_id": "c1_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "unitId": "mitsumura_g1_u7_chouon", "roundLength": 8, "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "c2_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "unitId": "mitsumura_g1_u7_chouon", "roundLength": 5 }
+        },
+        {
+          "challenge_id": "c3_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "unitId": "mitsumura_g1_u7_chouon", "roundLength": 5 }
+        },
+        {
+          "challenge_id": "c4_echo",
+          "game_mode": "echo_record",
+          "config_overrides": { "wordPool": ["w_obasan","w_obaasan","w_okaasan","w_otousan","w_yuuyake"] },
+          "required_for_completion": false
+        }
+      ],
+      "xp_reward": 250,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 },
+      "pet_evolution_on_clear": "stage_4_echo"
+    },
+
+    {
+      "level_id": "lv_09_nejire",
+      "level_number": 9,
+      "level_type": "lesson",
+      "region_id": "region_shinka",
+      "unit_id": "mitsumura_g1_u8_youon",
+      "title_jp": "ねじれのお城",
+      "subtitle_jp": "ちいさな へんか:おもち と おもちゃ",
+      "story_intro_jp": "ねじれた おしろで、ちいさな『ゃ・ゅ・ょ』が おとを かえる。おもちと おもちゃ、ふたつは べつの もの!",
+      "story_intro_zh": "在扭曲的城堡裡,小小的『ゃ・ゅ・ょ』改變了聲音。おもち和おもちゃ是兩個不同的東西!",
+      "scene_hint": "扭曲幾何感的城堡、紫色尖塔、漂浮的小ゃゅょ符號",
+      "challenges": [
+        {
+          "challenge_id": "c1_word_to_image",
+          "game_mode": "kana_catch_word_to_image",
+          "config_overrides": { "unitId": "mitsumura_g1_u8_youon", "roundLength": 8, "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "c2_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "unitId": "mitsumura_g1_u8_youon", "roundLength": 6 }
+        },
+        {
+          "challenge_id": "c3_write",
+          "game_mode": "write_canvas",
+          "config_overrides": { "kanaPool": ["ゃ","ゅ","ょ"], "roundLength": 3, "showStrokeOrder": true }
+        },
+        {
+          "challenge_id": "c4_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "unitId": "mitsumura_g1_u8_youon", "roundLength": 5 }
+        },
+        {
+          "challenge_id": "c5_echo",
+          "game_mode": "echo_record",
+          "config_overrides": { "wordPool": ["w_omochi","w_omocha","w_jitensha","w_kyouryuu","w_chou"] },
+          "required_for_completion": false
+        }
+      ],
+      "xp_reward": 280,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 },
+      "pet_evolution_on_clear": "stage_5_light"
+    },
+
+    {
+      "level_id": "lv_10_saidan",
+      "level_number": 10,
+      "level_type": "boss",
+      "region_id": "region_shinka",
+      "title_jp": "しんかの祭壇",
+      "subtitle_jp": "やみを はらう ひかり:すべてを かけた けっせん",
+      "story_intro_jp": "さいだんに あつまる、ねじれた かげ『ゆらぎ影』。とくしゅおんの ぜんぶを つかって、たおせ!",
+      "story_intro_zh": "祭壇上聚集著扭曲的影子「ゆらぎ影」。用所有特殊音的力量,擊敗它!",
+      "boss_review_units": [
+        "mitsumura_g1_u4_dakuten",
+        "mitsumura_g1_u6_sokuon",
+        "mitsumura_g1_u7_chouon",
+        "mitsumura_g1_u8_youon"
+      ],
+      "scene_hint": "祭壇、紫色光環、ゆらぎ影(扭曲晃動的影子,比 しずか影 更不穩定)、漂浮的特殊音符號",
+      "challenges": [
+        {
+          "challenge_id": "wave1_minimal_pair",
+          "game_mode": "kana_catch_minimal_pair",
+          "config_overrides": { "unitPool": ["mitsumura_g1_u4_dakuten","mitsumura_g1_u6_sokuon","mitsumura_g1_u7_chouon","mitsumura_g1_u8_youon"], "roundLength": 8, "fallSpeed": 75, "maxBubbles": 5, "bubblesBounce": true }
+        },
+        {
+          "challenge_id": "wave2_dakuten_drag",
+          "game_mode": "dakuten_drag",
+          "config_overrides": { "unitId": "mitsumura_g1_u4_dakuten", "roundLength": 4 }
+        },
+        {
+          "challenge_id": "wave3_kotodama",
+          "game_mode": "kotodama_summon",
+          "config_overrides": { "unitPool": ["mitsumura_g1_u4_dakuten","mitsumura_g1_u6_sokuon","mitsumura_g1_u7_chouon","mitsumura_g1_u8_youon"], "roundLength": 5 }
+        }
+      ],
+      "xp_reward": 800,
+      "stars_criteria": { "one": "complete", "two": "one_challenge_above_accuracy", "three": "all_challenges_above_accuracy", "accuracy_threshold": 0.7 },
+      "pet_evolution_on_clear": "stage_6_final"
+    }
+  ]
+}

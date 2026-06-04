@@ -20,30 +20,50 @@
       "required": ["region_id", "name_zh", "order", "asset_hint", "level_ids"],
       "additionalProperties": false,
       "properties": {
-        "region_id":  { "type": "string", "pattern": "^region_[a-z0-9_]+$" },
-        "name_zh":    { "type": "string", "minLength": 1 },
-        "order":      { "type": "integer", "minimum": 0 },
+        "region_id": { "type": "string", "pattern": "^region_[a-z0-9_]+$" },
+        "name_zh": { "type": "string", "minLength": 1 },
+        "name_jp": { "type": "string" },
+        "order": { "type": "integer", "minimum": 0 },
         "asset_hint": { "type": "string", "minLength": 1 },
-        "level_ids":  { "type": "array", "items": { "type": "string" }, "minItems": 1 }
+        "level_ids": {
+          "type": "array",
+          "items": { "type": "string" },
+          "minItems": 1
+        }
       }
     },
     "Level": {
       "type": "object",
       "required": [
-        "level_id", "level_number", "level_type", "region_id",
-        "title_zh", "challenges", "xp_reward", "stars_criteria"
+        "level_id",
+        "level_number",
+        "level_type",
+        "region_id",
+        "title_zh",
+        "challenges",
+        "xp_reward",
+        "stars_criteria"
       ],
       "additionalProperties": false,
       "properties": {
-        "level_id":        { "type": "string", "pattern": "^lv_[a-z0-9_]+$" },
-        "level_number":    { "type": "integer", "minimum": 1 },
-        "level_type":      { "type": "string", "enum": ["tutorial", "lesson", "boss"] },
-        "region_id":       { "type": "string" },
-        "title_zh":        { "type": "string", "minLength": 1 },
-        "subtitle_zh":     { "type": "string" },
-        "story_intro_zh":  { "type": "string" },
-        "unit_id":         { "type": "string", "description": "lesson 關卡必填;tutorial/boss 可選" },
-        "challenges":      {
+        "level_id": { "type": "string", "pattern": "^lv_[a-z0-9_]+$" },
+        "level_number": { "type": "integer", "minimum": 1 },
+        "level_type": {
+          "type": "string",
+          "enum": ["tutorial", "lesson", "boss"]
+        },
+        "region_id": { "type": "string" },
+        "title_zh": { "type": "string", "minLength": 1 },
+        "subtitle_zh": { "type": "string" },
+        "story_intro_zh": { "type": "string" },
+        "title_jp": { "type": "string" },
+        "subtitle_jp": { "type": "string" },
+        "story_intro_jp": { "type": "string" },
+        "unit_id": {
+          "type": "string",
+          "description": "lesson 關卡必填;tutorial/boss 可選"
+        },
+        "challenges": {
           "type": "array",
           "items": { "$ref": "#/definitions/Challenge" },
           "minItems": 1
@@ -53,9 +73,9 @@
           "items": { "type": "string" },
           "description": "僅 boss 關使用:複習哪幾課的內容"
         },
-        "scene_hint":      { "type": "string" },
-        "xp_reward":       { "type": "integer", "minimum": 0 },
-        "stars_criteria":  { "$ref": "#/definitions/StarsCriteria" }
+        "scene_hint": { "type": "string" },
+        "xp_reward": { "type": "integer", "minimum": 0 },
+        "stars_criteria": { "$ref": "#/definitions/StarsCriteria" }
       }
     },
     "Challenge": {
@@ -63,8 +83,8 @@
       "required": ["challenge_id", "game_mode"],
       "additionalProperties": false,
       "properties": {
-        "challenge_id":    { "type": "string", "minLength": 1 },
-        "game_mode":       {
+        "challenge_id": { "type": "string", "minLength": 1 },
+        "game_mode": {
           "type": "string",
           "enum": [
             "kana_catch_listen",
@@ -89,9 +109,12 @@
       "required": ["accuracy_threshold"],
       "additionalProperties": false,
       "properties": {
-        "one":                { "type": "string", "enum": ["complete"] },
-        "two":                { "type": "string", "enum": ["one_challenge_above_accuracy"] },
-        "three":              { "type": "string", "enum": ["all_challenges_above_accuracy"] },
+        "one": { "type": "string", "enum": ["complete"] },
+        "two": { "type": "string", "enum": ["one_challenge_above_accuracy"] },
+        "three": {
+          "type": "string",
+          "enum": ["all_challenges_above_accuracy"]
+        },
         "accuracy_threshold": { "type": "number", "minimum": 0, "maximum": 1 }
       }
     }

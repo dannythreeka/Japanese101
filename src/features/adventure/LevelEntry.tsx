@@ -1,78 +1,92 @@
-import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { getOrCreateAdventureProgress } from '../../db'
-import { levelsData } from '../../data/loaders'
-import { useAppStore } from '../../store/useAppStore'
-import { useT } from '../../hooks/useT'
-import { getFirstLevelId, getLevelStatus } from './adventureEngine'
-import { SCENE_REGISTRY } from '../kotodama/scenes'
-import type { Level, AdventureProgress } from '../../types/adventure'
-import type { GameModeId } from '../../types'
+import { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getOrCreateAdventureProgress } from '../../db';
+import { levelsData } from '../../data/loaders';
+import { useAppStore } from '../../store/useAppStore';
+import { useT } from '../../hooks/useT';
+import { getFirstLevelId, getLevelStatus } from './adventureEngine';
+import { SCENE_REGISTRY } from '../kotodama/scenes';
+import type { Level, AdventureProgress } from '../../types/adventure';
+import type { GameModeId } from '../../types';
 
 const GAME_MODE_LABEL: Record<string, string> = {
-  kana_catch_listen:        '🫧 かな キャッチ (きく)',
-  kana_catch_minimal_pair:  '🫧 かな キャッチ (くらべ)',
+  kana_catch_listen: '🫧 かな キャッチ (きく)',
+  kana_catch_minimal_pair: '🫧 かな キャッチ (くらべ)',
   kana_catch_word_to_image: '🫧 かな キャッチ (えあわせ)',
-  dakuten_drag:             '✏️ だくてん ドラッグ',
-  kotodama_summon:          '✨ ことだま しょうかん',
-  karaoke_rhythm:           '🎤 カラオケ リズム',
-  echo_record:              '🎙️ エコー レコード',
-  write_canvas:             '✍️ かな かいてみよう',
-}
+  dakuten_drag: '✏️ だくてん ドラッグ',
+  kotodama_summon: '✨ ことだま しょうかん',
+  karaoke_rhythm: '🎤 カラオケ リズム',
+  echo_record: '🎙️ エコー レコード',
+  write_canvas: '✍️ かな かいてみよう',
+};
 
 const GAME_ROUTES: Record<string, string> = {
-  kana_catch_listen:        '/play/kana-catch',
-  kana_catch_minimal_pair:  '/play/kana-catch',
+  kana_catch_listen: '/play/kana-catch',
+  kana_catch_minimal_pair: '/play/kana-catch',
   kana_catch_word_to_image: '/play/kana-catch',
-  dakuten_drag:             '/play/dakuten-drag',
-  kotodama_summon:          '/play/kotodama',
-  write_canvas:             '/play/kana-write',
-  karaoke_rhythm:           '/play/kana-catch',
-  echo_record:              '/play/kana-catch',
-}
+  dakuten_drag: '/play/dakuten-drag',
+  kotodama_summon: '/play/kotodama',
+  write_canvas: '/play/kana-write',
+  karaoke_rhythm: '/play/kana-catch',
+  echo_record: '/play/kana-catch',
+};
 
 export default function LevelEntry() {
-  const { levelId } = useParams<{ levelId: string }>()
-  const navigate = useNavigate()
-  const t = useT()
-  const { adventureSession, initAdventureSession, launchChallenge } = useAppStore()
-  const [level, setLevel] = useState<Level | null>(null)
-  const [progress, setProgress] = useState<AdventureProgress | null>(null)
+  const { levelId } = useParams<{ levelId: string }>();
+  const navigate = useNavigate();
+  const { uiLang } = useAppStore();
+  const t = useT();
+  const { adventureSession, initAdventureSession, launchChallenge } =
+    useAppStore();
+  const [level, setLevel] = useState<Level | null>(null);
+  const [progress, setProgress] = useState<AdventureProgress | null>(null);
 
   useEffect(() => {
-    const { levels } = levelsData()
-    const found = levels.find((l) => l.level_id === levelId) ?? null
-    setLevel(found)
+    const { levels } = levelsData();
+    const found = levels.find((l) => l.level_id === levelId) ?? null;
+    setLevel(found);
     getOrCreateAdventureProgress(getFirstLevelId()).then((adv) => {
-      setProgress(adv)
-      if (found && levelId) initAdventureSession(levelId)
-    })
-  }, [levelId, initAdventureSession])
+      setProgress(adv);
+      if (found && levelId) initAdventureSession(levelId);
+    });
+  }, [levelId, initAdventureSession]);
 
   if (!level || !progress) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex items-center justify-center">
         <span className="text-emerald-700 text-lg">{t('loading')}</span>
       </div>
-    )
+    );
   }
 
-  const status = getLevelStatus(level, progress)
-  const completedRecord = progress.completed_levels[level.level_id]
-  const BossScene = level.level_type === 'boss' ? SCENE_REGISTRY['shizuka_kage'] : null
-  const sessionResults = (adventureSession && adventureSession.levelId === levelId) ? adventureSession.results : {}
+  const status = getLevelStatus(level, progress);
+  const completedRecord = progress.completed_levels[level.level_id];
+  const BossScene =
+    level.level_type === 'boss' ? SCENE_REGISTRY['shizuka_kage'] : null;
+  const sessionResults =
+    adventureSession && adventureSession.levelId === levelId
+      ? adventureSession.results
+      : {};
 
-  const requiredChallenges = level.challenges.filter((c) => c.required_for_completion !== false)
-  const allRequiredDone = requiredChallenges.every((c) => sessionResults[c.challenge_id] !== undefined)
+  const requiredChallenges = level.challenges.filter(
+    (c) => c.required_for_completion !== false,
+  );
+  const allRequiredDone = requiredChallenges.every(
+    (c) => sessionResults[c.challenge_id] !== undefined,
+  );
 
-  function startChallenge(challengeId: string, gameMode: GameModeId, configOverrides: Record<string, unknown>) {
-    launchChallenge(challengeId, gameMode, configOverrides)
-    const route = GAME_ROUTES[gameMode] ?? '/play'
-    navigate(route)
+  function startChallenge(
+    challengeId: string,
+    gameMode: GameModeId,
+    configOverrides: Record<string, unknown>,
+  ) {
+    launchChallenge(challengeId, gameMode, configOverrides);
+    const route = GAME_ROUTES[gameMode] ?? '/play';
+    navigate(route);
   }
 
   function finishLevel() {
-    navigate(`/adventure/level/${levelId}/complete`)
+    navigate(`/adventure/level/${levelId}/complete`);
   }
 
   return (
@@ -104,23 +118,41 @@ export default function LevelEntry() {
               {t('mapBossLabel')}
             </span>
           )}
-          <h1 className="text-xl font-bold text-gray-800">{level.title_zh}</h1>
+          <h1 className="text-xl font-bold text-gray-800">
+            {uiLang === 'ja' && level.title_jp
+              ? level.title_jp
+              : level.title_zh}
+          </h1>
         </div>
-        {level.subtitle_zh && <p className="text-sm text-gray-500">{level.subtitle_zh}</p>}
-        {level.story_intro_zh && (
+        {(uiLang === 'ja'
+          ? (level.subtitle_jp ?? level.subtitle_zh)
+          : level.subtitle_zh) && (
+          <p className="text-sm text-gray-500">
+            {uiLang === 'ja' && level.subtitle_jp
+              ? level.subtitle_jp
+              : level.subtitle_zh}
+          </p>
+        )}
+        {(uiLang === 'ja'
+          ? (level.story_intro_jp ?? level.story_intro_zh)
+          : level.story_intro_zh) && (
           <p className="text-sm text-indigo-700 italic border-l-2 border-indigo-300 pl-3 mt-1">
-            {level.story_intro_zh}
+            {uiLang === 'ja' && level.story_intro_jp
+              ? level.story_intro_jp
+              : level.story_intro_zh}
           </p>
         )}
         <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
           <span>
-            {t('levelXpLabel')}: <strong className="text-emerald-600">+{level.xp_reward}</strong>
+            {t('levelXpLabel')}:{' '}
+            <strong className="text-emerald-600">+{level.xp_reward}</strong>
           </span>
           {completedRecord && (
             <span>
               {t('levelStarsLabel')}:{' '}
               <strong className="text-amber-500">
-                {'★'.repeat(completedRecord.stars)}{'☆'.repeat(3 - completedRecord.stars)}
+                {'★'.repeat(completedRecord.stars)}
+                {'☆'.repeat(3 - completedRecord.stars)}
               </strong>
             </span>
           )}
@@ -132,12 +164,16 @@ export default function LevelEntry() {
         <div className="w-full max-w-sm">
           <div className="flex justify-between text-xs text-gray-500 mb-1 px-1">
             <span>{t('levelChallengesTitle')}</span>
-            <span>{Object.keys(sessionResults).length} / {level.challenges.length}</span>
+            <span>
+              {Object.keys(sessionResults).length} / {level.challenges.length}
+            </span>
           </div>
           <div className="h-2 bg-white/50 rounded-full overflow-hidden">
             <div
               className="h-full bg-indigo-400 rounded-full transition-all duration-500"
-              style={{ width: `${(Object.keys(sessionResults).length / level.challenges.length) * 100}%` }}
+              style={{
+                width: `${(Object.keys(sessionResults).length / level.challenges.length) * 100}%`,
+              }}
             />
           </div>
         </div>
@@ -146,8 +182,8 @@ export default function LevelEntry() {
       {/* Challenges list */}
       <div className="w-full max-w-sm flex flex-col gap-2">
         {level.challenges.map((ch) => {
-          const done = sessionResults[ch.challenge_id] !== undefined
-          const accuracy = sessionResults[ch.challenge_id]?.accuracy
+          const done = sessionResults[ch.challenge_id] !== undefined;
+          const accuracy = sessionResults[ch.challenge_id]?.accuracy;
 
           return (
             <div
@@ -172,10 +208,14 @@ export default function LevelEntry() {
                       : 'bg-gray-100 text-gray-500'
                   }`}
                 >
-                  {ch.required_for_completion !== false ? t('levelChallengeRequired') : t('levelChallengeOptional')}
+                  {ch.required_for_completion !== false
+                    ? t('levelChallengeRequired')
+                    : t('levelChallengeOptional')}
                 </span>
                 {done ? (
-                  <span className="text-emerald-600 font-bold text-sm">{t('levelChallengeDone')}</span>
+                  <span className="text-emerald-600 font-bold text-sm">
+                    {t('levelChallengeDone')}
+                  </span>
                 ) : ch.game_mode === 'echo_record' ? (
                   <span className="text-xs text-gray-400 px-3 py-1.5 rounded-lg bg-gray-100">
                     {t('comingSoon')}
@@ -183,7 +223,13 @@ export default function LevelEntry() {
                 ) : status !== 'locked' ? (
                   <button
                     type="button"
-                    onClick={() => startChallenge(ch.challenge_id, ch.game_mode as GameModeId, ch.config_overrides ?? {})}
+                    onClick={() =>
+                      startChallenge(
+                        ch.challenge_id,
+                        ch.game_mode as GameModeId,
+                        ch.config_overrides ?? {},
+                      )
+                    }
                     className="px-3 py-1.5 rounded-lg bg-indigo-500 hover:bg-indigo-600 active:scale-95 text-white text-sm font-bold transition-all"
                   >
                     {t('levelChallengePlay')}
@@ -193,7 +239,7 @@ export default function LevelEntry() {
                 )}
               </div>
             </div>
-          )
+          );
         })}
       </div>
 
@@ -218,5 +264,5 @@ export default function LevelEntry() {
         )}
       </div>
     </div>
-  )
+  );
 }

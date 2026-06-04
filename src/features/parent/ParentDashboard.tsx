@@ -14,7 +14,12 @@ import {
   getRecentSessions,
   getTotalStudyTime,
   getOrCreateAdventureProgress,
+  getProfiles,
+  deleteProfile,
+  resetProfileProgress,
 } from '../../db';
+import { getAvatarEmoji } from '../../types/profile';
+import type { Profile } from '../../types/profile';
 import { lessonData, levelsData } from '../../data/loaders';
 import { getFirstLevelId } from '../adventure/adventureEngine';
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils';
@@ -57,6 +62,8 @@ export default function ParentDashboard() {
     useState<Exclude<MicMode, 'off'>>('offline');
   const [micPermError, setMicPermError] = useState(false);
 
+  const [profiles, setProfiles] = useState<Profile[]>([]);
+
   // B1: sound settings (read initial values from audio module)
   const [sfxEnabled, setSfxEnabledState] = useState(() => isSfxEnabled());
   const [sfxVolume, setSfxVolumeState] = useState(() =>
@@ -84,11 +91,13 @@ export default function ParentDashboard() {
       getAllProgress(),
       getRecentSessions(100),
       getOrCreateAdventureProgress(getFirstLevelId()),
-    ]).then(([time, recs, sess, adv]) => {
+      getProfiles(),
+    ]).then(([time, recs, sess, adv, profs]) => {
       setStudyTime(time);
       setProgressRecords(recs);
       setSessions(sess);
       setAdventureProgress(adv);
+      setProfiles(profs);
       setLoading(false);
     });
   }, [unlocked]);
@@ -571,6 +580,51 @@ export default function ParentDashboard() {
                     : t('parentMicStatusEnh')}
               </p>
               <p className="text-sm text-gray-400">{t('parentMicPrivacy')}</p>
+            </div>
+
+            {/* Profile management */}
+            <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
+              <h2 className="text-2xl font-bold text-gray-700">
+                👥 プレイヤーかんり
+              </h2>
+              {profiles.length === 0 ? (
+                <p className="text-gray-400 text-base">プレイヤーがいません</p>
+              ) : (
+                <div className="flex flex-col divide-y divide-gray-100">
+                  {profiles.map((p) => (
+                    <div key={p.profile_id} className="flex items-center gap-3 py-3">
+                      <span className="text-3xl">{getAvatarEmoji(p.avatar_id)}</span>
+                      <span className="flex-1 text-lg text-gray-700 font-medium">{p.name}</span>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (window.confirm(`「${p.name}」のしんちょくをリセットしますか？`)) {
+                            resetProfileProgress(p.profile_id).then(() => {
+                              alert('リセットしました');
+                            });
+                          }
+                        }}
+                        className="px-3 py-1 rounded-xl bg-amber-100 text-amber-700 text-sm font-bold hover:bg-amber-200 transition-colors"
+                      >
+                        リセット
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => {
+                          if (window.confirm(`「${p.name}」をさくじょしますか？`)) {
+                            deleteProfile(p.profile_id).then(() => {
+                              setProfiles((ps) => ps.filter((x) => x.profile_id !== p.profile_id));
+                            });
+                          }
+                        }}
+                        className="px-3 py-1 rounded-xl bg-red-100 text-red-700 text-sm font-bold hover:bg-red-200 transition-colors"
+                      >
+                        さくじょ
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
           </>
         )}

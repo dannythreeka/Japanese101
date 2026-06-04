@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getOrCreateAdventureProgress } from '../../db';
 import { useT } from '../../hooks/useT';
+import { useAppStore } from '../../store/useAppStore';
 import { playSfx } from '../../lib/audio';
 import {
   getSortedLevels,
@@ -14,6 +15,106 @@ import type {
   LevelStatus,
   AdventureProgress,
 } from '../../types/adventure';
+
+function IslandBackground() {
+  return (
+    <div
+      className="absolute inset-0 overflow-hidden pointer-events-none"
+      aria-hidden
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        className="w-full h-full"
+        viewBox="0 0 1200 400"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <linearGradient id="bg-ocean" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stopColor="#bae6fd" />
+            <stop offset="100%" stopColor="#7dd3fc" />
+          </linearGradient>
+        </defs>
+        {/* Ocean */}
+        <rect width="1200" height="400" fill="url(#bg-ocean)" opacity="0.45" />
+        {/* Island silhouettes */}
+        <ellipse
+          cx="600"
+          cy="260"
+          rx="490"
+          ry="120"
+          fill="#86efac"
+          opacity="0.35"
+        />
+        <ellipse
+          cx="600"
+          cy="270"
+          rx="430"
+          ry="90"
+          fill="#4ade80"
+          opacity="0.25"
+        />
+        <ellipse
+          cx="240"
+          cy="310"
+          rx="180"
+          ry="60"
+          fill="#86efac"
+          opacity="0.2"
+        />
+        <ellipse
+          cx="960"
+          cy="305"
+          rx="170"
+          ry="55"
+          fill="#86efac"
+          opacity="0.2"
+        />
+        {/* Clouds */}
+        <g opacity="0.75">
+          <circle cx="100" cy="55" r="28" fill="white" />
+          <circle cx="138" cy="48" r="22" fill="white" />
+          <circle cx="82" cy="60" r="18" fill="white" />
+          <circle cx="880" cy="50" r="32" fill="white" />
+          <circle cx="928" cy="44" r="26" fill="white" />
+          <circle cx="858" cy="56" r="20" fill="white" />
+          <circle cx="500" cy="35" r="20" fill="white" />
+          <circle cx="528" cy="30" r="16" fill="white" />
+        </g>
+        {/* Tree dots */}
+        <circle cx="190" cy="220" r="11" fill="#16a34a" opacity="0.35" />
+        <circle cx="350" cy="200" r="9" fill="#16a34a" opacity="0.35" />
+        <circle cx="700" cy="210" r="9" fill="#16a34a" opacity="0.35" />
+        <circle cx="870" cy="215" r="11" fill="#16a34a" opacity="0.35" />
+        <circle cx="1020" cy="225" r="8" fill="#16a34a" opacity="0.35" />
+        {/* Water glints */}
+        <ellipse
+          cx="80"
+          cy="370"
+          rx="70"
+          ry="10"
+          fill="#e0f2fe"
+          opacity="0.4"
+        />
+        <ellipse
+          cx="1100"
+          cy="360"
+          rx="80"
+          ry="10"
+          fill="#e0f2fe"
+          opacity="0.4"
+        />
+        <ellipse
+          cx="580"
+          cy="380"
+          rx="100"
+          ry="8"
+          fill="#e0f2fe"
+          opacity="0.3"
+        />
+      </svg>
+    </div>
+  );
+}
 
 function levelNodeClass(status: LevelStatus, isBoss: boolean): string {
   const base =
@@ -43,6 +144,7 @@ function starsDisplay(stars: 1 | 2 | 3): string {
 export default function AdventureMap() {
   const navigate = useNavigate();
   const t = useT();
+  const { uiLang } = useAppStore();
   const scrollRef = useRef<HTMLDivElement>(null);
   const currentNodeRef = useRef<HTMLButtonElement | null>(null);
   const [progress, setProgress] = useState<AdventureProgress | null>(null);
@@ -69,7 +171,6 @@ export default function AdventureMap() {
       alert(t('mapLockedHint'));
       return;
     }
-    // B2: completed levels are directly replayable — no confirm prompt
     playSfx('tap');
     navigate(`/adventure/level/${level.level_id}`);
   }
@@ -83,9 +184,11 @@ export default function AdventureMap() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col relative">
+      <IslandBackground />
+
       {/* Top bar */}
-      <div className="flex items-center gap-3 px-4 pt-6 pb-3">
+      <div className="relative flex items-center gap-3 px-4 pt-6 pb-3 z-10">
         <button
           type="button"
           aria-label={t('mapBackAria')}
@@ -100,7 +203,7 @@ export default function AdventureMap() {
       {/* Horizontal scroll map */}
       <div
         ref={scrollRef}
-        className="flex-1 overflow-x-auto overflow-y-hidden px-6 py-4"
+        className="relative flex-1 overflow-x-auto overflow-y-hidden px-6 py-4 z-10"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
         <div className="flex items-center gap-0 min-w-max pb-8">
@@ -111,6 +214,10 @@ export default function AdventureMap() {
             const regionUnlocked = regionLevels.some(
               (l) => getLevelStatus(l, progress) !== 'locked',
             );
+            const regionName =
+              uiLang === 'ja' && region.name_jp
+                ? region.name_jp
+                : region.name_zh;
 
             return (
               <div key={region.region_id} className="flex items-center gap-0">
@@ -123,7 +230,7 @@ export default function AdventureMap() {
                         : 'bg-gray-300 text-gray-500'
                     }`}
                   >
-                    {regionUnlocked ? region.name_zh : t('mapRegionLocked')}
+                    {regionUnlocked ? regionName : t('mapRegionLocked')}
                   </span>
                 </div>
 
@@ -134,6 +241,10 @@ export default function AdventureMap() {
                   const completedRecord =
                     progress.completed_levels[level.level_id];
                   const isCurrentNode = status === 'next';
+                  const titleDisplay =
+                    uiLang === 'ja' && level.title_jp
+                      ? level.title_jp
+                      : level.title_zh;
 
                   return (
                     <div key={level.level_id} className="flex items-center">
@@ -154,7 +265,7 @@ export default function AdventureMap() {
                         <button
                           ref={isCurrentNode ? currentNodeRef : null}
                           type="button"
-                          aria-label={level.title_zh}
+                          aria-label={titleDisplay}
                           className={levelNodeClass(status, isBoss)}
                           onClick={() => handleLevelClick(level, status)}
                         >
@@ -170,7 +281,7 @@ export default function AdventureMap() {
 
                         {/* Level title */}
                         <span className="text-xs text-center text-gray-600 max-w-[72px] leading-tight">
-                          {level.title_zh}
+                          {titleDisplay}
                         </span>
                       </div>
                     </div>
@@ -184,3 +295,4 @@ export default function AdventureMap() {
     </div>
   );
 }
+

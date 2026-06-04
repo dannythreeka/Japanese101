@@ -1,0 +1,100 @@
+{
+  "_meta": {
+    "note": "寵物進化階段。每完成關鍵關卡後觸發 stage 升級;由 level.pet_evolution_on_clear 欄位驅動。",
+    "animation_rule": "跨階段時強制播放 2-3 秒進化過場動畫,不可跳過。"
+  },
+  "stages": [
+    {
+      "stage_id": "stage_0_egg",
+      "stage_number": 0,
+      "name_jp": "謎の卵",
+      "name_jp_furigana": "なぞのたまご",
+      "name_zh": "謎之蛋",
+      "description_jp": "ふしぎな たまご。なかから なにか きこえる...",
+      "description_zh": "神秘的蛋,裡面好像有什麼聲音...",
+      "required_xp": 0,
+      "unlocked_initially": true,
+      "asset_hint": "彩色蛋形,有裂紋逐漸增多",
+      "animation_idle": "輕微搖晃"
+    },
+    {
+      "stage_id": "stage_1_chick",
+      "stage_number": 1,
+      "name_jp": "ヒナ鳥",
+      "name_jp_furigana": "ひなどり",
+      "name_zh": "雛鳥",
+      "description_jp": "たまごが かえった! ちいさな ヒナどりだ。",
+      "description_zh": "蛋孵化了!是一隻小雛鳥。",
+      "required_xp": 800,
+      "unlocked_after_level": "lv_05_kessen",
+      "asset_hint": "圓滾滾的小雛鳥,大眼睛、絨毛、橘色嘴",
+      "animation_idle": "輕微跳動 + 眨眼"
+    },
+    {
+      "stage_id": "stage_2_wind",
+      "stage_number": 2,
+      "name_jp": "風の使い",
+      "name_jp_furigana": "かぜのつかい",
+      "name_zh": "風之使者",
+      "description_jp": "からだの まわりに かぜが ながれる。",
+      "description_zh": "身體周圍開始流動著風。",
+      "required_xp": 1500,
+      "unlocked_after_level": "lv_06_kouzan",
+      "asset_hint": "雛鳥 + 半透明的風流線環繞身體",
+      "animation_idle": "風線條繞身體飄動"
+    },
+    {
+      "stage_id": "stage_3_jump",
+      "stage_number": 3,
+      "name_jp": "跳ね使い",
+      "name_jp_furigana": "はねつかい",
+      "name_zh": "跳躍使者",
+      "description_jp": "ちいさな はねが はえた。あしどりが かるくなった。",
+      "description_zh": "長出小翅膀。腳步變得輕盈。",
+      "required_xp": 2200,
+      "unlocked_after_level": "lv_07_hanebashi",
+      "asset_hint": "前一形態 + 小翅膀 + 腳上小裝飾",
+      "animation_idle": "輕微浮起 + 翅膀拍動"
+    },
+    {
+      "stage_id": "stage_4_echo",
+      "stage_number": 4,
+      "name_jp": "響の使い",
+      "name_jp_furigana": "ひびきのつかい",
+      "name_zh": "響之使者",
+      "description_jp": "からだが おおきくなり、ひたいに しるしが あらわれた。",
+      "description_zh": "體型變大,額頭出現符號。",
+      "required_xp": 3000,
+      "unlocked_after_level": "lv_08_kodama",
+      "asset_hint": "體型放大 1.2 倍 + 額頭發光符號 + 眼神更銳利",
+      "animation_idle": "符號發光、體型微微震動"
+    },
+    {
+      "stage_id": "stage_5_light",
+      "stage_number": 5,
+      "name_jp": "光の使い",
+      "name_jp_furigana": "ひかりのつかい",
+      "name_zh": "光之使者",
+      "description_jp": "ぜんしんから ひかりが あふれだす。",
+      "description_zh": "全身散發出耀眼光芒。",
+      "required_xp": 4000,
+      "unlocked_after_level": "lv_09_nejire",
+      "asset_hint": "全身光暈、發光粒子環繞、進化前兆",
+      "animation_idle": "光暈脈動、粒子緩慢盤旋"
+    },
+    {
+      "stage_id": "stage_6_final",
+      "stage_number": 6,
+      "name_jp": "しんかけい",
+      "name_jp_furigana": "しんかけい",
+      "name_zh": "終極形態",
+      "description_jp": "ついに しんかが かんりょうした! きらびやかな すがた!",
+      "description_zh": "終於完成終極進化!華麗的姿態!",
+      "required_xp": 5500,
+      "unlocked_after_level": "lv_10_saidan",
+      "asset_hint": "完全進化形態,華麗鱗片或羽毛、彩色光暈、力量感",
+      "animation_idle": "緩慢呼吸 + 光暈、彩色粒子",
+      "is_final": true
+    }
+  ]
+}

@@ -11,81 +11,1673 @@
     }
   },
   "words": [
-    { "id": "w_tamago",    "kana": "たまご",     "romaji": "tamago",    "meaning_zh": "蛋",         "category": "tutorial",            "unit": "mitsumura_g1_u1_tutorial", "source": "extended",         "image": { "src": "/assets/img/svg/w_tamago.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-
-    { "id": "w_ajisai",    "kana": "あじさい",   "romaji": "ajisai",    "meaning_zh": "繡球花",     "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_ajisai.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_aomushi",   "kana": "あおむし",   "romaji": "aomushi",   "meaning_zh": "青蟲",       "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_aomushi.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_ame",       "kana": "あめ",       "romaji": "ame",       "meaning_zh": "雨/糖",      "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "extended",         "image": { "src": "/assets/img/svg/w_ame.svg",       "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_ichigo",    "kana": "いちご",     "romaji": "ichigo",    "meaning_zh": "草莓",       "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_ichigo.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_inoshishi", "kana": "いのしし",   "romaji": "inoshishi", "meaning_zh": "山豬",       "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_inoshishi.svg", "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_inu",       "kana": "いぬ",       "romaji": "inu",       "meaning_zh": "狗",         "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "extended",         "image": { "src": "/assets/img/svg/w_inu.svg",       "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_uma",       "kana": "うま",       "romaji": "uma",       "meaning_zh": "馬",         "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_uma.svg",       "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_uchiwa",    "kana": "うちわ",     "romaji": "uchiwa",    "meaning_zh": "團扇",       "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_uchiwa.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_umi",       "kana": "うみ",       "romaji": "umi",       "meaning_zh": "海",         "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "extended",         "image": { "src": "/assets/img/svg/w_umi.svg",       "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_ebi",       "kana": "えび",       "romaji": "ebi",       "meaning_zh": "蝦子",       "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_ebi.svg",       "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_ensoku",    "kana": "えんそく",   "romaji": "ensoku",    "meaning_zh": "遠足",       "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_ensoku.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_eki",       "kana": "えき",       "romaji": "eki",       "meaning_zh": "車站",       "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "extended",         "image": { "src": "/assets/img/svg/w_eki.svg",       "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_onigiri",   "kana": "おにぎり",   "romaji": "onigiri",   "meaning_zh": "飯糰",       "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_onigiri.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_oni",       "kana": "おに",       "romaji": "oni",       "meaning_zh": "鬼",         "category": "vowel_word",          "unit": "mitsumura_g1_u2_aiueo",    "source": "extended",         "image": { "src": "/assets/img/svg/w_oni.svg",       "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-
-    { "id": "w_kaki",      "kana": "かき",       "romaji": "kaki",      "meaning_zh": "柿子",       "category": "minimal_pair_seion",  "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_kaki.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_kagi",      "kana": "かぎ",       "romaji": "kagi",      "meaning_zh": "鑰匙",       "category": "minimal_pair_dakuon", "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_kagi.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_saru",      "kana": "さる",       "romaji": "saru",      "meaning_zh": "猴子",       "category": "minimal_pair_seion",  "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_saru.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_zaru",      "kana": "ざる",       "romaji": "zaru",      "meaning_zh": "竹篩",       "category": "minimal_pair_dakuon", "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_zaru.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_mato",      "kana": "まと",       "romaji": "mato",      "meaning_zh": "標靶",       "category": "minimal_pair_seion",  "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_mato.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_mado",      "kana": "まど",       "romaji": "mado",      "meaning_zh": "窗戶",       "category": "minimal_pair_dakuon", "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_mado.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_konbu",     "kana": "こんぶ",     "romaji": "konbu",     "meaning_zh": "昆布",       "category": "dakuon_word",         "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_konbu.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_onpu",      "kana": "おんぷ",     "romaji": "onpu",      "meaning_zh": "音符",       "category": "handakuon_word",      "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_onpu.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_unagi",     "kana": "うなぎ",     "romaji": "unagi",     "meaning_zh": "鰻魚",       "category": "dakuon_word",         "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_unagi.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_budou",     "kana": "ぶどう",     "romaji": "budou",     "meaning_zh": "葡萄",       "category": "dakuon_word",         "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_budou.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_donguri",   "kana": "どんぐり",   "romaji": "donguri",   "meaning_zh": "橡實",       "category": "dakuon_word",         "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_donguri.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_zabuton",   "kana": "ざぶとん",   "romaji": "zabuton",   "meaning_zh": "坐墊",       "category": "dakuon_word",         "unit": "mitsumura_g1_u4_dakuten",  "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_zabuton.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_panda",     "kana": "ぱんだ",     "romaji": "panda",     "meaning_zh": "熊貓",       "category": "handakuon_word",      "unit": "mitsumura_g1_u4_dakuten",  "source": "extended",         "image": { "src": "/assets/img/svg/w_panda.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_purin",     "kana": "ぷりん",     "romaji": "purin",     "meaning_zh": "布丁",       "category": "handakuon_word",      "unit": "mitsumura_g1_u4_dakuten",  "source": "extended",         "image": { "src": "/assets/img/svg/w_purin.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-
-    { "id": "w_neko",      "kana": "ねこ",       "romaji": "neko",      "meaning_zh": "貓",         "category": "sokuon_no",           "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_neko.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_nekko",     "kana": "ねっこ",     "romaji": "nekko",     "meaning_zh": "樹根",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_nekko.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_harappa",   "kana": "はらっぱ",   "romaji": "harappa",   "meaning_zh": "草原",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_harappa.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_batta",     "kana": "ばった",     "romaji": "batta",     "meaning_zh": "蚱蜢",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_batta.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_kakekko",   "kana": "かけっこ",   "romaji": "kakekko",   "meaning_zh": "賽跑",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_kakekko.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_kitte",     "kana": "きって",     "romaji": "kitte",     "meaning_zh": "郵票",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_kitte.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_nikki",     "kana": "にっき",     "romaji": "nikki",     "meaning_zh": "日記",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_nikki.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_mokkin",    "kana": "もっきん",   "romaji": "mokkin",    "meaning_zh": "木琴",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_mokkin.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_shippo",    "kana": "しっぽ",     "romaji": "shippo",    "meaning_zh": "尾巴",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_shippo.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_happa",     "kana": "はっぱ",     "romaji": "happa",     "meaning_zh": "葉子",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_happa.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_gakkou",    "kana": "がっこう",   "romaji": "gakkou",    "meaning_zh": "學校",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_gakkou.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_kippu",     "kana": "きっぷ",     "romaji": "kippu",     "meaning_zh": "車票",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_kippu.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_hoppe",     "kana": "ほっぺ",     "romaji": "hoppe",     "meaning_zh": "臉頰",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "extended",         "image": { "src": "/assets/img/svg/w_hoppe.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_dakko",     "kana": "だっこ",     "romaji": "dakko",     "meaning_zh": "抱抱",       "category": "sokuon_yes",          "unit": "mitsumura_g1_u6_sokuon",   "source": "extended",         "image": { "src": "/assets/img/svg/w_dakko.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-
-    { "id": "w_obasan",    "kana": "おばさん",   "romaji": "obasan",    "meaning_zh": "阿姨",       "category": "family_short",        "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_obasan.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_obaasan",   "kana": "おばあさん", "romaji": "obaasan",   "meaning_zh": "奶奶",       "category": "family_long",         "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_obaasan.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_okaasan",   "kana": "おかあさん", "romaji": "okaasan",   "meaning_zh": "媽媽",       "category": "family_long",         "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_okaasan.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_otousan",   "kana": "おとうさん", "romaji": "otousan",   "meaning_zh": "爸爸",       "category": "family_long",         "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_otousan.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_oniisan",   "kana": "おにいさん", "romaji": "oniisan",   "meaning_zh": "哥哥",       "category": "family_long",         "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_oniisan.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_oneesan",   "kana": "おねえさん", "romaji": "oneesan",   "meaning_zh": "姐姐",       "category": "family_long",         "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_oneesan.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_ojiisan",   "kana": "おじいさん", "romaji": "ojiisan",   "meaning_zh": "爺爺",       "category": "family_long",         "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_ojiisan.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_imouto",    "kana": "いもうと",   "romaji": "imouto",    "meaning_zh": "妹妹",       "category": "family_long",         "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_imouto.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_otouto",    "kana": "おとうと",   "romaji": "otouto",    "meaning_zh": "弟弟",       "category": "family_long",         "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_otouto.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_rousoku",   "kana": "ろうそく",   "romaji": "rousoku",   "meaning_zh": "蠟燭",       "category": "long_vowel",          "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_rousoku.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_yuuyake",   "kana": "ゆうやけ",   "romaji": "yuuyake",   "meaning_zh": "晚霞",       "category": "long_vowel",          "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_yuuyake.svg",   "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_houki",     "kana": "ほうき",     "romaji": "houki",     "meaning_zh": "掃帚",       "category": "long_vowel",          "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_houki.svg",     "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_fuusen",    "kana": "ふうせん",   "romaji": "fuusen",    "meaning_zh": "氣球",       "category": "long_vowel",          "unit": "mitsumura_g1_u7_chouon",   "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_fuusen.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_youkai",    "kana": "ようかい",   "romaji": "youkai",    "meaning_zh": "妖怪",       "category": "long_vowel",          "unit": "mitsumura_g1_u7_chouon",   "source": "extended",         "image": { "src": "/assets/img/svg/w_youkai.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-
-    { "id": "w_omochi",    "kana": "おもち",     "romaji": "omochi",    "meaning_zh": "麻糬",       "category": "youon_no",            "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_omochi.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_omocha",    "kana": "おもちゃ",   "romaji": "omocha",    "meaning_zh": "玩具",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_omocha.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_jitensha",  "kana": "じてんしゃ", "romaji": "jitensha",  "meaning_zh": "腳踏車",     "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_jitensha.svg",  "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_akushu",    "kana": "あくしゅ",   "romaji": "akushu",    "meaning_zh": "握手",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_akushu.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_janken",    "kana": "じゃんけん", "romaji": "janken",    "meaning_zh": "猜拳",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_janken.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_gyuunyuu",  "kana": "ぎゅうにゅう","romaji": "gyuunyuu",  "meaning_zh": "牛奶",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_gyuunyuu.svg",  "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_kyuushoku", "kana": "きゅうしょく","romaji": "kyuushoku", "meaning_zh": "營養午餐",   "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_kyuushoku.svg", "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_ocha",      "kana": "おちゃ",     "romaji": "ocha",      "meaning_zh": "茶",         "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_content","image": { "src": "/assets/img/svg/w_ocha.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_densha",    "kana": "でんしゃ",   "romaji": "densha",    "meaning_zh": "電車",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_densha.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_ryokou",    "kana": "りょこう",   "romaji": "ryokou",    "meaning_zh": "旅行",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_ryokou.svg",    "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_chou",      "kana": "ちょう",     "romaji": "chou",      "meaning_zh": "蝴蝶",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_chou.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_kyouryuu",  "kana": "きょうりゅう","romaji": "kyouryuu",  "meaning_zh": "恐龍",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "mitsumura_qr",     "image": { "src": "/assets/img/svg/w_kyouryuu.svg",  "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_kyoushitsu","kana": "きょうしつ", "romaji": "kyoushitsu","meaning_zh": "教室",       "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "extended",         "image": { "src": "/assets/img/svg/w_kyoushitsu.svg","license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } },
-    { "id": "w_hyou",      "kana": "ひょう",     "romaji": "hyou",      "meaning_zh": "豹",         "category": "youon_yes",           "unit": "mitsumura_g1_u8_youon",    "source": "extended",         "image": { "src": "/assets/img/svg/w_hyou.svg",      "license": "self-created" }, "audio": { "src": "", "license": "tts_generated", "origin": "tts_generated" } }
+    {
+      "id": "w_tamago",
+      "kana": "たまご",
+      "romaji": "tamago",
+      "meaning_zh": "蛋",
+      "category": "tutorial",
+      "unit": "mitsumura_g1_u1_tutorial",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_tamago.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ajisai",
+      "kana": "あじさい",
+      "romaji": "ajisai",
+      "meaning_zh": "繡球花",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_ajisai.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_aomushi",
+      "kana": "あおむし",
+      "romaji": "aomushi",
+      "meaning_zh": "青蟲",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_aomushi.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ame",
+      "kana": "あめ",
+      "romaji": "ame",
+      "meaning_zh": "雨/糖",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_ame.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ichigo",
+      "kana": "いちご",
+      "romaji": "ichigo",
+      "meaning_zh": "草莓",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_ichigo.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_inoshishi",
+      "kana": "いのしし",
+      "romaji": "inoshishi",
+      "meaning_zh": "山豬",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_inoshishi.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_inu",
+      "kana": "いぬ",
+      "romaji": "inu",
+      "meaning_zh": "狗",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_inu.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_uma",
+      "kana": "うま",
+      "romaji": "uma",
+      "meaning_zh": "馬",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_uma.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_uchiwa",
+      "kana": "うちわ",
+      "romaji": "uchiwa",
+      "meaning_zh": "團扇",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_uchiwa.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_umi",
+      "kana": "うみ",
+      "romaji": "umi",
+      "meaning_zh": "海",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_umi.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ebi",
+      "kana": "えび",
+      "romaji": "ebi",
+      "meaning_zh": "蝦子",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_ebi.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ensoku",
+      "kana": "えんそく",
+      "romaji": "ensoku",
+      "meaning_zh": "遠足",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_ensoku.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_eki",
+      "kana": "えき",
+      "romaji": "eki",
+      "meaning_zh": "車站",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_eki.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_onigiri",
+      "kana": "おにぎり",
+      "romaji": "onigiri",
+      "meaning_zh": "飯糰",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_onigiri.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_oni",
+      "kana": "おに",
+      "romaji": "oni",
+      "meaning_zh": "鬼",
+      "category": "vowel_word",
+      "unit": "mitsumura_g1_u2_aiueo",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_oni.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_kaki",
+      "kana": "かき",
+      "romaji": "kaki",
+      "meaning_zh": "柿子",
+      "category": "minimal_pair_seion",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_kaki.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_kagi",
+      "kana": "かぎ",
+      "romaji": "kagi",
+      "meaning_zh": "鑰匙",
+      "category": "minimal_pair_dakuon",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_kagi.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_saru",
+      "kana": "さる",
+      "romaji": "saru",
+      "meaning_zh": "猴子",
+      "category": "minimal_pair_seion",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_saru.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_zaru",
+      "kana": "ざる",
+      "romaji": "zaru",
+      "meaning_zh": "竹篩",
+      "category": "minimal_pair_dakuon",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_zaru.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_mato",
+      "kana": "まと",
+      "romaji": "mato",
+      "meaning_zh": "標靶",
+      "category": "minimal_pair_seion",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_mato.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_mado",
+      "kana": "まど",
+      "romaji": "mado",
+      "meaning_zh": "窗戶",
+      "category": "minimal_pair_dakuon",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_mado.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_konbu",
+      "kana": "こんぶ",
+      "romaji": "konbu",
+      "meaning_zh": "昆布",
+      "category": "dakuon_word",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_konbu.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_onpu",
+      "kana": "おんぷ",
+      "romaji": "onpu",
+      "meaning_zh": "音符",
+      "category": "handakuon_word",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_onpu.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_unagi",
+      "kana": "うなぎ",
+      "romaji": "unagi",
+      "meaning_zh": "鰻魚",
+      "category": "dakuon_word",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_unagi.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_budou",
+      "kana": "ぶどう",
+      "romaji": "budou",
+      "meaning_zh": "葡萄",
+      "category": "dakuon_word",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_budou.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_donguri",
+      "kana": "どんぐり",
+      "romaji": "donguri",
+      "meaning_zh": "橡實",
+      "category": "dakuon_word",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_donguri.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_zabuton",
+      "kana": "ざぶとん",
+      "romaji": "zabuton",
+      "meaning_zh": "坐墊",
+      "category": "dakuon_word",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_zabuton.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_panda",
+      "kana": "ぱんだ",
+      "romaji": "panda",
+      "meaning_zh": "熊貓",
+      "category": "handakuon_word",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_panda.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_purin",
+      "kana": "ぷりん",
+      "romaji": "purin",
+      "meaning_zh": "布丁",
+      "category": "handakuon_word",
+      "unit": "mitsumura_g1_u4_dakuten",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_purin.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_neko",
+      "kana": "ねこ",
+      "romaji": "neko",
+      "meaning_zh": "貓",
+      "category": "sokuon_no",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_neko.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_nekko",
+      "kana": "ねっこ",
+      "romaji": "nekko",
+      "meaning_zh": "樹根",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_nekko.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_harappa",
+      "kana": "はらっぱ",
+      "romaji": "harappa",
+      "meaning_zh": "草原",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_harappa.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_batta",
+      "kana": "ばった",
+      "romaji": "batta",
+      "meaning_zh": "蚱蜢",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_batta.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_kakekko",
+      "kana": "かけっこ",
+      "romaji": "kakekko",
+      "meaning_zh": "賽跑",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_kakekko.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_kitte",
+      "kana": "きって",
+      "romaji": "kitte",
+      "meaning_zh": "郵票",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_kitte.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_nikki",
+      "kana": "にっき",
+      "romaji": "nikki",
+      "meaning_zh": "日記",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_nikki.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_mokkin",
+      "kana": "もっきん",
+      "romaji": "mokkin",
+      "meaning_zh": "木琴",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_mokkin.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_shippo",
+      "kana": "しっぽ",
+      "romaji": "shippo",
+      "meaning_zh": "尾巴",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_shippo.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_happa",
+      "kana": "はっぱ",
+      "romaji": "happa",
+      "meaning_zh": "葉子",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_happa.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_gakkou",
+      "kana": "がっこう",
+      "romaji": "gakkou",
+      "meaning_zh": "學校",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_gakkou.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_kippu",
+      "kana": "きっぷ",
+      "romaji": "kippu",
+      "meaning_zh": "車票",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_kippu.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_hoppe",
+      "kana": "ほっぺ",
+      "romaji": "hoppe",
+      "meaning_zh": "臉頰",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_hoppe.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_dakko",
+      "kana": "だっこ",
+      "romaji": "dakko",
+      "meaning_zh": "抱抱",
+      "category": "sokuon_yes",
+      "unit": "mitsumura_g1_u6_sokuon",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_dakko.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_obasan",
+      "kana": "おばさん",
+      "romaji": "obasan",
+      "meaning_zh": "阿姨",
+      "category": "family_short",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_obasan.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_obaasan",
+      "kana": "おばあさん",
+      "romaji": "obaasan",
+      "meaning_zh": "奶奶",
+      "category": "family_long",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_obaasan.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_okaasan",
+      "kana": "おかあさん",
+      "romaji": "okaasan",
+      "meaning_zh": "媽媽",
+      "category": "family_long",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_okaasan.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_otousan",
+      "kana": "おとうさん",
+      "romaji": "otousan",
+      "meaning_zh": "爸爸",
+      "category": "family_long",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_otousan.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_oniisan",
+      "kana": "おにいさん",
+      "romaji": "oniisan",
+      "meaning_zh": "哥哥",
+      "category": "family_long",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_oniisan.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_oneesan",
+      "kana": "おねえさん",
+      "romaji": "oneesan",
+      "meaning_zh": "姐姐",
+      "category": "family_long",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_oneesan.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ojiisan",
+      "kana": "おじいさん",
+      "romaji": "ojiisan",
+      "meaning_zh": "爺爺",
+      "category": "family_long",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_ojiisan.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_imouto",
+      "kana": "いもうと",
+      "romaji": "imouto",
+      "meaning_zh": "妹妹",
+      "category": "family_long",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_imouto.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_otouto",
+      "kana": "おとうと",
+      "romaji": "otouto",
+      "meaning_zh": "弟弟",
+      "category": "family_long",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_otouto.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_rousoku",
+      "kana": "ろうそく",
+      "romaji": "rousoku",
+      "meaning_zh": "蠟燭",
+      "category": "long_vowel",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_rousoku.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_yuuyake",
+      "kana": "ゆうやけ",
+      "romaji": "yuuyake",
+      "meaning_zh": "晚霞",
+      "category": "long_vowel",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_yuuyake.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_houki",
+      "kana": "ほうき",
+      "romaji": "houki",
+      "meaning_zh": "掃帚",
+      "category": "long_vowel",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_houki.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_fuusen",
+      "kana": "ふうせん",
+      "romaji": "fuusen",
+      "meaning_zh": "氣球",
+      "category": "long_vowel",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_fuusen.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_youkai",
+      "kana": "ようかい",
+      "romaji": "youkai",
+      "meaning_zh": "妖怪",
+      "category": "long_vowel",
+      "unit": "mitsumura_g1_u7_chouon",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_youkai.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_omochi",
+      "kana": "おもち",
+      "romaji": "omochi",
+      "meaning_zh": "麻糬",
+      "category": "youon_no",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_omochi.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_omocha",
+      "kana": "おもちゃ",
+      "romaji": "omocha",
+      "meaning_zh": "玩具",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_omocha.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_jitensha",
+      "kana": "じてんしゃ",
+      "romaji": "jitensha",
+      "meaning_zh": "腳踏車",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_jitensha.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_akushu",
+      "kana": "あくしゅ",
+      "romaji": "akushu",
+      "meaning_zh": "握手",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_akushu.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_janken",
+      "kana": "じゃんけん",
+      "romaji": "janken",
+      "meaning_zh": "猜拳",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_janken.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_gyuunyuu",
+      "kana": "ぎゅうにゅう",
+      "romaji": "gyuunyuu",
+      "meaning_zh": "牛奶",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_gyuunyuu.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_kyuushoku",
+      "kana": "きゅうしょく",
+      "romaji": "kyuushoku",
+      "meaning_zh": "營養午餐",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_kyuushoku.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ocha",
+      "kana": "おちゃ",
+      "romaji": "ocha",
+      "meaning_zh": "茶",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_content",
+      "image": {
+        "src": "/assets/img/svg/w_ocha.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_densha",
+      "kana": "でんしゃ",
+      "romaji": "densha",
+      "meaning_zh": "電車",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_densha.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ryokou",
+      "kana": "りょこう",
+      "romaji": "ryokou",
+      "meaning_zh": "旅行",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_ryokou.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_chou",
+      "kana": "ちょう",
+      "romaji": "chou",
+      "meaning_zh": "蝴蝶",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_chou.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_kyouryuu",
+      "kana": "きょうりゅう",
+      "romaji": "kyouryuu",
+      "meaning_zh": "恐龍",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "mitsumura_qr",
+      "image": {
+        "src": "/assets/img/svg/w_kyouryuu.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_kyoushitsu",
+      "kana": "きょうしつ",
+      "romaji": "kyoushitsu",
+      "meaning_zh": "教室",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_kyoushitsu.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_hyou",
+      "kana": "ひょう",
+      "romaji": "hyou",
+      "meaning_zh": "豹",
+      "category": "youon_yes",
+      "unit": "mitsumura_g1_u8_youon",
+      "source": "extended",
+      "image": {
+        "src": "/assets/img/svg/w_hyou.svg",
+        "license": "self-created"
+      },
+      "audio": {
+        "src": "",
+        "license": "tts_generated",
+        "origin": "tts_generated"
+      }
+    },
+    {
+      "id": "w_ari",
+      "hiragana": "あり",
+      "romaji": "ari",
+      "meaning_zh": "螞蟻",
+      "meaning_en": "ant",
+      "image_hint": "ant",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_kasa",
+      "hiragana": "かさ",
+      "romaji": "kasa",
+      "meaning_zh": "傘",
+      "meaning_en": "umbrella",
+      "image_hint": "umbrella",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_kiku",
+      "hiragana": "きく",
+      "romaji": "kiku",
+      "meaning_zh": "菊花",
+      "meaning_en": "chrysanthemum",
+      "image_hint": "chrysanthemum",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_kumo",
+      "hiragana": "くも",
+      "romaji": "kumo",
+      "meaning_zh": "雲",
+      "meaning_en": "cloud",
+      "image_hint": "cloud",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_kemuri",
+      "hiragana": "けむり",
+      "romaji": "kemuri",
+      "meaning_zh": "煙",
+      "meaning_en": "smoke",
+      "image_hint": "smoke",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_koma",
+      "hiragana": "こま",
+      "romaji": "koma",
+      "meaning_zh": "陀螺",
+      "meaning_en": "spinning top",
+      "image_hint": "spinning top",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_sakura",
+      "hiragana": "さくら",
+      "romaji": "sakura",
+      "meaning_zh": "櫻花",
+      "meaning_en": "cherry blossom",
+      "image_hint": "cherry blossom",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_shima",
+      "hiragana": "しま",
+      "romaji": "shima",
+      "meaning_zh": "島嶼",
+      "meaning_en": "island",
+      "image_hint": "island",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_suika",
+      "hiragana": "すいか",
+      "romaji": "suika",
+      "meaning_zh": "西瓜",
+      "meaning_en": "watermelon",
+      "image_hint": "watermelon",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_semi",
+      "hiragana": "せみ",
+      "romaji": "semi",
+      "meaning_zh": "蟬",
+      "meaning_en": "cicada",
+      "image_hint": "cicada",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_sora",
+      "hiragana": "そら",
+      "romaji": "sora",
+      "meaning_zh": "天空",
+      "meaning_en": "sky",
+      "image_hint": "sky",
+      "source": "extended",
+      "unit": "adv_l1_hajimari"
+    },
+    {
+      "id": "w_tako",
+      "hiragana": "たこ",
+      "romaji": "tako",
+      "meaning_zh": "風箏",
+      "meaning_en": "kite",
+      "image_hint": "kite",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_chizu",
+      "hiragana": "ちず",
+      "romaji": "chizu",
+      "meaning_zh": "地圖",
+      "meaning_en": "map",
+      "image_hint": "map",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_tsuki",
+      "hiragana": "つき",
+      "romaji": "tsuki",
+      "meaning_zh": "月亮",
+      "meaning_en": "moon",
+      "image_hint": "moon",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_tegami",
+      "hiragana": "てがみ",
+      "romaji": "tegami",
+      "meaning_zh": "信",
+      "meaning_en": "letter",
+      "image_hint": "letter",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_tokei",
+      "hiragana": "とけい",
+      "romaji": "tokei",
+      "meaning_zh": "時鐘",
+      "meaning_en": "clock",
+      "image_hint": "clock",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_natsu",
+      "hiragana": "なつ",
+      "romaji": "natsu",
+      "meaning_zh": "夏天",
+      "meaning_en": "summer",
+      "image_hint": "summer",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_niji",
+      "hiragana": "にじ",
+      "romaji": "niji",
+      "meaning_zh": "彩虹",
+      "meaning_en": "rainbow",
+      "image_hint": "rainbow",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_nuno",
+      "hiragana": "ぬの",
+      "romaji": "nuno",
+      "meaning_zh": "布",
+      "meaning_en": "fabric",
+      "image_hint": "fabric",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_nohara",
+      "hiragana": "のはら",
+      "romaji": "nohara",
+      "meaning_zh": "野原",
+      "meaning_en": "field",
+      "image_hint": "field",
+      "source": "extended",
+      "unit": "adv_l2_seseragi"
+    },
+    {
+      "id": "w_hana",
+      "hiragana": "はな",
+      "romaji": "hana",
+      "meaning_zh": "花",
+      "meaning_en": "flower",
+      "image_hint": "flower",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_hito",
+      "hiragana": "ひと",
+      "romaji": "hito",
+      "meaning_zh": "人",
+      "meaning_en": "person",
+      "image_hint": "person",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_fune",
+      "hiragana": "ふね",
+      "romaji": "fune",
+      "meaning_zh": "船",
+      "meaning_en": "boat",
+      "image_hint": "boat",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_heya",
+      "hiragana": "へや",
+      "romaji": "heya",
+      "meaning_zh": "房間",
+      "meaning_en": "room",
+      "image_hint": "room",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_hoshi",
+      "hiragana": "ほし",
+      "romaji": "hoshi",
+      "meaning_zh": "星星",
+      "meaning_en": "star",
+      "image_hint": "star",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_mame",
+      "hiragana": "まめ",
+      "romaji": "mame",
+      "meaning_zh": "豆",
+      "meaning_en": "bean",
+      "image_hint": "bean",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_mizu",
+      "hiragana": "みず",
+      "romaji": "mizu",
+      "meaning_zh": "水",
+      "meaning_en": "water",
+      "image_hint": "water",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_mushi",
+      "hiragana": "むし",
+      "romaji": "mushi",
+      "meaning_zh": "蟲",
+      "meaning_en": "bug",
+      "image_hint": "bug",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_megane",
+      "hiragana": "めがね",
+      "romaji": "megane",
+      "meaning_zh": "眼鏡",
+      "meaning_en": "glasses",
+      "image_hint": "glasses",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_momo",
+      "hiragana": "もも",
+      "romaji": "momo",
+      "meaning_zh": "桃子",
+      "meaning_en": "peach",
+      "image_hint": "peach",
+      "source": "extended",
+      "unit": "adv_l3_soyokaze"
+    },
+    {
+      "id": "w_yama",
+      "hiragana": "やま",
+      "romaji": "yama",
+      "meaning_zh": "山",
+      "meaning_en": "mountain",
+      "image_hint": "mountain",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    },
+    {
+      "id": "w_yuki",
+      "hiragana": "ゆき",
+      "romaji": "yuki",
+      "meaning_zh": "雪",
+      "meaning_en": "snow",
+      "image_hint": "snow",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    },
+    {
+      "id": "w_yoru",
+      "hiragana": "よる",
+      "romaji": "yoru",
+      "meaning_zh": "夜晚",
+      "meaning_en": "night",
+      "image_hint": "night",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    },
+    {
+      "id": "w_rakuda",
+      "hiragana": "らくだ",
+      "romaji": "rakuda",
+      "meaning_zh": "駱駝",
+      "meaning_en": "camel",
+      "image_hint": "camel",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    },
+    {
+      "id": "w_risu",
+      "hiragana": "りす",
+      "romaji": "risu",
+      "meaning_zh": "松鼠",
+      "meaning_en": "squirrel",
+      "image_hint": "squirrel",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    },
+    {
+      "id": "w_rusu",
+      "hiragana": "るす",
+      "romaji": "rusu",
+      "meaning_zh": "不在家",
+      "meaning_en": "away from home",
+      "image_hint": "empty house",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    },
+    {
+      "id": "w_remon",
+      "hiragana": "れもん",
+      "romaji": "remon",
+      "meaning_zh": "檸檬",
+      "meaning_en": "lemon",
+      "image_hint": "lemon",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    },
+    {
+      "id": "w_rosoku",
+      "hiragana": "ろうそく",
+      "romaji": "rosoku",
+      "meaning_zh": "蠟燭",
+      "meaning_en": "candle",
+      "image_hint": "candle",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    },
+    {
+      "id": "w_wani",
+      "hiragana": "わに",
+      "romaji": "wani",
+      "meaning_zh": "鱷魚",
+      "meaning_en": "crocodile",
+      "image_hint": "crocodile",
+      "source": "extended",
+      "unit": "adv_l4_yuugure"
+    }
   ]
 }

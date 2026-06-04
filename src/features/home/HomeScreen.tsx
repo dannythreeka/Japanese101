@@ -1,47 +1,63 @@
-import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { getOrCreatePet } from '../../db'
-import { getOrCreateAdventureProgress } from '../../db'
-import { useAppStore } from '../../store/useAppStore'
-import { xpProgress, xpToNextLevel } from '../../lib/pet'
-import PetAvatar from '../../components/PetAvatar'
-import { useT } from '../../hooks/useT'
-import { getFirstLevelId } from '../adventure/adventureEngine'
-import type { PetState } from '../../types'
-import type { AdventureProgress } from '../../types/adventure'
+import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { getOrCreatePet, getProfiles } from '../../db';
+import { getOrCreateAdventureProgress } from '../../db';
+import { useAppStore } from '../../store/useAppStore';
+import { xpProgress, xpToNextLevel } from '../../lib/pet';
+import PetAvatar from '../../components/PetAvatar';
+import { useT } from '../../hooks/useT';
+import { getFirstLevelId } from '../adventure/adventureEngine';
+import { getAvatarEmoji } from '../../types/profile';
+import type { PetState } from '../../types';
+import type { AdventureProgress } from '../../types/adventure';
+import type { Profile } from '../../types/profile';
 
 export default function HomeScreen() {
-  const navigate = useNavigate()
-  const { uiLang, setUiLang } = useAppStore()
-  const t = useT()
-  const [pet, setPet] = useState<PetState | null>(null)
-  const [adventureProgress, setAdventureProgress] = useState<AdventureProgress | null>(null)
+  const navigate = useNavigate();
+  const { uiLang, setUiLang, activeProfileId } = useAppStore();
+  const t = useT();
+  const [pet, setPet] = useState<PetState | null>(null);
+  const [adventureProgress, setAdventureProgress] =
+    useState<AdventureProgress | null>(null);
+  const [profile, setProfile] = useState<Profile | null>(null);
 
   useEffect(() => {
-    const firstId = getFirstLevelId()
-    Promise.all([
-      getOrCreatePet(),
-      getOrCreateAdventureProgress(firstId),
-    ]).then(([p, adv]) => {
-      setPet(p)
-      setAdventureProgress(adv)
-    })
-  }, [])
+    const firstId = getFirstLevelId();
+    Promise.all([getOrCreatePet(), getOrCreateAdventureProgress(firstId)]).then(
+      ([p, adv]) => {
+        setPet(p);
+        setAdventureProgress(adv);
+      },
+    );
+    if (activeProfileId) {
+      getProfiles().then((ps) => {
+        setProfile(ps.find((p) => p.profile_id === activeProfileId) ?? null);
+      });
+    }
+  }, [activeProfileId]);
 
   const hasStarted = adventureProgress
     ? Object.keys(adventureProgress.completed_levels).length > 0
-    : false
+    : false;
 
-  const progressPct = pet ? Math.round(xpProgress(pet.xp) * 100) : 0
-  const toNext = pet ? xpToNextLevel(pet.xp) : 0
-  const xpLabel = t('xpToNext').replace('{n}', String(toNext))
+  const progressPct = pet ? Math.round(xpProgress(pet.xp) * 100) : 0;
+  const toNext = pet ? xpToNextLevel(pet.xp) : 0;
+  const xpLabel = t('xpToNext').replace('{n}', String(toNext));
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-8 pb-6 gap-6">
-
       {/* Header */}
       <div className="w-full max-w-sm flex justify-between items-center">
-        <span className="text-3xl font-bold text-emerald-700">{t('appTitle')}</span>
+        <div className="flex flex-col">
+          <span className="text-3xl font-bold text-emerald-700">
+            {t('appTitle')}
+          </span>
+          {profile && (
+            <span className="text-sm text-emerald-600 font-medium">
+              {getAvatarEmoji(profile.avatar_id)} {profile.name}
+            </span>
+          )}
+        </div>
         <div className="flex items-center gap-2">
           <button
             type="button"
@@ -77,7 +93,9 @@ export default function HomeScreen() {
                 style={{ width: `${progressPct}%` }}
               />
             </div>
-            <span className="text-xs text-emerald-700 font-medium">{xpLabel}</span>
+            <span className="text-xs text-emerald-700 font-medium">
+              {xpLabel}
+            </span>
           </div>
         )}
       </div>
@@ -99,7 +117,15 @@ export default function HomeScreen() {
         >
           {t('homeFreePlay')}
         </button>
+
+        <button
+          type="button"
+          onClick={() => navigate('/profiles')}
+          className="w-full py-3 rounded-2xl bg-white/50 hover:bg-white/80 active:scale-95 text-gray-500 text-base font-medium shadow-sm transition-all"
+        >
+          ほかのプレイヤー
+        </button>
       </div>
     </div>
-  )
+  );
 }

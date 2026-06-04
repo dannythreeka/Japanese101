@@ -56,7 +56,7 @@ export default function KanaCatchGame() {
   const [pooledPairs, setPooledPairs] = useState<string[][] | null>(null)
   const [pooledWords, setPooledWords] = useState<ConceptWord[] | null>(null)
   const [paramsOverride, setParamsOverride] = useState<{
-    roundLength?: number; fallSpeed?: number; maxBubbles?: number
+    roundLength?: number; fallSpeed?: number; maxBubbles?: number; highlightCorrectAnswer?: boolean
   }>({})
 
   const baseParams = useMemo(() => buildParams(ageMode), [ageMode])
@@ -65,6 +65,7 @@ export default function KanaCatchGame() {
     fallSpeed:   paramsOverride.fallSpeed   ?? baseParams.fallSpeed,
     showRomaji:  baseParams.showRomaji,
     roundLength: paramsOverride.roundLength ?? baseParams.roundLength,
+    highlightCorrectAnswer: paramsOverride.highlightCorrectAnswer ?? false,
   }), [baseParams, paramsOverride])
 
   useEffect(() => { getOrCreatePet().then(setPet) }, [])
@@ -169,6 +170,7 @@ export default function KanaCatchGame() {
     if (typeof ov.roundLength === 'number') override.roundLength = ov.roundLength
     if (typeof ov.fallSpeed === 'number') override.fallSpeed = ov.fallSpeed
     if (typeof ov.maxBubbles === 'number') override.maxBubbles = ov.maxBubbles
+    if (typeof ov.highlightCorrectAnswer === 'boolean') override.highlightCorrectAnswer = ov.highlightCorrectAnswer
     setParamsOverride(override)
     const uid = ov.unitId
     handleStart(mode, typeof uid === 'string' ? uid : undefined)
@@ -221,7 +223,7 @@ export default function KanaCatchGame() {
     )
   }
 
-  const progress = Math.max(0, ((questionNum - 1) / effectiveParams.roundLength) * 100)
+  const progress = Math.max(0, (score / effectiveParams.roundLength) * 100)
 
   return (
     <div className="min-h-screen flex flex-col items-center gap-3 p-4 pt-6 bg-gradient-to-b from-orange-50 to-white">
@@ -235,7 +237,7 @@ export default function KanaCatchGame() {
           <div className="h-full bg-orange-400 rounded-full transition-all duration-500" style={{ width: `${progress}%` }} />
         </div>
         <span className="text-2xl font-bold text-gray-600 min-w-14 text-right">
-          {Math.max(0, questionNum - 1)}/{effectiveParams.roundLength}
+          {score}/{effectiveParams.roundLength}
         </span>
       </div>
 

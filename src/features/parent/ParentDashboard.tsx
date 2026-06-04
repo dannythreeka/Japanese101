@@ -4,6 +4,7 @@ import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode }
 import { useAppStore } from '../../store/useAppStore'
 import { requestMicPermission } from '../../lib/mic'
 import { getAllProgress, getRecentSessions, getTotalStudyTime, getOrCreateAdventureProgress } from '../../db'
+import { setSfxEnabled, setGlobalVolume, isSfxEnabled, getGlobalVolume } from '../../lib/audio'
 import { lessonData, levelsData } from '../../data/loaders'
 import { getFirstLevelId } from '../adventure/adventureEngine'
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils'
@@ -25,6 +26,9 @@ export default function ParentDashboard() {
     kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars, micMode,
     setKanaMode, setKanaDifficulty, setAgeMode, toggleUnit, setMicMode,
   } = useAppStore()
+
+  const [sfxOn, setSfxOn] = useState(isSfxEnabled)
+  const [sfxVol, setSfxVol] = useState(() => Math.round(getGlobalVolume() * 100))
 
   const [showMicModal, setShowMicModal] = useState(false)
   const [pendingMicMode, setPendingMicMode] = useState<Exclude<MicMode, 'off'>>('offline')
@@ -319,6 +323,43 @@ export default function ParentDashboard() {
                       </div>
                     )
                   })}
+                </div>
+              </div>
+            </div>
+
+            {/* Sound settings */}
+            <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
+              <h2 className="text-2xl font-bold text-gray-700">{t('parentSoundTitle')}</h2>
+              <div className="flex items-center gap-4">
+                <button
+                  type="button"
+                  aria-label={sfxOn ? t('parentSfxMute') : t('parentSfxUnmute')}
+                  onClick={() => {
+                    const next = !sfxOn
+                    setSfxOn(next)
+                    setSfxEnabled(next)
+                  }}
+                  className={`min-w-16 min-h-16 w-16 h-16 rounded-2xl text-3xl font-bold transition-all shadow ${
+                    sfxOn ? 'bg-emerald-400 text-white' : 'bg-gray-200 text-gray-400'
+                  }`}
+                >
+                  {sfxOn ? '🔊' : '🔇'}
+                </button>
+                <div className="flex-1 flex flex-col gap-1">
+                  <span className="text-lg text-gray-600">{t('parentSfxVolume')} {sfxVol}%</span>
+                  <input
+                    type="range"
+                    min={0}
+                    max={100}
+                    value={sfxVol}
+                    aria-label={t('parentSfxVolume')}
+                    onChange={(e) => {
+                      const v = Number(e.target.value)
+                      setSfxVol(v)
+                      setGlobalVolume(v / 100)
+                    }}
+                    className="w-full accent-emerald-500"
+                  />
                 </div>
               </div>
             </div>

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getOrCreateAdventureProgress } from '../../db'
 import { levelsData } from '../../data/loaders'
@@ -38,6 +38,8 @@ export default function LevelEntry() {
   const { adventureSession, initAdventureSession, launchChallenge } = useAppStore()
   const [level, setLevel] = useState<Level | null>(null)
   const [progress, setProgress] = useState<AdventureProgress | null>(null)
+  const [transitioning, setTransitioning] = useState(false)
+  const navTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
     const { levels } = levelsData()
@@ -72,8 +74,14 @@ export default function LevelEntry() {
   }
 
   function finishLevel() {
-    navigate(`/adventure/level/${levelId}/complete`)
+    if (transitioning) return
+    setTransitioning(true)
+    navTimerRef.current = setTimeout(() => {
+      navigate(`/adventure/level/${levelId}/complete`)
+    }, 1000)
   }
+
+  useEffect(() => () => { if (navTimerRef.current) clearTimeout(navTimerRef.current) }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-6 pb-8 gap-4">
@@ -217,6 +225,14 @@ export default function LevelEntry() {
           </button>
         )}
       </div>
+
+      {/* クリア! transition overlay */}
+      {transitioning && (
+        <div className="fixed inset-0 bg-indigo-500/90 flex flex-col items-center justify-center gap-5 z-50 pointer-events-none">
+          <p className="text-7xl font-bold text-white animate-bounce-in">{t('levelClearAnim')}</p>
+          <p className="text-5xl animate-star-pop" style={{ animationDelay: '0.15s', opacity: 0 }}>⭐⭐⭐</p>
+        </div>
+      )}
     </div>
   )
 }

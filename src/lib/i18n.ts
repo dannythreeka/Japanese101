@@ -166,6 +166,12 @@ export const T = {
   parentMicCancel:      { ja: 'キャンセル',                zh: '取消' },
   parentMicAllow:       { ja: '許可する',                  zh: '允許' },
 
+  // ── ParentDashboard: sound settings ─────────────────────────────────────
+  parentSoundTitle:     { ja: 'おとのせってい',            zh: '音效設定' },
+  parentSfxMute:        { ja: 'ミュート',                  zh: '靜音' },
+  parentSfxUnmute:      { ja: 'おとをだす',                zh: '開啟音效' },
+  parentSfxVolume:      { ja: 'おんりょう',                zh: '音量' },
+
   // ── HomeScreen ──────────────────────────────────────────────────────────
   homeStartAdventure:   { ja: 'ぼうけんを はじめよう！',   zh: '開始冒險！' },
   homeContinueAdventure:{ ja: 'ぼうけんを つづける',       zh: '繼續冒險' },
@@ -206,6 +212,7 @@ export const T = {
   parentBossNotYet:       { ja: 'だいまおうは まだ…',               zh: '大魔王尚未登場…' },
 
   // ── LevelComplete ────────────────────────────────────────────────────────
+  levelClearAnim:       { ja: 'クリア！',                  zh: '過關！' },
   levelCompleteTitle:   { ja: 'かんせい！',                zh: '關卡完成！' },
   levelCompleteStars:   { ja: '{n} ほし',                  zh: '{n} 星' },
   levelCompleteXp:      { ja: '+{n} XP',                   zh: '+{n} XP' },

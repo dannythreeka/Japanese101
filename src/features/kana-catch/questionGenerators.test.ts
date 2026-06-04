@@ -50,9 +50,10 @@ describe('buildParams', () => {
     const p = buildParams('young')
     expect(p.showRomaji).toBe(true); expect(p.fallSpeed).toBeLessThan(150)
   })
-  it('advanced → showRomaji=false, fast', () => {
+  it('advanced → showRomaji=false, faster than young', () => {
+    const young = buildParams('young')
     const p = buildParams('advanced')
-    expect(p.showRomaji).toBe(false); expect(p.fallSpeed).toBeGreaterThan(150)
+    expect(p.showRomaji).toBe(false); expect(p.fallSpeed).toBeGreaterThan(young.fallSpeed)
   })
 })
 

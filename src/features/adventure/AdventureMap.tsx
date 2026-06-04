@@ -52,10 +52,6 @@ export default function AdventureMap() {
       alert(t('mapLockedHint'))
       return
     }
-    if (status === 'completed') {
-      const ok = window.confirm(t('mapReplayPrompt'))
-      if (!ok) return
-    }
     navigate(`/adventure/level/${level.level_id}`)
   }
 

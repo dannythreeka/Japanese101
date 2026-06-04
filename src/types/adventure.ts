@@ -3,6 +3,7 @@ import type { GameModeId } from './index'
 export interface Region {
   region_id: string
   name_zh: string
+  name_ja?: string
   order: number
   asset_hint: string
   level_ids: string[]
@@ -30,8 +31,11 @@ export interface Level {
   level_type: LevelType
   region_id: string
   title_zh: string
+  title_ja?: string
   subtitle_zh?: string
+  subtitle_ja?: string
   story_intro_zh?: string
+  story_intro_ja?: string
   unit_id?: string
   challenges: Challenge[]
   boss_review_units?: string[]

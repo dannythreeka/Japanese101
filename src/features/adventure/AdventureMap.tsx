@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getOrCreateAdventureProgress } from '../../db'
 import { useT } from '../../hooks/useT'
-import { getSortedLevels, getLevelStatus, getFirstLevelId } from './adventureEngine'
+import { getSortedLevels, getLevelStatus, getFirstLevelId, ensureValidProgress } from './adventureEngine'
 import { levelsData } from '../../data/loaders'
 import type { Level, LevelStatus, AdventureProgress } from '../../types/adventure'
 
@@ -38,8 +38,8 @@ export default function AdventureMap() {
   const { regions } = levelsData()
 
   useEffect(() => {
-    getOrCreateAdventureProgress(getFirstLevelId()).then(setProgress)
-  }, [])
+    getOrCreateAdventureProgress(getFirstLevelId()).then(p => setProgress(ensureValidProgress(levels, p)))
+  }, [levels])
 
   useEffect(() => {
     if (progress && currentNodeRef.current) {
@@ -102,7 +102,7 @@ export default function AdventureMap() {
                         : 'bg-gray-300 text-gray-500'
                     }`}
                   >
-                    {regionUnlocked ? region.name_zh : t('mapRegionLocked')}
+                    {regionUnlocked ? (region.name_ja ?? region.name_zh) : t('mapRegionLocked')}
                   </span>
                 </div>
 
@@ -132,7 +132,7 @@ export default function AdventureMap() {
                         <button
                           ref={isCurrentNode ? currentNodeRef : null}
                           type="button"
-                          aria-label={level.title_zh}
+                          aria-label={level.title_ja ?? level.title_zh}
                           className={levelNodeClass(status, isBoss)}
                           onClick={() => handleLevelClick(level, status)}
                         >
@@ -148,7 +148,7 @@ export default function AdventureMap() {
 
                         {/* Level title */}
                         <span className="text-xs text-center text-gray-600 max-w-[72px] leading-tight">
-                          {level.title_zh}
+                          {level.title_ja ?? level.title_zh}
                         </span>
                       </div>
                     </div>

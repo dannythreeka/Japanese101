@@ -21,6 +21,14 @@ export function getFirstLevelId(): string {
   return sorted[0]?.level_id ?? ''
 }
 
+export function ensureValidProgress(levels: Level[], progress: AdventureProgress): AdventureProgress {
+  const validIds = new Set(levels.map(l => l.level_id))
+  if (validIds.has(progress.current_level_id)) return progress
+  const sorted = [...levels].sort((a, b) => a.level_number - b.level_number)
+  const firstUnfinished = sorted.find(l => !progress.completed_levels[l.level_id])
+  return { ...progress, current_level_id: firstUnfinished?.level_id ?? sorted[0]?.level_id ?? '' }
+}
+
 export function computeStars(
   level: Level,
   results: Record<string, { accuracy: number }>,

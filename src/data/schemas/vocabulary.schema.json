@@ -22,7 +22,11 @@
         "meaning_zh": { "type": "string", "minLength": 1 },
         "category":   { "type": "string" },
         "unit":       { "type": "string", "description": "可選:課本進度索引代碼" },
-        "emoji":      { "type": "string", "description": "可選:代表單字的 emoji" },
+        "source":     {
+          "type": "string",
+          "enum": ["mitsumura_content", "mitsumura_qr", "extended"],
+          "description": "詞彙來源:mitsumura_content=光村課本詞彙列表、mitsumura_qr=光村QR練習詞、extended=課外補充詞(常見日語基礎詞,無版權問題)"
+        },
         "image":      { "$ref": "#/definitions/Asset" },
         "audio":      { "$ref": "#/definitions/Asset" }
       }

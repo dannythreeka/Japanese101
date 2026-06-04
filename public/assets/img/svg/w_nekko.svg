@@ -1,15 +1,1 @@
-<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100" height="100" fill="#f0ece4" rx="8"/>
-  <!-- ground -->
-  <rect x="0" y="55" width="100" height="45" fill="#a08060" rx="4"/>
-  <!-- crack -->
-  <path d="M35,55 Q48,48 50,55 Q52,62 65,55" fill="none" stroke="#7a5030" strokeWidth="3" strokeLinecap="round"/>
-  <!-- tree trunk -->
-  <rect x="43" y="10" width="14" height="48" fill="#8b6340" rx="5"/>
-  <!-- roots emerging -->
-  <path d="M50,55 Q34,62 22,58 Q12,55 8,65" fill="none" stroke="#5a3820" strokeWidth="7" strokeLinecap="round"/>
-  <path d="M50,58 Q50,72 46,88" fill="none" stroke="#5a3820" strokeWidth="6" strokeLinecap="round"/>
-  <path d="M50,55 Q66,62 78,58 Q88,55 92,65" fill="none" stroke="#5a3820" strokeWidth="7" strokeLinecap="round"/>
-  <path d="M40,60 Q28,70 22,82" fill="none" stroke="#6b4320" strokeWidth="4" strokeLinecap="round"/>
-  <path d="M60,60 Q72,70 78,82" fill="none" stroke="#6b4320" strokeWidth="4" strokeLinecap="round"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M 40 10 L 40 50 Q 20 65 10 85 L 25 85 Q 42 70 50 60 Q 58 70 75 85 L 90 85 Q 80 65 60 50 L 60 10 Z" fill="#8D6E63" stroke="#2E2E2E" stroke-width="3.5"/></svg>

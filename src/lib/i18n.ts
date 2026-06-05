@@ -78,6 +78,8 @@ export const T = {
 
   // ── KanaWrite ───────────────────────────────────────────────────────────
   kanaWriteOrange:      { ja: 'オレンジ = おてほん', zh: '橙色 = 範本' },
+  kanaWriteOteho:       { ja: '✏️ おてほん',        zh: '✏️ 範本' },
+  kanaWriteKiminoj:     { ja: '🟠 きみのじ',        zh: '🟠 你寫的' },
   kanaWriteClear:       { ja: 'けす',               zh: '清除' },
   kanaWriteCheck:       { ja: 'かくにん ✓',         zh: '確認 ✓' },
   kanaWriteFinish:      { ja: 'おわり 🎉',          zh: '完成 🎉' },

@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getOrCreateAdventureProgress } from '../../db'
+import { getOrCreateAdventureProgress, saveAdventureProgress } from '../../db'
 import { levelsData } from '../../data/loaders'
 import { useAppStore } from '../../store/useAppStore'
 import { useT } from '../../hooks/useT'
-import { getFirstLevelId, getLevelStatus } from './adventureEngine'
+import { getFirstLevelId, getLevelStatus, ensureValidProgress, getSortedLevels } from './adventureEngine'
 import { SCENE_REGISTRY } from '../kotodama/scenes'
 import type { Level, AdventureProgress } from '../../types/adventure'
 import type { GameModeId } from '../../types'
@@ -45,11 +45,17 @@ export default function LevelEntry() {
     const { levels } = levelsData()
     const found = levels.find((l) => l.level_id === levelId) ?? null
     setLevel(found)
-    getOrCreateAdventureProgress(getFirstLevelId()).then((adv) => {
-      setProgress(adv)
+    getOrCreateAdventureProgress(getFirstLevelId()).then(async (adv) => {
+      const levels = getSortedLevels()
+      const fixed = ensureValidProgress(levels, adv)
+      if (fixed !== adv) await saveAdventureProgress(fixed)
+      setProgress(fixed)
       if (found && levelId) initAdventureSession(levelId)
     })
   }, [levelId, initAdventureSession])
+
+  // Must be before early return — hooks cannot be called conditionally
+  useEffect(() => () => { if (navTimerRef.current) clearTimeout(navTimerRef.current) }, [])
 
   if (!level || !progress) {
     return (
@@ -80,8 +86,6 @@ export default function LevelEntry() {
       navigate(`/adventure/level/${levelId}/complete`)
     }, 1000)
   }
-
-  useEffect(() => () => { if (navTimerRef.current) clearTimeout(navTimerRef.current) }, [])
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-6 pb-8 gap-4">

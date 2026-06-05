@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { kanaData } from '../../data/loaders'
-import type { Kana } from '../../types'
+import { kanaData, vocabData } from '../../data/loaders'
+import type { Kana, Word } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { useAdventureChallenge } from '../../hooks/useAdventureChallenge'
 import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
@@ -17,14 +17,28 @@ import { useT } from '../../hooks/useT'
 import StrokeOrderDemo from './StrokeOrderDemo'
 
 const ALL_KANA: Kana[] = kanaData()
+const ALL_VOCAB: Word[] = vocabData()
 const CANVAS_SIZE = 280
 const STROKE_WIDTH = 10
 const STROKE_COLOR = '#1a1a1a'
-const REF_FONT = `${Math.round(CANVAS_SIZE * 0.72)}px serif`
 
 type Phase = 'draw' | 'result' | 'done'
 
-interface RoundResult { kanaId: string; stars: 0 | 1 | 2 | 3 }
+interface RoundResult { itemId: string; stars: 0 | 1 | 2 | 3; type: 'kana' | 'vocab' }
+
+// Normalised target for any difficulty level
+interface WriteTarget {
+  id: string
+  text: string         // kana string to render + speak
+  emoji: string        // shown in the prompt area
+  promptLabel: string  // romaji (kana) or meaning_zh (vocab)
+  type: 'kana' | 'vocab'
+}
+
+function targetFontSize(text: string): number {
+  if (text.length === 1) return Math.round(CANVAS_SIZE * 0.72)
+  return Math.round(CANVAS_SIZE * 0.60 / text.length)
+}
 
 function drawStrokes(
   ctx: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D,
@@ -43,21 +57,51 @@ function drawStrokes(
   }
 }
 
-function renderRefChar(
+function renderRefText(
   ctx: CanvasRenderingContext2D | OffscreenCanvasRenderingContext2D,
-  char: string,
+  text: string,
   alpha: string,
 ) {
-  ctx.font = REF_FONT
+  ctx.font = `${targetFontSize(text)}px serif`
   ctx.fillStyle = alpha
   ctx.textAlign = 'center'
   ctx.textBaseline = 'middle'
-  ctx.fillText(char, CANVAS_SIZE / 2, CANVAS_SIZE / 2)
+  ctx.fillText(text, CANVAS_SIZE / 2, CANVAS_SIZE / 2)
+}
+
+function buildVocabPool(): Word[] {
+  return ALL_VOCAB.filter(w => w.kana.length >= 2 && w.kana.length <= 4 && w.emoji)
+}
+
+function pickVocabRound(pool: Word[], count: number): Word[] {
+  const shuffled = [...pool].sort(() => Math.random() - 0.5)
+  return shuffled.slice(0, Math.min(count, shuffled.length))
+}
+
+function toWriteTarget(item: Kana | Word, _difficulty: 1 | 2 | 3): WriteTarget {
+  if ('hiragana' in item) {
+    // It's a Kana
+    return {
+      id: item.id,
+      text: item.hiragana,
+      emoji: KANA_EMOJI[item.id] ?? '？',
+      promptLabel: item.romaji,
+      type: 'kana',
+    }
+  }
+  // It's a Word
+  return {
+    id: item.id,
+    text: item.kana,
+    emoji: item.emoji ?? '📝',
+    promptLabel: item.meaning_zh,
+    type: 'vocab',
+  }
 }
 
 export default function KanaWriteGame() {
   const navigate = useNavigate()
-  const { ageMode, kanaDifficulty } = useAppStore()
+  const { ageMode, kanaDifficulty, writeDifficulty } = useAppStore()
   const adventure = useAdventureChallenge()
   const t = useT()
 
@@ -67,7 +111,7 @@ export default function KanaWriteGame() {
   const isDrawing = useRef(false)
   const sessionStart = useRef(Date.now())
 
-  const [round, setRound] = useState<Kana[]>([])
+  const [round, setRound] = useState<WriteTarget[]>([])
   const [currentIdx, setCurrentIdx] = useState(0)
   const [phase, setPhase] = useState<Phase>('draw')
   const [currentStars, setCurrentStars] = useState<0 | 1 | 2 | 3>(0)
@@ -77,7 +121,7 @@ export default function KanaWriteGame() {
   const [userSnapshot, setUserSnapshot] = useState<string | null>(null)
   const [showDemo, setShowDemo] = useState(false)
 
-  // Build round — use adventure kanaPool override when launched from a level
+  // Build round
   useEffect(() => {
     const pending = adventure.pending
     if (pending?.gameMode === 'write_canvas') {
@@ -86,16 +130,22 @@ export default function KanaWriteGame() {
       if (Array.isArray(poolChars)) {
         const filtered = ALL_KANA.filter(k => (poolChars as string[]).includes(k.hiragana))
         const len = typeof roundLen === 'number' ? roundLen : ROUND_SIZE
-        setRound(pickRound(filtered.length > 0 ? filtered : ALL_KANA, len))
+        const pool = filtered.length > 0 ? filtered : ALL_KANA
+        setRound(pickRound(pool, len).map(k => toWriteTarget(k, writeDifficulty)))
         return
       }
     }
-    const pool = buildWritePool(ALL_KANA, ageMode, kanaDifficulty)
-    setRound(pickRound(pool, ROUND_SIZE))
+    if (writeDifficulty === 3) {
+      const pool = buildVocabPool()
+      setRound(pickVocabRound(pool, ROUND_SIZE).map(w => toWriteTarget(w, 3)))
+    } else {
+      const pool = buildWritePool(ALL_KANA, ageMode, kanaDifficulty)
+      setRound(pickRound(pool, ROUND_SIZE).map(k => toWriteTarget(k, writeDifficulty)))
+    }
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  const currentKana = round[currentIdx] ?? null
+  const current = round[currentIdx] ?? null
 
   // Redraw the main canvas (ghost + committed strokes)
   const redrawMain = useCallback(() => {
@@ -106,19 +156,18 @@ export default function KanaWriteGame() {
 
     ctx.clearRect(0, 0, CANVAS_SIZE, CANVAS_SIZE)
 
-    if (ageMode === 'young' && currentKana && phase === 'draw') {
+    if (writeDifficulty === 1 && current && phase === 'draw') {
       ctx.save()
-      renderRefChar(ctx, currentKana.hiragana, 'rgba(180,180,180,0.30)')
+      renderRefText(ctx, current.text, 'rgba(180,180,180,0.30)')
       ctx.restore()
     }
 
     ctx.save()
     drawStrokes(ctx, strokes.current)
     ctx.restore()
+  }, [writeDifficulty, current, phase])
 
-  }, [ageMode, currentKana, phase])
-
-  // Reset canvas when switching kana
+  // Reset canvas when switching target
   useEffect(() => {
     setHasStrokes(false)
     setUserSnapshot(null)
@@ -134,10 +183,13 @@ export default function KanaWriteGame() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentIdx])
 
-  // Speak kana on new character
+  // Sync canvas whenever redrawMain is recreated (covers initial load + phase changes)
+  useEffect(() => { redrawMain() }, [redrawMain])
+
+  // Speak on new target
   useEffect(() => {
-    if (currentKana && phase === 'draw') speak(currentKana.hiragana)
-  }, [currentKana, phase])
+    if (current && phase === 'draw') speak(current.text)
+  }, [current, phase])
 
   // ── Pointer events ──────────────────────────────────────────────────────────
 
@@ -161,7 +213,6 @@ export default function KanaWriteGame() {
     if (!isDrawing.current || phase !== 'draw') return
     const pos = getPos(e)
     currentStroke.current.push(pos)
-    // Incremental draw for the live stroke segment
     const ctx = canvasRef.current?.getContext('2d')
     if (ctx) {
       const pts = currentStroke.current
@@ -200,15 +251,13 @@ export default function KanaWriteGame() {
   // ── Check answer ────────────────────────────────────────────────────────────
 
   async function handleCheck() {
-    if (!currentKana) return
+    if (!current) return
 
-    // Score against offscreen canvases (no ghost contamination)
     const offUser = new OffscreenCanvas(CANVAS_SIZE, CANVAS_SIZE)
     const ctxU = offUser.getContext('2d')!
     drawStrokes(ctxU, strokes.current)
     const userImageData = ctxU.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE)
 
-    // Capture user drawing for result panel display
     const snapshotCanvas = document.createElement('canvas')
     snapshotCanvas.width = CANVAS_SIZE
     snapshotCanvas.height = CANVAS_SIZE
@@ -221,7 +270,7 @@ export default function KanaWriteGame() {
     const offRef = new OffscreenCanvas(CANVAS_SIZE, CANVAS_SIZE)
     const ctxR = offRef.getContext('2d')!
     ctxR.save()
-    renderRefChar(ctxR, currentKana.hiragana, '#000')
+    renderRefText(ctxR, current.text, '#000')
     ctxR.restore()
     const refImageData = ctxR.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE)
 
@@ -229,18 +278,17 @@ export default function KanaWriteGame() {
     const stars = scoreToStars(score)
     setCurrentStars(stars)
 
-    // SRS update
     const isCorrect = stars >= 2
-    const record = await getOrCreateProgress(currentKana.id, 'kana')
+    const record = await getOrCreateProgress(current.id, current.type)
     await saveProgress(isCorrect ? updateAfterCorrect(record) : updateAfterIncorrect(record))
 
     playSfx(isCorrect ? 'correct' : 'tap')
 
-    setResults(prev => [...prev, { kanaId: currentKana.id, stars }])
+    setResults(prev => [...prev, { itemId: current.id, stars, type: current.type }])
     setPhase('result')
   }
 
-  // ── Advance to next kana or finish ──────────────────────────────────────────
+  // ── Advance ─────────────────────────────────────────────────────────────────
 
   async function handleNext() {
     if (currentIdx + 1 >= round.length) {
@@ -266,7 +314,7 @@ export default function KanaWriteGame() {
       total,
     })
 
-    if (xp > 0) await addXpToPet(xp, results.filter(r => r.stars >= 2).map(r => r.kanaId))
+    if (xp > 0) await addXpToPet(xp, results.filter(r => r.stars >= 2 && r.type === 'kana').map(r => r.itemId))
     if (xp > 0) playSfx('levelup')
 
     setPhase('done')
@@ -295,8 +343,8 @@ export default function KanaWriteGame() {
         <div className="flex flex-col gap-2 w-full max-w-xs">
           {results.map((r, i) => (
             <div key={i} className="flex items-center justify-between bg-white/70 rounded-xl px-4 py-2">
-              <span className="text-2xl">{KANA_EMOJI[r.kanaId] ?? '？'}</span>
-              <span className="text-xl font-bold text-gray-700">{round[i]?.hiragana ?? ''}</span>
+              <span className="text-2xl">{round[i]?.emoji ?? '？'}</span>
+              <span className="text-xl font-bold text-gray-700">{round[i]?.text ?? ''}</span>
               <span className="text-xl">{'⭐'.repeat(r.stars)}{'☆'.repeat(3 - r.stars)}</span>
             </div>
           ))}
@@ -322,7 +370,7 @@ export default function KanaWriteGame() {
     )
   }
 
-  if (!currentKana) {
+  if (!current) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-200 to-emerald-100">
         <p className="text-2xl text-gray-400">{t('loading')}</p>
@@ -330,13 +378,12 @@ export default function KanaWriteGame() {
     )
   }
 
-  const emoji = KANA_EMOJI[currentKana.id] ?? '？'
   const isLast = currentIdx + 1 >= round.length
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-6 pb-8 gap-4">
-      {showDemo && currentKana && (
-        <StrokeOrderDemo char={currentKana.hiragana} onClose={() => setShowDemo(false)} />
+      {showDemo && current.type === 'kana' && (
+        <StrokeOrderDemo char={current.text} onClose={() => setShowDemo(false)} />
       )}
 
       {/* Header */}
@@ -364,15 +411,15 @@ export default function KanaWriteGame() {
 
       {/* Prompt */}
       <div className="flex flex-col items-center gap-1">
-        <span className="text-6xl">{emoji}</span>
+        <span className="text-6xl">{current.emoji}</span>
         <button
           type="button"
           aria-label={t('listenAgainAria')}
-          onClick={() => speak(currentKana.hiragana)}
+          onClick={() => speak(current.text)}
           className="flex items-center gap-2 bg-white/70 rounded-2xl px-4 py-2 shadow hover:bg-white transition-colors"
         >
           <span className="text-2xl">🔊</span>
-          <span className="text-2xl font-bold text-sky-700">{currentKana.romaji}</span>
+          <span className="text-2xl font-bold text-sky-700">{current.promptLabel}</span>
         </button>
       </div>
 
@@ -392,8 +439,8 @@ export default function KanaWriteGame() {
               className="rounded-2xl bg-white shadow-xl border-4 border-sky-200 flex items-center justify-center"
               style={{ width: 140, height: 140 }}
             >
-              <span style={{ fontSize: Math.round(140 * 0.72), fontFamily: 'serif', color: '#1d4ed8', lineHeight: 1 }}>
-                {currentKana.hiragana}
+              <span style={{ fontSize: Math.round(140 * 0.60 / Math.max(1, current.text.length)), fontFamily: 'serif', color: '#1d4ed8', lineHeight: 1 }}>
+                {current.text}
               </span>
             </div>
           </div>
@@ -401,7 +448,7 @@ export default function KanaWriteGame() {
             <span className="text-sm font-bold text-gray-600">{t('kanaWriteKiminoj')}</span>
             <img
               src={userSnapshot}
-              alt={currentKana.romaji}
+              alt={current.promptLabel}
               className="rounded-2xl bg-white shadow-xl border-4 border-orange-400"
               style={{ width: 140, height: 140 }}
               draggable={false}
@@ -421,7 +468,6 @@ export default function KanaWriteGame() {
             onPointerUp={handlePointerUp}
             onPointerCancel={handlePointerUp}
           />
-
         </div>
       )}
 
@@ -445,13 +491,15 @@ export default function KanaWriteGame() {
               {t('kanaWriteCheck')}
             </button>
           </div>
-          <button
-            type="button"
-            onClick={() => setShowDemo(true)}
-            className="px-5 py-2 rounded-full bg-sky-100 hover:bg-sky-200 text-sky-700 text-sm font-semibold transition-colors active:scale-95"
-          >
-            {t('kanaWriteDemo')} ✍️
-          </button>
+          {current.type === 'kana' && (
+            <button
+              type="button"
+              onClick={() => setShowDemo(true)}
+              className="px-5 py-2 rounded-full bg-sky-100 hover:bg-sky-200 text-sky-700 text-sm font-semibold transition-colors active:scale-95"
+            >
+              {t('kanaWriteDemo')} ✍️
+            </button>
+          )}
         </div>
       ) : (
         <button
@@ -463,8 +511,8 @@ export default function KanaWriteGame() {
         </button>
       )}
 
-      {/* Hint for young mode */}
-      {ageMode === 'young' && phase === 'draw' && (
+      {/* Hint: only show when ghost is visible (Level 1) */}
+      {writeDifficulty === 1 && phase === 'draw' && (
         <p className="text-sm text-gray-400">{t('kanaWriteHint')}</p>
       )}
     </div>

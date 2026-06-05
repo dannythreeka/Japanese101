@@ -54,6 +54,8 @@ export default function KanaCatchGame() {
   const [unitId, setUnitId] = useState<string | undefined>()
   const [pooledPairs, setPooledPairs] = useState<string[][] | null>(null)
   const [pooledWords, setPooledWords] = useState<ConceptWord[] | null>(null)
+  const [pausedQ, setPausedQ] = useState<QuestionConfig | null>(null)
+  const resumeRef = useRef<(() => void) | null>(null)
   const [kanaPoolOverride, setKanaPoolOverride] = useState<typeof ALL_KANA | null>(null)
   const [paramsOverride, setParamsOverride] = useState<{
     roundLength?: number; fallSpeed?: number; maxBubbles?: number; highlightCorrectAnswer?: boolean
@@ -69,6 +71,10 @@ export default function KanaCatchGame() {
   }), [baseParams, paramsOverride])
 
   useEffect(() => { getOrCreatePet().then(setPet) }, [])
+
+  useEffect(() => {
+    if (pausedQ) speak(pausedQ.ttsText)
+  }, [pausedQ])
 
   const handleCorrect = useCallback(async (itemId: string) => {
     playSfx('correct')
@@ -130,6 +136,10 @@ export default function KanaCatchGame() {
         onCorrect: (id) => { void handleCorrect(id) },
         onMiss:    (id) => { void handleMiss(id) },
         onComplete: (c, t) => { void handleComplete(c, t) },
+        onPauseAfterCorrect: (q, resume) => {
+          resumeRef.current = resume
+          setPausedQ(q)
+        },
       })
       engine.start()
       return () => engine.destroy()
@@ -151,6 +161,7 @@ export default function KanaCatchGame() {
     sessionSaved.current = false
     correctIds.current = []
     setScore(0); setCurrentQ(null); setXpResult(null)
+    setPausedQ(null); resumeRef.current = null
     startSession()
     setGameState('playing')
     setGameKey(k => k + 1)
@@ -233,7 +244,7 @@ export default function KanaCatchGame() {
   const progress = Math.max(0, (score / effectiveParams.roundLength) * 100)
 
   return (
-    <div className="min-h-screen flex flex-col items-center gap-3 p-4 pt-6 bg-gradient-to-b from-orange-50 to-white">
+    <div className="relative min-h-screen flex flex-col items-center gap-3 p-4 pt-6 bg-gradient-to-b from-orange-50 to-white">
       <div className="w-full max-w-sm flex items-center gap-3">
         <button type="button" aria-label={t('backAria')}
           onClick={() => adventure.isActive ? adventure.cancelChallenge() : setGameState('setup')}
@@ -275,6 +286,33 @@ export default function KanaCatchGame() {
         {pet ? <PetAvatar pet={pet} size="sm" /> : <span className="text-5xl">🐾</span>}
         {score > 0 && <span className="text-xl font-bold text-yellow-500">⭐ × {score}</span>}
       </div>
+
+      {/* Correct answer reveal overlay */}
+      {pausedQ && (
+        <div className="absolute inset-0 flex items-center justify-center bg-sky-900/60 z-20 rounded-none">
+          <div className="bg-white rounded-3xl p-8 flex flex-col items-center gap-6 shadow-2xl mx-4 w-full max-w-sm">
+            <div
+              className="w-40 h-40 rounded-full flex items-center justify-center shadow-xl border-4 border-yellow-300"
+              style={{ background: 'radial-gradient(circle at 35% 35%, #fef9c3, #fbbf24)' }}
+            >
+              <span className="text-5xl font-bold text-sky-900 select-none">
+                {pausedQ.items.find(i => i.id === pausedQ.targetId)?.display ?? ''}
+              </span>
+            </div>
+            <button
+              type="button"
+              onClick={() => {
+                setPausedQ(null)
+                resumeRef.current?.()
+                resumeRef.current = null
+              }}
+              className="min-w-16 min-h-16 px-10 py-4 rounded-3xl bg-emerald-400 text-white text-2xl font-bold shadow-lg hover:bg-emerald-500 active:scale-95 transition-all"
+            >
+              {t('kanaCatchNext')}
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }

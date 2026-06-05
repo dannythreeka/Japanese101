@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import type { KanaMode, KanaDifficulty, AgeMode, MicMode } from '../types'
+import type { KanaMode, KanaDifficulty, AgeMode, MicMode, WriteDifficulty } from '../types'
 import type { UiLang } from '../lib/i18n'
 
 export interface AdventureSession {
@@ -24,6 +24,8 @@ interface AppState {
   parentUnlocked: boolean
   adventureSession: AdventureSession | null
 
+  writeDifficulty: WriteDifficulty
+  setWriteDifficulty: (d: WriteDifficulty) => void
   setKanaMode: (mode: KanaMode) => void
   setKanaDifficulty: (level: KanaDifficulty) => void
   setAgeMode: (mode: AgeMode) => void
@@ -52,7 +54,9 @@ export const useAppStore = create<AppState>((set, get) => ({
   totalStars: Number(localStorage.getItem('totalStars') ?? 0),
   parentUnlocked: false,
   adventureSession: null,
+  writeDifficulty: (Number(localStorage.getItem('writeDifficulty')) || 1) as WriteDifficulty,
 
+  setWriteDifficulty: (d) => { localStorage.setItem('writeDifficulty', String(d)); set({ writeDifficulty: d }) },
   setKanaMode: (mode) => set({ kanaMode: mode }),
   setKanaDifficulty: (level) => set({ kanaDifficulty: level }),
   setAgeMode: (mode) => {

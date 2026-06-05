@@ -1,6 +1,27 @@
-# React + TypeScript + Vite
+# Japanese101 - 兒童日語學習 App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+這是一個專為 6-12 歲兒童設計的日語學習 Web App，結合了寵物養成與各種趣味小遊戲。
+
+## 語音合成 (VOICEVOX)
+
+本專案整合了 [VOICEVOX](https://voicevox.hiroshiba.jp/) 技術來生成高品質的日語發音。
+
+### 如何增加音檔
+1. 在 `src/data/vocabulary.json` 或 `kana.json` 增加新的單字或假名。
+2. 執行生成腳本：
+   ```bash
+   npm run gen:voice
+   ```
+   腳本會自動掃描資料並補齊缺失的音檔。更多詳細操作請參考 [VOICEVOX 使用指南](./doc/skills/VOICEVOX.md)。
+
+### 目前使用的參數
+* **角色**: 四國めたん (Speaker 2)
+* **特點**: 針對學習者優化，語速設定為 `0.87` (稍慢)，增加抑揚頓挫，語氣親切。
+
+### 授權與商用
+VOICEVOX 及其角色（如四國めたん）支援**免費商用**。在發佈產品時，請確保遵守相關的[利用規約](./doc/skills/VOICEVOX.md#授權說明)。
+
+## 既有功能
 
 Currently, two official plugins are available:
 

@@ -6,6 +6,7 @@ import { xpProgress, xpToNextLevel } from '../../lib/pet'
 import PetAvatar from '../../components/PetAvatar'
 import { useT } from '../../hooks/useT'
 import { getFirstLevelId } from '../adventure/adventureEngine'
+import SyncModal from '../sync/SyncModal'
 import type { PetState } from '../../types'
 import type { AdventureProgress } from '../../types/adventure'
 import type { Profile } from '../../types/profile'
@@ -17,6 +18,7 @@ export default function HomeScreen() {
   const [pet, setPet] = useState<PetState | null>(null)
   const [adventureProgress, setAdventureProgress] = useState<AdventureProgress | null>(null)
   const [activeProfile, setActiveProfile] = useState<Profile | null>(null)
+  const [showSync, setShowSync] = useState(false)
 
   useEffect(() => {
     const firstId = getFirstLevelId()
@@ -45,10 +47,20 @@ export default function HomeScreen() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-8 pb-6 gap-6">
 
+      {showSync && <SyncModal onClose={() => setShowSync(false)} />}
+
       {/* Header */}
       <div className="w-full max-w-sm flex justify-between items-center">
         <span className="text-3xl font-bold text-emerald-700">{t('appTitle')}</span>
         <div className="flex items-center gap-2">
+          <button
+            type="button"
+            aria-label={t('syncBtnAria')}
+            onClick={() => setShowSync(true)}
+            className="w-10 h-10 rounded-full bg-white/70 text-xl flex items-center justify-center shadow hover:bg-white transition-colors"
+          >
+            ☁️
+          </button>
           <button
             type="button"
             aria-label="言語切替 / 語言切換"

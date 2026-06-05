@@ -86,7 +86,9 @@ export const T = {
   kanaWriteNext:        { ja: 'つぎへ →',           zh: '下一個 →' },
   kanaWriteHint:        { ja: 'うすい もじを なぞってみよう！', zh: '試著描繪淡色的字！' },
   kanaWriteReturn:      { ja: 'もどる',             zh: '返回' },
-  kanaWriteDemo:        { ja: 'みほん',             zh: '示範' },
+  kanaWriteDemo:        { ja: 'みほん',                         zh: '示範' },
+  kanaWriteDemoClose:   { ja: 'とじる',                        zh: '關閉' },
+  kanaWriteDemoReplay:  { ja: 'もういちど みる',                zh: '再看一次' },
 
   // ── KanaGallery ─────────────────────────────────────────────────────────
   galleryTitle:         { ja: 'かなずかん',         zh: '假名圖鑑' },

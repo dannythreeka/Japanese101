@@ -1,0 +1,7 @@
+AnimCJK stroke order SVGs
+Copyright (c) 2016-2026 FM-SH
+Source: https://github.com/parsimonhi/animCJK
+License: GNU Lesser General Public License v3.0 (LGPL-3.0)
+https://www.gnu.org/licenses/lgpl-3.0.html
+
+These SVG files are used unchanged (except served as static assets).

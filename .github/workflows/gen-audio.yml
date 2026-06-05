@@ -1,0 +1,52 @@
+name: 自動生成 VOICEVOX 音檔
+
+# 觸發條件：有人 push 到 main，且修改了詞彙或假名資料
+# Bot 自己的 commit 不會再次觸發（actor 判斷 + [skip ci]）
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/data/vocabulary.json'
+      - 'src/data/kana.json'
+  workflow_dispatch: {}   # 也可手動觸發（例如 API 暫時失敗後補跑）
+
+jobs:
+  gen-audio:
+    name: 生成缺少的 WAV 音檔
+    runs-on: ubuntu-latest
+    if: github.actor != 'github-actions[bot]'
+    permissions:
+      contents: write
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: 安裝依賴
+        run: npm ci
+
+      # tts.quest 公開 API 有速率限制，每次請求間隔 2.5 秒
+      # 若有新詞語，預估每個詞約 8-10 秒（請求 + 輪詢）
+      - name: 生成缺少的音檔
+        continue-on-error: true   # API 暫時失敗不中斷整個 workflow
+        env:
+          VOICEVOX_DELAY_MS: '2500'
+        run: npm run gen:voice
+
+      - name: 提交新音檔
+        run: |
+          # -f 強制加入 .gitignore 中的 WAV 檔
+          git add -f public/assets/audio/
+          if git diff --cached --quiet; then
+            echo "沒有新音檔，跳過提交"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          COUNT=$(git diff --cached --name-only | grep -c '\.wav')
+          git commit -m "chore: 自動生成 VOICEVOX 音檔 (新增 ${COUNT} 個) [skip ci]"
+          git push

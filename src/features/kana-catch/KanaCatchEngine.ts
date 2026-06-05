@@ -27,6 +27,7 @@ export interface EngineCallbacks {
   onCorrect(itemId: string): void
   onMiss(itemId: string): void
   onComplete(correct: number, total: number): void
+  onPauseAfterCorrect?(q: QuestionConfig, resume: () => void): void
 }
 
 export interface EngineParams {
@@ -64,6 +65,7 @@ export class KanaCatchEngine {
   private lastTs = 0
   private waiting = false
   private pending: ReturnType<typeof setTimeout> | null = null
+  private currentQ: QuestionConfig | null = null
 
   constructor(canvas: HTMLCanvasElement, params: EngineParams, cb: EngineCallbacks) {
     this.canvas = canvas
@@ -90,6 +92,7 @@ export class KanaCatchEngine {
   private spawnQuestion(): void {
     this.waiting = false
     const q = this.cb.nextQuestion()
+    this.currentQ = q
     this.cb.onNewQuestion(q)
     const sectionW = CANVAS_W / q.items.length
     this.bubbles = q.items.map((item, i) => {
@@ -144,6 +147,11 @@ export class KanaCatchEngine {
         () => this.cb.onComplete(this.correctCount, this.params.roundLength),
         delay,
       )
+    } else if (caught && this.cb.onPauseAfterCorrect && this.currentQ) {
+      const q = this.currentQ
+      this.pending = setTimeout(() => {
+        this.cb.onPauseAfterCorrect!(q, () => { this.spawnQuestion() })
+      }, delay)
     } else {
       this.pending = setTimeout(() => this.spawnQuestion(), delay)
     }

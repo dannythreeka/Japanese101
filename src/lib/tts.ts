@@ -1,3 +1,5 @@
+import { kanaData, vocabData } from '../data/loaders'
+
 // Natural voice priority: Kyoko (macOS/iOS female) > Otoya (macOS male) >
 // Haruka/Hayashi/Sayaka (Windows) > any ja-JP > any ja
 const VOICE_PRIORITY = ['Kyoko', 'Otoya', 'Haruka', 'Hayashi', 'Sayaka']
@@ -45,42 +47,91 @@ function buildUtterance(text: string, rate: number): SpeechSynthesisUtterance {
   return utt
 }
 
-export function speak(text: string, rate = 0.85): void {
-  if (!window.speechSynthesis) return
-  try {
-    window.speechSynthesis.cancel()
-    window.speechSynthesis.speak(buildUtterance(text, rate))
-  } catch { /* silently fail */ }
+// ── VOICEVOX audio map ────────────────────────────────────────────────────────
+
+const PHRASE_MAP: Record<string, string> = {
+  'やった！':     'phrase_yatta',
+  'もういちど！': 'phrase_mouichido',
+  'すごい！':     'phrase_sugoi',
+  'いいね！':     'phrase_niceone',
+  'がんばれ！':   'phrase_gambare',
 }
 
-export function speakWithCallback(text: string, onEnd: () => void, rate = 0.85): void {
-  if (!window.speechSynthesis) { onEnd(); return }
+let audioMap: Map<string, string> | null = null
+
+function getAudioMap(): Map<string, string> {
+  if (audioMap) return audioMap
+  audioMap = new Map()
+  for (const [text, id] of Object.entries(PHRASE_MAP)) audioMap.set(text, id)
+  for (const k of kanaData()) audioMap.set(k.hiragana, `kana_${k.id}`)
+  for (const w of vocabData()) audioMap.set(w.kana, `word_${w.id}`)
+  return audioMap
+}
+
+// ── Internal helpers ──────────────────────────────────────────────────────────
+
+const audioCache: Record<string, HTMLAudioElement> = {}
+
+function speakWS(text: string, rate: number, onEnd?: () => void): void {
+  if (!window.speechSynthesis) { onEnd?.(); return }
   try {
     window.speechSynthesis.cancel()
     const utt = buildUtterance(text, rate)
-    utt.onend = onEnd
-    utt.onerror = onEnd
+    if (onEnd) { utt.onend = onEnd; utt.onerror = onEnd }
     window.speechSynthesis.speak(utt)
-  } catch { onEnd() }
+  } catch { onEnd?.() }
+}
+
+function playAudio(id: string, text: string, rate: number, onEnd?: () => void): void {
+  const fallback = () => speakWS(text, rate, onEnd)
+
+  if (audioCache[id]) {
+    const el = audioCache[id]
+    el.currentTime = 0
+    if (onEnd) {
+      el.addEventListener('ended', onEnd, { once: true })
+      el.play().catch(() => { el.removeEventListener('ended', onEnd); fallback() })
+    } else {
+      el.play().catch(fallback)
+    }
+    return
+  }
+
+  const path = `/assets/audio/${id}.wav`
+  const el = new Audio(path)
+  el.addEventListener('error', fallback, { once: true })
+  el.addEventListener('canplaythrough', () => {
+    audioCache[id] = el
+    if (onEnd) {
+      el.addEventListener('ended', onEnd, { once: true })
+      el.play().catch(() => { el.removeEventListener('ended', onEnd); fallback() })
+    } else {
+      el.play().catch(fallback)
+    }
+  }, { once: true })
+  el.load()
+}
+
+// ── Public API ────────────────────────────────────────────────────────────────
+
+export function speak(text: string, rate = 0.85): void {
+  if (typeof window === 'undefined') return
+  const id = getAudioMap().get(text)
+  if (id) { playAudio(id, text, rate); return }
+  speakWS(text, rate)
+}
+
+export function speakWithCallback(text: string, onEnd: () => void, rate = 0.85): void {
+  if (typeof window === 'undefined') { onEnd(); return }
+  const id = getAudioMap().get(text)
+  if (id) { playAudio(id, text, rate, onEnd); return }
+  speakWS(text, rate, onEnd)
 }
 
 // Prefer a pre-generated audio file at /assets/audio/<id>.wav; fall back to TTS.
 // id = kana_<kana.id>  or  word_<vocab.id>
-const audioCache: Record<string, HTMLAudioElement> = {}
-
 export function speakById(text: string, id: string, rate = 0.85): void {
-  const path = `/assets/audio/${id}.wav`
-  if (audioCache[id]) {
-    audioCache[id].play().catch(() => speak(text, rate))
-    return
-  }
-  const audio = new Audio(path)
-  audio.addEventListener('error', () => speak(text, rate), { once: true })
-  audio.addEventListener('canplaythrough', () => {
-    audioCache[id] = audio
-    audio.play().catch(() => speak(text, rate))
-  }, { once: true })
-  audio.load()
+  playAudio(id, text, rate)
 }
 
 export function isTTSAvailable(): boolean {

@@ -192,6 +192,7 @@ export const T = {
   mapBack:              { ja: '← ホーム',                  zh: '← 首頁' },
   mapBackAria:          { ja: 'ホームにもどる',            zh: '返回首頁' },
   mapRegionLocked:      { ja: '（まだひらかない）',        zh: '（尚未開放）' },
+  mapCenterAria:        { ja: 'いまのかんにもどる',        zh: '回到目前關卡' },
 
   // ── LevelEntry ──────────────────────────────────────────────────────────
   levelBack:            { ja: '← ちず',                   zh: '← 地圖' },

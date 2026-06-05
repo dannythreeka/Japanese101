@@ -25,3 +25,6 @@ dist-ssr
 
 # Uploaded zip files (may contain copyrighted source materials)
 *.zip
+
+# Generated audio
+public/assets/audio/*.wav

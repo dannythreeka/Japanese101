@@ -181,3 +181,4 @@ export type KanaMode = 'hiragana' | 'katakana' | 'both'
 export type KanaDifficulty = 1 | 2 | 3 | 'all'
 export type AgeMode = 'young' | 'advanced'
 export type MicMode = 'off' | 'offline' | 'enhanced'
+export type WriteDifficulty = 1 | 2 | 3

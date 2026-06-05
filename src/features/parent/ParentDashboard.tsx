@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode } from '../../types'
+import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode, WriteDifficulty } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { requestMicPermission } from '../../lib/mic'
 import { getAllProgress, getRecentSessions, getTotalStudyTime, getOrCreateAdventureProgress, getAllProfiles, deleteProfile, resetProfileProgress, getActiveProfileId, setActiveProfileId } from '../../db'
@@ -25,6 +25,7 @@ export default function ParentDashboard() {
   const navigate = useNavigate()
   const {
     kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars, micMode,
+    writeDifficulty, setWriteDifficulty,
     setKanaMode, setKanaDifficulty, setAgeMode, toggleUnit, setMicMode,
   } = useAppStore()
 
@@ -357,6 +358,25 @@ export default function ParentDashboard() {
                           : 'bg-gray-100 text-gray-600 hover:bg-blue-100'
                       }`}>
                       {difficultyLabels[diff]}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Writing difficulty */}
+              <div>
+                <p className="text-xl text-gray-600 mb-2">{t('parentWriteDifficulty')}</p>
+                <div className="flex gap-2 flex-wrap">
+                  {([1, 2, 3] as WriteDifficulty[]).map(d => (
+                    <button key={d} type="button"
+                      aria-label={t(d === 1 ? 'parentWriteDiff1' : d === 2 ? 'parentWriteDiff2' : 'parentWriteDiff3')}
+                      onClick={() => setWriteDifficulty(d)}
+                      className={`px-4 py-2 rounded-2xl text-xl font-bold transition-all ${
+                        writeDifficulty === d
+                          ? 'bg-purple-400 text-white shadow-md'
+                          : 'bg-gray-100 text-gray-600 hover:bg-purple-100'
+                      }`}>
+                      {t(d === 1 ? 'parentWriteDiff1' : d === 2 ? 'parentWriteDiff2' : 'parentWriteDiff3')}
                     </button>
                   ))}
                 </div>

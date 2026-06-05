@@ -46,6 +46,10 @@ export const T = {
   // ── KanaCatch ───────────────────────────────────────────────────────────
   kanaCatchTitle:       { ja: 'かな キャッチ！',            zh: '接住假名！' },
   kanaCatchPrompt:      { ja: 'どんな モード で あそぶ？',  zh: '選擇遊戲模式？' },
+  kanaCatchHiragana:     { ja: 'ひらがな',                          zh: '平假名' },
+  kanaCatchHiraganaDesc: { ja: 'おとを きいて ひらがなを みつけよう', zh: '聽聲音找平假名' },
+  kanaCatchKatakana:     { ja: 'カタカナ',                          zh: '片假名' },
+  kanaCatchKatakanaDesc: { ja: 'おとを きいて カタカナを みつけよう', zh: '聽聲音找片假名' },
   kanaCatchListen:      { ja: 'きく',                       zh: '聆聽' },
   kanaCatchCompare:     { ja: 'くらべる',                   zh: '比較' },
   kanaCatchWord:        { ja: 'ことばを みつけよう',        zh: '找詞語' },

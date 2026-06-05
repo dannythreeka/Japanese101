@@ -46,6 +46,7 @@ export default function ListenQuiz() {
   const navigate = useNavigate()
   const { addStars, startSession, endSession } = useAppStore()
   const t = useT()
+  const [imgErrors, setImgErrors] = useState<Set<string>>(new Set())
   const [round, setRound] = useState<QuizRound>(() => makeRound(allWords))
   const [roundNum, setRoundNum] = useState(1)
   const [score, setScore] = useState(0)
@@ -227,11 +228,18 @@ export default function ListenQuiz() {
               onClick={() => { void handleChoice(choice) }}
               className={btnClass}
             >
-              <img
-                src={choice.image.src}
-                alt={choice.meaning_zh}
-                className="w-16 h-16 object-contain"
-              />
+              {imgErrors.has(choice.id) ? (
+                <span className="text-5xl leading-none select-none">
+                  {choice.emoji ?? choice.meaning_zh}
+                </span>
+              ) : (
+                <img
+                  src={choice.image.src}
+                  alt={choice.meaning_zh}
+                  className="w-16 h-16 object-contain"
+                  onError={() => setImgErrors(prev => new Set([...prev, choice.id]))}
+                />
+              )}
               <span className="text-xs text-gray-500">{choice.meaning_zh}</span>
             </button>
           )

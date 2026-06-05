@@ -7,7 +7,8 @@ const fade = (v: boolean): CSSProperties => ({
 
 export default function ShizukaKageScene({ success }: { success: boolean }) {
   return (
-    <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg" style={{ display: 'block', width: '100%' }}>
+    <svg viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg"
+      style={{ display: 'block', width: '100%', animation: success ? 'none' : 'boss-blob 2.8s ease-in-out infinite' }}>
       {/* Initial: dark sky, shadow looms */}
       <g style={fade(!success)}>
         <rect width="320" height="220" fill="#0c0a1e" />
@@ -28,14 +29,16 @@ export default function ShizukaKageScene({ success }: { success: boolean }) {
         <ellipse cx="222" cy="142" rx="32" ry="22" fill="#161024" />
         <ellipse cx="160" cy="162" rx="26" ry="18" fill="#161024" />
         {/* glowing red eyes */}
-        <circle cx="136" cy="107" r="14" fill="#cc0000" opacity="0.25" />
-        <circle cx="184" cy="107" r="14" fill="#cc0000" opacity="0.25" />
-        <circle cx="136" cy="107" r="10" fill="#ff2a2a" />
-        <circle cx="184" cy="107" r="10" fill="#ff2a2a" />
-        <circle cx="136" cy="107" r="6"  fill="white" />
-        <circle cx="184" cy="107" r="6"  fill="white" />
-        <circle cx="138" cy="109" r="3.5" fill="#990000" />
-        <circle cx="186" cy="109" r="3.5" fill="#990000" />
+        <g style={{ animation: 'eye-flicker 3.5s ease-in-out infinite' }}>
+          <circle cx="136" cy="107" r="14" fill="#cc0000" opacity="0.25" />
+          <circle cx="184" cy="107" r="14" fill="#cc0000" opacity="0.25" />
+          <circle cx="136" cy="107" r="10" fill="#ff2a2a" />
+          <circle cx="184" cy="107" r="10" fill="#ff2a2a" />
+          <circle cx="136" cy="107" r="6"  fill="white" />
+          <circle cx="184" cy="107" r="6"  fill="white" />
+          <circle cx="138" cy="109" r="3.5" fill="#990000" />
+          <circle cx="186" cy="109" r="3.5" fill="#990000" />
+        </g>
       </g>
 
       {/* Success: shadow disperses, dawn light */}

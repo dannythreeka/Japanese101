@@ -48,8 +48,152 @@ button { touch-action: manipulation; }
 .animate-shake { animation: shake 0.4s ease-out; }
 .animate-star-pop { animation: star-pop 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; }
 
+/* ── Pet animations ─────────────────────────────────────────── */
+@keyframes pet-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-9px); }
+}
+@keyframes pet-shake {
+  0%,100% { transform: rotate(0deg); }
+  20%     { transform: rotate(-6deg); }
+  40%     { transform: rotate(6deg); }
+  60%     { transform: rotate(-5deg); }
+  80%     { transform: rotate(5deg); }
+}
+@keyframes wing-flap {
+  0%,100% { transform: rotate(0deg) scaleY(1); }
+  50%     { transform: rotate(-12deg) scaleY(0.82); }
+}
+@keyframes wing-slow {
+  0%,100% { transform: rotate(0deg) scaleY(1); }
+  50%     { transform: rotate(-7deg) scaleY(0.9); }
+}
+@keyframes star-particle {
+  0%   { opacity: 1; transform: translate(0,0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--dx,20px), var(--dy,-30px)) scale(0); }
+}
+@keyframes gold-pulse {
+  0%,100% { opacity: 0.55; }
+  50%     { opacity: 1; }
+}
+@keyframes orb-orbit {
+  from { transform: rotate(0deg) translateX(52px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(52px) rotate(-360deg); }
+}
+@keyframes confetti-fall {
+  0%   { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+@keyframes boss-blob {
+  0%,100% { transform: scaleY(1) scaleX(1); }
+  30%     { transform: scaleY(1.08) scaleX(0.94); }
+  70%     { transform: scaleY(0.93) scaleX(1.06); }
+}
+@keyframes boss-hat-sway {
+  0%,100% { transform: rotate(0deg); transform-origin: bottom center; }
+  40%     { transform: rotate(-4deg); transform-origin: bottom center; }
+  70%     { transform: rotate(3deg); transform-origin: bottom center; }
+}
+@keyframes eye-flicker {
+  0%,90%,100% { opacity: 1; }
+  95%          { opacity: 0.4; }
+}
+@keyframes hue-spin {
+  from { filter: hue-rotate(0deg) brightness(0.8); }
+  to   { filter: hue-rotate(360deg) brightness(0.8); }
+}
+@keyframes flame-wave {
+  0%,100% { d: path("M60 180 Q80 150 100 160 Q120 170 140 150 Q160 130 180 160 Q200 170 220 150 L220 220 L60 220 Z"); }
+  50%     { d: path("M60 180 Q90 160 100 150 Q115 140 140 160 Q165 140 180 150 Q200 160 220 140 L220 220 L60 220 Z"); }
+}
+@keyframes sunburst-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes victory-slide-up {
+  from { transform: translateY(60px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.pet-float  { animation: pet-float 3s ease-in-out infinite; }
+.pet-shake  { animation: pet-shake 0.5s ease-in-out; }
+.wing-flap  { animation: wing-flap 0.35s ease-in-out infinite; }
+.wing-slow  { animation: wing-slow 2.2s ease-in-out infinite; }
+.gold-pulse { animation: gold-pulse 1.8s ease-in-out infinite; }
+
 /* Stroke-order draw animation for みほん (KanaWrite demo) */
 @keyframes draw-stroke {
   from { stroke-dashoffset: 400; }
   to   { stroke-dashoffset: 0; }
 }
+
+/* ── Pet animations ─────────────────────────────────────────── */
+@keyframes pet-float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-9px); }
+}
+@keyframes pet-shake {
+  0%,100% { transform: rotate(0deg); }
+  20%     { transform: rotate(-6deg); }
+  40%     { transform: rotate(6deg); }
+  60%     { transform: rotate(-5deg); }
+  80%     { transform: rotate(5deg); }
+}
+@keyframes wing-flap {
+  0%,100% { transform: rotate(0deg) scaleY(1); }
+  50%     { transform: rotate(-12deg) scaleY(0.82); }
+}
+@keyframes wing-slow {
+  0%,100% { transform: rotate(0deg) scaleY(1); }
+  50%     { transform: rotate(-7deg) scaleY(0.9); }
+}
+@keyframes star-particle {
+  0%   { opacity: 1; transform: translate(0,0) scale(1); }
+  100% { opacity: 0; transform: translate(var(--dx,20px), var(--dy,-30px)) scale(0); }
+}
+@keyframes gold-pulse {
+  0%,100% { opacity: 0.55; }
+  50%     { opacity: 1; }
+}
+@keyframes orb-orbit {
+  from { transform: rotate(0deg) translateX(52px) rotate(0deg); }
+  to   { transform: rotate(360deg) translateX(52px) rotate(-360deg); }
+}
+@keyframes confetti-fall {
+  0%   { transform: translateY(-10px) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
+@keyframes boss-blob {
+  0%,100% { transform: scaleY(1) scaleX(1); }
+  30%     { transform: scaleY(1.08) scaleX(0.94); }
+  70%     { transform: scaleY(0.93) scaleX(1.06); }
+}
+@keyframes boss-hat-sway {
+  0%,100% { transform: rotate(0deg); transform-origin: bottom center; }
+  40%     { transform: rotate(-4deg); transform-origin: bottom center; }
+  70%     { transform: rotate(3deg); transform-origin: bottom center; }
+}
+@keyframes eye-flicker {
+  0%,90%,100% { opacity: 1; }
+  95%          { opacity: 0.4; }
+}
+@keyframes hue-spin {
+  from { filter: hue-rotate(0deg) brightness(0.8); }
+  to   { filter: hue-rotate(360deg) brightness(0.8); }
+}
+@keyframes flame-wave {
+  0%,100% { d: path("M60 180 Q80 150 100 160 Q120 170 140 150 Q160 130 180 160 Q200 170 220 150 L220 220 L60 220 Z"); }
+  50%     { d: path("M60 180 Q90 160 100 150 Q115 140 140 160 Q165 140 180 150 Q200 160 220 140 L220 220 L60 220 Z"); }
+}
+@keyframes sunburst-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes victory-slide-up {
+  from { transform: translateY(60px); opacity: 0; }
+  to   { transform: translateY(0); opacity: 1; }
+}
+.pet-float  { animation: pet-float 3s ease-in-out infinite; }
+.pet-shake  { animation: pet-shake 0.5s ease-in-out; }
+.wing-flap  { animation: wing-flap 0.35s ease-in-out infinite; }
+.wing-slow  { animation: wing-slow 2.2s ease-in-out infinite; }
+.gold-pulse { animation: gold-pulse 1.8s ease-in-out infinite; }

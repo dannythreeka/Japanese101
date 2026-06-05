@@ -67,7 +67,13 @@ export default function LevelEntry() {
 
   const status = getLevelStatus(level, progress)
   const completedRecord = progress.completed_levels[level.level_id]
-  const BossScene = level.level_type === 'boss' ? SCENE_REGISTRY['shizuka_kage'] : null
+  const BOSS_SCENE_MAP: Record<string, string> = {
+    lv_05_kessen: 'shizuka_kage',
+    lv_10_saidan: 'ankoku_yuragi',
+  }
+  const BossScene = level.level_type === 'boss'
+    ? (SCENE_REGISTRY[BOSS_SCENE_MAP[level.level_id] ?? 'shizuka_kage'] ?? null)
+    : null
   const sessionResults = (adventureSession && adventureSession.levelId === levelId) ? adventureSession.results : {}
 
   const requiredChallenges = level.challenges.filter((c) => c.required_for_completion !== false)

@@ -10,6 +10,8 @@
     "preview": "vite preview",
     "test": "vitest run",
     "validate:data": "tsx scripts/validate-data.ts",
+    "gen:voice:test": "tsx scripts/generate-audio.ts --test",
+    "gen:voice": "tsx scripts/generate-audio.ts",
     "server": "tsx server/index.ts",
     "server:dev": "tsx watch server/index.ts"
   },

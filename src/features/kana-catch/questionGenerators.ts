@@ -57,9 +57,13 @@ export function makeListenGenerator(
 ): () => QuestionConfig {
   const queue = [...shuffled(kanaPool)]
   let idx = 0
+  let lastId = ''
   return () => {
     if (idx >= queue.length) idx = 0
-    const correct = srsWeightedPick(queue.slice(idx, idx + Math.min(10, queue.length)), k => k.id, pMap)
+    const window = queue.slice(idx, idx + Math.min(10, queue.length))
+    const available = window.length > 1 ? window.filter(k => k.id !== lastId) : window
+    const correct = srsWeightedPick(available, k => k.id, pMap)
+    lastId = correct.id
     idx++
     const count = Math.min(maxBubbles - 1, kanaPool.length - 1)
     const others = shuffled(kanaPool.filter(k => k.id !== correct.id)).slice(0, count)
@@ -86,9 +90,12 @@ export function makeMinimalPairGenerator(
 
   const queue = [...shuffled(pairKana)]
   let idx = 0
+  let lastId = ''
   return () => {
     if (idx >= queue.length) idx = 0
-    const correct = srsWeightedPick(queue, k => k.id, pMap)
+    const available = queue.length > 1 ? queue.filter(k => k.id !== lastId) : queue
+    const correct = srsWeightedPick(available, k => k.id, pMap)
+    lastId = correct.id
     idx++
     const distractors = shuffled(pairKana.filter(k => k.id !== correct.id)).slice(0, maxBubbles - 1)
     const items: BubbleItem[] = shuffled([correct, ...distractors]).map(k => ({
@@ -112,13 +119,15 @@ export function makeWordToImageGenerator(
 
   const queue = [...shuffled(validConcepts)]
   let idx = 0
+  let lastId = ''
   return () => {
     if (validConcepts.length === 0) {
-      // fallback: empty config (shouldn't happen in production)
       return { items: [], targetId: '', ttsText: '' }
     }
     if (idx >= queue.length) idx = 0
-    const correct = srsWeightedPick(queue, cw => cw.id, pMap)
+    const available = queue.length > 1 ? queue.filter(cw => cw.id !== lastId) : queue
+    const correct = srsWeightedPick(available, cw => cw.id, pMap)
+    lastId = correct.id
     idx++
     const distractors = shuffled(validConcepts.filter(cw => cw.id !== correct.id)).slice(0, maxBubbles - 1)
     const items: BubbleItem[] = shuffled([correct, ...distractors]).map(cw => ({

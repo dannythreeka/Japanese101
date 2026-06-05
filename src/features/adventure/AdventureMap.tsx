@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getOrCreateAdventureProgress, saveAdventureProgress } from '../../db'
 import { useT } from '../../hooks/useT'
@@ -56,7 +56,7 @@ export default function AdventureMap() {
   const [view, setView] = useState<View>({ x: 0, y: 0, scale: 1 })
   const [isDragging, setIsDragging] = useState(false)
 
-  const levels  = getSortedLevels()
+  const levels  = useMemo(() => getSortedLevels(), [])
   const { regions } = levelsData()
 
   const containerRef = useRef<HTMLDivElement>(null)

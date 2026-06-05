@@ -40,16 +40,19 @@ export function calcRms(data: Uint8Array): number {
   return Math.sqrt(sum / data.length)
 }
 
-/** Pure: map voiced duration + optional ASR result to an outcome */
+/** Pure: map voiced duration + optional ASR result to an outcome.
+ *  When srWasUsed=true, a word match is required for 'good'/'perfect'. */
 export function determineOutcome(
   voicedMs: number,
   config: MicVolumeConfig,
   speechMatch: boolean,
+  srWasUsed = false,
 ): MicOutcome {
   if (voicedMs < 50) return 'silent'
   if (voicedMs < config.minVoicedDurationMs) return 'weak'
   if (speechMatch) return 'perfect'
-  return 'good'
+  if (srWasUsed) return 'weak'  // voice loud enough but wrong word
+  return 'good'  // no SR available → volume-based pass
 }
 
 interface SpeechRecognitionLike {
@@ -91,7 +94,7 @@ export async function requestMicPermission(): Promise<boolean> {
  */
 export async function createMicSession(
   config: MicVolumeConfig,
-  micMode: Exclude<MicMode, 'off'>,
+  _micMode: Exclude<MicMode, 'off'>,
   speechTarget?: string,
 ): Promise<MicSession> {
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false })
@@ -106,12 +109,16 @@ export async function createMicSession(
   let lastTs = performance.now()
   let rafId: number | null = null
   let speechMatch = false
+  let srWasUsed = false
   let stopped = false
   let currentRms = 0
 
-  if (micMode === 'enhanced' && speechTarget) {
+  // Always attempt SR when a target word is provided (not restricted to 'enhanced' mode)
+  // so ことだま requires actual word recognition on capable devices
+  if (speechTarget) {
     const SR = getSpeechRecognitionCtor()
     if (SR) {
+      srWasUsed = true
       const rec = new SR()
       rec.lang = 'ja-JP'
       rec.continuous = false
@@ -120,7 +127,7 @@ export async function createMicSession(
         const transcript = Array.from(e.results).map(r => r[0].transcript).join('')
         if (transcript.includes(speechTarget)) speechMatch = true
       }
-      try { rec.start() } catch { /* permission may already be in use */ }
+      try { rec.start() } catch { srWasUsed = false /* SR unavailable at runtime */ }
     }
   }
 
@@ -137,12 +144,12 @@ export async function createMicSession(
 
   return {
     stop(): MicSessionResult {
-      if (stopped) return { outcome: determineOutcome(voicedMs, config, speechMatch), voicedMs }
+      if (stopped) return { outcome: determineOutcome(voicedMs, config, speechMatch, srWasUsed), voicedMs }
       stopped = true
       if (rafId !== null) cancelAnimationFrame(rafId)
       stream.getTracks().forEach(t => t.stop())
       void ctx.close()
-      return { outcome: determineOutcome(voicedMs, config, speechMatch), voicedMs }
+      return { outcome: determineOutcome(voicedMs, config, speechMatch, srWasUsed), voicedMs }
     },
     getRms(): number { return stopped ? 0 : currentRms },
   }

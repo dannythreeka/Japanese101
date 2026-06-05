@@ -74,6 +74,32 @@ export function makeListenGenerator(
   }
 }
 
+// ── Submode A2: listen_katakana ───────────────────────────────────────────────
+
+export function makeKatakanaListenGenerator(
+  kanaPool: Kana[],
+  maxBubbles: number,
+  pMap: Map<string, ProgressRecord>,
+): () => QuestionConfig {
+  const queue = [...shuffled(kanaPool)]
+  let idx = 0
+  let lastId = ''
+  return () => {
+    if (idx >= queue.length) idx = 0
+    const window = queue.slice(idx, idx + Math.min(10, queue.length))
+    const available = window.length > 1 ? window.filter(k => k.id !== lastId) : window
+    const correct = srsWeightedPick(available, k => k.id, pMap)
+    lastId = correct.id
+    idx++
+    const count = Math.min(maxBubbles - 1, kanaPool.length - 1)
+    const others = shuffled(kanaPool.filter(k => k.id !== correct.id)).slice(0, count)
+    const items: BubbleItem[] = shuffled([correct, ...others]).map(k => ({
+      id: k.id, display: k.katakana, romaji: k.romaji,
+    }))
+    return { items, targetId: correct.id, ttsText: correct.hiragana }
+  }
+}
+
 // ── Submode B: minimal_pair ───────────────────────────────────────────────────
 
 export function makeMinimalPairGenerator(

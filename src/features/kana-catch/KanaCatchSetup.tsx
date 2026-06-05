@@ -11,15 +11,16 @@ interface Props {
 interface ModeInfo {
   mode: KanaCatchSubMode
   icon: string
-  labelKey: 'kanaCatchListen' | 'kanaCatchCompare' | 'kanaCatchWord'
-  descKey: 'kanaCatchListenDesc' | 'kanaCatchCompareDesc' | 'kanaCatchWordDesc'
+  labelKey: 'kanaCatchHiragana' | 'kanaCatchKatakana' | 'kanaCatchListen' | 'kanaCatchCompare' | 'kanaCatchWord'
+  descKey: 'kanaCatchHiraganaDesc' | 'kanaCatchKatakanaDesc' | 'kanaCatchListenDesc' | 'kanaCatchCompareDesc' | 'kanaCatchWordDesc'
   needsUnit: boolean
 }
 
 const MODES: ModeInfo[] = [
-  { mode: 'listen',       icon: '🎵', labelKey: 'kanaCatchListen',  descKey: 'kanaCatchListenDesc',  needsUnit: false },
-  { mode: 'minimal_pair', icon: '🔤', labelKey: 'kanaCatchCompare', descKey: 'kanaCatchCompareDesc', needsUnit: true  },
-  { mode: 'word_to_image',icon: '🖼️', labelKey: 'kanaCatchWord',    descKey: 'kanaCatchWordDesc',    needsUnit: true  },
+  { mode: 'listen',          icon: 'あ', labelKey: 'kanaCatchHiragana',  descKey: 'kanaCatchHiraganaDesc',  needsUnit: false },
+  { mode: 'listen_katakana', icon: 'ア', labelKey: 'kanaCatchKatakana',  descKey: 'kanaCatchKatakanaDesc',  needsUnit: false },
+  { mode: 'minimal_pair',    icon: '🔤', labelKey: 'kanaCatchCompare',   descKey: 'kanaCatchCompareDesc',   needsUnit: true  },
+  { mode: 'word_to_image',   icon: '🖼️', labelKey: 'kanaCatchWord',      descKey: 'kanaCatchWordDesc',      needsUnit: true  },
 ]
 
 export default function KanaCatchSetup({ lessons, onStart, onBack }: Props) {
@@ -42,7 +43,6 @@ export default function KanaCatchSetup({ lessons, onStart, onBack }: Props) {
         {MODES.map(({ mode, icon, labelKey, descKey, needsUnit }) => {
           const label = t(labelKey)
           const desc = t(descKey)
-          // modes that need a unit are only available if lessons provide that mode
           const availableLessons = needsUnit
             ? lessons.filter(l => l.suggested_game_modes.includes(
                 mode === 'minimal_pair' ? 'kana_catch_minimal_pair' : 'kana_catch_word_to_image'
@@ -55,7 +55,7 @@ export default function KanaCatchSetup({ lessons, onStart, onBack }: Props) {
               <button key={mode} type="button"
                 onClick={() => onStart(mode)}
                 className="w-full py-5 rounded-3xl bg-orange-400 text-white text-xl font-bold shadow-lg hover:bg-orange-500 hover:scale-[1.02] transition-all flex flex-col items-center gap-1">
-                <span className="text-3xl">{icon}</span>
+                <span className="text-3xl font-bold">{icon}</span>
                 <span>{label}</span>
                 <span className="text-sm font-normal opacity-80">{desc}</span>
               </button>

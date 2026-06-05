@@ -128,7 +128,7 @@ export interface GameModule<TConfig = unknown, TAnswer = unknown> {
 
 // ── §5.1 Kana Catch config ────────────────────────────────────────────────────
 
-export type KanaCatchSubMode = 'listen' | 'minimal_pair' | 'word_to_image'
+export type KanaCatchSubMode = 'listen' | 'listen_katakana' | 'minimal_pair' | 'word_to_image'
 
 export interface KanaCatchConfig {
   subMode: KanaCatchSubMode

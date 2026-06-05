@@ -16,7 +16,7 @@ import { KanaCatchEngine, CANVAS_W, CANVAS_H } from './KanaCatchEngine'
 import type { QuestionConfig, EngineParams } from './KanaCatchEngine'
 import {
   buildPool, buildParams, loadProgressMap,
-  makeListenGenerator, makeMinimalPairGenerator, makeWordToImageGenerator,
+  makeListenGenerator, makeKatakanaListenGenerator, makeMinimalPairGenerator, makeWordToImageGenerator,
 } from './questionGenerators'
 import KanaCatchSetup from './KanaCatchSetup'
 import { useT } from '../../hooks/useT'
@@ -119,6 +119,8 @@ export default function KanaCatchGame() {
         nextQ = makeMinimalPairGenerator(activePairs, ALL_KANA, maxB, pMap)
       } else if (subMode === 'word_to_image' && activeWords) {
         nextQ = makeWordToImageGenerator(activeWords, ALL_VOCAB, maxB, pMap)
+      } else if (subMode === 'listen_katakana') {
+        nextQ = makeKatakanaListenGenerator(kanaPoolOverride ?? kanaPool, maxB, pMap)
       } else {
         nextQ = makeListenGenerator(kanaPoolOverride ?? kanaPool, maxB, pMap)
       }

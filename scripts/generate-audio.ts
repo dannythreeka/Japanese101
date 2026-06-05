@@ -14,8 +14,7 @@
  *   VOICEVOX_DELAY_MS=700               # ms between requests (public API: use ≥600)
  *
  * ── Public API note ──────────────────────────────────────────────────────────
- *   Default: https://voicevox.su-shiki.com/api/  (free, no key needed)
- *   Backup:  https://deprecatedapis.tts.quest/v2/voicevox/audio/ (different format)
+ *   Default: https://api.tts.quest/v3/voicevox/synthesis  (V3 API)
  *   For batch generation of 200+ files, local VOICEVOX is more reliable:
  *   → Download: https://voicevox.hiroshiba.jp/  (free, ~500 MB)
  *   → Run engine, then: VOICEVOX_URL=http://localhost:50021 npm run gen:voice
@@ -40,10 +39,10 @@ const OUT_DIR   = path.join(ROOT, 'public', 'assets', 'audio')
 
 // ── Config ───────────────────────────────────────────────────────────────────
 
-const VOICEVOX_BASE = process.env.VOICEVOX_URL ?? 'https://voicevox.su-shiki.com/api'
+const VOICEVOX_BASE = process.env.VOICEVOX_URL ?? 'https://api.tts.quest/v3/voicevox/synthesis'
 const SPEAKER_ID    = Number(process.env.VOICEVOX_SPEAKER ?? '2')  // 2 = 四国めたん ノーマル
-const DELAY_MS      = Number(process.env.VOICEVOX_DELAY_MS ?? '700')
-const MAX_RETRIES   = 3
+const DELAY_MS      = Number(process.env.VOICEVOX_DELAY_MS ?? '2000') // Increased for public API V3
+const MAX_RETRIES   = 5
 const IS_LOCAL      = VOICEVOX_BASE.includes('localhost') || VOICEVOX_BASE.includes('127.0.0.1')
 
 // Fixed game phrases — slug → text
@@ -61,41 +60,93 @@ interface KanaEntry  { id: string; hiragana: string }
 interface VocabEntry { id: string; kana: string }
 interface Item       { id: string; text: string; label: string }
 
+interface V3Response {
+  success: boolean;
+  audioStatusUrl: string;
+  wavDownloadUrl: string;
+  retryAfter?: number;
+}
+
+interface V3Status {
+  success: boolean;
+  isAudioReady: boolean;
+  isAudioError: boolean;
+}
+
 // ── VOICEVOX API ─────────────────────────────────────────────────────────────
 
 async function synthesize(text: string, outPath: string, attempt = 1): Promise<void> {
   try {
-    // Step 1: audio_query
-    const qRes = await fetch(
-      `${VOICEVOX_BASE}/audio_query?text=${encodeURIComponent(text)}&speaker=${SPEAKER_ID}`,
-      { method: 'POST', signal: AbortSignal.timeout(15_000) },
-    )
-    if (!qRes.ok) throw new Error(`audio_query HTTP ${qRes.status}`)
-    const query = await qRes.json() as Record<string, unknown>
+    if (IS_LOCAL) {
+      // Local engine uses 2-step process (audio_query + synthesis)
+      const qRes = await fetch(
+        `${VOICEVOX_BASE}/audio_query?text=${encodeURIComponent(text)}&speaker=${SPEAKER_ID}`,
+        { method: 'POST', signal: AbortSignal.timeout(15_000) },
+      )
+      if (!qRes.ok) throw new Error(`audio_query HTTP ${qRes.status}`)
+      const query = await qRes.json() as Record<string, unknown>
 
-    // Tune for learner clarity: slightly slower, more expressive
-    query.speedScale      = 0.87
-    query.intonationScale = 1.15
-    query.pitchScale      = 0.02   // slightly higher pitch (child-friendly)
+      // Tune for learner clarity: slightly slower, more expressive
+      query.speedScale      = 0.87
+      query.intonationScale = 1.15
+      query.pitchScale      = 0.02   // slightly higher pitch (child-friendly)
 
-    // Step 2: synthesis
-    const sRes = await fetch(
-      `${VOICEVOX_BASE}/synthesis?speaker=${SPEAKER_ID}`,
-      {
-        method:  'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body:    JSON.stringify(query),
-        signal:  AbortSignal.timeout(30_000),
-      },
-    )
-    if (!sRes.ok) throw new Error(`synthesis HTTP ${sRes.status}`)
+      const sRes = await fetch(
+        `${VOICEVOX_BASE}/synthesis?speaker=${SPEAKER_ID}`,
+        {
+          method:  'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body:    JSON.stringify(query),
+          signal:  AbortSignal.timeout(30_000),
+        },
+      )
+      if (!sRes.ok) throw new Error(`synthesis HTTP ${sRes.status}`)
 
-    const buf = Buffer.from(await sRes.arrayBuffer())
-    fs.writeFileSync(outPath, buf)
+      const buf = Buffer.from(await sRes.arrayBuffer())
+      fs.writeFileSync(outPath, buf)
+    } else {
+      // Public API (tts.quest V3)
+      // Note: tts.quest V3 API doesn't support fine-tuning parameters (speed/pitch) in the URL yet.
+      const url = `${VOICEVOX_BASE}?text=${encodeURIComponent(text)}&speaker=${SPEAKER_ID}`
+      const res = await fetch(url, { signal: AbortSignal.timeout(15_000) })
+      if (!res.ok) throw new Error(`V3 Synthesis Request HTTP ${res.status}`)
+
+      const data = await res.json() as V3Response
+      if (!data.success) {
+        if (data.retryAfter) {
+          console.warn(`    ⏱ API rate limit, retry after ${data.retryAfter}s`)
+          await sleep(data.retryAfter * 1000)
+          return synthesize(text, outPath, attempt)
+        }
+        throw new Error(`V3 API success=false`)
+      }
+
+      // Poll for completion
+      let ready = false
+      let pollAttempt = 0
+      while (!ready && pollAttempt < 15) { // Increased polling attempts
+        await sleep(2000)
+        const sRes = await fetch(data.audioStatusUrl)
+        if (sRes.ok) {
+          const sData = await sRes.json() as V3Status
+          if (sData.isAudioReady) ready = true
+          if (sData.isAudioError) throw new Error('V3 Audio generation failed on server')
+        }
+        pollAttempt++
+      }
+
+      if (!ready) throw new Error('V3 Polling timeout')
+
+      const audioRes = await fetch(data.wavDownloadUrl)
+      if (!audioRes.ok) throw new Error(`V3 Download HTTP ${audioRes.status}`)
+
+      const buf = Buffer.from(await audioRes.arrayBuffer())
+      fs.writeFileSync(outPath, buf)
+    }
 
   } catch (err) {
     if (attempt < MAX_RETRIES) {
-      const wait = attempt * 1200
+      const wait = attempt * 2000
       console.warn(`    ↻ retry ${attempt}/${MAX_RETRIES - 1} in ${wait}ms — ${(err as Error).message}`)
       await sleep(wait)
       return synthesize(text, outPath, attempt + 1)
@@ -149,8 +200,8 @@ async function main() {
     } catch (err) {
       console.error(`❌ 失敗: ${(err as Error).message}`)
       console.error('\n【ヒント】ローカル VOICEVOX エンジンを試してみよう:')
-      console.error('  1. https://voicevox.hiroshiba.jp/ からダウンロード')
-      console.error('  2. 起動後: VOICEVOX_URL=http://localhost:50021 npm run gen:voice:test')
+      console.error('  1. https://voicevox.hiroshiba.jp/ から下載')
+      console.error('  2. 啟動後: VOICEVOX_URL=http://localhost:50021 npm run gen:voice:test')
       process.exit(1)
     }
     return
@@ -177,7 +228,7 @@ async function main() {
   }
 
   if (!IS_LOCAL && toGenerate.length > 10) {
-    const estMin = Math.ceil((toGenerate.length * (DELAY_MS + 3000)) / 60_000)
+    const estMin = Math.ceil((toGenerate.length * (DELAY_MS + 5000)) / 60_000)
     console.log(`⏱  Estimated time: ~${estMin} minutes (public API)`)
     console.log('   Tip: Use local VOICEVOX for faster batch generation\n')
   }

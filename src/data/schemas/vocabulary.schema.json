@@ -40,7 +40,7 @@
         "src":        { "type": "string" },
         "license":    {
           "type": "string",
-          "enum": ["CC0","CC-BY","CC-BY-SA","self-created","tts_generated","public_domain"]
+          "enum": ["CC0","CC-BY","CC-BY-SA","self-created","tts_generated","public_domain","VOICEVOX_四国めたん"]
         },
         "source_url": { "type": "string", "format": "uri" },
         "origin":     { "type": "string", "description": "tts_generated / recorded / drawn" }

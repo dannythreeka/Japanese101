@@ -24,8 +24,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_tamago.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🥚"
@@ -43,8 +43,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_ajisai.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌸"
@@ -62,8 +62,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_aomushi.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐛"
@@ -81,8 +81,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_ame.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌧️"
@@ -100,8 +100,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_ichigo.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍓"
@@ -119,8 +119,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_inoshishi.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐗"
@@ -138,8 +138,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_inu.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐶"
@@ -157,8 +157,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_uma.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐴"
@@ -176,8 +176,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_uchiwa.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌬️"
@@ -195,8 +195,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_umi.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌊"
@@ -214,8 +214,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_ebi.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🦐"
@@ -233,8 +233,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_ensoku.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🎒"
@@ -252,8 +252,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_eki.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🚉"
@@ -271,8 +271,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_onigiri.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍙"
@@ -290,8 +290,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_oni.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👹"
@@ -309,8 +309,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_kaki.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍊"
@@ -328,8 +328,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_kagi.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🔑"
@@ -347,8 +347,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_saru.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐒"
@@ -366,8 +366,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_zaru.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🧺"
@@ -385,8 +385,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_mato.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🎯"
@@ -404,8 +404,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_mado.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🪟"
@@ -423,8 +423,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_konbu.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌿"
@@ -442,8 +442,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_onpu.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🎵"
@@ -461,8 +461,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_unagi.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐟"
@@ -480,8 +480,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_budou.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍇"
@@ -499,8 +499,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_donguri.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌰"
@@ -518,8 +518,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_zabuton.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🛋️"
@@ -537,8 +537,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_panda.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐼"
@@ -556,8 +556,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_purin.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍮"
@@ -575,8 +575,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_neko.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐱"
@@ -594,8 +594,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_nekko.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌱"
@@ -613,8 +613,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_harappa.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌾"
@@ -632,8 +632,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_batta.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🦗"
@@ -651,8 +651,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_kakekko.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🏃"
@@ -670,8 +670,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_kitte.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "📮"
@@ -689,8 +689,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_nikki.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "📔"
@@ -708,8 +708,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_mokkin.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🎹"
@@ -727,8 +727,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_shippo.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🦊"
@@ -746,8 +746,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_happa.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍃"
@@ -765,8 +765,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_gakkou.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🏫"
@@ -784,8 +784,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_kippu.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🎟️"
@@ -803,8 +803,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_hoppe.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "😊"
@@ -822,8 +822,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_dakko.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🤗"
@@ -841,8 +841,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_obasan.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👩"
@@ -860,8 +860,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_obaasan.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👵"
@@ -879,8 +879,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_okaasan.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👩‍👧"
@@ -898,8 +898,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_otousan.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👨"
@@ -917,8 +917,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_oniisan.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👦"
@@ -936,8 +936,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_oneesan.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👧"
@@ -955,8 +955,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_ojiisan.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👴"
@@ -974,8 +974,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_imouto.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👶"
@@ -993,8 +993,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_otouto.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🧒"
@@ -1012,8 +1012,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_rousoku.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🕯️"
@@ -1031,8 +1031,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_yuuyake.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🌅"
@@ -1050,8 +1050,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_houki.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🧹"
@@ -1069,8 +1069,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_fuusen.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🎈"
@@ -1088,8 +1088,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_youkai.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "👻"
@@ -1107,8 +1107,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_omochi.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍡"
@@ -1126,8 +1126,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_omocha.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🧸"
@@ -1145,8 +1145,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_jitensha.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🚲"
@@ -1164,8 +1164,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_akushu.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🤝"
@@ -1183,8 +1183,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_janken.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "✊"
@@ -1202,8 +1202,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_gyuunyuu.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🥛"
@@ -1221,8 +1221,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_kyuushoku.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍱"
@@ -1240,8 +1240,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_ocha.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🍵"
@@ -1259,8 +1259,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_densha.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🚃"
@@ -1278,8 +1278,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_ryokou.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "✈️"
@@ -1297,8 +1297,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_chou.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🦋"
@@ -1316,8 +1316,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_kyouryuu.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🦕"
@@ -1335,8 +1335,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_kyoushitsu.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🏫"
@@ -1354,8 +1354,8 @@
         "license": "self-created"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated",
+        "src": "/assets/audio/word_w_hyou.wav",
+        "license": "VOICEVOX_四国めたん",
         "origin": "tts_generated"
       },
       "emoji": "🐆"
@@ -1373,8 +1373,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_ari.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🐜"
     },
@@ -1391,8 +1392,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_kasa.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "☂️"
     },
@@ -1409,8 +1411,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_kiku.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🌼"
     },
@@ -1427,8 +1430,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_kumo.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "☁️"
     },
@@ -1445,8 +1449,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_kemuri.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "💨"
     },
@@ -1463,8 +1468,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_koma.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🪀"
     },
@@ -1481,8 +1487,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_sakura.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🌸"
     },
@@ -1499,8 +1506,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_shima.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🏝️"
     },
@@ -1517,8 +1525,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_suika.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🍉"
     },
@@ -1535,8 +1544,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_semi.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🐛"
     },
@@ -1553,8 +1563,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_sora.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🌤️"
     },
@@ -1571,8 +1582,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_tako.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🐙"
     },
@@ -1589,8 +1601,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_chizu.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🗺️"
     },
@@ -1607,8 +1620,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_tsuki.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🌙"
     },
@@ -1625,8 +1639,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_tegami.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "📝"
     },
@@ -1643,8 +1658,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_tokei.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "⏰"
     },
@@ -1661,8 +1677,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_natsu.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "☀️"
     },
@@ -1679,8 +1696,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_niji.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🌈"
     },
@@ -1697,8 +1715,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_nuno.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🧵"
     },
@@ -1715,8 +1734,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_nohara.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🌾"
     },
@@ -1733,8 +1753,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_hana.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🌺"
     },
@@ -1751,8 +1772,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_hito.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "👤"
     },
@@ -1769,8 +1791,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_fune.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "⛵"
     },
@@ -1787,8 +1810,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_heya.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🏠"
     },
@@ -1805,8 +1829,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_hoshi.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "⭐"
     },
@@ -1823,8 +1848,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_mame.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🫘"
     },
@@ -1841,8 +1867,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_mizu.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "💧"
     },
@@ -1859,8 +1886,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_mushi.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🐛"
     },
@@ -1877,8 +1905,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_megane.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "👓"
     },
@@ -1895,8 +1924,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_momo.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🍑"
     },
@@ -1913,8 +1943,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_yama.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "⛰️"
     },
@@ -1931,8 +1962,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_yuki.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "❄️"
     },
@@ -1949,8 +1981,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_yoru.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🌙"
     },
@@ -1967,8 +2000,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_rakuda.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🐪"
     },
@@ -1985,8 +2019,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_risu.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🐿️"
     },
@@ -2003,8 +2038,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_rusu.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🚪"
     },
@@ -2021,8 +2057,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_remon.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🍋"
     },
@@ -2039,8 +2076,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_wani.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "🐊"
     },
@@ -2057,8 +2095,9 @@
         "license": "CC0"
       },
       "audio": {
-        "src": "",
-        "license": "tts_generated"
+        "src": "/assets/audio/word_w_hon.wav",
+        "license": "VOICEVOX_四国めたん",
+        "origin": "tts_generated"
       },
       "emoji": "📚"
     }

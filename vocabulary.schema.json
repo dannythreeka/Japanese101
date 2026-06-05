@@ -22,6 +22,7 @@
         "meaning_zh": { "type": "string", "minLength": 1 },
         "category":   { "type": "string" },
         "unit":       { "type": "string", "description": "可選:課本進度索引代碼" },
+        "emoji":      { "type": "string", "description": "代表詞語的 emoji 字元，用於遊戲中心顯示區" },
         "image":      { "$ref": "#/definitions/Asset" },
         "audio":      { "$ref": "#/definitions/Asset" }
       }

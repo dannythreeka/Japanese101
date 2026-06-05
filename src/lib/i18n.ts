@@ -192,6 +192,7 @@ export const T = {
   mapBack:              { ja: '← ホーム',                  zh: '← 首頁' },
   mapBackAria:          { ja: 'ホームにもどる',            zh: '返回首頁' },
   mapRegionLocked:      { ja: '（まだひらかない）',        zh: '（尚未開放）' },
+  mapCenterAria:        { ja: 'いまのかんにもどる',        zh: '回到目前關卡' },
 
   // ── LevelEntry ──────────────────────────────────────────────────────────
   levelBack:            { ja: '← ちず',                   zh: '← 地圖' },
@@ -245,6 +246,27 @@ export const T = {
   parentProfileActive:        { ja: 'いまのプレイヤー',          zh: '目前玩家' },
   parentProfileXp:            { ja: 'XP',                       zh: 'XP' },
   parentProfileLevels:        { ja: 'クリアしたかん',            zh: '通關數' },
+
+  // ── CloudSync ────────────────────────────────────────────────────────────
+  syncTitle:             { ja: '☁️ データ どうき',            zh: '☁️ 雲端同步' },
+  syncCloseAria:         { ja: 'とじる',                       zh: '關閉' },
+  syncLoginDesc:         { ja: 'IDとパスワードを にゅうりょく してください。', zh: '請輸入帳號與密碼。' },
+  syncUsernamePlaceholder: { ja: 'ID',                         zh: '帳號' },
+  syncPasswordPlaceholder: { ja: 'パスワード',                 zh: '密碼' },
+  syncLoginError:        { ja: 'IDかパスワードが ちがいます', zh: '帳號或密碼錯誤' },
+  syncLoginBtn:          { ja: 'ログイン',                     zh: '登入' },
+  syncIdleDesc:          { ja: 'データを クラウドに ほぞん・よみこみできます。', zh: '可以將資料儲存到雲端或從雲端讀取。' },
+  syncPushBtn:           { ja: '⬆ クラウドに ほぞん',         zh: '⬆ 上傳到雲端' },
+  syncPullBtn:           { ja: '⬇ クラウドから よみこむ',     zh: '⬇ 從雲端下載' },
+  syncLogout:            { ja: 'ログアウト',                   zh: '登出' },
+  syncPushing:           { ja: 'ほぞんちゅう…',               zh: '上傳中…' },
+  syncPulling:           { ja: 'よみこみちゅう…',             zh: '下載中…' },
+  syncPushOk:            { ja: 'クラウドに ほぞんしました！', zh: '已成功上傳到雲端！' },
+  syncPullOk:            { ja: 'データを よみこみました！',   zh: '已成功從雲端下載！' },
+  syncNoData:            { ja: 'クラウドに データが ありません', zh: '雲端沒有資料' },
+  syncError:             { ja: 'エラーが おきました。もういちど どうぞ。', zh: '發生錯誤，請再試一次。' },
+  syncDoneBtn:           { ja: 'OK',                           zh: 'OK' },
+  syncBtnAria:           { ja: 'データどうき',                 zh: '雲端同步' },
 
   // ── LevelComplete ────────────────────────────────────────────────────────
   levelClearAnim:       { ja: 'クリア！',                  zh: '過關！' },

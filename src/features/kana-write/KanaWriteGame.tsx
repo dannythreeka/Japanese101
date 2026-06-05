@@ -14,6 +14,7 @@ import {
   computeWritingScore, scoreToStars,
 } from './kanaWriteEngine'
 import { useT } from '../../hooks/useT'
+import StrokeOrderDemo from './StrokeOrderDemo'
 
 const ALL_KANA: Kana[] = kanaData()
 const CANVAS_SIZE = 280
@@ -74,6 +75,7 @@ export default function KanaWriteGame() {
   const [xpGained, setXpGained] = useState(0)
   const [hasStrokes, setHasStrokes] = useState(false)
   const [userSnapshot, setUserSnapshot] = useState<string | null>(null)
+  const [showDemo, setShowDemo] = useState(false)
 
   // Build round — use adventure kanaPool override when launched from a level
   useEffect(() => {
@@ -333,6 +335,10 @@ export default function KanaWriteGame() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-6 pb-8 gap-4">
+      {showDemo && currentKana && (
+        <StrokeOrderDemo char={currentKana.hiragana} onClose={() => setShowDemo(false)} />
+      )}
+
       {/* Header */}
       <div className="w-full max-w-sm flex justify-between items-center">
         <button
@@ -421,21 +427,30 @@ export default function KanaWriteGame() {
 
       {/* Action buttons */}
       {phase === 'draw' ? (
-        <div className="flex gap-3 w-full max-w-sm">
+        <div className="flex flex-col items-center gap-2 w-full max-w-sm">
+          <div className="flex gap-3 w-full">
+            <button
+              type="button"
+              onClick={handleClear}
+              className="flex-1 py-3 rounded-2xl bg-gray-200 text-gray-700 text-lg font-bold shadow hover:bg-gray-300 transition-colors"
+            >
+              {t('kanaWriteClear')}
+            </button>
+            <button
+              type="button"
+              onClick={() => { void handleCheck() }}
+              disabled={!hasStrokes}
+              className="flex-[2] py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+            >
+              {t('kanaWriteCheck')}
+            </button>
+          </div>
           <button
             type="button"
-            onClick={handleClear}
-            className="flex-1 py-3 rounded-2xl bg-gray-200 text-gray-700 text-lg font-bold shadow hover:bg-gray-300 transition-colors"
+            onClick={() => setShowDemo(true)}
+            className="px-5 py-2 rounded-full bg-sky-100 hover:bg-sky-200 text-sky-700 text-sm font-semibold transition-colors active:scale-95"
           >
-            {t('kanaWriteClear')}
-          </button>
-          <button
-            type="button"
-            onClick={() => { void handleCheck() }}
-            disabled={!hasStrokes}
-            className="flex-[2] py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
-          >
-            {t('kanaWriteCheck')}
+            {t('kanaWriteDemo')} ✍️
           </button>
         </div>
       ) : (

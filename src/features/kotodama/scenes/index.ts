@@ -37,6 +37,7 @@ import KyouryuuRoarsScene from './KyouryuuRoarsScene'
 
 // ── boss ─────────────────────────────────────────────────────────────────────
 import ShizukaKageScene from './ShizukaKageScene'
+import AnkokuYuragiScene from './AnkokuYuragiScene'
 
 export const SCENE_REGISTRY: Record<string, ComponentType<{ success: boolean }>> = {
   // u2
@@ -71,4 +72,5 @@ export const SCENE_REGISTRY: Record<string, ComponentType<{ success: boolean }>>
   kyouryuu_roars:   KyouryuuRoarsScene,
   // boss
   shizuka_kage:     ShizukaKageScene,
+  ankoku_yuragi:    AnkokuYuragiScene,
 }

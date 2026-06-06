@@ -8,6 +8,7 @@ import { useT } from '../../hooks/useT'
 import { computeStars, completeLevel, getFirstLevelId } from './adventureEngine'
 import PetAvatar from '../../components/PetAvatar'
 import LevelUpModal from '../play/LevelUpModal'
+import VictoryCutscene from './VictoryCutscene'
 import { getStageInfo } from '../../lib/petEvolution'
 import type { Level } from '../../types/adventure'
 import type { PetState } from '../../types'
@@ -29,6 +30,7 @@ export default function LevelComplete() {
   const [hasNextLevel, setHasNextLevel] = useState(false)
   const [evolvedToStage, setEvolvedToStage] = useState<number | null>(null)
   const [showEvolutionAnim, setShowEvolutionAnim] = useState(false)
+  const [showVictoryCutscene, setShowVictoryCutscene] = useState(false)
   const savedRef = useRef(false)
 
   useEffect(() => {
@@ -66,10 +68,14 @@ export default function LevelComplete() {
       if (xpRes.leveledUp) setXpResult(xpRes)
 
       const evoRes = await applyLevelEvolution(Object.keys(updated.completed_levels))
+      if (found.level_type === 'boss') {
+        // Always show victory cutscene for boss levels
+        setShowVictoryCutscene(true)
+      }
       if (evoRes.newStage !== null) {
         setPet(evoRes.pet)
         setEvolvedToStage(evoRes.newStage)
-        setShowEvolutionAnim(true)
+        if (found.level_type !== 'boss') setShowEvolutionAnim(true)
       }
 
       const sortedIds = levelsData().levels
@@ -100,6 +106,13 @@ export default function LevelComplete() {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-200 to-sky-100 flex flex-col items-center justify-center px-4 gap-6">
+      {showVictoryCutscene && (
+        <VictoryCutscene
+          evolvedToStage={evolvedToStage ?? (pet?.evolutionStage ?? 0)}
+          petName={evolvedToStage !== null ? getStageInfo(evolvedToStage).name_ja : ''}
+          onComplete={() => setShowVictoryCutscene(false)}
+        />
+      )}
       {xpResult?.leveledUp && (
         <LevelUpModal
           newLevel={xpResult.pet.level}

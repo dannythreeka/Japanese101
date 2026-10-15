@@ -39,6 +39,7 @@ export default function KanaCatchGame() {
   const adventure = useAdventureChallenge()
   const t = useT()
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const engineRef = useRef<KanaCatchEngine | null>(null)
   const sessionSaved = useRef(false)
   const correctIds = useRef<string[]>([])
   const adventureAutoStarted = useRef(false)
@@ -46,6 +47,8 @@ export default function KanaCatchGame() {
   const [gameState, setGameState] = useState<GameState>('setup')
   const [currentQ, setCurrentQ] = useState<QuestionConfig | null>(null)
   const [score, setScore] = useState(0)
+  const [firstScore, setFirstScore] = useState(0)
+  const [gameError, setGameError] = useState(false)
   const [bounce, setBounce] = useState(false)
   const [xpResult, setXpResult] = useState<XpResult | null>(null)
   const [pet, setPet] = useState<PetState | null>(null)
@@ -98,6 +101,7 @@ export default function KanaCatchGame() {
   const handleComplete = useCallback(async (correct: number, total: number) => {
     if (sessionSaved.current) return
     sessionSaved.current = true
+    setFirstScore(correct)
     const duration = endSession()
     await saveSession({ id: `kana-catch-${Date.now()}`, date: Date.now(), durationMs: duration,
       feature: 'kana_catch', correct, total })
@@ -113,6 +117,7 @@ export default function KanaCatchGame() {
     const canvas = canvasRef.current
     if (!canvas) return
     let active = true
+    let engine: KanaCatchEngine | null = null
     void (async () => {
       const pMap = await loadProgressMap()
       if (!active) return
@@ -130,27 +135,29 @@ export default function KanaCatchGame() {
       } else {
         nextQ = makeListenGenerator(kanaPoolOverride ?? kanaPool, maxB, pMap)
       }
-      const engine = new KanaCatchEngine(canvas, effectiveParams, {
+      engine = new KanaCatchEngine(canvas, effectiveParams, {
         nextQuestion: nextQ,
         onNewQuestion: (q) => { setCurrentQ(q) },
         onCorrect: (id) => { void handleCorrect(id) },
         onMiss:    (id) => { void handleMiss(id) },
         onComplete: (c, t) => { void handleComplete(c, t) },
+        onError: () => { setGameError(true) },
         onPauseAfterCorrect: (q, resume) => {
           resumeRef.current = resume
           setPausedQ(q)
         },
       })
+      engineRef.current = engine
       engine.start()
-      return () => engine.destroy()
-    })()
-    return () => { active = false }
+    })().catch(() => { if (active) setGameError(true) })
+    return () => { active = false; engine?.destroy(); engineRef.current = null }
   }, [gameState, gameKey, subMode, unitId, pooledPairs, pooledWords, effectiveParams, paramsOverride, kanaPool, kanaPoolOverride, handleCorrect, handleMiss, handleComplete])
 
   const handleStart = useCallback((mode: KanaCatchSubMode, uid?: string) => {
     sessionSaved.current = false
     correctIds.current = []
     setScore(0); setCurrentQ(null); setXpResult(null)
+    setFirstScore(0); setGameError(false)
     setSubMode(mode); setUnitId(uid)
     startSession()
     setGameState('playing')
@@ -161,6 +168,7 @@ export default function KanaCatchGame() {
     sessionSaved.current = false
     correctIds.current = []
     setScore(0); setCurrentQ(null); setXpResult(null)
+    setFirstScore(0); setGameError(false)
     setPausedQ(null); resumeRef.current = null
     startSession()
     setGameState('playing')
@@ -205,7 +213,7 @@ export default function KanaCatchGame() {
   }
 
   if (gameState === 'results') {
-    const accuracy = effectiveParams.roundLength > 0 ? score / effectiveParams.roundLength : 0
+    const accuracy = effectiveParams.roundLength > 0 ? firstScore / effectiveParams.roundLength : 0
     return (
       <div className="min-h-screen flex flex-col items-center justify-center gap-8 p-6">
         {xpResult?.leveledUp && (
@@ -214,10 +222,11 @@ export default function KanaCatchGame() {
         )}
         <h1 className="text-5xl font-bold text-pink-500">{t('done')}</h1>
         <div className="text-4xl font-bold text-yellow-500">⭐ × {score}</div>
-        <p className="text-3xl text-gray-600">{score} / {effectiveParams.roundLength} {t('correct')}</p>
+        <p className="text-3xl text-gray-600">{t('firstAccuracy')}: {Math.round(accuracy * 100)}% ({firstScore}/{effectiveParams.roundLength})</p>
+        <p>{t('practiceCompletion')}: 100%</p>
         {adventure.isActive ? (
           <button type="button"
-            onClick={() => adventure.submitResult(accuracy, calculateXpGain(score, effectiveParams.roundLength))}
+            onClick={() => adventure.submitResult(accuracy, calculateXpGain(firstScore, effectiveParams.roundLength))}
             className="min-w-16 min-h-16 px-8 py-4 rounded-3xl bg-indigo-500 text-white text-2xl font-bold shadow-lg hover:scale-105 transition-transform">
             {t('adventureReturn')}
           </button>
@@ -242,6 +251,8 @@ export default function KanaCatchGame() {
   }
 
   const progress = Math.max(0, (score / effectiveParams.roundLength) * 100)
+
+  if (gameError) return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={handleRestart}>{t('retry')}</button><button className="min-h-16 px-6" onClick={() => adventure.isActive ? adventure.cancelChallenge() : setGameState('setup')}>{t('back')}</button></div>
 
   return (
     <div className="relative min-h-screen flex flex-col items-center gap-3 p-4 pt-6 bg-gradient-to-b from-orange-50 to-white">
@@ -281,6 +292,7 @@ export default function KanaCatchGame() {
 
       <canvas ref={canvasRef} width={CANVAS_W} height={CANVAS_H}
         className="w-full max-w-sm rounded-2xl shadow-inner bg-gradient-to-b from-sky-100 to-indigo-100" />
+      <button className="min-h-16 px-6" onClick={() => engineRef.current?.skip()}>{t('skipQuestion')}</button>
 
       <div className={`flex flex-col items-center gap-1 transition-all duration-300 ${bounce ? '-translate-y-4 scale-110' : ''}`}>
         {pet ? <PetAvatar pet={pet} size="sm" /> : <span className="text-5xl">🐾</span>}

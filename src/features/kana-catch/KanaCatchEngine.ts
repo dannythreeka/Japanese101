@@ -27,6 +27,8 @@ export interface EngineCallbacks {
   onCorrect(itemId: string): void
   onMiss(itemId: string): void
   onComplete(correct: number, total: number): void
+  onAnswer?(questionIndex: number, itemId: string, correct: boolean | null): void
+  onError?(): void
   onPauseAfterCorrect?(q: QuestionConfig, resume: () => void): void
 }
 
@@ -61,6 +63,9 @@ export class KanaCatchEngine {
   private bubbles: Bubble[] = []
   private questionNum = 0
   private correctCount = 0
+  private firstCorrectCount = 0
+  private wrongInQuestion = false
+  private destroyed = false
   private raf = 0
   private lastTs = 0
   private waiting = false
@@ -84,14 +89,22 @@ export class KanaCatchEngine {
   }
 
   destroy(): void {
+    this.destroyed = true
     cancelAnimationFrame(this.raf)
     if (this.pending) clearTimeout(this.pending)
     this.canvas.removeEventListener('pointerdown', this.onPointer)
   }
 
   private spawnQuestion(): void {
+    if (this.destroyed) return
     this.waiting = false
+    this.wrongInQuestion = false
     const q = this.cb.nextQuestion()
+    if (q.items.length < 2 || !q.items.some(item => item.id === q.targetId)) {
+      this.waiting = true
+      this.cb.onError?.()
+      return
+    }
     this.currentQ = q
     this.cb.onNewQuestion(q)
     const sectionW = CANVAS_W / q.items.length
@@ -111,6 +124,7 @@ export class KanaCatchEngine {
   }
 
   private readonly loop = (ts: number): void => {
+    if (this.destroyed) return
     const dt = Math.min((ts - this.lastTs) / 1000, 0.1)
     this.lastTs = ts
     this.update(dt)
@@ -137,14 +151,15 @@ export class KanaCatchEngine {
   private onQuestionEnd(caught: boolean, itemId: string): void {
     this.waiting = true
     this.questionNum++
+    if (caught && !this.wrongInQuestion) this.firstCorrectCount++
     if (caught) { this.correctCount++; this.cb.onCorrect(itemId) }
     else { this.cb.onMiss(itemId) }
-    const done = caught && this.correctCount >= this.params.roundLength
+    const done = this.questionNum >= this.params.roundLength
     const delay = caught ? BURST_MS + 60 : 350
     if (done) {
       cancelAnimationFrame(this.raf)
       this.pending = setTimeout(
-        () => this.cb.onComplete(this.correctCount, this.params.roundLength),
+        () => { if (!this.destroyed) this.cb.onComplete(this.firstCorrectCount, this.questionNum) },
         delay,
       )
     } else if (caught && this.cb.onPauseAfterCorrect && this.currentQ) {
@@ -155,6 +170,12 @@ export class KanaCatchEngine {
     } else {
       this.pending = setTimeout(() => this.spawnQuestion(), delay)
     }
+  }
+
+  skip(): void {
+    if (this.waiting || !this.currentQ || this.destroyed) return
+    this.cb.onAnswer?.(this.questionNum, this.currentQ.targetId, null)
+    this.onQuestionEnd(false, this.currentQ.targetId)
   }
 
   private draw(): void {
@@ -217,9 +238,13 @@ export class KanaCatchEngine {
         if (b.isCorrect) {
           b.state = 'burst'
           b.animT = 0
+          this.cb.onAnswer?.(this.questionNum, this.currentQ!.targetId, true)
           this.onQuestionEnd(true, b.item.id)
+        } else {
+          this.cb.onAnswer?.(this.questionNum, this.currentQ!.targetId, false)
+          if (!this.wrongInQuestion) this.cb.onMiss(this.currentQ!.targetId)
+          this.wrongInQuestion = true
         }
-        // wrong tap: no penalty per SPEC §5.1
         break
       }
     }

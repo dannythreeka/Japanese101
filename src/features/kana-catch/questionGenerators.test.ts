@@ -154,3 +154,22 @@ describe('makeWordToImageGenerator', () => {
     expect(Array.isArray(q.items)).toBe(true)
   })
 })
+
+describe('P1-02 word contrasts and empty pools', () => {
+  it('keeps each complete-word contrast together without unrelated choices', () => {
+    const words = [makeWord('cat','ねこ'),makeWord('root','ねっこ'),makeWord('aunt','おばさん'),makeWord('grandma','おばあさん')]
+    const gen = makeMinimalPairGenerator([['ねこ','ねっこ'],['おばさん','おばあさん']], [], 4, NO_PROGRESS, words)
+    for(let i=0;i<30;i++){
+      const q=gen();const ids=q.items.map(x=>x.id).sort()
+      expect([['cat','root'],['aunt','grandma']]).toContainEqual(ids)
+      expect(q.items.some(x=>x.id===q.targetId)).toBe(true)
+    }
+  })
+  it('returns a recoverable empty question for 0/1 options and unknown words', () => {
+    for(const pairs of [[],[['a']],[['a','missing']]]) {
+      expect(makeMinimalPairGenerator(pairs, ALL, 4, NO_PROGRESS)().items).toHaveLength(0)
+    }
+    expect(makeListenGenerator([], 4, NO_PROGRESS)().items).toHaveLength(0)
+    expect(makeListenGenerator(SEION, 1, NO_PROGRESS)().items).toHaveLength(0)
+  })
+})

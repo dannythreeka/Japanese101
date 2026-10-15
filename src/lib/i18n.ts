@@ -1,6 +1,12 @@
 export type UiLang = 'ja' | 'zh'
 
 export const T = {
+  firstAccuracy: { ja: '最初の答えの正答率', zh: '首次獨立答對率' },
+  practiceCompletion: { ja: '練習の完了', zh: '練習完成率' },
+  questionUnavailable: { ja: '問題を用意できませんでした。もどるか、もう一度ためしてください。', zh: '目前無法準備題目，可以返回或重試。' },
+  retry: { ja: 'もう一度ためす', zh: '重試' },
+  skipQuestion: { ja: 'あとで練習する', zh: '先跳過，稍後複習' },
+
   // ── Common ──────────────────────────────────────────────────────────────
   back:             { ja: '← もどる',         zh: '← 返回' },
   backAria:         { ja: 'もどる',            zh: '返回' },

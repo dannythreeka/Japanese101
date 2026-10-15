@@ -42,3 +42,17 @@ Chromium第一批3項E2E通過：首次6/10與完成10/10、重整／兩分頁�
 人工同意不是模式切換的隱含結果：offline→enhanced現在一律再開明確說明的對話框；取消／延後權限回應／切換玩家不會誤啟用另一玩家。線上辨識說明已移除「不外送」錯誤承諾，明示瀏覽器語音服務可能外送；不支援／啟動失敗不再悄悄退回音量成功，會釋放資源並顯示恢復提示。新增UI同意測試與API故障測試。
 
 補上七種結果出口的重複下一題防護、詞卡末題refresh結果呈現、單字指定ID不隨機替換、一般朗讀按鈕播放錯誤可重試。CI改三引擎隔離job，與主機OS套件無關；保留Test & Build入口，新增每引擎artifact。
+
+## 完整Chromium操作結果
+
+以獨立output /tmp/p1-chromium-reviewed執行12項全部PASS（10.0min）：L0～L10在mic off／模擬拒絕／無裝置各完整走一次，三輪合計33關；模擬media API請求計數0，證明主線不依賴發聲。另含首次計分、重複提交／兩分頁、restore／storage retry／隔離、20次進出、實際WAV離線關頁重開、家長同意、五寬／200% CSS layout zoom、素材contact sheet及P0 smoke。這是瀏覽器自動化，不是實體裝置權限驗收。
+
+最後source review另補免費抓抓樂退出保持checkpoint、明確換模式才abandon舊輪建新session；進度從已保存completed推導，跳過也更新完成數，不把暫存完成數顯示成已領星星。新增專項E2E，會重跑受影響流程。CI三引擎job在各自隔離runner採3 workers、各context獨立，本機仍1 worker。
+
+## CI差異定位
+
+9175a62／GitHub合成merge ac56eb32e4cf659d832a949b46365488f656b35a 的Test & Build全部通過；三引擎完整suite實際執行後暴露差異，未標PASS。Chromium的壞checkpoint恢復測試在restart Promise完成前讀到舊掛載ID，已先等待實際ID變更再判定，保留新ID斷言。
+
+Firefox離線WAV：讀取CI failure trace，明確出現 `NS_ERROR_DOM_MEDIA_MEDIASINK_ERR ... OnMediaSinkAudioError`，不是將下載成功誤當播放成功。本機同測已PASS。隔離runner加入PulseAudio null sink供原生音訊輸出，仍使用真WAV／真播放完成事件與原斷言，不替換Audio、不跳過測試；不在Mac Mini上執行任何apt或聲音服務設定。CI虛擬輸出不等於人工審聽。下一個CI會以新版本重跑。
+
+本機更新後核心24項（Chromium＋Firefox，各12）全PASS；免費抓抓樂壞設定／退出／換模式及延後A家長授權不影響B另4項PASS。全部測試使用隔離匿名資料。

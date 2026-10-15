@@ -77,6 +77,15 @@ jobs:
           path: dist/
       - name: Install browser on isolated runner
         run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: Configure isolated runner audio output
+        run: |
+          if ! command -v pulseaudio >/dev/null || ! command -v pactl >/dev/null; then
+            sudo apt-get install --no-install-recommends -y pulseaudio pulseaudio-utils
+          fi
+          pulseaudio --check || pulseaudio --start --exit-idle-time=-1
+          pactl load-module module-null-sink sink_name=japanese101_qa
+          pactl set-default-sink japanese101_qa
+          pactl list short sinks
       - name: P1 browser regression
         run: npm run test:e2e -- --project=${{ matrix.browser }}
       - uses: actions/upload-artifact@v4

@@ -257,6 +257,7 @@ test('blocked IndexedDB and malformed checkpoints show recovery instead of a bla
   }),old.id)
   await page.reload();await expect(page.getByRole('alert')).toContainText('原有學習紀錄仍保留')
   await page.getByRole('button',{name:'保留紀錄並開始新練習',exact:true}).click()
+  await expect(page.locator('[data-game-session-id]')).not.toHaveAttribute('data-game-session-id',old.id)
   expect((await game(page,'kana')).id).not.toBe(old.id)
   expect((await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===old.id)?.checkpoint.rounds).toBeNull()
 })
@@ -276,3 +277,59 @@ test('parent can export preserved legacy-shared data without assigning it to a c
   expect(await records(page,'playerProgress')).toEqual([])
   expect((await records<{tables:{progress:{id:string}[]}}>(page,'migrationBackups'))[0].tables.progress[0].id).toBe('legacy-qa')
 })
+
+test('catch exit resumes its saved question; explicit mode change preserves history in a new session',async({page})=>{
+  await audioMock(page);await createPlayer(page,'P1-free')
+  await page.goto('/#/play/kana-catch')
+  await page.getByRole('button').filter({hasText:'平假名'}).first().click()
+  const old=await game(page,'kana_catch')
+  await expect.poll(async()=>!!(await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===old.id)?.checkpoint['q:0']).toBe(true)
+  const question=(await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===old.id)!.checkpoint['q:0'] as {targetId:string;items:{id:string;display:string}[]}
+  const wrong=question.items.find(item=>item.id!==question.targetId)!,correct=question.items.find(item=>item.id===question.targetId)!
+  await page.locator('canvas + div').getByRole('button',{name:wrong.display,exact:true}).click()
+  await expect.poll(async()=> (await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===old.id)?.attempts['q:0']?.firstAnswerCorrect).toBe(false)
+  await page.locator('canvas + div').getByRole('button',{name:correct.display,exact:true}).click()
+  await page.getByRole('button',{name:'下一題 →',exact:true}).click()
+  await page.getByRole('button',{name:'返回',exact:true}).click()
+  await expect(page).toHaveURL(/#\/play$/)
+  await page.goto('/#/play/kana-catch')
+  expect((await game(page,'kana_catch')).id).toBe(old.id)
+  await expect(page.getByText('1/10',{exact:true})).toBeVisible()
+  await page.getByRole('button',{name:'先跳過，稍後複習',exact:true}).click()
+  await expect(page.getByText('2/10',{exact:true})).toBeVisible()
+  await page.getByRole('button',{name:'換模式',exact:true}).click()
+  await expect(page.locator('canvas')).toHaveCount(0)
+  expect((await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===old.id)).toMatchObject({status:'abandoned',attempts:{'q:0':{firstAnswerCorrect:false,completed:true}}})
+  const freshId=await page.locator('[data-game-session-id]').getAttribute('data-game-session-id')
+  expect(freshId).not.toBe(old.id)
+  await page.evaluate(id=>new Promise<void>(resolve=>{
+    const req=indexedDB.open('Japanese101DB');req.onsuccess=()=>{const db=req.result,tx=db.transaction('gameCheckpoints','readwrite'),table=tx.objectStore('gameCheckpoints'),read=table.get(id!);read.onsuccess=()=>table.put({...read.result,checkpoint:{gameState:'playing',subMode:'unknown',paramsOverride:{roundLength:0}}});tx.oncomplete=()=>{db.close();resolve()}}
+  }),freshId)
+  await page.reload();await expect(page.getByRole('alert')).toBeVisible()
+  await page.getByRole('button',{name:'重試',exact:true}).click()
+  await expect(page.getByRole('button').filter({hasText:'平假名'}).first()).toBeVisible()
+})
+
+test('late parent permission from A stops its stream and never enables B',async({page})=>{
+  await createPlayer(page,'P1-lateA')
+  await page.goto('/#/parent')
+  // Use the same document for the pending permission and profile switch.
+  await page.evaluate(()=>{
+    window.__p1Stopped=0
+    Object.defineProperty(navigator,'mediaDevices',{configurable:true,value:{getUserMedia:()=>new Promise(resolve=>{window.__p1Release=()=>resolve({getTracks:()=>[{stop(){window.__p1Stopped++}}]})})}})
+  })
+  for(const digit of ['1','2','3','4'])await page.getByRole('button',{name:digit,exact:true}).click()
+  await page.getByRole('button',{name:'離線模式',exact:true}).click()
+  await page.getByRole('button',{name:'允許',exact:true}).click()
+  await page.evaluate(()=>{location.hash='/profiles/new'})
+  await page.locator('#profile-name').fill('P1-lateB');await page.locator('button').last().click()
+  await expect(page).toHaveURL(/#\/$/)
+  await page.evaluate(()=>window.__p1Release())
+  await expect.poll(()=>page.evaluate(()=>window.__p1Stopped)).toBe(1)
+  await page.evaluate(()=>{location.hash='/parent'})
+  for(const digit of ['1','2','3','4'])await page.getByRole('button',{name:digit,exact:true}).click()
+  await expect(page.getByText('言靈遊戲不可使用',{exact:true})).toBeVisible()
+  const active=await page.evaluate(()=>localStorage.getItem('activeProfileId'))
+  expect((await records<{profileId:string;micMode:string}>(page,'preferences')).find(p=>p.profileId===active)?.micMode??'off').toBe('off')
+})
+declare global {interface Window {__p1Release:()=>void;__p1Stopped:number}}

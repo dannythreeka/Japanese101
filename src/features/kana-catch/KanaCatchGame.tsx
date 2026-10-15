@@ -52,7 +52,7 @@ export default function KanaCatchGame() {
 
   const [gameState, setGameState] = useCheckpointState<GameState>('gameState', initialChallenge ? 'playing' : 'setup')
   const [currentQ, setCurrentQ] = useState<QuestionConfig | null>(null)
-  const [score, setScore] = useState(()=>practice.summary.completed)
+  const score = practice.summary.completed
   const [firstScore, setFirstScore] = useState(()=>practice.summary.correct)
   const [gameError, setGameError] = useState(false)
   const [audioState, setAudioState] = useState<'loading'|'ready'|'error'>('loading')
@@ -92,7 +92,6 @@ export default function KanaCatchGame() {
   useEffect(() => () => { if (bounceTimer.current) clearTimeout(bounceTimer.current) }, [])
   const handleCorrect = useCallback(async (itemId: string) => {
     playSfx('correct')
-    setScore(s => s + 1)
     setBounce(true)
     if (bounceTimer.current) clearTimeout(bounceTimer.current)
     bounceTimer.current = setTimeout(() => { if (alive()) setBounce(false) }, 600)
@@ -120,6 +119,7 @@ export default function KanaCatchGame() {
     let active = true
     let engine: KanaCatchEngine | null = null
     void (async () => {
+      if (!['listen','listen_katakana','minimal_pair','word_to_image'].includes(subMode) || !Number.isInteger(effectiveParams.roundLength) || effectiveParams.roundLength < 1 || effectiveParams.roundLength > 1000 || !Number.isFinite(effectiveParams.fallSpeed) || effectiveParams.fallSpeed <= 0) throw new Error('Invalid saved game settings')
       const pMap = await loadProgressMap(profileId)
       if (!active) return
       const lesson = LESSONS.find(l => l.unit_id === unitId)
@@ -177,7 +177,7 @@ export default function KanaCatchGame() {
   const handleStart = useCallback((mode: KanaCatchSubMode, uid?: string) => {
     sessionSaved.current = false
     correctIds.current = []
-    setScore(0); setCurrentQ(null); setXpResult(null)
+    setCurrentQ(null); setXpResult(null)
     setFirstScore(0); setGameError(false)
     setSubMode(mode); setUnitId(uid)
     startSession()
@@ -239,13 +239,14 @@ export default function KanaCatchGame() {
 
   const progress = Math.max(0, (score / effectiveParams.roundLength) * 100)
 
-  if (gameError) return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={handleRestart}>{t('retry')}</button><button className="min-h-16 px-6" onClick={() => adventure.isActive ? adventure.cancelChallenge() : setGameState('setup')}>{t('back')}</button></div>
+  const validSettings = ['setup','playing','results'].includes(gameState) && ['listen','listen_katakana','minimal_pair','word_to_image'].includes(subMode) && Number.isInteger(effectiveParams.roundLength) && effectiveParams.roundLength > 0 && effectiveParams.roundLength <= 1000 && Number.isFinite(effectiveParams.fallSpeed) && effectiveParams.fallSpeed > 0
+  if (gameError || !validSettings) return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => { void practice.restart() }}>{t('retry')}</button><button className="min-h-16 px-6" onClick={() => adventure.isActive ? adventure.cancelChallenge() : navigate('/play')}>{t('back')}</button></div>
 
   return (
     <div className="relative min-h-screen flex flex-col items-center gap-3 p-4 pt-6 bg-gradient-to-b from-orange-50 to-white">
       <div className="w-full max-w-sm flex items-center gap-3">
         <button type="button" aria-label={t('backAria')}
-          onClick={() => adventure.isActive ? adventure.cancelChallenge() : setGameState('setup')}
+          onClick={() => adventure.isActive ? adventure.cancelChallenge() : navigate('/play')}
           className="w-12 h-12 rounded-full bg-gray-200 text-xl flex items-center justify-center hover:bg-gray-300 transition-colors">
           ←
         </button>
@@ -277,6 +278,7 @@ export default function KanaCatchGame() {
         </div>
       )}
 
+      {!adventure.isActive && <button className="min-h-16 px-6" onClick={() => { void practice.restart({gameState:'setup'}) }}>{t('kanaCatchChangeMode')}</button>}
       {audioState === 'error' && <p role="alert">{t('audioUnavailable')}</p>}
       <canvas ref={canvasRef} width={CANVAS_W} height={CANVAS_H}
         className="w-full max-w-sm rounded-2xl shadow-inner bg-gradient-to-b from-sky-100 to-indigo-100" />
@@ -285,7 +287,7 @@ export default function KanaCatchGame() {
 
       <div className={`flex flex-col items-center gap-1 transition-all duration-300 ${bounce ? '-translate-y-4 scale-110' : ''}`}>
         {pet ? <PetAvatar pet={pet} size="sm" /> : <span className="text-5xl">🐾</span>}
-        {score > 0 && <span className="text-xl font-bold text-yellow-500">⭐ × {score}</span>}
+        {score > 0 && <span className="text-base font-bold text-gray-700">{t('practiceCompletion')}: {score}/{effectiveParams.roundLength}</span>}
       </div>
 
       {/* Correct answer reveal overlay */}

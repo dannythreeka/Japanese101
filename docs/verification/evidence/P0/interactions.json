@@ -1,0 +1,23 @@
+[
+  {
+    "id": "WRITE",
+    "method": "mouse stroke, clear, demonstration click",
+    "confirmEnabledAfterStroke": true,
+    "confirmEnabledAfterClear": false
+  },
+  {
+    "id": "VOICE-DENIED",
+    "method": "mock getUserMedia rejection; not real hardware permission",
+    "text": "←\n1/3\nえび\n蝦子\n🎤\n\n按住並說出來！"
+  },
+  {
+    "id": "F-07",
+    "method": "fresh SW context, wait ready, no prior audio play, set offline, fetch real bundled WAV",
+    "audio": "kana_a.wav",
+    "cacheEntryCount": 160,
+    "wavEntries": [],
+    "fetchResult": {
+      "error": "Failed to fetch"
+    }
+  }
+]

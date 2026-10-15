@@ -1,0 +1,15 @@
+{
+  "method": "source module with mocked APIs; no actual device or cloud speech service",
+  "expectedAfterP1": {
+    "constructed": 0,
+    "started": 0
+  },
+  "observed": {
+    "mode": "offline",
+    "target": "ねこ",
+    "constructed": 1,
+    "started": 1,
+    "stopped": 0,
+    "trackStopped": 1
+  }
+}

@@ -1,0 +1,18 @@
+[
+  {
+    "url": "https://japanese101-five.vercel.app",
+    "finalUrl": "https://japanese101-five.vercel.app",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bodyPrefix": "<!doctype html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <link rel=\"icon\" type=\"im",
+    "expected": "application homepage"
+  },
+  {
+    "url": "https://japanese101-l7x7sevpd-dannythreekas-projects.vercel.app/version.json",
+    "finalUrl": "https://vercel.com/login (SSO redirect query omitted)",
+    "status": 200,
+    "contentType": "text/html; charset=utf-8",
+    "bodyPrefix": "<!DOCTYPE html><html data-dpl-id=\"dpl_Br5tQWzZBc8iRokvkLrCSiKsEWhW\" class=\"VEU71W_className fW1cEW_c",
+    "expected": "application/json and matching 40-char sha"
+  }
+]

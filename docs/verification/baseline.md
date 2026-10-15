@@ -26,3 +26,13 @@ Node22.23.2（主機既有安裝）重測132/132 PASS，見node22-unit.txt。依
 - 不記錄真孩子資料／認證憑證；trace只限本機合成QA玩家，不登入真同步服務；Zip引用若需提交用git add -f，避免忽略後誤稱已保存。
 
 最終檢查與三引擎結果將追加於本頁與P0 acceptance，不將既有CI結果當本次結果。
+
+## 已執行的最終結果
+
+Node22.23.2下npm ci／typecheck／data／blueprint／unit／build通過；unit132/132、blueprint10/10。lint仍28errors／1warning。final-checks.json保留首次執行的實際exit，其中smoke因4173已占用失敗；改P0_E2E_PORT=4177後兩引擎通過，見final-smoke-retry.txt，沒有reuse不明server。只為此衝突增加可驗證port選項；本次自行啟動的4173 preview已於驗收後核對PID、cwd、完整命令再停止。
+
+CI：[run 38710872715](https://github.com/dannythreeka/Japanese101/actions/runs/38710872715)，PR head637ab42711cfd143cde2ee7a0471028bde88482f，實際GitHub合成merge／GITHUB_SHA為838b7416cfad50d9cb764bcf36cab907d970bb7d。typecheck、data、blueprint、unit、build、browser install、三引擎smoke與artifact全部成功，僅lint failure。三引擎home.png／trace.zip已從artifact11960234079另存evidence/P0/ci；下載走GitHub已授權憑證，證據未含憑證。已打開三份首頁確認中文字形與主要操作可見。
+
+後續工具變動為3b0d877（port選項、測試環境metadata輸出、觀測scripts），沒有runtime src行為變更；最新CI結果將附於P0 acceptance。原始三引擎證據保留，未以重新截圖抹掉失敗嘗試。
+
+官方題型來源：2026-10-15下載並核對[JLPT N5題型PDF](https://jlpt.jp/e/guideline/pdf/n5_e_revised.pdf)；配額屬本產品自訂，[官方FAQ](https://www.jlpt.jp/e/faq/)不提供固定詞彙／漢字／文法清單。這些引用僅支持題型與範圍界線，不能為AI擬定的60句型草案背書。

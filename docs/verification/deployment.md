@@ -10,4 +10,4 @@ CI順序：install→typecheck／data／blueprint／lint／unit／build→三引
 
 新增build後的`dist/version.json`，由Vercel commit env／GitHub SHA／本機git順序取得40位SHA。preview應GET version.json，與PR head或GitHub部署SHA一致；網址可開但SHA不同不能當此PR驗收。前端無技術資訊出現在孩子介面。
 
-目前待push取得本PR preview，核對可存取與SHA；不自動merge或發布main。
+本PR head637ab42已有Preview success，URL https://japanese101-l7x7sevpd-dannythreekas-projects.vercel.app 。實際GET /version.json重導到vercel.com/login，最終HTTP200是text/html登入頁，不是版本JSON；證據deployment-access.json／branch-deployment.json。可讀取GitHub部署SHA不等同能打開preview驗收，因此P0-06仍BLOCKED。正式別名實際HTTP200，沒有發布此分支到正式。需擁有者提供可存取preview／合法測試存取方式後，驗證首頁及版本SHA。

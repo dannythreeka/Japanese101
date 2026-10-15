@@ -1,0 +1,14 @@
+base=91006716d38a9afb63bb061bbb652577c7c79a26
+node=26.1.0 npm=11.13.0
+started=2026-10-15T08:56:44.285105+00:00
+command=npm run validate:data
+exit=0
+
+
+> japanese101@0.0.0 validate:data
+> tsx scripts/validate-data.ts
+
+✅ kana.json OK
+✅ vocabulary.json OK
+✅ unit_lessons.json OK
+✅ rhythm_tracks.json OK

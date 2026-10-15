@@ -1,0 +1,6 @@
+base=91006716d38a9afb63bb061bbb652577c7c79a26
+node=26.1.0 npm=11.13.0
+started=2026-10-15T08:56:37.091206+00:00
+command=npx tsc -b --pretty false
+exit=0
+

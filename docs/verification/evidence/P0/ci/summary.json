@@ -1,0 +1,73 @@
+{
+  "run": "https://github.com/dannythreeka/Japanese101/actions/runs/38710872715",
+  "sha": "637ab42711cfd143cde2ee7a0471028bde88482f",
+  "artifact_id": 11960234079,
+  "steps": [
+    {
+      "name": "Set up job",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/setup-node@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install dependencies",
+      "conclusion": "success"
+    },
+    {
+      "name": "Type check",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate data files",
+      "conclusion": "success"
+    },
+    {
+      "name": "Validate N5 blueprint",
+      "conclusion": "success"
+    },
+    {
+      "name": "Lint",
+      "conclusion": "failure"
+    },
+    {
+      "name": "Unit tests",
+      "conclusion": "success"
+    },
+    {
+      "name": "Build",
+      "conclusion": "success"
+    },
+    {
+      "name": "Install isolated runner browsers",
+      "conclusion": "success"
+    },
+    {
+      "name": "Browser smoke",
+      "conclusion": "success"
+    },
+    {
+      "name": "Run actions/upload-artifact@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Post Run actions/setup-node@v4",
+      "conclusion": "skipped"
+    },
+    {
+      "name": "Post Run actions/checkout@v4",
+      "conclusion": "success"
+    },
+    {
+      "name": "Complete job",
+      "conclusion": "success"
+    }
+  ],
+  "workflowBuildSha": "838b7416cfad50d9cb764bcf36cab907d970bb7d",
+  "note": "GitHub pull_request runs on synthetic merge; sha is PR head, workflowBuildSha comes from artifact name GITHUB_SHA."
+}

@@ -1,0 +1,20 @@
+code baseline=637ab42711cfd143cde2ee7a0471028bde88482f
+runtime src unchanged from 9100671
+node=22.23.2
+started=2026-10-15T09:14:53.193215+00:00
+command=npm test
+exit=0
+
+
+> japanese101@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.7 /home/yyy/workspace/Japanese101
+
+
+ Test Files  11 passed (11)
+      Tests  132 passed (132)
+   Start at  17:14:53
+   Duration  8.83s (transform 594ms, setup 1.44s, import 983ms, tests 388ms, environment 18.05s)
+

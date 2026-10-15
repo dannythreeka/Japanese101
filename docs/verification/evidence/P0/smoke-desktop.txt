@@ -1,0 +1,98 @@
+
+> japanese101@0.0.0 test:e2e
+> playwright test --project=chromium --project=firefox
+
+[2m[WebServer] [22m(node:45) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:66) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:66) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [chromium] › e2e/smoke.spec.ts:3:1 › home, profile creation, adventure and PIN entry work in an isolated context (6.0s)
+(node:144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [firefox] › e2e/smoke.spec.ts:3:1 › home, profile creation, adventure and PIN entry work in an isolated context (8.2s)
+
+
+  1) [chromium] › e2e/smoke.spec.ts:3:1 › home, profile creation, adventure and PIN entry work in an isolated context 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('button', { name: /QA-P0/ })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('button', { name: /QA-P0/ })[22m
+
+
+      11 |   await page.locator('button').last().click()
+      12 |   await expect(page).toHaveURL(/#\/$/)
+    > 13 |   await expect(page.getByRole('button', { name: /QA-P0/ })).toBeVisible()
+         |                                                             ^
+      14 |   await page.goto('/#/adventure')
+      15 |   await expect(page.locator('body')).toContainText(/冒険|ぼうけん|冒險/)
+      16 |   await page.goto('/#/parent')
+        at /home/yyy/workspace/Japanese101/e2e/smoke.spec.ts:13:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/smoke-home-profile-creatio-a14cb-work-in-an-isolated-context-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/smoke-home-profile-creatio-a14cb-work-in-an-isolated-context-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-home-profile-creatio-a14cb-work-in-an-isolated-context-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-home-profile-creatio-a14cb-work-in-an-isolated-context-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [firefox] › e2e/smoke.spec.ts:3:1 › home, profile creation, adventure and PIN entry work in an isolated context 
+
+    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoBeVisible[2m([22m[2m)[22m failed
+
+    Locator: getByRole('button', { name: /QA-P0/ })
+    Expected: visible
+    Timeout: 5000ms
+    Error: element(s) not found
+
+    Call log:
+    [2m  - Expect "toBeVisible" with timeout 5000ms[22m
+    [2m  - waiting for getByRole('button', { name: /QA-P0/ })[22m
+
+
+      11 |   await page.locator('button').last().click()
+      12 |   await expect(page).toHaveURL(/#\/$/)
+    > 13 |   await expect(page.getByRole('button', { name: /QA-P0/ })).toBeVisible()
+         |                                                             ^
+      14 |   await page.goto('/#/adventure')
+      15 |   await expect(page.locator('body')).toContainText(/冒険|ぼうけん|冒險/)
+      16 |   await page.goto('/#/parent')
+        at /home/yyy/workspace/Japanese101/e2e/smoke.spec.ts:13:61
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/smoke-home-profile-creatio-a14cb-work-in-an-isolated-context-firefox/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/smoke-home-profile-creatio-a14cb-work-in-an-isolated-context-firefox/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/smoke-home-profile-creatio-a14cb-work-in-an-isolated-context-firefox/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/smoke-home-profile-creatio-a14cb-work-in-an-isolated-context-firefox/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › e2e/smoke.spec.ts:3:1 › home, profile creation, adventure and PIN entry work in an isolated context 
+    [firefox] › e2e/smoke.spec.ts:3:1 › home, profile creation, adventure and PIN entry work in an isolated context 

@@ -1,0 +1,63 @@
+{
+  "browser": "145.0.7632.6",
+  "runtimeBase": "9100671",
+  "observations": [
+    {
+      "id": "F-02",
+      "method": "UI comparison sokuon first matching entry",
+      "errors": [
+        "Cannot read properties of undefined (reading 'id')"
+      ],
+      "text": "←\n0/10\n\n聆聽聲音！\n\n🔊"
+    },
+    {
+      "id": "F-06",
+      "method": "fresh context direct completion with no session",
+      "progress": [
+        {
+          "id": "player",
+          "current_level_id": "lv_01_hajimari",
+          "completed_levels": {
+            "lv_00_tamago": {
+              "completed_at": "2026-10-15T09:11:08.278Z",
+              "stars": 1,
+              "best_accuracy": 0,
+              "times_played": 1
+            }
+          },
+          "unlocked_regions": [],
+          "collected_medals": []
+        }
+      ],
+      "pets": [
+        {
+          "petId": "player",
+          "species": "fox",
+          "level": 1,
+          "xp": 50,
+          "evolutionStage": 0,
+          "unlockedCosmetics": [],
+          "collection": [],
+          "lastPlayed": "2026-10-15T09:11:08.282Z"
+        }
+      ]
+    },
+    {
+      "id": "F-03",
+      "method": "synthetic shared-schema A fixtures; UI switches to B then parent report",
+      "active": "qaB",
+      "text": "←\n家長儀表板\n⏱\n學習時間\n1分\n⭐\n獲得星數\n0\n冒險進度\n通關數\n0 / 11\n冒險星星\n★ 0\n大魔王尚未登場…\n玩家管理\n🦊\n\nqaA\n\n重置進度\n刪除\n🦊\n\nqaB\n\n目前玩家\n\n重置進度\n刪除\n🦊\n\nプレイヤー\n\n重置進度\n刪除\n正確率\n平假名\n60%\n詞彙\n0%\n本週\n10/9\n10/10\n10/11\n10/12\n10/13\n10/14\n10/15\n設定\n\n年齡模式\n\n幼齢 🐣\n進階 🚀\n\n含羅馬字・節奏較慢・以清音為主（適合6〜8歲）\n\n假名模式\n\n平假名\n片假名\n兩者皆有\n\n難易度\n\n第1級（清音）\n第2級（濁音）\n第3級（拗音）\n全部\n\n書寫難易度\n\nLv1：描字（有範本）\nLv2：空寫（無範本）\nLv3：寫詞語\n\n課程\n\n配著歌唱 あいうえお(母音入門)\nかき 與 かぎ(濁音半濁音)\nねこ 與 ねっこ(促音)\nおばさん 與 おばあさん(長音)\nおもち 與 おもちゃ(拗音)\nはじまりの森:あ・か・さ行\nせせらぎの川:た・な行\nそよ風の丘:は・ま行\n夕暮れの道:や・ら・わ行\n音效設定\n🔊\n音量 100%\n麥克風設定（言靈）\n\n在「言靈召喚」遊戲中讓孩子可以使用語音功能。\n\n關閉\n離線模式\n高精度\n\n言靈遊戲不可使用\n\n🔒 語音資料僅在設備內部處理。"
+    },
+    {
+      "id": "F-05",
+      "method": "L10 unlocked fixture; mic=off; click required voice challenge",
+      "url": "http://127.0.0.1:4173/#/adventure/level/lv_10_saidan",
+      "text": "← 地圖\nざ\nづ\nぱ\nぼ\nぎ\n大魔王\nしんかの祭壇\n\n闇を払う光:すべてを懸けた決戦\n\n大まおう「ゆらぎ影」が祭壇に待ちかまえていた！濁音・促音・長音・拗音—すべての力でペットを進化させよう！\n\n大魔王「ゆらぎ影」在祭壇等待！用全部特殊音的力量讓寵物終極進化！\n\nXP: +600\n挑戰清單\n0 / 3\n🫧 かな キャッチ (くらべ)\n必要\n開始玩\n✏️ だくてん ドラッグ\n必要\n開始玩\n✨ ことだま しょうかん\n必要\n開始玩\n開始！"
+    },
+    {
+      "id": "SYNC-ERROR",
+      "method": "mock 401; synthetic credentials",
+      "text": "☁️ 雲端同步\n×\n\n請輸入帳號與密碼。\n\n帳號或密碼錯誤\n\n登入\n日語101\n☁️\nJP\n⚙️\n升級還需 100 XP\n開始冒險！\n自由練習"
+    }
+  ]
+}

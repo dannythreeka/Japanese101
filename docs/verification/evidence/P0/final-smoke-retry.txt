@@ -1,0 +1,21 @@
+
+> japanese101@0.0.0 test:e2e
+> playwright test --project=chromium --project=firefox
+
+[2m[WebServer] [22m(node:44) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[2m[WebServer] [22m(Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:65) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:65) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/smoke.spec.ts:3:1 › home, profile creation, adventure and PIN entry work in an isolated context (1.6s)
+(node:134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [firefox] › e2e/smoke.spec.ts:3:1 › home, profile creation, adventure and PIN entry work in an isolated context (3.8s)
+
+  2 passed (11.7s)

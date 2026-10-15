@@ -108,7 +108,7 @@
 
 ### P1 — 修復學習資料與操作可靠度
 
-2026-10-15：依使用者授權在PR53合併後與P0人工驗證並行。P1工程交付與證據見docs/phases/P1；已驗證的工程項目先留IN_REVIEW，P0 gate及指定實機／人工簽核未補造。P1-12仍在完成三引擎回歸，不宣稱Phase完成。
+2026-10-15：依使用者授權在PR53合併後與P0人工驗證並行。P1工程交付與證據見docs/phases/P1；已驗證的工程項目先留IN_REVIEW，P0 gate及指定實機／人工簽核未補造。三引擎各18項及187單元測試全過，工程狀態ENGINEERING_READY；P1-12受P0與人工／實機補驗阻擋，正式Phase尚未完成。
 
 #### P1-01｜修復首次作答與練習完成的計數
 
@@ -189,10 +189,12 @@
 
 #### P1-12｜驗收全部可靠度修復
 
-- 狀態：**IN_PROGRESS**；負責：QA／產品。
+- 狀態：**BLOCKED**；負責：QA／產品。
 - 依賴：P1-05、P1-06、P1-08、P1-10、P1-11、P1-13。
 - 交付物：P1 gate報告、回歸suite與實測證據。
 - 驗收：project.md §3.2十個情境全過；玩家隔離、直連結算、錯誤正確率、refresh、離線、mic拒絕均有自動化或指定裝置證據。零未解資料遺失、錯誤計分、主線卡關。
+
+- 2026-10-15：工程回歸54／54、單元187／187通過；外部review與指定實機證據未齊，詳docs/phases/P1/acceptance.md及device-checklist.md。
 
 #### P1-13｜修復 P0 基準暴露的 lint 與依賴問題
 
@@ -224,6 +226,7 @@
 - 依賴：P1-12、P0-02。
 - 交付物：tokens、Button/ChoiceCard/Progress/AudioControl/Dialog/Feedback/StatePanel與可檢視狀態頁。
 - 驗收：project.md §4所有色碼/尺寸/間距落到共用token；default/selected/focus/disabled/loading/error全可預覽。孩子操作至少64px，文字對比合格；dialog焦點進出正常。狀態頁不向正式孩子流程暴露實作資訊。
+- P1視覺交接：結算保存失敗目前可重試但沿用questionUnavailable文案；本task的error狀態需依操作提供準備題目／保存／結算的精確可恢復說明，不能只換外觀。
 
 #### P2-04｜實作四種題型播放器與單一狀態機
 

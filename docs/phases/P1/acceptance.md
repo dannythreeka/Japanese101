@@ -1,45 +1,65 @@
 # P1 驗收
 
-狀態：IN_PROGRESS（工程回歸中，非 COMPLETE）。基準：PR #53 合併 `bc2116ad789d247e3be44d2eba5b5a0e790b73ea`。P0人工審核並行是使用者2026-10-15明確授權的執行例外，未把P0 gate補填PASS。
+狀態：**ENGINEERING_READY**；正式 Phase gate **NO-GO**，不是 COMPLETE。P1-01～11、P1-13工程已交付並驗證，task仍IN_REVIEW；P1-12因P0簽核與指定人工／實機補驗為BLOCKED。
 
-工程執行／自動化初審：本session Codex。真人日語內容、UX／產品與實機 reviewer 尚未指定／簽核，不能用本表替代。
+基準：PR #53已依使用者指示合併，merge `bc2116ad789d247e3be44d2eba5b5a0e790b73ea`。使用者2026-10-15允許P0人審與P1工程並行，沒有把P0 gate補填PASS。工程執行／自動化初審：本session Codex；真人日語、UX／產品與實機reviewer待實際指派／簽核。
 
-## 已有的工程證據
+## 最終工程版本與結果
 
-| Task | 預期與實際 | 狀態／證據 |
+- 最後產品程式commit：`4f2c948d2eba3e5666e99bf5769d9b87227c06d5`。
+- 完整回歸head：`036a7806f5c58676edf26393fe79b1f821b9a29b`；其相較產品版本只調整WebKit CI為1worker及紀錄，不改產品／測試斷言／逾時。CI實際checkout合成merge：`a5fb128ba3a5119076478c2f1130205a3a070ccd`，由artifact version.json核對。
+- [完整CI](https://github.com/dannythreeka/Japanese101/actions/runs/38743653858)：Test & Build與三引擎job均SUCCESS；Chromium、Firefox、WebKit各18 PASS，合計54 PASS／0 FAIL／0 SKIP，沒有重試。
+- Node22.23.2：187單元測試／19檔PASS；標準npm ci、typecheck、validate:data、validate:blueprint、lint 0 errors／0 warnings、build均PASS。npm audit 0，原18項分類見dependencies.md與audit-before/after.json。
+- 精確job／artifact連結、head／checkout、測試摘要：`evidence/ci/summary.json`及同目錄txt；三引擎實際版本：`environment-*.json`。完整trace／影片／其餘圖於CI artifact保存14日，選定圖與文字納入git。
+- 本驗收文件及索引整理為後續文件提交；不能宣稱CI已執行該文件commit。若後續改產品、測試或CI，需重跑受影響檢查。
+
+## Task驗證
+
+| Task | 預期與實際 | 工程結果／證據 |
 |---|---|---|
-| P1-01 | 五題首次3對、2錯後重試：60%／100%；提示、跳過、未答及十次提交有測試。七遊戲共用attempt與結算；詞卡／書寫／發聲標參與 | Unit PASS；Chromium 10題6首次對、十次連點／兩分頁PASS；完整suite見下方 |
-| P1-02 | 詞組ねこ/ねっこ、おばさん/おばあさん與同組選項；空／缺ID回復；不支援mode不啟動 | Unit／data validator PASS；L7/L8實際UI納入主線回歸 |
-| P1-03 | v1～v4、空庫、原始壞資料、重開及備份失敗rollback；原共用不分配；家長可匯出 | migration.test.ts與reliability.test.ts PASS；Chromium／Firefox匯出PASS；migration.md |
-| P1-04 | 固定profileId，延後A不能寫B；設定／錢包／任務／SRS／session隔離；reset/delete保留B和legacy | Unit PASS；Chromium存檔失敗→重試→B新玩家→切A續學PASS |
-| P1-05 | 缺結果／直連complete／鎖關零獎勵；game和level交易、單收據、重玩衰減；部分寫入失敗整筆回復 | reliability.test.ts PASS；Chromium十次點選／兩分頁結算PASS |
-| P1-06 | 每題保存，refresh續題；存檔錯誤保留待提交、可重試；版本／壞checkpoint保留原紀錄安全恢復 | Unit PASS；Chromium PASS，Firefox壞checkpoint恢復PASS；免費抓抓樂退出／換模式另補回歸 |
-| P1-07 | 預設off；offline不建SR；enhanced每次由家長明確同意；拒絕／撤銷／不支援回復並停止tracks | API spy unit PASS；Chromium／Firefox新同意／取消／拒絕UI PASS；實機 NOT_RUN |
-| P1-08 | 所有發聲非主線必做，發聲量只標參與 | L0～L10 mic off、模擬拒絕、無裝置全UI回歸PASS（Chromium／Firefox；最新WebKit CI待結束）；API mock不能稱為實體拒絕權限 |
-| P1-09 | 單一語音，離頁取消回調；完整409資源驗證才標離線，404／quota／hash錯誤可重試 | 音訊／教材包unit PASS；Chromium／Firefox離線關頁重開、逐資源fetch及真WAV播放PASS；WebKit停止origin方法已在前輪PASS，最新完整suite重跑中；實機 NOT_RUN |
-| P1-10 | 空／壞設定／IndexedDB錯誤可回復；20次進出無RAF、timer、mic殘留 | Chromium 20次同document測試PASS；Chromium／Firefox受阻IndexedDB、壞checkpoint恢復PASS |
-| P1-11 | schema＋unit/item/skill/scene/asset/level關聯＋實際生成選項檢查；11類壞fixture必失敗 | validate:data、contentValidation.test.ts PASS；39缺圖引用修正，人工素材審核 NOT_RUN |
-| P1-13 | Node22標準npmci；lint0/0；audit原18逐項分類／相容修補後0，不停規則、不改OS | PASS；dependencies.md與evidence/audit-*.json |
-| P1-12 | project §3.2十情境全部證據及指定實機／人工review齊全才放行 | IN_PROGRESS／NO-GO；工程回歸與外部補驗未完成前不可標COMPLETE |
+| P1-01 | 5題首次3對、2錯後重試：60%／100%；提示、跳過、未答分開，十次同提交不重複；七遊戲共同契約 | Unit PASS；三引擎10題6首次對、十次連點／兩分頁PASS；詞卡／書寫／發聲只標參與 |
+| P1-02 | ねこ/ねっこ、おばさん/おばあさん同組對比；空／缺ID／未知mode可回復 | Unit／data validator PASS；L7／L8真實UI PASS |
+| P1-03 | v1～v4、空庫、壞原始資料、重開、備份失敗rollback；共享不猜分配 | migration.test.ts、reliability.test.ts PASS；三引擎家長匯出PASS；migration.md |
+| P1-04 | 每次IO固定profileId，延後A不能寫B；設定／錢包／任務／SRS隔離；reset/delete保留B及legacy | Unit PASS；三引擎保存失敗→重試→B新玩家→切A續學、延後家長授權PASS |
+| P1-05 | 缺結果／直連／鎖關零獎勵；交易單收據、重玩衰減；部分寫入失敗回復；已存才完成 | Unit PASS；三引擎防重／兩分頁、receipt故障重試、重玩預覽40–55與實際計算一致PASS |
+| P1-06 | 每題保存、refresh續學；保存失敗保留答案；未知版本保留原歷史並安全重開 | Unit、三引擎restore／壞checkpoint／免費抓抓樂退出與換模式PASS |
+| P1-07 | off預設；offline不建SR；enhanced每次明確家長同意；拒絕／撤銷／不支援停止資源 | API spy unit、三引擎同意／取消／延後A隔離PASS；實機NOT_RUN |
+| P1-08 | 發聲非主線必做，聲量只標參與 | 每引擎L0～L10於off／模擬拒絕／無裝置各全UI完成，合計99關／198必做challenge；主線getUserMedia呼叫0。實體權限非本測試 |
+| P1-09 | 單一語音，離頁取消；409資源完整驗證才標離線；404／quota／hash錯誤可重試 | Unit PASS；三引擎停止隔離origin→無SW負控失敗→原頁關閉重開→409素材與真WAV完成PASS；實機NOT_RUN |
+| P1-10 | 空／壞設定／IndexedDB錯誤可回復；20次進出無RAF／timer／mic殘留 | Unit、三引擎20次同document進出與故障恢復PASS |
+| P1-11 | schema及unit/item/skill/scene/asset/level關聯、正解唯一、題組／mode檢查 | 11類壞fixture、好資料及110詞contact sheet無壞圖PASS；39缺圖引用修正，37原創圖真人語義／適齡審核NOT_RUN |
+| P1-13 | 原semver相容修補；保留lint規則，不改主機OS | npm ci、audit0、lint0/0與三引擎回歸PASS；dependencies.md |
+| P1-12 | project §3.2十情境、必要review與依賴齊全才放行 | 工程回歸PASS；人工／實機與P0依賴未齊，正式gate BLOCKED／NO-GO |
 
-## 目前命令基準
+## project §3.2逐項索引
 
-Node22.23.2：187 tests／19 files PASS；typecheck、validate:data、validate:blueprint、lint0/0、build PASS；npmci與audit0 PASS。此為工程結果，未代替人工／實機驗收。最終執行log、commit、環境、三引擎CI與截圖在工程回歸完成後補於本表。
+以下PASS僅指所列工程證據；完整Phase仍受上述人工／實機依賴阻擋。
 
-## 已知外部依賴
+| 需求 | 預期 | 實際／證據 |
+|---|---|---|
+| G1-1 | 5題3首次對、重試後全完＝60%／100% | PASS：attempts／engine unit；三引擎UI等比例6/10與100% |
+| G1-2 | 同提交十次只一筆／一獎勵 | PASS：交易unit；三引擎連點與兩頁結算 |
+| G1-3 | 重開／直連不可憑空XP | PASS：缺結果／鎖關／直連與receipt故障unit及三引擎UI |
+| G1-4 | A切B不污染學習／時長／任務 | PASS：明確profileId unit及三引擎切換／延後授權 |
+| G1-5 | refresh保留已存答案並續題 | PASS：checkpoint unit、三引擎配對／抓抓樂恢復 |
+| G1-6 | mic關閉／拒絕仍走完主線 | PASS：三引擎、三mic配置全11關；拒絕／無裝置是API模擬，實機NOT_RUN |
+| G1-7 | offline不啟動SpeechRecognition | PASS：constructor/start spy及UI分支；實機權限／瀏覽器服務行為NOT_RUN |
+| G1-8 | 促音／長音詞組題，空池可回復 | PASS：generator unit與L7／L8全UI |
+| G1-9 | 完整下載後斷網文字／圖／教學音訊可用 | PASS：409資源及原生WAV三引擎；實機Safari／PWA NOT_RUN |
+| G1-10 | 離遊戲停止迴圈／timer／音訊／mic | PASS：unit及每引擎20次同document進出；實機指示器／審聽NOT_RUN |
 
-- P0既有的內容／UX／owner與preview驗證仍待實際承接／簽核；使用者授權P1工程並行，不代表審核完成。
-- P1指定實機麥克風權限、音訊、自動播放、Safari／PWA離線、觸控操作，以及37張新增SVG的真人審核尚未執行。逐項腳本見device-checklist.md。
-- WebKit本機缺系統庫，依P0診斷在隔離GitHub runner執行；不為測試修改交易主機apt／核心／Wi-Fi。
+## 證據界線與視覺審查
 
-工程agent已開啟檢查320px配對／濁點、200% CSS縮放及110詞素材contact sheet：未見文字截斷／壞圖，新增簡筆圖可顯示。這是工程初審，`w_rusu`等抽象概念辨識度仍需真人內容審查。P2原定完整UI token／對比／screenreader設計未在本Phase冒稱完成。
+工程agent已實際開啟320px配對／濁點／詞卡／書寫、200% CSS layout zoom、60%／100%結果、主線結果、110詞contact sheet、鍵盤焦點與最終WebKit離線／結算錯誤／重玩預覽截圖核對。選定圖在`evidence/screenshots/`與`evidence/ci/`。未見本Phase新增文字截斷或壞圖；這是工程初審，不能代替真人UX／日語簽核。200%是CSS layout zoom，不包裝成實機瀏覽器文字放大驗證。
 
-## 本機工程回歸收斂
+WebKit setOffline有自身重現的internal error，背景與上游issue見progress.md。自動化改停下test-owned origin，無SW新context必須連線失敗；仍要求離線重開、409素材及原生WAV完成，未skip／expected-fail。Chromium／Firefox另維持setOffline旗標。這不是實機飛航模式。CI的PulseAudio null sink只在隔離runner，是真WAV的輸出端，不是人工審聽；本機WebKit缺庫，不修改交易主機apt。
 
-- 完整Chromium：12 PASS／0 FAIL，10.0min。L0～L10共22個必做challenge，在mic off／模擬拒絕／無裝置各走一次，合計33關／66個challenge完成。媒體API為測試mock且主線呼叫0次，不宣稱實機授權行為。`evidence/chromium-full.txt`。
-- 最後受影響流程：Chromium＋Firefox各12項、合計24 PASS；涵蓋真WAV離線重開、儲存錯誤、profile隔離、checkpoint損壞、匯出、免費抓抓樂續玩／換模式及視窗。`evidence/core-chromium-firefox.txt`。
-- 追加邊界：免費抓抓樂壞設定回復、延後A家長授權不影響B，兩引擎4 PASS。`evidence/last-boundaries.txt`。鎖關斷言再加強為實際繁中控制／disabled／零level session，兩引擎2 PASS，`evidence/lock-strengthened.txt`；沒有改產品程式。
-- `527bf320016f13f77a20708626a35bba1a5184b6`重新build及181 unit tests PASS，見`evidence/build-527bf32.txt`、`unit-527bf32.txt`。其後另修LevelEntry結算前的延遲動畫（見progress.md）；最終產品SHA與重新驗證結果會列於本表，不將不同commit冒稱同一次CI。
-- 36張選定PNG已提交`evidence/screenshots/`；工程agent已實際開啟結果60%／100%、離線聽力、320px詞卡／書寫、全部關卡結果與其他先前圖檢查。沒有將截圖產生當真人視覺核准。
+早期失敗並未被覆蓋：原本完整Chromium12項／雙引擎核心24項、追加邊界／鍵盤／離線／結算等歷史log保留；`ci-4f2c948-webkit-failure.txt`記錄前輪53 PASS／1 FAIL及trace定位，最終結果以本頁完整CI為準。
 
-尚存P0既有UI設計限制：詞卡單元列表在320px首屏很長、書寫舊版返回／示範尺寸及淺色提示對比仍待P2-03／P2-09。未出現本Phase新增的水平溢出；不宣稱已完成全產品十畫面a11y／UX gate。這些沒有被藏掉或從既有任務刪除。
+## 最小外部解阻
+
+1. 完成並記錄P0內容藍圖、UX、實際責任人及可存取preview／SHA的核准；若規格變更，先評估本Phase影響。PR merge不代替P0 gate。
+2. 依[device-checklist.md](device-checklist.md)在實體裝置執行mic拒絕／撤銷／晚回應、Safari音訊／PWA離線及觸控／鍵盤，填真實reviewer、日期、裝置、版本與證據。
+3. 真人審核[assets.md](assets.md)所列37原創SVG的語義與適齡性，特別是`w_rusu`等抽象詞。工程圖可見不等於教材核准。
+
+P0既有UI限制：詞卡單元列表在320px首屏很長、書寫舊返回／示範控制尺寸及淺色提示對比待P2-03／P2-09；未宣稱十畫面完整a11y／UX gate通過。結算故障頁的重試／返回已驗證，但仍沿用「無法準備題目」泛用文案；P2-03狀態元件需區分準備題目與結算保存失敗，這是已揭露的文字精確度限制，不影響本Phase交易與恢復斷言。Build仍有單bundle >500kB的提示，沒有為消警關閉規則；效能不由build成功推論。後續P2保持TODO，未自行跨Phase或發布。

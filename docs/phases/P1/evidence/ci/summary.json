@@ -1,0 +1,66 @@
+{
+  "id": 38743653858,
+  "head_sha": "036a7806f5c58676edf26393fe79b1f821b9a29b",
+  "event": "pull_request",
+  "status": "completed",
+  "conclusion": "success",
+  "html_url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858",
+  "recorded_at": "2026-10-15T13:47:07.900062+00:00",
+  "jobs": [
+    {
+      "id": 116451503341,
+      "name": "Test & Build",
+      "conclusion": "success",
+      "html_url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858/job/116451503341",
+      "unit_passed": 187
+    },
+    {
+      "id": 116452014263,
+      "name": "Browser / firefox",
+      "conclusion": "success",
+      "html_url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858/job/116452014263",
+      "passed": 18
+    },
+    {
+      "id": 116452014367,
+      "name": "Browser / chromium",
+      "conclusion": "success",
+      "html_url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858/job/116452014367",
+      "passed": 18
+    },
+    {
+      "id": 116452014371,
+      "name": "Browser / webkit",
+      "conclusion": "success",
+      "html_url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858/job/116452014371",
+      "passed": 18
+    }
+  ],
+  "artifacts": [
+    {
+      "id": 11977892203,
+      "name": "playwright-P1-webkit-a5fb128ba3a5119076478c2f1130205a3a070ccd",
+      "size": 177188368,
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858/artifacts/11977892203"
+    },
+    {
+      "id": 11977866328,
+      "name": "playwright-P1-firefox-a5fb128ba3a5119076478c2f1130205a3a070ccd",
+      "size": 166922405,
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858/artifacts/11977866328"
+    },
+    {
+      "id": 11977086423,
+      "name": "p1-build-a5fb128ba3a5119076478c2f1130205a3a070ccd",
+      "size": 4639586,
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858/artifacts/11977086423"
+    },
+    {
+      "id": 11976527207,
+      "name": "playwright-P1-chromium-a5fb128ba3a5119076478c2f1130205a3a070ccd",
+      "size": 184559729,
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38743653858/artifacts/11976527207"
+    }
+  ],
+  "tested_checkout_sha": "a5fb128ba3a5119076478c2f1130205a3a070ccd"
+}

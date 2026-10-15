@@ -4,6 +4,8 @@
 
 使用者允許P0人審與P1工程並行；P0未驗收項目保留，這不是P2放行或正式發布許可。P1外部驗收未齊前維持draft，不自動merge main／發布。狀態與最後已驗證commit以acceptance.md為準，不能只看到本地build或PR就標COMPLETE。
 
+狀態：ENGINEERING_READY，正式gate NO-GO。測試head `036a7806f5c58676edf26393fe79b1f821b9a29b`，產品程式 `4f2c948d2eba3e5666e99bf5769d9b87227c06d5`，完整CI [54/54](https://github.com/dannythreeka/Japanese101/actions/runs/38743653858)；測試實際checkout與文件後續提交差異見acceptance。P1-12剩外部補驗，勿重做已通過工程或直接啟動P2。
+
 ## 恢復與驗證
 
 目前程式變更已整合七遊戲作答／結算／checkpoint、v5玩家資料、音訊／mic、離線包、素材關聯、lint與相容依賴修補。187個單元測試通過；完整L0～L10三種mic情境33關實際UI通過；Chrome／Firefox核心與邊界另見evidence文字紀錄。三引擎完整CI及最終狀態見acceptance.md，勿沿用舊失敗run當新結果。
@@ -45,6 +47,6 @@ P0_E2E_PORT=4190 npm run test:e2e -- --project=chromium --project=firefox --outp
 
 執行device-checklist.md：P0實際人審／責任人／preview合法存取；P1真實裝置麥克風拒絕／撤銷／停止、Safari音訊／PWA離線、觸控／鍵盤、37張新增SVG真人審核。Reviewer、日期、版本必須真實。工程agent視覺初審不代替簽核。若人審改P0規格，先評估P1影響，再改gate。
 
-詞卡小螢幕單元列表很長、舊書寫返回／示範控制尺寸及對比等P0既有UI缺陷仍在P2-03／P2-09範圍；本Phase沒有宣稱十畫面完整UI／a11y設計已完成。
+結算錯誤的重試已驗證，但目前沿用「無法準備題目」泛用文案，已列P2-03狀態元件文案交接。詞卡小螢幕單元列表很長、舊書寫返回／示範控制尺寸及對比等P0既有UI缺陷仍在P2-03／P2-09範圍；本Phase沒有宣稱十畫面完整UI／a11y設計已完成。
 
 這是Mac Mini交易主機，Wi-Fi依賴既有Broadcom／核心hold；不執行apt update/upgrade/autoremove、改核心／Wi-Fi套件、重啟網路或交易服務。AppArmor profile是使用者暫時載入，重開機後可失效；沒有為本工作重開機或放寬全域userns限制。憑證不寫入repo；維持既有已授權GitHub操作範圍。

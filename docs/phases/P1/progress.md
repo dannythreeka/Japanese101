@@ -1,6 +1,6 @@
 # P1 執行紀錄
 
-狀態：IN_PROGRESS。基準：`bc2116ad789d247e3be44d2eba5b5a0e790b73ea`（PR #53合併）；分支phase/p1-reliability。
+狀態：ENGINEERING_READY（正式gate待人工／實機，非COMPLETE）。基準：`bc2116ad789d247e3be44d2eba5b5a0e790b73ea`（PR #53合併）；分支phase/p1-reliability。
 工程執行：本session Codex。2026-10-15使用者明確指示合併PR53並開始P1，P0人工驗證同步進行。這是執行順序的授權例外，沒有把P0-03／05／06／07改成DONE或捏造簽核。P0後續人審修訂需同步評估P1影響。
 
 範圍P1-01～P1-13；先共用作答契約／出題安全，再玩家遷移、持久session／交易／恢復，並處理mic／音訊、CI缺陷。主機apt／核心／Wi-Fi／交易服務不變動。
@@ -79,3 +79,9 @@ d648000三引擎合計50 PASS／1 FAIL：Firefox與Chromium各17 PASS；WebKit16
 4f2c948／合成merge 8968284da7190f34c0fd236ac000fa8a7d5a183e 的CI為53 PASS／1 FAIL：Chromium、Firefox各18 PASS，WebKit17 PASS；三種mic完整主線、原生WAV離線、結算失敗重試均PASS。首次答題case在30秒總預算內仍進行到第四題，並非等待同一控制30秒。取回trace確認context.newPage單一步驟耗15.602秒（尚未載入產品）、setup共17.268秒，其後作答持續推進，最後確認按鈕在剩233ms時遭整個case取消。已實際檢視失敗畫面，保留日誌摘要與timing。
 
 限定WebKit CI一個worker，減少同runner建立三個WebKit頁面的競爭；Chromium／Firefox維持三個。測試內容、預設30秒、主線420秒、斷言與無重試設定不變。這是runner資源配置修正，產品程式仍為4f2c948；重跑完整三引擎，未先標PASS。
+
+## 最終工程收斂與外部交接
+
+完整CI https://github.com/dannythreeka/Japanese101/actions/runs/38743653858 head `036a7806f5c58676edf26393fe79b1f821b9a29b`、實際merge checkout `a5fb128ba3a5119076478c2f1130205a3a070ccd`：187單元／19檔、typecheck、資料／blueprint、lint0/0、build全PASS；三引擎各18項，54 PASS／0 FAIL／0 SKIP。WebKit改單worker後保留全部斷言與原逾時通過。最終產品程式仍4f2c948；本批只有驗收文件／索引與選定證據，未把文件commit當實測程式版本。已實際檢視最終WebKit離線／錯誤結算／重玩預覽圖。
+
+全部可獨立推進工程工作已完成。P1-01～11／13保留IN_REVIEW；P1-12因P0責任人／內容／UX／preview及P1指定實機／素材人審BLOCKED。Phase報ENGINEERING_READY、正式gate NO-GO；沒有真人人名／設備證據就不填DONE／COMPLETE。最小承接動作見acceptance與device-checklist。PR54維持draft，不合併或發布、不啟動P2。

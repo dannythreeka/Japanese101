@@ -7,8 +7,8 @@
 | Hash route | 元件／redirect | 處置 | 後續 task |
 |---|---|---|---|
 | `/profiles` | `ProfileSelector /` | 保留 | P1-04 |
-| `/profiles/new` | `ProfileCreate /` | 保留 | P2-04 |
-| `/` | `HomeScreen /` | 修復 | P2-04 |
+| `/profiles/new` | `ProfileCreate /` | 保留 | P2-05 |
+| `/` | `HomeScreen /` | 修復 | P2-05 |
 | `/adventure` | `AdventureMap /` | 修復 | P2-05 |
 | `/adventure/level/:levelId` | `LevelEntry /` | 修復 | P2-05 |
 | `/adventure/level/:levelId/complete` | `LevelComplete /` | 修復 | P1-05 |
@@ -21,7 +21,7 @@
 | `/play/dakuten-drag` | `DakutenDragGame /` | 修復 | P1-10／P2-03 |
 | `/play/kana-write` | `KanaWriteGame /` | 修復 | P1-10／P2-03 |
 | `/play/kotodama` | `KotodamaGame /` | 修復 | P1-10／P2-03 |
-| `/parent` | `ParentDashboard /` | 修復 | P2-11 |
+| `/parent` | `ParentDashboard /` | 修復 | P2-06 |
 | `/kid` | `Navigate to="/" replace /` | 合併 | P1-10／P2-03 |
 | `/kid/kana` | `Navigate to="/play/kana" replace /` | 合併 | P1-10／P2-03 |
 | `/kid/flashcard` | `Navigate to="/play/flashcard" replace /` | 合併 | P1-10／P2-03 |
@@ -35,17 +35,17 @@ Redirect 合併保留相容入口，不刪舊書籤；* 未知路徑回首頁。
 | 範圍 | 處置 | 原因／任務 |
 |---|---|---|
 | profiles（選擇、新增、重設、刪除） | 修復 | UI 保留；學習、任務與設定必須隔離；P1-03／04 |
-| home | 修復 | P2 今天與續學、語言；P2-04 |
+| home | 修復 | P2 今天與續學、語言；P2-05 |
 | adventure（Map、Entry、Complete、engine） | 修復 | URL guard、交易、解鎖與關卡清單；P1-05、P2-05 |
 | kana（配對） | 合併 | 保留自由練習，接共用 Attempt；P1-01、P2-01 |
-| flashcard | 合併 | 變教學／詞卡入口，不以翻卡當獨立答對；P2-06 |
-| quiz | 合併 | 接聽力播放器，不另創計分；P2-07 |
+| flashcard | 合併 | 變教學／詞卡入口，不以翻卡當獨立答對；P2-08 |
+| quiz | 合併 | 接聽力播放器，不另創計分；P2-04 |
 | play／gallery | 合併 | 冒險內自由練習、假名先修入口；P2-05、P3-01 |
 | kana-catch（setup／engine／generators） | 修復 | F-01／02；P1-01／02 |
 | dakuten-drag | 修復 | 玩家紀錄／點選替代；P1-04、P2-03 |
 | kana-write／StrokeOrderDemo | 保留 | 輔助、不作 N5 主線門檻；資料與 cleanup 仍遵守 P1 |
 | kotodama／35 scenes | 修復 | F-04／05，活動可選，不稱發音正確；P1-07／08 |
-| parent（PIN、統計、設定、玩家操作） | 修復 | 玩家與能力樣本數、錯誤狀態；P1-04、P2-11 |
+| parent（PIN、統計、設定、玩家操作） | 修復 | 玩家與能力樣本數、錯誤狀態；P1-04、P2-06 |
 | sync（Modal、cloudSync、Express／Sheets backend） | 延後 | 實驗功能，未承諾多家庭正式服務；project §6.3 |
 | PetAvatar／PetStage、petEvolution、VictoryCutscene、cosmetics | 保留 | 現有外型／關卡進化保留為參與獎勵；P2 動態／略過規範，不宣稱能力 |
 | DailyTasksPanel、dailyTasks、StarCount | 修復 | localStorage 共用與冪等獎勵；P1-03／05 |

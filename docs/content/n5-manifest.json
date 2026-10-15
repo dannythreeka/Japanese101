@@ -1,0 +1,2752 @@
+{
+  "version": "0.1-draft",
+  "status": "IN_REVIEW",
+  "reviewer": null,
+  "reviewedAt": null,
+  "units": [
+    {
+      "id": "U01",
+      "theme": "自我介紹",
+      "prerequisites": [],
+      "entrySkills": [
+        "K-HIRA"
+      ],
+      "skillIds": [
+        "G01",
+        "G02",
+        "G03",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G01",
+        "G02",
+        "G03"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 5,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U02",
+      "theme": "教室物品",
+      "prerequisites": [
+        "U01"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G04",
+        "G05",
+        "G06",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G04",
+        "G05",
+        "G06"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 5,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U03",
+      "theme": "時間與日常",
+      "prerequisites": [
+        "U02"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G07",
+        "G08",
+        "G09",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G07",
+        "G08",
+        "G09"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 5,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U04",
+      "theme": "位置與存在",
+      "prerequisites": [
+        "U03"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G10",
+        "G11",
+        "G12",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G10",
+        "G11",
+        "G12"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 5,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U05",
+      "theme": "家庭",
+      "prerequisites": [
+        "U04"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G13",
+        "G14",
+        "G15",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G13",
+        "G14",
+        "G15"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U06",
+      "theme": "飲食",
+      "prerequisites": [
+        "U05"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G16",
+        "G17",
+        "G18",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G16",
+        "G17",
+        "G18"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U07",
+      "theme": "購物數量",
+      "prerequisites": [
+        "U06"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G19",
+        "G20",
+        "G21",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G19",
+        "G20",
+        "G21"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U08",
+      "theme": "交通與目的地",
+      "prerequisites": [
+        "U07"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G22",
+        "G23",
+        "G24",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G22",
+        "G23",
+        "G24"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U09",
+      "theme": "一天的活動",
+      "prerequisites": [
+        "U08"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G25",
+        "G26",
+        "G27",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G25",
+        "G26",
+        "G27"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U10",
+      "theme": "星期與日期",
+      "prerequisites": [
+        "U09"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G28",
+        "G29",
+        "G30",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G28",
+        "G29",
+        "G30"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U11",
+      "theme": "喜好",
+      "prerequisites": [
+        "U10"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G31",
+        "G32",
+        "G33",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G31",
+        "G32",
+        "G33"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U12",
+      "theme": "人物與物品描述",
+      "prerequisites": [
+        "U11"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G34",
+        "G35",
+        "G36",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G34",
+        "G35",
+        "G36"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 3,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U13",
+      "theme": "過去經驗",
+      "prerequisites": [
+        "U12"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G37",
+        "G38",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G37",
+        "G38"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U14",
+      "theme": "否定表達",
+      "prerequisites": [
+        "U13"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G39",
+        "G40",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G39",
+        "G40"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U15",
+      "theme": "動作順序",
+      "prerequisites": [
+        "U14"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G41",
+        "G42",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G41",
+        "G42"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U16",
+      "theme": "請求與指示",
+      "prerequisites": [
+        "U15"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G43",
+        "G44",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G43",
+        "G44"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U17",
+      "theme": "邀請與計畫",
+      "prerequisites": [
+        "U16"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G45",
+        "G46",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G45",
+        "G46"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U18",
+      "theme": "比較",
+      "prerequisites": [
+        "U17"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G47",
+        "G48",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G47",
+        "G48"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U19",
+      "theme": "原因",
+      "prerequisites": [
+        "U18"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G49",
+        "G50",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G49",
+        "G50"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U20",
+      "theme": "閱讀生活資訊",
+      "prerequisites": [
+        "U19"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G51",
+        "G52",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G51",
+        "G52"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U21",
+      "theme": "短對話",
+      "prerequisites": [
+        "U20"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G53",
+        "G54",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G53",
+        "G54"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U22",
+      "theme": "短文理解",
+      "prerequisites": [
+        "U21"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G55",
+        "G56",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G55",
+        "G56"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U23",
+      "theme": "告示與表格",
+      "prerequisites": [
+        "U22"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G57",
+        "G58",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G57",
+        "G58"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    },
+    {
+      "id": "U24",
+      "theme": "綜合應用",
+      "prerequisites": [
+        "U23"
+      ],
+      "entrySkills": [],
+      "skillIds": [
+        "G59",
+        "G60",
+        "V-CONTEXT",
+        "K-SCRIPT",
+        "R-SHORT",
+        "L-KEY",
+        "K-HIRA",
+        "K-KATA",
+        "K-CONTRAST",
+        "V-PARA",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "grammarIds": [
+        "G59",
+        "G60"
+      ],
+      "quotas": {
+        "newVocabulary": 25,
+        "newKanji": 4,
+        "newGrammar": 2,
+        "reading": 4,
+        "listening": 6,
+        "practice": 50
+      },
+      "reviewStatus": "DRAFT",
+      "typeCounts": {
+        "T01": 4,
+        "T02": 4,
+        "T03": 6,
+        "T04": 3,
+        "T05": 5,
+        "T06": 3,
+        "T07": 3,
+        "T08": 2,
+        "T09": 2,
+        "T10": 2,
+        "T11": 4,
+        "T12": 4,
+        "T13": 4,
+        "T14": 4
+      }
+    }
+  ],
+  "skills": [
+    {
+      "id": "K-HIRA",
+      "canDo": "辨識46個基本平假名",
+      "prerequisites": [],
+      "teaching": "圖字配音",
+      "practice": "音→字選擇",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "K-KATA",
+      "canDo": "辨識46個基本片假名",
+      "prerequisites": [
+        "K-HIRA"
+      ],
+      "teaching": "借詞字卡",
+      "practice": "音→字選擇",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "K-CONTRAST",
+      "canDo": "依音長、促音、濁點與拗音區分詞",
+      "prerequisites": [
+        "K-HIRA"
+      ],
+      "teaching": "對比教學",
+      "practice": "成對聽辨",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "K-SCRIPT",
+      "canDo": "在句中辨別漢字與片假名對應讀音",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "漢字讀音／字形例",
+      "practice": "讀音與正字選擇",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "V-CONTEXT",
+      "canDo": "依短句情境選擇詞義",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "情境詞卡",
+      "practice": "情境填空",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "V-PARA",
+      "canDo": "在短句辨識相近意思",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "原創同義例",
+      "practice": "釋義對應",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "R-SHORT",
+      "canDo": "從短訊找人物或動作",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "圈關鍵資訊",
+      "practice": "短文提問",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "R-MID",
+      "canDo": "從連貫短文找時間與先後",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "句間指代教學",
+      "practice": "跨句提問",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "R-INFO",
+      "canDo": "從告示／表格找符合條件資訊",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "表格閱讀示範",
+      "practice": "雙條件查找",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "L-TASK",
+      "canDo": "聽對話選下一步行動",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "先看任務再聽",
+      "practice": "選適當行動",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "L-KEY",
+      "canDo": "依事先問題聽取關鍵資訊",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "聽取人物時間位置",
+      "practice": "資訊選擇",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "L-EXPR",
+      "canDo": "依圖示情境選適當說法",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "情境與禮貌表達",
+      "practice": "聽音選表達",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "L-RESP",
+      "canDo": "聽短問句選適當回應",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "問答對照",
+      "practice": "短音訊回應",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "G-ORDER",
+      "canDo": "將句子片段排成有意義語句",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "語序示範",
+      "practice": "句子排序",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "G-TEXT",
+      "canDo": "依上下文選句型／連接",
+      "prerequisites": [
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "teaching": "段落轉折示範",
+      "practice": "段落填空",
+      "delayedCheck": "至少48小時後，以不同題族、無提示獨立作答；同樣能力五題族覆蓋",
+      "minFamilies": 5
+    },
+    {
+      "id": "G01",
+      "canDo": "在「自我介紹」的短句情境選用「NはNです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「NはNです」；繁中指令、日文句子",
+      "practice": "先用「NはNです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「NはNです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G02",
+      "canDo": "在「自我介紹」的短句情境選用「NはNですか」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G01"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「NはNですか」；繁中指令、日文句子",
+      "practice": "先用「NはNですか」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「NはNですか」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G03",
+      "canDo": "在「自我介紹」的短句情境選用「NもNです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G02"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「NもNです」；繁中指令、日文句子",
+      "practice": "先用「NもNです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「NもNです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G04",
+      "canDo": "在「教室物品」的短句情境選用「これ／それ／あれ」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G03"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「これ／それ／あれ」；繁中指令、日文句子",
+      "practice": "先用「これ／それ／あれ」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「これ／それ／あれ」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G05",
+      "canDo": "在「教室物品」的短句情境選用「この／その／あの＋N」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G04"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「この／その／あの＋N」；繁中指令、日文句子",
+      "practice": "先用「この／その／あの＋N」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「この／その／あの＋N」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G06",
+      "canDo": "在「教室物品」的短句情境選用「NのN（所有）」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G05"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「NのN（所有）」；繁中指令、日文句子",
+      "practice": "先用「NのN（所有）」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「NのN（所有）」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G07",
+      "canDo": "在「時間與日常」的短句情境選用「時刻：N時N分です」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G06"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「時刻：N時N分です」；繁中指令、日文句子",
+      "practice": "先用「時刻：N時N分です」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「時刻：N時N分です」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G08",
+      "canDo": "在「時間與日常」的短句情境選用「Vます／Vません」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G07"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vます／Vません」；繁中指令、日文句子",
+      "practice": "先用「Vます／Vません」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vます／Vません」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G09",
+      "canDo": "在「時間與日常」的短句情境選用「時間にV」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G08"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「時間にV」；繁中指令、日文句子",
+      "practice": "先用「時間にV」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「時間にV」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G10",
+      "canDo": "在「位置與存在」的短句情境選用「Nがあります／います」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G09"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nがあります／います」；繁中指令、日文句子",
+      "practice": "先用「Nがあります／います」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nがあります／います」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G11",
+      "canDo": "在「位置與存在」的短句情境選用「場所にNがあります／います」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G10"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「場所にNがあります／います」；繁中指令、日文句子",
+      "practice": "先用「場所にNがあります／います」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「場所にNがあります／います」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G12",
+      "canDo": "在「位置與存在」的短句情境選用「Nは場所にあります／います」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G11"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nは場所にあります／います」；繁中指令、日文句子",
+      "practice": "先用「Nは場所にあります／います」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nは場所にあります／います」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G13",
+      "canDo": "在「家庭」的短句情境選用「人＋と（並列）」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G12"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「人＋と（並列）」；繁中指令、日文句子",
+      "practice": "先用「人＋と（並列）」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「人＋と（並列）」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G14",
+      "canDo": "在「家庭」的短句情境選用「人数：N人」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G13"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「人数：N人」；繁中指令、日文句子",
+      "practice": "先用「人数：N人」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「人数：N人」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G15",
+      "canDo": "在「家庭」的短句情境選用「Nがいます（家族紹介）」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G14"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nがいます（家族紹介）」；繁中指令、日文句子",
+      "practice": "先用「Nがいます（家族紹介）」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nがいます（家族紹介）」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G16",
+      "canDo": "在「飲食」的短句情境選用「NをVます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G15"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「NをVます」；繁中指令、日文句子",
+      "practice": "先用「NをVます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「NをVます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G17",
+      "canDo": "在「飲食」的短句情境選用「Nが好きです／嫌いです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G16"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nが好きです／嫌いです」；繁中指令、日文句子",
+      "practice": "先用「Nが好きです／嫌いです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nが好きです／嫌いです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G18",
+      "canDo": "在「飲食」的短句情境選用「Nをください」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G17"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nをください」；繁中指令、日文句子",
+      "practice": "先用「Nをください」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nをください」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G19",
+      "canDo": "在「購物數量」的短句情境選用「個数：ひとつ～とお」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G18"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「個数：ひとつ～とお」；繁中指令、日文句子",
+      "practice": "先用「個数：ひとつ～とお」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「個数：ひとつ～とお」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G20",
+      "canDo": "在「購物數量」的短句情境選用「数詞＋助数詞（本／枚／冊）」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G19"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「数詞＋助数詞（本／枚／冊）」；繁中指令、日文句子",
+      "practice": "先用「数詞＋助数詞（本／枚／冊）」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「数詞＋助数詞（本／枚／冊）」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G21",
+      "canDo": "在「購物數量」的短句情境選用「いくら／いくつ」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G20"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「いくら／いくつ」；繁中指令、日文句子",
+      "practice": "先用「いくら／いくつ」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「いくら／いくつ」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G22",
+      "canDo": "在「交通與目的地」的短句情境選用「場所へ／に行きます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G21"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「場所へ／に行きます」；繁中指令、日文句子",
+      "practice": "先用「場所へ／に行きます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「場所へ／に行きます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G23",
+      "canDo": "在「交通與目的地」的短句情境選用「手段で行きます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G22"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「手段で行きます」；繁中指令、日文句子",
+      "practice": "先用「手段で行きます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「手段で行きます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G24",
+      "canDo": "在「交通與目的地」的短句情境選用「人と行きます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G23"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「人と行きます」；繁中指令、日文句子",
+      "practice": "先用「人と行きます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「人と行きます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G25",
+      "canDo": "在「一天的活動」的短句情境選用「場所でVます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G24"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「場所でVます」；繁中指令、日文句子",
+      "practice": "先用「場所でVます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「場所でVます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G26",
+      "canDo": "在「一天的活動」的短句情境選用「時点から／まで」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G25"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「時点から／まで」；繁中指令、日文句子",
+      "practice": "先用「時点から／まで」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「時点から／まで」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G27",
+      "canDo": "在「一天的活動」的短句情境選用「頻度：いつも／ときどき＋V」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G26"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「頻度：いつも／ときどき＋V」；繁中指令、日文句子",
+      "practice": "先用「頻度：いつも／ときどき＋V」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「頻度：いつも／ときどき＋V」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G28",
+      "canDo": "在「星期與日期」的短句情境選用「曜日／日付です」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G27"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「曜日／日付です」；繁中指令、日文句子",
+      "practice": "先用「曜日／日付です」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「曜日／日付です」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G29",
+      "canDo": "在「星期與日期」的短句情境選用「期間＋Vます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G28"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「期間＋Vます」；繁中指令、日文句子",
+      "practice": "先用「期間＋Vます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「期間＋Vます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G30",
+      "canDo": "在「星期與日期」的短句情境選用「Nの前／後」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G29"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nの前／後」；繁中指令、日文句子",
+      "practice": "先用「Nの前／後」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nの前／後」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G31",
+      "canDo": "在「喜好」的短句情境選用「Vることが好きです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G30"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vることが好きです」；繁中指令、日文句子",
+      "practice": "先用「Vることが好きです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vることが好きです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G32",
+      "canDo": "在「喜好」的短句情境選用「Nが上手です／下手です」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G31"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nが上手です／下手です」；繁中指令、日文句子",
+      "practice": "先用「Nが上手です／下手です」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nが上手です／下手です」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G33",
+      "canDo": "在「喜好」的短句情境選用「Nがほしいです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G32"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nがほしいです」；繁中指令、日文句子",
+      "practice": "先用「Nがほしいです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nがほしいです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G34",
+      "canDo": "在「人物與物品描述」的短句情境選用「い形容詞＋N／です」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G33"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「い形容詞＋N／です」；繁中指令、日文句子",
+      "practice": "先用「い形容詞＋N／です」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「い形容詞＋N／です」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G35",
+      "canDo": "在「人物與物品描述」的短句情境選用「な形容詞＋なN／です」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G34"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「な形容詞＋なN／です」；繁中指令、日文句子",
+      "practice": "先用「な形容詞＋なN／です」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「な形容詞＋なN／です」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G36",
+      "canDo": "在「人物與物品描述」的短句情境選用「どんなN／どうですか」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G35"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「どんなN／どうですか」；繁中指令、日文句子",
+      "practice": "先用「どんなN／どうですか」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「どんなN／どうですか」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G37",
+      "canDo": "在「過去經驗」的短句情境選用「Vました／Vませんでした」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G36"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vました／Vませんでした」；繁中指令、日文句子",
+      "practice": "先用「Vました／Vませんでした」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vました／Vませんでした」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G38",
+      "canDo": "在「過去經驗」的短句情境選用「Nでした／ではありませんでした」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G37"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nでした／ではありませんでした」；繁中指令、日文句子",
+      "practice": "先用「Nでした／ではありませんでした」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nでした／ではありませんでした」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G39",
+      "canDo": "在「否定表達」的短句情境選用「い形容詞くないです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G38"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「い形容詞くないです」；繁中指令、日文句子",
+      "practice": "先用「い形容詞くないです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「い形容詞くないです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G40",
+      "canDo": "在「否定表達」的短句情境選用「な形容詞ではありません」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G39"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「な形容詞ではありません」；繁中指令、日文句子",
+      "practice": "先用「な形容詞ではありません」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「な形容詞ではありません」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G41",
+      "canDo": "在「動作順序」的短句情境選用「Vて、Vます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G40"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vて、Vます」；繁中指令、日文句子",
+      "practice": "先用「Vて、Vます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vて、Vます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G42",
+      "canDo": "在「動作順序」的短句情境選用「Vてから、Vます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G41"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vてから、Vます」；繁中指令、日文句子",
+      "practice": "先用「Vてから、Vます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vてから、Vます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G43",
+      "canDo": "在「請求與指示」的短句情境選用「Vてください」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G42"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vてください」；繁中指令、日文句子",
+      "practice": "先用「Vてください」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vてください」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G44",
+      "canDo": "在「請求與指示」的短句情境選用「Vないでください」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G43"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vないでください」；繁中指令、日文句子",
+      "practice": "先用「Vないでください」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vないでください」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G45",
+      "canDo": "在「邀請與計畫」的短句情境選用「Vませんか／Vましょう」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G44"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vませんか／Vましょう」；繁中指令、日文句子",
+      "practice": "先用「Vませんか／Vましょう」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vませんか／Vましょう」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G46",
+      "canDo": "在「邀請與計畫」的短句情境選用「Vたいです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G45"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vたいです」；繁中指令、日文句子",
+      "practice": "先用「Vたいです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vたいです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G47",
+      "canDo": "在「比較」的短句情境選用「NよりNのほうが形容詞です」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G46"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「NよりNのほうが形容詞です」；繁中指令、日文句子",
+      "practice": "先用「NよりNのほうが形容詞です」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「NよりNのほうが形容詞です」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G48",
+      "canDo": "在「比較」的短句情境選用「NとNとどちらが形容詞ですか」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G47"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「NとNとどちらが形容詞ですか」；繁中指令、日文句子",
+      "practice": "先用「NとNとどちらが形容詞ですか」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「NとNとどちらが形容詞ですか」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G49",
+      "canDo": "在「原因」的短句情境選用「文から、文（理由）」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G48"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「文から、文（理由）」；繁中指令、日文句子",
+      "practice": "先用「文から、文（理由）」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「文から、文（理由）」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G50",
+      "canDo": "在「原因」的短句情境選用「どうして～か／～からです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G49"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「どうして～か／～からです」；繁中指令、日文句子",
+      "practice": "先用「どうして～か／～からです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「どうして～か／～からです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G51",
+      "canDo": "在「閱讀生活資訊」的短句情境選用「Vてもいいです」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G50"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vてもいいです」；繁中指令、日文句子",
+      "practice": "先用「Vてもいいです」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vてもいいです」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G52",
+      "canDo": "在「閱讀生活資訊」的短句情境選用「Vてはいけません」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G51"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vてはいけません」；繁中指令、日文句子",
+      "practice": "先用「Vてはいけません」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vてはいけません」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G53",
+      "canDo": "在「短對話」的短句情境選用「Vています（進行）」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G52"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vています（進行）」；繁中指令、日文句子",
+      "practice": "先用「Vています（進行）」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vています（進行）」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G54",
+      "canDo": "在「短對話」的短句情境選用「Vましょうか（申し出）」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G53"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vましょうか（申し出）」；繁中指令、日文句子",
+      "practice": "先用「Vましょうか（申し出）」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vましょうか（申し出）」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G55",
+      "canDo": "在「短文理解」的短句情境選用「Vる前に／Vた後で」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G54"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vる前に／Vた後で」；繁中指令、日文句子",
+      "practice": "先用「Vる前に／Vた後で」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vる前に／Vた後で」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G56",
+      "canDo": "在「短文理解」的短句情境選用「Vたことがあります」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G55"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vたことがあります」；繁中指令、日文句子",
+      "practice": "先用「Vたことがあります」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vたことがあります」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G57",
+      "canDo": "在「告示與表格」的短句情境選用「Vることができます」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G56"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Vることができます」；繁中指令、日文句子",
+      "practice": "先用「Vることができます」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Vることができます」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G58",
+      "canDo": "在「告示與表格」的短句情境選用「Nだけ／Nしか～ません」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G57"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nだけ／Nしか～ません」；繁中指令、日文句子",
+      "practice": "先用「Nだけ／Nしか～ません」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nだけ／Nしか～ません」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G59",
+      "canDo": "在「綜合應用」的短句情境選用「Nに／Vるのに時間がかかります」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G58"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nに／Vるのに時間がかかります」；繁中指令、日文句子",
+      "practice": "先用「Nに／Vるのに時間がかかります」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nに／Vるのに時間がかかります」，五題族不共用題幹",
+      "minFamilies": 5
+    },
+    {
+      "id": "G60",
+      "canDo": "在「綜合應用」的短句情境選用「Nは～が、Nは～（対比）」，並指出句中人物／物件／時間的關係",
+      "prerequisites": [
+        "K-HIRA",
+        "G59"
+      ],
+      "teaching": "用兩個原創正例及一個反例解說「Nは～が、Nは～（対比）」；繁中指令、日文句子",
+      "practice": "先用「Nは～が、Nは～（対比）」完成情境選擇，再做句子排序／短文填空；記錄提示與首次答案",
+      "delayedCheck": "至少48小時後換到未見的生活情境，無提示選用「Nは～が、Nは～（対比）」，五題族不共用題幹",
+      "minFamilies": 5
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G01",
+      "form": "NはNです",
+      "unitId": "U01",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G02",
+      "form": "NはNですか",
+      "unitId": "U01",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G03",
+      "form": "NもNです",
+      "unitId": "U01",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G04",
+      "form": "これ／それ／あれ",
+      "unitId": "U02",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G05",
+      "form": "この／その／あの＋N",
+      "unitId": "U02",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G06",
+      "form": "NのN（所有）",
+      "unitId": "U02",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G07",
+      "form": "時刻：N時N分です",
+      "unitId": "U03",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G08",
+      "form": "Vます／Vません",
+      "unitId": "U03",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G09",
+      "form": "時間にV",
+      "unitId": "U03",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G10",
+      "form": "Nがあります／います",
+      "unitId": "U04",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G11",
+      "form": "場所にNがあります／います",
+      "unitId": "U04",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G12",
+      "form": "Nは場所にあります／います",
+      "unitId": "U04",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G13",
+      "form": "人＋と（並列）",
+      "unitId": "U05",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G14",
+      "form": "人数：N人",
+      "unitId": "U05",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G15",
+      "form": "Nがいます（家族紹介）",
+      "unitId": "U05",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G16",
+      "form": "NをVます",
+      "unitId": "U06",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G17",
+      "form": "Nが好きです／嫌いです",
+      "unitId": "U06",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G18",
+      "form": "Nをください",
+      "unitId": "U06",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G19",
+      "form": "個数：ひとつ～とお",
+      "unitId": "U07",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G20",
+      "form": "数詞＋助数詞（本／枚／冊）",
+      "unitId": "U07",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G21",
+      "form": "いくら／いくつ",
+      "unitId": "U07",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G22",
+      "form": "場所へ／に行きます",
+      "unitId": "U08",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G23",
+      "form": "手段で行きます",
+      "unitId": "U08",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G24",
+      "form": "人と行きます",
+      "unitId": "U08",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G25",
+      "form": "場所でVます",
+      "unitId": "U09",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G26",
+      "form": "時点から／まで",
+      "unitId": "U09",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G27",
+      "form": "頻度：いつも／ときどき＋V",
+      "unitId": "U09",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G28",
+      "form": "曜日／日付です",
+      "unitId": "U10",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G29",
+      "form": "期間＋Vます",
+      "unitId": "U10",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G30",
+      "form": "Nの前／後",
+      "unitId": "U10",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G31",
+      "form": "Vることが好きです",
+      "unitId": "U11",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G32",
+      "form": "Nが上手です／下手です",
+      "unitId": "U11",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G33",
+      "form": "Nがほしいです",
+      "unitId": "U11",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G34",
+      "form": "い形容詞＋N／です",
+      "unitId": "U12",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G35",
+      "form": "な形容詞＋なN／です",
+      "unitId": "U12",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G36",
+      "form": "どんなN／どうですか",
+      "unitId": "U12",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G37",
+      "form": "Vました／Vませんでした",
+      "unitId": "U13",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G38",
+      "form": "Nでした／ではありませんでした",
+      "unitId": "U13",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G39",
+      "form": "い形容詞くないです",
+      "unitId": "U14",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G40",
+      "form": "な形容詞ではありません",
+      "unitId": "U14",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G41",
+      "form": "Vて、Vます",
+      "unitId": "U15",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G42",
+      "form": "Vてから、Vます",
+      "unitId": "U15",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G43",
+      "form": "Vてください",
+      "unitId": "U16",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G44",
+      "form": "Vないでください",
+      "unitId": "U16",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G45",
+      "form": "Vませんか／Vましょう",
+      "unitId": "U17",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G46",
+      "form": "Vたいです",
+      "unitId": "U17",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G47",
+      "form": "NよりNのほうが形容詞です",
+      "unitId": "U18",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G48",
+      "form": "NとNとどちらが形容詞ですか",
+      "unitId": "U18",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G49",
+      "form": "文から、文（理由）",
+      "unitId": "U19",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G50",
+      "form": "どうして～か／～からです",
+      "unitId": "U19",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G51",
+      "form": "Vてもいいです",
+      "unitId": "U20",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G52",
+      "form": "Vてはいけません",
+      "unitId": "U20",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G53",
+      "form": "Vています（進行）",
+      "unitId": "U21",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G54",
+      "form": "Vましょうか（申し出）",
+      "unitId": "U21",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G55",
+      "form": "Vる前に／Vた後で",
+      "unitId": "U22",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G56",
+      "form": "Vたことがあります",
+      "unitId": "U22",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G57",
+      "form": "Vることができます",
+      "unitId": "U23",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G58",
+      "form": "Nだけ／Nしか～ません",
+      "unitId": "U23",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G59",
+      "form": "Nに／Vるのに時間がかかります",
+      "unitId": "U24",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    },
+    {
+      "id": "G60",
+      "form": "Nは～が、Nは～（対比）",
+      "unitId": "U24",
+      "reviewStatus": "DRAFT",
+      "reviewer": null
+    }
+  ],
+  "questionTypes": [
+    {
+      "id": "T01",
+      "name": "漢字讀音"
+    },
+    {
+      "id": "T02",
+      "name": "正字"
+    },
+    {
+      "id": "T03",
+      "name": "情境詞義"
+    },
+    {
+      "id": "T04",
+      "name": "近義改寫"
+    },
+    {
+      "id": "T05",
+      "name": "句型選擇"
+    },
+    {
+      "id": "T06",
+      "name": "句子組合"
+    },
+    {
+      "id": "T07",
+      "name": "篇章文法"
+    },
+    {
+      "id": "T08",
+      "name": "短文理解"
+    },
+    {
+      "id": "T09",
+      "name": "中篇理解"
+    },
+    {
+      "id": "T10",
+      "name": "資訊查找"
+    },
+    {
+      "id": "T11",
+      "name": "課題理解"
+    },
+    {
+      "id": "T12",
+      "name": "重點理解"
+    },
+    {
+      "id": "T13",
+      "name": "情境表達"
+    },
+    {
+      "id": "T14",
+      "name": "即時應答"
+    }
+  ]
+}

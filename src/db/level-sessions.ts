@@ -1,14 +1,13 @@
 import { db, getOrCreateAdventureProgress } from './index'
 import { levelsData } from '../data/loaders'
 import type { LevelSession } from './models'
-import type { GameModeId } from '../types'
 import { computeStars, getFirstLevelId, getLevelStatus } from '../features/adventure/adventureEngine'
 import { addXpToPet, applyLevelEvolution } from '../lib/pet'
 import { CONTENT_VERSION } from './game-sessions'
 import { summarizeAttempts } from '../lib/attempts'
 
-export const GAME_ROUTES: Partial<Record<GameModeId, string>> = { kana_catch_listen:'/play/kana-catch', kana_catch_minimal_pair:'/play/kana-catch', kana_catch_word_to_image:'/play/kana-catch', dakuten_drag:'/play/dakuten-drag', kotodama_summon:'/play/kotodama', write_canvas:'/play/kana-write' }
-export const featureForMode: Partial<Record<GameModeId, string>> = { kana_catch_listen:'kana_catch',kana_catch_minimal_pair:'kana_catch',kana_catch_word_to_image:'kana_catch',dakuten_drag:'dakuten_drag',kotodama_summon:'kotodama',write_canvas:'kana_write' }
+export { GAME_ROUTES, featureForMode } from '../lib/gameModes'
+import { GAME_ROUTES, featureForMode } from '../lib/gameModes'
 
 export async function openLevelSession(profileId: string, levelId: string): Promise<LevelSession> {
   return db.transaction('rw', [db.profiles, db.adventureProgress, db.levelSessions], async () => {
@@ -18,8 +17,8 @@ export async function openLevelSession(profileId: string, levelId: string): Prom
     const progress = await getOrCreateAdventureProgress(getFirstLevelId(), profileId)
     if (getLevelStatus(level, progress) === 'locked') throw new Error('Level is locked')
     const current = (await db.levelSessions.where('[profileId+levelId]').equals([profileId,levelId]).toArray()).find(s => s.status === 'active' && s.contentVersion === CONTENT_VERSION)
-    if (current) return current
-    const session: LevelSession = { id: crypto.randomUUID(), profileId, levelId, contentVersion: CONTENT_VERSION, status: 'active', startedAt: Date.now(), pending: null, results: {} }
+    if (current) { const updated = { ...current, updatedAt: Date.now() }; await db.levelSessions.put(updated); return updated }
+    const session: LevelSession = { id: crypto.randomUUID(), profileId, levelId, contentVersion: CONTENT_VERSION, status: 'active', startedAt: Date.now(), updatedAt: Date.now(), pending: null, results: {} }
     await db.levelSessions.add(session)
     return session
   })
@@ -31,7 +30,7 @@ export async function launchLevelChallenge(profileId: string, sessionId: string,
     if (!session || session.profileId !== profileId || session.status !== 'active' || session.contentVersion !== CONTENT_VERSION) throw new Error('Invalid level session')
     const challenge = levelsData().levels.find(l => l.level_id === session.levelId)?.challenges.find(c => c.challenge_id === challengeId)
     if (!challenge || !GAME_ROUTES[challenge.game_mode]) throw new Error('Challenge is unavailable')
-    const updated = { ...session, pending: { challengeId, gameMode: challenge.game_mode, configOverrides: challenge.config_overrides ?? {} } }
+    const updated = { ...session, updatedAt: Date.now(), pending: { challengeId, gameMode: challenge.game_mode, configOverrides: challenge.config_overrides ?? {} } }
     await db.levelSessions.put(updated)
     return updated
   })
@@ -44,7 +43,7 @@ export async function acceptChallengeResult(profileId: string, levelSessionId: s
     const challenge = levelsData().levels.find(l => l.level_id === level.levelId)?.challenges.find(c => c.challenge_id === game.challengeId)
     if (!challenge || featureForMode[challenge.game_mode] !== game.feature) throw new Error('Wrong challenge mode')
     const accuracy = summarizeAttempts(Object.values(game.attempts), game.planned).firstAccuracy ?? 0
-    const updated = { ...level, pending: null, results: { ...level.results, [game.challengeId]: { accuracy, xpGained: 0, sessionId: game.id } } }
+    const updated = { ...level, updatedAt: Date.now(), pending: null, results: { ...level.results, [game.challengeId]: { accuracy, xpGained: 0, sessionId: game.id } } }
     await db.levelSessions.put(updated)
     return updated
   })
@@ -56,7 +55,7 @@ export async function finishLevel(profileId: string, sessionId: string, levelId:
     const level = levelsData().levels.find(l => l.level_id === levelId)
     if (!session || session.profileId !== profileId || session.levelId !== levelId || session.contentVersion !== CONTENT_VERSION || !level) throw new Error('Invalid level session')
     const oldReceipt = await db.rewardReceipts.get(`level:${sessionId}`)
-    if (oldReceipt) return { receipt: oldReceipt, stars: (await db.adventureProgress.get(profileId))!.completed_levels[levelId].stars }
+    if (oldReceipt) return { alreadyCompleted: true, receipt: oldReceipt, stars: (await db.adventureProgress.get(profileId))!.completed_levels[levelId].stars }
     if (session.status !== 'active') throw new Error('Session cannot be completed')
     const progress = await getOrCreateAdventureProgress(getFirstLevelId(), profileId)
     if (getLevelStatus(level, progress) === 'locked') throw new Error('Level is locked')
@@ -83,6 +82,15 @@ export async function finishLevel(profileId: string, sessionId: string, levelId:
     const receipt = { id:`level:${sessionId}`,profileId,xp,stars,createdAt:Date.now() }
     await db.rewardReceipts.add(receipt)
     await db.levelSessions.put({ ...session, status:'completed', pending:null })
-    return { receipt, stars }
+    return { alreadyCompleted: false, receipt, stars }
+  })
+}
+
+export async function cancelLevelChallenge(profileId: string, sessionId: string): Promise<void> {
+  await db.transaction('rw', [db.profiles, db.levelSessions], async () => {
+    if (!await db.profiles.get(profileId)) throw new Error('Player no longer exists')
+    const session = await db.levelSessions.get(sessionId)
+    if (!session || session.profileId !== profileId) throw new Error('Invalid level session')
+    await db.levelSessions.put({ ...session, pending: null, updatedAt: Date.now() })
   })
 }

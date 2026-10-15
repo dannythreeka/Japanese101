@@ -26,7 +26,7 @@ export default function KanaCard({ item, mode, showRomaji = false, className = '
       {showRomaji && (
         <span className="text-3xl text-gray-500 font-medium">{item.romaji}</span>
       )}
-      <SpeakButton text={item.romaji} size="lg" />
+      <SpeakButton text={item.hiragana} size="lg" />
     </div>
   )
 }

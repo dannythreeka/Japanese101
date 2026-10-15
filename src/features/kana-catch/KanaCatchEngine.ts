@@ -1,4 +1,4 @@
-import { speak } from '../../lib/tts'
+import { playSpeech, stopSpeaking } from '../../lib/tts'
 
 export const CANVAS_W = 360
 export const CANVAS_H = 380
@@ -27,8 +27,9 @@ export interface EngineCallbacks {
   onCorrect(itemId: string): void
   onMiss(itemId: string): void
   onComplete(correct: number, total: number): void
-  onAnswer?(questionIndex: number, itemId: string, correct: boolean | null): void
+  onAnswer?(questionIndex: number, itemId: string, correct: boolean | null): void | Promise<void>
   onError?(): void
+  onAudioState?(state: 'loading' | 'ready' | 'error'): void
   onPauseAfterCorrect?(q: QuestionConfig, resume: () => void): void
 }
 
@@ -36,6 +37,10 @@ export interface EngineParams {
   fallSpeed: number
   showRomaji: boolean
   roundLength: number
+  requireAudio?: boolean
+  initialQuestionIndex?: number
+  initialFirstCorrect?: number
+  initialWrong?: boolean
   highlightCorrectAnswer?: boolean
 }
 
@@ -66,6 +71,7 @@ export class KanaCatchEngine {
   private firstCorrectCount = 0
   private wrongInQuestion = false
   private destroyed = false
+  private audioReady = false
   private raf = 0
   private lastTs = 0
   private waiting = false
@@ -78,18 +84,23 @@ export class KanaCatchEngine {
     if (!ctx) throw new Error('Canvas 2D context unavailable')
     this.ctx = ctx
     this.params = params
+    this.questionNum = params.initialQuestionIndex ?? 0
+    this.firstCorrectCount = params.initialFirstCorrect ?? 0
     this.cb = cb
     canvas.addEventListener('pointerdown', this.onPointer)
   }
 
   start(): void {
+    if (this.questionNum >= this.params.roundLength) { this.cb.onComplete(this.firstCorrectCount, this.questionNum); return }
     this.spawnQuestion()
+    if (this.waiting) return
     this.lastTs = performance.now()
     this.raf = requestAnimationFrame(this.loop)
   }
 
   destroy(): void {
     this.destroyed = true
+    stopSpeaking()
     cancelAnimationFrame(this.raf)
     if (this.pending) clearTimeout(this.pending)
     this.canvas.removeEventListener('pointerdown', this.onPointer)
@@ -98,7 +109,7 @@ export class KanaCatchEngine {
   private spawnQuestion(): void {
     if (this.destroyed) return
     this.waiting = false
-    this.wrongInQuestion = false
+    this.wrongInQuestion = this.questionNum === (this.params.initialQuestionIndex ?? 0) && !!this.params.initialWrong
     const q = this.cb.nextQuestion()
     if (q.items.length < 2 || !q.items.some(item => item.id === q.targetId)) {
       this.waiting = true
@@ -120,7 +131,8 @@ export class KanaCatchEngine {
         animT: 0,
       }
     })
-    this.pending = setTimeout(() => speak(q.ttsText), 350)
+    this.audioReady = this.params.requireAudio === false
+    this.pending = setTimeout(() => { this.playQuestionAudio() }, 350)
   }
 
   private readonly loop = (ts: number): void => {
@@ -150,8 +162,10 @@ export class KanaCatchEngine {
 
   private onQuestionEnd(caught: boolean, itemId: string): void {
     this.waiting = true
+    if (this.pending) clearTimeout(this.pending)
+    stopSpeaking()
     this.questionNum++
-    if (caught && !this.wrongInQuestion) this.firstCorrectCount++
+    if (caught && !this.wrongInQuestion && !this.params.highlightCorrectAnswer && !this.params.showRomaji) this.firstCorrectCount++
     if (caught) { this.correctCount++; this.cb.onCorrect(itemId) }
     else { this.cb.onMiss(itemId) }
     const done = this.questionNum >= this.params.roundLength
@@ -174,8 +188,10 @@ export class KanaCatchEngine {
 
   skip(): void {
     if (this.waiting || !this.currentQ || this.destroyed) return
-    this.cb.onAnswer?.(this.questionNum, this.currentQ.targetId, null)
-    this.onQuestionEnd(false, this.currentQ.targetId)
+    this.waiting = true
+    void Promise.resolve(this.cb.onAnswer?.(this.questionNum, this.currentQ.targetId, null)).then(() => {
+      if (!this.destroyed && this.currentQ) this.onQuestionEnd(false, this.currentQ.targetId)
+    }).catch(() => { if (!this.destroyed) this.cb.onError?.() })
   }
 
   private draw(): void {
@@ -226,6 +242,35 @@ export class KanaCatchEngine {
     ctx.globalAlpha = 1
   }
 
+  playQuestionAudio(): void {
+    const question = this.currentQ
+    if (!question || this.destroyed) return
+    this.cb.onAudioState?.('loading')
+    void playSpeech(question.ttsText).then(() => {
+      if (!this.destroyed && this.currentQ === question) { this.audioReady = true; this.cb.onAudioState?.('ready') }
+    }).catch((error: unknown) => {
+      if (!this.destroyed && this.currentQ === question && !(error instanceof DOMException && error.name === 'AbortError')) this.cb.onAudioState?.('error')
+    })
+  }
+
+  choose(itemId: string): void {
+    if (!this.audioReady || this.waiting || this.destroyed || !this.currentQ) return
+    const b = this.bubbles.find(bubble => bubble.item.id === itemId && bubble.state === 'falling')
+    if (!b) return
+        this.waiting = true
+        void Promise.resolve(this.cb.onAnswer?.(this.questionNum, this.currentQ!.targetId, b.isCorrect)).then(() => {
+          if (this.destroyed) return
+          if (b.isCorrect) {
+            b.state = 'burst'; b.animT = 0
+            this.onQuestionEnd(true, b.item.id)
+          } else {
+            if (!this.wrongInQuestion) this.cb.onMiss(this.currentQ!.targetId)
+            this.wrongInQuestion = true
+            this.waiting = false
+          }
+        }).catch(() => { if (!this.destroyed) this.cb.onError?.() })
+  }
+
   private readonly onPointer = (e: PointerEvent): void => {
     if (this.waiting) return
     const rect = this.canvas.getBoundingClientRect()
@@ -235,16 +280,7 @@ export class KanaCatchEngine {
       if (b.state !== 'falling') continue
       const dx = b.x - px, dy = b.y - py
       if (Math.sqrt(dx * dx + dy * dy) <= BUBBLE_R + 10) {
-        if (b.isCorrect) {
-          b.state = 'burst'
-          b.animT = 0
-          this.cb.onAnswer?.(this.questionNum, this.currentQ!.targetId, true)
-          this.onQuestionEnd(true, b.item.id)
-        } else {
-          this.cb.onAnswer?.(this.questionNum, this.currentQ!.targetId, false)
-          if (!this.wrongInQuestion) this.cb.onMiss(this.currentQ!.targetId)
-          this.wrongInQuestion = true
-        }
+        this.choose(b.item.id)
         break
       }
     }

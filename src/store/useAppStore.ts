@@ -1,3 +1,4 @@
+import { setSfxEnabled as applySfx, setGlobalVolume as applyVolume } from '../lib/audio'
 import { create } from 'zustand'
 import { getActiveProfileId, getProfilePreferences, saveProfilePreferences, db } from '../db'
 import { incrementStars } from '../db/profile-data'
@@ -21,6 +22,10 @@ export interface AdventureSession {
 interface AppState {
   profileId: string
   enhancedConsent: boolean
+  sfxEnabled: boolean
+  sfxVolume: number
+  setSfxEnabled: (enabled: boolean) => void
+  setGlobalVolume: (volume: number) => void
   storageError: string | null
   hydrateProfile: (profileId: string) => Promise<void>
   retryStorage: () => Promise<void>
@@ -48,10 +53,6 @@ interface AppState {
   endSession: () => number
   addStars: (n: number) => void
   setParentUnlocked: (v: boolean) => void
-  initAdventureSession: (levelId: string) => void
-  launchChallenge: (challengeId: string, gameMode: string, overrides: Record<string, unknown>) => void
-  recordChallengeResult: (challengeId: string, accuracy: number, xpGained: number) => void
-  cancelAdventureChallenge: () => void
   clearAdventureSession: () => void
 }
 
@@ -63,9 +64,12 @@ export const useAppStore = create<AppState>((set, get) => {
     const preferences: ProfilePreferences = {
       profileId, kanaMode: snapshot.kanaMode, kanaDifficulty: snapshot.kanaDifficulty,
       ageMode: snapshot.ageMode, micMode: snapshot.micMode, enhancedConsent: snapshot.enhancedConsent,
+      sfxEnabled: snapshot.sfxEnabled, sfxVolume: snapshot.sfxVolume,
       uiLang: snapshot.uiLang, disabledUnits: snapshot.disabledUnits, writeDifficulty: snapshot.writeDifficulty, ...patch,
     }
     set(patch)
+    if (patch.sfxEnabled !== undefined) applySfx(patch.sfxEnabled)
+    if (patch.sfxVolume !== undefined) applyVolume(patch.sfxVolume)
     const operation = () => saveProfilePreferences(preferences)
     void operation().catch((error: unknown) => { retryPending = operation; set({ storageError: String(error) }) })
   }
@@ -77,11 +81,14 @@ export const useAppStore = create<AppState>((set, get) => {
   parentUnlocked: false,
   adventureSession: null,
   hydrateProfile: async (profileId) => {
-    const [preferences, wallet] = await Promise.all([getProfilePreferences(profileId), db.wallets.get(profileId)])
+    const [preferences, wallet, levels] = await Promise.all([getProfilePreferences(profileId), db.wallets.get(profileId), db.levelSessions.where('profileId').equals(profileId).toArray()])
     if (getActiveProfileId() !== profileId) return
-    set({ ...preferences, totalStars: wallet?.stars ?? 0, adventureSession: null, sessionStartTime: null, parentUnlocked: false })
+    applySfx(preferences.sfxEnabled); applyVolume(preferences.sfxVolume)
+    set({ ...preferences, totalStars: wallet?.stars ?? 0, adventureSession: levels.sort((a,b)=>(b.updatedAt ?? b.startedAt)-(a.updatedAt ?? a.startedAt))[0] ?? null, sessionStartTime: null, parentUnlocked: false })
   },
   retryStorage: async () => { if (retryPending) await retryPending(); retryPending = null; set({ storageError: null }) },
+  setSfxEnabled: (sfxEnabled) => persist({ sfxEnabled }),
+  setGlobalVolume: (sfxVolume) => persist({ sfxVolume }),
   setWriteDifficulty: (writeDifficulty) => persist({ writeDifficulty }),
   setKanaMode: (kanaMode) => persist({ kanaMode }),
   setKanaDifficulty: (kanaDifficulty) => persist({ kanaDifficulty }),
@@ -106,36 +113,6 @@ export const useAppStore = create<AppState>((set, get) => {
   },
 
   setParentUnlocked: (v) => set({ parentUnlocked: v }),
-
-  initAdventureSession: (levelId) => {
-    const current = get().adventureSession
-    if (current?.levelId === levelId) return  // keep existing results for replay
-    set({ adventureSession: { levelId, pending: null, results: {} } })
-  },
-
-  launchChallenge: (challengeId, gameMode, overrides) => {
-    const current = get().adventureSession
-    if (!current) return
-    set({ adventureSession: { ...current, pending: { challengeId, gameMode, configOverrides: overrides } } })
-  },
-
-  recordChallengeResult: (challengeId, accuracy, xpGained) => {
-    const current = get().adventureSession
-    if (!current) return
-    set({
-      adventureSession: {
-        ...current,
-        pending: null,
-        results: { ...current.results, [challengeId]: { accuracy, xpGained } },
-      },
-    })
-  },
-
-  cancelAdventureChallenge: () => {
-    const current = get().adventureSession
-    if (!current) return
-    set({ adventureSession: { ...current, pending: null } })
-  },
 
   clearAdventureSession: () => set({ adventureSession: null }),
   }

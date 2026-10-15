@@ -16,3 +16,9 @@ PR53已依使用者授權merge；P1只授權push工作分支／開PR，沒有自
 v5新增玩家範圍tables與checkpoint／level session／reward receipt，原progress／sessions保留legacy-shared；升級交易先保存原始tables與舊本機設定備份。v1～v4、空庫、壞原始資料、重啟與模擬備份寫入失敗回復測試通過。呼叫點固定profileId；正式偏好／星星／每日領獎改IndexedDB，不再共用全域localStorage。
 新增game／level session交易服務，6項測試覆蓋十次同題／獎勵重試、A延遲寫入不影響B、checkpoint版本不符保留、缺結果／鎖關拒絕、關卡獎勵重玩衰減、交易失敗回復。服務尚待接入全部遊戲與結算UI。
 mic mode／AbortSignal／家長enhancedConsent已實作，API spy測試通過；實機驗收仍未執行。所有上述task保持IN_PROGRESS，未以基礎服務通過當完整Phase通過。
+
+## 遊戲出口整合與恢復
+
+七個遊戲接上 PracticeSession，先將作答交易存好再推進／結算；首次答案、提示、重試、跳過持續記錄。配對／聽力改為選擇後確認並手動下一題；寫字、詞卡自評、發聲只作參與／輔助紀錄。濁點多位置需全部完成，Canvas增加DOM替代選項。關卡結算讀取owned finished game session，不再信任memory result或complete URL；refresh不重發。
+
+153項原有／基礎單元測試通過；目前正加入音訊、教材包與資料驗證器測試。尚未完成真實遊戲瀏覽器回歸，P1不標完成。

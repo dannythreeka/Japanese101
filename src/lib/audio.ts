@@ -26,9 +26,8 @@ function getHowl(key: SfxKey): Howl {
   return h
 }
 
-const _storedVol = parseFloat(localStorage.getItem('sfxVolume') ?? '1')
-let globalVolume = isNaN(_storedVol) ? 1 : Math.max(0, Math.min(1, _storedVol))
-let sfxEnabled = localStorage.getItem('sfxEnabled') !== 'false'
+let globalVolume = 1
+let sfxEnabled = true
 
 export function playSfx(key: SfxKey): void {
   if (!sfxEnabled) return
@@ -50,13 +49,11 @@ export function preloadSfx(keys: SfxKey[]): void {
 
 export function setSfxEnabled(enabled: boolean): void {
   sfxEnabled = enabled
-  localStorage.setItem('sfxEnabled', String(enabled))
   if (!enabled) Howler.stop()
 }
 
 export function setGlobalVolume(volume: number): void {
   globalVolume = Math.max(0, Math.min(1, volume))
-  localStorage.setItem('sfxVolume', String(globalVolume))
   Howler.volume(globalVolume)
 }
 
@@ -104,4 +101,12 @@ export function setBgmEnabled(enabled: boolean): void {
 
 export function isBgmEnabled(): boolean {
   return bgmEnabled
+}
+
+export function duckBgm(ducked: boolean): void {
+  if (bgmHowl) bgmHowl.volume((ducked ? .05 : .3) * globalVolume)
+}
+export function stopGameAudio(): void {
+  Object.values(cache).forEach(sound => sound.stop())
+  stopBgm()
 }

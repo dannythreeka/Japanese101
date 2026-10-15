@@ -1,13 +1,10 @@
-import { getActiveProfileId } from '../../db'
+import { useCheckpointState, usePracticeSession } from '../../hooks/usePracticeSession'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { kanaData, vocabData } from '../../data/loaders'
 import type { Kana, Word } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { useAdventureChallenge } from '../../hooks/useAdventureChallenge'
-import { getOrCreateProgress, saveProgress, saveSession } from '../../db'
-import { updateAfterCorrect, updateAfterIncorrect } from '../../lib/srs'
-import { calculateXpGain, addXpToPet } from '../../lib/pet'
 import { speak } from '../../lib/tts'
 import { playSfx } from '../../lib/audio'
 import {
@@ -79,7 +76,7 @@ function pickVocabRound(pool: Word[], count: number): Word[] {
   return shuffled.slice(0, Math.min(count, shuffled.length))
 }
 
-function toWriteTarget(item: Kana | Word, _difficulty: 1 | 2 | 3): WriteTarget {
+function toWriteTarget(item: Kana | Word): WriteTarget {
   if ('hiragana' in item) {
     // It's a Kana
     return {
@@ -101,7 +98,8 @@ function toWriteTarget(item: Kana | Word, _difficulty: 1 | 2 | 3): WriteTarget {
 }
 
 export default function KanaWriteGame() {
-  const [profileId] = useState(getActiveProfileId)
+  const practice = usePracticeSession()
+  const submitLock = useRef(false)
   const navigate = useNavigate()
   const { ageMode, kanaDifficulty, writeDifficulty } = useAppStore()
   const adventure = useAdventureChallenge()
@@ -111,41 +109,28 @@ export default function KanaWriteGame() {
   const strokes = useRef<{ x: number; y: number }[][]>([])
   const currentStroke = useRef<{ x: number; y: number }[]>([])
   const isDrawing = useRef(false)
-  const sessionStart = useRef(Date.now())
 
-  const [round, setRound] = useState<WriteTarget[]>([])
-  const [currentIdx, setCurrentIdx] = useState(0)
-  const [phase, setPhase] = useState<Phase>('draw')
+  const [currentIdx, setCurrentIdx] = useState(() => practice.summary.completed)
+  const [phase, setPhase] = useState<Phase>(()=>practice.session.status==='finished'?'done':'draw')
   const [currentStars, setCurrentStars] = useState<0 | 1 | 2 | 3>(0)
-  const [results, setResults] = useState<RoundResult[]>([])
-  const [xpGained, setXpGained] = useState(0)
+  const [results, setResults] = useCheckpointState<RoundResult[]>('results', [])
+  const [xpGained, setXpGained] = useState(practice.session.reward?.xp ?? 0)
   const [hasStrokes, setHasStrokes] = useState(false)
   const [userSnapshot, setUserSnapshot] = useState<string | null>(null)
   const [showDemo, setShowDemo] = useState(false)
 
-  // Build round
-  useEffect(() => {
+  const [round] = useCheckpointState<WriteTarget[]>('round', () => {
     const pending = adventure.pending
-    if (pending?.gameMode === 'write_canvas') {
-      const poolChars = pending.configOverrides.kanaPool
-      const roundLen = pending.configOverrides.roundLength
-      if (Array.isArray(poolChars)) {
-        const filtered = ALL_KANA.filter(k => (poolChars as string[]).includes(k.hiragana))
-        const len = typeof roundLen === 'number' ? roundLen : ROUND_SIZE
-        const pool = filtered.length > 0 ? filtered : ALL_KANA
-        setRound(pickRound(pool, len).map(k => toWriteTarget(k, writeDifficulty)))
-        return
-      }
+    const poolChars = pending?.configOverrides.kanaPool
+    const count = pending?.configOverrides.roundLength
+    if (pending?.gameMode === 'write_canvas' && Array.isArray(poolChars)) {
+      return pickRound(ALL_KANA.filter(k => (poolChars as string[]).includes(k.hiragana)), typeof count === 'number' ? count : ROUND_SIZE).map(k => toWriteTarget(k))
     }
-    if (writeDifficulty === 3) {
-      const pool = buildVocabPool()
-      setRound(pickVocabRound(pool, ROUND_SIZE).map(w => toWriteTarget(w, 3)))
-    } else {
-      const pool = buildWritePool(ALL_KANA, ageMode, kanaDifficulty)
-      setRound(pickRound(pool, ROUND_SIZE).map(k => toWriteTarget(k, writeDifficulty)))
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [])
+    if (writeDifficulty === 3) return pickVocabRound(buildVocabPool(), ROUND_SIZE).map(w => toWriteTarget(w))
+    return pickRound(buildWritePool(ALL_KANA, ageMode, kanaDifficulty), ROUND_SIZE).map(k => toWriteTarget(k))
+  })
+  const save = practice.save
+  useEffect(() => { void save({}, round.length).catch(() => {}) }, [save, round.length])
 
   const current = round[currentIdx] ?? null
 
@@ -171,8 +156,6 @@ export default function KanaWriteGame() {
 
   // Reset canvas when switching target
   useEffect(() => {
-    setHasStrokes(false)
-    setUserSnapshot(null)
     strokes.current = []
     currentStroke.current = []
     isDrawing.current = false
@@ -204,7 +187,7 @@ export default function KanaWriteGame() {
   }
 
   function handlePointerDown(e: React.PointerEvent<HTMLCanvasElement>) {
-    if (phase !== 'draw') return
+    if (phase !== 'draw' || submitLock.current) return
     e.currentTarget.setPointerCapture(e.pointerId)
     isDrawing.current = true
     currentStroke.current = [getPos(e)]
@@ -253,9 +236,11 @@ export default function KanaWriteGame() {
   // ── Check answer ────────────────────────────────────────────────────────────
 
   async function handleCheck() {
-    if (!current) return
+    if (!current || phase !== 'draw' || !hasStrokes || submitLock.current) return
+    submitLock.current = true
+    try {
 
-    const offUser = new OffscreenCanvas(CANVAS_SIZE, CANVAS_SIZE)
+    const offUser = Object.assign(document.createElement('canvas'), { width: CANVAS_SIZE, height: CANVAS_SIZE })
     const ctxU = offUser.getContext('2d')!
     drawStrokes(ctxU, strokes.current)
     const userImageData = ctxU.getImageData(0, 0, CANVAS_SIZE, CANVAS_SIZE)
@@ -269,7 +254,7 @@ export default function KanaWriteGame() {
       setUserSnapshot(snapshotCanvas.toDataURL('image/png'))
     }
 
-    const offRef = new OffscreenCanvas(CANVAS_SIZE, CANVAS_SIZE)
+    const offRef = Object.assign(document.createElement('canvas'), { width: CANVAS_SIZE, height: CANVAS_SIZE })
     const ctxR = offRef.getContext('2d')!
     ctxR.save()
     renderRefText(ctxR, current.text, '#000')
@@ -281,13 +266,15 @@ export default function KanaWriteGame() {
     setCurrentStars(stars)
 
     const isCorrect = stars >= 2
-    const record = await getOrCreateProgress(current.id, current.type, profileId)
-    await saveProgress(isCorrect ? updateAfterCorrect(record) : updateAfterIncorrect(record))
+    const nextResults = [...results, { itemId: current.id, stars, type: current.type }]
+    await practice.answer(`q:${currentIdx}`, current.id, current.type, true, true, { results: nextResults })
+    if (!practice.alive()) return
 
     playSfx(isCorrect ? 'correct' : 'tap')
 
-    setResults(prev => [...prev, { itemId: current.id, stars, type: current.type }])
+    setResults(nextResults)
     setPhase('result')
+    } finally { submitLock.current = false }
   }
 
   // ── Advance ─────────────────────────────────────────────────────────────────
@@ -296,30 +283,21 @@ export default function KanaWriteGame() {
     if (currentIdx + 1 >= round.length) {
       await finishRound()
     } else {
+      setHasStrokes(false); setUserSnapshot(null)
       setCurrentIdx(i => i + 1)
       setPhase('draw')
     }
   }
 
   async function finishRound() {
-    const correct = results.filter(r => r.stars >= 2).length
-    const total = results.length
-    const xp = calculateXpGain(correct, total)
-    setXpGained(xp)
-
-    await saveSession(profileId, {
-      id: `kw-${Date.now()}`,
-      date: Date.now(),
-      durationMs: Date.now() - sessionStart.current,
-      feature: 'kana_write',
-      correct,
-      total,
-    })
-
-    if (xp > 0) await addXpToPet(xp, results.filter(r => r.stars >= 2 && r.type === 'kana').map(r => r.itemId), profileId)
-    if (xp > 0) playSfx('levelup')
-
-    setPhase('done')
+    if (submitLock.current) return
+    submitLock.current = true
+    try {
+      const reward = await practice.finish()
+      if (!practice.alive()) return
+      setXpGained(reward.xpGained)
+      setPhase('done')
+    } finally { submitLock.current = false }
   }
 
   // ── Render ──────────────────────────────────────────────────────────────────
@@ -331,13 +309,13 @@ export default function KanaWriteGame() {
     const accuracy = results.length > 0 ? correct / results.length : 0
     return (
       <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center justify-center px-4 gap-6">
-        <p className="text-5xl">✏️</p>
+        <p className="text-5xl">✏️</p><p>{t('participationOnly')}</p>
         <p className="text-3xl font-bold text-emerald-700">{t('doneKanaWrite')}</p>
         <div className="text-6xl font-bold text-yellow-500">
           {'⭐'.repeat(Math.round(totalStars / Math.max(maxStars, 1) * 3))}
         </div>
         <p className="text-xl text-gray-600">
-          {correct} / {results.length} {t('correct')}
+          {correct} / {results.length} {t('writingQuality')}
         </p>
         {xpGained > 0 && (
           <p className="text-lg text-emerald-600 font-semibold">+{xpGained} XP ✨</p>
@@ -375,7 +353,7 @@ export default function KanaWriteGame() {
   if (!current) {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-sky-200 to-emerald-100">
-        <p className="text-2xl text-gray-400">{t('loading')}</p>
+        <p role="alert" className="text-2xl text-gray-500">{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => navigate('/play')}>{t('back')}</button>
       </div>
     )
   }

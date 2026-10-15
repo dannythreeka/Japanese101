@@ -36,7 +36,7 @@ describe('buildParams (smoke)', () => {
 
 import { afterEach, vi } from 'vitest'
 import { KanaCatchEngine } from './KanaCatchEngine'
-vi.mock('../../lib/tts', () => ({ speak: vi.fn() }))
+vi.mock('../../lib/tts', () => ({ playSpeech: vi.fn().mockResolvedValue(undefined), stopSpeaking: vi.fn() }))
 
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.useRealTimers() })
 
@@ -58,7 +58,7 @@ function engineHarness(roundLength = 5, empty = false) {
   const canvas = document.createElement('canvas')
   vi.spyOn(canvas, 'getBoundingClientRect').mockReturnValue({ x: 0, y: 0, left: 0, top: 0, right: 360, bottom: 380, width: 360, height: 380, toJSON() {} })
   const onComplete = vi.fn(), onMiss = vi.fn(), onError = vi.fn(), onAnswer = vi.fn()
-  const engine = new KanaCatchEngine(canvas, { fallSpeed: 1000, showRomaji: false, roundLength }, {
+  const engine = new KanaCatchEngine(canvas, { fallSpeed: 1000, showRomaji: false, requireAudio: false, roundLength }, {
     nextQuestion: () => ({ items: empty ? [] : [{ id: 'a', display: 'あ' }, { id: 'i', display: 'い' }], targetId: 'a', ttsText: 'あ' }),
     onNewQuestion() {}, onCorrect() {}, onMiss, onComplete, onError, onAnswer,
     onPauseAfterCorrect(_q, resume) { resume() },
@@ -73,13 +73,13 @@ function engineHarness(roundLength = 5, empty = false) {
   return { engine, draw, tap, onComplete, onMiss, onError, onAnswer }
 }
 
-it('real pointer events record two first errors, finish at 60%, and ignore repeated completion taps', () => {
+it('real pointer events record two first errors, finish at 60%, and ignore repeated completion taps', async () => {
   const h = engineHarness()
   for (let n = 0; n < 5; n++) {
     h.draw()
-    if (n >= 3) { h.tap('い'); h.tap('い') }
+    if (n >= 3) { h.tap('い'); await Promise.resolve(); await Promise.resolve() }
     for (let repeat = 0; repeat < 10; repeat++) h.tap('あ')
-    vi.advanceTimersByTime(600)
+    await vi.advanceTimersByTimeAsync(600)
   }
   expect(h.onMiss).toHaveBeenCalledTimes(2)
   expect(h.onComplete).toHaveBeenCalledExactlyOnceWith(3, 5)

@@ -20,7 +20,7 @@ async function owned(profileId: string, sessionId: string) {
 export async function openGameSession(profileId: string, routeKey: string, feature: SessionRecord['feature'], context?: { levelSessionId: string; challengeId: string }): Promise<GameCheckpoint> {
   return db.transaction('rw', [db.profiles, db.gameCheckpoints], async () => {
     if (!await db.profiles.get(profileId)) throw new Error('Player no longer exists')
-    const existing = (await db.gameCheckpoints.where('[profileId+routeKey]').equals([profileId, routeKey]).toArray()).find(s => s.status === 'active')
+    const existing = (await db.gameCheckpoints.where('[profileId+routeKey]').equals([profileId, routeKey]).toArray()).find(s => s.status === 'active' || (!!context && s.status === 'finished'))
     if (existing) {
       if (existing.contentVersion !== CONTENT_VERSION) throw new Error('Content version changed; previous answers are preserved')
       return existing
@@ -32,7 +32,8 @@ export async function openGameSession(profileId: string, routeKey: string, featu
 }
 export async function abandonGameSession(profileId: string, sessionId: string): Promise<void> {
   await db.transaction('rw', [db.profiles, db.gameCheckpoints], async () => {
-    const session = await owned(profileId, sessionId)
+    const session = await db.gameCheckpoints.get(sessionId)
+    if (!session || session.profileId !== profileId) throw new Error('Session does not belong to this player')
     if (session.status === 'active') await db.gameCheckpoints.put({ ...session, status: 'abandoned', updatedAt: Date.now() })
   })
 }
@@ -46,7 +47,7 @@ export async function saveCheckpoint(profileId: string, sessionId: string, patch
     return updated
   })
 }
-export async function submitGameAnswer(profileId: string, sessionId: string, questionId: string, itemId: string, type: 'kana' | 'vocab', answer: boolean | null, hintUsed = false): Promise<GameCheckpoint> {
+export async function submitGameAnswer(profileId: string, sessionId: string, questionId: string, itemId: string, type: 'kana' | 'vocab', answer: boolean | null, hintUsed = false, checkpointPatch: Record<string, unknown> = {}): Promise<GameCheckpoint> {
   return db.transaction('rw', [db.profiles, db.gameCheckpoints, db.playerProgress], async () => {
     const session = await owned(profileId, sessionId)
     if (session.status !== 'active') return session
@@ -54,7 +55,7 @@ export async function submitGameAnswer(profileId: string, sessionId: string, que
     if (previous?.completed) return session
     if (previous && previous.itemId !== itemId) throw new Error('Question identity changed')
     const attempt = answer === null ? skipQuestion(previous, questionId, itemId) : recordAnswer(previous, questionId, itemId, answer, hintUsed || participating(session.feature))
-    const updated = { ...session, attempts: { ...session.attempts, [questionId]: attempt }, updatedAt: Date.now() }
+    const updated = { ...session, checkpoint: { ...session.checkpoint, ...checkpointPatch }, attempts: { ...session.attempts, [questionId]: attempt }, updatedAt: Date.now() }
     if (!previous && !participating(session.feature)) {
       const record = await getOrCreateProgress(itemId, type, profileId)
       await db.playerProgress.put(attempt.firstAnswerCorrect && !attempt.hintUsed ? updateAfterCorrect(record) : updateAfterIncorrect(record))
@@ -77,11 +78,20 @@ export async function finishGameSession(profileId: string, sessionId: string) {
     const stars = participation ? summary.completed : summary.correct
     await addXpToPet(xp, participation ? [] : Object.values(session.attempts).filter(a => a.firstAnswerCorrect && !a.hintUsed).map(a => a.itemId), profileId)
     await incrementStars(profileId, stars)
-    const final = { ...session, status: 'finished' as const, updatedAt: Date.now() }
+    const final = { ...session, status: 'finished' as const, reward: { xp, stars }, updatedAt: Date.now() }
     await db.playerSessions.add({ id: session.id, profileId, date: Date.now(), durationMs: Date.now() - session.startedAt, feature: session.feature, correct: summary.correct, total: summary.total, completionRate: summary.completionRate, evidenceKind: participation ? 'participation' : 'independent' })
     const saved = { id: receiptId, profileId, xp, stars, createdAt: Date.now() }
     await db.rewardReceipts.add(saved)
     await db.gameCheckpoints.put(final)
     return { session: final, receipt: saved, summary }
+  })
+}
+
+/** Preserve old answers, then allow a fresh session at the same safe route. */
+export async function recoverGameRoute(profileId: string, routeKey: string): Promise<void> {
+  await db.transaction('rw', [db.profiles, db.gameCheckpoints], async () => {
+    if (!await db.profiles.get(profileId)) throw new Error('Player no longer exists')
+    const records = await db.gameCheckpoints.where('[profileId+routeKey]').equals([profileId, routeKey]).toArray()
+    for (const session of records.filter(s => s.status === 'active')) await db.gameCheckpoints.put({ ...session, status: 'abandoned', updatedAt: Date.now() })
   })
 }

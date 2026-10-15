@@ -1,3 +1,4 @@
+import { GAME_ROUTES, openLevelSession, launchLevelChallenge } from '../../db/level-sessions'
 import { getActiveProfileId } from '../../db'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
@@ -7,7 +8,7 @@ import { useAppStore } from '../../store/useAppStore'
 import { useT } from '../../hooks/useT'
 import { getFirstLevelId, getLevelStatus, ensureValidProgress, getSortedLevels } from './adventureEngine'
 import { SCENE_REGISTRY } from '../kotodama/scenes'
-import type { Level, AdventureProgress } from '../../types/adventure'
+import type { AdventureProgress } from '../../types/adventure'
 import type { GameModeId } from '../../types'
 
 const GAME_MODE_LABEL: Record<string, string> = {
@@ -21,45 +22,41 @@ const GAME_MODE_LABEL: Record<string, string> = {
   write_canvas:             '✍️ かな かいてみよう',
 }
 
-const GAME_ROUTES: Record<string, string> = {
-  kana_catch_listen:        '/play/kana-catch',
-  kana_catch_minimal_pair:  '/play/kana-catch',
-  kana_catch_word_to_image: '/play/kana-catch',
-  dakuten_drag:             '/play/dakuten-drag',
-  kotodama_summon:          '/play/kotodama',
-  write_canvas:             '/play/kana-write',
-  karaoke_rhythm:           '/play/kana-catch',
-  echo_record:              '/play/kana-catch',
-}
-
 export default function LevelEntry() {
   const [profileId] = useState(getActiveProfileId)
   const { levelId } = useParams<{ levelId: string }>()
   const navigate = useNavigate()
   const t = useT()
-  const { adventureSession, initAdventureSession, launchChallenge } = useAppStore()
-  const [level, setLevel] = useState<Level | null>(null)
+  const { adventureSession } = useAppStore()
+  const level = levelsData().levels.find(l => l.level_id === levelId) ?? null
+  const [loadError, setLoadError] = useState(false)
+  const [revision, setRevision] = useState(0)
   const [progress, setProgress] = useState<AdventureProgress | null>(null)
   const [transitioning, setTransitioning] = useState(false)
   const navTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
 
   useEffect(() => {
-    const { levels } = levelsData()
-    const found = levels.find((l) => l.level_id === levelId) ?? null
-    setLevel(found)
-    getOrCreateAdventureProgress(getFirstLevelId(), profileId).then(async (adv) => {
-      const levels = getSortedLevels()
-      const fixed = ensureValidProgress(levels, adv)
+    let active = true
+    void (async () => {
+      if (!level || !levelId) throw new Error('Unknown level')
+      const adv = await getOrCreateAdventureProgress(getFirstLevelId(), profileId)
+      const fixed = ensureValidProgress(getSortedLevels(), adv)
       if (fixed !== adv) await saveAdventureProgress(fixed)
+      if (!active) return
       setProgress(fixed)
-      if (found && levelId) initAdventureSession(levelId)
-    })
-  }, [levelId, initAdventureSession])
+      if (getLevelStatus(level, fixed) !== 'locked') {
+        const session = await openLevelSession(profileId, levelId)
+        if (active) useAppStore.setState({ adventureSession: session })
+      }
+    })().catch(() => { if (active) setLoadError(true) })
+    return () => { active = false }
+  }, [level, levelId, profileId, revision])
 
   // Must be before early return — hooks cannot be called conditionally
   useEffect(() => () => { if (navTimerRef.current) clearTimeout(navTimerRef.current) }, [])
 
-  if (!level || !progress) {
+  if (loadError || !level) return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => { setLoadError(false); setRevision(r=>r+1) }}>{t('retry')}</button><button className="min-h-16 px-6" onClick={() => navigate('/adventure')}>{t('back')}</button></div>
+  if (!progress) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex items-center justify-center">
         <span className="text-emerald-700 text-lg">{t('loading')}</span>
@@ -81,10 +78,14 @@ export default function LevelEntry() {
   const requiredChallenges = level.challenges.filter((c) => c.required_for_completion !== false)
   const allRequiredDone = requiredChallenges.every((c) => sessionResults[c.challenge_id] !== undefined)
 
-  function startChallenge(challengeId: string, gameMode: GameModeId, configOverrides: Record<string, unknown>) {
-    launchChallenge(challengeId, gameMode, configOverrides)
-    const route = GAME_ROUTES[gameMode] ?? '/play'
-    navigate(route)
+  async function startChallenge(challengeId: string, gameMode: GameModeId) {
+    if (!adventureSession?.id || adventureSession.profileId !== profileId || !GAME_ROUTES[gameMode]) { setLoadError(true); return }
+    try {
+      const session = await launchLevelChallenge(profileId, adventureSession.id, challengeId)
+      if (useAppStore.getState().profileId !== profileId) return
+      useAppStore.setState({ adventureSession: session })
+      navigate(GAME_ROUTES[gameMode]!)
+    } catch { setLoadError(true) }
   }
 
   function finishLevel() {
@@ -179,6 +180,7 @@ export default function LevelEntry() {
           return (
             <div
               key={ch.challenge_id}
+              data-challenge-id={ch.challenge_id}
               className={`bg-white/80 rounded-xl px-4 py-3 shadow flex items-center justify-between gap-3 ${done ? 'opacity-80' : ''}`}
             >
               <div className="flex flex-col gap-0.5 flex-1 min-w-0">
@@ -203,14 +205,14 @@ export default function LevelEntry() {
                 </span>
                 {done ? (
                   <span className="text-emerald-600 font-bold text-sm">{t('levelChallengeDone')}</span>
-                ) : ch.game_mode === 'echo_record' ? (
+                ) : !GAME_ROUTES[ch.game_mode] ? (
                   <span className="text-xs text-gray-400 px-3 py-1.5 rounded-lg bg-gray-100">
                     {t('comingSoon')}
                   </span>
                 ) : status !== 'locked' ? (
                   <button
                     type="button"
-                    onClick={() => startChallenge(ch.challenge_id, ch.game_mode as GameModeId, ch.config_overrides ?? {})}
+                    onClick={() => startChallenge(ch.challenge_id, ch.game_mode as GameModeId)}
                     className="px-3 py-1.5 rounded-lg bg-indigo-500 hover:bg-indigo-600 active:scale-95 text-white text-sm font-bold transition-all"
                   >
                     {t('levelChallengePlay')}

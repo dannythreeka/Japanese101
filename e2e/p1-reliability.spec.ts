@@ -1,3 +1,4 @@
+import { offlineOrigin } from './helpers/offlineOrigin'
 import { test, expect, type Page } from '@playwright/test'
 import levelsJson from '../data/levels.json' with { type: 'json' }
 import type { LevelsData } from '../src/types/adventure'
@@ -22,8 +23,8 @@ async function game(page:Page,feature:string){
   }).toBe(true)
   return result!
 }
-async function createPlayer(page:Page,name:string){
-  await page.goto('/#/profiles/new');await page.locator('#profile-name').fill(name);await page.locator('button').last().click();await expect(page).toHaveURL(/#\/$/)
+async function createPlayer(page:Page,name:string,origin=''){
+  await page.goto(`${origin}/#/profiles/new`);await page.locator('#profile-name').fill(name);await page.locator('button').last().click();await expect(page).toHaveURL(/#\/$/)
 }
 async function audioMock(page:Page,mic:'off'|'denied'|'no-device'='off'){
   await page.addInitScript(mode=>{
@@ -76,7 +77,10 @@ test('direct completion/locked URLs never reward; stale sessions recover without
   await page.goto('/#/adventure/level/lv_00_tamago/complete')
   await expect(page.getByRole('alert')).toBeVisible();expect(await records(page,'rewardReceipts')).toHaveLength(0)
   await page.goto('/#/adventure/level/lv_10_saidan')
-  await expect(page.getByRole('button',{name:'あそぶ',exact:true})).toHaveCount(0)
+  await expect(page.getByRole('heading',{name:'しんかの祭壇',exact:true})).toBeVisible()
+  await expect(page.getByRole('button',{name:'開始玩',exact:true})).toHaveCount(0)
+  await expect(page.getByRole('button',{name:'開始！',exact:true})).toBeDisabled()
+  expect(await records(page,'levelSessions')).toEqual([])
   expect(await records(page,'rewardReceipts')).toHaveLength(0)
   await page.goto('/#/play/kana');const old=await game(page,'kana')
   await page.evaluate(id=>new Promise<void>((resolve,reject)=>{
@@ -198,13 +202,21 @@ declare global {interface Window {__p1Resources:()=>{frames:number;timers:number
 
 test.describe('verified offline application and material pack',()=>{
   test.use({serviceWorkers:'allow'})
-  test('download all assets then close page and reopen offline with real WAV playback',async({page,context},info)=>{
+  test('download all assets then close page and reopen offline with real WAV playback',async({page,context,browser,browserName},info)=>{
     test.setTimeout(90_000)
-    await createPlayer(page,'P1-local')
+    const isolated=await offlineOrigin()
+    try {
+    await createPlayer(page,'P1-local',isolated.origin)
     await page.getByRole('button',{name:'下載離線教材',exact:true}).click()
     await expect(page.getByText('教材下載完成，可離線練習。',{exact:true})).toBeVisible({timeout:60_000})
     await page.evaluate(async()=>{await navigator.serviceWorker.ready})
-    await context.setOffline(true)
+    await expect.poll(()=>page.evaluate(()=>!!navigator.serviceWorker.controller)).toBe(true)
+    await isolated.stop()
+    expect(isolated.listening).toBe(false)
+    const negative=await browser.newContext({serviceWorkers:'block'})
+    try{await expect((await negative.newPage()).goto(isolated.origin,{timeout:10000})).rejects.toThrow()}finally{await negative.close()}
+    // WebKit's offline flag rejects SW responses upstream (#42775). The stopped origin is the real outage for every engine.
+    if(browserName!=='webkit')await context.setOffline(true)
     const url=page.url();await page.close()
     const reopened=await context.newPage();await reopened.goto(url)
     await expect(reopened.getByText('教材下載完成，可離線練習。',{exact:true})).toBeVisible()
@@ -215,10 +227,11 @@ test.describe('verified offline application and material pack',()=>{
       return failures
     },manifest.assets as {path:string}[])
     expect(result).toBe(0)
-    await reopened.goto('/#/play/quiz')
+    await reopened.goto(`${isolated.origin}/#/play/quiz`)
     await reopened.getByRole('button',{name:'再聽一次',exact:true}).click()
     await expect(reopened.locator('.grid button').first()).toBeEnabled({timeout:15000})
     await reopened.screenshot({path:info.outputPath('offline-listen-ready.png'),fullPage:true})
+    } finally { await isolated.stop() }
   })
 })
 
@@ -333,3 +346,24 @@ test('late parent permission from A stops its stream and never enables B',async(
   expect((await records<{profileId:string;micMode:string}>(page,'preferences')).find(p=>p.profileId===active)?.micMode??'off').toBe('off')
 })
 declare global {interface Window {__p1Release:()=>void;__p1Stopped:number}}
+
+test('keyboard can confirm a choice and place every required dakuten mark',async({page},info)=>{
+  await audioMock(page);await createPlayer(page,'P1-keys');await page.goto('/#/play/kana')
+  const kana=await game(page,'kana'),rounds=kana.checkpoint.rounds as {correct:Kana}[]
+  const choice=page.getByRole('button',{name:rounds[0].correct.romaji,exact:true})
+  await choice.focus();await page.keyboard.press('Enter');await expect(choice).toHaveAttribute('aria-pressed','true')
+  await page.getByRole('button',{name:'確認答案',exact:true}).focus();await page.keyboard.press('Space')
+  await page.getByRole('button',{name:'下一題',exact:true}).focus();await page.keyboard.press('Enter')
+  await expect(page.getByText('2/10',{exact:true})).toBeVisible()
+  await page.goto('/#/play/dakuten-drag')
+  const drag=await game(page,'dakuten_drag'),questions=drag.checkpoint.questions as {item:{mark_at:number[]};baseChars:string[];targetChars:string[]}[]
+  const symbol=page.locator('button[aria-pressed]');await symbol.focus();await page.keyboard.press('Enter')
+  await expect(symbol).toHaveAttribute('aria-pressed','true')
+  for(const pos of questions[0].item.mark_at){
+    const tile=page.getByRole('button',{name:`${questions[0].baseChars[pos]} ${pos+1}`,exact:true})
+    await tile.focus();await page.keyboard.press('Space');await expect(tile).toHaveText(questions[0].targetChars[pos])
+  }
+  await page.getByRole('button',{name:'下一題',exact:true}).focus()
+  await page.screenshot({path:info.outputPath('keyboard-dakuten-next.png'),fullPage:true})
+  await page.keyboard.press('Enter');await expect(page.getByText(`2/${questions.length}`,{exact:true})).toBeVisible()
+})

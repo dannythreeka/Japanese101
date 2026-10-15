@@ -56,3 +56,11 @@ Chromium第一批3項E2E通過：首次6/10與完成10/10、重整／兩分頁�
 Firefox離線WAV：讀取CI failure trace，明確出現 `NS_ERROR_DOM_MEDIA_MEDIASINK_ERR ... OnMediaSinkAudioError`，不是將下載成功誤當播放成功。本機同測已PASS。隔離runner加入PulseAudio null sink供原生音訊輸出，仍使用真WAV／真播放完成事件與原斷言，不替換Audio、不跳過測試；不在Mac Mini上執行任何apt或聲音服務設定。CI虛擬輸出不等於人工審聽。下一個CI會以新版本重跑。
 
 本機更新後核心24項（Chromium＋Firefox，各12）全PASS；免費抓抓樂壞設定／退出／換模式及延後A家長授權不影響B另4項PASS。全部測試使用隔離匿名資料。
+
+## WebKit離線模擬的獨立驗證方式
+
+527bf32的CI Test & Build、Chromium、Firefox均已PASS；WebKit其餘主線／可靠度回歸執行後，離線API導航仍回報internal error。原始trace與[Playwright #42775](https://github.com/microsoft/playwright/issues/42775)所報的WebKit setOffline攔截SW回應現象相符；該issue版本為1.63，本專案固定1.58的實際失敗由自己的CI證據確認，不把來源版本混稱成本專案版本。
+
+離線test現在啟動test-owned隔離origin（只讀dist、HTTP no-store），確認SW已控制並完成409素材下載後停止該server。另建SW blocked全新context，必須連不上已停origin作負控。之後關頁重開、逐409資源讀取與真WAV完成播放的原斷言全部保留。Chromium／Firefox另保持setOffline=true；WebKit不用已知有問題的模擬旗標，但同樣沒有可連線origin，不轉為單純online測試，也沒有skip／expected-fail。此方法不是實機飛航模式驗證。本機Chrome／Firefox兩項已PASS，WebKit由下一個隔離CI驗證。
+
+另補鍵盤Enter／Space完成單選與濁點點選替代，兩引擎2 PASS，含焦點截圖；沒有宣稱完整screenreader／P2視覺規範已驗收。

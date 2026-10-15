@@ -73,3 +73,9 @@ d648000三引擎合計50 PASS／1 FAIL：Firefox與Chromium各17 PASS；WebKit16
 
 
 補驗：結算receipt寫入故障→零level獎勵／無完成畫面→重試只發一次，Chromium／Firefox連同直連鎖關共4項PASS。LevelEntry另等實際owned active session就緒才開挑戰／完成，避免重玩瞬間沿用舊完成結果。預覽獎勵與結算共用levelRewardXp，重玩畫面顯示衰減後的可得範圍（L0第二次40–55），完成頁只顯實際receipt；6項固定邊界測試新增後，合計187 unit tests／19 files PASS。沒有修改重玩衰減數字，只消除預覽與結算不一致。最終產品變更在這批收斂，接著重跑CI。
+
+## WebKit runner 啟動競爭定位
+
+4f2c948／合成merge 8968284da7190f34c0fd236ac000fa8a7d5a183e 的CI為53 PASS／1 FAIL：Chromium、Firefox各18 PASS，WebKit17 PASS；三種mic完整主線、原生WAV離線、結算失敗重試均PASS。首次答題case在30秒總預算內仍進行到第四題，並非等待同一控制30秒。取回trace確認context.newPage單一步驟耗15.602秒（尚未載入產品）、setup共17.268秒，其後作答持續推進，最後確認按鈕在剩233ms時遭整個case取消。已實際檢視失敗畫面，保留日誌摘要與timing。
+
+限定WebKit CI一個worker，減少同runner建立三個WebKit頁面的競爭；Chromium／Firefox維持三個。測試內容、預設30秒、主線420秒、斷言與無重試設定不變。這是runner資源配置修正，產品程式仍為4f2c948；重跑完整三引擎，未先標PASS。

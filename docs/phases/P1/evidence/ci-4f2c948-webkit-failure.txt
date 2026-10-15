@@ -1,0 +1,47 @@
+Run: https://github.com/dannythreeka/Japanese101/actions/runs/38741915328
+Head: 4f2c948d2eba3e5666e99bf5769d9b87227c06d5
+Checkout: 8968284da7190f34c0fd236ac000fa8a7d5a183e
+Trace: context.newPage 15602ms; setup 17268ms; wrong-answer confirmation cancelled after 233ms by total 30000ms budget. No repeated stuck action.
+  1) [webkit] › e2e/p1-reliability.spec.ts:45:1 › first answers survive retry/refresh, ten clicks and two-page finalization pay once 
+2026-10-15T13:30:32.7824203Z 
+2026-10-15T13:30:32.7824655Z     [31mTest timeout of 30000ms exceeded.[39m
+2026-10-15T13:30:32.7825077Z 
+2026-10-15T13:30:32.7825451Z     Error: locator.click: Test timeout of 30000ms exceeded.
+2026-10-15T13:30:32.7826105Z     Call log:
+2026-10-15T13:30:32.7827032Z     [2m  - waiting for getByRole('button', { name: '確認答案', exact: true })[22m
+2026-10-15T13:30:32.7828744Z     [2m    - locator resolved to <button class="min-h-16 rounded-2xl bg-emerald-600 px-8 text-white disabled:opacity-50">確認答案</button>[22m
+2026-10-15T13:30:32.7830137Z     [2m  - attempting click action[22m
+2026-10-15T13:30:32.7831010Z     [2m    - waiting for element to be visible, enabled and stable[22m
+2026-10-15T13:30:32.7831985Z     [2m    - element is visible, enabled and stable[22m
+2026-10-15T13:30:32.7834635Z     [2m    - scrolling into view if needed[22m
+2026-10-15T13:30:32.7835485Z     [2m    - done scrolling[22m
+2026-10-15T13:30:32.7835838Z 
+2026-10-15T13:30:32.7835850Z 
+2026-10-15T13:30:32.7836389Z       54 |       const wrong=rounds[i].choices.find(k=>k.id!==rounds[i].correct.id)!
+2026-10-15T13:30:32.7837525Z       55 |       await page.getByRole('button',{name:wrong.romaji,exact:true}).click()
+2026-10-15T13:30:32.7838703Z     > 56 |       await page.getByRole('button',{name:'確認答案',exact:true}).click()
+2026-10-15T13:30:32.7839498Z          |                                                               ^
+2026-10-15T13:30:32.7840544Z       57 |       await page.getByRole('button',{name:'再試一次',exact:true}).click()
+2026-10-15T13:30:32.7841532Z       58 |     }
+2026-10-15T13:30:32.7842451Z       59 |     if(i===4){await page.reload();await expect(page.getByText('5/10',{exact:true})).toBeVisible()}
+2026-10-15T13:30:32.7844030Z         at /home/runner/work/Japanese101/Japanese101/e2e/p1-reliability.spec.ts:56:63
+2026-10-15T13:30:32.7844701Z 
+2026-10-15T13:30:32.7845572Z     attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+2026-10-15T13:30:32.7847032Z     test-results/p1-reliability-first-answe-59ade--page-finalization-pay-once-webkit/test-failed-1.png
+2026-10-15T13:30:32.7848567Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-10-15T13:30:32.7849113Z 
+2026-10-15T13:30:32.7850042Z     Error Context: test-results/p1-reliability-first-answe-59ade--page-finalization-pay-once-webkit/error-context.md
+2026-10-15T13:30:32.7851003Z 
+2026-10-15T13:30:32.7851890Z     attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+2026-10-15T13:30:32.7853534Z     test-results/p1-reliability-first-answe-59ade--page-finalization-pay-once-webkit/trace.zip
+2026-10-15T13:30:32.7854473Z     Usage:
+2026-10-15T13:30:32.7854691Z 
+2026-10-15T13:30:32.7855606Z         npx playwright show-trace test-results/p1-reliability-first-answe-59ade--page-finalization-pay-once-webkit/trace.zip
+2026-10-15T13:30:32.7856839Z 
+2026-10-15T13:30:32.7857596Z     ────────────────────────────────────────────────────────────────────────────────────────────────
+2026-10-15T13:30:32.7858152Z 
+2026-10-15T13:30:32.7858314Z   1 failed
+2026-10-15T13:30:32.7859648Z     [webkit] › e2e/p1-reliability.spec.ts:45:1 › first answers survive retry/refresh, ten clicks and two-page finalization pay once 
+2026-10-15T13:30:32.7860746Z   17 passed (7.6m)
+2026-10-15T13:30:33.0038411Z ##[error]Process completed with exit code 1.
+2026-10-15T13:30:33.0116996Z 

@@ -15,8 +15,8 @@
 | P1-05 | 缺結果／直連complete／鎖關零獎勵；game和level交易、單收據、重玩衰減；部分寫入失敗整筆回復 | reliability.test.ts PASS；Chromium十次點選／兩分頁結算PASS |
 | P1-06 | 每題保存，refresh續題；存檔錯誤保留待提交、可重試；版本／壞checkpoint保留原紀錄安全恢復 | Unit PASS；Chromium PASS，Firefox壞checkpoint恢復PASS；免費抓抓樂退出／換模式另補回歸 |
 | P1-07 | 預設off；offline不建SR；enhanced每次由家長明確同意；拒絕／撤銷／不支援回復並停止tracks | API spy unit PASS；Chromium／Firefox新同意／取消／拒絕UI PASS；實機 NOT_RUN |
-| P1-08 | 所有發聲非主線必做，發聲量只標參與 | L0～L10 mic off、模擬拒絕、無裝置全UI回歸中；API mock不能稱為實體拒絕權限 |
-| P1-09 | 單一語音，離頁取消回調；完整409資源驗證才標離線，404／quota／hash錯誤可重試 | 音訊／教材包unit PASS；Chromium離線關頁重開、逐資源fetch及真WAV播放曾PASS，最新suite重跑中；實機 NOT_RUN |
+| P1-08 | 所有發聲非主線必做，發聲量只標參與 | L0～L10 mic off、模擬拒絕、無裝置全UI回歸PASS（Chromium／Firefox；最新WebKit CI待結束）；API mock不能稱為實體拒絕權限 |
+| P1-09 | 單一語音，離頁取消回調；完整409資源驗證才標離線，404／quota／hash錯誤可重試 | 音訊／教材包unit PASS；Chromium／Firefox離線關頁重開、逐資源fetch及真WAV播放PASS；WebKit停止origin方法已在前輪PASS，最新完整suite重跑中；實機 NOT_RUN |
 | P1-10 | 空／壞設定／IndexedDB錯誤可回復；20次進出無RAF、timer、mic殘留 | Chromium 20次同document測試PASS；Chromium／Firefox受阻IndexedDB、壞checkpoint恢復PASS |
 | P1-11 | schema＋unit/item/skill/scene/asset/level關聯＋實際生成選項檢查；11類壞fixture必失敗 | validate:data、contentValidation.test.ts PASS；39缺圖引用修正，人工素材審核 NOT_RUN |
 | P1-13 | Node22標準npmci；lint0/0；audit原18逐項分類／相容修補後0，不停規則、不改OS | PASS；dependencies.md與evidence/audit-*.json |
@@ -24,7 +24,7 @@
 
 ## 目前命令基準
 
-Node22.23.2：181 tests／18 files PASS；typecheck、validate:data、validate:blueprint、lint0/0、build PASS；npmci與audit0 PASS。此為工程結果，未代替人工／實機驗收。最終執行log、commit、環境、三引擎CI與截圖在工程回歸完成後補於本表。
+Node22.23.2：187 tests／19 files PASS；typecheck、validate:data、validate:blueprint、lint0/0、build PASS；npmci與audit0 PASS。此為工程結果，未代替人工／實機驗收。最終執行log、commit、環境、三引擎CI與截圖在工程回歸完成後補於本表。
 
 ## 已知外部依賴
 

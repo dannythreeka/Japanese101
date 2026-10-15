@@ -6,7 +6,7 @@
 
 ## 恢復與驗證
 
-目前程式變更已整合七遊戲作答／結算／checkpoint、v5玩家資料、音訊／mic、離線包、素材關聯、lint與相容依賴修補。181個單元測試通過；完整L0～L10三種mic情境33關實際UI通過；Chrome／Firefox核心與邊界另見evidence文字紀錄。三引擎完整CI及最終狀態見acceptance.md，勿沿用舊失敗run當新結果。
+目前程式變更已整合七遊戲作答／結算／checkpoint、v5玩家資料、音訊／mic、離線包、素材關聯、lint與相容依賴修補。187個單元測試通過；完整L0～L10三種mic情境33關實際UI通過；Chrome／Firefox核心與邊界另見evidence文字紀錄。三引擎完整CI及最終狀態見acceptance.md，勿沿用舊失敗run當新結果。
 
 ```sh
 cd /home/yyy/workspace/Japanese101
@@ -25,7 +25,7 @@ P0_E2E_PORT=4190 npm run test:e2e -- --project=chromium --project=firefox --outp
 
 挑未占用port，Playwright拒絕重用不明preview。離線測試會另開test-owned ephemeral origin並停止它，含無SW負控；不停止共享preview或任何使用者服務。WebKit不用有已知缺陷的setOffline旗標，仍必須在origin已停下完成重開／圖音／真WAV斷言。
 
-每個run用獨立output目錄，避免artifact互相覆寫；不要在某個preview正測試時重建dist。CImatrix三引擎、隔離context、3workers；本機預設1worker。WebKit本機缺系統庫，依P0既有診斷使用隔離CI；不要再試主機apt install-deps。CI的PulseAudio null sink只在GitHub runner，目的是讓真WAV原生播放有輸出端，不是實體審聽。
+每個run用獨立output目錄，避免artifact互相覆寫；不要在某個preview正測試時重建dist。CImatrix三引擎、隔離context；Chromium／Firefox各3workers，WebKit因trace證實啟動競爭改1worker；本機預設1worker。WebKit本機缺系統庫，依P0既有診斷使用隔離CI；不要再試主機apt install-deps。CI的PulseAudio null sink只在GitHub runner，目的是讓真WAV原生播放有輸出端，不是實體審聽。
 
 結果以actual session ID為準，不從同feature的歷史結果猜目前輪次。恢復／restart是非同步操作，測試先等實際掛載ID改變再判定；禁止放寬結果或以固定sleep假成功。
 

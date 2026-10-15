@@ -1,0 +1,372 @@
+code baseline=637ab42711cfd143cde2ee7a0471028bde88482f
+runtime src unchanged from 9100671
+node=22.23.2
+started=2026-10-15T09:14:38.449187+00:00
+command=npm run lint
+exit=1
+
+
+> japanese101@0.0.0 lint
+> eslint .
+
+
+/home/yyy/workspace/Japanese101/src/components/PetStage.tsx
+  33:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/components/PetStage.tsx:33:5
+  31 |   useEffect(() => {
+  32 |     if (!onShake) return
+> 33 |     setShaking(true)
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  34 |     const t = setTimeout(() => setShaking(false), 500)
+  35 |     return () => clearTimeout(t)
+  36 |   }, [onShake])  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/components/StarCount.tsx
+  12:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/components/StarCount.tsx:12:5
+  10 |
+  11 |   useEffect(() => {
+> 12 |     setAnimClass('animate-star-pop')
+     |     ^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  13 |     const t = setTimeout(() => setAnimClass(''), 600)
+  14 |     return () => clearTimeout(t)
+  15 |   }, [])  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/data/loaders.ts
+  19:5  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+  27:5  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+  35:5  error  There is no `cause` attached to the symptom error being thrown  preserve-caught-error
+
+/home/yyy/workspace/Japanese101/src/features/adventure/AdventureMap.tsx
+  97:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/adventure/AdventureMap.tsx:97:5
+   95 |     if (!progress) return
+   96 |     const idx = levels.findIndex((l) => getLevelStatus(l, progress) === 'next')
+>  97 |     setView(viewCenteredOn(idx >= 0 ? idx : 0))
+      |     ^^^^^^^ Avoid calling setState() directly within an effect
+   98 |   // eslint-disable-next-line react-hooks/exhaustive-deps
+   99 |   }, [progress])
+  100 |  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/features/adventure/LevelComplete.tsx
+  47:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/adventure/LevelComplete.tsx:47:5
+  45 |     const results = (adventureSession && adventureSession.levelId === levelId) ? adventureSession.results : {}
+  46 |     const earnedStars = computeStars(found, results)
+> 47 |     setStars(earnedStars)
+     |     ^^^^^^^^ Avoid calling setState() directly within an effect
+  48 |
+  49 |     const bonus = COMPLETION_BONUS + (earnedStars === 3 ? PERFECT_BONUS : 0)
+  50 |     setBonusXp(bonus)  react-hooks/set-state-in-effect
+  87:35  warning  Unused eslint-disable directive (no problems were reported from 'react-hooks/exhaustive-deps')
+
+/home/yyy/workspace/Japanese101/src/features/adventure/LevelEntry.tsx
+  47:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/adventure/LevelEntry.tsx:47:5
+  45 |     const { levels } = levelsData()
+  46 |     const found = levels.find((l) => l.level_id === levelId) ?? null
+> 47 |     setLevel(found)
+     |     ^^^^^^^^ Avoid calling setState() directly within an effect
+  48 |     getOrCreateAdventureProgress(getFirstLevelId()).then(async (adv) => {
+  49 |       const levels = getSortedLevels()
+  50 |       const fixed = ensureValidProgress(levels, adv)  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/features/adventure/VictoryCutscene.tsx
+  14:68  error  '_petName' is defined but never used  @typescript-eslint/no-unused-vars
+
+/home/yyy/workspace/Japanese101/src/features/flashcard/FlashCardDeck.tsx
+  59:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/flashcard/FlashCardDeck.tsx:59:5
+  57 |
+  58 |   useEffect(() => {
+> 59 |     setQueue([...unitWords])
+     |     ^^^^^^^^ Avoid calling setState() directly within an effect
+  60 |     setWordIdx(0)
+  61 |     setCorrectCount(0)
+  62 |   // eslint-disable-next-line react-hooks/exhaustive-deps  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/features/kana-catch/KanaCatchGame.tsx
+  179:7  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/kana-catch/KanaCatchGame.tsx:179:7
+  177 |     if (Array.isArray(ov.unitPool)) {
+  178 |       const poolLessons = LESSONS.filter(l => (ov.unitPool as string[]).includes(l.unit_id))
+> 179 |       setPooledPairs(poolLessons.flatMap(l => l.target_kana_pairs))
+      |       ^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  180 |       setPooledWords(poolLessons.flatMap(l => l.concept_words))
+  181 |     }
+  182 |     if (Array.isArray(ov.kanaPool)) {  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/features/kana-write/KanaWriteGame.tsx
+   81:43  error  '_difficulty' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 @typescript-eslint/no-unused-vars
+  112:31  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/home/yyy/workspace/Japanese101/src/features/kana-write/KanaWriteGame.tsx:112:31
+  110 |   const currentStroke = useRef<{ x: number; y: number }[]>([])
+  111 |   const isDrawing = useRef(false)
+> 112 |   const sessionStart = useRef(Date.now())
+      |                               ^^^^^^^^^^ Cannot call impure function
+  113 |
+  114 |   const [round, setRound] = useState<WriteTarget[]>([])
+  115 |   const [currentIdx, setCurrentIdx] = useState(0)                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/purity
+  134:9   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/kana-write/KanaWriteGame.tsx:134:9
+  132 |         const len = typeof roundLen === 'number' ? roundLen : ROUND_SIZE
+  133 |         const pool = filtered.length > 0 ? filtered : ALL_KANA
+> 134 |         setRound(pickRound(pool, len).map(k => toWriteTarget(k, writeDifficulty)))
+      |         ^^^^^^^^ Avoid calling setState() directly within an effect
+  135 |         return
+  136 |       }
+  137 |     }  react-hooks/set-state-in-effect
+  172:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/kana-write/KanaWriteGame.tsx:172:5
+  170 |   // Reset canvas when switching target
+  171 |   useEffect(() => {
+> 172 |     setHasStrokes(false)
+      |     ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  173 |     setUserSnapshot(null)
+  174 |     strokes.current = []
+  175 |     currentStroke.current = []                                                                                  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/features/kana-write/StrokeOrderDemo.tsx
+  35:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/kana-write/StrokeOrderDemo.tsx:35:5
+  33 |
+  34 |   useEffect(() => {
+> 35 |     setLoading(true)
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  36 |     setSvgs([])
+  37 |     void Promise.all(
+  38 |       codepoints.map((cp) =>  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/features/kana/KanaMatchGame.tsx
+   64:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/kana/KanaMatchGame.tsx:64:5
+  62 |     if (filteredKana.length === 0) return
+  63 |     const q = shuffle(filteredKana).slice(0, TOTAL_QUESTIONS)
+> 64 |     setQueue(q)
+     |     ^^^^^^^^ Avoid calling setState() directly within an effect
+  65 |     setCurrentIdx(0)
+  66 |     setScore(0)
+  67 |     setShowCompletion(false)                                                   react-hooks/set-state-in-effect
+   76:5   error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/kana/KanaMatchGame.tsx:76:5
+  74 |     const pool = filteredKana.length >= 4 ? filteredKana : ALL_KANA
+  75 |     const wrong = pickWrongChoices(current, pool, 3)
+> 76 |     setChoices(shuffle([current, ...wrong]))
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  77 |     setAnswered(false)
+  78 |     setCorrectId(null)
+  79 |     setWrongId(null)  react-hooks/set-state-in-effect
+  128:19  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/home/yyy/workspace/Japanese101/src/features/kana/KanaMatchGame.tsx:128:19
+  126 |     const duration = endSession()
+  127 |     await saveSession({
+> 128 |       id: `kana-${Date.now()}`,
+      |                   ^^^^^^^^^^ Cannot call impure function
+  129 |       date: Date.now(),
+  130 |       durationMs: duration,
+  131 |       feature: 'kana',                                                                                                                                                                                                                                                                                                                                                                                                                                                          react-hooks/purity
+  129:13  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/home/yyy/workspace/Japanese101/src/features/kana/KanaMatchGame.tsx:129:13
+  127 |     await saveSession({
+  128 |       id: `kana-${Date.now()}`,
+> 129 |       date: Date.now(),
+      |             ^^^^^^^^^^ Cannot call impure function
+  130 |       durationMs: duration,
+  131 |       feature: 'kana',
+  132 |       correct: finalScore,                                                                                                                                                                                                                                                                                                                                                                                                                                                                       react-hooks/purity
+
+/home/yyy/workspace/Japanese101/src/features/kotodama/KotodamaGame.tsx
+   77:3   error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/home/yyy/workspace/Japanese101/src/features/kotodama/KotodamaGame.tsx:77:3
+  75 |   // Keep advance logic in a ref to avoid stale closures in setTimeout
+  76 |   const advanceRef = useRef<() => void>(() => undefined)
+> 77 |   advanceRef.current = () => {
+     |   ^^^^^^^^^^^^^^^^^^ Cannot update ref during render
+  78 |     if (roundIndex + 1 >= words.length) {
+  79 |       setPhase('done')
+  80 |     } else {                                                                                                                                                                                                                                                                                                                    react-hooks/refs
+  350:23  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/home/yyy/workspace/Japanese101/src/features/kotodama/KotodamaGame.tsx:350:23
+  348 |             onPointerUp={stopListening}
+  349 |             onPointerCancel={stopListening}
+> 350 |             disabled={isListening && !sessionRef.current}
+      |                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  351 |             className={`w-28 h-28 rounded-full text-5xl shadow-xl flex items-center justify-center transition-all select-none ${
+  352 |               isListening
+  353 |                 ? 'bg-red-400 scale-110 shadow-red-300/60 shadow-2xl'                                                                                                                               react-hooks/refs
+  350:38  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/home/yyy/workspace/Japanese101/src/features/kotodama/KotodamaGame.tsx:350:38
+  348 |             onPointerUp={stopListening}
+  349 |             onPointerCancel={stopListening}
+> 350 |             disabled={isListening && !sessionRef.current}
+      |                                      ^^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  351 |             className={`w-28 h-28 rounded-full text-5xl shadow-xl flex items-center justify-center transition-all select-none ${
+  352 |               isListening
+  353 |                 ? 'bg-red-400 scale-110 shadow-red-300/60 shadow-2xl'                                                                                                                               react-hooks/refs
+  350:39  error  Error: Cannot access refs during render
+
+React refs are values that are not needed for rendering. Refs should only be accessed outside of render, such as in event handlers or effects. Accessing a ref value (the `current` property) during render can cause your component not to update as expected (https://react.dev/reference/react/useRef).
+
+/home/yyy/workspace/Japanese101/src/features/kotodama/KotodamaGame.tsx:350:39
+  348 |             onPointerUp={stopListening}
+  349 |             onPointerCancel={stopListening}
+> 350 |             disabled={isListening && !sessionRef.current}
+      |                                       ^^^^^^^^^^^^^^^^^^ Cannot access ref value during render
+  351 |             className={`w-28 h-28 rounded-full text-5xl shadow-xl flex items-center justify-center transition-all select-none ${
+  352 |               isListening
+  353 |                 ? 'bg-red-400 scale-110 shadow-red-300/60 shadow-2xl'
+
+To initialize a ref only once, check that the ref is null with the pattern `if (ref.current == null) { ref.current = ... }`  react-hooks/refs
+
+/home/yyy/workspace/Japanese101/src/features/parent/ParentDashboard.tsx
+  56:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+/home/yyy/workspace/Japanese101/src/features/parent/ParentDashboard.tsx:56:5
+  54 |   useEffect(() => {
+  55 |     if (!unlocked) return
+> 56 |     setLoading(true)
+     |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  57 |     Promise.all([
+  58 |       getTotalStudyTime(),
+  59 |       getAllProgress(),  react-hooks/set-state-in-effect
+
+/home/yyy/workspace/Japanese101/src/features/quiz/ListenQuiz.tsx
+  121:19  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/home/yyy/workspace/Japanese101/src/features/quiz/ListenQuiz.tsx:121:19
+  119 |     const duration = endSession()
+  120 |     await saveSession({
+> 121 |       id: `quiz-${Date.now()}`,
+      |                   ^^^^^^^^^^ Cannot call impure function
+  122 |       date: Date.now(),
+  123 |       durationMs: duration,
+  124 |       feature: 'quiz',  react-hooks/purity
+  122:13  error  Error: Cannot call impure function during render
+
+`Date.now` is an impure function. Calling an impure function can produce unstable results that update unpredictably when the component happens to re-render. (https://react.dev/reference/rules/components-and-hooks-must-be-pure#components-and-hooks-must-be-idempotent).
+
+/home/yyy/workspace/Japanese101/src/features/quiz/ListenQuiz.tsx:122:13
+  120 |     await saveSession({
+  121 |       id: `quiz-${Date.now()}`,
+> 122 |       date: Date.now(),
+      |             ^^^^^^^^^^ Cannot call impure function
+  123 |       durationMs: duration,
+  124 |       feature: 'quiz',
+  125 |       correct: finalScore,               react-hooks/purity
+
+/home/yyy/workspace/Japanese101/src/lib/pet.ts
+  15:35  error  '_level' is defined but never used  @typescript-eslint/no-unused-vars
+
+✖ 29 problems (28 errors, 1 warning)
+  0 errors and 1 warning potentially fixable with the `--fix` option.
+

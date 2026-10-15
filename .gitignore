@@ -28,3 +28,7 @@ dist-ssr
 
 # Generated audio
 public/assets/audio/*.wav
+
+# Isolated browser artifacts (CI uploads; selected evidence is committed)
+/test-results/
+/playwright-report/

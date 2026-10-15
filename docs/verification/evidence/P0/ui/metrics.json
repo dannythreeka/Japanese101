@@ -1,0 +1,2650 @@
+{
+  "base": "9100671 (runtime src unchanged)",
+  "browser": "145.0.7632.6",
+  "serviceWorkers": "block",
+  "fixture": "isolated QA-P0; uiLang=zh; micMode=offline; no real mic opened",
+  "results": [
+    {
+      "name": "home",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 288,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 288,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "profiles",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "プレイヤー",
+          "width": 288,
+          "height": 80
+        },
+        {
+          "label": "QA-P0",
+          "width": 288,
+          "height": 80
+        },
+        {
+          "label": "新增玩家",
+          "width": 288,
+          "height": 72
+        },
+        {
+          "label": "開啟家長設定",
+          "width": 122,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "選擇玩家\n🦊\nプレイヤー\n🦊\nQA-P0\n➕\n新增玩家\n⚙ 家長設定"
+    },
+    {
+      "name": "adventure",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "謎の卵",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はじまりの森",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "せせらぎの川",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "そよ風の丘",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "夕暮れの道",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "平原の決戦",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "霧の鉱山",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はね橋の谷",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "こだまの洞窟",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "ねじれのお城",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "しんかの祭壇",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "回到目前關卡",
+          "width": 48,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "🥚\n✦\n✧\n✦\n✧\n🐚\n🐟\nはじまり\nきずなの里\nしんかの里\n← 首頁\n冒險之島\nなぞのたまご\n（尚未開放）\n（尚未開放）\n⭐\n謎の卵\n1\nはじまりの森\n2\nせせらぎの川\n3\nそよ風の丘\n4\n夕暮れの道\n大魔王\n👹\n平原の決戦\n6\n霧の鉱山\n7\nはね橋の谷\n8\nこだまの洞窟\n9\nねじれのお城\n大魔王\n👹\nしんかの祭壇\n🎯"
+    },
+    {
+      "name": "unit",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "返回地圖",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始！",
+          "width": 288,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "← 地圖\n謎の卵\n\nあ・い・う・え・お\n\nぼうけんの島のおくに、ふしぎな光をはなつたまごがあった。やさしく声をかけると、何かが目をさます…\n\n在冒險島的深處,有一顆等待已久的蛋。輕輕喚一聲,它就會醒來…\n\nXP: +80\n挑戰清單\n0 / 2\n🫧 かな キャッチ (きく)\n必要\n開始玩\n✨ ことだま しょうかん\n選玩\n開始玩\n開始！"
+    },
+    {
+      "name": "catch",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "あ\n平假名\n聽聲音找平假名",
+          "width": 288,
+          "height": 132
+        },
+        {
+          "label": "ア\n片假名\n聽聲音找片假名",
+          "width": 288,
+          "height": 132
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 はじまりの森:あ・か・さ行",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 せせらぎの川:た・な行",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 そよ風の丘:は・ま行",
+          "width": 288,
+          "height": 60
+        },
+        {
+          "label": "📘 夕暮れの道:や・ら・わ行",
+          "width": 288,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "←\n接住假名！\n\n選擇遊戲模式？\n\nあ\n平假名\n聽聲音找平假名\nア\n片假名\n聽聲音找片假名\n🔤\n比較\n有濁點嗎？\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n🖼️\n找詞語\n找出符合圖片的詞語！\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n📘 はじまりの森:あ・か・さ行\n📘 せせらぎの川:た・な行\n📘 そよ風の丘:は・ま行\n📘 夕暮れの道:や・ら・わ行"
+    },
+    {
+      "name": "write",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "←",
+          "width": 24,
+          "height": 32
+        },
+        {
+          "label": "再聽一次",
+          "width": 94,
+          "height": 48
+        },
+        {
+          "label": "清除",
+          "width": 92,
+          "height": 52
+        },
+        {
+          "label": "確認 ✓",
+          "width": 184,
+          "height": 52
+        },
+        {
+          "label": "示範 ✍️",
+          "width": 89,
+          "height": 36
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1 / 5\n🤖\n🔊\nro\n清除\n確認 ✓\n示範 ✍️\n\n試著描繪淡色的字！"
+    },
+    {
+      "name": "voice",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "返回",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "唸言靈",
+          "width": 112,
+          "height": 112
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1/3\nゆうやけ\n晚霞\n🎤\n\n按住並說出來！"
+    },
+    {
+      "name": "parent",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "重置此玩家的進度 プレイヤー",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 プレイヤー",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "重置此玩家的進度 QA-P0",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 QA-P0",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "幼齢 🐣",
+          "width": 118,
+          "height": 52
+        },
+        {
+          "label": "進階 🚀",
+          "width": 118,
+          "height": 52
+        },
+        {
+          "label": "平假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "片假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "兩者皆有",
+          "width": 112,
+          "height": 44
+        },
+        {
+          "label": "第1級（清音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第2級（濁音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第3級（拗音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "全部",
+          "width": 72,
+          "height": 44
+        },
+        {
+          "label": "Lv1：描字（有範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv2：空寫（無範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv3：寫詞語",
+          "width": 146,
+          "height": 44
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "靜音",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "關閉",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "離線模式",
+          "width": 120,
+          "height": 44
+        },
+        {
+          "label": "高精度",
+          "width": 100,
+          "height": 44
+        }
+      ],
+      "lang": "en",
+      "text": "←\n家長儀表板\n⏱\n學習時間\n0分\n⭐\n獲得星數\n0\n冒險進度\n通關數\n0 / 11\n冒險星星\n★ 0\n大魔王尚未登場…\n玩家管理\n🦊\n\nプレイヤー\n\n重置進度\n刪除\n🦊\n\nQA-P0\n\n目前玩家\n\n重置進度\n刪除\n正確率\n平假名\n0%\n詞彙\n0%\n本週\n10/9\n10/10\n10/11\n10/12\n10/13\n10/14\n10/15\n設定\n\n年齡模式\n\n幼齢 🐣\n進階 🚀\n\n含羅馬字・節奏較慢・以清音為主（適合6〜8歲）\n\n假名模式\n\n平假名\n片假名\n兩者皆有\n\n難易度\n\n第1級（清音）\n第2級（濁音）\n第3級（拗音）\n全部\n\n書寫難易度\n\nLv1：描字（有範本）\nLv2：空寫（無範本）\nLv3：寫詞語\n\n課程\n\n配著歌唱 あいうえお(母音入門)\nかき 與 かぎ(濁音半濁音)\nねこ 與 ねっこ(促音)\nおばさん 與 おばあさん(長音)\nおもち 與 おもちゃ(拗音)\nはじまりの森:あ・か・さ行\nせせらぎの川:た・な行\nそよ風の丘:は・ま行\n夕暮れの道:や・ら・わ行\n音效設定\n🔊\n音量 100%\n麥克風設定（言靈）\n\n在「言靈召喚」遊戲中讓孩子可以使用語音功能。\n\n關閉\n離線模"
+    },
+    {
+      "name": "sync",
+      "width": 320,
+      "scrollWidth": 320,
+      "buttons": [
+        {
+          "label": "關閉",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "label": "登入",
+          "width": 240,
+          "height": 48
+        },
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 288,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 288,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "☁️ 雲端同步\n×\n\n請輸入帳號與密碼。\n\n登入\n日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "home",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 358,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 358,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "profiles",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "プレイヤー",
+          "width": 358,
+          "height": 80
+        },
+        {
+          "label": "QA-P0",
+          "width": 358,
+          "height": 80
+        },
+        {
+          "label": "新增玩家",
+          "width": 358,
+          "height": 72
+        },
+        {
+          "label": "開啟家長設定",
+          "width": 122,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "選擇玩家\n🦊\nプレイヤー\n🦊\nQA-P0\n➕\n新增玩家\n⚙ 家長設定"
+    },
+    {
+      "name": "adventure",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "謎の卵",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はじまりの森",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "せせらぎの川",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "そよ風の丘",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "夕暮れの道",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "平原の決戦",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "霧の鉱山",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はね橋の谷",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "こだまの洞窟",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "ねじれのお城",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "しんかの祭壇",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "回到目前關卡",
+          "width": 48,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "🥚\n✦\n✧\n✦\n✧\n🐚\n🐟\nはじまり\nきずなの里\nしんかの里\n← 首頁\n冒險之島\nなぞのたまご\n（尚未開放）\n（尚未開放）\n⭐\n謎の卵\n1\nはじまりの森\n2\nせせらぎの川\n3\nそよ風の丘\n4\n夕暮れの道\n大魔王\n👹\n平原の決戦\n6\n霧の鉱山\n7\nはね橋の谷\n8\nこだまの洞窟\n9\nねじれのお城\n大魔王\n👹\nしんかの祭壇\n🎯"
+    },
+    {
+      "name": "unit",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "返回地圖",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始！",
+          "width": 358,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "← 地圖\n謎の卵\n\nあ・い・う・え・お\n\nぼうけんの島のおくに、ふしぎな光をはなつたまごがあった。やさしく声をかけると、何かが目をさます…\n\n在冒險島的深處,有一顆等待已久的蛋。輕輕喚一聲,它就會醒來…\n\nXP: +80\n挑戰清單\n0 / 2\n🫧 かな キャッチ (きく)\n必要\n開始玩\n✨ ことだま しょうかん\n選玩\n開始玩\n開始！"
+    },
+    {
+      "name": "catch",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "あ\n平假名\n聽聲音找平假名",
+          "width": 358,
+          "height": 132
+        },
+        {
+          "label": "ア\n片假名\n聽聲音找片假名",
+          "width": 358,
+          "height": 132
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 はじまりの森:あ・か・さ行",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 せせらぎの川:た・な行",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 そよ風の丘:は・ま行",
+          "width": 358,
+          "height": 60
+        },
+        {
+          "label": "📘 夕暮れの道:や・ら・わ行",
+          "width": 358,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "←\n接住假名！\n\n選擇遊戲模式？\n\nあ\n平假名\n聽聲音找平假名\nア\n片假名\n聽聲音找片假名\n🔤\n比較\n有濁點嗎？\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n🖼️\n找詞語\n找出符合圖片的詞語！\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n📘 はじまりの森:あ・か・さ行\n📘 せせらぎの川:た・な行\n📘 そよ風の丘:は・ま行\n📘 夕暮れの道:や・ら・わ行"
+    },
+    {
+      "name": "write",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "←",
+          "width": 24,
+          "height": 32
+        },
+        {
+          "label": "再聽一次",
+          "width": 98,
+          "height": 48
+        },
+        {
+          "label": "清除",
+          "width": 115,
+          "height": 52
+        },
+        {
+          "label": "確認 ✓",
+          "width": 231,
+          "height": 52
+        },
+        {
+          "label": "示範 ✍️",
+          "width": 89,
+          "height": 36
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1 / 5\n🐍\n🔊\nhe\n清除\n確認 ✓\n示範 ✍️\n\n試著描繪淡色的字！"
+    },
+    {
+      "name": "voice",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "返回",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "唸言靈",
+          "width": 112,
+          "height": 112
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1/3\n✦\n✦\nおにぎり\n飯糰\n🎤\n\n按住並說出來！"
+    },
+    {
+      "name": "parent",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "重置此玩家的進度 プレイヤー",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 プレイヤー",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "重置此玩家的進度 QA-P0",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 QA-P0",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "幼齢 🐣",
+          "width": 153,
+          "height": 52
+        },
+        {
+          "label": "進階 🚀",
+          "width": 153,
+          "height": 52
+        },
+        {
+          "label": "平假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "片假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "兩者皆有",
+          "width": 112,
+          "height": 44
+        },
+        {
+          "label": "第1級（清音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第2級（濁音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第3級（拗音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "全部",
+          "width": 72,
+          "height": 44
+        },
+        {
+          "label": "Lv1：描字（有範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv2：空寫（無範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv3：寫詞語",
+          "width": 146,
+          "height": 44
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "靜音",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "關閉",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "離線模式",
+          "width": 120,
+          "height": 44
+        },
+        {
+          "label": "高精度",
+          "width": 100,
+          "height": 44
+        }
+      ],
+      "lang": "en",
+      "text": "←\n家長儀表板\n⏱\n學習時間\n0分\n⭐\n獲得星數\n0\n冒險進度\n通關數\n0 / 11\n冒險星星\n★ 0\n大魔王尚未登場…\n玩家管理\n🦊\n\nプレイヤー\n\n重置進度\n刪除\n🦊\n\nQA-P0\n\n目前玩家\n\n重置進度\n刪除\n正確率\n平假名\n0%\n詞彙\n0%\n本週\n10/9\n10/10\n10/11\n10/12\n10/13\n10/14\n10/15\n設定\n\n年齡模式\n\n幼齢 🐣\n進階 🚀\n\n含羅馬字・節奏較慢・以清音為主（適合6〜8歲）\n\n假名模式\n\n平假名\n片假名\n兩者皆有\n\n難易度\n\n第1級（清音）\n第2級（濁音）\n第3級（拗音）\n全部\n\n書寫難易度\n\nLv1：描字（有範本）\nLv2：空寫（無範本）\nLv3：寫詞語\n\n課程\n\n配著歌唱 あいうえお(母音入門)\nかき 與 かぎ(濁音半濁音)\nねこ 與 ねっこ(促音)\nおばさん 與 おばあさん(長音)\nおもち 與 おもちゃ(拗音)\nはじまりの森:あ・か・さ行\nせせらぎの川:た・な行\nそよ風の丘:は・ま行\n夕暮れの道:や・ら・わ行\n音效設定\n🔊\n音量 100%\n麥克風設定（言靈）\n\n在「言靈召喚」遊戲中讓孩子可以使用語音功能。\n\n關閉\n離線模"
+    },
+    {
+      "name": "sync",
+      "width": 390,
+      "scrollWidth": 390,
+      "buttons": [
+        {
+          "label": "關閉",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "label": "登入",
+          "width": 310,
+          "height": 48
+        },
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 358,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 358,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "☁️ 雲端同步\n×\n\n請輸入帳號與密碼。\n\n登入\n日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "home",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 384,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "profiles",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "プレイヤー",
+          "width": 384,
+          "height": 80
+        },
+        {
+          "label": "QA-P0",
+          "width": 384,
+          "height": 80
+        },
+        {
+          "label": "新增玩家",
+          "width": 384,
+          "height": 72
+        },
+        {
+          "label": "開啟家長設定",
+          "width": 122,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "選擇玩家\n🦊\nプレイヤー\n🦊\nQA-P0\n➕\n新增玩家\n⚙ 家長設定"
+    },
+    {
+      "name": "adventure",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "謎の卵",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はじまりの森",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "せせらぎの川",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "そよ風の丘",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "夕暮れの道",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "平原の決戦",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "霧の鉱山",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はね橋の谷",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "こだまの洞窟",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "ねじれのお城",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "しんかの祭壇",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "回到目前關卡",
+          "width": 48,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "🥚\n✦\n✧\n✦\n✧\n🐚\n🐟\nはじまり\nきずなの里\nしんかの里\n← 首頁\n冒險之島\nなぞのたまご\n（尚未開放）\n（尚未開放）\n⭐\n謎の卵\n1\nはじまりの森\n2\nせせらぎの川\n3\nそよ風の丘\n4\n夕暮れの道\n大魔王\n👹\n平原の決戦\n6\n霧の鉱山\n7\nはね橋の谷\n8\nこだまの洞窟\n9\nねじれのお城\n大魔王\n👹\nしんかの祭壇\n🎯"
+    },
+    {
+      "name": "unit",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "返回地圖",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始！",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "← 地圖\n謎の卵\n\nあ・い・う・え・お\n\nぼうけんの島のおくに、ふしぎな光をはなつたまごがあった。やさしく声をかけると、何かが目をさます…\n\n在冒險島的深處,有一顆等待已久的蛋。輕輕喚一聲,它就會醒來…\n\nXP: +80\n挑戰清單\n0 / 2\n🫧 かな キャッチ (きく)\n必要\n開始玩\n✨ ことだま しょうかん\n選玩\n開始玩\n開始！"
+    },
+    {
+      "name": "catch",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "あ\n平假名\n聽聲音找平假名",
+          "width": 384,
+          "height": 132
+        },
+        {
+          "label": "ア\n片假名\n聽聲音找片假名",
+          "width": 384,
+          "height": 132
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 はじまりの森:あ・か・さ行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 せせらぎの川:た・な行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 そよ風の丘:は・ま行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 夕暮れの道:や・ら・わ行",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "←\n接住假名！\n\n選擇遊戲模式？\n\nあ\n平假名\n聽聲音找平假名\nア\n片假名\n聽聲音找片假名\n🔤\n比較\n有濁點嗎？\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n🖼️\n找詞語\n找出符合圖片的詞語！\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n📘 はじまりの森:あ・か・さ行\n📘 せせらぎの川:た・な行\n📘 そよ風の丘:は・ま行\n📘 夕暮れの道:や・ら・わ行"
+    },
+    {
+      "name": "write",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "←",
+          "width": 24,
+          "height": 32
+        },
+        {
+          "label": "再聽一次",
+          "width": 91,
+          "height": 48
+        },
+        {
+          "label": "清除",
+          "width": 124,
+          "height": 52
+        },
+        {
+          "label": "確認 ✓",
+          "width": 248,
+          "height": 52
+        },
+        {
+          "label": "示範 ✍️",
+          "width": 89,
+          "height": 36
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1 / 5\n🥁\n🔊\nta\n清除\n確認 ✓\n示範 ✍️\n\n試著描繪淡色的字！"
+    },
+    {
+      "name": "voice",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "返回",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "唸言靈",
+          "width": 112,
+          "height": 112
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1/3\nいちご\n草莓\n🎤\n\n按住並說出來！"
+    },
+    {
+      "name": "parent",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "重置此玩家的進度 プレイヤー",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 プレイヤー",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "重置此玩家的進度 QA-P0",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 QA-P0",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "幼齢 🐣",
+          "width": 230,
+          "height": 52
+        },
+        {
+          "label": "進階 🚀",
+          "width": 230,
+          "height": 52
+        },
+        {
+          "label": "平假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "片假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "兩者皆有",
+          "width": 112,
+          "height": 44
+        },
+        {
+          "label": "第1級（清音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第2級（濁音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第3級（拗音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "全部",
+          "width": 72,
+          "height": 44
+        },
+        {
+          "label": "Lv1：描字（有範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv2：空寫（無範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv3：寫詞語",
+          "width": 146,
+          "height": 44
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "靜音",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "關閉",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "離線模式",
+          "width": 120,
+          "height": 44
+        },
+        {
+          "label": "高精度",
+          "width": 100,
+          "height": 44
+        }
+      ],
+      "lang": "en",
+      "text": "←\n家長儀表板\n⏱\n學習時間\n0分\n⭐\n獲得星數\n0\n冒險進度\n通關數\n0 / 11\n冒險星星\n★ 0\n大魔王尚未登場…\n玩家管理\n🦊\n\nプレイヤー\n\n重置進度\n刪除\n🦊\n\nQA-P0\n\n目前玩家\n\n重置進度\n刪除\n正確率\n平假名\n0%\n詞彙\n0%\n本週\n10/9\n10/10\n10/11\n10/12\n10/13\n10/14\n10/15\n設定\n\n年齡模式\n\n幼齢 🐣\n進階 🚀\n\n含羅馬字・節奏較慢・以清音為主（適合6〜8歲）\n\n假名模式\n\n平假名\n片假名\n兩者皆有\n\n難易度\n\n第1級（清音）\n第2級（濁音）\n第3級（拗音）\n全部\n\n書寫難易度\n\nLv1：描字（有範本）\nLv2：空寫（無範本）\nLv3：寫詞語\n\n課程\n\n配著歌唱 あいうえお(母音入門)\nかき 與 かぎ(濁音半濁音)\nねこ 與 ねっこ(促音)\nおばさん 與 おばあさん(長音)\nおもち 與 おもちゃ(拗音)\nはじまりの森:あ・か・さ行\nせせらぎの川:た・な行\nそよ風の丘:は・ま行\n夕暮れの道:や・ら・わ行\n音效設定\n🔊\n音量 100%\n麥克風設定（言靈）\n\n在「言靈召喚」遊戲中讓孩子可以使用語音功能。\n\n關閉\n離線模"
+    },
+    {
+      "name": "sync",
+      "width": 768,
+      "scrollWidth": 768,
+      "buttons": [
+        {
+          "label": "關閉",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "label": "登入",
+          "width": 336,
+          "height": 48
+        },
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 384,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "☁️ 雲端同步\n×\n\n請輸入帳號與密碼。\n\n登入\n日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "home",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 384,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "profiles",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "プレイヤー",
+          "width": 384,
+          "height": 80
+        },
+        {
+          "label": "QA-P0",
+          "width": 384,
+          "height": 80
+        },
+        {
+          "label": "新增玩家",
+          "width": 384,
+          "height": 72
+        },
+        {
+          "label": "開啟家長設定",
+          "width": 122,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "選擇玩家\n🦊\nプレイヤー\n🦊\nQA-P0\n➕\n新增玩家\n⚙ 家長設定"
+    },
+    {
+      "name": "adventure",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "謎の卵",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はじまりの森",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "せせらぎの川",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "そよ風の丘",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "夕暮れの道",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "平原の決戦",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "霧の鉱山",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はね橋の谷",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "こだまの洞窟",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "ねじれのお城",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "しんかの祭壇",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "回到目前關卡",
+          "width": 48,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "🥚\n✦\n✧\n✦\n✧\n🐚\n🐟\nはじまり\nきずなの里\nしんかの里\n← 首頁\n冒險之島\nなぞのたまご\n（尚未開放）\n（尚未開放）\n⭐\n謎の卵\n1\nはじまりの森\n2\nせせらぎの川\n3\nそよ風の丘\n4\n夕暮れの道\n大魔王\n👹\n平原の決戦\n6\n霧の鉱山\n7\nはね橋の谷\n8\nこだまの洞窟\n9\nねじれのお城\n大魔王\n👹\nしんかの祭壇\n🎯"
+    },
+    {
+      "name": "unit",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "返回地圖",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始！",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "← 地圖\n謎の卵\n\nあ・い・う・え・お\n\nぼうけんの島のおくに、ふしぎな光をはなつたまごがあった。やさしく声をかけると、何かが目をさます…\n\n在冒險島的深處,有一顆等待已久的蛋。輕輕喚一聲,它就會醒來…\n\nXP: +80\n挑戰清單\n0 / 2\n🫧 かな キャッチ (きく)\n必要\n開始玩\n✨ ことだま しょうかん\n選玩\n開始玩\n開始！"
+    },
+    {
+      "name": "catch",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "あ\n平假名\n聽聲音找平假名",
+          "width": 384,
+          "height": 132
+        },
+        {
+          "label": "ア\n片假名\n聽聲音找片假名",
+          "width": 384,
+          "height": 132
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 はじまりの森:あ・か・さ行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 せせらぎの川:た・な行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 そよ風の丘:は・ま行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 夕暮れの道:や・ら・わ行",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "←\n接住假名！\n\n選擇遊戲模式？\n\nあ\n平假名\n聽聲音找平假名\nア\n片假名\n聽聲音找片假名\n🔤\n比較\n有濁點嗎？\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n🖼️\n找詞語\n找出符合圖片的詞語！\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n📘 はじまりの森:あ・か・さ行\n📘 せせらぎの川:た・な行\n📘 そよ風の丘:は・ま行\n📘 夕暮れの道:や・ら・わ行"
+    },
+    {
+      "name": "write",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "←",
+          "width": 24,
+          "height": 32
+        },
+        {
+          "label": "再聽一次",
+          "width": 83,
+          "height": 48
+        },
+        {
+          "label": "清除",
+          "width": 124,
+          "height": 52
+        },
+        {
+          "label": "確認 ✓",
+          "width": 248,
+          "height": 52
+        },
+        {
+          "label": "示範 ✍️",
+          "width": 89,
+          "height": 36
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1 / 5\n🐜\n🔊\na\n清除\n確認 ✓\n示範 ✍️\n\n試著描繪淡色的字！"
+    },
+    {
+      "name": "voice",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "返回",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "唸言靈",
+          "width": 112,
+          "height": 112
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1/3\nまど\n窗戶\n🎤\n\n按住並說出來！"
+    },
+    {
+      "name": "parent",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "重置此玩家的進度 プレイヤー",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 プレイヤー",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "重置此玩家的進度 QA-P0",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 QA-P0",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "幼齢 🐣",
+          "width": 230,
+          "height": 52
+        },
+        {
+          "label": "進階 🚀",
+          "width": 230,
+          "height": 52
+        },
+        {
+          "label": "平假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "片假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "兩者皆有",
+          "width": 112,
+          "height": 44
+        },
+        {
+          "label": "第1級（清音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第2級（濁音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第3級（拗音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "全部",
+          "width": 72,
+          "height": 44
+        },
+        {
+          "label": "Lv1：描字（有範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv2：空寫（無範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv3：寫詞語",
+          "width": 146,
+          "height": 44
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "靜音",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "關閉",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "離線模式",
+          "width": 120,
+          "height": 44
+        },
+        {
+          "label": "高精度",
+          "width": 100,
+          "height": 44
+        }
+      ],
+      "lang": "en",
+      "text": "←\n家長儀表板\n⏱\n學習時間\n0分\n⭐\n獲得星數\n0\n冒險進度\n通關數\n0 / 11\n冒險星星\n★ 0\n大魔王尚未登場…\n玩家管理\n🦊\n\nプレイヤー\n\n重置進度\n刪除\n🦊\n\nQA-P0\n\n目前玩家\n\n重置進度\n刪除\n正確率\n平假名\n0%\n詞彙\n0%\n本週\n10/9\n10/10\n10/11\n10/12\n10/13\n10/14\n10/15\n設定\n\n年齡模式\n\n幼齢 🐣\n進階 🚀\n\n含羅馬字・節奏較慢・以清音為主（適合6〜8歲）\n\n假名模式\n\n平假名\n片假名\n兩者皆有\n\n難易度\n\n第1級（清音）\n第2級（濁音）\n第3級（拗音）\n全部\n\n書寫難易度\n\nLv1：描字（有範本）\nLv2：空寫（無範本）\nLv3：寫詞語\n\n課程\n\n配著歌唱 あいうえお(母音入門)\nかき 與 かぎ(濁音半濁音)\nねこ 與 ねっこ(促音)\nおばさん 與 おばあさん(長音)\nおもち 與 おもちゃ(拗音)\nはじまりの森:あ・か・さ行\nせせらぎの川:た・な行\nそよ風の丘:は・ま行\n夕暮れの道:や・ら・わ行\n音效設定\n🔊\n音量 100%\n麥克風設定（言靈）\n\n在「言靈召喚」遊戲中讓孩子可以使用語音功能。\n\n關閉\n離線模"
+    },
+    {
+      "name": "sync",
+      "width": 1024,
+      "scrollWidth": 1024,
+      "buttons": [
+        {
+          "label": "關閉",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "label": "登入",
+          "width": 336,
+          "height": 48
+        },
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 384,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "☁️ 雲端同步\n×\n\n請輸入帳號與密碼。\n\n登入\n日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "home",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 384,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "profiles",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "プレイヤー",
+          "width": 384,
+          "height": 80
+        },
+        {
+          "label": "QA-P0",
+          "width": 384,
+          "height": 80
+        },
+        {
+          "label": "新增玩家",
+          "width": 384,
+          "height": 72
+        },
+        {
+          "label": "開啟家長設定",
+          "width": 122,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "選擇玩家\n🦊\nプレイヤー\n🦊\nQA-P0\n➕\n新增玩家\n⚙ 家長設定"
+    },
+    {
+      "name": "adventure",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "謎の卵",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はじまりの森",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "せせらぎの川",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "そよ風の丘",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "夕暮れの道",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "平原の決戦",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "霧の鉱山",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "はね橋の谷",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "こだまの洞窟",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "ねじれのお城",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "しんかの祭壇",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "回到目前關卡",
+          "width": 48,
+          "height": 48
+        }
+      ],
+      "lang": "en",
+      "text": "🥚\n✦\n✧\n✦\n✧\n🐚\n🐟\nはじまり\nきずなの里\nしんかの里\n← 首頁\n冒險之島\nなぞのたまご\n（尚未開放）\n（尚未開放）\n⭐\n謎の卵\n1\nはじまりの森\n2\nせせらぎの川\n3\nそよ風の丘\n4\n夕暮れの道\n大魔王\n👹\n平原の決戦\n6\n霧の鉱山\n7\nはね橋の谷\n8\nこだまの洞窟\n9\nねじれのお城\n大魔王\n👹\nしんかの祭壇\n🎯"
+    },
+    {
+      "name": "unit",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "返回地圖",
+          "width": 78,
+          "height": 36
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始玩",
+          "width": 66,
+          "height": 32
+        },
+        {
+          "label": "開始！",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "← 地圖\n謎の卵\n\nあ・い・う・え・お\n\nぼうけんの島のおくに、ふしぎな光をはなつたまごがあった。やさしく声をかけると、何かが目をさます…\n\n在冒險島的深處,有一顆等待已久的蛋。輕輕喚一聲,它就會醒來…\n\nXP: +80\n挑戰清單\n0 / 2\n🫧 かな キャッチ (きく)\n必要\n開始玩\n✨ ことだま しょうかん\n選玩\n開始玩\n開始！"
+    },
+    {
+      "name": "catch",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "あ\n平假名\n聽聲音找平假名",
+          "width": 384,
+          "height": 132
+        },
+        {
+          "label": "ア\n片假名\n聽聲音找片假名",
+          "width": 384,
+          "height": 132
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 かき 與 かぎ(濁音半濁音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 ねこ 與 ねっこ(促音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おばさん 與 おばあさん(長音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 おもち 與 おもちゃ(拗音)",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 はじまりの森:あ・か・さ行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 せせらぎの川:た・な行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 そよ風の丘:は・ま行",
+          "width": 384,
+          "height": 60
+        },
+        {
+          "label": "📘 夕暮れの道:や・ら・わ行",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "←\n接住假名！\n\n選擇遊戲模式？\n\nあ\n平假名\n聽聲音找平假名\nア\n片假名\n聽聲音找片假名\n🔤\n比較\n有濁點嗎？\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n🖼️\n找詞語\n找出符合圖片的詞語！\n📘 かき 與 かぎ(濁音半濁音)\n📘 ねこ 與 ねっこ(促音)\n📘 おばさん 與 おばあさん(長音)\n📘 おもち 與 おもちゃ(拗音)\n📘 はじまりの森:あ・か・さ行\n📘 せせらぎの川:た・な行\n📘 そよ風の丘:は・ま行\n📘 夕暮れの道:や・ら・わ行"
+    },
+    {
+      "name": "write",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "←",
+          "width": 24,
+          "height": 32
+        },
+        {
+          "label": "再聽一次",
+          "width": 106,
+          "height": 48
+        },
+        {
+          "label": "清除",
+          "width": 124,
+          "height": 52
+        },
+        {
+          "label": "確認 ✓",
+          "width": 248,
+          "height": 52
+        },
+        {
+          "label": "示範 ✍️",
+          "width": 89,
+          "height": 36
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1 / 5\n🌙\n🔊\ntsu\n清除\n確認 ✓\n示範 ✍️\n\n試著描繪淡色的字！"
+    },
+    {
+      "name": "voice",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "返回",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "唸言靈",
+          "width": 112,
+          "height": 112
+        }
+      ],
+      "lang": "en",
+      "text": "←\n1/3\nおばあさん\n奶奶\n🎤\n\n按住並說出來！"
+    },
+    {
+      "name": "parent",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "返回首頁",
+          "width": 48,
+          "height": 48
+        },
+        {
+          "label": "重置此玩家的進度 プレイヤー",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 プレイヤー",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "重置此玩家的進度 QA-P0",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "刪除此玩家 QA-P0",
+          "width": 52,
+          "height": 44
+        },
+        {
+          "label": "幼齢 🐣",
+          "width": 230,
+          "height": 52
+        },
+        {
+          "label": "進階 🚀",
+          "width": 230,
+          "height": 52
+        },
+        {
+          "label": "平假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "片假名",
+          "width": 92,
+          "height": 44
+        },
+        {
+          "label": "兩者皆有",
+          "width": 112,
+          "height": 44
+        },
+        {
+          "label": "第1級（清音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第2級（濁音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "第3級（拗音）",
+          "width": 163,
+          "height": 44
+        },
+        {
+          "label": "全部",
+          "width": 72,
+          "height": 44
+        },
+        {
+          "label": "Lv1：描字（有範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv2：空寫（無範本）",
+          "width": 226,
+          "height": 44
+        },
+        {
+          "label": "Lv3：寫詞語",
+          "width": 146,
+          "height": 44
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "關閉",
+          "width": 56,
+          "height": 32
+        },
+        {
+          "label": "靜音",
+          "width": 64,
+          "height": 64
+        },
+        {
+          "label": "關閉",
+          "width": 80,
+          "height": 44
+        },
+        {
+          "label": "離線模式",
+          "width": 120,
+          "height": 44
+        },
+        {
+          "label": "高精度",
+          "width": 100,
+          "height": 44
+        }
+      ],
+      "lang": "en",
+      "text": "←\n家長儀表板\n⏱\n學習時間\n0分\n⭐\n獲得星數\n0\n冒險進度\n通關數\n0 / 11\n冒險星星\n★ 0\n大魔王尚未登場…\n玩家管理\n🦊\n\nプレイヤー\n\n重置進度\n刪除\n🦊\n\nQA-P0\n\n目前玩家\n\n重置進度\n刪除\n正確率\n平假名\n0%\n詞彙\n0%\n本週\n10/9\n10/10\n10/11\n10/12\n10/13\n10/14\n10/15\n設定\n\n年齡模式\n\n幼齢 🐣\n進階 🚀\n\n含羅馬字・節奏較慢・以清音為主（適合6〜8歲）\n\n假名模式\n\n平假名\n片假名\n兩者皆有\n\n難易度\n\n第1級（清音）\n第2級（濁音）\n第3級（拗音）\n全部\n\n書寫難易度\n\nLv1：描字（有範本）\nLv2：空寫（無範本）\nLv3：寫詞語\n\n課程\n\n配著歌唱 あいうえお(母音入門)\nかき 與 かぎ(濁音半濁音)\nねこ 與 ねっこ(促音)\nおばさん 與 おばあさん(長音)\nおもち 與 おもちゃ(拗音)\nはじまりの森:あ・か・さ行\nせせらぎの川:た・な行\nそよ風の丘:は・ま行\n夕暮れの道:や・ら・わ行\n音效設定\n🔊\n音量 100%\n麥克風設定（言靈）\n\n在「言靈召喚」遊戲中讓孩子可以使用語音功能。\n\n關閉\n離線模"
+    },
+    {
+      "name": "sync",
+      "width": 1440,
+      "scrollWidth": 1440,
+      "buttons": [
+        {
+          "label": "關閉",
+          "width": 32,
+          "height": 32
+        },
+        {
+          "label": "登入",
+          "width": 336,
+          "height": 48
+        },
+        {
+          "label": "雲端同步",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "言語切替 / 語言切換",
+          "width": 41,
+          "height": 40
+        },
+        {
+          "label": "家長設定",
+          "width": 40,
+          "height": 40
+        },
+        {
+          "label": "切換到其他玩家",
+          "width": 173,
+          "height": 48
+        },
+        {
+          "label": "開始冒險！",
+          "width": 384,
+          "height": 68
+        },
+        {
+          "label": "自由練習",
+          "width": 384,
+          "height": 60
+        }
+      ],
+      "lang": "en",
+      "text": "☁️ 雲端同步\n×\n\n請輸入帳號與密碼。\n\n登入\n日語101\n☁️\nJP\n⚙️\n🦊\nQA-P0\n切換玩家\n升級還需 100 XP\n開始冒險！\n自由練習"
+    },
+    {
+      "name": "home",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "profiles",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "adventure",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "unit",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "catch",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "write",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "voice",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "parent",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 489
+    },
+    {
+      "name": "sync",
+      "textScale": 2,
+      "width": 390,
+      "scrollWidth": 390
+    },
+    {
+      "name": "keyboard",
+      "focus": {
+        "tag": "BUTTON",
+        "label": "言語切替 / 語言切換",
+        "outline": "rgb(54, 65, 83) auto 1px"
+      }
+    }
+  ]
+}

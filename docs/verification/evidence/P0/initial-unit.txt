@@ -1,0 +1,44 @@
+base=91006716d38a9afb63bb061bbb652577c7c79a26
+node=26.1.0 npm=11.13.0
+started=2026-10-15T08:56:53.740946+00:00
+command=npm test
+exit=1
+
+
+> japanese101@0.0.0 test
+> vitest run
+
+(node:134) [DEP0205] DeprecationWarning: `module.register()` is deprecated. Use `module.registerHooks()` instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+
+ RUN  v4.1.7 /home/yyy/workspace/Japanese101
+
+(node:190) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ❯ src/lib/dailyTasks.test.ts (15 tests | 3 failed) 44ms
+     × returns empty array when nothing completed 15ms
+     × marks a task as completed 1ms
+     × does not duplicate already-completed tasks 1ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 3 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  src/lib/dailyTasks.test.ts > getCompletedToday / markCompleted > returns empty array when nothing completed
+ FAIL  src/lib/dailyTasks.test.ts > getCompletedToday / markCompleted > marks a task as completed
+ FAIL  src/lib/dailyTasks.test.ts > getCompletedToday / markCompleted > does not duplicate already-completed tasks
+TypeError: Cannot read properties of undefined (reading 'clear')
+ ❯ src/lib/dailyTasks.test.ts:87:18
+     85| describe('getCompletedToday / markCompleted', () => {
+     86|   beforeEach(() => {
+     87|     localStorage.clear()
+       |                  ^
+     88|     vi.restoreAllMocks()
+     89|   })
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/3]⎯
+
+
+ Test Files  1 failed | 10 passed (11)
+      Tests  3 failed | 129 passed (132)
+   Start at  16:56:54
+   Duration  7.02s (transform 647ms, setup 1.04s, import 975ms, tests 299ms, environment 14.24s)
+

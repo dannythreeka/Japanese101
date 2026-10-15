@@ -13,7 +13,11 @@
     "gen:voice:test": "tsx scripts/generate-audio.ts --test",
     "gen:voice": "tsx scripts/generate-audio.ts",
     "server": "tsx server/index.ts",
-    "server:dev": "tsx watch server/index.ts"
+    "server:dev": "tsx watch server/index.ts",
+    "typecheck": "tsc -b --pretty false",
+    "postbuild": "node scripts/build-version.mjs",
+    "test:e2e": "playwright test",
+    "validate:blueprint": "node scripts/blueprint.mjs && node --test scripts/blueprint.test.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",
@@ -34,6 +38,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "1.58.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
@@ -59,5 +64,8 @@
     "vite": "^8.0.12",
     "vite-plugin-pwa": "^1.3.0",
     "vitest": "^4.1.7"
+  },
+  "engines": {
+    "node": ">=22.13.0 <23"
   }
 }

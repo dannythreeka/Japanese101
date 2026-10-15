@@ -1,0 +1,32 @@
+[
+  {
+    "check": "install",
+    "command": "npm ci",
+    "exit": 0
+  },
+  {
+    "check": "typecheck",
+    "command": "npx tsc -b --pretty false",
+    "exit": 0
+  },
+  {
+    "check": "data",
+    "command": "npm run validate:data",
+    "exit": 0
+  },
+  {
+    "check": "lint",
+    "command": "npm run lint",
+    "exit": 1
+  },
+  {
+    "check": "unit",
+    "command": "npm test",
+    "exit": 1
+  },
+  {
+    "check": "build",
+    "command": "npm run build",
+    "exit": 0
+  }
+]

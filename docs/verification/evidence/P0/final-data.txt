@@ -1,0 +1,15 @@
+code baseline=637ab42711cfd143cde2ee7a0471028bde88482f
+runtime src unchanged from 9100671
+node=22.23.2
+started=2026-10-15T09:14:37.423442+00:00
+command=npm run validate:data
+exit=0
+
+
+> japanese101@0.0.0 validate:data
+> tsx scripts/validate-data.ts
+
+✅ kana.json OK
+✅ vocabulary.json OK
+✅ unit_lessons.json OK
+✅ rhythm_tracks.json OK

@@ -1,0 +1,42 @@
+[
+  {
+    "check": "install",
+    "command": "npm ci",
+    "exit": 0
+  },
+  {
+    "check": "typecheck",
+    "command": "npm run typecheck",
+    "exit": 0
+  },
+  {
+    "check": "data",
+    "command": "npm run validate:data",
+    "exit": 0
+  },
+  {
+    "check": "blueprint",
+    "command": "npm run validate:blueprint",
+    "exit": 0
+  },
+  {
+    "check": "lint",
+    "command": "npm run lint",
+    "exit": 1
+  },
+  {
+    "check": "unit",
+    "command": "npm test",
+    "exit": 0
+  },
+  {
+    "check": "build",
+    "command": "npm run build",
+    "exit": 0
+  },
+  {
+    "check": "smoke",
+    "command": "npm run test:e2e -- --project=chromium --project=firefox",
+    "exit": 1
+  }
+]

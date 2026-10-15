@@ -1,0 +1,22 @@
+base=91006716d38a9afb63bb061bbb652577c7c79a26
+node=26.1.0 npm=11.13.0
+started=2026-10-15T08:56:28.146383+00:00
+command=npm ci
+exit=0
+
+npm warn deprecated source-map@0.8.0-beta.0: The work that was done in this beta branch won't be included in future versions
+npm warn deprecated node-domexception@1.0.0: Use your platform's native DOMException instead
+npm warn deprecated glob@11.1.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+npm warn deprecated glob@10.5.0: Old versions of glob are not supported, and contain widely publicized security vulnerabilities, which have been fixed in the current version. Please update. Support for old versions may be purchased (at exorbitant rates) by contacting i@izs.me
+
+added 671 packages, and audited 672 packages in 9s
+
+187 packages are looking for funding
+  run `npm fund` for details
+
+18 vulnerabilities (2 low, 6 moderate, 9 high, 1 critical)
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.

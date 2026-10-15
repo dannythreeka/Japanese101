@@ -1,0 +1,82 @@
+code baseline=637ab42711cfd143cde2ee7a0471028bde88482f
+runtime src unchanged from 9100671
+node=22.23.2
+started=2026-10-15T09:14:38.096484+00:00
+command=npm run validate:blueprint
+exit=0
+
+
+> japanese101@0.0.0 validate:blueprint
+> node scripts/blueprint.mjs && node --test scripts/blueprint.test.mjs
+
+Blueprint structure PASS: 24 units, 75 skills, 14 types. Human review: IN_REVIEW
+TAP version 13
+# Subtest: valid draft passes without claiming human approval
+ok 1 - valid draft passes without claiming human approval
+  ---
+  duration_ms: 5.199453
+  type: 'test'
+  ...
+# Subtest: duplicate unit
+ok 2 - duplicate unit
+  ---
+  duration_ms: 3.35375
+  type: 'test'
+  ...
+# Subtest: unit cycle
+ok 3 - unit cycle
+  ---
+  duration_ms: 1.378866
+  type: 'test'
+  ...
+# Subtest: skill cycle
+ok 4 - skill cycle
+  ---
+  duration_ms: 1.85948
+  type: 'test'
+  ...
+# Subtest: missing skill
+ok 5 - missing skill
+  ---
+  duration_ms: 1.238034
+  type: 'test'
+  ...
+# Subtest: missing can-do
+ok 6 - missing can-do
+  ---
+  duration_ms: 1.318766
+  type: 'test'
+  ...
+# Subtest: insufficient families
+ok 7 - insufficient families
+  ---
+  duration_ms: 1.505693
+  type: 'test'
+  ...
+# Subtest: missing type
+ok 8 - missing type
+  ---
+  duration_ms: 1.469472
+  type: 'test'
+  ...
+# Subtest: incorrect quota
+ok 9 - incorrect quota
+  ---
+  duration_ms: 1.814181
+  type: 'test'
+  ...
+# Subtest: false approval
+ok 10 - false approval
+  ---
+  duration_ms: 1.9544
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 111.436739

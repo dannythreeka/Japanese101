@@ -1,0 +1,68 @@
+{
+  "method": "actual app UI with Audio playback stub and canvas draw-coordinate observation; no source state mutation",
+  "steps": [
+    {
+      "round": 1,
+      "action": "wrong tap",
+      "target": "な",
+      "selected": "を"
+    },
+    {
+      "round": 1,
+      "action": "correct tap",
+      "target": "な"
+    },
+    {
+      "round": 2,
+      "action": "wrong tap",
+      "target": "え",
+      "selected": "き"
+    },
+    {
+      "round": 2,
+      "action": "correct tap",
+      "target": "え"
+    },
+    {
+      "round": 3,
+      "action": "correct tap",
+      "target": "な"
+    },
+    {
+      "round": 4,
+      "action": "correct tap",
+      "target": "ね"
+    },
+    {
+      "round": 5,
+      "action": "correct tap",
+      "target": "た"
+    },
+    {
+      "round": 6,
+      "action": "correct tap",
+      "target": "か"
+    },
+    {
+      "round": 7,
+      "action": "correct tap",
+      "target": "た"
+    },
+    {
+      "round": 8,
+      "action": "correct tap",
+      "target": "る"
+    },
+    {
+      "round": 9,
+      "action": "correct tap",
+      "target": "な"
+    },
+    {
+      "round": 10,
+      "action": "correct tap",
+      "target": "へ"
+    }
+  ],
+  "resultText": "🎉\n升級了！\n\nLv. 2\n\n太棒了！\n完成了！\n⭐ × 10\n\n10 / 10 答對\n\n再玩一次！\n換模式\n首頁"
+}

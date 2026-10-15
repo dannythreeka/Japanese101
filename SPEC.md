@@ -1,3 +1,5 @@
+> **歷史文件（P0 2026-10-15 標註）**：內容保存原時期背景，不代表本次驗收結果。當前產品／流程以 [project.md](project.md)、[tasks.md](tasks.md) 為準；被取代與仍適用規則見 [規格對照](docs/spec-reconciliation.md)。舊階段、停止點、數量與測試結果不得當作本輪完成證據。
+
 # japanese101-pet — Production 規格與 Agent 開發規範
 
 > 給孩子(6–12歲)的日文學習 Web App。世界觀:**寵物養成**。

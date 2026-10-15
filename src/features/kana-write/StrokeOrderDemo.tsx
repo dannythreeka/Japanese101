@@ -26,26 +26,24 @@ function processSvg(raw: string): string {
 
 export default function StrokeOrderDemo({ char, onClose }: Props) {
   const t = useT()
-  const codepoints = getHiraganaCodepoints(char)
-  const [svgs, setSvgs] = useState<(string | null)[]>([])
-  const [loading, setLoading] = useState(true)
+  const [response, setResponse] = useState<{ char: string; svgs: (string | null)[] } | null>(null)
+  const loading = response?.char !== char
+  const svgs = loading ? [] : response.svgs
   const [replayKey, setReplayKey] = useState(0)
 
   useEffect(() => {
-    setLoading(true)
-    setSvgs([])
+    const controller = new AbortController()
     void Promise.all(
-      codepoints.map((cp) =>
-        fetch(`/stroke-svgs/${cp}.svg`)
+      getHiraganaCodepoints(char).map((cp) =>
+        fetch(`${import.meta.env.BASE_URL}stroke-svgs/${cp}.svg`, { signal: controller.signal })
           .then((r) => (r.ok ? r.text() : null))
           .then((text) => (text ? processSvg(text) : null))
           .catch(() => null),
       ),
     ).then((results) => {
-      setSvgs(results)
-      setLoading(false)
+      if (!controller.signal.aborted) setResponse({char, svgs: results})
     })
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    return () => controller.abort()
   }, [char])
 
   const loaded = svgs.filter(Boolean)

@@ -1,7 +1,7 @@
 import 'fake-indexeddb/auto'
 import { beforeEach, afterEach, describe, it, expect } from 'vitest'
-import { db, getAllProgress, setActiveProfileId } from './index'
-import { openGameSession, saveCheckpoint, submitGameAnswer, finishGameSession } from './game-sessions'
+import { db, getAllProgress, setActiveProfileId, resetProfileProgress, deleteProfile, getProfilePreferences } from './index'
+import { openGameSession, saveCheckpoint, submitGameAnswer, finishGameSession, recoverGameRoute } from './game-sessions'
 import { openLevelSession, launchLevelChallenge, acceptChallengeResult, finishLevel } from './level-sessions'
 import { levelsData } from '../data/loaders'
 
@@ -85,4 +85,52 @@ describe('owned durable sessions and atomic rewards',()=>{
     expect((await db.adventureProgress.get('A'))?.completed_levels[first.level_id]).toBeUndefined()
     expect((await db.levelSessions.get(level.id))?.status).toBe('active')
   })
+})
+
+
+it('recovers a stale content version without deleting its attempts',async()=>{
+  const game=await openGameSession('A','old-route','kana')
+  await submitGameAnswer('A',game.id,'q1','a','kana',false)
+  await db.gameCheckpoints.update(game.id,{contentVersion:'expired'})
+  await recoverGameRoute('A','old-route')
+  expect((await db.gameCheckpoints.get(game.id))?.attempts.q1.firstAnswerCorrect).toBe(false)
+  expect((await openGameSession('A','old-route','kana')).id).not.toBe(game.id)
+})
+it('reset/delete A never changes B or original shared backup data',async()=>{
+  for(const profileId of ['A','B']) {
+    const game=await openGameSession(profileId,'test','kana')
+    await saveCheckpoint(profileId,game.id,{},1)
+    await submitGameAnswer(profileId,game.id,'q1','a','kana',true)
+    await finishGameSession(profileId,game.id)
+  }
+  await db.progress.put({id:'legacy',type:'kana',correct:5,incorrect:0,lastSeen:1,nextReview:2,streak:1})
+  const before=await db.wallets.get('B')
+  await resetProfileProgress('A')
+  expect(await getAllProgress('A')).toEqual([]);expect((await getAllProgress('B'))[0].correct).toBe(1)
+  expect(await db.wallets.get('B')).toEqual(before)
+  await deleteProfile('A')
+  expect(await db.profiles.get('B')).toBeDefined();expect(await db.progress.get('legacy')).toBeDefined()
+})
+it('normalizes broken preferences and defaults microphones off',async()=>{
+  await db.preferences.put({profileId:'A',micMode:'enhanced',enhancedConsent:false,kanaDifficulty:'broken',disabledUnits:null} as never)
+  expect(await getProfilePreferences('A')).toMatchObject({profileId:'A',micMode:'off',kanaDifficulty:1,disabledUnits:[]})
+  expect(await getProfilePreferences('B')).toMatchObject({micMode:'off',enhancedConsent:false})
+})
+it('all L0–L10 required challenge services complete without any voice evidence',async()=>{
+  for(const level of levelsData().levels) {
+    const session=await openLevelSession('A',level.level_id)
+    for(const challenge of level.challenges.filter(c=>c.required_for_completion!==false)) {
+      expect(challenge.game_mode).not.toBe('kotodama_summon')
+      const active=await launchLevelChallenge('A',session.id,challenge.challenge_id)
+      expect(active.pending?.challengeId).toBe(challenge.challenge_id)
+      const feature=challenge.game_mode==='dakuten_drag'?'dakuten_drag':'kana_catch'
+      const game=await openGameSession('A',`${session.id}:${challenge.challenge_id}`,feature,{levelSessionId:session.id,challengeId:challenge.challenge_id})
+      await saveCheckpoint('A',game.id,{},1)
+      await submitGameAnswer('A',game.id,'q1','a','kana',true)
+      await finishGameSession('A',game.id)
+      await acceptChallengeResult('A',session.id,game.id)
+    }
+    await finishLevel('A',session.id,level.level_id)
+  }
+  expect(Object.keys((await db.adventureProgress.get('A'))!.completed_levels)).toHaveLength(11)
 })

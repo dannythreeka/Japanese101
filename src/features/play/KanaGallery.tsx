@@ -24,11 +24,16 @@ export default function KanaGallery() {
   const t = useT()
   const [collected, setCollected] = useState<Set<string>>(new Set())
 
+  const [failed,setFailed]=useState(false)
   useEffect(() => {
-    getOrCreatePet(profileId).then((pet) => {
+    let active=true
+    void getOrCreatePet(profileId).then((pet) => {
+      if(!active)return
       setCollected(new Set(pet.collection))
-    })
-  }, [])
+    }).catch(()=>{if(active)setFailed(true)})
+    return()=>{active=false}
+  }, [profileId])
+  if(failed)throw new Error('Player data unavailable; data retained')
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-100 to-white p-4 pt-6 pb-10">

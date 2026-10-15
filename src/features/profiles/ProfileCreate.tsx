@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { createProfile, setActiveProfileId } from '../../db'
 import { useT } from '../../hooks/useT'
@@ -10,20 +10,26 @@ export default function ProfileCreate() {
   const [name, setName] = useState('')
   const [avatar, setAvatar] = useState<string>(AVATAR_EMOJIS[0])
   const [error, setError] = useState('')
+  const lock = useRef(false)
   const [saving, setSaving] = useState(false)
 
   async function handleSave() {
+    if (lock.current) return
     const trimmed = name.trim()
     if (!trimmed) {
       setError(t('profileNameEmpty'))
       return
     }
+    lock.current = true
     setSaving(true)
     try {
       const profile = await createProfile(trimmed, avatar)
       setActiveProfileId(profile.profile_id)
       navigate('/')
+    } catch {
+      setError(t('savePending'))
     } finally {
+      lock.current = false
       setSaving(false)
     }
   }

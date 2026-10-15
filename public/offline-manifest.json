@@ -1,0 +1,2050 @@
+{
+  "version": "42c63ee6573e798c",
+  "assets": [
+    {
+      "path": "assets/audio/kana_a.wav",
+      "bytes": 25678,
+      "sha256": "52e1c0cabc3745e020d5332353c13b7f3de20d622a068aaa6619731bd44e6b96"
+    },
+    {
+      "path": "assets/audio/kana_ba.wav",
+      "bytes": 19534,
+      "sha256": "32edd8b970919003eed5a754bfb9ffb0451b5d2f2a3c1628b40321750596dcd7"
+    },
+    {
+      "path": "assets/audio/kana_be.wav",
+      "bytes": 19022,
+      "sha256": "dbef250c31f591268a5d96ec5634b32122f614133a919c4e54b4fb4fb028bdaa"
+    },
+    {
+      "path": "assets/audio/kana_bi.wav",
+      "bytes": 19534,
+      "sha256": "526215f30c0b0fc1f53e930f784f24a3df3d906afdc0e1aa208a8ed8e539cfb1"
+    },
+    {
+      "path": "assets/audio/kana_bo.wav",
+      "bytes": 20558,
+      "sha256": "983545849af8d849abecb7078ae5dd302859de86d60e32b35fd91f95036f820d"
+    },
+    {
+      "path": "assets/audio/kana_bu.wav",
+      "bytes": 17486,
+      "sha256": "0b24b037b34d6b57441ed41805fdf8bfebd209eae16a98e53bfcb7520b56a404"
+    },
+    {
+      "path": "assets/audio/kana_bya.wav",
+      "bytes": 23630,
+      "sha256": "8d621999cdef23fc67e6499ca1d3514998ab5e772cb487bcb4e21bf9178ba9ed"
+    },
+    {
+      "path": "assets/audio/kana_byo.wav",
+      "bytes": 25678,
+      "sha256": "a5ad824b9aa8fb2a77d6c5b549520f28c3beb5556af2ab67d512258a5eb8dac0"
+    },
+    {
+      "path": "assets/audio/kana_byu.wav",
+      "bytes": 23630,
+      "sha256": "1d6e07a55f9550dc80e7955212e75cf6b0e136a6bc69b6ddf9cbae35e10095bf"
+    },
+    {
+      "path": "assets/audio/kana_cha.wav",
+      "bytes": 23630,
+      "sha256": "f77eb7eac4a9ccd649de0e061936302b1490b15ab4c5e2e683df10531ed394c4"
+    },
+    {
+      "path": "assets/audio/kana_chi.wav",
+      "bytes": 25678,
+      "sha256": "6129f8f13095f195bdc54aa53ea55f97c604317935a812c9c9da9ac9bb13711c"
+    },
+    {
+      "path": "assets/audio/kana_cho.wav",
+      "bytes": 25166,
+      "sha256": "b1b10793cfaba45c6b23ff4bac6a77e490ad48dc64b9b3ef7279314b5a08d277"
+    },
+    {
+      "path": "assets/audio/kana_chu.wav",
+      "bytes": 23118,
+      "sha256": "e0bd7a884a2c7392585ee7b24cf3b503993d1b309c51a1e12a81b787ba949d50"
+    },
+    {
+      "path": "assets/audio/kana_da.wav",
+      "bytes": 20046,
+      "sha256": "dee36ff7a94436fb4a1504b538b86d9404fd98ff37c055ea8b9a2223cdbd6bfe"
+    },
+    {
+      "path": "assets/audio/kana_de.wav",
+      "bytes": 20558,
+      "sha256": "32ec4bbbd6a6ab1abb212d13f6deb4289ba93951c1d76da8d341f9c65319e013"
+    },
+    {
+      "path": "assets/audio/kana_dji.wav",
+      "bytes": 24142,
+      "sha256": "513d29812cadd7fbca8110acc2f12eebf6b58892910fe5d798ad5ec7b201de47"
+    },
+    {
+      "path": "assets/audio/kana_do.wav",
+      "bytes": 21070,
+      "sha256": "db085a6defaaf6faad6add402a0363092da6af0928c74287fe4aab32ab65b013"
+    },
+    {
+      "path": "assets/audio/kana_dzu.wav",
+      "bytes": 19534,
+      "sha256": "3cc587a4da45d4d333fc1fb4d60ca73901ddf14e10a448add6c95fffd737b83a"
+    },
+    {
+      "path": "assets/audio/kana_e.wav",
+      "bytes": 26702,
+      "sha256": "ebb17789d25e775140eef3826e0fc28213e19738c7cc4d4feb38c5a8988ee676"
+    },
+    {
+      "path": "assets/audio/kana_fu.wav",
+      "bytes": 20046,
+      "sha256": "e5ec2d287872c54eac573ddfdeac4ca4cdf6554b4beb5f574bec10e172e094c3"
+    },
+    {
+      "path": "assets/audio/kana_ga.wav",
+      "bytes": 19022,
+      "sha256": "7303039a5f400f65cf0e3e355ab4c468c9df6acf2ae2d71f43b6187d8e980b74"
+    },
+    {
+      "path": "assets/audio/kana_ge.wav",
+      "bytes": 20046,
+      "sha256": "5fcf86dfaff5a3427c58ad7cc23af4242e4d22b7fb27e7135a587bd0798f2bb4"
+    },
+    {
+      "path": "assets/audio/kana_gi.wav",
+      "bytes": 19534,
+      "sha256": "d62cba6ad1331edbe89fefa43fe921ff10d8dc88c075593f22d5fa6a71a51125"
+    },
+    {
+      "path": "assets/audio/kana_go.wav",
+      "bytes": 21582,
+      "sha256": "e44177f214f83fdd85bc96143566250d8461c9f8273396a69c76aee0e76478d5"
+    },
+    {
+      "path": "assets/audio/kana_gu.wav",
+      "bytes": 17486,
+      "sha256": "a0d7e2edd7241bcd8171f03bd8ecb62088ae0e968c2dae45eec073f8cd18259a"
+    },
+    {
+      "path": "assets/audio/kana_gya.wav",
+      "bytes": 24654,
+      "sha256": "ac1fe03affbd2a145ce81fb24c83abf3c0296d0d66cbb511eed346fdeb2e80d4"
+    },
+    {
+      "path": "assets/audio/kana_gyo.wav",
+      "bytes": 25678,
+      "sha256": "8126aa1444f7d277ac697bf30a8ae5de8180f5bd9cbe98bc3a05771bdd8f216d"
+    },
+    {
+      "path": "assets/audio/kana_gyu.wav",
+      "bytes": 23118,
+      "sha256": "15eb50f74dd772d6072d2ba73209bea881325d488a7b7200ea5469d9d48dc349"
+    },
+    {
+      "path": "assets/audio/kana_ha.wav",
+      "bytes": 20046,
+      "sha256": "0f55438c7b53331cdc8886b954112b0ba01576afc0b3531de0d21e348b00388d"
+    },
+    {
+      "path": "assets/audio/kana_he.wav",
+      "bytes": 26702,
+      "sha256": "0196b98b951498b0ed02a3dcd2ec6fbbb521cc806318a5ff9bb9fff1bfd2fb6d"
+    },
+    {
+      "path": "assets/audio/kana_hi.wav",
+      "bytes": 25166,
+      "sha256": "ce0bbf0737d5dd7425d9cc1dd35e141cc57fe21e60f2931476aa6fa8f86c3454"
+    },
+    {
+      "path": "assets/audio/kana_ho.wav",
+      "bytes": 24142,
+      "sha256": "a5d0c24784a674e1a8d7fe581ec916e4e1d4e7d94a0261f3ff24f79a93f5a760"
+    },
+    {
+      "path": "assets/audio/kana_hya.wav",
+      "bytes": 23118,
+      "sha256": "8169dc517b0910032138f02b61e8ebc506637f66fba728afb086dca5d5dd2cec"
+    },
+    {
+      "path": "assets/audio/kana_hyo.wav",
+      "bytes": 26190,
+      "sha256": "5560bd0364b25ce562c340368ed269285435841183f6a84a1b89599cf650ca84"
+    },
+    {
+      "path": "assets/audio/kana_hyu.wav",
+      "bytes": 22094,
+      "sha256": "696cff2aa15b407413453115bbb6bbe8b4e956f9a6d198036f5437890018825e"
+    },
+    {
+      "path": "assets/audio/kana_i.wav",
+      "bytes": 24142,
+      "sha256": "1f8aabc15e22af20f3310bd60a10d8a1b854b288d7564e5a36a3fe2da2cc200f"
+    },
+    {
+      "path": "assets/audio/kana_ja.wav",
+      "bytes": 23118,
+      "sha256": "4375612b6e3e37bd1591e086bbbd438fe0d22a751e5530033641f2fb753eda4e"
+    },
+    {
+      "path": "assets/audio/kana_ji.wav",
+      "bytes": 24142,
+      "sha256": "c9f5df904af054025a4ec89cd56649672fc4f718e319a9df1937251108b6f49e"
+    },
+    {
+      "path": "assets/audio/kana_jo.wav",
+      "bytes": 23630,
+      "sha256": "9a4d249d55ccfeb61c46219f1575d23db4aa67d9e2c392d42968fa8be0b0e81f"
+    },
+    {
+      "path": "assets/audio/kana_ju.wav",
+      "bytes": 22094,
+      "sha256": "ebf863326682d47388f4f260f92bdd18d136c9b63cbc236a19aac9b12472fe18"
+    },
+    {
+      "path": "assets/audio/kana_ka.wav",
+      "bytes": 22094,
+      "sha256": "86166cd90141ffebbdab0e5936ac35fcefe9a759a9369edb719fae6b9fe0b850"
+    },
+    {
+      "path": "assets/audio/kana_ke.wav",
+      "bytes": 22606,
+      "sha256": "6110f40627871cf594c58bef99540c927be7127d6981fa6e8a056fd234c03e7a"
+    },
+    {
+      "path": "assets/audio/kana_ki.wav",
+      "bytes": 22606,
+      "sha256": "e750202df4aec3efcf914e42e3bba57f372c59bec51a49fb19c2f882f0779d53"
+    },
+    {
+      "path": "assets/audio/kana_ko.wav",
+      "bytes": 23118,
+      "sha256": "b7d822c2e43a7ff8057ff92d4635f23c1500fd3a7621edac2dfc9e09530527a9"
+    },
+    {
+      "path": "assets/audio/kana_ku.wav",
+      "bytes": 21070,
+      "sha256": "d34dd45a7aad883309f157904fedf5a0a1bc5e7b2ddc71c5c944321e2809adc3"
+    },
+    {
+      "path": "assets/audio/kana_kya.wav",
+      "bytes": 23630,
+      "sha256": "a6cba657cd0a3f4a812415595335f71a66fcfe9ec18ccd06d5620d4e12413263"
+    },
+    {
+      "path": "assets/audio/kana_kyo.wav",
+      "bytes": 25678,
+      "sha256": "b4ef1148458bb0dac7d984eb373aac87ea7fd4ce5db0ddab94846c3666d106a5"
+    },
+    {
+      "path": "assets/audio/kana_kyu.wav",
+      "bytes": 24142,
+      "sha256": "16741abca9856ef9cb66b2c3cb2ab7ce7d3199bca0efe5144565193b336b682a"
+    },
+    {
+      "path": "assets/audio/kana_ma.wav",
+      "bytes": 19534,
+      "sha256": "569a6297afa4fc33a7c9501a908f93cc90adecc3f829d2a65372e90e97d2eb3f"
+    },
+    {
+      "path": "assets/audio/kana_me.wav",
+      "bytes": 20046,
+      "sha256": "409053c1cc76ad5615fd39ced220bd00e0d7f12ee1633d013a9394a64e00a6ca"
+    },
+    {
+      "path": "assets/audio/kana_mi.wav",
+      "bytes": 20558,
+      "sha256": "7023dec340ec856b6cde8afe5266a93da236617e498c32a8f1421afd0954c4eb"
+    },
+    {
+      "path": "assets/audio/kana_mo.wav",
+      "bytes": 21582,
+      "sha256": "9d96cd847b79eef5f43004995196abe463578ef4cdb940d00c6e724deaa17901"
+    },
+    {
+      "path": "assets/audio/kana_mu.wav",
+      "bytes": 17998,
+      "sha256": "a79711b2377d8d3cecb6255c012e190e91e785d47345278b27bb51fae7cec72b"
+    },
+    {
+      "path": "assets/audio/kana_mya.wav",
+      "bytes": 25166,
+      "sha256": "8007d1fff55a6c43b332c5d97f89f02d734b832602d5d350ec88842908d368cb"
+    },
+    {
+      "path": "assets/audio/kana_myo.wav",
+      "bytes": 27214,
+      "sha256": "e24ceda36a4be61a2f29a0541072d57dd8ae4765a425c576176f7651e30e4613"
+    },
+    {
+      "path": "assets/audio/kana_myu.wav",
+      "bytes": 22094,
+      "sha256": "6c04aa15439a7b34113d763ec2012c3f7a1c47f81c347a7e5be4a1ee1b94be33"
+    },
+    {
+      "path": "assets/audio/kana_n.wav",
+      "bytes": 21582,
+      "sha256": "0f606a7e992aadf83e9876401cb9b4d81f6451338de0abfff5e48dcba52ec525"
+    },
+    {
+      "path": "assets/audio/kana_na.wav",
+      "bytes": 19534,
+      "sha256": "1a31baa6401dacb3ada95136be9a1611dd1d01e9d2d0813673efde2ac008d39b"
+    },
+    {
+      "path": "assets/audio/kana_ne.wav",
+      "bytes": 20046,
+      "sha256": "4799e4df96b92bb5162dd0f1cb22f4fbba6a1e7a1068336984bc982f6024b9fd"
+    },
+    {
+      "path": "assets/audio/kana_ni.wav",
+      "bytes": 19534,
+      "sha256": "8908c16e7698e0eabd6582cca6de2529f60bb39c37d7a8a39b0b8d3f8abb1967"
+    },
+    {
+      "path": "assets/audio/kana_no.wav",
+      "bytes": 21070,
+      "sha256": "a6b91b105fb7e5507ceaf292810b1a1d2d71ae371a6a605b74a2c7d81f8c6d10"
+    },
+    {
+      "path": "assets/audio/kana_nu.wav",
+      "bytes": 17998,
+      "sha256": "cb8284c9c7ca20f9e10aa92fc5806828abb8de501b951ef8496323d664c1e287"
+    },
+    {
+      "path": "assets/audio/kana_nya.wav",
+      "bytes": 22606,
+      "sha256": "66c3eb2b53d213be2ee14b3815625cf3ceb652f378202c7163d24ea9f099f32e"
+    },
+    {
+      "path": "assets/audio/kana_nyo.wav",
+      "bytes": 25166,
+      "sha256": "8ecf03522156677e92a1b3486eff90faed19d55b8f5cb501cc2b73dba3ef8a9b"
+    },
+    {
+      "path": "assets/audio/kana_nyu.wav",
+      "bytes": 22094,
+      "sha256": "0c13a6bf6b19ec2e432c6ccd303bb7aa3b446cc156266dcc8d844f0a7662a190"
+    },
+    {
+      "path": "assets/audio/kana_o.wav",
+      "bytes": 25678,
+      "sha256": "33d4e75a0eb92b480b245c548b7cdd04eac01d3acc35b6581aac3b889d48dde6"
+    },
+    {
+      "path": "assets/audio/kana_pa.wav",
+      "bytes": 19534,
+      "sha256": "58e4abbb96aa8bc75ebf50c892bf5ace94a9b22cf81684750dff6b31f146b229"
+    },
+    {
+      "path": "assets/audio/kana_pe.wav",
+      "bytes": 20558,
+      "sha256": "1ee2a60ee72c044a176a0a0f33f51997c5ed9fb771f1e0ed514efc5fb24b1db7"
+    },
+    {
+      "path": "assets/audio/kana_pi.wav",
+      "bytes": 20046,
+      "sha256": "b7fcca65097de9d69f3ffbf4cff0ae8492292a87e209581a30aa8c700b62aa5d"
+    },
+    {
+      "path": "assets/audio/kana_po.wav",
+      "bytes": 21582,
+      "sha256": "704845d06a39e0ef67de7d3778b3c459441351f1fa56e97fd3137c4e32d3f94c"
+    },
+    {
+      "path": "assets/audio/kana_pu.wav",
+      "bytes": 18510,
+      "sha256": "aecc807534aa94a490c8e0f0cebfce3bc849756cbfe3a612954a0c4ac3b9df4e"
+    },
+    {
+      "path": "assets/audio/kana_pya.wav",
+      "bytes": 26702,
+      "sha256": "1a14e0d62aa643dad96a5c04566f06715fc89111bf51ada03555aa885361de08"
+    },
+    {
+      "path": "assets/audio/kana_pyo.wav",
+      "bytes": 27214,
+      "sha256": "7744368c22832ec9cea95a45725aed5b9a7a1a0be0dedafcbd735f0e0a31ad60"
+    },
+    {
+      "path": "assets/audio/kana_pyu.wav",
+      "bytes": 25678,
+      "sha256": "f789507a516cdc24c9bf80501c5be2fd38ad94f42a407189888acebfd1b13df8"
+    },
+    {
+      "path": "assets/audio/kana_ra.wav",
+      "bytes": 18510,
+      "sha256": "69496c50253261545d14c19de36f6de427bee11d1d114591e23b23dfe58902f0"
+    },
+    {
+      "path": "assets/audio/kana_re.wav",
+      "bytes": 18510,
+      "sha256": "4e6f6a5860aeac776cf73cc3baedfb9ac6afa094b2fc8d709fbaef1208ddf517"
+    },
+    {
+      "path": "assets/audio/kana_ri.wav",
+      "bytes": 17486,
+      "sha256": "1bfbc9c2cf6f8e71766b5024368d1f3a764fd9bebcd9a5f5f1293756a8d045ae"
+    },
+    {
+      "path": "assets/audio/kana_ro.wav",
+      "bytes": 19534,
+      "sha256": "0913698d04e70b2b2fe83166042203dbdce50c87c6efb4376fcb1bddef0dbb35"
+    },
+    {
+      "path": "assets/audio/kana_ru.wav",
+      "bytes": 15950,
+      "sha256": "5122560c3905d58077aea3a39556394ecc5c1f4255067e35c95e6453fabb6210"
+    },
+    {
+      "path": "assets/audio/kana_rya.wav",
+      "bytes": 22606,
+      "sha256": "2ba2308301b658fd295627bff0017ebd36960b685cfb6b9ae031e6db377c4bfe"
+    },
+    {
+      "path": "assets/audio/kana_ryo.wav",
+      "bytes": 24142,
+      "sha256": "69ea4fade1c184126f6dcfe3c31526ba0177fe9458521584966f3e700aad0d7b"
+    },
+    {
+      "path": "assets/audio/kana_ryu.wav",
+      "bytes": 21582,
+      "sha256": "13d3538512ae0aca3e701149f99647bffd7dda93fde236cca7f357a2637c2498"
+    },
+    {
+      "path": "assets/audio/kana_sa.wav",
+      "bytes": 23630,
+      "sha256": "90e3b64ba2041c8e0e3d12d8154272053eab71675ba801ab38d3457ea3efaa0b"
+    },
+    {
+      "path": "assets/audio/kana_se.wav",
+      "bytes": 24142,
+      "sha256": "cf1fb0699b8fcaef5aaab91f695e102f93b02d08877b29f506cf0f2915e983c0"
+    },
+    {
+      "path": "assets/audio/kana_sha.wav",
+      "bytes": 24654,
+      "sha256": "47fb60ca9ea727b26e1f6f1857bd84698e77aa36967865899fc07d0651db1a0a"
+    },
+    {
+      "path": "assets/audio/kana_shi.wav",
+      "bytes": 25166,
+      "sha256": "f35a27fa663204adc750062ce7daf7db1401440421d44836d9e7bb177e385181"
+    },
+    {
+      "path": "assets/audio/kana_sho.wav",
+      "bytes": 25678,
+      "sha256": "e45e4d9441b4aabf0650e6dac15cec4786e9a056e32b4389dba6ac257a570ddc"
+    },
+    {
+      "path": "assets/audio/kana_shu.wav",
+      "bytes": 22094,
+      "sha256": "5fff538c3ba193d0188990e1a8c0ea53b4b9ece22d903a052402a0ffdfaca0c2"
+    },
+    {
+      "path": "assets/audio/kana_so.wav",
+      "bytes": 25678,
+      "sha256": "ac1d6e2dd9d0e2cf061f2b9595f9aa63fe835de2ef9141abd7ed11ce84b9840e"
+    },
+    {
+      "path": "assets/audio/kana_su.wav",
+      "bytes": 22094,
+      "sha256": "bb06c1be9bd1ef209e14b200446f20cefec3332f7bbb556f0b4e9b06444b06c6"
+    },
+    {
+      "path": "assets/audio/kana_ta.wav",
+      "bytes": 19534,
+      "sha256": "b35addc8061a5e96a70385d61ba39ff711bb283e33ab3dac1b60414e7e058f25"
+    },
+    {
+      "path": "assets/audio/kana_te.wav",
+      "bytes": 20046,
+      "sha256": "31209bd60c7174aa1b9250f19a89b2f3bab03097cb401b1476bb881615eefb00"
+    },
+    {
+      "path": "assets/audio/kana_to.wav",
+      "bytes": 21070,
+      "sha256": "1b989ea79bed8db1ffecb0e69343ac3cfde6cb72cbaf0098da1ed496f4c91cfe"
+    },
+    {
+      "path": "assets/audio/kana_tsu.wav",
+      "bytes": 21070,
+      "sha256": "5ddf99062ee2eedb9882ce07077888cd0d5768e50c6f16474ea0b2d72f3c385a"
+    },
+    {
+      "path": "assets/audio/kana_u.wav",
+      "bytes": 24142,
+      "sha256": "f05a4104244494fd5b6caa31094d17ec862c2c40195d62b304f59e2546d97599"
+    },
+    {
+      "path": "assets/audio/kana_wa.wav",
+      "bytes": 20046,
+      "sha256": "c58b778c3be7ff6b5e74f2ff2fb20142ef3b56f821528232b59f700215536da5"
+    },
+    {
+      "path": "assets/audio/kana_wo.wav",
+      "bytes": 25678,
+      "sha256": "33d4e75a0eb92b480b245c548b7cdd04eac01d3acc35b6581aac3b889d48dde6"
+    },
+    {
+      "path": "assets/audio/kana_ya.wav",
+      "bytes": 21070,
+      "sha256": "de3d7c8b9fcbb846d93d647150e7f8c1d6c7291762d4b3026ac8de95beef349e"
+    },
+    {
+      "path": "assets/audio/kana_yo.wav",
+      "bytes": 22094,
+      "sha256": "a9c4a2a5efe20c7e9aa7bc2fa7c21cb470167af40f9cf7b7258241cf233e2dfe"
+    },
+    {
+      "path": "assets/audio/kana_yu.wav",
+      "bytes": 20046,
+      "sha256": "68cca1f46549352438aa21d0ff4b25d6dbd973fde7e034ef12a11009b78441fb"
+    },
+    {
+      "path": "assets/audio/kana_za.wav",
+      "bytes": 21582,
+      "sha256": "68e719899e71dc5c11b7569e821120434beaa21896fa8a0a6beda1fb21efe656"
+    },
+    {
+      "path": "assets/audio/kana_ze.wav",
+      "bytes": 21582,
+      "sha256": "573918d916cd2a2d199332cde21dcd3f49cf6769ef12237ed81850d38884486b"
+    },
+    {
+      "path": "assets/audio/kana_zo.wav",
+      "bytes": 22606,
+      "sha256": "c8323f60fd2b1a8b3277e5bae5f3fac4d5ed9b96a2de662611aa59ee6e027023"
+    },
+    {
+      "path": "assets/audio/kana_zu.wav",
+      "bytes": 19534,
+      "sha256": "5ff0f30bcbd7f96a71fd6ccd64890acf30789475a8114aa841b50ed203e1235d"
+    },
+    {
+      "path": "assets/audio/phrase_gambare.wav",
+      "bytes": 34894,
+      "sha256": "a18bc37bdefca1a190109a69ce38def1153d9a578e3d01ca931d43c0449b5c1c"
+    },
+    {
+      "path": "assets/audio/phrase_mouichido.wav",
+      "bytes": 42574,
+      "sha256": "c392577523fd22cb3f4f67f20bd1504908f8c809963739928950841c6a4235d2"
+    },
+    {
+      "path": "assets/audio/phrase_niceone.wav",
+      "bytes": 29774,
+      "sha256": "58efe287b1d20aba29adf1fe5bc94f6d1279d13dac179855202f6badd94f0711"
+    },
+    {
+      "path": "assets/audio/phrase_sugoi.wav",
+      "bytes": 30286,
+      "sha256": "ce408edc8d882246c517e8d4cf716702a171b0aed0840aae181428937d5cfa9d"
+    },
+    {
+      "path": "assets/audio/phrase_yatta.wav",
+      "bytes": 29262,
+      "sha256": "816e16f5e28c0360932f1863ea8afc2b1aac7dc510ba917a57b03d022c68aa07"
+    },
+    {
+      "path": "assets/audio/word_w_ajisai.wav",
+      "bytes": 36430,
+      "sha256": "e7bdec39ba1e9c261fa1ec6431ec39315fd966fab98b70624b45b79164f0247f"
+    },
+    {
+      "path": "assets/audio/word_w_akushu.wav",
+      "bytes": 30286,
+      "sha256": "3635e1a91fc4e50314598768e7f4ccd4f54cd36edee4a6c534fe8b76da4521f7"
+    },
+    {
+      "path": "assets/audio/word_w_ame.wav",
+      "bytes": 27214,
+      "sha256": "93046ff3c21d21bd5c7981e4c9a2127feecd56246822672fe5b896dc9bcac19c"
+    },
+    {
+      "path": "assets/audio/word_w_aomushi.wav",
+      "bytes": 37454,
+      "sha256": "e52e8e3115513927c4bb0ff3ebcc23ae6f8771c59f4261e14652ee8629ebb0fe"
+    },
+    {
+      "path": "assets/audio/word_w_ari.wav",
+      "bytes": 24142,
+      "sha256": "9c59c21efe3c6483904b0a931e0b8a56921a73f03556ec382a91d3dd8561c444"
+    },
+    {
+      "path": "assets/audio/word_w_batta.wav",
+      "bytes": 29262,
+      "sha256": "810d6547cf6e1bff0134a5b8fbe85d1c892e0f8bc98f942240b46eca5b6ed14d"
+    },
+    {
+      "path": "assets/audio/word_w_budou.wav",
+      "bytes": 29774,
+      "sha256": "165144bc4fad1c20e1982850b7c88561f44eb1460501cc18f57a6f94fc69255c"
+    },
+    {
+      "path": "assets/audio/word_w_chizu.wav",
+      "bytes": 25166,
+      "sha256": "e3bc4997137b8f5106d85f512988f3cff565c5b7df08cd99e8a3bf070f95d2d2"
+    },
+    {
+      "path": "assets/audio/word_w_chou.wav",
+      "bytes": 23630,
+      "sha256": "4ba125de1d96812f4206dd287d62b3c072115b69713aa8a277578e77143d8126"
+    },
+    {
+      "path": "assets/audio/word_w_dakko.wav",
+      "bytes": 31822,
+      "sha256": "da4859e6641166c1c44322a295f8074ee48d8d8a709897e65eb4ddcc4c89121b"
+    },
+    {
+      "path": "assets/audio/word_w_densha.wav",
+      "bytes": 33358,
+      "sha256": "24fe6ad74f1222b1bda25e319d438b4ae313f5c0a0e0901096faba06433e610f"
+    },
+    {
+      "path": "assets/audio/word_w_donguri.wav",
+      "bytes": 34894,
+      "sha256": "77e068ed6a12b0ab93070bba044fa9e7c1c7781143174c4facdb9baec2eb7610"
+    },
+    {
+      "path": "assets/audio/word_w_ebi.wav",
+      "bytes": 25678,
+      "sha256": "496960084e52072ff739d48718f3a6a9ddd8eff9a7eeddc25055bb897c60d1ab"
+    },
+    {
+      "path": "assets/audio/word_w_eki.wav",
+      "bytes": 28238,
+      "sha256": "5ed765bbc1db2586b82b23c167c662f9c9469dbe3c93a2c921fc66aa8108d89f"
+    },
+    {
+      "path": "assets/audio/word_w_ensoku.wav",
+      "bytes": 35918,
+      "sha256": "ade2a62bd85eb918009f035eaed6e770c5117d38b47cb258db424771512bb45c"
+    },
+    {
+      "path": "assets/audio/word_w_fune.wav",
+      "bytes": 25166,
+      "sha256": "c34298f34be5993f92372b96c028c2f9fd8da820814ea9b7d18a20e002e9e4c2"
+    },
+    {
+      "path": "assets/audio/word_w_fuusen.wav",
+      "bytes": 33358,
+      "sha256": "581db4ce58a329a08d3266b6e4ad554767bb26bb65d52659ec6216a8ae1e23de"
+    },
+    {
+      "path": "assets/audio/word_w_gakkou.wav",
+      "bytes": 35406,
+      "sha256": "33ec71d21fb7ab039b9f001b3c12df62f929d44bc6fd9205030b3196fa1fc6d4"
+    },
+    {
+      "path": "assets/audio/word_w_gyuunyuu.wav",
+      "bytes": 35406,
+      "sha256": "1bac544a67ffd7642f8369ca5cea7b49084e6cd3b87eee752fbf0124e0f338bc"
+    },
+    {
+      "path": "assets/audio/word_w_hana.wav",
+      "bytes": 24654,
+      "sha256": "ddee5e8c2959b0473660d73cdffbce7d2cbd37d1d41974e1abca2e68fdf12895"
+    },
+    {
+      "path": "assets/audio/word_w_happa.wav",
+      "bytes": 30798,
+      "sha256": "bedada1bf8b06b7f2543fc64c9131a21738667a8b6628fb015423645a069e1ac"
+    },
+    {
+      "path": "assets/audio/word_w_harappa.wav",
+      "bytes": 33870,
+      "sha256": "32517714124511491c9b3fd95ff47587df7fe8c238ef0a9d9fc9b8ff0788d244"
+    },
+    {
+      "path": "assets/audio/word_w_heya.wav",
+      "bytes": 25678,
+      "sha256": "c61f152804cd27a513084adc6d2f4c20b53bfd3eab78e7ec08445a5ea1f57413"
+    },
+    {
+      "path": "assets/audio/word_w_hito.wav",
+      "bytes": 26190,
+      "sha256": "4b055a53623a3f607ceda56d46b3d901be1bcc0d86492870871b5a2840fc003f"
+    },
+    {
+      "path": "assets/audio/word_w_hon.wav",
+      "bytes": 21582,
+      "sha256": "91f55f13b6c3023dc87279554eff8a6a2221e30233b0e35f8bfef808af831de0"
+    },
+    {
+      "path": "assets/audio/word_w_hoppe.wav",
+      "bytes": 32334,
+      "sha256": "053ba783fbd611c97a55e11d94d61ac21e8cbe976d4ae5db7ea8ae4e0da7c4bd"
+    },
+    {
+      "path": "assets/audio/word_w_hoshi.wav",
+      "bytes": 27214,
+      "sha256": "d4b088c2478f8b3aa0b85c2993bd6819f949ede06e8958c5330b1465b8a6701b"
+    },
+    {
+      "path": "assets/audio/word_w_houki.wav",
+      "bytes": 32334,
+      "sha256": "c0864b193f098427c3b60ec70700c7936f6543e61915e8f6511df63b2b9ed4f6"
+    },
+    {
+      "path": "assets/audio/word_w_hyou.wav",
+      "bytes": 24654,
+      "sha256": "1b74b053a2f0156ba264338b867c697d4fdab3f997fd60d7f23d2cdc01ab7cd3"
+    },
+    {
+      "path": "assets/audio/word_w_ichigo.wav",
+      "bytes": 32334,
+      "sha256": "6e915660ac9bdc511c1dbb176e086e06f8a259c1d24c70280f18353038b5402a"
+    },
+    {
+      "path": "assets/audio/word_w_imouto.wav",
+      "bytes": 35406,
+      "sha256": "25b2e720753f7f10864fef84ff8b4f4bbbe096dc83700384d60f8f872d9cab64"
+    },
+    {
+      "path": "assets/audio/word_w_inoshishi.wav",
+      "bytes": 37454,
+      "sha256": "a74981f721f3465d76141d6f9609e24c726698a3ee4af5664c35ae36c483310d"
+    },
+    {
+      "path": "assets/audio/word_w_inu.wav",
+      "bytes": 23118,
+      "sha256": "7c405b451fcf7e522b6dc2e1828f61c8d2deca5c13af931cb74688be015e44db"
+    },
+    {
+      "path": "assets/audio/word_w_janken.wav",
+      "bytes": 31822,
+      "sha256": "d0687c2107727a0ca4682346666dce34dea0ed22d2f136f91fb5410726eb46e8"
+    },
+    {
+      "path": "assets/audio/word_w_jitensha.wav",
+      "bytes": 37966,
+      "sha256": "fb120153b62af0c49482d825effea0d27fc97c2060b1c95303135a44cc3c6273"
+    },
+    {
+      "path": "assets/audio/word_w_kagi.wav",
+      "bytes": 26702,
+      "sha256": "90dc22e6ebe1f141ca0a6d7b99b162b46248f910cc0616ce73c1d96ba758977c"
+    },
+    {
+      "path": "assets/audio/word_w_kakekko.wav",
+      "bytes": 38990,
+      "sha256": "f566a65d30c6ea9d14888d5ef80dc6cc15ed0219a4285e7cfd8c3c3d4f5d3aea"
+    },
+    {
+      "path": "assets/audio/word_w_kaki.wav",
+      "bytes": 28750,
+      "sha256": "037bc2e942fee770056d6eeeacc55d8d155adda221e3b3bfc9825199a11b6c51"
+    },
+    {
+      "path": "assets/audio/word_w_kasa.wav",
+      "bytes": 26702,
+      "sha256": "d435d19a2401ef479ff0c100fd3a3b7bf96ec420f24f904ef477e6ec47de6a16"
+    },
+    {
+      "path": "assets/audio/word_w_kemuri.wav",
+      "bytes": 30798,
+      "sha256": "dc44dd4ad061eab313b07780a1f5bb21457d8d2069c8a970853d6615df4637a6"
+    },
+    {
+      "path": "assets/audio/word_w_kiku.wav",
+      "bytes": 25166,
+      "sha256": "9e63cac5141d334d9ecc76f61829d9cd8d77f2b7211057e6cdcff17f0bed6510"
+    },
+    {
+      "path": "assets/audio/word_w_kippu.wav",
+      "bytes": 31822,
+      "sha256": "c78f98701c396efefa28dbb886661312a8fa496f011fee28ca9e6bc63a3e684a"
+    },
+    {
+      "path": "assets/audio/word_w_kitte.wav",
+      "bytes": 33870,
+      "sha256": "a2bb896a8197a17b4c9fe2caa4de7dc6febdd022c8ccbc8a5aff16fde1f5da2d"
+    },
+    {
+      "path": "assets/audio/word_w_koma.wav",
+      "bytes": 25166,
+      "sha256": "c737ea640071579377a42c04cbf352de153772e03531c607afb8ef5006a614e0"
+    },
+    {
+      "path": "assets/audio/word_w_konbu.wav",
+      "bytes": 30286,
+      "sha256": "b7cc209db415ddbaeaa6628b21802eab377ea812a0521f4bb43bca52da9b317e"
+    },
+    {
+      "path": "assets/audio/word_w_kumo.wav",
+      "bytes": 26702,
+      "sha256": "bf958aed4b36d7884ec2771e2bf3c075d8b83a4936f7d1c62214f95b30f2d4d2"
+    },
+    {
+      "path": "assets/audio/word_w_kyouryuu.wav",
+      "bytes": 34382,
+      "sha256": "f42cf24d51794cad2fe08916b8d5cd8ce3f76c1053f249e3c5c883a66f4b000a"
+    },
+    {
+      "path": "assets/audio/word_w_kyoushitsu.wav",
+      "bytes": 36942,
+      "sha256": "f315390ef019fd7cb72b2c76ef4f1aacabde1c105f7cabf377606d02e4d75603"
+    },
+    {
+      "path": "assets/audio/word_w_kyuushoku.wav",
+      "bytes": 38990,
+      "sha256": "0a13e0067384acf08169ade1c061f6abfb306e892e8610e1ea94684af0a3c39c"
+    },
+    {
+      "path": "assets/audio/word_w_mado.wav",
+      "bytes": 24654,
+      "sha256": "549d543de9cf408f5e0a0f407285d6c9532a2884426601b061ce20d6462747ff"
+    },
+    {
+      "path": "assets/audio/word_w_mame.wav",
+      "bytes": 25678,
+      "sha256": "e20f91cbbf108a9c7a3209fbaff313009bc983724f5df2a5665e2b92c55566a9"
+    },
+    {
+      "path": "assets/audio/word_w_mato.wav",
+      "bytes": 26190,
+      "sha256": "d3735d64bf73816264e92ff090d690ad27b4c809ec947121d89de4b018658786"
+    },
+    {
+      "path": "assets/audio/word_w_megane.wav",
+      "bytes": 31822,
+      "sha256": "68ab725a69fd85739312e62cc61363391a670940c1c76a98ea5ce0214e7786d9"
+    },
+    {
+      "path": "assets/audio/word_w_mizu.wav",
+      "bytes": 24142,
+      "sha256": "2bee8a71d47d7a6a1f67e05d3d7cd20c1223fd87b06cc05311e271b7a3590f95"
+    },
+    {
+      "path": "assets/audio/word_w_mokkin.wav",
+      "bytes": 33358,
+      "sha256": "b1ac6a56ba94b7c1d70ccbcec18f135ce2126fed89564c6aaf5bdd9626ef6f28"
+    },
+    {
+      "path": "assets/audio/word_w_momo.wav",
+      "bytes": 26190,
+      "sha256": "ce7cc4b19619cb2c648294382f1a45442f775cf60b05d1f7b6a3230a1624c723"
+    },
+    {
+      "path": "assets/audio/word_w_mushi.wav",
+      "bytes": 27214,
+      "sha256": "5a567c8f87ac71ae7374dc459758c8155c295ffd139839833f75bc872a7b9770"
+    },
+    {
+      "path": "assets/audio/word_w_natsu.wav",
+      "bytes": 27214,
+      "sha256": "86cfc248d8a992f6ec69f3271f41df698d9cdb4777a3d050766c66bc34f827a1"
+    },
+    {
+      "path": "assets/audio/word_w_nekko.wav",
+      "bytes": 32846,
+      "sha256": "4ee9bbbba80eb077226c13bf9c5d9df5934301ed2be43d3785fae422e4f95cdd"
+    },
+    {
+      "path": "assets/audio/word_w_neko.wav",
+      "bytes": 27214,
+      "sha256": "843ffaa1aa640fdd9fbaa14cd82cdd464ca0c59e78e6dc5bae5ffca6cef4babb"
+    },
+    {
+      "path": "assets/audio/word_w_niji.wav",
+      "bytes": 26190,
+      "sha256": "d1dce88722ae3c47516f7da6673ae7f3328e0e925d25f396b4cad8b5f88d0ff6"
+    },
+    {
+      "path": "assets/audio/word_w_nikki.wav",
+      "bytes": 31822,
+      "sha256": "c0914cd27356eca7ca1d41ebd7fa508e11dbb1574891cebe547087fc1a0979b1"
+    },
+    {
+      "path": "assets/audio/word_w_nohara.wav",
+      "bytes": 29774,
+      "sha256": "8bac629206fb22b27eb27d9e81c1b8a048da7175534debab2ad29cfc8c048af6"
+    },
+    {
+      "path": "assets/audio/word_w_nuno.wav",
+      "bytes": 24142,
+      "sha256": "5faeb14b8dc03993174b2eaeb3a8762959ab03e734e6610b85b477d74241db04"
+    },
+    {
+      "path": "assets/audio/word_w_obaasan.wav",
+      "bytes": 36430,
+      "sha256": "f2f0531830ef3976dbc77217261573b748b2fcf8d6df2c7505a5742728f5798a"
+    },
+    {
+      "path": "assets/audio/word_w_obasan.wav",
+      "bytes": 32334,
+      "sha256": "5d3216d8a03ab6d565b6356eac72e1dde58c860ac5f499e90aa0213333e4a5da"
+    },
+    {
+      "path": "assets/audio/word_w_ocha.wav",
+      "bytes": 29262,
+      "sha256": "61f190e78e7b80054344d03f52b48044f5b34c378ab5b74b6495b2ec3094e6a6"
+    },
+    {
+      "path": "assets/audio/word_w_ojiisan.wav",
+      "bytes": 40526,
+      "sha256": "cea3c1dac5664d7de59b82e84c96d9b69f78b07f312b1058a5c8078da8bf6daf"
+    },
+    {
+      "path": "assets/audio/word_w_okaasan.wav",
+      "bytes": 37966,
+      "sha256": "50443bd576469c4168b70d2544c4d05ed8015f9807620eb4cc0b78e8c8318de5"
+    },
+    {
+      "path": "assets/audio/word_w_omocha.wav",
+      "bytes": 31822,
+      "sha256": "7d9222385a9586e7531159b3645398371d607ac600844732aa3ba43d3071398b"
+    },
+    {
+      "path": "assets/audio/word_w_omochi.wav",
+      "bytes": 31822,
+      "sha256": "99932dd22b0e1ec70da7c6256a9e586359c16079e9a8b0d64356e179840f92ce"
+    },
+    {
+      "path": "assets/audio/word_w_oneesan.wav",
+      "bytes": 37966,
+      "sha256": "a28a9b7b52edc5d1af168c9cfbf9567a8778249463116a2546804e42a65ef011"
+    },
+    {
+      "path": "assets/audio/word_w_oni.wav",
+      "bytes": 25678,
+      "sha256": "b4762a1a1a571e7108233fb79c2ab573484383df67dabc58941904e7c1848f70"
+    },
+    {
+      "path": "assets/audio/word_w_onigiri.wav",
+      "bytes": 36430,
+      "sha256": "0b530e43b4e873a12f648debc8ed3a920cbfd7df708289c50b444607f0ec24d4"
+    },
+    {
+      "path": "assets/audio/word_w_oniisan.wav",
+      "bytes": 38478,
+      "sha256": "7b066201ce77fd90d70cd991fa655861787a5c33a7f78beb84b76e13acf63d7a"
+    },
+    {
+      "path": "assets/audio/word_w_onpu.wav",
+      "bytes": 31310,
+      "sha256": "68208f0a407cf1f0bf27227a3ec6fe22af44b017c1e2449cce381a214982972f"
+    },
+    {
+      "path": "assets/audio/word_w_otousan.wav",
+      "bytes": 38478,
+      "sha256": "d4cf4185edd443da325a202544f8b78a17932bdcb7856cb4242ace74ac451b49"
+    },
+    {
+      "path": "assets/audio/word_w_otouto.wav",
+      "bytes": 36430,
+      "sha256": "aa4ce9c20e52da9bdb6cfa10e3a41d01f8eb0ce8c859a6b604646141edcc3643"
+    },
+    {
+      "path": "assets/audio/word_w_panda.wav",
+      "bytes": 30798,
+      "sha256": "9cecdcf2d3bdbd94d12aeef15bc95b2a441f7e0d386b47a17cd66b9b2c4fd1c4"
+    },
+    {
+      "path": "assets/audio/word_w_purin.wav",
+      "bytes": 28238,
+      "sha256": "f4df9ff73692d19ec742a6048ccf606a0553bc0817edb9adfa0e35193fc1aa1e"
+    },
+    {
+      "path": "assets/audio/word_w_rakuda.wav",
+      "bytes": 29774,
+      "sha256": "ab7e9a1338cbd9d8dc6ff1d5ee2cde24b6fd957308f3686e0e0e3b256e421b8c"
+    },
+    {
+      "path": "assets/audio/word_w_remon.wav",
+      "bytes": 26702,
+      "sha256": "dac5f1daf7ee581aab69852e929eeac058747c0113bda31ee43bfe4916e00493"
+    },
+    {
+      "path": "assets/audio/word_w_risu.wav",
+      "bytes": 23118,
+      "sha256": "51d0c42256ea859ff459842202f68c36c98d38d6e42933b00b4a5d77237f06b3"
+    },
+    {
+      "path": "assets/audio/word_w_rousoku.wav",
+      "bytes": 35918,
+      "sha256": "312ea57b0e613e4085c6f18369ba04b6587cff997c9ee2372b336dc096ba626c"
+    },
+    {
+      "path": "assets/audio/word_w_rusu.wav",
+      "bytes": 24142,
+      "sha256": "ab08b400d080243dfbde8b2606b451e2e0bf5cf05e4f4855955da18aa69e9fea"
+    },
+    {
+      "path": "assets/audio/word_w_ryokou.wav",
+      "bytes": 30798,
+      "sha256": "2b161c3740129d79b7377beecf33112623188fab937f98146207be461d45e7aa"
+    },
+    {
+      "path": "assets/audio/word_w_sakura.wav",
+      "bytes": 29774,
+      "sha256": "5454dc792529da9fac93d4c292625b4759c8a943491f681f04863234bc192c89"
+    },
+    {
+      "path": "assets/audio/word_w_saru.wav",
+      "bytes": 24142,
+      "sha256": "48f890f7c76d6ad8561c9516b9e2ffed36247848a18b693b6b182d768a1adb93"
+    },
+    {
+      "path": "assets/audio/word_w_semi.wav",
+      "bytes": 26190,
+      "sha256": "8400d2b3fca19915499da35978bd4967897be11f9f60dcc3ce1129e263a4fb98"
+    },
+    {
+      "path": "assets/audio/word_w_shima.wav",
+      "bytes": 24654,
+      "sha256": "8888e54570ece276d6bb68b5026ac848cd2f4c4b040f862d3ab2067b78235f72"
+    },
+    {
+      "path": "assets/audio/word_w_shippo.wav",
+      "bytes": 33358,
+      "sha256": "1bfe36862a134e32c98fbf38918fa64fdbbd1b795bedfaa43b930573062e6109"
+    },
+    {
+      "path": "assets/audio/word_w_sora.wav",
+      "bytes": 24654,
+      "sha256": "310c7ba9a4409ddb16fb76d3f9b99bd91f85d94eca98bc435cd9a5ad8ea9e9af"
+    },
+    {
+      "path": "assets/audio/word_w_suika.wav",
+      "bytes": 32846,
+      "sha256": "c395a729f2e1f6c3f9096f385b10a24def83c089ba5a7d1a440784de481b7258"
+    },
+    {
+      "path": "assets/audio/word_w_tako.wav",
+      "bytes": 28238,
+      "sha256": "815da5e0adce1d095bdd704e73dd837b3e5ac83da9268508441a924e43208678"
+    },
+    {
+      "path": "assets/audio/word_w_tamago.wav",
+      "bytes": 32846,
+      "sha256": "c32e7a8604423aab6ee1d3e3278e3caa4f4060ee646e601b0c569edc03f73cb3"
+    },
+    {
+      "path": "assets/audio/word_w_tegami.wav",
+      "bytes": 32334,
+      "sha256": "6017448ba918f05894e65daddb8e3b13e1d8691af97822f7dc3eb5d60ae5fa20"
+    },
+    {
+      "path": "assets/audio/word_w_tokei.wav",
+      "bytes": 29774,
+      "sha256": "cb7e800b87d70a0b2ffddd97a4ebf05adc46850918c448f7fdd3d6e1bcb966cd"
+    },
+    {
+      "path": "assets/audio/word_w_tsuki.wav",
+      "bytes": 26702,
+      "sha256": "5c74125606b79f8cb0de0345d7f62e4212014684af558d05a993146cb250a371"
+    },
+    {
+      "path": "assets/audio/word_w_uchiwa.wav",
+      "bytes": 33358,
+      "sha256": "d90030eba5816232b05401fec401e6ff6d3f97c275f02b83dc3548d5ef78c766"
+    },
+    {
+      "path": "assets/audio/word_w_uma.wav",
+      "bytes": 24142,
+      "sha256": "27121af4f22929da48fe1b1b7d3febbc1f68357393b885fed24e5faebd67a736"
+    },
+    {
+      "path": "assets/audio/word_w_umi.wav",
+      "bytes": 25166,
+      "sha256": "384d023a0a867935520334feef575a550ee81ebad0e6d72a53758f16de03e096"
+    },
+    {
+      "path": "assets/audio/word_w_unagi.wav",
+      "bytes": 30286,
+      "sha256": "bcde0ba2a04a2fb5a0ab7b9366da2874ee9c1587af9aadee563f80ea3c675ad5"
+    },
+    {
+      "path": "assets/audio/word_w_wani.wav",
+      "bytes": 25166,
+      "sha256": "a256df7e211d799c57582eedcd4196741a98ef84d2bcacea774e8bb937de47f7"
+    },
+    {
+      "path": "assets/audio/word_w_yama.wav",
+      "bytes": 23630,
+      "sha256": "cac7a211bad93fb8aa5bbec6aa69aaa83a9da884c8d6e80c4f742087a4ebbaff"
+    },
+    {
+      "path": "assets/audio/word_w_yoru.wav",
+      "bytes": 22606,
+      "sha256": "56a094ba5c038d8b1fa12f11a125b539bddc8542bc4d072bc6d55574a88ee5be"
+    },
+    {
+      "path": "assets/audio/word_w_youkai.wav",
+      "bytes": 34382,
+      "sha256": "4b577d323f72893031d76f7b069f691242e866b4d0c9e9b7b7966c7f02ae7fa6"
+    },
+    {
+      "path": "assets/audio/word_w_yuki.wav",
+      "bytes": 27726,
+      "sha256": "d6e5020a0f5189e049af72ac066806b78412e7b0c29964098964bee9ff73bf33"
+    },
+    {
+      "path": "assets/audio/word_w_yuuyake.wav",
+      "bytes": 37966,
+      "sha256": "35378ccc16e183e95e08ca020ac5996539a2d38bfceebc00f72436e2076b3097"
+    },
+    {
+      "path": "assets/audio/word_w_zabuton.wav",
+      "bytes": 34382,
+      "sha256": "1c5862fb796bd9d3136ee32f00e154490bb031ff1ead530990f594f6724ffbf6"
+    },
+    {
+      "path": "assets/audio/word_w_zaru.wav",
+      "bytes": 23630,
+      "sha256": "4560236b263329e2cc74f33c3b98ca6a709d00979666fd7515137a23303982c7"
+    },
+    {
+      "path": "assets/img/svg/w_ajisai.svg",
+      "bytes": 548,
+      "sha256": "cccd29e970dc870d5d30530e83c4d8168599b56a0e875796928f020ef7968600"
+    },
+    {
+      "path": "assets/img/svg/w_akushu.svg",
+      "bytes": 272,
+      "sha256": "0b11c399636e2d20c4b11d3ea3c10e26a3cb2ef44ee854d1b45db14b15fde274"
+    },
+    {
+      "path": "assets/img/svg/w_ame.svg",
+      "bytes": 451,
+      "sha256": "8189ec86cdc004f961f8fd22924532fa8f7df60593f44973b0dc42c6529bee5d"
+    },
+    {
+      "path": "assets/img/svg/w_aomushi.svg",
+      "bytes": 565,
+      "sha256": "d33024598d6ee7e69f8a549b3a6c5bdf4a7acbf779af357408d321656f2b7e5c"
+    },
+    {
+      "path": "assets/img/svg/w_ari.svg",
+      "bytes": 409,
+      "sha256": "da868ee073d099517ae27b099f7841e0e66fe44159ef83796880e88a596fec0e"
+    },
+    {
+      "path": "assets/img/svg/w_batta.svg",
+      "bytes": 272,
+      "sha256": "19d6d1cd56f31522ad4085d1e0fafd8561cbe161ad71aa1c4c3f6466b059de06"
+    },
+    {
+      "path": "assets/img/svg/w_budou.svg",
+      "bytes": 559,
+      "sha256": "2915d9b3dfff26a65fbde86066409d26ee27c216f9fb81fd30152a191c3cbc87"
+    },
+    {
+      "path": "assets/img/svg/w_chizu.svg",
+      "bytes": 424,
+      "sha256": "0f630bc5627fd1e44105f7a9d0735048f6b10fd5b322bcda0f42f3eaba5a3be0"
+    },
+    {
+      "path": "assets/img/svg/w_chou.svg",
+      "bytes": 316,
+      "sha256": "15e335aef78942825da327f1eba5fa9de4f350f043da7a357fcfbcd795d18fe2"
+    },
+    {
+      "path": "assets/img/svg/w_dakko.svg",
+      "bytes": 265,
+      "sha256": "23f77a1501df6bc0b676b45d433b6efca52aadfc733b8a976997d5adeab9e236"
+    },
+    {
+      "path": "assets/img/svg/w_densha.svg",
+      "bytes": 349,
+      "sha256": "565751db67c9d3d673b2163012b80d06a6ec321b53f6446c1d8265fb85f59ae5"
+    },
+    {
+      "path": "assets/img/svg/w_donguri.svg",
+      "bytes": 370,
+      "sha256": "a41fd7ad25f13160926577498775bf1f32cf0e831e0f4100e2606ab596e0e580"
+    },
+    {
+      "path": "assets/img/svg/w_ebi.svg",
+      "bytes": 336,
+      "sha256": "a377191aa3e9d4c74aa54308b68e143b1862a6a79eec72f5486ae9f8fd9ee6a8"
+    },
+    {
+      "path": "assets/img/svg/w_eki.svg",
+      "bytes": 379,
+      "sha256": "d9cbe6d3045fc71a7ddddf8000be505ac6d5616f8a0c1189d8531238dce09772"
+    },
+    {
+      "path": "assets/img/svg/w_ensoku.svg",
+      "bytes": 273,
+      "sha256": "28ddb8ca026e1f70b633cb5ed8dfc97fc0ddac54ce4b704d6b69943154cfd7d1"
+    },
+    {
+      "path": "assets/img/svg/w_fune.svg",
+      "bytes": 364,
+      "sha256": "62e8e71bcd7897196b546ccaccd93eddf8a736b5224ed0c26bdcfb90d7fa8cd4"
+    },
+    {
+      "path": "assets/img/svg/w_fuusen.svg",
+      "bytes": 232,
+      "sha256": "bc9e689ece55080dbe533911a1e0a5194b14d98dc7b1388956a816fcc7bf9b27"
+    },
+    {
+      "path": "assets/img/svg/w_gakkou.svg",
+      "bytes": 352,
+      "sha256": "0a5397e5caa59c7a8f49d90c9930f5e88289b8be6ceb7ab3f587dfffbb1d2f9c"
+    },
+    {
+      "path": "assets/img/svg/w_gyuunyuu.svg",
+      "bytes": 328,
+      "sha256": "3557261f4c5cf31028a5950e3c98aab425d7153ebb07af830fadd6291c9fd853"
+    },
+    {
+      "path": "assets/img/svg/w_hana.svg",
+      "bytes": 500,
+      "sha256": "6c76de26933b11655f7d51115175a745a0331f9c38f05114fb4ddeddc4203bc5"
+    },
+    {
+      "path": "assets/img/svg/w_happa.svg",
+      "bytes": 255,
+      "sha256": "ac03aade1fb87d3b2a0019d94db889f42533857e9383969978b9b69c7a22137a"
+    },
+    {
+      "path": "assets/img/svg/w_harappa.svg",
+      "bytes": 186,
+      "sha256": "43dd3123d0a53fa6fa804fe7dbc47b2c5453c15bf5f736726d68c46fdd68810f"
+    },
+    {
+      "path": "assets/img/svg/w_heya.svg",
+      "bytes": 395,
+      "sha256": "15ce12f79cbf46ffc8a808d3c89cd5dc87c879447f2c619db7dc807444cf9537"
+    },
+    {
+      "path": "assets/img/svg/w_hito.svg",
+      "bytes": 361,
+      "sha256": "cd8b5b2e967dfd87fbdd91cff1e8999d986465a69b701939aef63462380143f9"
+    },
+    {
+      "path": "assets/img/svg/w_hon.svg",
+      "bytes": 358,
+      "sha256": "cc029762778e6833fb7df24ddd38daa7cec711eea0834bf483c1ac1e9d67d71f"
+    },
+    {
+      "path": "assets/img/svg/w_hoppe.svg",
+      "bytes": 345,
+      "sha256": "5a8aacd6001a7c8e0aa8571c312cdaa7e08b3727d75bd6e61ec913aafb38ae4e"
+    },
+    {
+      "path": "assets/img/svg/w_hoshi.svg",
+      "bytes": 257,
+      "sha256": "c62c5baf5b017cd603d2466c204663a31a2fe1a3b64017ab024629687e3a0e43"
+    },
+    {
+      "path": "assets/img/svg/w_houki.svg",
+      "bytes": 250,
+      "sha256": "decff9a5a2f98810682f0e0d4be40fc651beb9b2f46e664674398f47e269b5a9"
+    },
+    {
+      "path": "assets/img/svg/w_hyou.svg",
+      "bytes": 335,
+      "sha256": "f9393dc7fa0609ffa6a863d495ee09498421eff72019cc7e334c67d68c296779"
+    },
+    {
+      "path": "assets/img/svg/w_ichigo.svg",
+      "bytes": 531,
+      "sha256": "a1fba86705969b4a8c31c7a97c72bb4ebea829068cd77e2f06f5229cb53f2047"
+    },
+    {
+      "path": "assets/img/svg/w_imouto.svg",
+      "bytes": 243,
+      "sha256": "606640816876eb8de065d8c836884f20ca5cf9e72a3e2fa53f4e99aa36c53356"
+    },
+    {
+      "path": "assets/img/svg/w_inoshishi.svg",
+      "bytes": 404,
+      "sha256": "40761a047c1fb25198a1ed7d184c4e6ffc74c3b82105be6792f53bee9a6ebd61"
+    },
+    {
+      "path": "assets/img/svg/w_inu.svg",
+      "bytes": 480,
+      "sha256": "88c0fa4d8bf06cf22c8447f0e99c854fd0bad5c4af9b7d1afed2659d8175ace9"
+    },
+    {
+      "path": "assets/img/svg/w_janken.svg",
+      "bytes": 349,
+      "sha256": "50c6d7dcfbf6de25130a6623d521ab68d6ead7a29510a4bd3ca7f8c1a4fb10e2"
+    },
+    {
+      "path": "assets/img/svg/w_jitensha.svg",
+      "bytes": 322,
+      "sha256": "bd0812a27921fbd5bd169aa508f878cce508048a6f244859e328081e5a394e41"
+    },
+    {
+      "path": "assets/img/svg/w_kagi.svg",
+      "bytes": 353,
+      "sha256": "9b5923ff3eee756bbf45b3c9ede9cbb61ab6b7d1a3136c0565e4da0f3041616a"
+    },
+    {
+      "path": "assets/img/svg/w_kakekko.svg",
+      "bytes": 285,
+      "sha256": "de915f3402f3781d6dbaa39a53410014332018b72524a065a5b4d4a2db4f950d"
+    },
+    {
+      "path": "assets/img/svg/w_kaki.svg",
+      "bytes": 290,
+      "sha256": "97ce402f918b77894ad356b90fe2aaae3a522eb130e42538f75ac20ce4faafb8"
+    },
+    {
+      "path": "assets/img/svg/w_kami.svg",
+      "bytes": 912,
+      "sha256": "27ca862871c5f5380c1ea777b4680586f7277cf9ca42d94499467f55df3f92c1"
+    },
+    {
+      "path": "assets/img/svg/w_kani.svg",
+      "bytes": 1249,
+      "sha256": "59728f4b3333e7771690ef63af8433e8a3fae12b2b6ac362bfc940d91898ee99"
+    },
+    {
+      "path": "assets/img/svg/w_kasa.svg",
+      "bytes": 779,
+      "sha256": "c32b8f60b17f6350012fa559e4483a0f3de5e212990c02503fe8333745133540"
+    },
+    {
+      "path": "assets/img/svg/w_kazan.svg",
+      "bytes": 646,
+      "sha256": "02283ab6884acb3877b475042e58a45febd328967bf8d4fb314332ee168ec63c"
+    },
+    {
+      "path": "assets/img/svg/w_kemuri.svg",
+      "bytes": 293,
+      "sha256": "bc98f07c1e0a27b3b92f03bac4d6e705ac4febaf4cf5dca0e140e411287c16b8"
+    },
+    {
+      "path": "assets/img/svg/w_kiku.svg",
+      "bytes": 1138,
+      "sha256": "6eb49f25d16373c024157d55b42709d0ac783fd22de12fa629e6c88fdb87f41c"
+    },
+    {
+      "path": "assets/img/svg/w_kippu.svg",
+      "bytes": 328,
+      "sha256": "783ff749b00e95fd4701443537c66920b2787068726c130c11dd74e1ebe415d9"
+    },
+    {
+      "path": "assets/img/svg/w_kitte.svg",
+      "bytes": 260,
+      "sha256": "a0d4e458775c0b2ce9706ee50dd79c55a9c837e51888ad3ae81cdcf0ef2ec40d"
+    },
+    {
+      "path": "assets/img/svg/w_koma.svg",
+      "bytes": 361,
+      "sha256": "85597536c704fec53a28438d0bd92b73536ee10eff29af41781b8c1d71bc3246"
+    },
+    {
+      "path": "assets/img/svg/w_konbu.svg",
+      "bytes": 284,
+      "sha256": "abe89a31b27914009e7bd9374e95c36421522b6dc1cc59ae2b90ac52f99438f7"
+    },
+    {
+      "path": "assets/img/svg/w_kumo.svg",
+      "bytes": 279,
+      "sha256": "d1db2f8ff78a235c8e70f3621f9050a1cebe28902c87ebcb2e94134169700e2d"
+    },
+    {
+      "path": "assets/img/svg/w_kyouryuu.svg",
+      "bytes": 261,
+      "sha256": "531b77b863b50235de210296d89243c5b6e361c591fdcb2badec59ddbddc2b4a"
+    },
+    {
+      "path": "assets/img/svg/w_kyoushitsu.svg",
+      "bytes": 258,
+      "sha256": "4cb44ac138ba8da1bf8e7c73181c3ebd3695b8e97387eb6a66562d9c01aca5dd"
+    },
+    {
+      "path": "assets/img/svg/w_kyuushoku.svg",
+      "bytes": 330,
+      "sha256": "f87c3b153493d9cb725c808386adc599ec7741ef56d4aec001ad2bf24e879a21"
+    },
+    {
+      "path": "assets/img/svg/w_mado.svg",
+      "bytes": 320,
+      "sha256": "0415d5333f27457f5b545f7bfcc3b05e13fc86c3f30351a679082692f960e9d4"
+    },
+    {
+      "path": "assets/img/svg/w_mame.svg",
+      "bytes": 392,
+      "sha256": "3222d5ae043a4b1e7dab809258cfbfe872897116f60e47ad54dbead2b0435267"
+    },
+    {
+      "path": "assets/img/svg/w_mato.svg",
+      "bytes": 355,
+      "sha256": "3ffef19781903f8b3d2d41f52d03df537916769e5a5582ec71f66cfb60e79452"
+    },
+    {
+      "path": "assets/img/svg/w_megane.svg",
+      "bytes": 334,
+      "sha256": "6ca83d36c30f2751e877d42fd10d027ab3872f34572bcde7618c43a73240f769"
+    },
+    {
+      "path": "assets/img/svg/w_mizu.svg",
+      "bytes": 336,
+      "sha256": "90346eba9a8f0c52808dead3e3f4003bcebe98076745bb524dcf1b49bcd5fbe1"
+    },
+    {
+      "path": "assets/img/svg/w_mokkin.svg",
+      "bytes": 280,
+      "sha256": "83c07e46f6df3eb4ab742cdf18516af4c40f27546930bb5196c3714de570bff0"
+    },
+    {
+      "path": "assets/img/svg/w_momo.svg",
+      "bytes": 380,
+      "sha256": "4250df84efdcbc269123ef65f82699c4bd1a783ef3a4e21199d5039281df7995"
+    },
+    {
+      "path": "assets/img/svg/w_mushi.svg",
+      "bytes": 485,
+      "sha256": "adf98235c16e3435eed5a0d70fd3211d2c8addb91ca59601959da784a6c80f19"
+    },
+    {
+      "path": "assets/img/svg/w_natsu.svg",
+      "bytes": 428,
+      "sha256": "3fd5acafcc858b3e7b1627a1c7d7f9e604aa6dcc599b84e35f6b7fe60f27de15"
+    },
+    {
+      "path": "assets/img/svg/w_nekko.svg",
+      "bytes": 228,
+      "sha256": "f7c277212b5774b3d162c1e01c0b67f1e0d61e066ba34a21c1356cdda6992bff"
+    },
+    {
+      "path": "assets/img/svg/w_neko.svg",
+      "bytes": 341,
+      "sha256": "85380e6ef0879c3d6ad8255e534c979256b8fb5825cd872c487dc0f5400011ef"
+    },
+    {
+      "path": "assets/img/svg/w_niji.svg",
+      "bytes": 506,
+      "sha256": "91b48b6ef05fb86d7f8ecc6b397272afa402f077525bd9499d0bbcc7760b46b4"
+    },
+    {
+      "path": "assets/img/svg/w_nikki.svg",
+      "bytes": 261,
+      "sha256": "bd54cd25c875656b4a7381a8455a9d8ec8e57bf7348cbdf96b38648007774d50"
+    },
+    {
+      "path": "assets/img/svg/w_nohara.svg",
+      "bytes": 377,
+      "sha256": "6799a429bc16eef49921dc5406ce33cb182cb30624da93423f3a881874946453"
+    },
+    {
+      "path": "assets/img/svg/w_nuno.svg",
+      "bytes": 364,
+      "sha256": "6e22d84f4b856726098f0e4e3fdc6f0ed539913cd3edcd0d2a75b1121a6447db"
+    },
+    {
+      "path": "assets/img/svg/w_obaasan.svg",
+      "bytes": 346,
+      "sha256": "fe20635bc65a8c28793ff9a25fea1a18eeb25448a40a2c623e1bf8f1d635303f"
+    },
+    {
+      "path": "assets/img/svg/w_obasan.svg",
+      "bytes": 263,
+      "sha256": "4926973b0f4c2e04e4e2eb41d0c6f06a016e4e310530cb0f10e26d079a5c0960"
+    },
+    {
+      "path": "assets/img/svg/w_ocha.svg",
+      "bytes": 280,
+      "sha256": "a31036a58346b3ef87534a0cb12f886677db5f930e6238be00bff7e918b8d823"
+    },
+    {
+      "path": "assets/img/svg/w_ojiisan.svg",
+      "bytes": 287,
+      "sha256": "9a068c1e3d91b8e5689eed296c02a8cdc5b9b254b04f002b73dc82ed47b7fc5b"
+    },
+    {
+      "path": "assets/img/svg/w_okaasan.svg",
+      "bytes": 263,
+      "sha256": "241cbec33ae89ec72ef223b90b9bdee293a62400ad8820a347b993136349d0ed"
+    },
+    {
+      "path": "assets/img/svg/w_omocha.svg",
+      "bytes": 340,
+      "sha256": "182c10f49e7f91d3bc0b97cd8d7533e2ac8dc0a022375f6a09ca825baecd1146"
+    },
+    {
+      "path": "assets/img/svg/w_omochi.svg",
+      "bytes": 248,
+      "sha256": "b8a17f471ffffba60e543b6544398a41f252346adfe0daa7ef4e9a976744bbe7"
+    },
+    {
+      "path": "assets/img/svg/w_oneesan.svg",
+      "bytes": 345,
+      "sha256": "083eccf52c681f53bd4a911c3453e967e5e391180fdb48f0f6b90e9e3b60b343"
+    },
+    {
+      "path": "assets/img/svg/w_oni.svg",
+      "bytes": 415,
+      "sha256": "b753d039e49614825d8e641d2990f2cebc9a7b5dc06a7f2f5161cb3a329f9361"
+    },
+    {
+      "path": "assets/img/svg/w_onigiri.svg",
+      "bytes": 312,
+      "sha256": "4cc5e378b6f48b440812f79db146bcf309d3a52b91cb3462656e80dc9b48e225"
+    },
+    {
+      "path": "assets/img/svg/w_oniisan.svg",
+      "bytes": 263,
+      "sha256": "d1ee4d371363c3d88f20a5ae8bf60da5944ab84fe078367c13edea30f6c11349"
+    },
+    {
+      "path": "assets/img/svg/w_onpu.svg",
+      "bytes": 347,
+      "sha256": "64d4ac7be6c8554212bdc2ae5b9cb221e7f1ad8eccb66a7eb317a37bfeebaed8"
+    },
+    {
+      "path": "assets/img/svg/w_otousan.svg",
+      "bytes": 263,
+      "sha256": "11109e37e221378a83920bee64f51be42b84c6f5cda021644de9213c957496cd"
+    },
+    {
+      "path": "assets/img/svg/w_otouto.svg",
+      "bytes": 253,
+      "sha256": "6e72dc47345526e1c666a5723fd00aba333dc63af10eb0e92dba53fbafe9d0c6"
+    },
+    {
+      "path": "assets/img/svg/w_panda.svg",
+      "bytes": 438,
+      "sha256": "5cfd95f92279c323ba627095a1e58d843ffac75ad1c2b703edef79b0c0708663"
+    },
+    {
+      "path": "assets/img/svg/w_purin.svg",
+      "bytes": 302,
+      "sha256": "3f92e3dd84040230483c98d24e64713e2142bc5865ee3e620f5bac1c09051c96"
+    },
+    {
+      "path": "assets/img/svg/w_rakuda.svg",
+      "bytes": 354,
+      "sha256": "afe31dd4d107ac60bbb3e0e2e792feda33ac46f437a1610fd60e55fa3623bf36"
+    },
+    {
+      "path": "assets/img/svg/w_remon.svg",
+      "bytes": 341,
+      "sha256": "06a95174a5bb620e1b1ef0fc475a543b4d6dd37eb0a4865bfe47d07df87012f4"
+    },
+    {
+      "path": "assets/img/svg/w_risu.svg",
+      "bytes": 561,
+      "sha256": "f4a26cfa6e36a53987d1e2d4def5005c390e6456898059dc78bfb1829d1cc40f"
+    },
+    {
+      "path": "assets/img/svg/w_rousoku.svg",
+      "bytes": 287,
+      "sha256": "2aa9a636ba2e1769a5092aae6b3a6e1ae72e4736602ee3a23c61e22f46af54f9"
+    },
+    {
+      "path": "assets/img/svg/w_rusu.svg",
+      "bytes": 453,
+      "sha256": "fc23302cc1d344c165c53e8de8b752f6fec1a323fb1417a0c0c509f5d6de59ff"
+    },
+    {
+      "path": "assets/img/svg/w_ryokou.svg",
+      "bytes": 354,
+      "sha256": "31e9494ea01b87d48c8f434d43118bb4d232a7db92b3ca37dd273fa936961474"
+    },
+    {
+      "path": "assets/img/svg/w_sakura.svg",
+      "bytes": 369,
+      "sha256": "b906882b0e2a8cc8e8fdf2c7a9b303841e52c00b8e4dcb4c082fa587f2f3e430"
+    },
+    {
+      "path": "assets/img/svg/w_saru.svg",
+      "bytes": 303,
+      "sha256": "42fba4647ca270200807f1efd0562e29387cb3ff8954d08dbc033f038d9bff52"
+    },
+    {
+      "path": "assets/img/svg/w_semi.svg",
+      "bytes": 532,
+      "sha256": "d5358dc60d8e24b70ee70b996234f2fc2d9cb0374ef2f093dd847b5576a14d40"
+    },
+    {
+      "path": "assets/img/svg/w_shima.svg",
+      "bytes": 420,
+      "sha256": "41ab24b545edc7954d529f387b61a01ff04b686afcd2ca193b60aba5f049ed92"
+    },
+    {
+      "path": "assets/img/svg/w_shippo.svg",
+      "bytes": 206,
+      "sha256": "c43acb16f7b4655ed153157786343aacb3bbf88feadfb823325cb8e80b6dd63e"
+    },
+    {
+      "path": "assets/img/svg/w_sora.svg",
+      "bytes": 371,
+      "sha256": "b1c83669c9eddbaf9ac1abdeb31c69632cc1e68a098b05f9d144451d05fca22a"
+    },
+    {
+      "path": "assets/img/svg/w_suika.svg",
+      "bytes": 365,
+      "sha256": "3106c6470a7c197652b1f7489c7a345d6a64b64b63892d1d0ae283d04314144a"
+    },
+    {
+      "path": "assets/img/svg/w_tako.svg",
+      "bytes": 447,
+      "sha256": "f57ec4f0aa0fe1572b466761b86b80fffd382edd8c1f5a6d1909fe3aaf8ecaec"
+    },
+    {
+      "path": "assets/img/svg/w_tamago.svg",
+      "bytes": 227,
+      "sha256": "81d559d3169450fb1f020675ab1de724d7980197ac9b9560d9ead78204f051b3"
+    },
+    {
+      "path": "assets/img/svg/w_tegami.svg",
+      "bytes": 310,
+      "sha256": "c35fe30e482cf7bb2a8749e61db6fc1e713f0398cfe48ba60b66a3d8b5fc075e"
+    },
+    {
+      "path": "assets/img/svg/w_tokei.svg",
+      "bytes": 364,
+      "sha256": "e4fefd21dcd11cf8f5213702b539eaa0db46d5e6f919c7e4b1a98cc834dbb025"
+    },
+    {
+      "path": "assets/img/svg/w_tsugi.svg",
+      "bytes": 506,
+      "sha256": "a1354fddbeb54add4bb34855a2ba174c41926128a17246dc70df9d8ecf4e94dd"
+    },
+    {
+      "path": "assets/img/svg/w_tsuki.svg",
+      "bytes": 585,
+      "sha256": "da4aceb910d840f0b45b04ea8b85602043f69bc7bf9023b5546b57728f3a26e3"
+    },
+    {
+      "path": "assets/img/svg/w_uchiwa.svg",
+      "bytes": 308,
+      "sha256": "af79f12b2b195147446efb8f038540ba8d2c027e785ab467baef9ce1c6049340"
+    },
+    {
+      "path": "assets/img/svg/w_uma.svg",
+      "bytes": 424,
+      "sha256": "1742f8ae0b47d8f80ac3a24cad0a1f9e8ccdde2d8f812523b2af4f9e88b5f235"
+    },
+    {
+      "path": "assets/img/svg/w_umi.svg",
+      "bytes": 297,
+      "sha256": "654481bd0a065ac67ea0358cdc9ffa7a057e6b6b73e1ba81cfd87eb910ebd984"
+    },
+    {
+      "path": "assets/img/svg/w_unagi.svg",
+      "bytes": 243,
+      "sha256": "f168e397473913554f6ea75270315f56e0a690c15f90b44bff294d01482b4923"
+    },
+    {
+      "path": "assets/img/svg/w_wani.svg",
+      "bytes": 394,
+      "sha256": "b0f11d6172f3eee829c79a9de89238fe72cfbaf5d812871868bbd3a3205c1529"
+    },
+    {
+      "path": "assets/img/svg/w_yama.svg",
+      "bytes": 327,
+      "sha256": "c30b87bcef5a66a2237aff32c882cd88ff8eaa8786ff28514af00891125f9f9d"
+    },
+    {
+      "path": "assets/img/svg/w_yoru.svg",
+      "bytes": 419,
+      "sha256": "8485ef398552084897dc430532bee7b9b2516cb3b36ac476322d1d92282e95b5"
+    },
+    {
+      "path": "assets/img/svg/w_youkai.svg",
+      "bytes": 244,
+      "sha256": "f7619e6d81b00ee6bf0eef1c9fb3fe3149cfd90ea95fb1dc021b7da66ac473ea"
+    },
+    {
+      "path": "assets/img/svg/w_yuki.svg",
+      "bytes": 370,
+      "sha256": "b913f3003be76f1c08c27db5e10f3be6e6c73a7dd319326e2d0805c9b10611f4"
+    },
+    {
+      "path": "assets/img/svg/w_yuuyake.svg",
+      "bytes": 313,
+      "sha256": "7abd556c47c1becb578d1a154a10959e29ef5a7ce70f2a1a54df29fd34a5b9b7"
+    },
+    {
+      "path": "assets/img/svg/w_zabuton.svg",
+      "bytes": 199,
+      "sha256": "5e8234b5546cb800f1c67f395759df49c945ca9c6d793e9771b80900b22afed0"
+    },
+    {
+      "path": "assets/img/svg/w_zaru.svg",
+      "bytes": 325,
+      "sha256": "12b35c2da135f1d3b4fdd99cb5e8775d505acef20ef2c24f27c64a7e1ba597fb"
+    },
+    {
+      "path": "favicon.svg",
+      "bytes": 9522,
+      "sha256": "61bc9a161de58248288e6905425d7180f0624c2865007b97d763fdac12043a66"
+    },
+    {
+      "path": "icons.svg",
+      "bytes": 5031,
+      "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a"
+    },
+    {
+      "path": "stroke-svgs/12354.svg",
+      "bytes": 3437,
+      "sha256": "6e07815d308def22c9fdcacf68281e26e734758a72a0a16bd4cf377ea11a5275"
+    },
+    {
+      "path": "stroke-svgs/12356.svg",
+      "bytes": 2015,
+      "sha256": "d27009128a1253c26c7cbc01c90b85d8430006e19f93ddcbd9659ebcc34b674c"
+    },
+    {
+      "path": "stroke-svgs/12358.svg",
+      "bytes": 1965,
+      "sha256": "781107513e750855308083e5f00a8f0749de939d486809df18353658dd0e8eef"
+    },
+    {
+      "path": "stroke-svgs/12360.svg",
+      "bytes": 2461,
+      "sha256": "96e2ce554168e87800dad78e676e2cf3f23755cf8eed3115cd11aff862125bd0"
+    },
+    {
+      "path": "stroke-svgs/12362.svg",
+      "bytes": 3482,
+      "sha256": "78ed2030404609a19eb905d53d7c3ebecd440ace558e7b60920935aa08a22798"
+    },
+    {
+      "path": "stroke-svgs/12363.svg",
+      "bytes": 2763,
+      "sha256": "f78103493dc2503b7aa8f772436952ac3657d75e0541ef1081e7e44cf64e6519"
+    },
+    {
+      "path": "stroke-svgs/12364.svg",
+      "bytes": 3582,
+      "sha256": "cd3a6a9b2d74839f03caa5f2926b54c70cf51545f6bf990cd48389dd06007b9c"
+    },
+    {
+      "path": "stroke-svgs/12365.svg",
+      "bytes": 2778,
+      "sha256": "81ce7daa63a156c28b26d29dbd1d194ee04271c542278ee3562bd3a37a2ee940"
+    },
+    {
+      "path": "stroke-svgs/12366.svg",
+      "bytes": 3545,
+      "sha256": "5908154ce8e5b56eb88abf31353f71875419418a9595ecad722470fb8820c9f7"
+    },
+    {
+      "path": "stroke-svgs/12367.svg",
+      "bytes": 1514,
+      "sha256": "36990f183f19e89d697b48df3de9aef80e44f47cf836242f6a471e279a69f25b"
+    },
+    {
+      "path": "stroke-svgs/12368.svg",
+      "bytes": 2288,
+      "sha256": "a5501e5e5ecc48d477f10c10d488ee40d5dc5bb95e55b5a251dd07ec32bcdb02"
+    },
+    {
+      "path": "stroke-svgs/12369.svg",
+      "bytes": 2504,
+      "sha256": "4a7622ad7c0e3a6d01f7ff2f54b42abcb0fe966740ceabec6770d08bd85aad4d"
+    },
+    {
+      "path": "stroke-svgs/12370.svg",
+      "bytes": 3287,
+      "sha256": "f1f9fb3056cd857ed198b95b1f1dc16641d33c94d85d459519ee26c85ae5a70b"
+    },
+    {
+      "path": "stroke-svgs/12371.svg",
+      "bytes": 2061,
+      "sha256": "68d1792222ad1502a29a3f519ab2ccc2a6553a187f8e104b62bfcc27e9547d8c"
+    },
+    {
+      "path": "stroke-svgs/12372.svg",
+      "bytes": 2829,
+      "sha256": "e052a9c188faaabc611cd4ae649642bd21bc63ca26aedd23701cfc61e9164ace"
+    },
+    {
+      "path": "stroke-svgs/12373.svg",
+      "bytes": 2366,
+      "sha256": "43ba16f4e43079e12dde4d6b266276890a99615de34e5edfb6e829eaafbf5fd6"
+    },
+    {
+      "path": "stroke-svgs/12374.svg",
+      "bytes": 2949,
+      "sha256": "2fdcb3584da0b047020a193b38ddcb8caae0e9dc479337c90ecaa88af4d011af"
+    },
+    {
+      "path": "stroke-svgs/12375.svg",
+      "bytes": 1586,
+      "sha256": "20e2951535e980fcd2fe6848c2f5f344021db6a50f7f4c708ab50fbc60b7c633"
+    },
+    {
+      "path": "stroke-svgs/12376.svg",
+      "bytes": 2360,
+      "sha256": "2fddd36fefb747382cba98e29ffb9e989c870b754abb87ffc4a514a5c19f195b"
+    },
+    {
+      "path": "stroke-svgs/12377.svg",
+      "bytes": 2648,
+      "sha256": "ea0250a4d41bc7324781e0d669eacfd65e0b1d36e3ca53863e9515178c9ca01d"
+    },
+    {
+      "path": "stroke-svgs/12378.svg",
+      "bytes": 3401,
+      "sha256": "26516db3822382f7270d0a79c0875ddfe426fadfa7de994d45077598f639a403"
+    },
+    {
+      "path": "stroke-svgs/12379.svg",
+      "bytes": 2770,
+      "sha256": "67362c78e70e4157a0f27d65f1a8b8545e749c2f6637646d6c36e0aefbf4ee23"
+    },
+    {
+      "path": "stroke-svgs/12380.svg",
+      "bytes": 3533,
+      "sha256": "b3ceb460062b756393e9b1f5c8ba50b9041bc827f2bed9ddbefc8c3010ab707a"
+    },
+    {
+      "path": "stroke-svgs/12381.svg",
+      "bytes": 2122,
+      "sha256": "dd1d922f86bb39c54daf6e05742b2782b7ed7eea8bb1e5cc47198fa1a7de4b60"
+    },
+    {
+      "path": "stroke-svgs/12382.svg",
+      "bytes": 2890,
+      "sha256": "45dd24aaf948a5b3c1ff8909fa55d6e7670ea9564bcd865fdfe9a4587f37a5ca"
+    },
+    {
+      "path": "stroke-svgs/12383.svg",
+      "bytes": 2851,
+      "sha256": "01b3374e3af5b4641a73765564bb92134c4936842bfc7224d8781f4da67563e5"
+    },
+    {
+      "path": "stroke-svgs/12384.svg",
+      "bytes": 3619,
+      "sha256": "ee93517dd0212484dd95dab956649679e6975733b15e8406308efb7e33760b07"
+    },
+    {
+      "path": "stroke-svgs/12385.svg",
+      "bytes": 2297,
+      "sha256": "fd086a8dbe09e4c4653f1dc2cebd93bb5869d9c177019640f671e14dd9e2d14d"
+    },
+    {
+      "path": "stroke-svgs/12386.svg",
+      "bytes": 3065,
+      "sha256": "b40d45fef2f118f32f2b4378f81d0cfca2d0d1f8fc46c972ed3ca00cc729844f"
+    },
+    {
+      "path": "stroke-svgs/12388.svg",
+      "bytes": 1397,
+      "sha256": "019eb221a4af96a7822ff510ad0d36bf65195e8b241b0c54736e98cb31416329"
+    },
+    {
+      "path": "stroke-svgs/12389.svg",
+      "bytes": 2033,
+      "sha256": "ed9c3213a0332da8e12c1e7266afbd091eda68fe74b4ccc046d725184e472a73"
+    },
+    {
+      "path": "stroke-svgs/12390.svg",
+      "bytes": 1810,
+      "sha256": "ecc86d33d1bd041aead7032ccc0fc54369282d540bf79cce8700316a80255ca0"
+    },
+    {
+      "path": "stroke-svgs/12391.svg",
+      "bytes": 2617,
+      "sha256": "3dd26d87a9deef3d00acc07a9df6740be6677c3bf30da52ae19e73a1aa3533ae"
+    },
+    {
+      "path": "stroke-svgs/12392.svg",
+      "bytes": 2149,
+      "sha256": "cedc7f8580ac408563ffa76a03eeb0ab7f4c7cb9a088928f7f0094ffd0264f18"
+    },
+    {
+      "path": "stroke-svgs/12393.svg",
+      "bytes": 2913,
+      "sha256": "dfac27a4b3cf8e965de7b4974bcdf65717e241b31edad27653786a039b76fc6f"
+    },
+    {
+      "path": "stroke-svgs/12394.svg",
+      "bytes": 3202,
+      "sha256": "5a77718ecf04b6e3f96f212b09d8793335591fe5739dfe7a70e87bca0b64d281"
+    },
+    {
+      "path": "stroke-svgs/12395.svg",
+      "bytes": 2456,
+      "sha256": "8445511daa2592fcfd1f67e0467eb0aeba4f3e2d752b8fd92857619df2f2eae5"
+    },
+    {
+      "path": "stroke-svgs/12396.svg",
+      "bytes": 3636,
+      "sha256": "8bce9bec68b604afe4725743bd12cbdab39e09694c14a66da64755f8e0a67e56"
+    },
+    {
+      "path": "stroke-svgs/12397.svg",
+      "bytes": 3428,
+      "sha256": "d9621813eff47f10053506a19572ae6c50e5d7284fc89a3bcdeb1b19e6918e7a"
+    },
+    {
+      "path": "stroke-svgs/12398.svg",
+      "bytes": 2345,
+      "sha256": "59de8efd5a8fee9a0b4ac23727d379659d20caa1191a4defb80ac38b85a12094"
+    },
+    {
+      "path": "stroke-svgs/12399.svg",
+      "bytes": 2937,
+      "sha256": "e5bee16c6e9b6edf6d9e6c0af588cbf611748ffa1861a0d42242835d5a383c38"
+    },
+    {
+      "path": "stroke-svgs/12400.svg",
+      "bytes": 3615,
+      "sha256": "9076efde52b8cb3da0b0ba6bd1b76fab8c3d60fcab6f5e4a22141e02068dfdc1"
+    },
+    {
+      "path": "stroke-svgs/12401.svg",
+      "bytes": 3470,
+      "sha256": "8a2515947f632bdc99db261a584288a17d160a0627ca6421ce7946af7cd99b2c"
+    },
+    {
+      "path": "stroke-svgs/12402.svg",
+      "bytes": 2042,
+      "sha256": "061b94ef38657bdcc5082840700cd73c4bfc4ab9d578279d0f1dcf439c94c65d"
+    },
+    {
+      "path": "stroke-svgs/12403.svg",
+      "bytes": 2810,
+      "sha256": "c7bc8c4cf6ce9a6bd91af44fea476bf39c0e3f82986b7c2665346984245239e4"
+    },
+    {
+      "path": "stroke-svgs/12404.svg",
+      "bytes": 2581,
+      "sha256": "eb6322fc256aa768cc2c66b4406fb770573c61a4b9d40118b316117170121187"
+    },
+    {
+      "path": "stroke-svgs/12405.svg",
+      "bytes": 2647,
+      "sha256": "575fda2a0f7f8c5b514dbb44093be64ace2a9d271275589406ce757b310a64ef"
+    },
+    {
+      "path": "stroke-svgs/12406.svg",
+      "bytes": 3421,
+      "sha256": "79b134cc7941729a64b8d62eedd1262e7cdace7fc10f504e04fe512382e76f62"
+    },
+    {
+      "path": "stroke-svgs/12407.svg",
+      "bytes": 3190,
+      "sha256": "e57122dd2a4ca4bf5217ecdf317206f06132c90a635a580486905d277294b426"
+    },
+    {
+      "path": "stroke-svgs/12408.svg",
+      "bytes": 1529,
+      "sha256": "f6272e63e4c5c865a940a5a8f2821e94676bd299caf179cb837ed41d331b08d2"
+    },
+    {
+      "path": "stroke-svgs/12409.svg",
+      "bytes": 2295,
+      "sha256": "24bb569fb3cc6609b71d24235fbfb0170d0189c2a245eab948976ad41a8672d5"
+    },
+    {
+      "path": "stroke-svgs/12410.svg",
+      "bytes": 2069,
+      "sha256": "9fcf3cbae5ebc4d02fe6897cc8e9b5c7537adf1c6a66bf0697591ef82ffb6b28"
+    },
+    {
+      "path": "stroke-svgs/12411.svg",
+      "bytes": 3788,
+      "sha256": "500b20f6191aedf0b97e1a80b6f28fd8b73889e587e9fd5d31d28a6f1f851ed9"
+    },
+    {
+      "path": "stroke-svgs/12412.svg",
+      "bytes": 4563,
+      "sha256": "470f0663a6bb970cc291a0f55ed8a291f9cdbd6ff3603ef6e1bae7461999f570"
+    },
+    {
+      "path": "stroke-svgs/12413.svg",
+      "bytes": 4332,
+      "sha256": "8b3816b85d1f1353edb7d22bc74ebc632735f2548e89270d83264c84acca44ec"
+    },
+    {
+      "path": "stroke-svgs/12414.svg",
+      "bytes": 3200,
+      "sha256": "49efae9de72f9f5620142b9f2a7d08fae51ddec025e434ca5844e232e25e0ed2"
+    },
+    {
+      "path": "stroke-svgs/12415.svg",
+      "bytes": 2915,
+      "sha256": "4d08fc63dd322a2f7c575a4501e773891d7f0af2810d4af1dd4bf4243ece5457"
+    },
+    {
+      "path": "stroke-svgs/12416.svg",
+      "bytes": 3378,
+      "sha256": "a698c8478a6af73eb5f386f6b5ec00506716fed7c9d0e87dad042244c594c57c"
+    },
+    {
+      "path": "stroke-svgs/12417.svg",
+      "bytes": 3247,
+      "sha256": "3837154fc71a4fb02aae9812c97772cd559650b6ea0d784e5e87a2bcdd834f2c"
+    },
+    {
+      "path": "stroke-svgs/12418.svg",
+      "bytes": 2357,
+      "sha256": "9dba7ae56d716cb0686315f0741836a534c6036ac2ec332a660212d4e860ac28"
+    },
+    {
+      "path": "stroke-svgs/12419.svg",
+      "bytes": 2750,
+      "sha256": "9a13fd83f69d56e2b69250be9d0f045d7177b81eee9e2feeb9078f1c7757625a"
+    },
+    {
+      "path": "stroke-svgs/12420.svg",
+      "bytes": 2734,
+      "sha256": "2df656d2150c7c622c04395ecf5f1c86cbfed3ae74d71cbe97c3762a0f9e6890"
+    },
+    {
+      "path": "stroke-svgs/12421.svg",
+      "bytes": 2569,
+      "sha256": "e1f96b9774603643f72c9b537620d2d0eec0802db59af2235b494c93a1a811c4"
+    },
+    {
+      "path": "stroke-svgs/12422.svg",
+      "bytes": 2565,
+      "sha256": "eafc587c11ccf6b3f7589fba7025dbbfddfc82e170821edc6ee3d1c87ce1f29a"
+    },
+    {
+      "path": "stroke-svgs/12423.svg",
+      "bytes": 2198,
+      "sha256": "455e52e4f4658f9266e124aca129fc4ee35c1e479ae506297109eb1e24a1b240"
+    },
+    {
+      "path": "stroke-svgs/12424.svg",
+      "bytes": 2544,
+      "sha256": "3b95e714cfb627fdc28c26fe1aa671aecbb1c8ef83f1d80853b3e3c619686440"
+    },
+    {
+      "path": "stroke-svgs/12425.svg",
+      "bytes": 2253,
+      "sha256": "146c806cbcb07edb4b4d7b4962d9c26d1ac7c05f1b625df8ad007794bcfb7176"
+    },
+    {
+      "path": "stroke-svgs/12426.svg",
+      "bytes": 2027,
+      "sha256": "a860a803d6db86c0882e69165d29b20bf9fcb3aefa6791f29b213ed0fb3db0d7"
+    },
+    {
+      "path": "stroke-svgs/12427.svg",
+      "bytes": 2664,
+      "sha256": "8a5991d0b1ec39db249584d050c962f28b508910e1c367819d1962499088fda3"
+    },
+    {
+      "path": "stroke-svgs/12428.svg",
+      "bytes": 2692,
+      "sha256": "25d0375c10a15e78da8a4981eacdb789ad1b957820a0d446a68b8ae9e9872c14"
+    },
+    {
+      "path": "stroke-svgs/12429.svg",
+      "bytes": 2076,
+      "sha256": "c53b5d994b94c4d8a9a157d7bec776e8776600046b88aaad8ff133675470f5af"
+    },
+    {
+      "path": "stroke-svgs/12431.svg",
+      "bytes": 2579,
+      "sha256": "b9a3f3d2518877e456674e029614998fdd91f35d9e6b6476120f77a5252a0c9f"
+    },
+    {
+      "path": "stroke-svgs/12434.svg",
+      "bytes": 2953,
+      "sha256": "9c195775f160fb782e2f5f1c8e970e973f0ecd9a382f52bd32a58c75abae644a"
+    },
+    {
+      "path": "stroke-svgs/12435.svg",
+      "bytes": 2070,
+      "sha256": "671eb0dd93c51b480dff399762c158f879651f5d56991c9eeff8096af0ba6fe2"
+    }
+  ]
+}

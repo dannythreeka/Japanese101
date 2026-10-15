@@ -16,7 +16,7 @@ export async function loadKana(): Promise<Kana[]> {
   try {
     return _kana
   } catch (e) {
-    throw new Error(`loadKana failed: ${String(e)}`)
+    throw new Error(`loadKana failed: ${String(e)}`, { cause: e })
   }
 }
 
@@ -24,7 +24,7 @@ export async function loadVocabulary(): Promise<Word[]> {
   try {
     return _vocab
   } catch (e) {
-    throw new Error(`loadVocabulary failed: ${String(e)}`)
+    throw new Error(`loadVocabulary failed: ${String(e)}`, { cause: e })
   }
 }
 
@@ -32,7 +32,7 @@ export async function loadUnitLessons(): Promise<UnitLesson[]> {
   try {
     return _lessons
   } catch (e) {
-    throw new Error(`loadUnitLessons failed: ${String(e)}`)
+    throw new Error(`loadUnitLessons failed: ${String(e)}`, { cause: e })
   }
 }
 

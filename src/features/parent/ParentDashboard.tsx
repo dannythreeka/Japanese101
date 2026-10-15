@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import LegacyBackup from '../../components/LegacyBackup'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode, WriteDifficulty } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { requestMicPermission } from '../../lib/mic'
 import { getAllProgress, getRecentSessions, getTotalStudyTime, getOrCreateAdventureProgress, getAllProfiles, deleteProfile, resetProfileProgress, getActiveProfileId, setActiveProfileId } from '../../db'
-import { setSfxEnabled, setGlobalVolume, isSfxEnabled, getGlobalVolume } from '../../lib/audio'
+import { isSfxEnabled, getGlobalVolume } from '../../lib/audio'
 import { lessonData, levelsData } from '../../data/loaders'
 import { getFirstLevelId } from '../adventure/adventureEngine'
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils'
@@ -26,7 +27,7 @@ export default function ParentDashboard() {
   const navigate = useNavigate()
   const {
     kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars, micMode,
-    writeDifficulty, setWriteDifficulty,
+    writeDifficulty, setWriteDifficulty, setSfxEnabled, setGlobalVolume,
     setKanaMode, setKanaDifficulty, setAgeMode, toggleUnit, setMicMode,
   } = useAppStore()
 
@@ -45,31 +46,38 @@ export default function ParentDashboard() {
   const [progressRecords, setProgressRecords] = useState<ProgressRecord[]>([])
   const [sessions, setSessions] = useState<SessionRecord[]>([])
   const [adventureProgress, setAdventureProgress] = useState<AdventureProgress | null>(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(false)
+  const [revision, setRevision] = useState(0)
 
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [confirmAction, setConfirmAction] = useState<{ type: 'reset' | 'delete'; profileId: string } | null>(null)
 
   const t = useT()
+  const pinTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  useEffect(() => () => { if (pinTimer.current) clearTimeout(pinTimer.current) }, [])
 
   useEffect(() => {
     if (!unlocked) return
-    setLoading(true)
-    Promise.all([
+    let active = true
+    void Promise.all([
       getTotalStudyTime(profileId),
       getAllProgress(profileId),
       getRecentSessions(profileId, 100),
       getOrCreateAdventureProgress(getFirstLevelId(), profileId),
       getAllProfiles(),
     ]).then(([time, recs, sess, adv, profs]) => {
+      if (!active) return
+      setLoadError(false)
       setStudyTime(time)
       setProgressRecords(recs)
       setSessions(sess)
       setAdventureProgress(adv)
       setProfiles(profs)
       setLoading(false)
-    })
-  }, [unlocked])
+    }).catch(() => { if (active) setLoadError(true) })
+    return () => { active = false }
+  }, [unlocked, profileId, revision])
 
   async function handleResetProfile(profileId: string) {
     await resetProfileProgress(profileId)
@@ -97,7 +105,8 @@ export default function ParentDashboard() {
         setUnlocked(true)
       } else {
         setPinError(true)
-        setTimeout(() => setPinInput(''), 600)
+        if (pinTimer.current) clearTimeout(pinTimer.current)
+        pinTimer.current = setTimeout(() => setPinInput(''), 600)
       }
     }
   }
@@ -151,6 +160,8 @@ export default function ParentDashboard() {
     )
   }
 
+  if (loadError) return <div role="alert"><p>{t('sessionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => setRevision(r=>r+1)}>{t('retry')}</button></div>
+
   const kanaAcc = featureAccuracy(progressRecords, 'kana')
   const vocabAcc = featureAccuracy(progressRecords, 'vocab')
   const dayCounts = last7DayCounts(sessions)
@@ -182,6 +193,7 @@ export default function ParentDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-4 pt-6">
+      <LegacyBackup />
       <div className="max-w-lg mx-auto flex flex-col gap-6">
 
         <div className="flex items-center gap-3">

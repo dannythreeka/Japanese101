@@ -11,7 +11,7 @@ interface Props {
 
 type Phase = 'boss-shake' | 'evolve' | 'victory'
 
-export default function VictoryCutscene({ evolvedToStage, petName: _petName, onComplete }: Props) {
+export default function VictoryCutscene({ evolvedToStage, onComplete }: Props) {
   const [phase, setPhase] = useState<Phase>('boss-shake')
   const [showCard, setShowCard] = useState(false)
   const confettiRef = useRef<ReturnType<typeof setInterval> | null>(null)
@@ -55,6 +55,7 @@ export default function VictoryCutscene({ evolvedToStage, petName: _petName, onC
       clearTimeout(t1); clearTimeout(t2)
       if (confettiRef.current) clearInterval(confettiRef.current)
       cancelAnimationFrame(rafRef.current)
+      confetti.reset()
     }
   }, [])
 
@@ -63,6 +64,7 @@ export default function VictoryCutscene({ evolvedToStage, petName: _petName, onC
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.85)' }}>
 
+<button className="absolute right-4 top-4 min-h-16 px-6 rounded-2xl bg-white text-indigo-800" onClick={onComplete}>繼續 →</button>
       {/* Phase 1: boss shake overlay */}
       {phase === 'boss-shake' && (
         <div className="flex flex-col items-center gap-6" style={{ animation: 'pet-shake 0.3s ease-in-out infinite' }}>

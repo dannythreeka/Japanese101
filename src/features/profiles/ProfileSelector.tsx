@@ -10,16 +10,21 @@ export default function ProfileSelector() {
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [loading, setLoading] = useState(true)
 
+  const [failed,setFailed] = useState(false)
   useEffect(() => {
-    getAllProfiles().then(p => {
+    let active=true
+    void getAllProfiles().then(p => {
+      if (!active) return
       setProfiles(p)
       setLoading(false)
-    })
+    }).catch(()=>{if(active)setFailed(true)})
+    return()=>{active=false}
   }, [])
+  if(failed)throw new Error('Profile list unavailable; data retained')
 
   function handleSelect(profile: Profile) {
     setActiveProfileId(profile.profile_id)
-    void updateProfileLastPlayed(profile.profile_id)
+    void updateProfileLastPlayed(profile.profile_id).catch(()=>setFailed(true))
     navigate('/')
   }
 

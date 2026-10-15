@@ -1,7 +1,18 @@
 import type { ProgressRecord, SessionRecord, KanaMode, KanaDifficulty, AgeMode, MicMode, WriteDifficulty } from '../types'
 import type { UiLang } from '../lib/i18n'
 import type { QuestionAttempt } from '../lib/attempts'
-import type { AdventureSession } from '../store/useAppStore'
+export interface AdventureSession {
+  id?: string
+  profileId?: string
+  levelId: string
+  pending: {
+    challengeId: string
+    gameMode: string
+    configOverrides: Record<string, unknown>
+  } | null
+  results: Record<string, { accuracy: number; xpGained: number; sessionId?: string }>
+}
+
 
 export type ScopedProgress = ProgressRecord & { profileId: string }
 export type ScopedSession = SessionRecord & { profileId: string; completionRate?: number; evidenceKind?: 'independent' | 'participation' }

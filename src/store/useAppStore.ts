@@ -1,23 +1,13 @@
 import { setSfxEnabled as applySfx, setGlobalVolume as applyVolume } from '../lib/audio'
 import { create } from 'zustand'
 import { getActiveProfileId, getProfilePreferences, saveProfilePreferences, db } from '../db'
-import { incrementStars } from '../db/profile-data'
 import { defaultPreferences } from '../db/models'
 import type { ProfilePreferences } from '../db/models'
 import type { KanaMode, KanaDifficulty, AgeMode, MicMode, WriteDifficulty } from '../types'
 import type { UiLang } from '../lib/i18n'
 
-export interface AdventureSession {
-  id?: string
-  profileId?: string
-  levelId: string
-  pending: {
-    challengeId: string
-    gameMode: string
-    configOverrides: Record<string, unknown>
-  } | null
-  results: Record<string, { accuracy: number; xpGained: number; sessionId?: string }>
-}
+import type { AdventureSession } from '../db/models'
+export type { AdventureSession } from '../db/models'
 
 interface AppState {
   profileId: string
@@ -51,12 +41,12 @@ interface AppState {
   toggleUnit: (unitId: string) => void
   startSession: () => void
   endSession: () => number
-  addStars: (n: number) => void
   setParentUnlocked: (v: boolean) => void
   clearAdventureSession: () => void
 }
 
-let retryPending: (() => Promise<unknown>) | null = null
+const pendingPreferences = new Map<string, ProfilePreferences>()
+let preferenceChain = Promise.resolve()
 export const useAppStore = create<AppState>((set, get) => {
   const persist = (patch: Partial<ProfilePreferences>) => {
     const snapshot = { ...get() }
@@ -70,8 +60,12 @@ export const useAppStore = create<AppState>((set, get) => {
     set(patch)
     if (patch.sfxEnabled !== undefined) applySfx(patch.sfxEnabled)
     if (patch.sfxVolume !== undefined) applyVolume(patch.sfxVolume)
-    const operation = () => saveProfilePreferences(preferences)
-    void operation().catch((error: unknown) => { retryPending = operation; set({ storageError: String(error) }) })
+    pendingPreferences.set(profileId, preferences)
+    preferenceChain = preferenceChain.then(async () => {
+      if (pendingPreferences.get(profileId) !== preferences) return
+      try { await saveProfilePreferences(preferences); if(pendingPreferences.get(profileId)===preferences)pendingPreferences.delete(profileId); if(!pendingPreferences.size)set({storageError:null}) }
+      catch(error) {set({storageError:String(error)})}
+    })
   }
   return {
   ...defaultPreferences(getActiveProfileId()),
@@ -86,7 +80,7 @@ export const useAppStore = create<AppState>((set, get) => {
     applySfx(preferences.sfxEnabled); applyVolume(preferences.sfxVolume)
     set({ ...preferences, totalStars: wallet?.stars ?? 0, adventureSession: levels.sort((a,b)=>(b.updatedAt ?? b.startedAt)-(a.updatedAt ?? a.startedAt))[0] ?? null, sessionStartTime: null, parentUnlocked: false })
   },
-  retryStorage: async () => { if (retryPending) await retryPending(); retryPending = null; set({ storageError: null }) },
+  retryStorage: async () => { await preferenceChain; for(const [id,preferences] of pendingPreferences) { await saveProfilePreferences(preferences); if(pendingPreferences.get(id)===preferences)pendingPreferences.delete(id) }; if(!pendingPreferences.size)set({storageError:null}) },
   setSfxEnabled: (sfxEnabled) => persist({ sfxEnabled }),
   setGlobalVolume: (sfxVolume) => persist({ sfxVolume }),
   setWriteDifficulty: (writeDifficulty) => persist({ writeDifficulty }),
@@ -104,12 +98,6 @@ export const useAppStore = create<AppState>((set, get) => {
     const duration = start ? Date.now() - start : 0
     set({ sessionStartTime: null })
     return duration
-  },
-
-  addStars: (n) => {
-    const profileId = get().profileId
-    const operation = async () => { const totalStars = await incrementStars(profileId, n); if (get().profileId === profileId) set({ totalStars }) }
-    void operation().catch((error: unknown) => { retryPending = operation; set({ storageError: String(error) }) })
   },
 
   setParentUnlocked: (v) => set({ parentUnlocked: v }),

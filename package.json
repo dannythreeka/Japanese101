@@ -17,7 +17,8 @@
     "typecheck": "tsc -b --pretty false",
     "postbuild": "node scripts/build-version.mjs",
     "test:e2e": "playwright test",
-    "validate:blueprint": "node scripts/blueprint.mjs && node --test scripts/blueprint.test.mjs"
+    "validate:blueprint": "node scripts/blueprint.mjs && node --test scripts/blueprint.test.mjs",
+    "prebuild": "node scripts/offline-manifest.mjs"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

@@ -2,7 +2,7 @@
   "$schema": "../schemas/vocabulary.schema.json",
   "_meta": {
     "note": "Beta v0.2 — 5 課 14 詞/課 + 新手村蛋。詞彙來源混搭:課本(mitsumura content/qr)+ 課外常用詞(extended)。",
-    "audio_strategy": "Web Speech API 即時合成 ja-JP;audio.src 留空,程式以 word.kana 呼叫 TTS。",
+    "audio_strategy": "Bundled VOICEVOX WAV; Japanese Web Speech is a runtime fallback only, never a verified offline asset.",
     "image_strategy": "每個 image.src 指向 /assets/img/svg/<id>.svg;Claude Code 在 S6.7 階段批次生成簡筆 SVG(先給 3 張範例確認風格再批次)。",
     "source_legend": {
       "mitsumura_content": "光村圖書 content.json 中該課的 vocabulary 欄位",
@@ -1369,8 +1369,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_ari.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_ari.wav",
@@ -1388,8 +1388,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_kasa.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_kasa.wav",
@@ -1407,8 +1407,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_kiku.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_kiku.wav",
@@ -1426,8 +1426,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_kumo.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_kumo.wav",
@@ -1445,8 +1445,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_kemuri.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_kemuri.wav",
@@ -1464,8 +1464,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_koma.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_koma.wav",
@@ -1483,8 +1483,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_sakura.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_sakura.wav",
@@ -1502,8 +1502,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_shima.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_shima.wav",
@@ -1521,8 +1521,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_suika.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_suika.wav",
@@ -1540,8 +1540,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_semi.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_semi.wav",
@@ -1559,8 +1559,8 @@
       "unit": "adv_l1_hajimari",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_sora.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_sora.wav",
@@ -1578,8 +1578,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_tako.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_tako.wav",
@@ -1597,8 +1597,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_chizu.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_chizu.wav",
@@ -1616,8 +1616,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_tsuki.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_tsuki.wav",
@@ -1635,8 +1635,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_tegami.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_tegami.wav",
@@ -1654,8 +1654,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_tokei.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_tokei.wav",
@@ -1673,8 +1673,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_natsu.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_natsu.wav",
@@ -1692,8 +1692,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_niji.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_niji.wav",
@@ -1711,8 +1711,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_nuno.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_nuno.wav",
@@ -1730,8 +1730,8 @@
       "unit": "adv_l2_seseragi",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_nohara.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_nohara.wav",
@@ -1749,8 +1749,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_hana.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_hana.wav",
@@ -1768,8 +1768,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_hito.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_hito.wav",
@@ -1787,8 +1787,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_fune.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_fune.wav",
@@ -1806,8 +1806,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_heya.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_heya.wav",
@@ -1825,8 +1825,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_hoshi.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_hoshi.wav",
@@ -1844,8 +1844,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_mame.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_mame.wav",
@@ -1863,8 +1863,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_mizu.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_mizu.wav",
@@ -1882,8 +1882,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_mushi.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_mushi.wav",
@@ -1901,8 +1901,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_megane.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_megane.wav",
@@ -1920,8 +1920,8 @@
       "unit": "adv_l3_soyokaze",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_momo.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_momo.wav",
@@ -1939,8 +1939,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_yama.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_yama.wav",
@@ -1958,8 +1958,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_yuki.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_yuki.wav",
@@ -1977,8 +1977,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_yoru.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_yoru.wav",
@@ -1996,8 +1996,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_rakuda.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_rakuda.wav",
@@ -2015,8 +2015,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_risu.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_risu.wav",
@@ -2034,8 +2034,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_rusu.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_rusu.wav",
@@ -2053,8 +2053,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_remon.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_remon.wav",
@@ -2072,8 +2072,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_wani.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_wani.wav",
@@ -2091,8 +2091,8 @@
       "unit": "adv_l4_yuugure",
       "source": "extended",
       "image": {
-        "src": "",
-        "license": "CC0"
+        "src": "/assets/img/svg/w_hon.svg",
+        "license": "self-created"
       },
       "audio": {
         "src": "/assets/audio/word_w_hon.wav",

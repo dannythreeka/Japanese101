@@ -2,7 +2,7 @@ import Dexie, { type Table } from 'dexie'
 import type { ProgressRecord, SessionRecord, PetState } from '../types'
 import type { AdventureProgress } from '../types/adventure'
 import type { Profile } from '../types/profile'
-import { defaultPreferences } from './models'
+import { normalizePreferences } from './models'
 import type { ScopedProgress, ScopedSession, ProfilePreferences, MigrationBackup, GameCheckpoint, LevelSession, RewardReceipt } from './models'
 
 export class AppDB extends Dexie {
@@ -64,7 +64,7 @@ export class AppDB extends Dexie {
         for (let n = 0; n < localStorage.length; n++) {
           const key = localStorage.key(n)
           // Preserve old app state, never unrelated credentials or sync tokens.
-          if (key && (/^completedTasks_/.test(key) || ['ageMode','micMode','uiLang','disabledUnits','totalStars','writeDifficulty'].includes(key))) {
+          if (key && (/^completedTasks_/.test(key) || ['kanaMode','kanaDifficulty','ageMode','micMode','uiLang','disabledUnits','totalStars','writeDifficulty','sfxEnabled','sfxVolume'].includes(key))) {
             localPreferences[key] = localStorage.getItem(key) ?? ''
           }
         }
@@ -82,7 +82,7 @@ export const db = new AppDB()
 const DEFAULT_PROFILE_ID = 'player'
 
 export function getActiveProfileId(): string {
-  return localStorage.getItem('activeProfileId') ?? DEFAULT_PROFILE_ID
+  try { return localStorage.getItem('activeProfileId') ?? DEFAULT_PROFILE_ID } catch { return DEFAULT_PROFILE_ID }
 }
 
 export function setActiveProfileId(id: string): void {
@@ -247,10 +247,13 @@ export async function getOrCreateAdventureProgress(firstLevelId: string, profile
 }
 
 export async function getProfilePreferences(profileId: string): Promise<ProfilePreferences> {
-  return (await db.preferences.get(profileId)) ?? defaultPreferences(profileId)
+  return normalizePreferences(profileId, await db.preferences.get(profileId))
 }
 export async function saveProfilePreferences(preferences: ProfilePreferences): Promise<void> {
-  await db.preferences.put(preferences)
+  await db.transaction('rw', [db.profiles, db.preferences], async () => {
+    if (!await db.profiles.get(preferences.profileId)) throw new Error('Player no longer exists')
+    await db.preferences.put(normalizePreferences(preferences.profileId,preferences))
+  })
 }
 export async function getLegacySharedBackup(): Promise<MigrationBackup | undefined> {
   return db.migrationBackups.get('pre-v5')

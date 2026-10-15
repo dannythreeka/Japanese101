@@ -29,9 +29,13 @@ function ActivePractice({ session: initial, children, restart }: { session: Game
         if (!alive.current) { done(); return }
         const cancel = () => { pending.current = null; done() }
         cancelPending.current = cancel
+        let running = false
         const wrapped = () => {
+          if (running) return
           if (!alive.current) { cancel(); return }
-          void operation().then(value => { if (alive.current) { setError(false); pending.current = null }; resolve(value); done() }).catch(() => {
+          running = true
+          void operation().then(value => { running = false; if (alive.current) { setError(false); pending.current = null }; resolve(value); done() }).catch(() => {
+            running = false
             if (!alive.current) { cancel(); return }
             pending.current = wrapped; setError(true)
           })

@@ -36,6 +36,7 @@ describe('buildParams (smoke)', () => {
 
 import { afterEach, vi } from 'vitest'
 import { KanaCatchEngine } from './KanaCatchEngine'
+import { playSpeech } from '../../lib/tts'
 vi.mock('../../lib/tts', () => ({ playSpeech: vi.fn().mockResolvedValue(undefined), stopSpeaking: vi.fn() }))
 
 afterEach(() => { vi.restoreAllMocks(); vi.unstubAllGlobals(); vi.useRealTimers() })
@@ -94,4 +95,19 @@ it('handles an empty pool without crashing and cancels completion on destroy', (
   h.draw(); h.tap('あ'); h.engine.destroy()
   vi.advanceTimersByTime(1000)
   expect(h.onComplete).not.toHaveBeenCalled()
+})
+
+
+it('disables answering immediately on a new audio question, before playback finishes',async()=>{
+  const h=engineHarness(1);h.engine.destroy()
+  const canvas=document.createElement('canvas'),onAnswer=vi.fn(),states:string[]=[]
+  let ended:()=>void=()=>{}
+  vi.mocked(playSpeech).mockImplementationOnce(()=>new Promise<void>(resolve=>{ended=resolve}))
+  const engine=new KanaCatchEngine(canvas,{fallSpeed:50,showRomaji:false,roundLength:1,requireAudio:true},{
+    nextQuestion:()=>({items:[{id:'a',display:'あ'},{id:'i',display:'い'}],targetId:'a',ttsText:'あ'}),
+    onNewQuestion(){expect(states.at(-1)).toBe('loading')},onCorrect(){},onMiss(){},onComplete(){},onAnswer,onAudioState:state=>states.push(state),
+  })
+  engine.start();engine.choose('a');expect(onAnswer).not.toHaveBeenCalled()
+  ended();await Promise.resolve();expect(states.at(-1)).toBe('ready')
+  engine.choose('a');await Promise.resolve();expect(onAnswer).toHaveBeenCalledOnce();engine.destroy()
 })

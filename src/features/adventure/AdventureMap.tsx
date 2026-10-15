@@ -84,21 +84,22 @@ export default function AdventureMap() {
     return { x: vw / 2 - pos.x, y: vh / 2 - pos.y, scale: 1 }
   }
 
-  // ── Load progress + initial centering ──────────────────────────────────────
+  const [loadError, setLoadError] = useState(false)
+  const [revision, setRevision] = useState(0)
   useEffect(() => {
-    getOrCreateAdventureProgress(getFirstLevelId(), profileId).then(async (p) => {
+    let active = true
+    void getOrCreateAdventureProgress(getFirstLevelId(), profileId).then(async p => {
       const fixed = ensureValidProgress(levels, p)
       if (fixed !== p) await saveAdventureProgress(fixed)
-      setProgress(fixed)
-    })
-  }, [levels])
-
-  useEffect(() => {
-    if (!progress) return
-    const idx = levels.findIndex((l) => getLevelStatus(l, progress) === 'next')
-    setView(viewCenteredOn(idx >= 0 ? idx : 0))
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [progress])
+      if (!active) return
+      setProgress(fixed); setLoadError(false)
+      const idx = levels.findIndex(l => getLevelStatus(l, fixed) === 'next')
+      const pos = nodePos(Math.max(0, idx))
+      setView({ x: (containerRef.current?.clientWidth ?? window.innerWidth) / 2 - pos.x,
+        y: (containerRef.current?.clientHeight ?? window.innerHeight - 60) / 2 - pos.y, scale: 1 })
+    }).catch(() => { if (active) setLoadError(true) })
+    return () => { active = false }
+  }, [levels, profileId, revision])
 
   // ── Pointer drag ────────────────────────────────────────────────────────────
   function onPointerDown(e: React.PointerEvent) {
@@ -191,6 +192,7 @@ export default function AdventureMap() {
   const pathStr = levels.map((_, i) => { const p = nodePos(i); return `${p.x},${p.y}` }).join(' ')
 
   // ── Loading ─────────────────────────────────────────────────────────────────
+  if (loadError) return <div role="alert"><p>{t('sessionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => setRevision(r=>r+1)}>{t('retry')}</button></div>
   if (!progress) {
     return (
       <div className="relative min-h-screen flex items-center justify-center overflow-hidden">

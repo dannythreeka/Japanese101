@@ -111,12 +111,14 @@ export class KanaCatchEngine {
     this.waiting = false
     this.wrongInQuestion = this.questionNum === (this.params.initialQuestionIndex ?? 0) && !!this.params.initialWrong
     const q = this.cb.nextQuestion()
-    if (q.items.length < 2 || !q.items.some(item => item.id === q.targetId)) {
+    if (q.items.length < 2 || new Set(q.items.map(item=>item.id)).size !== q.items.length || q.items.filter(item => item.id === q.targetId).length !== 1) {
       this.waiting = true
       this.cb.onError?.()
       return
     }
     this.currentQ = q
+    this.audioReady = this.params.requireAudio === false
+    this.cb.onAudioState?.(this.audioReady ? 'ready' : 'loading')
     this.cb.onNewQuestion(q)
     const sectionW = CANVAS_W / q.items.length
     this.bubbles = q.items.map((item, i) => {
@@ -132,7 +134,7 @@ export class KanaCatchEngine {
       }
     })
     this.audioReady = this.params.requireAudio === false
-    this.pending = setTimeout(() => { this.playQuestionAudio() }, 350)
+    this.playQuestionAudio()
   }
 
   private readonly loop = (ts: number): void => {

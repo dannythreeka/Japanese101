@@ -55,7 +55,7 @@ export async function finishLevel(profileId: string, sessionId: string, levelId:
     const level = levelsData().levels.find(l => l.level_id === levelId)
     if (!session || session.profileId !== profileId || session.levelId !== levelId || session.contentVersion !== CONTENT_VERSION || !level) throw new Error('Invalid level session')
     const oldReceipt = await db.rewardReceipts.get(`level:${sessionId}`)
-    if (oldReceipt) return { alreadyCompleted: true, receipt: oldReceipt, stars: (await db.adventureProgress.get(profileId))!.completed_levels[levelId].stars }
+    if (oldReceipt) return { alreadyCompleted: true, receipt: oldReceipt, stars: oldReceipt.stars as 1|2|3 }
     if (session.status !== 'active') throw new Error('Session cannot be completed')
     const progress = await getOrCreateAdventureProgress(getFirstLevelId(), profileId)
     if (getLevelStatus(level, progress) === 'locked') throw new Error('Level is locked')

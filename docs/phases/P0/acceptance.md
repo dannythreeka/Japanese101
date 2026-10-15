@@ -17,7 +17,7 @@
 | P0-06 | BLOCKED | CI補齊typecheck／data／blueprint／lint／unit／build／三引擎及artifact；Vercel正式入口、Pages移除待合併。preview轉登入，無法GET版本SHA | Codex工程；Vercel權限需擁有者 |
 | P0-07 | BLOCKED | 六條gate逐項記錄、P1第一批PR已排；責任人／人工簽核與preview尚缺 | 產品／QA真人待確認 |
 
-所有證據在docs/verification/。實測commit與截圖紀錄分開：UI/probe針對runtime src@9100671（本PR從未修改runtime src）；CI工具基準637ab42，GitHub PR runner合成merge 838b7416cfad50d9cb764bcf36cab907d970bb7d，三引擎PASS；後續3b0d877僅增加port選項與測試環境metadata，最終CI另列baseline。檢查不使用真孩子紀錄。
+所有證據在docs/verification/。實測commit與截圖紀錄分開：UI/probe針對runtime src@9100671（本PR從未修改runtime src）；CI工具基準637ab42，GitHub PR runner合成merge 838b7416cfad50d9cb764bcf36cab907d970bb7d，三引擎PASS；後續3b0d877僅增加port選項與測試環境metadata，最終CI（head3b0d877、run38711924120）三引擎再PASS，具體步驟／版本見baseline及ci-final。檢查不使用真孩子紀錄。
 
 ## project §3.1 六項 gate
 
@@ -50,3 +50,5 @@
 4. P0-07：上述通過後重審六項gate，記錄簽核commit，才能放行P1-01／02／03及13。P1-13修lint是可靠度階段工作，本P0只建立真實基準，不為gate綠燈提前跨Phase。
 
 主機AppArmor目前暫時載入，重開機可能失效。持久化不是此P0工具驗收的隱含前提；交接已說明，後續維護由主機管理者處理。沒有更動核心／Wi-Fi／apt或交易服務。
+
+真人審查可直接使用 [審核表](../../content/review-form.md)，尚未填寫或簽核。

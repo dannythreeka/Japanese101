@@ -36,3 +36,5 @@ CI：[run 38710872715](https://github.com/dannythreeka/Japanese101/actions/runs/
 後續工具變動為3b0d877（port選項、測試環境metadata輸出、觀測scripts），沒有runtime src行為變更；最新CI結果將附於P0 acceptance。原始三引擎證據保留，未以重新截圖抹掉失敗嘗試。
 
 官方題型來源：2026-10-15下載並核對[JLPT N5題型PDF](https://jlpt.jp/e/guideline/pdf/n5_e_revised.pdf)；配額屬本產品自訂，[官方FAQ](https://www.jlpt.jp/e/faq/)不提供固定詞彙／漢字／文法清單。這些引用僅支持題型與範圍界線，不能為AI擬定的60句型草案背書。
+
+最終工具版本CI：[run 38711924120](https://github.com/dannythreeka/Japanese101/actions/runs/38711924120)，head3b0d877a5807f4cd1c71d5dcb874cfa8732345dd，合成merge10209aaa3d0a3d77675ae4e55c03a45fdcf85fb8。三引擎smoke再次PASS，CI僅lint failure。artifact11961256861已存ci-final，包括每引擎environment.json：Node22.23.2、Chromium145.0.7632.6／Firefox146.0.1／WebKit26.0。這是最終工具程式檢查；後續commit僅文件／證據，未改應用或工具邏輯。

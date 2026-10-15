@@ -27,3 +27,5 @@ Vercelproduction與branch部署由GitHub可核SHA，正式別名可讀。但bran
 - 不改原runtime src／schema，不跨入P1；缺陷與audit轉具體P1-13，不自動升級依賴或apt。
 
 下一步只需解除acceptance列出的真人審核／責任承接／preview存取；不重做已保存證據、不自動合併或正式發布。
+
+最終工具CI run38711924120：Node22.23.2，Chromium145／Firefox146／WebKit26三引擎PASS，其餘檢查除既有lint均PASS。證據ci-final具三份environment.json、home.png、trace.zip。228任務ID唯一，依賴無循環；新增／異動Markdown本機連結與fence檢查通過；diff掃描未包含實際憑證值。

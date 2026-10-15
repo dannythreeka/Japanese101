@@ -144,3 +144,5 @@ manifest.skills 每個節點明確列 canDo、prerequisites、teaching、practic
 ## 凍結前 gate
 
 結構驗證用`npm run validate:blueprint`檢查唯一ID、單元／能力引用、先修無循環、首四與全配額及14類。這只驗結構；P0-03需真人簽核後設定reviewer／reviewedAt與APPROVED狀態。P4逐題審核不因本藍圖簽核而免除。
+
+待審者可填 [真人審核表](docs/content/review-form.md)；未填表不代表默認通過。

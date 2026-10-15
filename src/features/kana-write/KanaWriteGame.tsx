@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { kanaData, vocabData } from '../../data/loaders'
@@ -100,6 +101,7 @@ function toWriteTarget(item: Kana | Word, _difficulty: 1 | 2 | 3): WriteTarget {
 }
 
 export default function KanaWriteGame() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { ageMode, kanaDifficulty, writeDifficulty } = useAppStore()
   const adventure = useAdventureChallenge()
@@ -279,7 +281,7 @@ export default function KanaWriteGame() {
     setCurrentStars(stars)
 
     const isCorrect = stars >= 2
-    const record = await getOrCreateProgress(current.id, current.type)
+    const record = await getOrCreateProgress(current.id, current.type, profileId)
     await saveProgress(isCorrect ? updateAfterCorrect(record) : updateAfterIncorrect(record))
 
     playSfx(isCorrect ? 'correct' : 'tap')
@@ -305,7 +307,7 @@ export default function KanaWriteGame() {
     const xp = calculateXpGain(correct, total)
     setXpGained(xp)
 
-    await saveSession({
+    await saveSession(profileId, {
       id: `kw-${Date.now()}`,
       date: Date.now(),
       durationMs: Date.now() - sessionStart.current,
@@ -314,7 +316,7 @@ export default function KanaWriteGame() {
       total,
     })
 
-    if (xp > 0) await addXpToPet(xp, results.filter(r => r.stars >= 2 && r.type === 'kana').map(r => r.itemId))
+    if (xp > 0) await addXpToPet(xp, results.filter(r => r.stars >= 2 && r.type === 'kana').map(r => r.itemId), profileId)
     if (xp > 0) playSfx('levelup')
 
     setPhase('done')

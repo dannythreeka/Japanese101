@@ -1,6 +1,7 @@
 export type UiLang = 'ja' | 'zh'
 
 export const T = {
+  micUnavailable: { ja: 'マイクを使えません。設定を確認するか、もどって別の練習を選んでください。', zh: '無法使用麥克風。可以確認權限後重試，或返回選擇其他練習。' },
   firstAccuracy: { ja: '最初の答えの正答率', zh: '首次獨立答對率' },
   practiceCompletion: { ja: '練習の完了', zh: '練習完成率' },
   questionUnavailable: { ja: '問題を用意できませんでした。もどるか、もう一度ためしてください。', zh: '目前無法準備題目，可以返回或重試。' },

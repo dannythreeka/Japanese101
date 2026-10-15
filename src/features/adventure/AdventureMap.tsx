@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getOrCreateAdventureProgress, saveAdventureProgress } from '../../db'
@@ -50,6 +51,7 @@ interface View { x: number; y: number; scale: number }
 
 // ── Component ───────────────────────────────────────────────────────────────
 export default function AdventureMap() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const t = useT()
   const [progress, setProgress] = useState<AdventureProgress | null>(null)
@@ -84,7 +86,7 @@ export default function AdventureMap() {
 
   // ── Load progress + initial centering ──────────────────────────────────────
   useEffect(() => {
-    getOrCreateAdventureProgress(getFirstLevelId()).then(async (p) => {
+    getOrCreateAdventureProgress(getFirstLevelId(), profileId).then(async (p) => {
       const fixed = ensureValidProgress(levels, p)
       if (fixed !== p) await saveAdventureProgress(fixed)
       setProgress(fixed)

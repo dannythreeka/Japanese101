@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { Kana } from '../../types'
@@ -31,6 +32,7 @@ function pickWrongChoices(correct: Kana, pool: Kana[], count: number): Kana[] {
 }
 
 export default function KanaMatchGame() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { kanaDifficulty, kanaMode, addStars, startSession, endSession } = useAppStore()
   const t = useT()
@@ -86,7 +88,7 @@ export default function KanaMatchGame() {
     const current = queue[currentIdx]
     const isCorrect = chosen.id === current.id
 
-    const record = await getOrCreateProgress(current.id, 'kana')
+    const record = await getOrCreateProgress(current.id, 'kana', profileId)
     if (isCorrect) {
       setCorrectId(chosen.id)
       setCardAnim('animate-bounce-in')
@@ -124,7 +126,7 @@ export default function KanaMatchGame() {
     if (sessionSaved.current) return
     sessionSaved.current = true
     const duration = endSession()
-    await saveSession({
+    await saveSession(profileId, {
       id: `kana-${Date.now()}`,
       date: Date.now(),
       durationMs: duration,
@@ -133,7 +135,7 @@ export default function KanaMatchGame() {
       total: TOTAL_QUESTIONS,
     })
     const xp = calculateXpGain(finalScore, TOTAL_QUESTIONS)
-    const result = await addXpToPet(xp, correctKanaIds.current)
+    const result = await addXpToPet(xp, correctKanaIds.current, profileId)
     if (result.leveledUp) {
       playSfx('levelup')
       setXpResult(result)

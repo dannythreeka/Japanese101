@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { Word } from '../../types'
@@ -43,6 +44,7 @@ function makeRound(pool: Word[]): QuizRound {
 }
 
 export default function ListenQuiz() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { addStars, startSession, endSession } = useAppStore()
   const t = useT()
@@ -78,7 +80,7 @@ export default function ListenQuiz() {
     setAnswered(true)
     const isCorrect = chosen.id === round.correct.id
 
-    const record = await getOrCreateProgress(round.correct.id, 'vocab')
+    const record = await getOrCreateProgress(round.correct.id, 'vocab', profileId)
 
     if (isCorrect) {
       setCorrectId(chosen.id)
@@ -117,7 +119,7 @@ export default function ListenQuiz() {
     if (sessionSaved.current) return
     sessionSaved.current = true
     const duration = endSession()
-    await saveSession({
+    await saveSession(profileId, {
       id: `quiz-${Date.now()}`,
       date: Date.now(),
       durationMs: duration,
@@ -126,7 +128,7 @@ export default function ListenQuiz() {
       total: TOTAL_ROUNDS,
     })
     const xp = calculateXpGain(finalScore, TOTAL_ROUNDS)
-    const result = await addXpToPet(xp)
+    const result = await addXpToPet(xp, [], profileId)
     if (result.leveledUp) {
       playSfx('levelup')
       setXpResult(result)

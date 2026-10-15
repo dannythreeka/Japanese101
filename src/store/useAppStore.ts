@@ -1,18 +1,30 @@
 import { create } from 'zustand'
+import { getActiveProfileId, getProfilePreferences, saveProfilePreferences, db } from '../db'
+import { incrementStars } from '../db/profile-data'
+import { defaultPreferences } from '../db/models'
+import type { ProfilePreferences } from '../db/models'
 import type { KanaMode, KanaDifficulty, AgeMode, MicMode, WriteDifficulty } from '../types'
 import type { UiLang } from '../lib/i18n'
 
 export interface AdventureSession {
+  id?: string
+  profileId?: string
   levelId: string
   pending: {
     challengeId: string
     gameMode: string
     configOverrides: Record<string, unknown>
   } | null
-  results: Record<string, { accuracy: number; xpGained: number }>
+  results: Record<string, { accuracy: number; xpGained: number; sessionId?: string }>
 }
 
 interface AppState {
+  profileId: string
+  enhancedConsent: boolean
+  storageError: string | null
+  hydrateProfile: (profileId: string) => Promise<void>
+  retryStorage: () => Promise<void>
+
   kanaMode: KanaMode
   kanaDifficulty: KanaDifficulty
   ageMode: AgeMode
@@ -43,42 +55,40 @@ interface AppState {
   clearAdventureSession: () => void
 }
 
-export const useAppStore = create<AppState>((set, get) => ({
-  kanaMode: 'hiragana',
-  kanaDifficulty: 1,
-  ageMode: (localStorage.getItem('ageMode') as AgeMode | null) ?? 'young',
-  micMode: (localStorage.getItem('micMode') as MicMode | null) ?? 'offline',
-  uiLang: (localStorage.getItem('uiLang') as UiLang | null) ?? 'ja',
-  disabledUnits: JSON.parse(localStorage.getItem('disabledUnits') ?? '[]') as string[],
+let retryPending: (() => Promise<unknown>) | null = null
+export const useAppStore = create<AppState>((set, get) => {
+  const persist = (patch: Partial<ProfilePreferences>) => {
+    const snapshot = { ...get() }
+    const profileId = snapshot.profileId
+    const preferences: ProfilePreferences = {
+      profileId, kanaMode: snapshot.kanaMode, kanaDifficulty: snapshot.kanaDifficulty,
+      ageMode: snapshot.ageMode, micMode: snapshot.micMode, enhancedConsent: snapshot.enhancedConsent,
+      uiLang: snapshot.uiLang, disabledUnits: snapshot.disabledUnits, writeDifficulty: snapshot.writeDifficulty, ...patch,
+    }
+    set(patch)
+    const operation = () => saveProfilePreferences(preferences)
+    void operation().catch((error: unknown) => { retryPending = operation; set({ storageError: String(error) }) })
+  }
+  return {
+  ...defaultPreferences(getActiveProfileId()),
+  storageError: null,
   sessionStartTime: null,
-  totalStars: Number(localStorage.getItem('totalStars') ?? 0),
+  totalStars: 0,
   parentUnlocked: false,
   adventureSession: null,
-  writeDifficulty: (Number(localStorage.getItem('writeDifficulty')) || 1) as WriteDifficulty,
-
-  setWriteDifficulty: (d) => { localStorage.setItem('writeDifficulty', String(d)); set({ writeDifficulty: d }) },
-  setKanaMode: (mode) => set({ kanaMode: mode }),
-  setKanaDifficulty: (level) => set({ kanaDifficulty: level }),
-  setAgeMode: (mode) => {
-    localStorage.setItem('ageMode', mode)
-    set({ ageMode: mode })
+  hydrateProfile: async (profileId) => {
+    const [preferences, wallet] = await Promise.all([getProfilePreferences(profileId), db.wallets.get(profileId)])
+    if (getActiveProfileId() !== profileId) return
+    set({ ...preferences, totalStars: wallet?.stars ?? 0, adventureSession: null, sessionStartTime: null, parentUnlocked: false })
   },
-  setMicMode: (mode) => {
-    localStorage.setItem('micMode', mode)
-    set({ micMode: mode })
-  },
-  setUiLang: (lang) => {
-    localStorage.setItem('uiLang', lang)
-    set({ uiLang: lang })
-  },
-  toggleUnit: (unitId: string) => {
-    const current = get().disabledUnits
-    const next = current.includes(unitId)
-      ? current.filter(id => id !== unitId)
-      : [...current, unitId]
-    localStorage.setItem('disabledUnits', JSON.stringify(next))
-    set({ disabledUnits: next })
-  },
+  retryStorage: async () => { if (retryPending) await retryPending(); retryPending = null; set({ storageError: null }) },
+  setWriteDifficulty: (writeDifficulty) => persist({ writeDifficulty }),
+  setKanaMode: (kanaMode) => persist({ kanaMode }),
+  setKanaDifficulty: (kanaDifficulty) => persist({ kanaDifficulty }),
+  setAgeMode: (ageMode) => persist({ ageMode }),
+  setMicMode: (micMode) => persist({ micMode, enhancedConsent: micMode === 'enhanced' }),
+  setUiLang: (uiLang) => persist({ uiLang }),
+  toggleUnit: (unitId) => { const current = get().disabledUnits; persist({ disabledUnits: current.includes(unitId) ? current.filter(id => id !== unitId) : [...current, unitId] }) },
 
   startSession: () => set({ sessionStartTime: Date.now() }),
 
@@ -90,9 +100,9 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
 
   addStars: (n) => {
-    const next = get().totalStars + n
-    localStorage.setItem('totalStars', String(next))
-    set({ totalStars: next })
+    const profileId = get().profileId
+    const operation = async () => { const totalStars = await incrementStars(profileId, n); if (get().profileId === profileId) set({ totalStars }) }
+    void operation().catch((error: unknown) => { retryPending = operation; set({ storageError: String(error) }) })
   },
 
   setParentUnlocked: (v) => set({ parentUnlocked: v }),
@@ -128,4 +138,5 @@ export const useAppStore = create<AppState>((set, get) => ({
   },
 
   clearAdventureSession: () => set({ adventureSession: null }),
-}))
+  }
+})

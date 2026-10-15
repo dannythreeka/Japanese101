@@ -137,3 +137,8 @@ export function speakById(text: string, id: string, rate = 0.85): void {
 export function isTTSAvailable(): boolean {
   return typeof window !== 'undefined' && 'speechSynthesis' in window
 }
+
+export function stopSpeaking(): void {
+  window.speechSynthesis?.cancel()
+  for (const audio of Object.values(audioCache)) { audio.pause(); audio.currentTime = 0 }
+}

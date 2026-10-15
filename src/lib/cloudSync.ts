@@ -47,7 +47,7 @@ async function buildLocalPayload(): Promise<SyncPayload> {
   const [adventure, pet, kana] = await Promise.all([
     getAdventureProgress(profileId),
     getPetState(profileId),
-    getAllProgress(),
+    getAllProgress(profileId),
   ])
   return { profileId, adventure_progress: adventure, pet_state: pet, kana_progress: kana, updated_at: Date.now() }
 }
@@ -81,15 +81,21 @@ export async function pullSync(): Promise<'ok' | 'nodata' | 'auth' | 'error'> {
     if (!res.ok) return 'error'
     const data = (await res.json()) as SyncPayload | null
     if (!data) return 'nodata'
-    await applyRemoteData(data)
+    await applyRemoteData(data, profileId)
     return 'ok'
   } catch {
     return 'error'
   }
 }
 
-async function applyRemoteData(remote: SyncPayload): Promise<void> {
+async function applyRemoteData(remote: SyncPayload, profileId: string): Promise<void> {
+  if (remote.profileId !== profileId) throw new Error('Remote player mismatch')
+  if (remote.adventure_progress && remote.adventure_progress.id !== profileId) throw new Error('Remote adventure owner mismatch')
+  if (remote.pet_state && remote.pet_state.petId !== profileId) throw new Error('Remote pet owner mismatch')
+  for (const record of remote.kana_progress) {
+    if (!('profileId' in record) || record.profileId !== profileId) throw new Error('Unassignable remote legacy record; keep it in the legacy backup')
+  }
   if (remote.adventure_progress) await saveAdventureProgress(remote.adventure_progress)
   if (remote.pet_state) await savePetState(remote.pet_state)
-  for (const record of remote.kana_progress) await saveProgress(record as ProgressRecord)
+  for (const record of remote.kana_progress) await saveProgress({ ...record, profileId })
 }

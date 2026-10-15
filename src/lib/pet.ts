@@ -1,5 +1,5 @@
 import type { PetState } from '../types'
-import { getOrCreatePet, savePetState } from '../db'
+import { db, getOrCreatePet, savePetState } from '../db'
 import { getNewlyUnlocked } from './cosmetics'
 import { computeEvolutionStageFromLevels } from './petEvolution'
 
@@ -12,7 +12,8 @@ export function getLevel(xp: number): number {
 }
 
 /** @deprecated Evolution is now level-triggered via applyLevelEvolution */
-export function getEvolutionStage(_level: number): 0 {
+export function getEvolutionStage(...args: [number]): 0 {
+  void args
   return 0
 }
 
@@ -40,9 +41,12 @@ export interface XpResult {
 
 export async function addXpToPet(
   xpGain: number,
-  newKanaIds: string[] = [],
+  newKanaIds: string[],
+  profileId: string,
 ): Promise<XpResult> {
-  const pet = await getOrCreatePet()
+  return db.transaction('rw', [db.profiles, db.pets], async () => {
+  if (!await db.profiles.get(profileId)) throw new Error('Player no longer exists')
+  const pet = await getOrCreatePet(profileId)
   const oldLevel = pet.level
 
   const newXp = pet.xp + xpGain
@@ -69,6 +73,7 @@ export async function addXpToPet(
     leveledUp: newLevel > oldLevel,
     evolvedToStage: null,
   }
+  })
 }
 
 export interface EvolutionResult {
@@ -76,8 +81,8 @@ export interface EvolutionResult {
   newStage: number | null
 }
 
-export async function applyLevelEvolution(completedLevelIds: string[]): Promise<EvolutionResult> {
-  const pet = await getOrCreatePet()
+export async function applyLevelEvolution(completedLevelIds: string[], profileId: string): Promise<EvolutionResult> {
+  const pet = await getOrCreatePet(profileId)
   const targetStage = computeEvolutionStageFromLevels(completedLevelIds)
   if (targetStage <= pet.evolutionStage) return { pet, newStage: null }
   const updated: PetState = { ...pet, evolutionStage: targetStage }

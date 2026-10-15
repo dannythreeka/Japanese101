@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import ProfileGate from './components/ProfileGate'
 import { loadVoices } from './lib/tts'
 import HomeScreen from './features/home/HomeScreen'
 import PlayScreen from './features/play/PlayScreen'
@@ -22,7 +23,7 @@ export default function App() {
   useEffect(() => { void loadVoices() }, [])
 
   return (
-    <HashRouter>
+    <ProfileGate><HashRouter>
       <Routes>
         {/* Profiles */}
         <Route path="/profiles" element={<ProfileSelector />} />
@@ -50,6 +51,6 @@ export default function App() {
         <Route path="/kid/quiz" element={<Navigate to="/play/quiz" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </HashRouter>
+    </HashRouter></ProfileGate>
   )
 }

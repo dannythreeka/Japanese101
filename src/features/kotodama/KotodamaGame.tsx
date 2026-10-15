@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useState, useEffect, useRef, useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../../store/useAppStore'
@@ -26,8 +27,9 @@ const MAX_ATTEMPTS = 5
 const ALL_LESSONS = lessonData()
 
 export default function KotodamaGame() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
-  const { micMode, ageMode, addStars, startSession, endSession } = useAppStore()
+  const { micMode, enhancedConsent, ageMode, addStars, startSession, endSession } = useAppStore()
   const adventure = useAdventureChallenge()
   const t = useT()
   const outcomeMsg: Record<MicOutcome, string> = {
@@ -65,6 +67,8 @@ export default function KotodamaGame() {
   const [roundStars, setRoundStars] = useState<number[]>([])
 
   const sessionRef = useRef<MicSession | null>(null)
+  const micAbort = useRef<AbortController | null>(null)
+  const [micError, setMicError] = useState(false)
   const autoStopRef = useRef<ReturnType<typeof setTimeout> | null>(null)
   const savedRef   = useRef(false)
   const waveBarRefs = useRef<(HTMLDivElement | null)[]>([])
@@ -90,6 +94,7 @@ export default function KotodamaGame() {
     startSession()
     return () => {
       if (autoStopRef.current) clearTimeout(autoStopRef.current)
+      micAbort.current?.abort()
       sessionRef.current?.stop()
       sessionRef.current = null
     }
@@ -109,7 +114,7 @@ export default function KotodamaGame() {
     const total = roundStars.reduce((a, b) => a + b, 0)
     addStars(total)
     const duration = endSession()
-    void saveSession({
+    void saveSession(profileId, {
       id: `kotodama-${Date.now()}`,
       date: Date.now(),
       durationMs: duration,
@@ -117,7 +122,7 @@ export default function KotodamaGame() {
       correct: roundStars.filter(s => s > 0).length,
       total: words.length,
     })
-    void addXpToPet(total * 10)
+    void addXpToPet(total * 10, [], profileId)
   }, [phase]) // eslint-disable-line react-hooks/exhaustive-deps
 
   // Drive waveform bars directly via DOM refs — bypass React re-renders at 60fps
@@ -176,18 +181,26 @@ export default function KotodamaGame() {
     if (!words[roundIndex]) return
     setPhase('listening')
     setOutcome(null)
+    setMicError(false)
+    micAbort.current?.abort()
+    const controller = new AbortController()
+    micAbort.current = controller
     const config = ageMode === 'young' ? EASY_CONFIG : DEFAULT_CONFIG
     try {
       sessionRef.current = await createMicSession(
         config,
         micMode as Exclude<MicMode, 'off'>,
         words[roundIndex].word,
+        { enhancedConsent, signal: controller.signal },
       )
+      if (controller.signal.aborted) { sessionRef.current.stop(); sessionRef.current = null; return }
       autoStopRef.current = setTimeout(stopListening, config.maxRecordDurationMs)
     } catch {
+      if (controller.signal.aborted) return
+      setMicError(true)
       setPhase('initial')
     }
-  }, [phase, roundIndex, words, ageMode, micMode, stopListening])
+  }, [phase, roundIndex, words, ageMode, micMode, enhancedConsent, stopListening])
 
   // ── Done screen ────────────────────────────────────────────
   if (phase === 'done') {
@@ -259,6 +272,7 @@ export default function KotodamaGame() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-indigo-100 to-purple-100 flex flex-col items-center px-4 pt-6 pb-8 gap-4">
 
+      {micError && <p role="alert">{t('micUnavailable')}</p>}
       {/* Header */}
       <div className="w-full max-w-sm flex justify-between items-center">
         <button

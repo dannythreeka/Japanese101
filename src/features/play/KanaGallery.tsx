@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../../store/useAppStore'
@@ -17,13 +18,14 @@ const TYPE_LABEL: Record<string, string> = {
 const KANA_TYPES = ['seion', 'dakuon', 'handakuon', 'youon'] as const
 
 export default function KanaGallery() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { kanaMode } = useAppStore()
   const t = useT()
   const [collected, setCollected] = useState<Set<string>>(new Set())
 
   useEffect(() => {
-    getOrCreatePet().then((pet) => {
+    getOrCreatePet(profileId).then((pet) => {
       setCollected(new Set(pet.collection))
     })
   }, [])

@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getOrCreatePet } from '../../db'
@@ -10,6 +11,7 @@ import { useT } from '../../hooks/useT'
 import type { PetState } from '../../types'
 
 export default function PlayScreen() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { totalStars, micMode, uiLang, setUiLang } = useAppStore()
   const t = useT()
@@ -20,7 +22,7 @@ export default function PlayScreen() {
 
   useEffect(() => {
     preloadSfx(['tap', 'correct', 'levelup'])
-    getOrCreatePet().then(setPet)
+    getOrCreatePet(profileId).then(setPet)
   }, [])
 
   const handleGameNav = (path: string) => {

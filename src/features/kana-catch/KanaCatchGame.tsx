@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { PetState, KanaCatchSubMode, ConceptWord } from '../../types'
@@ -34,6 +35,7 @@ const KANA_CATCH_MODE: Record<string, KanaCatchSubMode> = {
 }
 
 export default function KanaCatchGame() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { ageMode, kanaDifficulty, addStars, startSession, endSession } = useAppStore()
   const adventure = useAdventureChallenge()
@@ -73,7 +75,7 @@ export default function KanaCatchGame() {
     highlightCorrectAnswer: paramsOverride.highlightCorrectAnswer ?? false,
   }), [baseParams, paramsOverride])
 
-  useEffect(() => { getOrCreatePet().then(setPet) }, [])
+  useEffect(() => { getOrCreatePet(profileId).then(setPet) }, [])
 
   useEffect(() => {
     if (pausedQ) speak(pausedQ.ttsText)
@@ -87,14 +89,14 @@ export default function KanaCatchGame() {
     setTimeout(() => setBounce(false), 600)
     correctIds.current = [...correctIds.current, itemId]
     const type = subMode === 'word_to_image' ? 'vocab' : 'kana'
-    const record = await getOrCreateProgress(itemId, type)
+    const record = await getOrCreateProgress(itemId, type, profileId)
     await saveProgress(updateAfterCorrect(record))
   }, [addStars, subMode])
 
   const handleMiss = useCallback(async (itemId: string) => {
     playSfx('wrong')
     const type = subMode === 'word_to_image' ? 'vocab' : 'kana'
-    const record = await getOrCreateProgress(itemId, type)
+    const record = await getOrCreateProgress(itemId, type, profileId)
     await saveProgress(updateAfterIncorrect(record))
   }, [subMode])
 
@@ -103,10 +105,10 @@ export default function KanaCatchGame() {
     sessionSaved.current = true
     setFirstScore(correct)
     const duration = endSession()
-    await saveSession({ id: `kana-catch-${Date.now()}`, date: Date.now(), durationMs: duration,
+    await saveSession(profileId, { id: `kana-catch-${Date.now()}`, date: Date.now(), durationMs: duration,
       feature: 'kana_catch', correct, total })
     const xp = calculateXpGain(correct, total)
-    const result = await addXpToPet(xp, subMode !== 'word_to_image' ? correctIds.current : [])
+    const result = await addXpToPet(xp, subMode !== 'word_to_image' ? correctIds.current : [], profileId)
     setPet(result.pet)
     if (result.leveledUp) { playSfx('levelup'); setXpResult(result) }
     setGameState('results')
@@ -119,7 +121,7 @@ export default function KanaCatchGame() {
     let active = true
     let engine: KanaCatchEngine | null = null
     void (async () => {
-      const pMap = await loadProgressMap()
+      const pMap = await loadProgressMap(profileId)
       if (!active) return
       const lesson = LESSONS.find(l => l.unit_id === unitId)
       const activePairs = pooledPairs ?? lesson?.target_kana_pairs

@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { Word } from '../../types'
@@ -38,6 +39,7 @@ const UNIT_JAPANESE: Record<string, string> = {
 const unitIds = [...new Set(ALL_WORDS.map((w) => w.unit).filter((u): u is string => u !== undefined))]
 
 export default function FlashCardDeck() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { startSession, endSession } = useAppStore()
   const t = useT()
@@ -64,7 +66,7 @@ export default function FlashCardDeck() {
 
   const handleKnow = async () => {
     const word = queue[wordIdx]
-    const record = await getOrCreateProgress(word.id, 'vocab')
+    const record = await getOrCreateProgress(word.id, 'vocab', profileId)
     playSfx('correct')
     await saveProgress(updateAfterCorrect(record))
     setCorrectCount((c) => c + 1)
@@ -77,7 +79,7 @@ export default function FlashCardDeck() {
 
   const handleDontKnow = async () => {
     const word = queue[wordIdx]
-    const record = await getOrCreateProgress(word.id, 'vocab')
+    const record = await getOrCreateProgress(word.id, 'vocab', profileId)
     playSfx('wrong')
     await saveProgress(updateAfterIncorrect(record))
     const newQueue = [...queue]
@@ -90,7 +92,7 @@ export default function FlashCardDeck() {
     if (sessionSaved.current) return
     sessionSaved.current = true
     const duration = endSession()
-    await saveSession({
+    await saveSession(profileId, {
       id: `flashcard-${Date.now()}`,
       date: Date.now(),
       durationMs: duration,
@@ -99,7 +101,7 @@ export default function FlashCardDeck() {
       total,
     })
     const xp = calculateXpGain(correct, total)
-    const result = await addXpToPet(xp)
+    const result = await addXpToPet(xp, [], profileId)
     if (result.leveledUp) {
       playSfx('levelup')
       setXpResult(result)

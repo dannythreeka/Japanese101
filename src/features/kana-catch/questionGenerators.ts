@@ -7,8 +7,8 @@ const emptyQuestion = (): QuestionConfig => ({ items: [], targetId: '', ttsText:
 
 // ── SRS helpers ───────────────────────────────────────────────────────────────
 
-export async function loadProgressMap(): Promise<Map<string, ProgressRecord>> {
-  const all = await getAllProgress()
+export async function loadProgressMap(profileId: string): Promise<Map<string, ProgressRecord>> {
+  const all = await getAllProgress(profileId)
   return new Map(all.map(r => [r.id, r]))
 }
 

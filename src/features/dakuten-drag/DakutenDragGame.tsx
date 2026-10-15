@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { PetState } from '../../types'
@@ -29,6 +30,7 @@ function loadShuffledQuestions(unitId?: string): DragQuestion[] {
 type Phase = 'playing' | 'results'
 
 export default function DakutenDragGame() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { addStars, startSession, endSession } = useAppStore()
   const adventure = useAdventureChallenge()
@@ -54,7 +56,7 @@ export default function DakutenDragGame() {
   const tileRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
-    void getOrCreatePet().then(setPet)
+    void getOrCreatePet(profileId).then(setPet)
     startSession()
   }, [startSession])
 
@@ -68,7 +70,7 @@ export default function DakutenDragGame() {
     if (sessionSaved.current) return
     sessionSaved.current = true
     const duration = endSession()
-    await saveSession({
+    await saveSession(profileId, {
       id: `dakuten-drag-${Date.now()}`,
       date: Date.now(),
       durationMs: duration,
@@ -77,7 +79,7 @@ export default function DakutenDragGame() {
       total,
     })
     const xp = calculateXpGain(correct, total)
-    const result = await addXpToPet(xp, [])
+    const result = await addXpToPet(xp, [], profileId)
     setPet(result.pet)
     if (result.leveledUp) { playSfx('levelup'); setXpResult(result) }
     setPhase('results')
@@ -94,7 +96,7 @@ export default function DakutenDragGame() {
       setScore(newScore)
       setSuccessTile(tileIndex)
       speak(current.item.target)
-      const record = await getOrCreateProgress(getProgressId(current.item), 'vocab')
+      const record = await getOrCreateProgress(getProgressId(current.item), 'vocab', profileId)
       await saveProgress(updateAfterCorrect(record))
       setTimeout(() => {
         setSuccessTile(null)
@@ -108,7 +110,7 @@ export default function DakutenDragGame() {
     } else {
       playSfx('wrong')
       setWrongTile(tileIndex)
-      const record = await getOrCreateProgress(getProgressId(current.item), 'vocab')
+      const record = await getOrCreateProgress(getProgressId(current.item), 'vocab', profileId)
       await saveProgress(updateAfterIncorrect(record))
       setTimeout(() => setWrongTile(null), 500)
     }

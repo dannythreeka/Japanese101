@@ -22,6 +22,7 @@ function getStoredPin(): string {
 }
 
 export default function ParentDashboard() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const {
     kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars, micMode,
@@ -55,10 +56,10 @@ export default function ParentDashboard() {
     if (!unlocked) return
     setLoading(true)
     Promise.all([
-      getTotalStudyTime(),
-      getAllProgress(),
-      getRecentSessions(100),
-      getOrCreateAdventureProgress(getFirstLevelId()),
+      getTotalStudyTime(profileId),
+      getAllProgress(profileId),
+      getRecentSessions(profileId, 100),
+      getOrCreateAdventureProgress(getFirstLevelId(), profileId),
       getAllProfiles(),
     ]).then(([time, recs, sess, adv, profs]) => {
       setStudyTime(time)

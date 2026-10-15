@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getOrCreateAdventureProgress, saveAdventureProgress } from '../../db'
@@ -32,6 +33,7 @@ const GAME_ROUTES: Record<string, string> = {
 }
 
 export default function LevelEntry() {
+  const [profileId] = useState(getActiveProfileId)
   const { levelId } = useParams<{ levelId: string }>()
   const navigate = useNavigate()
   const t = useT()
@@ -45,7 +47,7 @@ export default function LevelEntry() {
     const { levels } = levelsData()
     const found = levels.find((l) => l.level_id === levelId) ?? null
     setLevel(found)
-    getOrCreateAdventureProgress(getFirstLevelId()).then(async (adv) => {
+    getOrCreateAdventureProgress(getFirstLevelId(), profileId).then(async (adv) => {
       const levels = getSortedLevels()
       const fixed = ensureValidProgress(levels, adv)
       if (fixed !== adv) await saveAdventureProgress(fixed)

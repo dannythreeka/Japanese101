@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { getOrCreateAdventureProgress } from '../../db'
@@ -18,6 +19,7 @@ const COMPLETION_BONUS = 50
 const PERFECT_BONUS = 30
 
 export default function LevelComplete() {
+  const [profileId] = useState(getActiveProfileId)
   const { levelId } = useParams<{ levelId: string }>()
   const navigate = useNavigate()
   const t = useT()
@@ -51,7 +53,7 @@ export default function LevelComplete() {
 
     const bestAccuracy = Object.values(results).reduce((max, r) => Math.max(max, r.accuracy), 0)
 
-    getOrCreateAdventureProgress(getFirstLevelId()).then(async (progress) => {
+    getOrCreateAdventureProgress(getFirstLevelId(), profileId).then(async (progress) => {
       const existingRecord = progress.completed_levels[found.level_id]
       const playCount = existingRecord?.times_played ?? 0
       let decayedBonus = bonus
@@ -61,13 +63,13 @@ export default function LevelComplete() {
       setBonusXp(decayedBonus)
 
       const [xpRes, updated] = await Promise.all([
-        addXpToPet(decayedBonus),
+        addXpToPet(decayedBonus, [], profileId),
         completeLevel(progress, found, earnedStars, bestAccuracy),
       ])
       setPet(xpRes.pet)
       if (xpRes.leveledUp) setXpResult(xpRes)
 
-      const evoRes = await applyLevelEvolution(Object.keys(updated.completed_levels))
+      const evoRes = await applyLevelEvolution(Object.keys(updated.completed_levels), profileId)
       if (found.level_type === 'boss') {
         // Always show victory cutscene for boss levels
         setShowVictoryCutscene(true)

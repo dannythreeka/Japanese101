@@ -189,7 +189,7 @@ export default function LevelEntry() {
                 </span>
                 {done && accuracy !== undefined && (
                   <span className="text-xs text-emerald-600">
-                    {Math.round(accuracy * 100)}%
+                    {['kotodama_summon','write_canvas'].includes(ch.game_mode) ? t('participationOnly') : `${Math.round(accuracy * 100)}%`}
                   </span>
                 )}
               </div>

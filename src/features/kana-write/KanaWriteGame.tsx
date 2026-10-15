@@ -284,7 +284,7 @@ export default function KanaWriteGame() {
       await finishRound()
     } else {
       setHasStrokes(false); setUserSnapshot(null)
-      setCurrentIdx(i => i + 1)
+      setCurrentIdx(currentIdx + 1)
       setPhase('draw')
     }
   }

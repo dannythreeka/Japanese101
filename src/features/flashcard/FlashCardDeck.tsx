@@ -37,7 +37,7 @@ export default function FlashCardDeck() {
   const [queue]=useCheckpointState<Word[]>('queue',()=>ALL_WORDS.filter(w=>w.unit===unitId))
   const [index,setIndex]=useState(()=>practice.summary.completed)
   const [revision,setRevision]=useState(0)
-  const [done,setDone]=useState(false)
+  const [done,setDone]=useState(()=>practice.session.status==='finished')
   const busy=useRef(false)
   const save=practice.save
   useEffect(()=>{void save({},queue.length).catch(()=>{})},[save,queue.length])
@@ -50,7 +50,7 @@ export default function FlashCardDeck() {
       if(!practice.alive())return
       if(!known){setRevision(r=>r+1);return}
       if(index+1>=queue.length){await practice.finish();if(practice.alive())setDone(true)}
-      else setIndex(i=>i+1)
+      else setIndex(index+1)
     } finally {busy.current=false}
   }
   return <div className="min-h-screen flex flex-col items-center gap-4 p-4 pt-6">

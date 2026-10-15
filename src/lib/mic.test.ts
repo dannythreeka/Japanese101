@@ -97,3 +97,13 @@ it('releases a stream whose permission request resolves after unmount', async ()
   await expect(pending).rejects.toMatchObject({ name: 'AbortError' })
   expect(mock.track.stop).toHaveBeenCalledTimes(1)
 })
+
+it('enhanced does not silently fall back when recognition is unsupported or start fails',async()=>{
+  const mock=mockMic()
+  Object.defineProperty(window,'SpeechRecognition',{configurable:true,value:undefined})
+  await expect(createMicSession(DEFAULT_CONFIG,'enhanced','ねこ',{enhancedConsent:true})).rejects.toMatchObject({name:'NotSupportedError'})
+  expect(mock.getUserMedia).not.toHaveBeenCalled()
+  Object.defineProperty(window,'SpeechRecognition',{configurable:true,value:class {start(){throw new DOMException('revoked','NotAllowedError')}stop(){}}})
+  await expect(createMicSession(DEFAULT_CONFIG,'enhanced','ねこ',{enhancedConsent:true})).rejects.toMatchObject({name:'NotAllowedError'})
+  expect(mock.track.stop).toHaveBeenCalledOnce()
+})

@@ -37,6 +37,10 @@ export default function ParentDashboard() {
   const [showMicModal, setShowMicModal] = useState(false)
   const [pendingMicMode, setPendingMicMode] = useState<Exclude<MicMode, 'off'>>('offline')
   const [micPermError, setMicPermError] = useState(false)
+  const [micPending,setMicPending] = useState(false)
+  const consentGeneration = useRef(0)
+  const micRequest = useRef(false)
+  useEffect(()=>()=>{consentGeneration.current++},[])
 
   const [pinInput, setPinInput] = useState('')
   const [pinError, setPinError] = useState(false)
@@ -470,12 +474,13 @@ export default function ParentDashboard() {
                     key={mode}
                     type="button"
                     onClick={() => {
-                      if (mode !== 'off' && micMode === 'off') {
+                      if (mode !== 'off' && mode !== micMode) {
+                        consentGeneration.current++
                         setPendingMicMode(mode)
                         setMicPermError(false)
                         setShowMicModal(true)
                       } else {
-                        setMicMode(mode)
+                        if (mode === 'off') { consentGeneration.current++; setMicMode(mode) }
                       }
                     }}
                     className={`px-5 py-2 rounded-2xl text-xl font-bold transition-all ${
@@ -495,7 +500,7 @@ export default function ParentDashboard() {
                   ? t('parentMicStatusOfl')
                   : t('parentMicStatusEnh')}
               </p>
-              <p className="text-sm text-gray-400">{t('parentMicPrivacy')}</p>
+              <p className="text-sm text-gray-700">{t(micMode === 'enhanced' ? 'parentMicEnhancedPrivacy' : 'parentMicPrivacy')}</p>
             </div>
           </>
         )}
@@ -545,8 +550,8 @@ export default function ParentDashboard() {
             <h3 id="mic-modal-title" className="text-2xl font-bold text-gray-800">{t('parentMicModalTitle')}</h3>
             <p className="text-lg text-gray-600">{t('parentMicModalDesc')}</p>
             <ul className="text-base text-gray-500 list-disc pl-5 flex flex-col gap-1">
-              <li>{t('parentMicBullet1')}</li>
-              <li>{t('parentMicBullet2')}</li>
+              <li>{t(pendingMicMode==='enhanced'?'parentMicEnhancedPrivacy':'parentMicBullet1')}</li>
+              {pendingMicMode==='offline'&&<li>{t('parentMicBullet2')}</li>}
               <li>{t('parentMicBullet3')}</li>
             </ul>
             {micPermError && (
@@ -555,17 +560,24 @@ export default function ParentDashboard() {
             <div className="flex gap-3 mt-1">
               <button
                 type="button"
-                onClick={() => { setShowMicModal(false); setMicPermError(false) }}
+                onClick={() => { consentGeneration.current++; setShowMicModal(false); setMicPermError(false); setMicPending(false) }}
                 className="flex-1 py-3 rounded-2xl bg-gray-100 text-xl font-bold hover:bg-gray-200 transition-colors"
               >
                 {t('parentMicCancel')}
               </button>
               <button
                 type="button"
+                disabled={micPending}
                 onClick={async () => {
+                  if(micRequest.current)return
+                  micRequest.current=true;setMicPending(true)
+                  const generation=consentGeneration.current
                   const granted = await requestMicPermission()
+                  micRequest.current=false
+                  if(generation!==consentGeneration.current || useAppStore.getState().profileId!==profileId)return
+                  setMicPending(false)
                   if (granted) {
-                    setMicMode(pendingMicMode)
+                    setMicMode(pendingMicMode, pendingMicMode==='enhanced')
                     setShowMicModal(false)
                     setMicPermError(false)
                   } else {

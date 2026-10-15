@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [main]
 
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ci:
     name: Test & Build
@@ -46,18 +50,39 @@ jobs:
         if: ${{ !cancelled() }}
         run: npm run build
 
-      - name: Install isolated runner browsers
-        if: ${{ !cancelled() }}
-        run: npx playwright install --with-deps chromium firefox webkit
+      - uses: actions/upload-artifact@v4
+        with:
+          name: p1-build-${{ github.sha }}
+          path: dist/
+          retention-days: 14
 
-      - name: Browser smoke
-        if: ${{ !cancelled() }}
-        run: npm run test:e2e
-
+  browser:
+    name: Browser / ${{ matrix.browser }}
+    needs: ci
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache: 'npm'
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: p1-build-${{ github.sha }}
+          path: dist/
+      - name: Install browser on isolated runner
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+      - name: P1 browser regression
+        run: npm run test:e2e -- --project=${{ matrix.browser }}
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
-          name: playwright-P0-${{ github.sha }}
+          name: playwright-P1-${{ matrix.browser }}-${{ github.sha }}
           path: |
             playwright-report/
             test-results/

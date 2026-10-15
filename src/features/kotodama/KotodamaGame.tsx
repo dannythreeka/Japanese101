@@ -4,8 +4,7 @@ import { useAppStore } from '../../store/useAppStore'
 import { useAdventureChallenge } from '../../hooks/useAdventureChallenge'
 import { useCheckpointState, usePracticeSession } from '../../hooks/usePracticeSession'
 import { speak, stopSpeaking } from '../../lib/tts'
-import { buildKotodamaRound } from './KotodamaEngine'
-import { lessonData } from '../../data/loaders'
+import { buildConfiguredKotodamaRound } from './KotodamaEngine'
 import { SCENE_REGISTRY } from './scenes'
 import { useT } from '../../hooks/useT'
 import { createMicSession, DEFAULT_CONFIG, EASY_CONFIG, type MicSession, type MicOutcome } from '../../lib/mic'
@@ -14,11 +13,7 @@ type Phase='initial'|'listening'|'saving'|'success'|'done'
 export default function KotodamaGame() {
   const practice=usePracticeSession(),adventure=useAdventureChallenge(),navigate=useNavigate(),t=useT()
   const {micMode,enhancedConsent,ageMode}=useAppStore()
-  const [words]=useCheckpointState('words',()=>{
-    const ov=adventure.pending?.configOverrides,pool=ov?.unitPool,count=typeof ov?.roundLength==='number'?ov.roundLength:3
-    if(Array.isArray(pool)){const lessons=lessonData().filter(l=>(pool as string[]).includes(l.unit_id));return lessons.length?buildKotodamaRound(lessons,count):[]}
-    return buildKotodamaRound(undefined,count)
-  })
+  const [words]=useCheckpointState('words',()=>buildConfiguredKotodamaRound(adventure.pending?.configOverrides))
   const [stars,setStars]=useCheckpointState<number[]>('stars',[])
   const [index,setIndex]=useState(()=>practice.summary.completed)
   const [phase,setPhase]=useState<Phase>(()=>practice.session.status==='finished'?'done':'initial')
@@ -62,7 +57,7 @@ export default function KotodamaGame() {
     const abort=new AbortController();controller.current?.abort();controller.current=abort
     try {
       const config=ageMode==='young'?EASY_CONFIG:DEFAULT_CONFIG
-      const session=await createMicSession(config,micMode,current.word,{enhancedConsent,signal:abort.signal})
+      const session=await createMicSession(config,micMode,current.word,{enhancedConsent,signal:abort.signal,onError:()=>{abort.abort();mic.current?.stop();mic.current=null;if(timer.current)clearTimeout(timer.current);lock.current=false;if(alive()){setMicError(true);setPhase('initial')}}})
       if(!alive()||abort.signal.aborted){session.stop();return}
       mic.current=session;timer.current=setTimeout(()=>{void stop()},config.maxRecordDurationMs)
     }catch{if(alive()&&!abort.signal.aborted){setMicError(true);setPhase('initial')}lock.current=false}
@@ -79,7 +74,7 @@ export default function KotodamaGame() {
     lock.current=true
     try {
       if(index+1>=words.length){await practice.finish();if(alive())setPhase('done')}
-      else{setIndex(n=>n+1);setOutcome(null);setMicError(false);setPhase('initial')}
+      else{setIndex(index+1);setOutcome(null);setMicError(false);setPhase('initial')}
     }finally{lock.current=false}
   }
   if(micMode==='off')return <div className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('micDisabled')}</p><button className="min-h-16 px-8" onClick={()=>adventure.isActive?void adventure.cancelChallenge():navigate('/play')}>{t('back')}</button></div>

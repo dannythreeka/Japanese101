@@ -70,7 +70,7 @@ export default function ChoicePractice({mode}:{mode:'kana'|'quiz'}) {
     lock.current=true
     try {
       if(index+1>=rounds.length){await finish();if(alive())setDone(true)}
-      else{setIndex(i=>i+1);setSelected(null);setFeedback(null)}
+      else{setIndex(index+1);setSelected(null);setFeedback(null)}
     } finally {lock.current=false}
   }
   if(!rounds.length)return <div role="alert"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-8" onClick={()=>navigate('/play')}>{t('back')}</button></div>

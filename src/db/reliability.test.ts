@@ -134,3 +134,15 @@ it('all L0–L10 required challenge services complete without any voice evidence
   }
   expect(Object.keys((await db.adventureProgress.get('A'))!.completed_levels)).toHaveLength(11)
 })
+
+it('rolls back game XP, wallet, receipt and summary on settlement failure',async()=>{
+  const game=await openGameSession('A','atomic-game','kana')
+  await saveCheckpoint('A',game.id,{},1);await submitGameAnswer('A',game.id,'q1','a','kana',true)
+  const fail=()=>{throw new DOMException('full','QuotaExceededError')}
+  db.rewardReceipts.hook('creating',fail)
+  await expect(finishGameSession('A',game.id)).rejects.toBeDefined()
+  db.rewardReceipts.hook('creating').unsubscribe(fail)
+  expect(await db.pets.get('A')).toBeUndefined();expect(await db.wallets.get('A')).toBeUndefined()
+  expect(await db.playerSessions.count()).toBe(0);expect((await db.gameCheckpoints.get(game.id))?.status).toBe('active')
+  expect((await finishGameSession('A',game.id)).receipt.stars).toBe(1)
+})

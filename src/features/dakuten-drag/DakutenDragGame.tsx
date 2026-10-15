@@ -53,7 +53,7 @@ export default function DakutenDragGame() {
     lock.current=true
     try {
       if(index+1>=questions.length){await practice.finish();if(practice.alive())setDone(true)}
-      else{setIndex(i=>i+1);setFinishedQuestion(false);setWrong(null);setSelected(false)}
+      else{setIndex(index+1);setFinishedQuestion(false);setWrong(null);setSelected(false)}
     }finally{lock.current=false}
   }
   if(!questions.length)return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={()=>navigate('/play')}>{t('back')}</button></div>

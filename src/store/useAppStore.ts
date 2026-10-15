@@ -36,7 +36,7 @@ interface AppState {
   setKanaMode: (mode: KanaMode) => void
   setKanaDifficulty: (level: KanaDifficulty) => void
   setAgeMode: (mode: AgeMode) => void
-  setMicMode: (mode: MicMode) => void
+  setMicMode: (mode: MicMode, explicitEnhancedConsent?: boolean) => void
   setUiLang: (lang: UiLang) => void
   toggleUnit: (unitId: string) => void
   startSession: () => void
@@ -87,7 +87,7 @@ export const useAppStore = create<AppState>((set, get) => {
   setKanaMode: (kanaMode) => persist({ kanaMode }),
   setKanaDifficulty: (kanaDifficulty) => persist({ kanaDifficulty }),
   setAgeMode: (ageMode) => persist({ ageMode }),
-  setMicMode: (micMode) => persist({ micMode, enhancedConsent: micMode === 'enhanced' }),
+  setMicMode: (micMode, explicitEnhancedConsent = false) => persist({ micMode: micMode === 'enhanced' && !explicitEnhancedConsent ? 'off' : micMode, enhancedConsent: micMode === 'enhanced' && explicitEnhancedConsent }),
   setUiLang: (uiLang) => persist({ uiLang }),
   toggleUnit: (unitId) => { const current = get().disabledUnits; persist({ disabledUnits: current.includes(unitId) ? current.filter(id => id !== unitId) : [...current, unitId] }) },
 

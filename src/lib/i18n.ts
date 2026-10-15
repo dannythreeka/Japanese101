@@ -1,6 +1,7 @@
 export type UiLang = 'ja' | 'zh'
 
 export const T = {
+  parentMicEnhancedPrivacy: {ja:'オンライン認識ではブラウザ提供元の音声サービスに音声が送信される場合があります。保護者の同意が必要です。アプリは録音を保存しません。', zh:'線上辨識可能將語音傳送給瀏覽器提供者的語音服務，須由家長明確同意。本程式不保存錄音。'},
   packReady: { ja: '教材のダウンロードが完了しました。', zh: '教材下載完成，可離線練習。' },
   packMissing: { ja: 'オフライン教材は未完了です。', zh: '離線教材尚未完整下載。' },
   packError: { ja: '教材を保存できません。接続や空き容量を確認してもう一度ためせます。', zh: '教材尚未存好。請確認連線與可用空間後重試。' },
@@ -194,7 +195,7 @@ export const T = {
   parentMicDesc:        { ja: '「ことだま召喚」ゲームで子どもが声を使えるようになります。', zh: '在「言靈召喚」遊戲中讓孩子可以使用語音功能。' },
   parentMicOff:         { ja: 'オフ',                      zh: '關閉' },
   parentMicOffline:     { ja: 'オフライン',                zh: '離線模式' },
-  parentMicHigh:        { ja: '高精度',                    zh: '高精度' },
+  parentMicHigh:        { ja: 'オンライン認識（任意）', zh: '線上辨識（選用）' },
   parentMicStatusOff:   { ja: 'ことだまゲームは利用できません', zh: '言靈遊戲不可使用' },
   parentMicStatusOfl:   { ja: '音量検知のみ · 外部送信なし', zh: '僅偵測音量 · 不傳送至外部' },
   parentMicStatusEnh:   { ja: '音声認識あり · インターネット必要', zh: '語音識別 · 需要網路連線' },

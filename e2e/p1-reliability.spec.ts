@@ -61,7 +61,7 @@ test('first answers survive retry/refresh, ten clicks and two-page finalization 
     if(i===9){
       const second=await context.newPage();await second.goto('/#/play/kana');await expect(second.getByText('完成了！',{exact:true})).toBeVisible();await second.close()
     }
-    await page.getByRole('button',{name:'下一題',exact:true}).click()
+    await page.getByRole('button',{name:'下一題',exact:true}).evaluate(el=>{for(let n=0;n<10;n++)(el as HTMLButtonElement).click()})
   }
   await expect(page.getByText('首次獨立答對率: 60% (6/10)',{exact:true})).toBeVisible()
   await expect(page.getByText('練習完成率: 100%',{exact:true})).toBeVisible()
@@ -103,10 +103,13 @@ for(const mic of ['off','denied','no-device'] as const) test(`L0–L10 complete 
       const challengeIndex=level.challenges.findIndex(c=>c.challenge_id===challenge.challenge_id)
       await page.locator('[data-challenge-id]').nth(challengeIndex).getByRole('button').click()
       if(challenge.game_mode==='dakuten_drag'){
-        const session=await game(page,'dakuten_drag'),questions=session.checkpoint.questions as {item:{mark_at:number[]};baseChars:string[]}[]
+        const session=await game(page,'dakuten_drag'),questions=session.checkpoint.questions as {item:{mark_at:number[]};baseChars:string[];targetChars:string[]}[]
         for(const question of questions){
-          await page.getByRole('button',{pressed:false}).click()
-          for(const pos of question.item.mark_at)await page.getByRole('button',{name:`${question.baseChars[pos]} ${pos+1}`,exact:true}).click()
+          await page.locator('button[aria-pressed]').click()
+          for(const pos of question.item.mark_at){
+            const tile=page.getByRole('button',{name:`${question.baseChars[pos]} ${pos+1}`,exact:true})
+            await tile.click();await expect(tile).toHaveText(question.targetChars[pos])
+          }
           await page.getByRole('button',{name:'下一題',exact:true}).click()
         }
       }else{
@@ -217,4 +220,26 @@ test.describe('verified offline application and material pack',()=>{
     await expect(reopened.locator('.grid button').first()).toBeEnabled({timeout:15000})
     await reopened.screenshot({path:info.outputPath('offline-listen-ready.png'),fullPage:true})
   })
+})
+
+
+test('offline to enhanced requires a new explicit parent consent; denial/cancel never opts in',async({page})=>{
+  await audioMock(page);await createPlayer(page,'P1-consent')
+  await page.goto('/#/parent')
+  for(const digit of ['1','2','3','4'])await page.getByRole('button',{name:digit,exact:true}).click()
+  await page.getByRole('button',{name:'離線模式',exact:true}).click()
+  await page.getByRole('button',{name:'允許',exact:true}).click()
+  await expect(page.getByRole('dialog')).toContainText('無法取得麥克風授權')
+  await page.getByRole('button',{name:'取消',exact:true}).click()
+  await page.evaluate(()=>Object.defineProperty(navigator,'mediaDevices',{configurable:true,value:{getUserMedia:async()=>({getTracks:()=>[{stop(){}}]})}}))
+  await page.getByRole('button',{name:'離線模式',exact:true}).click()
+  await page.getByRole('button',{name:'允許',exact:true}).click()
+  await expect(page.getByRole('dialog')).toHaveCount(0)
+  await page.getByRole('button',{name:'線上辨識（選用）',exact:true}).click()
+  await expect(page.getByRole('dialog')).toContainText('可能將語音傳送')
+  await page.getByRole('button',{name:'取消',exact:true}).click()
+  expect((await records<{micMode:string}>(page,'preferences')).at(-1)?.micMode).toBe('offline')
+  await page.getByRole('button',{name:'線上辨識（選用）',exact:true}).click()
+  await page.getByRole('button',{name:'允許',exact:true}).click()
+  await expect.poll(async()=> (await records<{micMode:string;enhancedConsent:boolean}>(page,'preferences')).at(-1)).toMatchObject({micMode:'enhanced',enhancedConsent:true})
 })

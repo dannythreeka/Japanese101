@@ -60,6 +60,7 @@ interface SpeechRecognitionLike {
   continuous: boolean
   interimResults: boolean
   onresult: ((e: { results: ArrayLike<ArrayLike<{ transcript: string }>> }) => void) | null
+  onerror?: (() => void) | null
   start(): void
   stop(): void
 }
@@ -96,11 +97,13 @@ export async function createMicSession(
   config: MicVolumeConfig,
   micMode: MicMode,
   speechTarget?: string,
-  options: { enhancedConsent?: boolean; signal?: AbortSignal } = {},
+  options: { enhancedConsent?: boolean; signal?: AbortSignal; onError?: () => void } = {},
 ): Promise<MicSession> {
   if (micMode === 'off') throw new DOMException('Microphone is off', 'NotAllowedError')
   if (micMode === 'enhanced' && !options.enhancedConsent) throw new DOMException('Parent consent required', 'NotAllowedError')
   if (options.signal?.aborted) throw new DOMException('Cancelled', 'AbortError')
+  const Recognition = micMode === 'enhanced' ? getSpeechRecognitionCtor() : undefined
+  if (micMode === 'enhanced' && !Recognition) throw new DOMException('Speech recognition unsupported', 'NotSupportedError')
   const stream = await navigator.mediaDevices.getUserMedia({ audio: true, video: false })
   let ctx: AudioContext | null = null
   let rec: SpeechRecognitionLike | null = null
@@ -114,7 +117,7 @@ export async function createMicSession(
     if (!stopped) {
       stopped = true
       if (rafId !== null) cancelAnimationFrame(rafId)
-      if (rec) { rec.onresult = null; try { rec.stop() } catch { /* already stopped */ } }
+      if (rec) { rec.onresult = null; rec.onerror = null; try { rec.stop() } catch { /* already stopped */ } }
       stream.getTracks().forEach(track => track.stop())
       if (ctx) void ctx.close().catch(() => {})
       options.signal?.removeEventListener('abort', stop)
@@ -131,12 +134,13 @@ export async function createMicSession(
     const buf = new Uint8Array(analyser.fftSize)
     // Offline deliberately never even looks up or constructs SpeechRecognition.
     if (micMode === 'enhanced' && speechTarget) {
-      const SR = getSpeechRecognitionCtor()
+      const SR = Recognition
       if (SR) {
         rec = new SR()
         rec.lang = 'ja-JP'; rec.continuous = false; rec.interimResults = true
         rec.onresult = (event) => { if (!stopped) speechMatch = Array.from(event.results).map(r => r[0].transcript).join('').includes(speechTarget) }
-        try { rec.start(); srWasUsed = true } catch { rec.onresult = null }
+        rec.onerror = () => { if (!stopped) { stop(); options.onError?.() } }
+        rec.start(); srWasUsed = true
       }
     }
     let lastTs = performance.now()
@@ -149,7 +153,7 @@ export async function createMicSession(
       rafId = requestAnimationFrame(tick)
     }
     options.signal?.addEventListener('abort', stop, { once: true })
-    stream.getTracks().forEach(track => track.addEventListener?.('ended', stop, { once: true }))
+    stream.getTracks().forEach(track => track.addEventListener?.('ended', () => { if (!stopped) { stop(); options.onError?.() } }, { once: true }))
     rafId = requestAnimationFrame(tick)
     return { stop, getRms: () => stopped ? 0 : currentRms }
   } catch (error) {

@@ -243,3 +243,36 @@ test('offline to enhanced requires a new explicit parent consent; denial/cancel 
   await page.getByRole('button',{name:'允許',exact:true}).click()
   await expect.poll(async()=> (await records<{micMode:string;enhancedConsent:boolean}>(page,'preferences')).at(-1)).toMatchObject({micMode:'enhanced',enhancedConsent:true})
 })
+
+test('blocked IndexedDB and malformed checkpoints show recovery instead of a blank screen',async({page,context})=>{
+  const denied=await context.newPage()
+  await denied.addInitScript(()=>{IDBFactory.prototype.open=function(){throw new DOMException('QA storage blocked','SecurityError')}})
+  await denied.goto('/#/')
+  await expect(denied.getByRole('alert')).toContainText('原有資料仍保留')
+  await denied.close()
+  await audioMock(page);await createPlayer(page,'P1-bad');await page.goto('/#/play/kana')
+  const old=await game(page,'kana')
+  await page.evaluate(id=>new Promise<void>(resolve=>{
+    const req=indexedDB.open('Japanese101DB');req.onsuccess=()=>{const db=req.result,tx=db.transaction('gameCheckpoints','readwrite'),table=tx.objectStore('gameCheckpoints'),read=table.get(id);read.onsuccess=()=>table.put({...read.result,checkpoint:{rounds:null}});tx.oncomplete=()=>{db.close();resolve()}}
+  }),old.id)
+  await page.reload();await expect(page.getByRole('alert')).toContainText('原有學習紀錄仍保留')
+  await page.getByRole('button',{name:'保留紀錄並開始新練習',exact:true}).click()
+  expect((await game(page,'kana')).id).not.toBe(old.id)
+  expect((await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===old.id)?.checkpoint.rounds).toBeNull()
+})
+
+test('parent can export preserved legacy-shared data without assigning it to a child',async({page})=>{
+  await createPlayer(page,'P1-backup')
+  await page.evaluate(()=>new Promise<void>(resolve=>{
+    const req=indexedDB.open('Japanese101DB');req.onsuccess=()=>{const db=req.result,tx=db.transaction('migrationBackups','readwrite');tx.objectStore('migrationBackups').put({id:'pre-v5',createdAt:1,tables:{progress:[{id:'legacy-qa',correct:3}]},localPreferences:{}});tx.oncomplete=()=>{db.close();resolve()}}
+  }))
+  await page.goto('/#/parent')
+  for(const digit of ['1','2','3','4'])await page.getByRole('button',{name:digit,exact:true}).click()
+  const downloadPromise=page.waitForEvent('download')
+  await page.getByRole('button',{name:'匯出舊版共用備份',exact:true}).click()
+  const download=await downloadPromise
+  expect(await download.failure()).toBeNull()
+  expect(download.suggestedFilename()).toBe('Japanese101-legacy-shared-backup.json')
+  expect(await records(page,'playerProgress')).toEqual([])
+  expect((await records<{tables:{progress:{id:string}[]}}>(page,'migrationBackups'))[0].tables.progress[0].id).toBe('legacy-qa')
+})

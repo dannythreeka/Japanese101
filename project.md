@@ -619,3 +619,7 @@ interface Attempt {
 各階段的可複製指令見 [agent prompts 使用入口](docs/agent-prompts/README.md)，通用版本見 [phase-template.md](docs/agent-prompts/phase-template.md)。P0～P5 各有完整專用 prompt，包含任務範圍、前置依賴、完成門檻、外部驗收及 Git 交接要求。
 
 預設每個 Phase 由一個 agent 負責，按依賴接續；工程可交付與完整 Phase 驗收通過分開記錄。人工教材審核、兒童試用與實體裝置證據不得以 AI 模擬代替。建立這些指令不表示任何 Phase 已啟動或完成。
+
+## 2026-10-15 執行順序授權補充
+
+專案擁有者明確指示：「merge 53，然後接著做phase1，同時會有人工驗證phase0」。因此P1工程可在P0人工驗證／preview存取待補時開始；保留P0未驗收狀態，不能以此指示當內容或UX簽核。P1完成仍需其自身完整驗收，P0後續修訂需做影響評估。此例外只針對P0→P1，不自動放行P2或後續發布。

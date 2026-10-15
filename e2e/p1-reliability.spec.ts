@@ -367,3 +367,40 @@ test('keyboard can confirm a choice and place every required dakuten mark',async
   await page.screenshot({path:info.outputPath('keyboard-dakuten-next.png'),fullPage:true})
   await page.keyboard.press('Enter');await expect(page.getByText(`2/${questions.length}`,{exact:true})).toBeVisible()
 })
+
+test('level settlement failure shows recovery and never celebrates or pays before commit',async({page},info)=>{
+  await audioMock(page);await createPlayer(page,'P1-final')
+  await page.goto('/#/adventure/level/lv_00_tamago')
+  await page.locator('[data-challenge-id="c1_listen_basic"]').getByRole('button').click()
+  const session=await game(page,'kana_catch')
+  for(let i=0;i<session.planned;i++){
+    await expect.poll(async()=>!!(await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===session.id)?.checkpoint[`q:${i}`]).toBe(true)
+    const current=(await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===session.id)!.checkpoint[`q:${i}`] as {targetId:string;items:{id:string;display:string}[]}
+    await page.locator('canvas + div').getByRole('button',{name:current.items.find(x=>x.id===current.targetId)!.display,exact:true}).click()
+    if(i+1<session.planned)await page.getByRole('button',{name:'下一題 →',exact:true}).click()
+  }
+  await page.getByRole('button',{name:'回冒險',exact:true}).click()
+  const before=(await records<{petId:string;xp:number}>(page,'pets')).find(p=>p.petId===session.profileId)!.xp
+  await page.evaluate(()=>{
+    const original=IDBObjectStore.prototype.add
+    IDBObjectStore.prototype.add=function(value,...args){
+      if(this.name==='rewardReceipts'&&String(value.id).startsWith('level:')){IDBObjectStore.prototype.add=original;throw new DOMException('QA settlement fault','QuotaExceededError')}
+      return original.call(this,value,...args)
+    }
+  })
+  await page.getByRole('button',{name:'完成關卡！',exact:true}).click()
+  await expect(page).toHaveURL(/lv_00_tamago\/complete/)
+  await expect(page.getByRole('alert')).toBeVisible()
+  await expect(page.getByRole('heading',{name:'關卡完成！',exact:true})).toHaveCount(0)
+  expect((await records<{petId:string;xp:number}>(page,'pets')).find(p=>p.petId===session.profileId)!.xp).toBe(before)
+  expect((await records<{id:string}>(page,'rewardReceipts')).filter(r=>r.id.startsWith('level:'))).toHaveLength(0)
+  await page.screenshot({path:info.outputPath('settlement-failed-no-reward.png'),fullPage:true})
+  await page.getByRole('button',{name:'重試',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'關卡完成！',exact:true})).toBeVisible()
+  expect((await records<{id:string}>(page,'rewardReceipts')).filter(r=>r.id.startsWith('level:'))).toHaveLength(1)
+  await page.goto('/#/adventure/level/lv_00_tamago')
+  await expect(page.getByText('+40–55',{exact:true})).toBeVisible()
+  await expect(page.getByRole('button',{name:'開始！',exact:true})).toBeDisabled()
+  await expect(page.getByRole('button',{name:'完成關卡！',exact:true})).toHaveCount(0)
+  await page.screenshot({path:info.outputPath('replay-reward-preview.png'),fullPage:true})
+})

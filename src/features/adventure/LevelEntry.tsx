@@ -1,3 +1,4 @@
+import { levelRewardXp } from '../../lib/levelRewards'
 import { GAME_ROUTES, openLevelSession, launchLevelChallenge } from '../../db/level-sessions'
 import { getActiveProfileId } from '../../db'
 import { useEffect, useRef, useState } from 'react'
@@ -32,8 +33,8 @@ export default function LevelEntry() {
   const [loadError, setLoadError] = useState(false)
   const [revision, setRevision] = useState(0)
   const [progress, setProgress] = useState<AdventureProgress | null>(null)
-  const [transitioning, setTransitioning] = useState(false)
-  const navTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [readySessionId,setReadySessionId]=useState<string|null>(null)
+  const finishRequested = useRef(false)
 
   useEffect(() => {
     let active = true
@@ -46,14 +47,11 @@ export default function LevelEntry() {
       setProgress(fixed)
       if (getLevelStatus(level, fixed) !== 'locked') {
         const session = await openLevelSession(profileId, levelId)
-        if (active) useAppStore.setState({ adventureSession: session })
+        if (active) { useAppStore.setState({ adventureSession: session }); setReadySessionId(session.id) }
       }
     })().catch(() => { if (active) setLoadError(true) })
     return () => { active = false }
   }, [level, levelId, profileId, revision])
-
-  // Must be before early return — hooks cannot be called conditionally
-  useEffect(() => () => { if (navTimerRef.current) clearTimeout(navTimerRef.current) }, [])
 
   if (loadError || !level) return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => { setLoadError(false); setRevision(r=>r+1) }}>{t('retry')}</button><button className="min-h-16 px-6" onClick={() => navigate('/adventure')}>{t('back')}</button></div>
   if (!progress) {
@@ -65,7 +63,10 @@ export default function LevelEntry() {
   }
 
   const status = getLevelStatus(level, progress)
+  if(status!=='locked' && (!readySessionId || adventureSession?.id!==readySessionId || adventureSession.levelId!==levelId || adventureSession.profileId!==profileId))return <p role="status">{t('loading')}</p>
   const completedRecord = progress.completed_levels[level.level_id]
+  const rewardMin=levelRewardXp(level.xp_reward,1,completedRecord?.times_played??0)
+  const rewardMax=levelRewardXp(level.xp_reward,3,completedRecord?.times_played??0)
   const BOSS_SCENE_MAP: Record<string, string> = {
     lv_05_kessen: 'shizuka_kage',
     lv_10_saidan: 'ankoku_yuragi',
@@ -89,11 +90,10 @@ export default function LevelEntry() {
   }
 
   function finishLevel() {
-    if (transitioning) return
-    setTransitioning(true)
-    navTimerRef.current = setTimeout(() => {
-      navigate(`/adventure/level/${levelId}/complete`)
-    }, 1000)
+    if (finishRequested.current) return
+    finishRequested.current = true
+    // Completion and celebration belong to LevelComplete, after its atomic receipt is saved.
+    navigate(`/adventure/level/${levelId}/complete`)
   }
 
   return (
@@ -142,7 +142,7 @@ export default function LevelEntry() {
         )}
         <div className="flex items-center gap-4 mt-2 text-sm text-gray-600">
           <span>
-            {t('levelXpLabel')}: <strong className="text-emerald-600">+{level.xp_reward}</strong>
+            {t('levelXpLabel')}: <strong className="text-emerald-600">+{rewardMin}–{rewardMax}</strong>
           </span>
           {completedRecord && (
             <span>
@@ -247,13 +247,7 @@ export default function LevelEntry() {
         )}
       </div>
 
-      {/* クリア! transition overlay */}
-      {transitioning && (
-        <div className="fixed inset-0 bg-indigo-500/90 flex flex-col items-center justify-center gap-5 z-50 pointer-events-none">
-          <p className="text-7xl font-bold text-white animate-bounce-in">{t('levelClearAnim')}</p>
-          <p className="text-5xl animate-star-pop" style={{ animationDelay: '0.15s', opacity: 0 }}>⭐⭐⭐</p>
-        </div>
-      )}
+
     </div>
   )
 }

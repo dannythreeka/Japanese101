@@ -64,3 +64,12 @@ Firefox離線WAV：讀取CI failure trace，明確出現 `NS_ERROR_DOM_MEDIA_MED
 離線test現在啟動test-owned隔離origin（只讀dist、HTTP no-store），確認SW已控制並完成409素材下載後停止該server。另建SW blocked全新context，必須連不上已停origin作負控。之後關頁重開、逐409資源讀取與真WAV完成播放的原斷言全部保留。Chromium／Firefox另保持setOffline=true；WebKit不用已知有問題的模擬旗標，但同樣沒有可連線origin，不轉為單純online測試，也沒有skip／expected-fail。此方法不是實機飛航模式驗證。本機Chrome／Firefox兩項已PASS，WebKit由下一個隔離CI驗證。
 
 另補鍵盤Enter／Space完成單選與濁點點選替代，兩引擎2 PASS，含焦點截圖；沒有宣稱完整screenreader／P2視覺規範已驗收。
+
+## WebKit通關導頁邊界與先存再完成
+
+d648000三引擎合計50 PASS／1 FAIL：Firefox與Chromium各17 PASS；WebKit16 PASS，含停止origin的離線重開／真WAV驗證。唯一失敗是三worker負載下L5完成後5秒URL等待超時；失敗截圖取回時已到完成頁，不能把它當整輪PASS，也不以拉長等待解決。
+
+檢查LevelEntry發現舊流程先顯示「クリア!／三星」，再用1秒timer導頁，實際結算交易是在之後的LevelComplete。這會在真正提交前宣告完成，且忙碌時timer可延遲。現改為單次立即導向驗證結算，只有receipt成功才顯示完成／慶祝；移除該timer與預先三星。新增真實L0操作後注入level receipt寫入失敗，必須零level獎勵、XP回復、無完成heading，重試後只發一次。正在本機兩引擎與新CI重驗，527bf32不再是最終產品SHA。
+
+
+補驗：結算receipt寫入故障→零level獎勵／無完成畫面→重試只發一次，Chromium／Firefox連同直連鎖關共4項PASS。LevelEntry另等實際owned active session就緒才開挑戰／完成，避免重玩瞬間沿用舊完成結果。預覽獎勵與結算共用levelRewardXp，重玩畫面顯示衰減後的可得範圍（L0第二次40–55），完成頁只顯實際receipt；6項固定邊界測試新增後，合計187 unit tests／19 files PASS。沒有修改重玩衰減數字，只消除預覽與結算不一致。最終產品變更在這批收斂，接著重跑CI。

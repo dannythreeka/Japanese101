@@ -39,7 +39,7 @@ Node22.23.2：181 tests／18 files PASS；typecheck、validate:data、validate:b
 - 完整Chromium：12 PASS／0 FAIL，10.0min。L0～L10共22個必做challenge，在mic off／模擬拒絕／無裝置各走一次，合計33關／66個challenge完成。媒體API為測試mock且主線呼叫0次，不宣稱實機授權行為。`evidence/chromium-full.txt`。
 - 最後受影響流程：Chromium＋Firefox各12項、合計24 PASS；涵蓋真WAV離線重開、儲存錯誤、profile隔離、checkpoint損壞、匯出、免費抓抓樂續玩／換模式及視窗。`evidence/core-chromium-firefox.txt`。
 - 追加邊界：免費抓抓樂壞設定回復、延後A家長授權不影響B，兩引擎4 PASS。`evidence/last-boundaries.txt`。鎖關斷言再加強為實際繁中控制／disabled／零level session，兩引擎2 PASS，`evidence/lock-strengthened.txt`；沒有改產品程式。
-- `527bf320016f13f77a20708626a35bba1a5184b6`重新build及181 unit tests PASS，見`evidence/build-527bf32.txt`、`unit-527bf32.txt`。此後產品程式不再改動；最後交付如有文件／強化測試差異會明列，不將不同commit冒稱同一次CI。
+- `527bf320016f13f77a20708626a35bba1a5184b6`重新build及181 unit tests PASS，見`evidence/build-527bf32.txt`、`unit-527bf32.txt`。其後另修LevelEntry結算前的延遲動畫（見progress.md）；最終產品SHA與重新驗證結果會列於本表，不將不同commit冒稱同一次CI。
 - 36張選定PNG已提交`evidence/screenshots/`；工程agent已實際開啟結果60%／100%、離線聽力、320px詞卡／書寫、全部關卡結果與其他先前圖檢查。沒有將截圖產生當真人視覺核准。
 
 尚存P0既有UI設計限制：詞卡單元列表在320px首屏很長、書寫舊版返回／示範尺寸及淺色提示對比仍待P2-03／P2-09。未出現本Phase新增的水平溢出；不宣稱已完成全產品十畫面a11y／UX gate。這些沒有被藏掉或從既有任務刪除。

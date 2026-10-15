@@ -1,3 +1,4 @@
+import { levelRewardXp } from '../lib/levelRewards'
 import { db, getOrCreateAdventureProgress } from './index'
 import { levelsData } from '../data/loaders'
 import type { LevelSession } from './models'
@@ -70,8 +71,7 @@ export async function finishLevel(profileId: string, sessionId: string, levelId:
     }
     const stars = computeStars(level, results)
     const played = progress.completed_levels[levelId]?.times_played ?? 0
-    const factor = played >= 3 ? .1 : played === 2 ? .25 : played === 1 ? .5 : 1
-    const xp = Math.round((level.xp_reward + (stars === 3 ? 30 : 0)) * factor)
+    const xp = levelRewardXp(level.xp_reward,stars,played)
     await addXpToPet(xp, [], profileId)
     const previous = progress.completed_levels[levelId]
     const completed = { ...progress.completed_levels, [levelId]: { completed_at: new Date().toISOString(), stars: Math.max(stars, previous?.stars ?? 1) as 1|2|3, best_accuracy: Math.max(...Object.values(results).map(r => r.accuracy), previous?.best_accuracy ?? 0), times_played: played + 1 } }

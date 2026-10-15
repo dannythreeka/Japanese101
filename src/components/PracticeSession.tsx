@@ -65,8 +65,9 @@ function ActivePractice({ session: initial, children, restart }: { session: Game
   const isAlive = useCallback(() => alive.current && useAppStore.getState().profileId === initial.profileId, [initial.profileId])
   const summary = summarizeAttempts(Object.values(session.attempts), session.planned)
   return <PracticeContext.Provider value={{ session, initial: initial.checkpoint, summary, save, answer, finish, restart, alive: isAlive }}>
-    <RecoveryBoundary recover={() => { void restart().catch(() => setError(true)) }}>{children}</RecoveryBoundary>
+    <div className="contents" data-game-session-id={initial.id} data-feature={initial.feature}><RecoveryBoundary recover={() => { void restart().catch(() => setError(true)) }}>{children}</RecoveryBoundary>
     {error && <div role="alert" className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-4 bg-amber-50 p-6"><p>{t('savePending')}</p><button className="min-h-16 px-8" onClick={() => pending.current?.()}>{t('retry')}</button></div>}
+    </div>
   </PracticeContext.Provider>
 }
 

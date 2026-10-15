@@ -30,3 +30,9 @@ mic mode／AbortSignal／家長enhancedConsent已實作，API spy測試通過；
 Chromium第一批3項E2E通過：首次6/10與完成10/10、重整／兩分頁結算防重、complete／鎖關拒絕、過期版本保留、儲存失敗重試、玩家切換。離線實測409素材完整下載、斷網關頁重開、逐資源fetch及真實WAV播放PASS一次，待最終commit重跑。
 
 長流程首次失敗：先修正測試「下一題 →」定位；重跑後發現下一題DOM仍顯ready但engine尚未audioReady，點擊被忽略。已改spawn立即發布loading並開始播放，新增回歸。20次進出RAF歸零，但捕獲Howler由hydrate volume建立的30秒autoSuspend timer；改音效/BGM用可明確停止的HTMLAudio，不再由設定讀取啟動AudioContext。正在重跑，尚未將長流程標PASS。
+
+## 隔離測試定位補充
+
+20次同文件進出已通過（RAF、timer、mic計數均歸零）；五寬與200% CSS layout zoom畫面無水平溢出，工程agent已開啟素材contact sheet、320px配對／濁點及200%配對截圖檢查。正式人工UX核准仍未取得。
+
+完整主線後續卡在測試helper：只按feature找最新session，切到新challenge時過早讀到前一已完成session（測試讀到8題／假名，UI實際為6題／詞圖）。已改讀取實際掛載的session ID，保留原始失敗記錄，不透過延長逾時掩蓋。正在隔離output目錄重跑全部Chromium suite，避免不同run產物覆寫。

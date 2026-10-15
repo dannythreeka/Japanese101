@@ -12,8 +12,14 @@ async function records<T>(page:Page,store:string):Promise<T[]> {
   }),store) as Promise<T[]>
 }
 async function game(page:Page,feature:string){
+  const mounted=page.locator(`[data-feature="${feature}"][data-game-session-id]`)
+  await expect(mounted).toBeAttached()
   let result:GameCheckpoint|undefined
-  await expect.poll(async()=>{result=(await records<GameCheckpoint>(page,'gameCheckpoints')).filter(s=>s.feature===feature).sort((a,b)=>b.startedAt-a.startedAt)[0];return !!result?.planned}).toBe(true)
+  await expect.poll(async()=>{
+    const id=await mounted.getAttribute('data-game-session-id')
+    result=(await records<GameCheckpoint>(page,'gameCheckpoints')).find(s=>s.id===id)
+    return !!result?.planned
+  }).toBe(true)
   return result!
 }
 async function createPlayer(page:Page,name:string){

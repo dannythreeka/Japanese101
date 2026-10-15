@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test'
+import { writeFileSync } from 'node:fs'
 
-test('home, profile creation, adventure and PIN entry work in an isolated context', async ({ page }, info) => {
+test('home, profile creation, adventure and PIN entry work in an isolated context', async ({ page, browser }, info) => {
+  writeFileSync(info.outputPath('environment.json'), JSON.stringify({ node: process.version, browser: browser.version(), project: info.project.name }, null, 2))
   const errors: string[] = []
   page.on('pageerror', error => errors.push(error.message))
   await page.goto('/#/')

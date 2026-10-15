@@ -12,12 +12,12 @@
 | F-06 | P1-05 | 依規格對照重現；修復後反向回歸 | docs/verification/ui-baseline.md | 工程／QA | NOT_RUN |
 | F-07 | P1-09 | 依規格對照重現；修復後反向回歸 | docs/verification/ui-baseline.md | 工程／QA | NOT_RUN |
 | F-08 | P0-01、P2-03／07 | 依規格對照重現；修復後反向回歸 | docs/verification/ui-baseline.md | 工程／QA | NOT_RUN |
-| G0-1 | P0-07 | 路由功能全分類 | docs/phases/P0/acceptance.md | 產品／QA | NOT_RUN |
-| G0-2 | P0-07 | F-01～08具task與步驟 | docs/phases/P0/acceptance.md | 產品／QA | NOT_RUN |
-| G0-3 | P0-07 | 歷史文件版本界線 | docs/phases/P0/acceptance.md | 產品／QA | NOT_RUN |
-| G0-4 | P0-07 | CI資料／lint／test／build有結果 | docs/phases/P0/acceptance.md | 產品／QA | NOT_RUN |
-| G0-5 | P0-07 | 唯一正式入口 | docs/phases/P0/acceptance.md | 產品／QA | NOT_RUN |
-| G0-6 | P0-07 | 所有工作責任人 | docs/phases/P0/acceptance.md | 產品／QA | NOT_RUN |
+| G0-1 | P0-07 | 路由功能全分類 | docs/phases/P0/acceptance.md | 產品／QA | PASS |
+| G0-2 | P0-07 | F-01～08具task與步驟 | docs/phases/P0/acceptance.md | 產品／QA | PASS |
+| G0-3 | P0-07 | 歷史文件版本界線 | docs/phases/P0/acceptance.md | 產品／QA | PASS |
+| G0-4 | P0-07 | CI資料／lint／test／build有結果 | docs/phases/P0/acceptance.md | 產品／QA | PASS |
+| G0-5 | P0-07 | 唯一正式入口 | docs/phases/P0/acceptance.md | 產品／QA | BLOCKED |
+| G0-6 | P0-07 | 所有工作責任人 | docs/phases/P0/acceptance.md | 產品／QA | BLOCKED |
 | G1-1 | P1-12 | project §3.2 驗收第1項；逐項實測／人審 | docs/phases/P1/acceptance.md（待建立） | 工程／內容／QA／產品 | NOT_RUN |
 | G1-2 | P1-12 | project §3.2 驗收第2項；逐項實測／人審 | docs/phases/P1/acceptance.md（待建立） | 工程／內容／QA／產品 | NOT_RUN |
 | G1-3 | P1-12 | project §3.2 驗收第3項；逐項實測／人審 | docs/phases/P1/acceptance.md（待建立） | 工程／內容／QA／產品 | NOT_RUN |
@@ -137,9 +137,9 @@
 | SCORE-FIRST | P1-01、P2-02 | 5題3首次對60%完成100%；提示／skip／未提交 | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | NOT_RUN |
 | SKILL-DELAY | P2-02 | 五不同題族4/5、跨兩天含48h；1/3/7/14/30複習 | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | NOT_RUN |
 | CONTENT-QUOTA | P4-05 | ID唯一與配額、75能力教／練／檢核，逐題人工審核 | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | NOT_RUN |
-| BLUEPRINT-STRUCT | P0-03 | manifest結構、關聯、DAG、配額與壞fixtures | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | NOT_RUN |
-| TOOL-BROWSER | ENV-01、P0-04 | 三引擎首頁截圖／trace與版本 | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | NOT_RUN |
-| DEPLOY-SHA | P0-06 | 部署URL／version.json SHA與GitHub對照 | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | NOT_RUN |
+| BLUEPRINT-STRUCT | P0-03 | manifest結構、關聯、DAG、配額與壞fixtures | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | PASS（結構，未人審） |
+| TOOL-BROWSER | ENV-01、P0-04 | 三引擎首頁截圖／trace與版本 | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | PASS（CI三引擎） |
+| DEPLOY-SHA | P0-06 | 部署URL／version.json SHA與GitHub對照 | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | BLOCKED |
 | A11Y | P2-09、P5-05 | 焦點／對比／文字放大／Canvas替代／reduced motion | docs/verification/baseline.md 或對應 Phase acceptance | 工程／QA；內容另由真人審核 | NOT_RUN |
 
 註：P0的重現成功表示缺陷已確認，不代表F需求已修好；本表F列仍NOT_RUN至修復回歸。所有狀態包括模擬測驗與設定畫面也需獨立fixture，不因當前畫面不存在而刪除要求。實際承接人／簽核名單見docs/phases/P0/acceptance.md。

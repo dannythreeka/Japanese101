@@ -3,7 +3,8 @@
 > 版本：1.0｜日期：2026-10-15
 > 產品與 UI／UX 主規格：[project.md](project.md)
 > 程式審視基準：`main@d291376b72106243568c9c4717da45be2d7550fe`
-> 本清單共 **228 項任務**：59 項工程／規格／驗收工作、24 個單元各 7 項內容工作。
+> P0 實際證據與未完成門檻：[P0 acceptance](docs/phases/P0/acceptance.md)。文件／結構通過不代表人工審核或完整 gate 通過。
+> 本清單共 **228 項任務**：60 項工程／規格／驗收工作、24 個單元各 7 項內容工作。
 > 本次提交完成的是規劃文件；以下任務尚未宣告完成，功能、人工審核、兒童試用與裝置驗收都需要後續證據。
 
 ## 1. 現在可以開始拆 task，哪些地方還要分析
@@ -50,57 +51,57 @@
 
 #### ENV-01｜恢復命令執行並確認瀏覽器工具可用
 
-- 狀態：**IN_PROGRESS**；負責：環境維護者／工程。
+- 狀態：**DONE**；負責：環境維護者／工程。
 - 依賴：無。
 - 交付物：環境診斷紀錄、可執行的 repo 路徑與 browser 啟動方式。
 - 驗收：原 session 的 pwd/true 在命令啟動前被 bwrap 拒絕。完成須以相同 session 成功執行 pwd、讀取 repo、執行 node/npm，再讓 Playwright 或直接 browser 工具開啟本機頁面並取得 screenshot。保存命令輸出；不得以更換模型或假設已重啟當作修復證據。若需主機管理者介入，記錄確切錯誤與責任人。
-- 2026-10-15 進展：主機暫時載入 bwrap 專用 AppArmor profile 後，本 session 的命令、repo 讀寫、Node v26.1.0、npm 11.13.0 已恢復。以既有 Playwright 啟動 Chromium 145.0.7632.6，載入隔離的 localhost 測試頁、核對 DOM 並取得 1024×768 截圖成功。尚待將可重現的啟動方式、證據與環境交接納入專案驗收；未宣告 task DONE，亦未驗收 Japanese101 的 UI。
+- 2026-10-15 進展：主機暫時載入 bwrap 專用 AppArmor profile 後，本 session 的命令、repo 讀寫、Node v26.1.0、npm 11.13.0 已恢復。以既有 Playwright 啟動 Chromium 145.0.7632.6，載入隔離的 localhost 測試頁、核對 DOM 並取得 1024×768 截圖成功。本次P0已納入可重現設定、Node22及本機／CI三引擎證據與環境交接；ENV-01驗收完成。產品UI是否合規仍見P0-05，不由工具成功推論。
 
 #### P0-01｜統一新舊規格與路由盤點
 
-- 狀態：**TODO**；負責：工程／產品。
+- 狀態：**DONE**；負責：工程／產品。
 - 依賴：無。
 - 交付物：docs/spec-reconciliation.md、路由與功能清單；舊文件的版本提示。
 - 驗收：列出 App.tsx 所有路由（含 redirect）、每個主要 feature、現有 game_mode，逐一分類保留/修復/合併/延後；F-01～F-08 逐項連到修復 task。列出 project.md 與舊 SPEC/KICKOFF 的差異，尤其計分、麥克風、內容範圍、語言、進化與 PR 粒度。
 
 #### P0-02｜建立規格入口、需求編號與驗收索引
 
-- 狀態：**TODO**；負責：工程／產品。
+- 狀態：**DONE**；負責：工程／產品。
 - 依賴：P0-01。
 - 交付物：PRODUCT_DIRECTION.md、ROADMAP.md、UI_UX_SPEC.md、ENGINEERING_RULES.md、ACCEPTANCE_MATRIX.md。
 - 驗收：各文件引用 project.md 的唯一規則；驗收索引覆蓋每個 phase gate、F-01～F-08、十個畫面與所有資料/音訊狀態。每列有需求 ID、task ID、驗證方法、證據位置與責任角色；未測的列標 NOT_RUN。
 
 #### P0-03｜凍結 N5 能力圖與內容 blueprint
 
-- 狀態：**TODO**；負責：內容審核者／產品。
+- 狀態：**IN_REVIEW**；負責：內容審核者／產品。
 - 依賴：P0-01。
 - 交付物：CONTENT_BLUEPRINT.md、24 單元 manifest、14 題型對照與 item-family 規則。
 - 驗收：每個能力節點有可觀察的 can-do、先備節點、教學/練習/延後檢核方式；24 單元唯一 ID 與內容配額完整，無循環依賴。官方題型與自訂600詞/100漢字/60文法配額分開。五題族條件以能力節點計算，不把每個字詞 ID 誤當成能力節點。記錄內容審核者；未取得審核不得標 DONE。
 
 #### P0-04｜執行基準檢查並加入瀏覽器驗收骨架
 
-- 狀態：**TODO**；負責：工程／QA。
+- 狀態：**DONE**；負責：工程／QA。
 - 依賴：ENV-01、P0-01。
 - 交付物：docs/verification/baseline.md、Playwright 設定、獨立測試資料與 evidence 目錄規則。
 - 驗收：先記錄 node/npm 版本與基準 commit；執行 npm ci、validate:data、lint、test、build並逐項記錄成功/失敗。依 lockfile/套件需求設定 Node，不猜版本。Chromium/Firefox/WebKit 可啟動本機 build並保存首頁截圖和trace。預設用隔離 browser context，不清除使用者真實資料。現有失敗建立 task，不偽造全綠。
 
 #### P0-05｜補現有版本操作與視覺審視
 
-- 狀態：**TODO**；負責：QA／UX。
+- 狀態：**IN_REVIEW**；負責：QA／UX。
 - 依賴：P0-04。
 - 交付物：docs/verification/ui-baseline.md、現況截圖與缺陷清單。
 - 驗收：逐一操作首頁、玩家切換、冒險、單元、抓抓樂、書寫、發聲、家長、同步。跑320/390/768/1024/1440寬度及200%文字放大；對F-01～F-07記錄重現/未重現/工具限制。人工檢查字形、文字截斷、遮擋、焦點、觸控大小與下一步清晰度；截圖本身不等於驗收通過。實體裝置未取得時另外標 BLOCKED，不拿emulation替代。
 
 #### P0-06｜統一 CI 與部署入口
 
-- 狀態：**TODO**；負責：工程／專案擁有者。
+- 狀態：**BLOCKED**；負責：工程／專案擁有者。
 - 依賴：P0-04。
 - 交付物：CI 必要檢查、部署決策紀錄與可存取 preview URL。
 - 驗收：CI 執行正確專案typecheck、validate:data、lint、test、build，加入 smoke E2E。確認Vercel或Pages的單一正式入口；若保留Pages則修復configure-pages失敗，若不保留則停止誤導性部署流程。用部署URL驗證可開啟與版本SHA，外部設定無權修改時標阻擋而非宣稱修好。
 
 #### P0-07｜P0 gate 與第一批工作排序
 
-- 狀態：**TODO**；負責：產品／QA。
+- 狀態：**BLOCKED**；負責：產品／QA。
 - 依賴：P0-02、P0-03、P0-05、P0-06。
 - 交付物：P0 gate 報告與本批次負責人名單。
 - 驗收：project.md §3.1六項條件都有證據。實際負責人填入工程、內容審核、UX/QA、產品欄位；可兼任。排出P1第一批PR，不把本文編寫完成當P0完成。
@@ -1636,4 +1637,4 @@ P0-07、P1-12、P2-09、P3-06、P4-05、P5-07 各自記錄 PASS／NO-GO 與未�
 
 使用 [通用 prompt](docs/agent-prompts/phase-template.md) 或 [P0～P5 專用 prompts](docs/agent-prompts/README.md)。每個 Phase 的工作包含本檔標記該 Phase 的全部 task，包括 Uxx、MA／MB／MC，不能只依 task ID 前綴判斷。
 
-各 Phase 數量為 P0：8、P1：12、P2：16、P3：27、P4：145、P5：19，共 228。新 agent 必須讀取前一階段驗收與 handoff，並以包含其成果的 commit 開始；一般實作決策自行處理，真正外部阻礙集中回報。
+各 Phase 數量為 P0：8、P1：13、P2：16、P3：27、P4：145、P5：19，共 228。新 agent 必須讀取前一階段驗收與 handoff，並以包含其成果的 commit 開始；一般實作決策自行處理，真正外部阻礙集中回報。

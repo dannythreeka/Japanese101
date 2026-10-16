@@ -13,6 +13,7 @@ export const town:Town={id:'travel-town',width:32,height:24,tileSize:40,spawn:{x
 ] satisfies Destination[]}
 const inside=(p:Point,r:Rectangle)=>p.x>=r.x && p.x<r.x+r.w && p.y>=r.y && p.y<r.y+r.h
 export function walkable(p:Point): boolean {
+  if(!p || typeof p!=='object')return false
   return Number.isInteger(p.x) && Number.isInteger(p.y) && p.x>=1 && p.y>=1 && p.x<town.width-1 && p.y<town.height-1 && !(p.x>=29 && (p.y<13 || p.y>15)) && !town.destinations.some(d=>d.footprint && inside(p,d.footprint) || d.actorPosition && p.x===d.actorPosition.x && p.y===d.actorPosition.y)
 }
 export function safePoint(input:Point): Point { return walkable(input) ? {...input}:{...town.spawn} }

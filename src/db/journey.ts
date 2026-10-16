@@ -6,6 +6,12 @@ import { BATTLE_RULES_VERSION, initialCombat, resolveTurn, type Move } from '../
 import { CATALOG_VERSION, armorFor, catalogItem } from '../economy/catalog'
 import { WORLD_VERSION, safePoint, town, walkable, type Facing, type Point } from '../world/map'
 import type { BattleSession, CoinLedger, JourneyTables, StudyPlan, WorldCheckpoint, LearningCheck } from './journey-models'
+import {currentBattle,currentCheck,currentStudy,currentWorld} from './journey-compatibility'
+function walletBalance(wallet:{balance:number}|undefined):number{
+  if(wallet===undefined)return 0
+  if(!Number.isSafeInteger(wallet.balance) || wallet.balance<0)throw new Error('Wallet invalid; original data is preserved for export')
+  return wallet.balance
+}
 
 export class JourneyRepository {
   private readonly pack: UnitPack
@@ -29,7 +35,7 @@ export class JourneyRepository {
     await this.owned(profileId)
     const battle=await this.database.battleSessions.get(id)
     if(!battle || battle.profileId!==profileId) throw new Error('Battle does not belong to this player')
-    if(battle.contentVersion!==this.pack.version || battle.rulesVersion!==BATTLE_RULES_VERSION) throw new Error('Battle version changed; original data is preserved')
+    if(!currentBattle(battle,this.pack)) throw new Error('Battle version changed or data incompatible; original data is preserved')
     return battle
   }
   async state(profileId:string) {
@@ -39,7 +45,7 @@ export class JourneyRepository {
       world:await d.worldCheckpoints.get(profileId), study:await d.studyPlans.get([profileId,this.pack.id]),
       attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),
       battles:await d.battleSessions.where('profileId').equals(profileId).toArray(),
-      coins:(await d.coinWallets.get(profileId))?.balance ?? 0,
+      coins:walletBalance(await d.coinWallets.get(profileId)),
       inventory:await d.inventory.where('profileId').equals(profileId).toArray(),
       equipment:(await d.equipment.get(profileId))?.slots ?? {},
       reviews:await d.skillReviews.where('profileId').equals(profileId).toArray(),
@@ -52,7 +58,7 @@ export class JourneyRepository {
     return d.transaction('rw',[d.profiles,d.studyPlans],async()=>{
       await this.owned(profileId)
       const previous=await d.studyPlans.get([profileId,this.pack.id])
-      if(previous && previous.contentVersion!==this.pack.version) throw new Error('Content version changed; original study plan is preserved')
+      if(previous && !currentStudy(previous,this.pack)) throw new Error('Content version changed or study data incompatible; original study plan is preserved')
       if(previous) return previous
       const plan:StudyPlan={profileId,unitId:this.pack.id,contentVersion:this.pack.version,taughtCards:[],taughtAt:{},date:localDay(now,timeZone),timeZone,gradeBand,questionIds:[],updatedAt:now}
       await d.studyPlans.add(plan)
@@ -102,7 +108,7 @@ export class JourneyRepository {
       await this.owned(profileId)
       const old=await d.worldCheckpoints.get(profileId)
       if(old) await d.migrationBackups.put({id:`world:${profileId}:${old.updatedAt}`,createdAt:Date.now(),tables:{worldCheckpoints:[old]},localPreferences:{}})
-      await d.worldCheckpoints.put({profileId,mapId:town.id,worldVersion:WORLD_VERSION,position:safePoint(town.spawn),facing:'down',storyFlags:old?.storyFlags ?? [],updatedAt:Date.now()})
+      await d.worldCheckpoints.put({profileId,mapId:town.id,worldVersion:WORLD_VERSION,position:safePoint(town.spawn),facing:'down',storyFlags:Array.isArray(old?.storyFlags) ? old.storyFlags.filter(id=>town.destinations.some(d=>d.id===id)):[],updatedAt:Date.now()})
     })
   }
   /** Archive affected records before a safe restart. Answers and coins remain intact. */
@@ -111,17 +117,17 @@ export class JourneyRepository {
     await d.transaction('rw',[d.profiles,d.studyPlans,d.battleSessions,d.learningChecks,d.worldCheckpoints,d.migrationBackups],async()=>{
       await this.owned(profileId)
       const plan=await d.studyPlans.get([profileId,this.pack.id])
-      const battles=(await d.battleSessions.where('profileId').equals(profileId).toArray()).filter(b=>b.phase!=='finished' && (b.contentVersion!==this.pack.version || b.rulesVersion!==BATTLE_RULES_VERSION))
-      const checks=(await d.learningChecks.where('profileId').equals(profileId).toArray()).filter(c=>c.phase!=='finished' && c.contentVersion!==this.pack.version)
+      const battles=(await d.battleSessions.where('profileId').equals(profileId).toArray()).filter(b=>b.phase!=='finished' && !currentBattle(b,this.pack))
+      const checks=(await d.learningChecks.where('profileId').equals(profileId).toArray()).filter(c=>c.phase!=='finished' && !currentCheck(c,this.pack))
       const world=await d.worldCheckpoints.get(profileId)
-      const badWorld=world && (world.worldVersion!==WORLD_VERSION || world.mapId!==town.id || !walkable(world.position))
-      const badPlan=plan && plan.contentVersion!==this.pack.version
+      const badWorld=world && !currentWorld(world)
+      const badPlan=plan && !currentStudy(plan,this.pack)
       if(!badPlan && !battles.length && !checks.length && !badWorld)return
       await d.migrationBackups.add({id:`journey:${profileId}:${crypto.randomUUID()}`,createdAt:now,tables:{studyPlans:badPlan ? [plan]:[],battleSessions:battles,learningChecks:checks,worldCheckpoints:badWorld ? [world]:[]},localPreferences:{}})
       for(const battle of battles)await d.battleSessions.put({...battle,status:'retreated',phase:'finished',endReason:'version-recovery',updatedAt:now})
       for(const check of checks)await d.learningChecks.put({...check,phase:'finished',updatedAt:now})
-      if(badWorld)await d.worldCheckpoints.put({profileId,mapId:town.id,worldVersion:WORLD_VERSION,position:{...town.spawn},facing:'down',storyFlags:Array.isArray(world.storyFlags) ? world.storyFlags:[],updatedAt:now})
-      if(badPlan)await d.studyPlans.put({profileId,unitId:this.pack.id,contentVersion:this.pack.version,taughtCards:[],taughtAt:{},date:localDay(now,plan.timeZone),timeZone:plan.timeZone,gradeBand:plan.gradeBand,questionIds:[],updatedAt:now})
+      if(badWorld)await d.worldCheckpoints.put({profileId,mapId:town.id,worldVersion:WORLD_VERSION,position:{...town.spawn},facing:'down',storyFlags:Array.isArray(world.storyFlags) ? world.storyFlags.filter(id=>town.destinations.some(d=>d.id===id)):[],updatedAt:now})
+      if(badPlan){let zone=typeof plan.timeZone==='string' ? plan.timeZone:'Asia/Taipei';try{localDay(now,zone)}catch{zone='Asia/Taipei'}await d.studyPlans.put({profileId,unitId:this.pack.id,contentVersion:this.pack.version,taughtCards:[],taughtAt:{},date:localDay(now,zone),timeZone:zone,gradeBand:[1,2,3].includes(plan.gradeBand) ? plan.gradeBand:1,questionIds:[],updatedAt:now})}
     })
   }
   async startBattle(profileId:string,now=Date.now()): Promise<BattleSession> {
@@ -138,11 +144,11 @@ export class JourneyRepository {
       const today=localDay(now,plan.timeZone)
       let ids=plan.date===today ? plan.questionIds.filter(id=>questions.some(q=>q.id===id)):[]
       const used=new Set(attempts.filter(a=>localDay(Date.parse(a.submittedAt),plan.timeZone)===today).map(a=>a.itemId+':'+a.itemFamilyId))
-      let queue=ids.filter(id=>!used.has(this.question(id).itemId+':'+this.question(id).itemFamilyId)).slice(0,8)
+      let queue=ids.filter(id=>!used.has(this.question(id).itemId+':'+this.question(id).itemFamilyId))
       if(!queue.length) {
         const planned=planQuestions(questions,due,Object.keys(plan.taughtAt),attempts,questions.length)
         ids=planned
-        queue=planned.slice(0,8)
+        queue=planned
       }
       if(!queue.length) throw new Error('Learn the teaching cards first; no eligible questions')
       await d.studyPlans.put({...plan,date:today,questionIds:ids,updatedAt:now})
@@ -154,14 +160,19 @@ export class JourneyRepository {
   }
   async chooseMove(profileId:string,battleId:string,move:Move): Promise<BattleSession> {
     const d=this.database
-    return d.transaction('rw',[d.profiles,d.battleSessions],async()=>{
+    return d.transaction('rw',[d.profiles,d.battleSessions,d.learningAttempts],async()=>{
       const battle=await this.activeBattle(profileId,battleId)
       if(battle.phase!=='choosing' || battle.status!=='active') return battle
       if(!['attack','guard','partner'].includes(move) || move==='partner' && battle.partnerUsed) throw new Error('Move unavailable')
-      const questionId=battle.questionIds[battle.turn-1]
-      if(!questionId) throw new Error('Question pool exhausted; previous answers are preserved')
+      const recent=(await d.learningAttempts.where('profileId').equals(profileId).toArray()).sort((a,b)=>Date.parse(a.submittedAt)-Date.parse(b.submittedAt) || a.id.localeCompare(b.id)).slice(-3)
+      const blocked=new Set(recent.filter(a=>!a.firstAnswerCorrect || a.hintUsed).map(a=>a.itemFamilyId))
+      const questionIds=[...battle.questionIds]
+      const index=questionIds.findIndex((id,n)=>n>=battle.turn-1 && !blocked.has(this.question(id).itemFamilyId))
+      if(index<0){const ended:BattleSession={...battle,status:'lost',phase:'finished',endReason:'questions-complete',updatedAt:Date.now()};await d.battleSessions.put(ended);return ended}
+      ;[questionIds[battle.turn-1],questionIds[index]]=[questionIds[index],questionIds[battle.turn-1]]
+      const questionId=questionIds[battle.turn-1]
       this.question(questionId)
-      const next={...battle,phase:'question' as const,move,currentQuestionId:questionId,updatedAt:Date.now()}
+      const next={...battle,questionIds,phase:'question' as const,move,currentQuestionId:questionId,updatedAt:Date.now()}
       await d.battleSessions.put(next)
       return next
     })
@@ -219,7 +230,7 @@ export class JourneyRepository {
       if(battle.phase!=='finished' || battle.status!=='won' || battle.enemyHp!==0 || !attempt || attempt.profileId!==profileId || attempt.sessionId!==battleId) throw new Error('A verified victory is required')
       const first=await d.firstWins.get([profileId,battle.challengeId])
       const amount=first ? 10:60
-      const old=(await d.coinWallets.get(profileId))?.balance ?? 0
+      const old=walletBalance(await d.coinWallets.get(profileId))
       if(!Number.isSafeInteger(old) || old<0) throw new Error('Wallet is invalid; original data is preserved')
       const receipt:CoinLedger={id,profileId,kind:'reward',amount,balanceAfter:old+amount,battleId,createdAt:Date.now()}
       await d.coinWallets.put({profileId,balance:old+amount})
@@ -241,7 +252,7 @@ export class JourneyRepository {
       }
       if((await d.battleSessions.where('profileId').equals(profileId).toArray()).some(b=>b.phase!=='finished')) throw new Error('Equipment is locked during battle')
       if(await d.inventory.get([profileId,itemId])) throw new Error('Item already owned')
-      const balance=(await d.coinWallets.get(profileId))?.balance ?? 0
+      const balance=walletBalance(await d.coinWallets.get(profileId))
       if(!Number.isSafeInteger(balance) || balance<item.price) throw new Error('Not enough coins')
       const slots=(await d.equipment.get(profileId))?.slots ?? {}
       await d.coinWallets.put({profileId,balance:balance-item.price})
@@ -267,7 +278,7 @@ export class JourneyRepository {
     await this.owned(profileId)
     const check=await this.database.learningChecks.get(id)
     if(!check || check.profileId!==profileId)throw new Error('Check does not belong to this player')
-    if(check.contentVersion!==this.pack.version)throw new Error('Check version changed; original answers are preserved')
+    if(!currentCheck(check,this.pack))throw new Error('Check version changed or data incompatible; original answers are preserved')
     return check
   }
   async startCheck(profileId:string,now=Date.now()):Promise<LearningCheck> {

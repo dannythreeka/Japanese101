@@ -1,6 +1,6 @@
 {
   "id": "U01",
-  "version": "u01-1-draft",
+  "version": "u01-2-draft",
   "title": "自我介紹：認識小鎮的新朋友",
   "reviewStatus": "DRAFT",
   "reviewer": null,
@@ -220,7 +220,7 @@
     },
     {
       "id": "U01-R02",
-      "text": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。",
+      "text": "ミナ：はじめまして。わたしは ミナです。がくせいです。\nレン：わたしは レンです。わたしも がくせいです。\nミナ：あなたは せんせいですか。\nハル：はい。わたしは ハルです。せんせいです。\nレン：アキは ともだちです。\nアキ：わたしは アキです。がくせいです。よろしく おねがいします。",
       "skillId": "R-MID"
     },
     {
@@ -290,7 +290,9 @@
       "example": "じぶんとなかま",
       "translation": "可以慢慢讀，不用現在就全部記住。",
       "audioScript": "わたし。あなた。ともだち。せんせい。がくせい。ひと。なまえ。",
-      "audioSrc": "/assets/audio/u01/teach-words-1.wav"
+      "audioSrc": "/assets/audio/u01/teach-words-1.wav",
+      "titleJa": "じぶんと、ともだち",
+      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。"
     },
     {
       "id": "teach-words-2",
@@ -303,7 +305,9 @@
       "example": "くにのなまえ",
       "translation": "可以慢慢讀，不用現在就全部記住。",
       "audioScript": "くに。にほん。たいわん。",
-      "audioSrc": "/assets/audio/u01/teach-words-2.wav"
+      "audioSrc": "/assets/audio/u01/teach-words-2.wav",
+      "titleJa": "なまえと、くに",
+      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。"
     },
     {
       "id": "teach-words-3",
@@ -316,7 +320,9 @@
       "example": "ものとどうぶつ",
       "translation": "可以慢慢讀，不用現在就全部記住。",
       "audioScript": "ほん。えんぴつ。かばん。つくえ。いす。ねこ。いぬ。",
-      "audioSrc": "/assets/audio/u01/teach-words-3.wav"
+      "audioSrc": "/assets/audio/u01/teach-words-3.wav",
+      "titleJa": "ものと、どうぶつ",
+      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。"
     },
     {
       "id": "teach-words-4",
@@ -329,7 +335,9 @@
       "example": "あいさつ",
       "translation": "可以慢慢讀，不用現在就全部記住。",
       "audioScript": "はい。いいえ。はじめまして。こんにちは。ありがとう。よろしく。おねがいします。どういたしまして。",
-      "audioSrc": "/assets/audio/u01/teach-words-4.wav"
+      "audioSrc": "/assets/audio/u01/teach-words-4.wav",
+      "titleJa": "はじめてのあいさつ",
+      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。"
     },
     {
       "id": "teach-kanji",
@@ -346,7 +354,10 @@
         "teach-words-3"
       ],
       "audioScript": "わたし。ひと。にち。ほん。な。にほん。",
-      "audioSrc": "/assets/audio/u01/teach-kanji.wav"
+      "audioSrc": "/assets/audio/u01/teach-kanji.wav",
+      "titleJa": "5つのかんじをてちょうへ",
+      "translationJa": "よみかたは、ことばによってかわります。このかでは「日」と「本」で「日本（にほん）」をつくります。",
+      "bodyJa": "私（わたし）：じぶん\n人（ひと）：ひと\n日（にち／ひ）：ひにち。「日本」では「に」\n本（ほん）：ほん。「日本」でも「ほん」\n名（な）：なまえの「な」"
     },
     {
       "id": "teach-G01",
@@ -363,7 +374,10 @@
         "teach-words-1"
       ],
       "audioScript": "わたしは がくせいです。",
-      "audioSrc": "/assets/audio/u01/teach-G01.wav"
+      "audioSrc": "/assets/audio/u01/teach-G01.wav",
+      "titleJa": "わたしはだれ？",
+      "translationJa": "じぶんが、がくせいだとつたえています。",
+      "bodyJa": "「AはBです」で、AがBだとしょうかいします。この「は」は「わ」とよみます。"
     },
     {
       "id": "teach-G02",
@@ -381,7 +395,10 @@
         "teach-words-4"
       ],
       "audioScript": "あなたは せんせいですか。",
-      "audioSrc": "/assets/audio/u01/teach-G02.wav"
+      "audioSrc": "/assets/audio/u01/teach-G02.wav",
+      "titleJa": "あいてにきいてみよう",
+      "translationJa": "あいてが、せんせいかどうかをきいています。",
+      "bodyJa": "「です」のあとに「か」をつけると、しつもんになります。「はい／いいえ」でこたえられます。"
     },
     {
       "id": "teach-G03",
@@ -398,7 +415,10 @@
         "teach-G01"
       ],
       "audioScript": "わたしも がくせいです。",
-      "audioSrc": "/assets/audio/u01/teach-G03.wav"
+      "audioSrc": "/assets/audio/u01/teach-G03.wav",
+      "titleJa": "わたしも、おなじ！",
+      "translationJa": "じぶんも、がくせいだとつたえています。",
+      "bodyJa": "まえのひとのみぶんがわかっているとき、「も」で、じぶんもおなじだとつたえます。このぶんでは「は」のかわりに「も」をつかい、「はも」にはしません。"
     },
     {
       "id": "teach-story",
@@ -421,13 +441,16 @@
         "teach-G03",
         "teach-words-4"
       ],
-      "audioSrc": "/assets/audio/u01/listening-01.wav"
+      "audioSrc": "/assets/audio/u01/listening-01.wav",
+      "titleJa": "まちのじこしょうかい",
+      "translationJa": "はじめてあうアキが、がくせいだとしょうかいしています。",
+      "bodyJa": "よむときは、まずなまえとみぶんをさがします。きくときは「はい／いいえ」と「も」にちゅうもくします。すべてのことばがわからなくても、だいじょうぶです。"
     }
   ],
   "questions": [
     {
       "id": "U01-Q01",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q01",
       "itemFamilyId": "U01-F-kanji-reading",
@@ -477,11 +500,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T01"
+      "typeId": "T01",
+      "promptJa": "このかの「私」は、なんとよみますか。",
+      "explanationJa": "ここでは「私」を「わたし」とよみます。",
+      "hintJa": "てちょうの、かんじとよみかたのくみあわせをおもいだそう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q02",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q02",
       "itemFamilyId": "U01-F-kanji-reading",
@@ -531,11 +558,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T01"
+      "typeId": "T01",
+      "promptJa": "このかの「人」は、なんとよみますか。",
+      "explanationJa": "ここでは「人」を「ひと」とよみます。",
+      "hintJa": "てちょうの、かんじとよみかたのくみあわせをおもいだそう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q03",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q03",
       "itemFamilyId": "U01-F-kanji-reading",
@@ -585,11 +616,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T01"
+      "typeId": "T01",
+      "promptJa": "このかの「日本」は、なんとよみますか。",
+      "explanationJa": "ここでは「日本」を「にほん」とよみます。",
+      "hintJa": "てちょうの、かんじとよみかたのくみあわせをおもいだそう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q04",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q04",
       "itemFamilyId": "U01-F-kanji-reading",
@@ -639,11 +674,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T01"
+      "typeId": "T01",
+      "promptJa": "このかの「名」は、なんとよみますか。",
+      "explanationJa": "ここでは「名」を「な」とよみます。",
+      "hintJa": "てちょうの、かんじとよみかたのくみあわせをおもいだそう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q05",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q05",
       "itemFamilyId": "U01-F-kanji-spelling",
@@ -693,11 +732,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T02"
+      "typeId": "T02",
+      "promptJa": "「わたし」をあらわすかんじは、どれですか。",
+      "explanationJa": "ここでは「わたし」を「私」とかきます。",
+      "hintJa": "こんかいは、よみかたから、もじをさがすよ。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q06",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q06",
       "itemFamilyId": "U01-F-kanji-spelling",
@@ -747,11 +790,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T02"
+      "typeId": "T02",
+      "promptJa": "「ひと」をあらわすかんじは、どれですか。",
+      "explanationJa": "ここでは「ひと」を「人」とかきます。",
+      "hintJa": "こんかいは、よみかたから、もじをさがすよ。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q07",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q07",
       "itemFamilyId": "U01-F-kanji-spelling",
@@ -801,11 +848,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T02"
+      "typeId": "T02",
+      "promptJa": "「にほん」をあらわすかんじは、どれですか。",
+      "explanationJa": "「にほん」は「日本」とかきます。",
+      "hintJa": "こんかいは、よみかたから、もじをさがすよ。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q08",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q08",
       "itemFamilyId": "U01-F-kanji-spelling",
@@ -855,11 +906,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T02"
+      "typeId": "T02",
+      "promptJa": "「な」をあらわすかんじは、どれですか。",
+      "explanationJa": "ここでは、なまえの「な」を「名」とかきます。",
+      "hintJa": "こんかいは、よみかたから、もじをさがすよ。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q09",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q09",
       "itemFamilyId": "U01-F-first-meeting-context",
@@ -905,11 +960,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T03"
+      "typeId": "T03",
+      "promptJa": "はじめてあうともだちに、まずなんといいますか。",
+      "explanationJa": "はじめてあうときは「はじめまして」といいます。",
+      "hintJa": "このばめんで、なにをつたえたいか、まずかんがえよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q10",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q10",
       "itemFamilyId": "U01-F-greeting-context",
@@ -955,11 +1014,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T03"
+      "typeId": "T03",
+      "promptJa": "ひる、まちでちかくにすむひとにあいました。あいさつは、どれですか。",
+      "explanationJa": "ひるのあいさつには「こんにちは」をつかいます。",
+      "hintJa": "このばめんで、なにをつたえたいか、まずかんがえよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q11",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q11",
       "itemFamilyId": "U01-F-gratitude-context",
@@ -1005,11 +1068,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T03"
+      "typeId": "T03",
+      "promptJa": "ともだちが、おとしたえんぴつをひろってかえしてくれました。なんといいますか。",
+      "explanationJa": "たすけてもらったときは「ありがとう」で、おれいをつたえます。",
+      "hintJa": "このばめんで、なにをつたえたいか、まずかんがえよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q12",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q12",
       "itemFamilyId": "U01-F-role-vocabulary",
@@ -1055,11 +1122,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T03"
+      "typeId": "T03",
+      "promptJa": "中国語の「老師」にあたることばは、どれですか。",
+      "explanationJa": "「せんせい」は老師、「がくせい」は學生です。",
+      "hintJa": "このばめんで、なにをつたえたいか、まずかんがえよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q13",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q13",
       "itemFamilyId": "U01-F-role-vocabulary",
@@ -1105,11 +1176,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T03"
+      "typeId": "T03",
+      "promptJa": "中国語の「學生」にあたることばは、どれですか。",
+      "explanationJa": "「がくせい」は學生です。せんせいや、なまえではありません。",
+      "hintJa": "このばめんで、なにをつたえたいか、まずかんがえよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q14",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q14",
       "itemFamilyId": "U01-F-label-vocabulary",
@@ -1155,11 +1230,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T03"
+      "typeId": "T03",
+      "promptJa": "なふだに中国語の「名字」をかきます。どのことばをさがしますか。",
+      "explanationJa": "「なまえ」は名字、「くに」は國家です。",
+      "hintJa": "このばめんで、なにをつたえたいか、まずかんがえよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q15",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q15",
       "itemFamilyId": "U01-F-sentence-paraphrase",
@@ -1206,11 +1285,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T04"
+      "typeId": "T04",
+      "promptJa": "「わたしは がくせいです。」のいみに、もっともちかい中国語は、どれですか。",
+      "explanationJa": "「わたし」は我です。「がくせいです」で、じぶんががくせいだとつたえます。",
+      "hintJa": "「わたし／あなた」と「も／か」にちゅうもくしよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q16",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q16",
       "itemFamilyId": "U01-F-sentence-paraphrase",
@@ -1259,11 +1342,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T04"
+      "typeId": "T04",
+      "promptJa": "「あなたは せんせいですか。」のいみに、もっともちかい中国語は、どれですか。",
+      "explanationJa": "「あなた」は、はなしかけているあいてです。「ですか」でたずねます。",
+      "hintJa": "「わたし／あなた」と「も／か」にちゅうもくしよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q17",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q17",
       "itemFamilyId": "U01-F-sentence-paraphrase",
@@ -1311,11 +1398,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T04"
+      "typeId": "T04",
+      "promptJa": "「わたしも がくせいです。」のいみに、もっともちかい中国語は、どれですか。",
+      "explanationJa": "「も」で、じぶんもおなじだとつたえます。",
+      "hintJa": "「わたし／あなた」と「も／か」にちゅうもくしよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q18",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q18",
       "itemFamilyId": "U01-F-G01-predicate-gap",
@@ -1362,11 +1453,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "「我是學生」とつたえます。わたしは がくせい＿＿。",
+      "explanationJa": "みぶんをつたえるぶんのさいごは「です」です。",
+      "hintJa": "つたえるぶん、たずねるぶん、それとも「也」をあらわすぶんか、かくにんしよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q19",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q19",
       "itemFamilyId": "U01-F-G01-topic-gap",
@@ -1413,11 +1508,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "なまえをしょうかいします。わたし＿＿ アキです。",
+      "explanationJa": "「わたしはアキです」の「は」は、なにについてはなすかをしめします。",
+      "hintJa": "つたえるぶん、たずねるぶん、それとも「也」をあらわすぶんか、かくにんしよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q20",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q20",
       "itemFamilyId": "U01-F-G02-question-ending",
@@ -1466,11 +1565,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "「你是老師嗎」とたずねます。あなたは せんせいです＿＿。",
+      "explanationJa": "ぶんのさいごに「か」をつけて、たずねます。",
+      "hintJa": "つたえるぶん、たずねるぶん、それとも「也」をあらわすぶんか、かくにんしよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q21",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q21",
       "itemFamilyId": "U01-F-G03-shared-predicate",
@@ -1518,11 +1621,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "ともだちはがくせいです。じぶんもおなじだとつたえます。わたし＿＿ がくせいです。",
+      "explanationJa": "ともだちとおなじなので、「も」で「也」をあらわします。",
+      "hintJa": "つたえるぶん、たずねるぶん、それとも「也」をあらわすぶんか、かくにんしよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q22",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q22",
       "itemFamilyId": "U01-F-G02-yes-response",
@@ -1571,11 +1678,15 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "「あなたは がくせいですか。」ときかれました。あなたはがくせいです。どうこたえますか。",
+      "explanationJa": "がくせいなので、まず「はい」とこたえます。",
+      "hintJa": "つたえるぶん、たずねるぶん、それとも「也」をあらわすぶんか、かくにんしよう。",
+      "difficulty": 1
     },
     {
       "id": "U01-Q23",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q23",
       "itemFamilyId": "U01-F-G01-statement-order",
@@ -1590,7 +1701,7 @@
       "partition": "practice",
       "kind": "order",
       "prompt": "排出「我是學生」。",
-      "promptJa": "ことばをただしいじゅんにならべよう。",
+      "promptJa": "「我是學生」になるように、ことばをならべます。",
       "choices": [
         {
           "id": "U01-Q23-o1",
@@ -1622,11 +1733,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T06"
+      "typeId": "T06",
+      "explanationJa": "「わたし／は／がくせい／です」のじゅんばんです。",
+      "hintJa": "はなすひとからはじめて、「は」や「も」をさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q24",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q24",
       "itemFamilyId": "U01-F-G02-question-order",
@@ -1643,7 +1757,7 @@
       "partition": "practice",
       "kind": "order",
       "prompt": "排出「你是老師嗎」。",
-      "promptJa": "ことばをただしいじゅんにならべよう。",
+      "promptJa": "「你是老師嗎」になるように、ことばをならべます。",
       "choices": [
         {
           "id": "U01-Q24-o1",
@@ -1680,11 +1794,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T06"
+      "typeId": "T06",
+      "explanationJa": "たずねる「か」は、ぶんのさいごにおきます。",
+      "hintJa": "はなすひとからはじめて、「は」や「も」をさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q25",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q25",
       "itemFamilyId": "U01-F-G03-also-order",
@@ -1700,7 +1817,7 @@
       "partition": "practice",
       "kind": "order",
       "prompt": "朋友說他是學生，排出「我也是學生」。",
-      "promptJa": "ことばをただしいじゅんにならべよう。",
+      "promptJa": "ともだちはがくせいです。「我也是學生」になるように、ことばをならべます。",
       "choices": [
         {
           "id": "U01-Q25-o3",
@@ -1732,11 +1849,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T06"
+      "typeId": "T06",
+      "explanationJa": "ここでは「は」のかわりに「も」をつかいます。「はも」にはしません。",
+      "hintJa": "はなすひとからはじめて、「は」や「も」をさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q26",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q26",
       "itemFamilyId": "U01-F-G01-text-completion",
@@ -1791,11 +1911,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T07",
       "materialId": "U01-R01",
-      "material": "はじめまして。わたしは アキです。がくせいです。よろしく おねがいします。"
+      "material": "はじめまして。わたしは アキです。がくせいです。よろしく おねがいします。",
+      "promptJa": "アキのしょうかいをみて、「わたしは アキ＿＿」をかんせいさせます。",
+      "explanationJa": "じぶんのなまえをしょうかいしているので、さいごは「です」です。",
+      "hintJa": "まえとうしろのぶんを、いっしょによもう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q27",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q27",
       "itemFamilyId": "U01-F-G03-text-link",
@@ -1850,11 +1974,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T07",
       "materialId": "U01-R02",
-      "material": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。"
+      "material": "ミナ：はじめまして。わたしは ミナです。がくせいです。\nレン：わたしは レンです。わたしも がくせいです。\nミナ：あなたは せんせいですか。\nハル：はい。わたしは ハルです。せんせいです。\nレン：アキは ともだちです。\nアキ：わたしは アキです。がくせいです。よろしく おねがいします。",
+      "promptJa": "ふたりのがくせいのかいわをみます。レンは、どのことばで「じぶんもおなじ」とつたえていますか。",
+      "explanationJa": "レンの「わたしも」は、ミナとおなじがくせいだといういみです。",
+      "hintJa": "まえとうしろのぶんを、いっしょによもう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q28",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q28",
       "itemFamilyId": "U01-F-G02-text-question",
@@ -1909,11 +2037,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T07",
       "materialId": "U01-R04",
-      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。"
+      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。",
+      "promptJa": "ハルのこたえをみます。そのまえのぶんで、たずねていることをしめすことばは、どれですか。",
+      "explanationJa": "「せんせいですか」のさいごの「か」で、たずねています。",
+      "hintJa": "まえとうしろのぶんを、いっしょによもう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q29",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q29",
       "itemFamilyId": "U01-F-reading-explicit-role",
@@ -1968,11 +2100,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T08",
       "materialId": "U01-R01",
-      "material": "はじめまして。わたしは アキです。がくせいです。よろしく おねがいします。"
+      "material": "はじめまして。わたしは アキです。がくせいです。よろしく おねがいします。",
+      "promptJa": "アキは、じぶんがなんだとしょうかいしていますか。",
+      "explanationJa": "しょうかいに「がくせいです」とかいてあります。",
+      "hintJa": "まず、ぶんしょうから、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q30",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q30",
       "itemFamilyId": "U01-F-reading-response-link",
@@ -2027,11 +2163,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T08",
       "materialId": "U01-R04",
-      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。"
+      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。",
+      "promptJa": "「せんせいですか。」に、ハルはどうこたえていますか。",
+      "explanationJa": "ハルは「はい」とこたえてから、せんせいだとつたえています。",
+      "hintJa": "まず、ぶんしょうから、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q31",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q31",
       "itemFamilyId": "U01-F-reading-shared-information",
@@ -2086,11 +2226,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T09",
       "materialId": "U01-R02",
-      "material": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。"
+      "material": "ミナ：はじめまして。わたしは ミナです。がくせいです。\nレン：わたしは レンです。わたしも がくせいです。\nミナ：あなたは せんせいですか。\nハル：はい。わたしは ハルです。せんせいです。\nレン：アキは ともだちです。\nアキ：わたしは アキです。がくせいです。よろしく おねがいします。",
+      "promptJa": "ミナとレンは、なにがおなじですか。",
+      "explanationJa": "ミナはがくせいです。レンも「も」で、じぶんががくせいだとつたえています。",
+      "hintJa": "まず、ぶんしょうから、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q32",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q32",
       "itemFamilyId": "U01-F-reading-speaker-tracking",
@@ -2110,7 +2254,7 @@
       ],
       "partition": "practice",
       "kind": "reading",
-      "prompt": "誰說了「わたしも」？",
+      "prompt": "對話第二行，誰說了「わたしも」？",
       "choices": [
         {
           "id": "U01-Q32-o1",
@@ -2145,11 +2289,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T09",
       "materialId": "U01-R02",
-      "material": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。"
+      "material": "ミナ：はじめまして。わたしは ミナです。がくせいです。\nレン：わたしは レンです。わたしも がくせいです。\nミナ：あなたは せんせいですか。\nハル：はい。わたしは ハルです。せんせいです。\nレン：アキは ともだちです。\nアキ：わたしは アキです。がくせいです。よろしく おねがいします。",
+      "promptJa": "かいわの2ぎょうめで、「わたしも」といったのは、だれですか。",
+      "explanationJa": "かいわの2ぎょうめでは、レンがはなしています。",
+      "hintJa": "まず、ぶんしょうから、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q33",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q33",
       "itemFamilyId": "U01-F-information-name-field",
@@ -2204,11 +2352,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T10",
       "materialId": "U01-R03",
-      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ"
+      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ",
+      "promptJa": "なふだから、がくせいのなまえをさがします。だれですか。",
+      "explanationJa": "「なまえ」のところはユイです。アキは、ともだちです。",
+      "hintJa": "まず、ぶんしょうから、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q34",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q34",
       "itemFamilyId": "U01-F-information-friend-field",
@@ -2263,11 +2415,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T10",
       "materialId": "U01-R03",
-      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ"
+      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ",
+      "promptJa": "なふだにかかれた、ともだちはだれですか。",
+      "explanationJa": "「ともだち」のところにはアキとかいてあります。",
+      "hintJa": "まず、ぶんしょうから、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q35",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q35",
       "itemFamilyId": "U01-F-listening-role-action",
@@ -2322,11 +2478,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T11",
       "audioId": "U01-L01",
-      "audioSrc": "/assets/audio/u01/listening-01.wav"
+      "audioSrc": "/assets/audio/u01/listening-01.wav",
+      "promptJa": "じこしょうかいをきいて、アキにわたすみぶんのカードをえらびます。",
+      "explanationJa": "アキは「がくせいです」といっています。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q36",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q36",
       "itemFamilyId": "U01-F-listening-confirmed-role-action",
@@ -2381,11 +2541,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T11",
       "audioId": "U01-L02",
-      "audioSrc": "/assets/audio/u01/listening-02.wav"
+      "audioSrc": "/assets/audio/u01/listening-02.wav",
+      "promptJa": "こたえをきいて、あいてをどちらのグループにつれていきますか。",
+      "explanationJa": "「はい。せんせいです」とこたえているので、せんせいです。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q37",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q37",
       "itemFamilyId": "U01-F-listening-group-action",
@@ -2440,11 +2604,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T11",
       "audioId": "U01-L03",
-      "audioSrc": "/assets/audio/u01/listening-03.wav"
+      "audioSrc": "/assets/audio/u01/listening-03.wav",
+      "promptJa": "このふたりをグループにわけます。どのグループですか。",
+      "explanationJa": "ふたりめは「わたしも」といい、ふたりともがくせいだとつたえています。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q38",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q38",
       "itemFamilyId": "U01-F-listening-corrected-object-action",
@@ -2499,11 +2667,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T11",
       "audioId": "U01-L04",
-      "audioSrc": "/assets/audio/u01/listening-04.wav"
+      "audioSrc": "/assets/audio/u01/listening-04.wav",
+      "promptJa": "あいてのかくにんをきいて、どのものをだしますか。",
+      "explanationJa": "ほんかときかれて「いいえ」とこたえ、そのあと、えんぴつだとつたえています。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q39",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q39",
       "itemFamilyId": "U01-F-listening-key-name",
@@ -2558,11 +2730,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T12",
       "audioId": "U01-L01",
-      "audioSrc": "/assets/audio/u01/listening-01.wav"
+      "audioSrc": "/assets/audio/u01/listening-01.wav",
+      "promptJa": "しょうかいしているひとの、なまえはなんですか。",
+      "explanationJa": "「わたしはアキです」といっています。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q40",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q40",
       "itemFamilyId": "U01-F-listening-key-confirmation",
@@ -2617,11 +2793,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T12",
       "audioId": "U01-L02",
-      "audioSrc": "/assets/audio/u01/listening-02.wav"
+      "audioSrc": "/assets/audio/u01/listening-02.wav",
+      "promptJa": "こたえているひとは、せんせいですか。",
+      "explanationJa": "まず「はい」とこたえてから、せんせいだとつたえています。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q41",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q41",
       "itemFamilyId": "U01-F-listening-key-also",
@@ -2676,11 +2856,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T12",
       "audioId": "U01-L03",
-      "audioSrc": "/assets/audio/u01/listening-03.wav"
+      "audioSrc": "/assets/audio/u01/listening-03.wav",
+      "promptJa": "ふたりめは、どのことばで「也」をあらわしていますか。",
+      "explanationJa": "ふたりめは「わたしも」といっています。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q42",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q42",
       "itemFamilyId": "U01-F-listening-key-correction",
@@ -2735,11 +2919,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T12",
       "audioId": "U01-L04",
-      "audioSrc": "/assets/audio/u01/listening-04.wav"
+      "audioSrc": "/assets/audio/u01/listening-04.wav",
+      "promptJa": "さいごにかくにんされたものは、なんですか。",
+      "explanationJa": "「いいえ」のあとのいいなおしにちゅうもくします。えんぴつです。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q43",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q43",
       "itemFamilyId": "U01-F-situation-student-response",
@@ -2794,11 +2982,23 @@
       "reviewStatus": "DRAFT",
       "typeId": "T13",
       "audioId": "U01-L05",
-      "audioSrc": "/assets/audio/u01/listening-05.wav"
+      "audioSrc": "/assets/audio/u01/listening-05.wav",
+      "image": {
+        "src": "/assets/img/journey/u01-contexts.webp",
+        "cell": 0,
+        "alt": {
+          "zh": "兩位孩子在小鎮相遇。",
+          "ja": "まちでふたりのこどもがであっています。"
+        }
+      },
+      "promptJa": "あなたはがくせいのやくです。ユイのしつもんをきいて、あなたにあうこたえをえらびます。",
+      "explanationJa": "がくせいのやくなので、「はい」とこたえて「がくせいです」とつたえます。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q44",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q44",
       "itemFamilyId": "U01-F-situation-thanks-response",
@@ -2853,11 +3053,23 @@
       "reviewStatus": "DRAFT",
       "typeId": "T13",
       "audioId": "U01-L06",
-      "audioSrc": "/assets/audio/u01/listening-06.wav"
+      "audioSrc": "/assets/audio/u01/listening-06.wav",
+      "image": {
+        "src": "/assets/img/journey/u01-contexts.webp",
+        "cell": 1,
+        "alt": {
+          "zh": "一位孩子把小袋子交給另一位孩子。",
+          "ja": "こどもがもうひとりにふくろをわたしています。"
+        }
+      },
+      "promptJa": "ともだちは、おんせいのさいしょのぶんをあなたにいいました。どうこたえるとよいですか。",
+      "explanationJa": "「ありがとう」といわれたら、「どういたしまして」とこたえられます。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q45",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q45",
       "itemFamilyId": "U01-F-situation-object-confirmation",
@@ -2912,11 +3124,23 @@
       "reviewStatus": "DRAFT",
       "typeId": "T13",
       "audioId": "U01-L04",
-      "audioSrc": "/assets/audio/u01/listening-04.wav"
+      "audioSrc": "/assets/audio/u01/listening-04.wav",
+      "image": {
+        "src": "/assets/img/journey/u01-contexts.webp",
+        "cell": 2,
+        "alt": {
+          "zh": "桌上同時放著書和鉛筆，兩位孩子正在討論。",
+          "ja": "つくえにほんとえんぴつがあり、ふたりがはなしています。"
+        }
+      },
+      "promptJa": "てにもつものをかくにんします。いいなおしをきいて、もっともあうぶんをえらびます。",
+      "explanationJa": "ほんではなく、えんぴつだと、かくにんしています。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q46",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q46",
       "itemFamilyId": "U01-F-situation-relay-role",
@@ -2971,11 +3195,23 @@
       "reviewStatus": "DRAFT",
       "typeId": "T13",
       "audioId": "U01-L02",
-      "audioSrc": "/assets/audio/u01/listening-02.wav"
+      "audioSrc": "/assets/audio/u01/listening-02.wav",
+      "image": {
+        "src": "/assets/img/journey/u01-contexts.webp",
+        "cell": 3,
+        "alt": {
+          "zh": "兩位旅行者在入口附近交談。",
+          "ja": "ふたりのたびびとがいりぐちで、はなしています。"
+        }
+      },
+      "promptJa": "きいたみぶんを、ほかのひとにつたえます。どのぶんですか。",
+      "explanationJa": "こたえのなかで、せんせいだと、かくにんしています。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q47",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q47",
       "itemFamilyId": "U01-F-response-role-question",
@@ -3030,11 +3266,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T14",
       "audioId": "U01-L05",
-      "audioSrc": "/assets/audio/u01/listening-05.wav"
+      "audioSrc": "/assets/audio/u01/listening-05.wav",
+      "promptJa": "あなたはがくせいです。おんせいのさいごのしつもんに、どうこたえますか。",
+      "explanationJa": "がくせいかときかれています。あなたはがくせいなので、そうだとこたえます。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q48",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q48",
       "itemFamilyId": "U01-F-response-gratitude",
@@ -3089,11 +3329,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T14",
       "audioId": "U01-L06",
-      "audioSrc": "/assets/audio/u01/listening-06.wav"
+      "audioSrc": "/assets/audio/u01/listening-06.wav",
+      "promptJa": "「ありがとう」といわれました。もっともあうこたえをえらびます。",
+      "explanationJa": "おれいには「どういたしまして」とこたえられます。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q49",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q49",
       "itemFamilyId": "U01-F-response-first-meeting",
@@ -3148,11 +3392,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T14",
       "audioId": "U01-L01",
-      "audioSrc": "/assets/audio/u01/listening-01.wav"
+      "audioSrc": "/assets/audio/u01/listening-01.wav",
+      "promptJa": "はじめてあうひとが、おんせいのしょうかいをしました。どのあいさつがあいますか。",
+      "explanationJa": "はじめてあうときは「はじめまして。よろしくおねがいします」とこたえられます。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-Q50",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-Q50",
       "itemFamilyId": "U01-F-response-join-shared-role",
@@ -3207,11 +3455,15 @@
       "reviewStatus": "DRAFT",
       "typeId": "T14",
       "audioId": "U01-L03",
-      "audioSrc": "/assets/audio/u01/listening-03.wav"
+      "audioSrc": "/assets/audio/u01/listening-03.wav",
+      "promptJa": "あなたもがくせいです。おんせいのかいわにくわわるには、どういいますか。",
+      "explanationJa": "すでにだれかががくせいだといいました。あなたもおなじなので「も」をつかいます。",
+      "hintJa": "まず、さいごまできいて、たずねられたじょうほうをさがそう。",
+      "difficulty": 2
     },
     {
       "id": "U01-C01",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C01",
       "itemFamilyId": "U01-F-check-G01-two-field-record",
@@ -3259,11 +3511,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "なふだのなまえはアキ、みぶんはがくせいです。どのしょうかいが、どちらにもあいますか。",
+      "explanationJa": "なまえと、がくせいというみぶんの、どちらもかくにんします。",
+      "difficulty": 3
     },
     {
       "id": "U01-C02",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C02",
       "itemFamilyId": "U01-F-check-G01-speaker-attribution",
@@ -3311,11 +3566,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "3にんが、それぞれじぶんのみぶんのカードをもっています。ひとりだけせんせいです。せんせいがいうぶんは、どれですか。",
+      "explanationJa": "じぶんがせんせいだとしょうかいするので「わたしはせんせいです」といいます。",
+      "difficulty": 3
     },
     {
       "id": "U01-C03",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C03",
       "itemFamilyId": "U01-F-check-G01-error-repair",
@@ -3363,11 +3621,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "「我是學生」とかこうとして、「わたし です がくせい は」とかいてしまいました。ぜんたいをなおしたぶんをえらびます。",
+      "explanationJa": "「は」のまえに、なにについてはなすかをおき、「です」のまえに、みぶんをおきます。",
+      "difficulty": 3
     },
     {
       "id": "U01-C04",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C04",
       "itemFamilyId": "U01-F-check-G01-label-vs-value",
@@ -3415,11 +3676,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "なふだには「なまえ：ミナ」とあります。じぶんのなまえだけをしょうかいするには、どのぶんですか。",
+      "explanationJa": "ミナというなまえをいいます。「わたしはなまえです」は、なまえのしょうかいになりません。",
+      "difficulty": 3
     },
     {
       "id": "U01-C05",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C05",
       "itemFamilyId": "U01-F-check-G01-detect-conflict",
@@ -3469,11 +3733,14 @@
       "reviewStatus": "DRAFT",
       "typeId": "T05",
       "materialId": "U01-R03",
-      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ"
+      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ",
+      "promptJa": "なふだのひとはユイです。なふだとあわないしょうかいは、どれですか。",
+      "explanationJa": "なふだはユイなので、ハルというなまえは、なふだとあいません。",
+      "difficulty": 3
     },
     {
       "id": "U01-C06",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C06",
       "itemFamilyId": "U01-F-check-G02-identify-intention",
@@ -3521,11 +3788,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "あいてのみぶんをたずねているぶんは、どれですか。",
+      "explanationJa": "「あなた」はあいてをあらわし、さいごの「か」でたずねます。",
+      "difficulty": 3
     },
     {
       "id": "U01-C07",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C07",
       "itemFamilyId": "U01-F-check-G02-clause-boundary",
@@ -3582,11 +3852,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T06"
+      "typeId": "T06",
+      "promptJa": "「你是學生嗎」になるように、ことばをならべます。たずねることばを、とちゅうにおかないようにします。",
+      "explanationJa": "「か」は、さいごの「です」のあとにつけます。",
+      "difficulty": 3
     },
     {
       "id": "U01-C08",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C08",
       "itemFamilyId": "U01-F-check-G02-infer-prior-question",
@@ -3634,11 +3907,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "せんせいが「はい。せんせいです」とこたえました。そのまえに、どのしつもんがあいますか。",
+      "explanationJa": "せんせいだというこたえなので、せんせいかとたずねるしつもんがあいます。",
+      "difficulty": 3
     },
     {
       "id": "U01-C09",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C09",
       "itemFamilyId": "U01-F-check-G02-uncertainty",
@@ -3686,11 +3962,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "あいてのなまえだけをしっています。がくせいかどうか、まだしりません。きめつけずにかくにんするぶんは、どれですか。",
+      "explanationJa": "みぶんをまだしらないので、きめつけるぶんではなく、たずねるぶんをつかいます。",
+      "difficulty": 3
     },
     {
       "id": "U01-C10",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C10",
       "itemFamilyId": "U01-F-check-G02-dialogue-turn",
@@ -3740,11 +4019,14 @@
       "reviewStatus": "DRAFT",
       "typeId": "T05",
       "materialId": "U01-R04",
-      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。"
+      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。",
+      "promptJa": "かいわの「はい」は、だれのしつもんへのこたえですか。",
+      "explanationJa": "アキがせんせいかとたずね、ハルが「はい」とこたえています。",
+      "difficulty": 3
     },
     {
       "id": "U01-C11",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C11",
       "itemFamilyId": "U01-F-check-G03-shared-records",
@@ -3792,11 +4074,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "ふたつのみぶんのカードは、どちらもがくせいです。ひとりめは「わたしは がくせいです」といいました。ふたりめは、おなじところをつたえるために、どういいますか。",
+      "explanationJa": "おなじがくせいだと「も」でつたえます。「はも」はつかいません。",
+      "difficulty": 3
     },
     {
       "id": "U01-C12",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C12",
       "itemFamilyId": "U01-F-check-G03-membership-conflict",
@@ -3846,11 +4131,14 @@
       "reviewStatus": "DRAFT",
       "typeId": "T05",
       "materialId": "U01-R02",
-      "material": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。"
+      "material": "ミナ：はじめまして。わたしは ミナです。がくせいです。\nレン：わたしは レンです。わたしも がくせいです。\nミナ：あなたは せんせいですか。\nハル：はい。わたしは ハルです。せんせいです。\nレン：アキは ともだちです。\nアキ：わたしは アキです。がくせいです。よろしく おねがいします。",
+      "promptJa": "ふたりが「も」をつかって、がくせいのグループにはいります。どのようすが、かいわとあいませんか。",
+      "explanationJa": "ふたりめの「わたしも」は、がくせいだといういみをうけついでいます。せんせいにかわるのではありません。",
+      "difficulty": 3
     },
     {
       "id": "U01-C13",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C13",
       "itemFamilyId": "U01-F-check-G03-transfer-to-role",
@@ -3902,11 +4190,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T06"
+      "typeId": "T06",
+      "promptJa": "ハルはせんせいです。あなたもせんせいです。「我也是老師」になるように、ことばをならべます。",
+      "explanationJa": "まえのひととおなじせんせいなので、「も」をつかいます。",
+      "difficulty": 3
     },
     {
       "id": "U01-C14",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C14",
       "itemFamilyId": "U01-F-check-G03-ellipsis",
@@ -3954,11 +4245,14 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "アキはがくせいだとしょうかいしました。つぎのひとの「わたしも」は、なにをはぶいてつたえていますか。",
+      "explanationJa": "ここでの「も」は、まえのがくせいだといういみをうけついでいます。",
+      "difficulty": 3
     },
     {
       "id": "U01-C15",
-      "version": "1",
+      "version": "2",
       "unitId": "U01",
       "itemId": "U01-C15",
       "itemFamilyId": "U01-F-check-G03-unshared-predicate",
@@ -4006,7 +4300,10 @@
       "audioPolicy": "optional",
       "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
       "reviewStatus": "DRAFT",
-      "typeId": "T05"
+      "typeId": "T05",
+      "promptJa": "あなたはがくせいですが、まえのひとはせんせいです。まちがって「も」をつかわず、じぶんをしょうかいするぶんは、どれですか。",
+      "explanationJa": "みぶんがちがうので、あいてのせんせいというみぶんをうけつがず、「は」でじぶんをしょうかいします。",
+      "difficulty": 3
     }
   ]
 }

@@ -19,8 +19,8 @@ export default function BattleScene({battle,attempts,receipt,pending,onChoose,on
     <div className="journey-content-header"><h1>{t('dojo')} · {battle.turn} / 8</h1><Button variant="quiet" disabled={pending || battle.status==='won' || battle.status==='lost'} onClick={onRetreat}>{t('retreat')}</Button></div>
     <div className="journey-actions" style={{marginBottom:16}}><Button variant="quiet" aria-expanded={!collapsed} onClick={()=>setCollapsed(!collapsed)}>{collapsed ? t('opponent'):t('close')} · {t('hp')}</Button></div>
     {!collapsed && <div className="journey-battle-stage">
-      <div className="journey-battle-side"><div className="journey-battle-status"><Progress label={t('hp')} value={shown.playerHp} max={40}/></div><div className="journey-battle-figures"><Character battle facing="right" frame={battle.phase==='feedback' ? 0:1} items={battle.loadoutSnapshot} size={200}/><Character kind="fox" battle facing="right" items={battle.loadoutSnapshot} size={140}/></div></div>
-      <div className="journey-battle-side"><div className="journey-battle-status"><Progress label={t('opponent')} value={shown.enemyHp} max={30}/></div><Character kind="opponent" frame={battle.phase==='feedback' ? 2:0} size={220}/></div>
+      <div className="journey-battle-side"><div className="journey-battle-status"><Progress label={t('hp')} value={shown.playerHp} max={40}/></div><div className="journey-battle-figures"><Character battle facing="right" frame={battle.phase==='choosing' && battle.lastAttemptId ? 1:0} items={battle.loadoutSnapshot} size={200}/><Character kind="fox" battle facing="right" items={battle.loadoutSnapshot} size={140}/></div></div>
+      <div className="journey-battle-side"><div className="journey-battle-status"><Progress label={t('opponent')} value={shown.enemyHp} max={30}/></div><Character kind="opponent" frame={(battle.phase==='choosing' || battle.phase==='finished') && battle.lastAttemptId ? 2:0} size={220}/></div>
     </div>}
     <div className="journey-battle-controls journey-stack">
       {battle.phase==='choosing' && <>

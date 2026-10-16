@@ -38,6 +38,10 @@ jobs:
         if: ${{ !cancelled() }}
         run: npm run validate:blueprint
 
+      - name: Validate P2 journey and draft assets
+        if: ${{ !cancelled() }}
+        run: npm run validate:journey
+
       - name: Lint
         if: ${{ !cancelled() }}
         run: npm run lint

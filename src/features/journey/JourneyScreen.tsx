@@ -1,27 +1,29 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
 import { Button, Dialog, Progress, StatePanel } from '../../components/ui/journey-ui'
+import OfflinePack from '../../components/OfflinePack'
 import { setActiveProfileId } from '../../db'
 import { u01 } from '../../content/packs/u01'
 import { CATALOG_VERSION } from '../../economy/catalog'
-import { BATTLE_RULES_VERSION } from '../../battle/rules'
+import {currentBattle,currentCheck,currentWorld} from '../../db/journey-compatibility'
 import { localDay, summarize } from '../../learning/rules'
 import { stopJourneyAudio } from '../../lib/journeyAudio'
 import { stopSpeaking } from '../../lib/tts'
 import { useAppStore } from '../../store/useAppStore'
-import { town, walkable, WORLD_VERSION, type Destination, type Facing, type Point } from '../../world/map'
+import { town, WORLD_VERSION, type Destination, type Facing, type Point } from '../../world/map'
 import BattleScene from './BattleScene'
 import { TeachingScene, CheckScene } from './LearningScene'
 import ShopScene from './ShopScene'
 import WorldScene from './WorldScene'
 import { useJourney } from './useJourney'
 import { useJourneyText } from './text'
+import { JourneyPetContext } from './pet-context'
 import './journey.css'
 
 type Panel='journal'|'places'|'profiles'|'pause'|null
 export default function JourneyScreen(){
   const {lang,t}=useJourneyText();const navigate=useNavigate();const [params,setParams]=useSearchParams()
-  const {profileId,repo,data,setData,profile,profiles,error,setError,pending,perform,reload,retry}=useJourney()
+  const {profileId,repo,data,setData,profile,profiles,pet,error,setError,pending,perform,reload,retry}=useJourney()
   const [panel,setPanel]=useState<Panel>(null);const [resident,setResident]=useState<Destination|null>(null);const [line,setLine]=useState(0)
   const [teachingIndex,setTeachingIndex]=useState(0);const [notice,setNotice]=useState('')
   const [clock,setClock]=useState(()=>Date.now())
@@ -50,12 +52,12 @@ export default function JourneyScreen(){
     }).finally(()=>{entering.current=false})
   }
   const recover=()=>{void perform(async()=>{await repo.recoverVersions(profileId);go('town')})}
-  if(!data || !data.study)return <main className="journey journey-shell"><StatePanel state={error ? 'retryable-error':'loading'} title={error==='version' ? t('versionError'):error ? t('error'):t('loading')} action={error ? t(error==='version'?'continueJourney':'retry'):undefined} onAction={error ? error==='version' ? recover:retry:undefined}/></main>
-  const stale=data.battles.some(b=>b.phase!=='finished' && (b.contentVersion!==u01.version || b.rulesVersion!==BATTLE_RULES_VERSION)) || data.checks.some(c=>c.phase!=='finished' && c.contentVersion!==u01.version)
-  if(stale)return <main className="journey journey-shell"><StatePanel state="retryable-error" title={t('versionError')} action={t('continueJourney')} onAction={recover}/></main>
+  if(!data || !data.study)return <main className="journey journey-shell"><StatePanel state={error ? 'retryable-error':'loading'} title={error==='version' ? t('versionError'):error ? t('error'):t('loading')} action={error ? t(error==='version'?'continueJourney':'retry'):undefined} onAction={error ? error==='version' ? recover:retry:undefined}/>{error && <Button variant="quiet" onClick={()=>navigate('/parent')}>{t('parent')}</Button>}</main>
+  const stale=data.battles.some(b=>b.phase!=='finished' && !currentBattle(b,u01)) || data.checks.some(c=>c.phase!=='finished' && !currentCheck(c,u01))
+  if(stale)return <main className="journey journey-shell"><StatePanel state="retryable-error" title={t(error==='storage'?'storageError':'versionError')} action={t('continueJourney')} onAction={recover}/></main>
   const battle=data.battles.find(b=>b.id===id)
   const check=data.checks.find(c=>c.id===id)
-  if(scene==='battle' && battle && (battle.contentVersion!==u01.version || battle.rulesVersion!==BATTLE_RULES_VERSION) || scene==='check' && check && check.contentVersion!==u01.version)return <main className="journey journey-shell"><StatePanel state="retryable-error" title={t('versionError')} action={t('returnTown')} onAction={()=>go('town')}/></main>
+  if(scene==='battle' && battle && !currentBattle(battle,u01) || scene==='check' && check && !currentCheck(check,u01))return <main className="journey journey-shell"><StatePanel state="retryable-error" title={t('versionError')} action={t('returnTown')} onAction={()=>go('town')}/></main>
   const activeBattle=data.battles.find(b=>b.phase!=='finished')
   const unfinishedCheck=data.checks.find(c=>c.phase!=='finished')
   const items=Object.values(data.equipment)
@@ -64,10 +66,10 @@ export default function JourneyScreen(){
   const due=data.reviews.filter(r=>r.dueDate<=today)
   const eligible=u01.questions.some(q=>q.partition==='practice' && q.teachingIds.every(id=>data.study!.taughtCards.includes(id)))
   const checkEligible=u01.questions.some(q=>q.partition==='check' && q.teachingIds.every(id=>data.study!.taughtCards.includes(id)))
-  const worldOutdated=data.world && (data.world.worldVersion!==WORLD_VERSION || data.world.mapId!==town.id || !walkable(data.world.position))
+  const worldOutdated=data.world && !currentWorld(data.world)
   const startBattle=()=>{void perform(async()=>{const battle=await repo.startBattle(profileId);go('battle',battle.id)})}
   const startCheck=()=>{void perform(async()=>{const check=await repo.startCheck(profileId);go('check',check.id)})}
-  return <main className="journey journey-shell" lang={lang==='ja'?'ja':'zh-Hant'}>
+  return <JourneyPetContext.Provider value={pet}><main className="journey journey-shell" lang={lang==='ja'?'ja':'zh-Hant'}>
     <header className="journey-header"><div><small>{profile?.name}</small><h1>{t('title')}</h1><p>{t('coins')} {data.coins}</p></div><div className="journey-actions">
       <Button variant="quiet" onClick={()=>useAppStore.getState().setUiLang(lang==='zh'?'ja':'zh')}>{lang==='zh'?'日本語':'繁體中文'}</Button>
       <Button variant="quiet" onClick={()=>setPanel('profiles')}>{t('profiles')}</Button><Button variant="quiet" onClick={()=>navigate('/parent')}>{t('parent')}</Button>
@@ -96,10 +98,11 @@ export default function JourneyScreen(){
     <Dialog open={panel==='journal'} title={t('journal')} closeLabel={t('close')} onClose={()=>setPanel(null)}><div className="journey-stack"><h3>{t('suggested')}</h3><p>{t('noDeadline')}</p><p>{t('sections')} {summary.completedSections} / {data.study.gradeBand+1}</p><Progress label={t('partial')} value={summary.partialSection} max={5}/><p>{due.length ? `${t('due')} (${due.length})`:t('noDue')}</p>
       <label>{t('grade')} <select value={data.study.gradeBand} onChange={e=>{const value=Number(e.target.value) as 1|2|3;void perform(()=>repo.setGradeBand(profileId,value))}} style={{minHeight:64,padding:12,maxWidth:'100%'}}>{([1,2,3] as const).map(g=><option key={g} value={g}>{t(g===1?'grade1':g===2?'grade2':'grade3')}</option>)}</select></label>
       <Button onClick={()=>go('dojo')}>{t('dojo')}</Button>{activeBattle && <Button variant="secondary" onClick={()=>go('battle',activeBattle.id)}>{t('resume')}</Button>}{unfinishedCheck && <Button variant="secondary" onClick={()=>go('check',unfinishedCheck.id)}>{t('check')}</Button>}
-      <h3>{t('story')}</h3>{(data.world?.storyFlags ?? []).map(flag=><p key={flag}>{town.destinations.find(d=>d.id===flag)?.name[lang]}</p>)}
+      <h3>{t('story')}</h3>{(Array.isArray(data.world?.storyFlags) ? data.world.storyFlags:[]).map(flag=><p key={flag}>{town.destinations.find(d=>d.id===flag)?.name[lang]}</p>)}
+      <OfflinePack/>
     </div></Dialog>
     <Dialog open={panel==='profiles'} title={t('profiles')} closeLabel={t('close')} onClose={()=>setPanel(null)}><div className="journey-stack">{profiles.map(p=><Button key={p.profile_id} variant="secondary" aria-pressed={p.profile_id===profileId} onClick={()=>{stopJourneyAudio();setActiveProfileId(p.profile_id)}}>{p.name}</Button>)}<Button variant="quiet" onClick={()=>navigate('/profiles/new')}>{lang==='zh'?'新增玩家':'プレイヤーをふやす'}</Button></div></Dialog>
     <Dialog open={panel==='pause'} title={t('rest')} closeLabel={t('close')} onClose={()=>setPanel(null)}><Button onClick={()=>setPanel(null)}>{t('continueJourney')}</Button></Dialog>
     <Dialog open={!!resident} title={resident?.name[lang] ?? ''} closeLabel={t('close')} onClose={()=>setResident(null)}>{resident && <div className="journey-stack"><img src={`${import.meta.env.BASE_URL}assets/img/journey/${resident.asset}.webp`} style={{width:180,maxHeight:200,objectFit:'contain',margin:'auto'}} alt=""/><p>{resident.dialogue?.[line]?.[lang]}</p><Button onClick={()=>{if(line+1<(resident.dialogue?.length ?? 0))setLine(line+1);else setResident(null)}}>{t('next')}</Button></div>}</Dialog>
-  </main>
+  </main></JourneyPetContext.Provider>
 }

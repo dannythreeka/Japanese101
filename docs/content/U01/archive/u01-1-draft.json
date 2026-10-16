@@ -1,0 +1,4012 @@
+{
+  "id": "U01",
+  "version": "u01-1-draft",
+  "title": "自我介紹：認識小鎮的新朋友",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "vocabulary": [
+    {
+      "id": "U01-V01",
+      "text": "わたし",
+      "reading": "わたし",
+      "meaning": "我"
+    },
+    {
+      "id": "U01-V02",
+      "text": "あなた",
+      "reading": "あなた",
+      "meaning": "你"
+    },
+    {
+      "id": "U01-V03",
+      "text": "ともだち",
+      "reading": "ともだち",
+      "meaning": "朋友"
+    },
+    {
+      "id": "U01-V04",
+      "text": "せんせい",
+      "reading": "せんせい",
+      "meaning": "老師"
+    },
+    {
+      "id": "U01-V05",
+      "text": "がくせい",
+      "reading": "がくせい",
+      "meaning": "學生"
+    },
+    {
+      "id": "U01-V06",
+      "text": "ひと",
+      "reading": "ひと",
+      "meaning": "人"
+    },
+    {
+      "id": "U01-V07",
+      "text": "なまえ",
+      "reading": "なまえ",
+      "meaning": "名字"
+    },
+    {
+      "id": "U01-V08",
+      "text": "くに",
+      "reading": "くに",
+      "meaning": "國家"
+    },
+    {
+      "id": "U01-V09",
+      "text": "にほん",
+      "reading": "にほん",
+      "meaning": "日本"
+    },
+    {
+      "id": "U01-V10",
+      "text": "たいわん",
+      "reading": "たいわん",
+      "meaning": "臺灣"
+    },
+    {
+      "id": "U01-V11",
+      "text": "ほん",
+      "reading": "ほん",
+      "meaning": "書"
+    },
+    {
+      "id": "U01-V12",
+      "text": "えんぴつ",
+      "reading": "えんぴつ",
+      "meaning": "鉛筆"
+    },
+    {
+      "id": "U01-V13",
+      "text": "かばん",
+      "reading": "かばん",
+      "meaning": "書包／包包"
+    },
+    {
+      "id": "U01-V14",
+      "text": "つくえ",
+      "reading": "つくえ",
+      "meaning": "桌子"
+    },
+    {
+      "id": "U01-V15",
+      "text": "いす",
+      "reading": "いす",
+      "meaning": "椅子"
+    },
+    {
+      "id": "U01-V16",
+      "text": "ねこ",
+      "reading": "ねこ",
+      "meaning": "貓"
+    },
+    {
+      "id": "U01-V17",
+      "text": "いぬ",
+      "reading": "いぬ",
+      "meaning": "狗"
+    },
+    {
+      "id": "U01-V18",
+      "text": "はい",
+      "reading": "はい",
+      "meaning": "是／對"
+    },
+    {
+      "id": "U01-V19",
+      "text": "いいえ",
+      "reading": "いいえ",
+      "meaning": "不是／不對"
+    },
+    {
+      "id": "U01-V20",
+      "text": "はじめまして",
+      "reading": "はじめまして",
+      "meaning": "初次見面"
+    },
+    {
+      "id": "U01-V21",
+      "text": "こんにちは",
+      "reading": "こんにちは",
+      "meaning": "你好"
+    },
+    {
+      "id": "U01-V22",
+      "text": "ありがとう",
+      "reading": "ありがとう",
+      "meaning": "謝謝"
+    },
+    {
+      "id": "U01-V23",
+      "text": "よろしく",
+      "reading": "よろしく",
+      "meaning": "請多指教（與おねがいします連用）"
+    },
+    {
+      "id": "U01-V24",
+      "text": "おねがいします",
+      "reading": "おねがいします",
+      "meaning": "麻煩你／拜託了"
+    },
+    {
+      "id": "U01-V25",
+      "text": "どういたしまして",
+      "reading": "どういたしまして",
+      "meaning": "不客氣"
+    }
+  ],
+  "kanji": [
+    {
+      "id": "U01-K01",
+      "text": "私",
+      "reading": "わたし",
+      "meaning": "我"
+    },
+    {
+      "id": "U01-K02",
+      "text": "人",
+      "reading": "ひと",
+      "meaning": "人"
+    },
+    {
+      "id": "U01-K03",
+      "text": "日",
+      "reading": "にち／ひ",
+      "meaning": "日子；在「日本」讀に"
+    },
+    {
+      "id": "U01-K04",
+      "text": "本",
+      "reading": "ほん",
+      "meaning": "書；在「日本」讀ほん"
+    },
+    {
+      "id": "U01-K05",
+      "text": "名",
+      "reading": "な",
+      "meaning": "名字的「名」"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G01",
+      "title": "NはNです",
+      "prerequisites": [
+        "K-HIRA"
+      ]
+    },
+    {
+      "id": "G02",
+      "title": "NはNですか",
+      "prerequisites": [
+        "G01"
+      ]
+    },
+    {
+      "id": "G03",
+      "title": "NもNです",
+      "prerequisites": [
+        "G01"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "U01-R01",
+      "text": "はじめまして。わたしは アキです。がくせいです。よろしく おねがいします。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U01-R02",
+      "text": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。",
+      "skillId": "R-MID"
+    },
+    {
+      "id": "U01-R03",
+      "text": "なまえ：ユイ\nがくせいです。\nともだち：アキ",
+      "skillId": "R-INFO"
+    },
+    {
+      "id": "U01-R04",
+      "text": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。",
+      "skillId": "R-SHORT"
+    }
+  ],
+  "listening": [
+    {
+      "id": "U01-L01",
+      "script": "はじめまして。わたしはアキです。がくせいです。よろしくおねがいします。",
+      "skillId": "L-TASK",
+      "audioSrc": "/assets/audio/u01/listening-01.wav",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U01-L02",
+      "script": "あなたはせんせいですか。はい。わたしはせんせいです。",
+      "skillId": "L-KEY",
+      "audioSrc": "/assets/audio/u01/listening-02.wav",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U01-L03",
+      "script": "わたしはがくせいです。わたしもがくせいです。",
+      "skillId": "L-KEY",
+      "audioSrc": "/assets/audio/u01/listening-03.wav",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U01-L04",
+      "script": "ほんですか。いいえ。えんぴつです。",
+      "skillId": "L-TASK",
+      "audioSrc": "/assets/audio/u01/listening-04.wav",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U01-L05",
+      "script": "こんにちは。わたしはユイです。あなたはがくせいですか。",
+      "skillId": "L-EXPR",
+      "audioSrc": "/assets/audio/u01/listening-05.wav",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U01-L06",
+      "script": "ありがとう。どういたしまして。",
+      "skillId": "L-RESP",
+      "audioSrc": "/assets/audio/u01/listening-06.wav",
+      "reviewStatus": "DRAFT"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "teach-words-1",
+      "skillIds": [
+        "V-CONTEXT",
+        "K-HIRA"
+      ],
+      "title": "認識自己與朋友",
+      "body": "わたし：我\nあなた：你\nともだち：朋友\nせんせい：老師\nがくせい：學生\nひと：人\nなまえ：名字",
+      "example": "じぶんとなかま",
+      "translation": "可以慢慢讀，不用現在就全部記住。",
+      "audioScript": "わたし。あなた。ともだち。せんせい。がくせい。ひと。なまえ。",
+      "audioSrc": "/assets/audio/u01/teach-words-1.wav"
+    },
+    {
+      "id": "teach-words-2",
+      "skillIds": [
+        "V-CONTEXT",
+        "K-HIRA"
+      ],
+      "title": "名字與來自的地方",
+      "body": "くに：國家\nにほん：日本\nたいわん：臺灣",
+      "example": "くにのなまえ",
+      "translation": "可以慢慢讀，不用現在就全部記住。",
+      "audioScript": "くに。にほん。たいわん。",
+      "audioSrc": "/assets/audio/u01/teach-words-2.wav"
+    },
+    {
+      "id": "teach-words-3",
+      "skillIds": [
+        "V-CONTEXT",
+        "K-HIRA"
+      ],
+      "title": "身邊的物品與動物",
+      "body": "ほん：書\nえんぴつ：鉛筆\nかばん：書包／包包\nつくえ：桌子\nいす：椅子\nねこ：貓\nいぬ：狗",
+      "example": "ものとどうぶつ",
+      "translation": "可以慢慢讀，不用現在就全部記住。",
+      "audioScript": "ほん。えんぴつ。かばん。つくえ。いす。ねこ。いぬ。",
+      "audioSrc": "/assets/audio/u01/teach-words-3.wav"
+    },
+    {
+      "id": "teach-words-4",
+      "skillIds": [
+        "V-PARA",
+        "K-HIRA"
+      ],
+      "title": "向新朋友打招呼",
+      "body": "はい：是／對\nいいえ：不是／不對\nはじめまして：初次見面\nこんにちは：你好\nありがとう：謝謝\nよろしく：請多指教（與おねがいします連用）\nおねがいします：麻煩你／拜託了\nどういたしまして：不客氣",
+      "example": "あいさつ",
+      "translation": "可以慢慢讀，不用現在就全部記住。",
+      "audioScript": "はい。いいえ。はじめまして。こんにちは。ありがとう。よろしく。おねがいします。どういたしまして。",
+      "audioSrc": "/assets/audio/u01/teach-words-4.wav"
+    },
+    {
+      "id": "teach-kanji",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "title": "把五個漢字放進手帳",
+      "body": "私（わたし）：我\n人（ひと）：人\n日（にち／ひ）：日子；在「日本」讀に\n本（ほん）：書；在「日本」讀ほん\n名（な）：名字的「名」",
+      "example": "私・人・日・本・名",
+      "translation": "讀音會隨詞語改變。日／本在這一課一起組成「日本（にほん）」。",
+      "prerequisites": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3"
+      ],
+      "audioScript": "わたし。ひと。にち。ほん。な。にほん。",
+      "audioSrc": "/assets/audio/u01/teach-kanji.wav"
+    },
+    {
+      "id": "teach-G01",
+      "skillIds": [
+        "G01",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "title": "我是誰？",
+      "body": "「AはBです」用來介紹A是B。作為助詞的「は」在這裡讀成「わ」。",
+      "example": "わたしは がくせいです。",
+      "translation": "我是學生。",
+      "prerequisites": [
+        "teach-words-1"
+      ],
+      "audioScript": "わたしは がくせいです。",
+      "audioSrc": "/assets/audio/u01/teach-G01.wav"
+    },
+    {
+      "id": "teach-G02",
+      "skillIds": [
+        "G02",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "title": "想認識對方，就問問看",
+      "body": "在「です」後面加「か」表示詢問，可以用「はい／いいえ」回應。",
+      "example": "あなたは せんせいですか。",
+      "translation": "你是老師嗎？",
+      "prerequisites": [
+        "teach-G01",
+        "teach-words-4"
+      ],
+      "audioScript": "あなたは せんせいですか。",
+      "audioSrc": "/assets/audio/u01/teach-G02.wav"
+    },
+    {
+      "id": "teach-G03",
+      "skillIds": [
+        "G03",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "title": "我也一樣！",
+      "body": "已經知道另一個人的身分時，「も」表示「也」。用「も」取代這句的「は」，不要寫成「はも」。",
+      "example": "わたしも がくせいです。",
+      "translation": "我也是學生。",
+      "prerequisites": [
+        "teach-G01"
+      ],
+      "audioScript": "わたしも がくせいです。",
+      "audioSrc": "/assets/audio/u01/teach-G03.wav"
+    },
+    {
+      "id": "teach-story",
+      "skillIds": [
+        "R-SHORT",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-KEY",
+        "L-EXPR",
+        "L-RESP"
+      ],
+      "title": "小鎮的自我介紹",
+      "body": "閱讀時先找人名與身分。聽對話時留意「はい／いいえ」與「も」，不必每個字都聽懂。",
+      "example": "はじめまして。わたしは アキです。がくせいです。よろしく おねがいします。",
+      "translation": "初次見面，我是小秋，是學生。請多指教。",
+      "prerequisites": [
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-words-4"
+      ],
+      "audioSrc": "/assets/audio/u01/listening-01.wav"
+    }
+  ],
+  "questions": [
+    {
+      "id": "U01-Q01",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q01",
+      "itemFamilyId": "U01-F-kanji-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「私」在這一課的讀音是？",
+      "choices": [
+        {
+          "id": "U01-Q01-o2",
+          "text": "にほん"
+        },
+        {
+          "id": "U01-Q01-o3",
+          "text": "なまえ"
+        },
+        {
+          "id": "U01-Q01-o1",
+          "text": "ひと"
+        },
+        {
+          "id": "U01-Q01-o0",
+          "text": "わたし"
+        }
+      ],
+      "answer": [
+        "U01-Q01-o0"
+      ],
+      "explanation": "本題「私」讀作「わたし」。",
+      "hint": "回想手帳裡漢字和讀音的配對。",
+      "distractorReasons": {
+        "U01-Q01-o1": "「ひと」不符合這題的條件。本題「私」讀作「わたし」。",
+        "U01-Q01-o2": "「にほん」不符合這題的條件。本題「私」讀作「わたし」。",
+        "U01-Q01-o3": "「なまえ」不符合這題的條件。本題「私」讀作「わたし」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T01"
+    },
+    {
+      "id": "U01-Q02",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q02",
+      "itemFamilyId": "U01-F-kanji-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「人」在這一課的讀音是？",
+      "choices": [
+        {
+          "id": "U01-Q02-o3",
+          "text": "にほん"
+        },
+        {
+          "id": "U01-Q02-o0",
+          "text": "ひと"
+        },
+        {
+          "id": "U01-Q02-o1",
+          "text": "ほん"
+        },
+        {
+          "id": "U01-Q02-o2",
+          "text": "わたし"
+        }
+      ],
+      "answer": [
+        "U01-Q02-o0"
+      ],
+      "explanation": "本題「人」讀作「ひと」。",
+      "hint": "回想手帳裡漢字和讀音的配對。",
+      "distractorReasons": {
+        "U01-Q02-o1": "「ほん」不符合這題的條件。本題「人」讀作「ひと」。",
+        "U01-Q02-o2": "「わたし」不符合這題的條件。本題「人」讀作「ひと」。",
+        "U01-Q02-o3": "「にほん」不符合這題的條件。本題「人」讀作「ひと」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T01"
+    },
+    {
+      "id": "U01-Q03",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q03",
+      "itemFamilyId": "U01-F-kanji-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「日本」在這一課的讀音是？",
+      "choices": [
+        {
+          "id": "U01-Q03-o3",
+          "text": "ほん"
+        },
+        {
+          "id": "U01-Q03-o0",
+          "text": "にほん"
+        },
+        {
+          "id": "U01-Q03-o2",
+          "text": "なまえ"
+        },
+        {
+          "id": "U01-Q03-o1",
+          "text": "ひと"
+        }
+      ],
+      "answer": [
+        "U01-Q03-o0"
+      ],
+      "explanation": "本題「日本」讀作「にほん」。",
+      "hint": "回想手帳裡漢字和讀音的配對。",
+      "distractorReasons": {
+        "U01-Q03-o1": "「ひと」不符合這題的條件。本題「日本」讀作「にほん」。",
+        "U01-Q03-o2": "「なまえ」不符合這題的條件。本題「日本」讀作「にほん」。",
+        "U01-Q03-o3": "「ほん」不符合這題的條件。本題「日本」讀作「にほん」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T01"
+    },
+    {
+      "id": "U01-Q04",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q04",
+      "itemFamilyId": "U01-F-kanji-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「名」在這一課的讀音是？",
+      "choices": [
+        {
+          "id": "U01-Q04-o3",
+          "text": "ほん"
+        },
+        {
+          "id": "U01-Q04-o0",
+          "text": "な"
+        },
+        {
+          "id": "U01-Q04-o2",
+          "text": "わたし"
+        },
+        {
+          "id": "U01-Q04-o1",
+          "text": "ひと"
+        }
+      ],
+      "answer": [
+        "U01-Q04-o0"
+      ],
+      "explanation": "本題「名」讀作「な」。",
+      "hint": "回想手帳裡漢字和讀音的配對。",
+      "distractorReasons": {
+        "U01-Q04-o1": "「ひと」不符合這題的條件。本題「名」讀作「な」。",
+        "U01-Q04-o2": "「わたし」不符合這題的條件。本題「名」讀作「な」。",
+        "U01-Q04-o3": "「ほん」不符合這題的條件。本題「名」讀作「な」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T01"
+    },
+    {
+      "id": "U01-Q05",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q05",
+      "itemFamilyId": "U01-F-kanji-spelling",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「わたし」對應哪一個漢字／詞？",
+      "choices": [
+        {
+          "id": "U01-Q05-o0",
+          "text": "私"
+        },
+        {
+          "id": "U01-Q05-o1",
+          "text": "人"
+        },
+        {
+          "id": "U01-Q05-o3",
+          "text": "名"
+        },
+        {
+          "id": "U01-Q05-o2",
+          "text": "日本"
+        }
+      ],
+      "answer": [
+        "U01-Q05-o0"
+      ],
+      "explanation": "「わたし」在本題寫作「私」。",
+      "hint": "注意這次是從讀音找文字。",
+      "distractorReasons": {
+        "U01-Q05-o1": "「人」不符合這題的條件。「わたし」在本題寫作「私」。",
+        "U01-Q05-o2": "「日本」不符合這題的條件。「わたし」在本題寫作「私」。",
+        "U01-Q05-o3": "「名」不符合這題的條件。「わたし」在本題寫作「私」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T02"
+    },
+    {
+      "id": "U01-Q06",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q06",
+      "itemFamilyId": "U01-F-kanji-spelling",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「ひと」對應哪一個漢字／詞？",
+      "choices": [
+        {
+          "id": "U01-Q06-o1",
+          "text": "私"
+        },
+        {
+          "id": "U01-Q06-o0",
+          "text": "人"
+        },
+        {
+          "id": "U01-Q06-o2",
+          "text": "日本"
+        },
+        {
+          "id": "U01-Q06-o3",
+          "text": "名"
+        }
+      ],
+      "answer": [
+        "U01-Q06-o0"
+      ],
+      "explanation": "「ひと」在本題寫作「人」。",
+      "hint": "注意這次是從讀音找文字。",
+      "distractorReasons": {
+        "U01-Q06-o1": "「私」不符合這題的條件。「ひと」在本題寫作「人」。",
+        "U01-Q06-o2": "「日本」不符合這題的條件。「ひと」在本題寫作「人」。",
+        "U01-Q06-o3": "「名」不符合這題的條件。「ひと」在本題寫作「人」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T02"
+    },
+    {
+      "id": "U01-Q07",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q07",
+      "itemFamilyId": "U01-F-kanji-spelling",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「にほん」對應哪一個漢字／詞？",
+      "choices": [
+        {
+          "id": "U01-Q07-o2",
+          "text": "人"
+        },
+        {
+          "id": "U01-Q07-o0",
+          "text": "日本"
+        },
+        {
+          "id": "U01-Q07-o3",
+          "text": "名"
+        },
+        {
+          "id": "U01-Q07-o1",
+          "text": "私"
+        }
+      ],
+      "answer": [
+        "U01-Q07-o0"
+      ],
+      "explanation": "「にほん」在本題寫作「日本」。",
+      "hint": "注意這次是從讀音找文字。",
+      "distractorReasons": {
+        "U01-Q07-o1": "「私」不符合這題的條件。「にほん」在本題寫作「日本」。",
+        "U01-Q07-o2": "「人」不符合這題的條件。「にほん」在本題寫作「日本」。",
+        "U01-Q07-o3": "「名」不符合這題的條件。「にほん」在本題寫作「日本」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T02"
+    },
+    {
+      "id": "U01-Q08",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q08",
+      "itemFamilyId": "U01-F-kanji-spelling",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「な」對應哪一個漢字／詞？",
+      "choices": [
+        {
+          "id": "U01-Q08-o1",
+          "text": "私"
+        },
+        {
+          "id": "U01-Q08-o3",
+          "text": "日本"
+        },
+        {
+          "id": "U01-Q08-o2",
+          "text": "人"
+        },
+        {
+          "id": "U01-Q08-o0",
+          "text": "名"
+        }
+      ],
+      "answer": [
+        "U01-Q08-o0"
+      ],
+      "explanation": "「な」在本題寫作「名」。",
+      "hint": "注意這次是從讀音找文字。",
+      "distractorReasons": {
+        "U01-Q08-o1": "「私」不符合這題的條件。「な」在本題寫作「名」。",
+        "U01-Q08-o2": "「人」不符合這題的條件。「な」在本題寫作「名」。",
+        "U01-Q08-o3": "「日本」不符合這題的條件。「な」在本題寫作「名」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T02"
+    },
+    {
+      "id": "U01-Q09",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q09",
+      "itemFamilyId": "U01-F-first-meeting-context",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "teach-words-4"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "第一次見到新朋友，最適合先說什麼？",
+      "choices": [
+        {
+          "id": "U01-Q09-o3",
+          "text": "どういたしまして"
+        },
+        {
+          "id": "U01-Q09-o0",
+          "text": "はじめまして"
+        },
+        {
+          "id": "U01-Q09-o2",
+          "text": "いいえ"
+        },
+        {
+          "id": "U01-Q09-o1",
+          "text": "ありがとう"
+        }
+      ],
+      "answer": [
+        "U01-Q09-o0"
+      ],
+      "explanation": "初次見面先用「はじめまして」。",
+      "hint": "先想想這個情境需要表達什麼。",
+      "distractorReasons": {
+        "U01-Q09-o1": "「ありがとう」不符合這題的條件。初次見面先用「はじめまして」。",
+        "U01-Q09-o2": "「いいえ」不符合這題的條件。初次見面先用「はじめまして」。",
+        "U01-Q09-o3": "「どういたしまして」不符合這題的條件。初次見面先用「はじめまして」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T03"
+    },
+    {
+      "id": "U01-Q10",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q10",
+      "itemFamilyId": "U01-F-greeting-context",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "teach-words-4"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "白天在街上見到鄰居，哪一句是打招呼？",
+      "choices": [
+        {
+          "id": "U01-Q10-o2",
+          "text": "どういたしまして"
+        },
+        {
+          "id": "U01-Q10-o3",
+          "text": "がくせい"
+        },
+        {
+          "id": "U01-Q10-o1",
+          "text": "いいえ"
+        },
+        {
+          "id": "U01-Q10-o0",
+          "text": "こんにちは"
+        }
+      ],
+      "answer": [
+        "U01-Q10-o0"
+      ],
+      "explanation": "「こんにちは」是白天見面常用的招呼。",
+      "hint": "先想想這個情境需要表達什麼。",
+      "distractorReasons": {
+        "U01-Q10-o1": "「いいえ」不符合這題的條件。「こんにちは」是白天見面常用的招呼。",
+        "U01-Q10-o2": "「どういたしまして」不符合這題的條件。「こんにちは」是白天見面常用的招呼。",
+        "U01-Q10-o3": "「がくせい」不符合這題的條件。「こんにちは」是白天見面常用的招呼。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T03"
+    },
+    {
+      "id": "U01-Q11",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q11",
+      "itemFamilyId": "U01-F-gratitude-context",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "teach-words-4"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "朋友把你的鉛筆撿起來交還，你可以說什麼？",
+      "choices": [
+        {
+          "id": "U01-Q11-o3",
+          "text": "にほん"
+        },
+        {
+          "id": "U01-Q11-o0",
+          "text": "ありがとう"
+        },
+        {
+          "id": "U01-Q11-o2",
+          "text": "あなた"
+        },
+        {
+          "id": "U01-Q11-o1",
+          "text": "はじめまして"
+        }
+      ],
+      "answer": [
+        "U01-Q11-o0"
+      ],
+      "explanation": "受到幫助後用「ありがとう」表達感謝。",
+      "hint": "先想想這個情境需要表達什麼。",
+      "distractorReasons": {
+        "U01-Q11-o1": "「はじめまして」不符合這題的條件。受到幫助後用「ありがとう」表達感謝。",
+        "U01-Q11-o2": "「あなた」不符合這題的條件。受到幫助後用「ありがとう」表達感謝。",
+        "U01-Q11-o3": "「にほん」不符合這題的條件。受到幫助後用「ありがとう」表達感謝。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T03"
+    },
+    {
+      "id": "U01-Q12",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q12",
+      "itemFamilyId": "U01-F-role-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "teach-words-1"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「老師」是哪個詞？",
+      "choices": [
+        {
+          "id": "U01-Q12-o3",
+          "text": "なまえ"
+        },
+        {
+          "id": "U01-Q12-o2",
+          "text": "ともだち"
+        },
+        {
+          "id": "U01-Q12-o1",
+          "text": "がくせい"
+        },
+        {
+          "id": "U01-Q12-o0",
+          "text": "せんせい"
+        }
+      ],
+      "answer": [
+        "U01-Q12-o0"
+      ],
+      "explanation": "「せんせい」是老師；「がくせい」是學生。",
+      "hint": "先想想這個情境需要表達什麼。",
+      "distractorReasons": {
+        "U01-Q12-o1": "「がくせい」不符合這題的條件。「せんせい」是老師；「がくせい」是學生。",
+        "U01-Q12-o2": "「ともだち」不符合這題的條件。「せんせい」是老師；「がくせい」是學生。",
+        "U01-Q12-o3": "「なまえ」不符合這題的條件。「せんせい」是老師；「がくせい」是學生。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T03"
+    },
+    {
+      "id": "U01-Q13",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q13",
+      "itemFamilyId": "U01-F-role-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "teach-words-1"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「學生」是哪個詞？",
+      "choices": [
+        {
+          "id": "U01-Q13-o1",
+          "text": "せんせい"
+        },
+        {
+          "id": "U01-Q13-o0",
+          "text": "がくせい"
+        },
+        {
+          "id": "U01-Q13-o2",
+          "text": "なまえ"
+        },
+        {
+          "id": "U01-Q13-o3",
+          "text": "くに"
+        }
+      ],
+      "answer": [
+        "U01-Q13-o0"
+      ],
+      "explanation": "「がくせい」是學生，不是老師或名字。",
+      "hint": "先想想這個情境需要表達什麼。",
+      "distractorReasons": {
+        "U01-Q13-o1": "「せんせい」不符合這題的條件。「がくせい」是學生，不是老師或名字。",
+        "U01-Q13-o2": "「なまえ」不符合這題的條件。「がくせい」是學生，不是老師或名字。",
+        "U01-Q13-o3": "「くに」不符合這題的條件。「がくせい」是學生，不是老師或名字。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T03"
+    },
+    {
+      "id": "U01-Q14",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q14",
+      "itemFamilyId": "U01-F-label-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "teach-words-1"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "在名牌上要填「名字」，應找哪個詞？",
+      "choices": [
+        {
+          "id": "U01-Q14-o0",
+          "text": "なまえ"
+        },
+        {
+          "id": "U01-Q14-o3",
+          "text": "ひと"
+        },
+        {
+          "id": "U01-Q14-o1",
+          "text": "くに"
+        },
+        {
+          "id": "U01-Q14-o2",
+          "text": "ほん"
+        }
+      ],
+      "answer": [
+        "U01-Q14-o0"
+      ],
+      "explanation": "「なまえ」表示名字，與「くに」（國家）不同。",
+      "hint": "先想想這個情境需要表達什麼。",
+      "distractorReasons": {
+        "U01-Q14-o1": "「くに」不符合這題的條件。「なまえ」表示名字，與「くに」（國家）不同。",
+        "U01-Q14-o2": "「ほん」不符合這題的條件。「なまえ」表示名字，與「くに」（國家）不同。",
+        "U01-Q14-o3": "「ひと」不符合這題的條件。「なまえ」表示名字，與「くに」（國家）不同。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T03"
+    },
+    {
+      "id": "U01-Q15",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q15",
+      "itemFamilyId": "U01-F-sentence-paraphrase",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「わたしは がくせいです。」意思最接近哪一句？",
+      "choices": [
+        {
+          "id": "U01-Q15-o3",
+          "text": "你好。"
+        },
+        {
+          "id": "U01-Q15-o0",
+          "text": "我是學生。"
+        },
+        {
+          "id": "U01-Q15-o1",
+          "text": "你是學生嗎？"
+        },
+        {
+          "id": "U01-Q15-o2",
+          "text": "我也是老師。"
+        }
+      ],
+      "answer": [
+        "U01-Q15-o0"
+      ],
+      "explanation": "「わたし」是我，「がくせいです」表明是學生。",
+      "hint": "留意「わたし／あなた」和「も／か」。",
+      "distractorReasons": {
+        "U01-Q15-o1": "「你是學生嗎？」不符合這題的條件。「わたし」是我，「がくせいです」表明是學生。",
+        "U01-Q15-o2": "「我也是老師。」不符合這題的條件。「わたし」是我，「がくせいです」表明是學生。",
+        "U01-Q15-o3": "「你好。」不符合這題的條件。「わたし」是我，「がくせいです」表明是學生。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T04"
+    },
+    {
+      "id": "U01-Q16",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q16",
+      "itemFamilyId": "U01-F-sentence-paraphrase",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01",
+        "teach-G02",
+        "teach-words-4"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「あなたは せんせいですか。」意思最接近哪一句？",
+      "choices": [
+        {
+          "id": "U01-Q16-o2",
+          "text": "我也是學生。"
+        },
+        {
+          "id": "U01-Q16-o3",
+          "text": "謝謝。"
+        },
+        {
+          "id": "U01-Q16-o0",
+          "text": "你是老師嗎？"
+        },
+        {
+          "id": "U01-Q16-o1",
+          "text": "我是老師。"
+        }
+      ],
+      "answer": [
+        "U01-Q16-o0"
+      ],
+      "explanation": "「あなた」指對方，句尾「ですか」是在詢問。",
+      "hint": "留意「わたし／あなた」和「も／か」。",
+      "distractorReasons": {
+        "U01-Q16-o1": "「我是老師。」不符合這題的條件。「あなた」指對方，句尾「ですか」是在詢問。",
+        "U01-Q16-o2": "「我也是學生。」不符合這題的條件。「あなた」指對方，句尾「ですか」是在詢問。",
+        "U01-Q16-o3": "「謝謝。」不符合這題的條件。「あなた」指對方，句尾「ですか」是在詢問。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T04"
+    },
+    {
+      "id": "U01-Q17",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q17",
+      "itemFamilyId": "U01-F-sentence-paraphrase",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01",
+        "teach-G03"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「わたしも がくせいです。」意思最接近哪一句？",
+      "choices": [
+        {
+          "id": "U01-Q17-o3",
+          "text": "初次見面。"
+        },
+        {
+          "id": "U01-Q17-o0",
+          "text": "我也是學生。"
+        },
+        {
+          "id": "U01-Q17-o2",
+          "text": "我是老師。"
+        },
+        {
+          "id": "U01-Q17-o1",
+          "text": "你是老師嗎？"
+        }
+      ],
+      "answer": [
+        "U01-Q17-o0"
+      ],
+      "explanation": "「も」把「也一樣」的意思加進句子。",
+      "hint": "留意「わたし／あなた」和「も／か」。",
+      "distractorReasons": {
+        "U01-Q17-o1": "「你是老師嗎？」不符合這題的條件。「も」把「也一樣」的意思加進句子。",
+        "U01-Q17-o2": "「我是老師。」不符合這題的條件。「も」把「也一樣」的意思加進句子。",
+        "U01-Q17-o3": "「初次見面。」不符合這題的條件。「も」把「也一樣」的意思加進句子。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T04"
+    },
+    {
+      "id": "U01-Q18",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q18",
+      "itemFamilyId": "U01-F-G01-predicate-gap",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "介紹「我是學生」：わたしは がくせい＿＿。",
+      "choices": [
+        {
+          "id": "U01-Q18-o0",
+          "text": "です"
+        },
+        {
+          "id": "U01-Q18-o3",
+          "text": "は"
+        },
+        {
+          "id": "U01-Q18-o2",
+          "text": "も"
+        },
+        {
+          "id": "U01-Q18-o1",
+          "text": "ですか"
+        }
+      ],
+      "answer": [
+        "U01-Q18-o0"
+      ],
+      "explanation": "這裡在陳述身分，句尾用「です」。",
+      "hint": "確認這句是在陳述、詢問，還是表示「也」。",
+      "distractorReasons": {
+        "U01-Q18-o1": "「ですか」不符合這題的條件。這裡在陳述身分，句尾用「です」。",
+        "U01-Q18-o2": "「も」不符合這題的條件。這裡在陳述身分，句尾用「です」。",
+        "U01-Q18-o3": "「は」不符合這題的條件。這裡在陳述身分，句尾用「です」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-Q19",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q19",
+      "itemFamilyId": "U01-F-G01-topic-gap",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "介紹名字：わたし＿＿ アキです。",
+      "choices": [
+        {
+          "id": "U01-Q19-o0",
+          "text": "は"
+        },
+        {
+          "id": "U01-Q19-o2",
+          "text": "です"
+        },
+        {
+          "id": "U01-Q19-o3",
+          "text": "か"
+        },
+        {
+          "id": "U01-Q19-o1",
+          "text": "もか"
+        }
+      ],
+      "answer": [
+        "U01-Q19-o0"
+      ],
+      "explanation": "介紹「我是小秋」時，用「は」連接主題。",
+      "hint": "確認這句是在陳述、詢問，還是表示「也」。",
+      "distractorReasons": {
+        "U01-Q19-o1": "「もか」不符合這題的條件。介紹「我是小秋」時，用「は」連接主題。",
+        "U01-Q19-o2": "「です」不符合這題的條件。介紹「我是小秋」時，用「は」連接主題。",
+        "U01-Q19-o3": "「か」不符合這題的條件。介紹「我是小秋」時，用「は」連接主題。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-Q20",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q20",
+      "itemFamilyId": "U01-F-G02-question-ending",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01",
+        "teach-G02",
+        "teach-words-4"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "想問「你是老師嗎」：あなたは せんせいです＿＿。",
+      "choices": [
+        {
+          "id": "U01-Q20-o0",
+          "text": "か"
+        },
+        {
+          "id": "U01-Q20-o2",
+          "text": "は"
+        },
+        {
+          "id": "U01-Q20-o1",
+          "text": "も"
+        },
+        {
+          "id": "U01-Q20-o3",
+          "text": "です"
+        }
+      ],
+      "answer": [
+        "U01-Q20-o0"
+      ],
+      "explanation": "句尾加「か」才是在詢問。",
+      "hint": "確認這句是在陳述、詢問，還是表示「也」。",
+      "distractorReasons": {
+        "U01-Q20-o1": "「も」不符合這題的條件。句尾加「か」才是在詢問。",
+        "U01-Q20-o2": "「は」不符合這題的條件。句尾加「か」才是在詢問。",
+        "U01-Q20-o3": "「です」不符合這題的條件。句尾加「か」才是在詢問。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-Q21",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q21",
+      "itemFamilyId": "U01-F-G03-shared-predicate",
+      "primarySkillId": "G03",
+      "skillIds": [
+        "G03"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01",
+        "teach-G03"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "朋友說他是學生，你想說「我也是」：わたし＿＿ がくせいです。",
+      "choices": [
+        {
+          "id": "U01-Q21-o2",
+          "text": "か"
+        },
+        {
+          "id": "U01-Q21-o1",
+          "text": "はも"
+        },
+        {
+          "id": "U01-Q21-o0",
+          "text": "も"
+        },
+        {
+          "id": "U01-Q21-o3",
+          "text": "です"
+        }
+      ],
+      "answer": [
+        "U01-Q21-o0"
+      ],
+      "explanation": "和朋友同樣是學生，用「も」表示「也」。",
+      "hint": "確認這句是在陳述、詢問，還是表示「也」。",
+      "distractorReasons": {
+        "U01-Q21-o1": "「はも」不符合這題的條件。和朋友同樣是學生，用「も」表示「也」。",
+        "U01-Q21-o2": "「か」不符合這題的條件。和朋友同樣是學生，用「も」表示「也」。",
+        "U01-Q21-o3": "「です」不符合這題的條件。和朋友同樣是學生，用「も」表示「也」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-Q22",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q22",
+      "itemFamilyId": "U01-F-G02-yes-response",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01",
+        "teach-G02",
+        "teach-words-4"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "對方問「あなたは がくせいですか。」你確實是學生，應如何回應？",
+      "choices": [
+        {
+          "id": "U01-Q22-o2",
+          "text": "はじめまして。"
+        },
+        {
+          "id": "U01-Q22-o3",
+          "text": "ほんです。"
+        },
+        {
+          "id": "U01-Q22-o1",
+          "text": "いいえ。せんせいです。"
+        },
+        {
+          "id": "U01-Q22-o0",
+          "text": "はい。がくせいです。"
+        }
+      ],
+      "answer": [
+        "U01-Q22-o0"
+      ],
+      "explanation": "題目已說你是學生，先以「はい」肯定。",
+      "hint": "確認這句是在陳述、詢問，還是表示「也」。",
+      "distractorReasons": {
+        "U01-Q22-o1": "「いいえ。せんせいです。」不符合這題的條件。題目已說你是學生，先以「はい」肯定。",
+        "U01-Q22-o2": "「はじめまして。」不符合這題的條件。題目已說你是學生，先以「はい」肯定。",
+        "U01-Q22-o3": "「ほんです。」不符合這題的條件。題目已說你是學生，先以「はい」肯定。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-Q23",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q23",
+      "itemFamilyId": "U01-F-G01-statement-order",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「我是學生」。",
+      "promptJa": "ことばをただしいじゅんにならべよう。",
+      "choices": [
+        {
+          "id": "U01-Q23-o1",
+          "text": "は"
+        },
+        {
+          "id": "U01-Q23-o2",
+          "text": "がくせい"
+        },
+        {
+          "id": "U01-Q23-o3",
+          "text": "です"
+        },
+        {
+          "id": "U01-Q23-o0",
+          "text": "わたし"
+        }
+      ],
+      "answer": [
+        "U01-Q23-o0",
+        "U01-Q23-o1",
+        "U01-Q23-o2",
+        "U01-Q23-o3"
+      ],
+      "explanation": "順序是「わたし／は／がくせい／です」。",
+      "hint": "從說話者開始，再找「は」或「も」。",
+      "distractorReasons": {},
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T06"
+    },
+    {
+      "id": "U01-Q24",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q24",
+      "itemFamilyId": "U01-F-G02-question-order",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01",
+        "teach-G02",
+        "teach-words-4"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「你是老師嗎」。",
+      "promptJa": "ことばをただしいじゅんにならべよう。",
+      "choices": [
+        {
+          "id": "U01-Q24-o1",
+          "text": "は"
+        },
+        {
+          "id": "U01-Q24-o0",
+          "text": "あなた"
+        },
+        {
+          "id": "U01-Q24-o2",
+          "text": "せんせい"
+        },
+        {
+          "id": "U01-Q24-o3",
+          "text": "です"
+        },
+        {
+          "id": "U01-Q24-o4",
+          "text": "か"
+        }
+      ],
+      "answer": [
+        "U01-Q24-o0",
+        "U01-Q24-o1",
+        "U01-Q24-o2",
+        "U01-Q24-o3",
+        "U01-Q24-o4"
+      ],
+      "explanation": "疑問的「か」放在句尾。",
+      "hint": "從說話者開始，再找「は」或「も」。",
+      "distractorReasons": {},
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T06"
+    },
+    {
+      "id": "U01-Q25",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q25",
+      "itemFamilyId": "U01-F-G03-also-order",
+      "primarySkillId": "G03",
+      "skillIds": [
+        "G03"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-G01",
+        "teach-G03"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "朋友說他是學生，排出「我也是學生」。",
+      "promptJa": "ことばをただしいじゅんにならべよう。",
+      "choices": [
+        {
+          "id": "U01-Q25-o3",
+          "text": "です"
+        },
+        {
+          "id": "U01-Q25-o1",
+          "text": "も"
+        },
+        {
+          "id": "U01-Q25-o0",
+          "text": "わたし"
+        },
+        {
+          "id": "U01-Q25-o2",
+          "text": "がくせい"
+        }
+      ],
+      "answer": [
+        "U01-Q25-o0",
+        "U01-Q25-o1",
+        "U01-Q25-o2",
+        "U01-Q25-o3"
+      ],
+      "explanation": "「も」代替這句的「は」，不是「はも」。",
+      "hint": "從說話者開始，再找「は」或「も」。",
+      "distractorReasons": {},
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T06"
+    },
+    {
+      "id": "U01-Q26",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q26",
+      "itemFamilyId": "U01-F-G01-text-completion",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "看小秋的介紹，把「わたしは アキ＿＿」補完整。",
+      "choices": [
+        {
+          "id": "U01-Q26-o1",
+          "text": "か"
+        },
+        {
+          "id": "U01-Q26-o0",
+          "text": "です"
+        },
+        {
+          "id": "U01-Q26-o2",
+          "text": "も"
+        },
+        {
+          "id": "U01-Q26-o3",
+          "text": "は"
+        }
+      ],
+      "answer": [
+        "U01-Q26-o0"
+      ],
+      "explanation": "小秋在介紹自己，句尾是「です」。",
+      "hint": "把前後兩句一起讀。",
+      "distractorReasons": {
+        "U01-Q26-o1": "「か」不符合這題的條件。小秋在介紹自己，句尾是「です」。",
+        "U01-Q26-o2": "「も」不符合這題的條件。小秋在介紹自己，句尾是「です」。",
+        "U01-Q26-o3": "「は」不符合這題的條件。小秋在介紹自己，句尾是「です」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T07",
+      "materialId": "U01-R01",
+      "material": "はじめまして。わたしは アキです。がくせいです。よろしく おねがいします。"
+    },
+    {
+      "id": "U01-Q27",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q27",
+      "itemFamilyId": "U01-F-G03-text-link",
+      "primarySkillId": "G03",
+      "skillIds": [
+        "G03"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "看兩位學生的對話，レン用哪個字表示「我也一樣」？",
+      "choices": [
+        {
+          "id": "U01-Q27-o3",
+          "text": "です"
+        },
+        {
+          "id": "U01-Q27-o2",
+          "text": "か"
+        },
+        {
+          "id": "U01-Q27-o0",
+          "text": "も"
+        },
+        {
+          "id": "U01-Q27-o1",
+          "text": "は"
+        }
+      ],
+      "answer": [
+        "U01-Q27-o0"
+      ],
+      "explanation": "レン的「わたしも」表示他也和ミナ一樣是學生。",
+      "hint": "把前後兩句一起讀。",
+      "distractorReasons": {
+        "U01-Q27-o1": "「は」不符合這題的條件。レン的「わたしも」表示他也和ミナ一樣是學生。",
+        "U01-Q27-o2": "「か」不符合這題的條件。レン的「わたしも」表示他也和ミナ一樣是學生。",
+        "U01-Q27-o3": "「です」不符合這題的條件。レン的「わたしも」表示他也和ミナ一樣是學生。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T07",
+      "materialId": "U01-R02",
+      "material": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。"
+    },
+    {
+      "id": "U01-Q28",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q28",
+      "itemFamilyId": "U01-F-G02-text-question",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "看阿晴的回答，前一句是在問問題；哪個字標記詢問？",
+      "choices": [
+        {
+          "id": "U01-Q28-o3",
+          "text": "はい"
+        },
+        {
+          "id": "U01-Q28-o1",
+          "text": "も"
+        },
+        {
+          "id": "U01-Q28-o0",
+          "text": "か"
+        },
+        {
+          "id": "U01-Q28-o2",
+          "text": "は"
+        }
+      ],
+      "answer": [
+        "U01-Q28-o0"
+      ],
+      "explanation": "「せんせいですか」句尾的「か」標記疑問。",
+      "hint": "把前後兩句一起讀。",
+      "distractorReasons": {
+        "U01-Q28-o1": "「も」不符合這題的條件。「せんせいですか」句尾的「か」標記疑問。",
+        "U01-Q28-o2": "「は」不符合這題的條件。「せんせいですか」句尾的「か」標記疑問。",
+        "U01-Q28-o3": "「はい」不符合這題的條件。「せんせいですか」句尾的「か」標記疑問。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T07",
+      "materialId": "U01-R04",
+      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。"
+    },
+    {
+      "id": "U01-Q29",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q29",
+      "itemFamilyId": "U01-F-reading-explicit-role",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "小秋介紹自己是什麼身分？",
+      "choices": [
+        {
+          "id": "U01-Q29-o3",
+          "text": "いぬ"
+        },
+        {
+          "id": "U01-Q29-o1",
+          "text": "せんせい"
+        },
+        {
+          "id": "U01-Q29-o0",
+          "text": "がくせい"
+        },
+        {
+          "id": "U01-Q29-o2",
+          "text": "ねこ"
+        }
+      ],
+      "answer": [
+        "U01-Q29-o0"
+      ],
+      "explanation": "介紹中清楚寫著「がくせいです」。",
+      "hint": "先找材料裡對應的關鍵資訊。",
+      "distractorReasons": {
+        "U01-Q29-o1": "「せんせい」不符合這題的條件。介紹中清楚寫著「がくせいです」。",
+        "U01-Q29-o2": "「ねこ」不符合這題的條件。介紹中清楚寫著「がくせいです」。",
+        "U01-Q29-o3": "「いぬ」不符合這題的條件。介紹中清楚寫著「がくせいです」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T08",
+      "materialId": "U01-R01",
+      "material": "はじめまして。わたしは アキです。がくせいです。よろしく おねがいします。"
+    },
+    {
+      "id": "U01-Q30",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q30",
+      "itemFamilyId": "U01-F-reading-response-link",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "阿晴如何回答「你是老師嗎」？",
+      "choices": [
+        {
+          "id": "U01-Q30-o1",
+          "text": "いいえ"
+        },
+        {
+          "id": "U01-Q30-o3",
+          "text": "ありがとう"
+        },
+        {
+          "id": "U01-Q30-o2",
+          "text": "こんにちは"
+        },
+        {
+          "id": "U01-Q30-o0",
+          "text": "はい"
+        }
+      ],
+      "answer": [
+        "U01-Q30-o0"
+      ],
+      "explanation": "阿晴回答「はい」，接著說自己是老師。",
+      "hint": "先找材料裡對應的關鍵資訊。",
+      "distractorReasons": {
+        "U01-Q30-o1": "「いいえ」不符合這題的條件。阿晴回答「はい」，接著說自己是老師。",
+        "U01-Q30-o2": "「こんにちは」不符合這題的條件。阿晴回答「はい」，接著說自己是老師。",
+        "U01-Q30-o3": "「ありがとう」不符合這題的條件。阿晴回答「はい」，接著說自己是老師。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T08",
+      "materialId": "U01-R04",
+      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。"
+    },
+    {
+      "id": "U01-Q31",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q31",
+      "itemFamilyId": "U01-F-reading-shared-information",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "ミナ和レン有什麼共同點？",
+      "choices": [
+        {
+          "id": "U01-Q31-o0",
+          "text": "兩人都是學生。"
+        },
+        {
+          "id": "U01-Q31-o1",
+          "text": "兩人都是老師。"
+        },
+        {
+          "id": "U01-Q31-o3",
+          "text": "只有レン是老師。"
+        },
+        {
+          "id": "U01-Q31-o2",
+          "text": "只有ミナ是老師。"
+        }
+      ],
+      "answer": [
+        "U01-Q31-o0"
+      ],
+      "explanation": "ミナ說自己是學生，レン用「も」表示自己也是學生。",
+      "hint": "先找材料裡對應的關鍵資訊。",
+      "distractorReasons": {
+        "U01-Q31-o1": "「兩人都是老師。」不符合這題的條件。ミナ說自己是學生，レン用「も」表示自己也是學生。",
+        "U01-Q31-o2": "「只有ミナ是老師。」不符合這題的條件。ミナ說自己是學生，レン用「も」表示自己也是學生。",
+        "U01-Q31-o3": "「只有レン是老師。」不符合這題的條件。ミナ說自己是學生，レン用「も」表示自己也是學生。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T09",
+      "materialId": "U01-R02",
+      "material": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。"
+    },
+    {
+      "id": "U01-Q32",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q32",
+      "itemFamilyId": "U01-F-reading-speaker-tracking",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "誰說了「わたしも」？",
+      "choices": [
+        {
+          "id": "U01-Q32-o1",
+          "text": "ミナ"
+        },
+        {
+          "id": "U01-Q32-o0",
+          "text": "レン"
+        },
+        {
+          "id": "U01-Q32-o2",
+          "text": "アキ"
+        },
+        {
+          "id": "U01-Q32-o3",
+          "text": "ハル"
+        }
+      ],
+      "answer": [
+        "U01-Q32-o0"
+      ],
+      "explanation": "對話第二行的說話者是レン。",
+      "hint": "先找材料裡對應的關鍵資訊。",
+      "distractorReasons": {
+        "U01-Q32-o1": "「ミナ」不符合這題的條件。對話第二行的說話者是レン。",
+        "U01-Q32-o2": "「アキ」不符合這題的條件。對話第二行的說話者是レン。",
+        "U01-Q32-o3": "「ハル」不符合這題的條件。對話第二行的說話者是レン。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T09",
+      "materialId": "U01-R02",
+      "material": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。"
+    },
+    {
+      "id": "U01-Q33",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q33",
+      "itemFamilyId": "U01-F-information-name-field",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "在名牌上找名字，這位學生叫什麼？",
+      "choices": [
+        {
+          "id": "U01-Q33-o3",
+          "text": "レン"
+        },
+        {
+          "id": "U01-Q33-o1",
+          "text": "アキ"
+        },
+        {
+          "id": "U01-Q33-o2",
+          "text": "ハル"
+        },
+        {
+          "id": "U01-Q33-o0",
+          "text": "ユイ"
+        }
+      ],
+      "answer": [
+        "U01-Q33-o0"
+      ],
+      "explanation": "「なまえ」欄寫著ユイ；アキ在朋友欄。",
+      "hint": "先找材料裡對應的關鍵資訊。",
+      "distractorReasons": {
+        "U01-Q33-o1": "「アキ」不符合這題的條件。「なまえ」欄寫著ユイ；アキ在朋友欄。",
+        "U01-Q33-o2": "「ハル」不符合這題的條件。「なまえ」欄寫著ユイ；アキ在朋友欄。",
+        "U01-Q33-o3": "「レン」不符合這題的條件。「なまえ」欄寫著ユイ；アキ在朋友欄。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T10",
+      "materialId": "U01-R03",
+      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ"
+    },
+    {
+      "id": "U01-Q34",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q34",
+      "itemFamilyId": "U01-F-information-friend-field",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "名牌上的朋友是誰？",
+      "choices": [
+        {
+          "id": "U01-Q34-o3",
+          "text": "ミナ"
+        },
+        {
+          "id": "U01-Q34-o0",
+          "text": "アキ"
+        },
+        {
+          "id": "U01-Q34-o1",
+          "text": "ユイ"
+        },
+        {
+          "id": "U01-Q34-o2",
+          "text": "ハル"
+        }
+      ],
+      "answer": [
+        "U01-Q34-o0"
+      ],
+      "explanation": "「ともだち」欄寫著アキ。",
+      "hint": "先找材料裡對應的關鍵資訊。",
+      "distractorReasons": {
+        "U01-Q34-o1": "「ユイ」不符合這題的條件。「ともだち」欄寫著アキ。",
+        "U01-Q34-o2": "「ハル」不符合這題的條件。「ともだち」欄寫著アキ。",
+        "U01-Q34-o3": "「ミナ」不符合這題的條件。「ともだち」欄寫著アキ。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T10",
+      "materialId": "U01-R03",
+      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ"
+    },
+    {
+      "id": "U01-Q35",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q35",
+      "itemFamilyId": "U01-F-listening-role-action",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽完自我介紹，應把哪張身分牌交給小秋？",
+      "choices": [
+        {
+          "id": "U01-Q35-o2",
+          "text": "ねこ"
+        },
+        {
+          "id": "U01-Q35-o0",
+          "text": "がくせい"
+        },
+        {
+          "id": "U01-Q35-o3",
+          "text": "いぬ"
+        },
+        {
+          "id": "U01-Q35-o1",
+          "text": "せんせい"
+        }
+      ],
+      "answer": [
+        "U01-Q35-o0"
+      ],
+      "explanation": "小秋在音訊中說「がくせいです」。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q35-o1": "「せんせい」不符合這題的條件。小秋在音訊中說「がくせいです」。",
+        "U01-Q35-o2": "「ねこ」不符合這題的條件。小秋在音訊中說「がくせいです」。",
+        "U01-Q35-o3": "「いぬ」不符合這題的條件。小秋在音訊中說「がくせいです」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T11",
+      "audioId": "U01-L01",
+      "audioSrc": "/assets/audio/u01/listening-01.wav"
+    },
+    {
+      "id": "U01-Q36",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q36",
+      "itemFamilyId": "U01-F-listening-confirmed-role-action",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽完回答，要把對方帶到哪一組？",
+      "choices": [
+        {
+          "id": "U01-Q36-o0",
+          "text": "老師組"
+        },
+        {
+          "id": "U01-Q36-o3",
+          "text": "狗狗組"
+        },
+        {
+          "id": "U01-Q36-o1",
+          "text": "學生組"
+        },
+        {
+          "id": "U01-Q36-o2",
+          "text": "貓咪組"
+        }
+      ],
+      "answer": [
+        "U01-Q36-o0"
+      ],
+      "explanation": "對方回答「はい。せんせいです」，所以是老師。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q36-o1": "「學生組」不符合這題的條件。對方回答「はい。せんせいです」，所以是老師。",
+        "U01-Q36-o2": "「貓咪組」不符合這題的條件。對方回答「はい。せんせいです」，所以是老師。",
+        "U01-Q36-o3": "「狗狗組」不符合這題的條件。對方回答「はい。せんせいです」，所以是老師。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T11",
+      "audioId": "U01-L02",
+      "audioSrc": "/assets/audio/u01/listening-02.wav"
+    },
+    {
+      "id": "U01-Q37",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q37",
+      "itemFamilyId": "U01-F-listening-group-action",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "要把這兩位朋友分組，應放在哪一組？",
+      "choices": [
+        {
+          "id": "U01-Q37-o2",
+          "text": "只有第一位是老師"
+        },
+        {
+          "id": "U01-Q37-o3",
+          "text": "只有第二位是老師"
+        },
+        {
+          "id": "U01-Q37-o0",
+          "text": "兩人都在學生組"
+        },
+        {
+          "id": "U01-Q37-o1",
+          "text": "兩人都在老師組"
+        }
+      ],
+      "answer": [
+        "U01-Q37-o0"
+      ],
+      "explanation": "第二位說「わたしも」，兩位都表示是學生。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q37-o1": "「兩人都在老師組」不符合這題的條件。第二位說「わたしも」，兩位都表示是學生。",
+        "U01-Q37-o2": "「只有第一位是老師」不符合這題的條件。第二位說「わたしも」，兩位都表示是學生。",
+        "U01-Q37-o3": "「只有第二位是老師」不符合這題的條件。第二位說「わたしも」，兩位都表示是學生。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T11",
+      "audioId": "U01-L03",
+      "audioSrc": "/assets/audio/u01/listening-03.wav"
+    },
+    {
+      "id": "U01-Q38",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q38",
+      "itemFamilyId": "U01-F-listening-corrected-object-action",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "對方確認後，你應拿出什麼物品？",
+      "choices": [
+        {
+          "id": "U01-Q38-o2",
+          "text": "かばん"
+        },
+        {
+          "id": "U01-Q38-o0",
+          "text": "えんぴつ"
+        },
+        {
+          "id": "U01-Q38-o3",
+          "text": "いす"
+        },
+        {
+          "id": "U01-Q38-o1",
+          "text": "ほん"
+        }
+      ],
+      "answer": [
+        "U01-Q38-o0"
+      ],
+      "explanation": "先問是不是書，回答「いいえ」，接著確認是鉛筆。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q38-o1": "「ほん」不符合這題的條件。先問是不是書，回答「いいえ」，接著確認是鉛筆。",
+        "U01-Q38-o2": "「かばん」不符合這題的條件。先問是不是書，回答「いいえ」，接著確認是鉛筆。",
+        "U01-Q38-o3": "「いす」不符合這題的條件。先問是不是書，回答「いいえ」，接著確認是鉛筆。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T11",
+      "audioId": "U01-L04",
+      "audioSrc": "/assets/audio/u01/listening-04.wav"
+    },
+    {
+      "id": "U01-Q39",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q39",
+      "itemFamilyId": "U01-F-listening-key-name",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "這段介紹的名字是什麼？",
+      "choices": [
+        {
+          "id": "U01-Q39-o2",
+          "text": "ミナ"
+        },
+        {
+          "id": "U01-Q39-o1",
+          "text": "ユイ"
+        },
+        {
+          "id": "U01-Q39-o0",
+          "text": "アキ"
+        },
+        {
+          "id": "U01-Q39-o3",
+          "text": "ハル"
+        }
+      ],
+      "answer": [
+        "U01-Q39-o0"
+      ],
+      "explanation": "音訊說「わたしはアキです」。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q39-o1": "「ユイ」不符合這題的條件。音訊說「わたしはアキです」。",
+        "U01-Q39-o2": "「ミナ」不符合這題的條件。音訊說「わたしはアキです」。",
+        "U01-Q39-o3": "「ハル」不符合這題的條件。音訊說「わたしはアキです」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T12",
+      "audioId": "U01-L01",
+      "audioSrc": "/assets/audio/u01/listening-01.wav"
+    },
+    {
+      "id": "U01-Q40",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q40",
+      "itemFamilyId": "U01-F-listening-key-confirmation",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "回答的人是老師嗎？",
+      "choices": [
+        {
+          "id": "U01-Q40-o3",
+          "text": "對方只說了名字。"
+        },
+        {
+          "id": "U01-Q40-o0",
+          "text": "是，對方說はい。"
+        },
+        {
+          "id": "U01-Q40-o2",
+          "text": "對方沒有回答。"
+        },
+        {
+          "id": "U01-Q40-o1",
+          "text": "不是，對方說いいえ。"
+        }
+      ],
+      "answer": [
+        "U01-Q40-o0"
+      ],
+      "explanation": "對方先說「はい」，再說自己是老師。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q40-o1": "「不是，對方說いいえ。」不符合這題的條件。對方先說「はい」，再說自己是老師。",
+        "U01-Q40-o2": "「對方沒有回答。」不符合這題的條件。對方先說「はい」，再說自己是老師。",
+        "U01-Q40-o3": "「對方只說了名字。」不符合這題的條件。對方先說「はい」，再說自己是老師。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T12",
+      "audioId": "U01-L02",
+      "audioSrc": "/assets/audio/u01/listening-02.wav"
+    },
+    {
+      "id": "U01-Q41",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q41",
+      "itemFamilyId": "U01-F-listening-key-also",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "第二位朋友用了哪個字表示「也」？",
+      "choices": [
+        {
+          "id": "U01-Q41-o0",
+          "text": "も"
+        },
+        {
+          "id": "U01-Q41-o3",
+          "text": "です"
+        },
+        {
+          "id": "U01-Q41-o1",
+          "text": "か"
+        },
+        {
+          "id": "U01-Q41-o2",
+          "text": "は"
+        }
+      ],
+      "answer": [
+        "U01-Q41-o0"
+      ],
+      "explanation": "第二位說的是「わたしも」。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q41-o1": "「か」不符合這題的條件。第二位說的是「わたしも」。",
+        "U01-Q41-o2": "「は」不符合這題的條件。第二位說的是「わたしも」。",
+        "U01-Q41-o3": "「です」不符合這題的條件。第二位說的是「わたしも」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T12",
+      "audioId": "U01-L03",
+      "audioSrc": "/assets/audio/u01/listening-03.wav"
+    },
+    {
+      "id": "U01-Q42",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q42",
+      "itemFamilyId": "U01-F-listening-key-correction",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "最後確認的物品是什麼？",
+      "choices": [
+        {
+          "id": "U01-Q42-o0",
+          "text": "えんぴつ"
+        },
+        {
+          "id": "U01-Q42-o3",
+          "text": "かばん"
+        },
+        {
+          "id": "U01-Q42-o2",
+          "text": "つくえ"
+        },
+        {
+          "id": "U01-Q42-o1",
+          "text": "ほん"
+        }
+      ],
+      "answer": [
+        "U01-Q42-o0"
+      ],
+      "explanation": "注意「いいえ」後面的修正：是鉛筆。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q42-o1": "「ほん」不符合這題的條件。注意「いいえ」後面的修正：是鉛筆。",
+        "U01-Q42-o2": "「つくえ」不符合這題的條件。注意「いいえ」後面的修正：是鉛筆。",
+        "U01-Q42-o3": "「かばん」不符合這題的條件。注意「いいえ」後面的修正：是鉛筆。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T12",
+      "audioId": "U01-L04",
+      "audioSrc": "/assets/audio/u01/listening-04.wav"
+    },
+    {
+      "id": "U01-Q43",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q43",
+      "itemFamilyId": "U01-F-situation-student-response",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你扮演學生。聽完ユイ的問題，哪句回答符合你的身分？",
+      "choices": [
+        {
+          "id": "U01-Q43-o3",
+          "text": "ほんです。"
+        },
+        {
+          "id": "U01-Q43-o1",
+          "text": "いいえ。せんせいです。"
+        },
+        {
+          "id": "U01-Q43-o0",
+          "text": "はい。がくせいです。"
+        },
+        {
+          "id": "U01-Q43-o2",
+          "text": "ねこです。"
+        }
+      ],
+      "answer": [
+        "U01-Q43-o0"
+      ],
+      "explanation": "你扮演學生，應肯定並說「がくせいです」。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q43-o1": "「いいえ。せんせいです。」不符合這題的條件。你扮演學生，應肯定並說「がくせいです」。",
+        "U01-Q43-o2": "「ねこです。」不符合這題的條件。你扮演學生，應肯定並說「がくせいです」。",
+        "U01-Q43-o3": "「ほんです。」不符合這題的條件。你扮演學生，應肯定並說「がくせいです」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T13",
+      "audioId": "U01-L05",
+      "audioSrc": "/assets/audio/u01/listening-05.wav"
+    },
+    {
+      "id": "U01-Q44",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q44",
+      "itemFamilyId": "U01-F-situation-thanks-response",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "朋友對你說了音訊的第一句，你最適合怎麼回應？",
+      "choices": [
+        {
+          "id": "U01-Q44-o3",
+          "text": "いすです。"
+        },
+        {
+          "id": "U01-Q44-o0",
+          "text": "どういたしまして。"
+        },
+        {
+          "id": "U01-Q44-o1",
+          "text": "はじめまして。"
+        },
+        {
+          "id": "U01-Q44-o2",
+          "text": "にほんです。"
+        }
+      ],
+      "answer": [
+        "U01-Q44-o0"
+      ],
+      "explanation": "對方說「ありがとう」時，可以回應「どういたしまして」。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q44-o1": "「はじめまして。」不符合這題的條件。對方說「ありがとう」時，可以回應「どういたしまして」。",
+        "U01-Q44-o2": "「にほんです。」不符合這題的條件。對方說「ありがとう」時，可以回應「どういたしまして」。",
+        "U01-Q44-o3": "「いすです。」不符合這題的條件。對方說「ありがとう」時，可以回應「どういたしまして」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T13",
+      "audioId": "U01-L06",
+      "audioSrc": "/assets/audio/u01/listening-06.wav"
+    },
+    {
+      "id": "U01-Q45",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q45",
+      "itemFamilyId": "U01-F-situation-object-confirmation",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你要確認手中的物品，聽完修正後哪句最符合？",
+      "choices": [
+        {
+          "id": "U01-Q45-o3",
+          "text": "せんせいです。"
+        },
+        {
+          "id": "U01-Q45-o1",
+          "text": "ほんです。"
+        },
+        {
+          "id": "U01-Q45-o2",
+          "text": "がくせいです。"
+        },
+        {
+          "id": "U01-Q45-o0",
+          "text": "えんぴつです。"
+        }
+      ],
+      "answer": [
+        "U01-Q45-o0"
+      ],
+      "explanation": "音訊已否定書並確認是鉛筆。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q45-o1": "「ほんです。」不符合這題的條件。音訊已否定書並確認是鉛筆。",
+        "U01-Q45-o2": "「がくせいです。」不符合這題的條件。音訊已否定書並確認是鉛筆。",
+        "U01-Q45-o3": "「せんせいです。」不符合這題的條件。音訊已否定書並確認是鉛筆。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T13",
+      "audioId": "U01-L04",
+      "audioSrc": "/assets/audio/u01/listening-04.wav"
+    },
+    {
+      "id": "U01-Q46",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q46",
+      "itemFamilyId": "U01-F-situation-relay-role",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你要轉告聽到的身分，應選哪一句？",
+      "choices": [
+        {
+          "id": "U01-Q46-o3",
+          "text": "ねこです。"
+        },
+        {
+          "id": "U01-Q46-o2",
+          "text": "ほんです。"
+        },
+        {
+          "id": "U01-Q46-o1",
+          "text": "がくせいです。"
+        },
+        {
+          "id": "U01-Q46-o0",
+          "text": "せんせいです。"
+        }
+      ],
+      "answer": [
+        "U01-Q46-o0"
+      ],
+      "explanation": "音訊中的回答確認對方是老師。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q46-o1": "「がくせいです。」不符合這題的條件。音訊中的回答確認對方是老師。",
+        "U01-Q46-o2": "「ほんです。」不符合這題的條件。音訊中的回答確認對方是老師。",
+        "U01-Q46-o3": "「ねこです。」不符合這題的條件。音訊中的回答確認對方是老師。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T13",
+      "audioId": "U01-L02",
+      "audioSrc": "/assets/audio/u01/listening-02.wav"
+    },
+    {
+      "id": "U01-Q47",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q47",
+      "itemFamilyId": "U01-F-response-role-question",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你是學生。對方問了音訊最後一句，最合適的回答是？",
+      "choices": [
+        {
+          "id": "U01-Q47-o1",
+          "text": "いいえ。せんせいです。"
+        },
+        {
+          "id": "U01-Q47-o2",
+          "text": "ありがとう。"
+        },
+        {
+          "id": "U01-Q47-o3",
+          "text": "はじめまして。"
+        },
+        {
+          "id": "U01-Q47-o0",
+          "text": "はい。がくせいです。"
+        }
+      ],
+      "answer": [
+        "U01-Q47-o0"
+      ],
+      "explanation": "問的是你是不是學生；題目設定你是學生。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q47-o1": "「いいえ。せんせいです。」不符合這題的條件。問的是你是不是學生；題目設定你是學生。",
+        "U01-Q47-o2": "「ありがとう。」不符合這題的條件。問的是你是不是學生；題目設定你是學生。",
+        "U01-Q47-o3": "「はじめまして。」不符合這題的條件。問的是你是不是學生；題目設定你是學生。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T14",
+      "audioId": "U01-L05",
+      "audioSrc": "/assets/audio/u01/listening-05.wav"
+    },
+    {
+      "id": "U01-Q48",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q48",
+      "itemFamilyId": "U01-F-response-gratitude",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "對方說「ありがとう」，選最合適的回應。",
+      "choices": [
+        {
+          "id": "U01-Q48-o0",
+          "text": "どういたしまして。"
+        },
+        {
+          "id": "U01-Q48-o3",
+          "text": "にほんです。"
+        },
+        {
+          "id": "U01-Q48-o1",
+          "text": "こんにちは。"
+        },
+        {
+          "id": "U01-Q48-o2",
+          "text": "いいえ。がくせいです。"
+        }
+      ],
+      "answer": [
+        "U01-Q48-o0"
+      ],
+      "explanation": "感謝的常見回應是「どういたしまして」。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q48-o1": "「こんにちは。」不符合這題的條件。感謝的常見回應是「どういたしまして」。",
+        "U01-Q48-o2": "「いいえ。がくせいです。」不符合這題的條件。感謝的常見回應是「どういたしまして」。",
+        "U01-Q48-o3": "「にほんです。」不符合這題的條件。感謝的常見回應是「どういたしまして」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T14",
+      "audioId": "U01-L06",
+      "audioSrc": "/assets/audio/u01/listening-06.wav"
+    },
+    {
+      "id": "U01-Q49",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q49",
+      "itemFamilyId": "U01-F-response-first-meeting",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "第一次見面，對方做完音訊的介紹後，最合適的招呼是？",
+      "choices": [
+        {
+          "id": "U01-Q49-o3",
+          "text": "かばんです。"
+        },
+        {
+          "id": "U01-Q49-o1",
+          "text": "えんぴつです。"
+        },
+        {
+          "id": "U01-Q49-o2",
+          "text": "いいえ。せんせいです。"
+        },
+        {
+          "id": "U01-Q49-o0",
+          "text": "はじめまして。よろしくおねがいします。"
+        }
+      ],
+      "answer": [
+        "U01-Q49-o0"
+      ],
+      "explanation": "初次相識時，可以回應「はじめまして。よろしくおねがいします」。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q49-o1": "「えんぴつです。」不符合這題的條件。初次相識時，可以回應「はじめまして。よろしくおねがいします」。",
+        "U01-Q49-o2": "「いいえ。せんせいです。」不符合這題的條件。初次相識時，可以回應「はじめまして。よろしくおねがいします」。",
+        "U01-Q49-o3": "「かばんです。」不符合這題的條件。初次相識時，可以回應「はじめまして。よろしくおねがいします」。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T14",
+      "audioId": "U01-L01",
+      "audioSrc": "/assets/audio/u01/listening-01.wav"
+    },
+    {
+      "id": "U01-Q50",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-Q50",
+      "itemFamilyId": "U01-F-response-join-shared-role",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你也是學生，想加入音訊的對話，應怎麼說？",
+      "choices": [
+        {
+          "id": "U01-Q50-o0",
+          "text": "わたしも がくせいです。"
+        },
+        {
+          "id": "U01-Q50-o1",
+          "text": "わたしは せんせいです。"
+        },
+        {
+          "id": "U01-Q50-o2",
+          "text": "あなたは いぬですか。"
+        },
+        {
+          "id": "U01-Q50-o3",
+          "text": "ほんです。"
+        }
+      ],
+      "answer": [
+        "U01-Q50-o0"
+      ],
+      "explanation": "已經有人說自己是學生，你也相同，用「も」加入。",
+      "hint": "先完整聽一次，再找出題目要的資訊。",
+      "distractorReasons": {
+        "U01-Q50-o1": "「わたしは せんせいです。」不符合這題的條件。已經有人說自己是學生，你也相同，用「も」加入。",
+        "U01-Q50-o2": "「あなたは いぬですか。」不符合這題的條件。已經有人說自己是學生，你也相同，用「も」加入。",
+        "U01-Q50-o3": "「ほんです。」不符合這題的條件。已經有人說自己是學生，你也相同，用「も」加入。"
+      },
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T14",
+      "audioId": "U01-L03",
+      "audioSrc": "/assets/audio/u01/listening-03.wav"
+    },
+    {
+      "id": "U01-C01",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C01",
+      "itemFamilyId": "U01-F-check-G01-two-field-record",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "名牌資料：名字是アキ，身分是學生。哪一整段介紹完全符合？",
+      "choices": [
+        {
+          "id": "U01-C01-o0",
+          "text": "わたしは アキです。がくせいです。"
+        },
+        {
+          "id": "U01-C01-o1",
+          "text": "わたしは ユイです。がくせいです。"
+        },
+        {
+          "id": "U01-C01-o2",
+          "text": "わたしは アキです。せんせいです。"
+        }
+      ],
+      "answer": [
+        "U01-C01-o0"
+      ],
+      "explanation": "先確認名字，再確認學生身分，兩項都要符合。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C01-o1": "「わたしは ユイです。がくせいです。」不符合這題的條件。先確認名字，再確認學生身分，兩項都要符合。",
+        "U01-C01-o2": "「わたしは アキです。せんせいです。」不符合這題的條件。先確認名字，再確認學生身分，兩項都要符合。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C02",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C02",
+      "itemFamilyId": "U01-F-check-G01-speaker-attribution",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "三個人各拿自己的身分牌。只有一位是老師，哪一句應由老師說？",
+      "choices": [
+        {
+          "id": "U01-C02-o1",
+          "text": "わたしは がくせいです。"
+        },
+        {
+          "id": "U01-C02-o2",
+          "text": "わたしは ねこです。"
+        },
+        {
+          "id": "U01-C02-o0",
+          "text": "わたしは せんせいです。"
+        }
+      ],
+      "answer": [
+        "U01-C02-o0"
+      ],
+      "explanation": "介紹自己的老師身分應用「わたしはせんせいです」。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C02-o1": "「わたしは がくせいです。」不符合這題的條件。介紹自己的老師身分應用「わたしはせんせいです」。",
+        "U01-C02-o2": "「わたしは ねこです。」不符合這題的條件。介紹自己的老師身分應用「わたしはせんせいです」。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C03",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C03",
+      "itemFamilyId": "U01-F-check-G01-error-repair",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "朋友想寫「我是學生」，卻寫成「わたし です がくせい は」。選擇完整修正。",
+      "choices": [
+        {
+          "id": "U01-C03-o2",
+          "text": "わたしはです がくせい。"
+        },
+        {
+          "id": "U01-C03-o0",
+          "text": "わたしは がくせいです。"
+        },
+        {
+          "id": "U01-C03-o1",
+          "text": "わたしです がくせいは。"
+        }
+      ],
+      "answer": [
+        "U01-C03-o0"
+      ],
+      "explanation": "主題在は之前，身分在です之前。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C03-o1": "「わたしです がくせいは。」不符合這題的條件。主題在は之前，身分在です之前。",
+        "U01-C03-o2": "「わたしはです がくせい。」不符合這題的條件。主題在は之前，身分在です之前。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C04",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C04",
+      "itemFamilyId": "U01-F-check-G01-label-vs-value",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "名牌上有「なまえ：ミナ」。只想介紹自己的名字，哪一句最準確？",
+      "choices": [
+        {
+          "id": "U01-C04-o2",
+          "text": "わたしは がくせいです。"
+        },
+        {
+          "id": "U01-C04-o1",
+          "text": "わたしは なまえです。"
+        },
+        {
+          "id": "U01-C04-o0",
+          "text": "わたしは ミナです。"
+        }
+      ],
+      "answer": [
+        "U01-C04-o0"
+      ],
+      "explanation": "應說出名字ミナ；「我是名字」不是姓名介紹。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C04-o1": "「わたしは なまえです。」不符合這題的條件。應說出名字ミナ；「我是名字」不是姓名介紹。",
+        "U01-C04-o2": "「わたしは がくせいです。」不符合這題的條件。應說出名字ミナ；「我是名字」不是姓名介紹。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C05",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C05",
+      "itemFamilyId": "U01-F-check-G01-detect-conflict",
+      "primarySkillId": "G01",
+      "skillIds": [
+        "G01"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "reading",
+      "prompt": "看名牌：這位是ユイ。哪個介紹與名牌衝突？",
+      "choices": [
+        {
+          "id": "U01-C05-o2",
+          "text": "わたしは がくせいです。"
+        },
+        {
+          "id": "U01-C05-o1",
+          "text": "わたしは ユイです。"
+        },
+        {
+          "id": "U01-C05-o0",
+          "text": "わたしは ハルです。"
+        }
+      ],
+      "answer": [
+        "U01-C05-o0"
+      ],
+      "explanation": "材料名字是ユイ，說自己叫ハル與名牌不符。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C05-o1": "「わたしは ユイです。」不符合這題的條件。材料名字是ユイ，說自己叫ハル與名牌不符。",
+        "U01-C05-o2": "「わたしは がくせいです。」不符合這題的條件。材料名字是ユイ，說自己叫ハル與名牌不符。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05",
+      "materialId": "U01-R03",
+      "material": "なまえ：ユイ\nがくせいです。\nともだち：アキ"
+    },
+    {
+      "id": "U01-C06",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C06",
+      "itemFamilyId": "U01-F-check-G02-identify-intention",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "找出真正向對方詢問身分的一句。",
+      "choices": [
+        {
+          "id": "U01-C06-o0",
+          "text": "あなたは せんせいですか。"
+        },
+        {
+          "id": "U01-C06-o2",
+          "text": "わたしも がくせいです。"
+        },
+        {
+          "id": "U01-C06-o1",
+          "text": "わたしは せんせいです。"
+        }
+      ],
+      "answer": [
+        "U01-C06-o0"
+      ],
+      "explanation": "「あなた」指對方，句尾か表示詢問。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C06-o1": "「わたしは せんせいです。」不符合這題的條件。「あなた」指對方，句尾か表示詢問。",
+        "U01-C06-o2": "「わたしも がくせいです。」不符合這題的條件。「あなた」指對方，句尾か表示詢問。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C07",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C07",
+      "itemFamilyId": "U01-F-check-G02-clause-boundary",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "order",
+      "prompt": "排出「你是學生嗎」，不要把詢問字放到句子中間。",
+      "choices": [
+        {
+          "id": "U01-C07-o1",
+          "text": "は"
+        },
+        {
+          "id": "U01-C07-o4",
+          "text": "か"
+        },
+        {
+          "id": "U01-C07-o3",
+          "text": "です"
+        },
+        {
+          "id": "U01-C07-o0",
+          "text": "あなた"
+        },
+        {
+          "id": "U01-C07-o2",
+          "text": "がくせい"
+        }
+      ],
+      "answer": [
+        "U01-C07-o0",
+        "U01-C07-o1",
+        "U01-C07-o2",
+        "U01-C07-o3",
+        "U01-C07-o4"
+      ],
+      "explanation": "か應接在句尾です後面。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {},
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T06"
+    },
+    {
+      "id": "U01-C08",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C08",
+      "itemFamilyId": "U01-F-check-G02-infer-prior-question",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "老師說「はい。せんせいです」。這句之前最適合問什麼？",
+      "choices": [
+        {
+          "id": "U01-C08-o0",
+          "text": "あなたは せんせいですか。"
+        },
+        {
+          "id": "U01-C08-o1",
+          "text": "あなたは がくせいですか。"
+        },
+        {
+          "id": "U01-C08-o2",
+          "text": "わたしも がくせいです。"
+        }
+      ],
+      "answer": [
+        "U01-C08-o0"
+      ],
+      "explanation": "依肯定回答反推問題，問的應是老師身分。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C08-o1": "「あなたは がくせいですか。」不符合這題的條件。依肯定回答反推問題，問的應是老師身分。",
+        "U01-C08-o2": "「わたしも がくせいです。」不符合這題的條件。依肯定回答反推問題，問的應是老師身分。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C09",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C09",
+      "itemFamilyId": "U01-F-check-G02-uncertainty",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "只知道對方的名字，不知道身分。想確認他是不是學生，哪句不會先下結論？",
+      "choices": [
+        {
+          "id": "U01-C09-o1",
+          "text": "あなたは がくせいです。"
+        },
+        {
+          "id": "U01-C09-o0",
+          "text": "あなたは がくせいですか。"
+        },
+        {
+          "id": "U01-C09-o2",
+          "text": "わたしは がくせいです。"
+        }
+      ],
+      "answer": [
+        "U01-C09-o0"
+      ],
+      "explanation": "還不知道對方身分時，使用疑問而非直接斷言。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C09-o1": "「あなたは がくせいです。」不符合這題的條件。還不知道對方身分時，使用疑問而非直接斷言。",
+        "U01-C09-o2": "「わたしは がくせいです。」不符合這題的條件。還不知道對方身分時，使用疑問而非直接斷言。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C10",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C10",
+      "itemFamilyId": "U01-F-check-G02-dialogue-turn",
+      "primarySkillId": "G02",
+      "skillIds": [
+        "G02"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "reading",
+      "prompt": "對話中「はい」是在回答誰的問題？",
+      "choices": [
+        {
+          "id": "U01-C10-o1",
+          "text": "ハル"
+        },
+        {
+          "id": "U01-C10-o0",
+          "text": "アキ"
+        },
+        {
+          "id": "U01-C10-o2",
+          "text": "ユイ"
+        }
+      ],
+      "answer": [
+        "U01-C10-o0"
+      ],
+      "explanation": "アキ先問老師身分，ハル用はい回答。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C10-o1": "「ハル」不符合這題的條件。アキ先問老師身分，ハル用はい回答。",
+        "U01-C10-o2": "「ユイ」不符合這題的條件。アキ先問老師身分，ハル用はい回答。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05",
+      "materialId": "U01-R04",
+      "material": "アキ：あなたは せんせいですか。\nハル：はい。わたしは せんせいです。"
+    },
+    {
+      "id": "U01-C11",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C11",
+      "itemFamilyId": "U01-F-check-G03-shared-records",
+      "primarySkillId": "G03",
+      "skillIds": [
+        "G03"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "兩張身分牌都是學生。第一位說「わたしは がくせいです」。第二位想強調相同點，應說？",
+      "choices": [
+        {
+          "id": "U01-C11-o0",
+          "text": "わたしも がくせいです。"
+        },
+        {
+          "id": "U01-C11-o1",
+          "text": "わたしはも がくせいです。"
+        },
+        {
+          "id": "U01-C11-o2",
+          "text": "わたしも せんせいです。"
+        }
+      ],
+      "answer": [
+        "U01-C11-o0"
+      ],
+      "explanation": "相同的學生身分用も表示也，不用はも。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C11-o1": "「わたしはも がくせいです。」不符合這題的條件。相同的學生身分用も表示也，不用はも。",
+        "U01-C11-o2": "「わたしも せんせいです。」不符合這題的條件。相同的學生身分用も表示也，不用はも。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C12",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C12",
+      "itemFamilyId": "U01-F-check-G03-membership-conflict",
+      "primarySkillId": "G03",
+      "skillIds": [
+        "G03"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "reading",
+      "prompt": "兩位都用も加入學生組。哪個情況與對話不一致？",
+      "choices": [
+        {
+          "id": "U01-C12-o1",
+          "text": "第一位是學生。"
+        },
+        {
+          "id": "U01-C12-o2",
+          "text": "第二位也是學生。"
+        },
+        {
+          "id": "U01-C12-o0",
+          "text": "第二位是老師。"
+        }
+      ],
+      "answer": [
+        "U01-C12-o0"
+      ],
+      "explanation": "第二位的わたしも承接學生身分，不是改成老師。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C12-o1": "「第一位是學生。」不符合這題的條件。第二位的わたしも承接學生身分，不是改成老師。",
+        "U01-C12-o2": "「第二位也是學生。」不符合這題的條件。第二位的わたしも承接學生身分，不是改成老師。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05",
+      "materialId": "U01-R02",
+      "material": "ミナ：わたしは がくせいです。\nレン：わたしも がくせいです。"
+    },
+    {
+      "id": "U01-C13",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C13",
+      "itemFamilyId": "U01-F-check-G03-transfer-to-role",
+      "primarySkillId": "G03",
+      "skillIds": [
+        "G03"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "order",
+      "prompt": "小晴說自己是老師，你也是老師。排出「我也是老師」。",
+      "choices": [
+        {
+          "id": "U01-C13-o3",
+          "text": "です"
+        },
+        {
+          "id": "U01-C13-o0",
+          "text": "わたし"
+        },
+        {
+          "id": "U01-C13-o1",
+          "text": "も"
+        },
+        {
+          "id": "U01-C13-o2",
+          "text": "せんせい"
+        }
+      ],
+      "answer": [
+        "U01-C13-o0",
+        "U01-C13-o1",
+        "U01-C13-o2",
+        "U01-C13-o3"
+      ],
+      "explanation": "和前一位同為老師，以も表示相同身分。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {},
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T06"
+    },
+    {
+      "id": "U01-C14",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C14",
+      "itemFamilyId": "U01-F-check-G03-ellipsis",
+      "primarySkillId": "G03",
+      "skillIds": [
+        "G03"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "小秋已經介紹自己是學生，第二人只說「わたしも」。他省略但承接了什麼意思？",
+      "choices": [
+        {
+          "id": "U01-C14-o1",
+          "text": "第二人在問名字。"
+        },
+        {
+          "id": "U01-C14-o2",
+          "text": "第二人是老師。"
+        },
+        {
+          "id": "U01-C14-o0",
+          "text": "第二人也是學生。"
+        }
+      ],
+      "answer": [
+        "U01-C14-o0"
+      ],
+      "explanation": "此處も承接前文的學生身分。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C14-o1": "「第二人在問名字。」不符合這題的條件。此處も承接前文的學生身分。",
+        "U01-C14-o2": "「第二人是老師。」不符合這題的條件。此處も承接前文的學生身分。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    },
+    {
+      "id": "U01-C15",
+      "version": "1",
+      "unitId": "U01",
+      "itemId": "U01-C15",
+      "itemFamilyId": "U01-F-check-G03-unshared-predicate",
+      "primarySkillId": "G03",
+      "skillIds": [
+        "G03"
+      ],
+      "teachingIds": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3",
+        "teach-words-4",
+        "teach-G01",
+        "teach-G02",
+        "teach-G03",
+        "teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "你是學生，但前一位說自己是老師。哪句適合介紹自己，而且不錯說「也」？",
+      "choices": [
+        {
+          "id": "U01-C15-o1",
+          "text": "わたしも せんせいです。"
+        },
+        {
+          "id": "U01-C15-o2",
+          "text": "わたしはも がくせいです。"
+        },
+        {
+          "id": "U01-C15-o0",
+          "text": "わたしは がくせいです。"
+        }
+      ],
+      "answer": [
+        "U01-C15-o0"
+      ],
+      "explanation": "身分不同，不承接對方的老師身分；用は介紹自己。",
+      "hint": "檢核不提供答案提示。",
+      "distractorReasons": {
+        "U01-C15-o1": "「わたしも せんせいです。」不符合這題的條件。身分不同，不承接對方的老師身分；用は介紹自己。",
+        "U01-C15-o2": "「わたしはも がくせいです。」不符合這題的條件。身分不同，不承接對方的老師身分；用は介紹自己。"
+      },
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored draft by Codex, 2026-10-16; not copied from official questions",
+      "reviewStatus": "DRAFT",
+      "typeId": "T05"
+    }
+  ]
+}

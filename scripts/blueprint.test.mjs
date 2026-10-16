@@ -3,8 +3,9 @@ import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
 import { validateBlueprint } from './blueprint.mjs'
 
-const fixture = () => JSON.parse(readFileSync(new URL('../docs/content/n5-manifest.json', import.meta.url), 'utf8'))
+const fixture = () => ({...JSON.parse(readFileSync(new URL('../docs/content/n5-manifest.json', import.meta.url), 'utf8')),status:'DRAFT',reviewer:null,reviewedAt:null})
 test('valid draft passes without claiming human approval', () => assert.deepEqual(validateBlueprint(fixture()), []))
+test('actual owner gate attestation is valid without weakening the false approval fixture',()=>assert.deepEqual(validateBlueprint(JSON.parse(readFileSync(new URL('../docs/content/n5-manifest.json',import.meta.url),'utf8'))),[]))
 for (const [name, mutate, expected] of [
   ['duplicate unit', d => { d.units[1].id = 'U01' }, /duplicate/],
   ['unit cycle', d => { d.units[0].prerequisites = ['U24'] }, /cycle/],

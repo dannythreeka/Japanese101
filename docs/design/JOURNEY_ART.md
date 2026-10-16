@@ -1,6 +1,6 @@
 # P2 分層美術與角色設定（待真人視覺核對）
 
-本批使用內建imagegen，13個獨立資產，完整[prompt set](journey-art-prompts.json)。來源PNG保留原始位元組於工具generated_images；正式檔案在public/assets/img/journey，逐檔來源檔名、原圖／成品hash、尺寸、容量、透明區與處理方式見[manifest](../../public/assets/img/journey/manifest.json)。WebP只做標準格式壓縮，沒有以程式重畫或把概念圖冒充互動介面。
+本批使用內建imagegen，14個獨立資產（13個RPG層及1張U01情境atlas），完整[prompt set](journey-art-prompts.json)。來源PNG保留原始位元組於工具generated_images；正式檔案在public/assets/img/journey，逐檔來源檔名、原圖／成品hash、尺寸、容量、透明區與處理方式見[manifest](../../public/assets/img/journey/manifest.json)。WebP只做標準格式壓縮，沒有以程式重畫或把概念圖冒充互動介面。
 
 ## 設定與定位
 
@@ -13,6 +13,12 @@
 
 ## 工程初審界線
 
-Codex已實際檢視13張生成圖：整體線條／水彩／配色一致，方向與姿態可辨，建築標牌留白、裝備未烘焙於角色。格式流程驗證12張透明資產確有alpha，terrain為不透明底圖；成品合計5,177,318 bytes。這些是資產初審，尚不代表已完成跨場景定位、實體平板效能或真人P2-11／P2-09簽核。
+Codex已實際檢視14張生成圖：整體線條／水彩／配色一致，方向與姿態可辨，建築標牌留白、裝備未烘焙於角色。格式流程驗證12張透明資產確有alpha，terrain為不透明底圖；成品合計5,629,720 bytes。這些是資產初審，尚不代表已完成跨場景定位、實體平板效能或真人P2-11／P2-09簽核。
 
 後續在正式可操作預覽核對：四方向與動作、透明邊緣、頭部／背部／頸部定位、遮擋、所有三場景穿戴一致、320px與平板小尺寸辨識、減少動態，以及原始／成品來源與權利。審核記實際reviewer、日期、資產版本與問題，不填AI為真人核准者。
+
+## 整合後工程修正
+
+U01情境atlas為2×2，四格依序見面／歸還小袋／書與鉛筆同時在桌上／旅行者交談。供T13配合實際WAV；alt只描述可見情境，不寫日語正解。已看圖，未取代內容審核。
+
+實際商店截圖發現帽沿遮住眼睛，已調整高度與各姿態頭部中心；fox戰鬥列與對手格有不均padding，Character使用明確來源窗，未修改原圖。接續須核對最新三場景四方向圖，不把首次截圖PASS當成視覺核准。舊cat／dragon資料保持原species、petId、XP與evolution，以既有PetAvatar回退顯示，不新增物種資產；新狐夥伴圖只套用既有fox。

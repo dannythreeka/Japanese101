@@ -72,6 +72,13 @@ describe('P2-14 durable turn transactions',()=>{
   })
 })
 describe('P2-15 wallet and inventory',()=>{
+  it('quarantines malformed balances instead of inventing a zero balance or overwriting the record',async()=>{
+    const win=await victory();await db.coinWallets.put({profileId:'A',balance:-1})
+    await expect(repo.state('A')).rejects.toThrow('preserved')
+    await expect(repo.reward('A',win.id)).rejects.toThrow('preserved')
+    expect((await repo.exportJourney('A')).data.wallets).toEqual([{profileId:'A',balance:-1}])
+    expect(await db.coinLedger.count()).toBe(0)
+  })
   it('awards first victory once, repeats 10, never changes another player',async()=>{
     const first=await victory()
     await Promise.all(Array.from({length:10},()=>repo.reward('A',first.id)))
@@ -120,6 +127,47 @@ describe('P2-15 wallet and inventory',()=>{
   })
 })
 describe('world and battle pure boundaries',()=>{
+  it('archives stale content/rules/checkpoints atomically; backup failure preserves every original',async()=>{
+    const battle=await start();await repo.chooseMove('A',battle.id,'attack');await repo.submitTurn('A',battle.id,1,{answerIds:['a'],hintUsed:false,audioPlayCount:0,responseMs:1})
+    await db.battleSessions.update(battle.id,{rulesVersion:'old-rules'})
+    await db.studyPlans.update(['A','U01'],{contentVersion:'old-pack'})
+    await db.learningChecks.put({id:'old-check',profileId:'A',unitId:'U01',contentVersion:'old-pack',questionIds:['old-q'],index:0,phase:'question',createdAt:1,updatedAt:1})
+    await repo.saveWorld('A',town.spawn,'down');await db.worldCheckpoints.update('A',{position:{x:-1,y:300}})
+    const original=await repo.exportJourney('A')
+    vi.spyOn(db.migrationBackups,'add').mockRejectedValueOnce(new Error('backup quota fault'))
+    await expect(repo.recoverVersions('A')).rejects.toThrow('quota')
+    expect(await repo.exportJourney('A')).toEqual(original)
+    await repo.recoverVersions('A')
+    const state=await repo.state('A');expect(state.attempts).toHaveLength(1);expect(state.coins).toBe(0)
+    expect(state.battles[0]).toMatchObject({rulesVersion:'old-rules',phase:'finished',endReason:'version-recovery'})
+    expect(state.checks[0].phase).toBe('finished');expect(state.study).toMatchObject({contentVersion:pack.version,taughtCards:[]});expect(state.world?.position).toEqual(town.spawn)
+    expect((await db.migrationBackups.toArray())[0].tables.battleSessions[0]).toMatchObject({rulesVersion:'old-rules',phase:'feedback'})
+    await expect(repo.reward('A',battle.id)).rejects.toThrow('version')
+    expect((await repo.state('B')).battles).toEqual([])
+  })
+  it('backs up malformed same-version positions and study fields before restoring safe defaults',async()=>{
+    await repo.openStudy('A');await repo.saveWorld('A',town.spawn,'down')
+    await db.studyPlans.update(['A','U01'],{taughtCards:[] ,timeZone:'not-a-timezone'})
+    await db.worldCheckpoints.update('A',{position:null as unknown as {x:number;y:number},storyFlags:'bad' as unknown as string[]})
+    await expect(repo.openStudy('A')).rejects.toThrow('preserved')
+    await repo.recoverVersions('A')
+    expect((await repo.openStudy('A')).timeZone).toBe('Asia/Taipei');expect((await repo.state('A')).world?.position).toEqual(town.spawn)
+    const backup=(await db.migrationBackups.toArray())[0];expect(backup.tables.worldCheckpoints[0]).toMatchObject({position:null,storyFlags:'bad'})
+  })
+  it('delays a wrong family inside the same battle by three other submitted answers',async()=>{
+    const changed=structuredClone(pack);changed.questions[1].itemFamilyId=changed.questions[0].itemFamilyId
+    repo=new JourneyRepository(changed);let battle=await start()
+    battle=await repo.chooseMove('A',battle.id,'attack');expect(battle.currentQuestionId).toBe('q0')
+    await repo.submitTurn('A',battle.id,1,{answerIds:['b'],hintUsed:false,audioPlayCount:0,responseMs:1},10000);await repo.continueBattle('A',battle.id,1)
+    for(let turn=2;turn<=4;turn++){
+      battle=await repo.chooseMove('A',battle.id,'guard');expect(battle.currentQuestionId).not.toBe('q1')
+      await repo.submitTurn('A',battle.id,turn,{answerIds:['a'],hintUsed:false,audioPlayCount:0,responseMs:1},10000+turn);await repo.continueBattle('A',battle.id,turn)
+    }
+    battle=await repo.chooseMove('A',battle.id,'guard')
+    // The persisted permutation is stable on refresh; the blocked family is now eligible.
+    expect((await repo.startBattle('A')).questionIds).toEqual(battle.questionIds)
+    expect((await repo.state('A')).attempts).toHaveLength(4)
+  })
   it('reaches every destination, rejects walls and preserves an old world checkpoint',async()=>{
     for(const destination of town.destinations) {
       const path=findPath(town.spawn,destination.point)

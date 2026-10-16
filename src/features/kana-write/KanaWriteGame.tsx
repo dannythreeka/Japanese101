@@ -371,7 +371,8 @@ export default function KanaWriteGame() {
         <button
           type="button"
           onClick={() => adventure.isActive ? adventure.cancelChallenge() : navigate('/play')}
-          className="text-2xl text-gray-500 hover:text-gray-700"
+          aria-label={t('homeAria')}
+          className="min-h-16 min-w-16 text-2xl text-gray-500 hover:text-gray-700"
         >
           ←
         </button>
@@ -396,7 +397,7 @@ export default function KanaWriteGame() {
           type="button"
           aria-label={t('listenAgainAria')}
           onClick={() => speak(current.text)}
-          className="flex items-center gap-2 bg-white/70 rounded-2xl px-4 py-2 shadow hover:bg-white transition-colors"
+          className="min-h-16 min-w-16 flex items-center gap-2 bg-white/70 rounded-2xl px-4 py-2 shadow hover:bg-white transition-colors"
         >
           <span className="text-2xl">🔊</span>
           <span className="text-2xl font-bold text-sky-700">{current.promptLabel}</span>

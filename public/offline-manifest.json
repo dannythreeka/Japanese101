@@ -1,5 +1,5 @@
 {
-  "version": "51d3edfc8e49d601",
+  "version": "0fb11bb3aafe0be8",
   "assets": [
     {
       "path": "assets/audio/kana_a.wav",
@@ -579,7 +579,7 @@
     {
       "path": "assets/audio/u01/manifest.json",
       "bytes": 8469,
-      "sha256": "b68a7da0ff6a43c0c14e83ba6b59cd09fdacb01f692bd4f6adad709a40566edd"
+      "sha256": "bb2d9172f888d576ce3359f3ece63f5b1963df87509d118f11e0fdf01b179aa3"
     },
     {
       "path": "assets/audio/u01/teach-G01.wav",
@@ -1203,8 +1203,8 @@
     },
     {
       "path": "assets/img/journey/manifest.json",
-      "bytes": 10201,
-      "sha256": "e8a1427f004aad53010feaafec19046be4290dde9a000a2ceaf2e4a607b43cca"
+      "bytes": 10967,
+      "sha256": "ea2ed84379db6e98e4915dc202c0b9d49b6361e52338b5ac7a683bb9a004fae7"
     },
     {
       "path": "assets/img/journey/mentor.webp",
@@ -1240,6 +1240,11 @@
       "path": "assets/img/journey/terrain.webp",
       "bytes": 507678,
       "sha256": "16a1e88b40e92577049de97df818d20a5287a5302ea087bcc6cb71251c84f05a"
+    },
+    {
+      "path": "assets/img/journey/u01-contexts.webp",
+      "bytes": 452402,
+      "sha256": "ecc1517a66b5956eca457424d6e88bcdaf92521636124163552ae158af789b2f"
     },
     {
       "path": "assets/img/svg/w_ajisai.svg",

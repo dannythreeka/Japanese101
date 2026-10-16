@@ -31,6 +31,8 @@ export interface Question {
   promptJa?: string
   explanationJa?: string
   hintJa?: string
+  difficulty?:1|2|3
+  image?: {src:string;cell:0|1|2|3;alt:{zh:string;ja:string}}
 }
 export interface Attempt {
   id: string
@@ -54,6 +56,7 @@ export interface Attempt {
 }
 export interface TeachingCard {
   id: string; skillIds: string[]; title: string; body: string; example: string; translation: string; audioSrc?: string
+  titleJa?:string;bodyJa?:string;translationJa?:string
   prerequisites?: string[]
   audioScript?: string
 }
@@ -80,7 +83,9 @@ export function questionErrors(input: unknown): string[] {
   for (const key of ['id','version','unitId','itemId','itemFamilyId','primarySkillId','prompt','explanation','hint','source']) {
     if (!nonempty(input[key])) errors.push(`${label}: missing ${key}`)
   }
-  if (input.version !== '1') errors.push(`${label}: unsupported version`)
+  // Explicit supported revisions; old Attempt.itemVersion remains unchanged.
+  if (!['1','2'].includes(String(input.version))) errors.push(`${label}: unsupported version`)
+  if(input.difficulty!==undefined && (typeof input.difficulty!=='number' || ![1,2,3].includes(input.difficulty)))errors.push(`${label}: invalid difficulty`)
   if (!['practice','check','mock'].includes(String(input.partition))) errors.push(`${label}: invalid partition`)
   if (!['choice','order','reading','audio'].includes(String(input.kind))) errors.push(`${label}: invalid kind`)
   if (!strings(input.skillIds) || !unique(input.skillIds) || !input.skillIds.includes(String(input.primarySkillId))) errors.push(`${label}: invalid skillIds`)
@@ -92,6 +97,7 @@ export function questionErrors(input: unknown): string[] {
   if (!strings(input.answer) || !input.answer.length || !unique(input.answer) || input.answer.some(id => !ids.includes(id))) errors.push(`${label}: invalid answer`)
   else if (input.kind === 'order' ? input.answer.length !== choices.length : input.answer.length !== 1) errors.push(`${label}: answer cardinality`)
   if (input.kind === 'reading' && !nonempty(input.material)) errors.push(`${label}: missing reading material`)
+  if(input.image!==undefined && (!record(input.image) || !nonempty(input.image.src) || !input.image.src.startsWith('/assets/img/') || typeof input.image.cell!=='number' || ![0,1,2,3].includes(input.image.cell) || !record(input.image.alt) || !nonempty(input.image.alt.zh) || !nonempty(input.image.alt.ja))) errors.push(`${label}: invalid context image`)
   if (!['optional','required'].includes(String(input.audioPolicy))) errors.push(`${label}: invalid audio policy`)
   if (input.kind === 'audio' && input.audioPolicy !== 'required') errors.push(`${label}: audio must be required`)
   if (input.audioPolicy === 'required' && (!nonempty(input.audioSrc) || !input.audioSrc.startsWith('/assets/audio/'))) errors.push(`${label}: missing local audio`)
@@ -179,6 +185,7 @@ export function unitPackErrors(input:unknown):string[] {
     if(input.reviewStatus==='APPROVED' && q.reviewStatus!=='APPROVED')errors.push(`${q.id}: unreviewed question in approved unit`)
   }
   if(input.id==='U01') {
+    for(const q of lists.questions)if(typeof q.difficulty!=='number' || ![1,2,3].includes(q.difficulty))errors.push(`${q.id}: missing difficulty`)
     for(const [field,count] of [['vocabulary',25],['kanji',5],['grammar',3],['readings',4],['listening',6]] as const)if(lists[field].length!==count)errors.push(`U01: requires ${count} ${field}`)
     if(lists.questions.filter(q=>q.partition==='practice').length!==50)errors.push('U01: requires 50 practice questions')
     for(const material of lists.readings)if(!lists.questions.some(q=>q.materialId===material.id))errors.push(`${material.id}: unused reading`)

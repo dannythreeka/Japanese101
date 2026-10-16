@@ -255,6 +255,25 @@
       "columns": 2,
       "rows": 2,
       "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "u01-contexts",
+      "src": "/assets/img/journey/u01-contexts.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-17c9f16a-5cca-455e-a106-81a524e5acd1.png",
+      "sourceSha256": "d1580a48ec103e75836130b11e35fa7bef8c1f4f84c92f1360fb3a4358572035",
+      "sourceBytes": 2966694,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "ecc1517a66b5956eca457424d6e88bcdaf92521636124163552ae158af789b2f",
+      "bytes": 452402,
+      "width": 1254,
+      "height": 1254,
+      "transparent": false,
+      "transparentPixels": 0,
+      "columns": 2,
+      "rows": 2,
+      "reviewStatus": "DRAFT"
     }
   ]
 }

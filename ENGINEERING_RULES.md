@@ -36,8 +36,16 @@ npm run test:e2e
 
 ## 工程交付與驗收
 
-分支每個可驗證小批commit，訊息含taskID。PR必含問題／結果、改動範圍、驗證、未完成／外部依賴。遵守原授權：可push分支與開PR，不自動merge或發布main。新依賴目前只增加`@playwright/test`（其傳遞依賴納入lockfile）。
+分支每個可驗證小批commit，訊息含taskID。PR必含問題／結果、改動範圍、驗證、未完成／外部依賴。遵守原授權：可push分支與開PR，不自動merge或發布main。依賴以當前package.json與lockfile為準；P2尚未選定新渲染套件，不從概念圖推定需要更換整個框架。
 
 證據目錄與敏感資料規則見 docs/verification/baseline.md。非必要不記錄網頁requestbody／個資／憑證。相同程式SHA若只多文件commit，列明差異；若程式變更重跑受影響檢查。
 
 CI失敗保持失敗；不continue-on-error lint、不放寬測試、不用舊CI綠燈抵本次未測。歷史缺陷見docs/verification/defects.md，依task追蹤。
+
+## 冒險工程契約
+
+細節以[設計附錄§8](docs/design/ADVENTURE_RPG_SPEC.md#8-資料版本與離線)為準。world／battle／economy／learning分責；版本化原型參數不散落元件。回合Attempt引用與血量同交易，獎勵receipt具冪等鍵，購物扣款／持有／穿戴原子完成；兩分頁競爭與錯玩家async必測。
+
+地圖、角色、碰撞與DOM介面分層；可見文字不是烘焙PNG。點地面、方向控制、鍵盤與地點清單提供等價路徑；失焦與取消輸入必停走。正式素材納入版本／hash／離線包，概念PNG僅放docs。
+
+每個原型參數變更列rulesVersion／catalogVersion、原因與受影響存檔；戰鬥使用開場loadoutSnapshot。任何遷移保留既有孩子、legacy-shared與舊receipt，不靠重置來換新美術。

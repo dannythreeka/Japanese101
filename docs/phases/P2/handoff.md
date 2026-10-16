@@ -55,3 +55,5 @@ P2-03／04／05／12工程驗收DONE（Codex工程reviewer）；P2-11、U01-M已
 新審閱頁 /#/__review/content 可看全部65題與正解、14教材＋4居民WAV、四方向及三戰鬥姿態裝備；完全不寫Attempt／wallet或簽核。居民朗讀已改四段本地WAV，以免依賴平板是否有系統日語聲線；生成時遇429，保留已完成兩檔並經工作間隔有限續作，四檔均已完成DRAFT。美術v2背面視角修正、manifest frameWindows與三場景新截圖保存evidence/gear-visual；Codex已實際看圖，真人核准仍NOT_RUN。
 
 第四批提交前檢查：218 tests／24 files、typecheck、lint、validate:data、blueprint與validate:journey全PASS，審閱build PASS（444離線素材）。新P2 suite共20項，含兩頁同物競購、長閱讀五寬、平板768×1024／1024×768、200%文字、審閱頁無寫入及20次資源檢查；最新全suite待本批提交後重跑。詞／漢字／文法均有明確teaching refs，duplicate item revision壞fixture會失敗。
+
+最新核心：SRS learning-v1.1-spaced只在到期日獨立答對前進；未到期不延後due，舊derived review會backup/replay真實Attempts。Journey export含profile-filtered backups，完整全庫匯入仍是P5。reward綁定最後有效當回合題目／版本，普通saveWorld必須先驗證原checkpoint完整；未知／壞原資料只能走先備份recover。未領獎勝利在手帳／道館優先續接，不能自動發或重播。21項P2新瀏覽器情境（含時鐘推一天）需用最新commit跑。

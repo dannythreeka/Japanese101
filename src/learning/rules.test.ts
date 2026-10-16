@@ -50,10 +50,28 @@ describe('P2-02 evidence and calendar rules', () => {
     const first=nextReview(undefined,a,'Asia/Taipei')
     expect(first.dueDate).toBe('2026-10-17')
     expect(nextReview(first,a,'Asia/Taipei')).toEqual(first)
-    expect(nextReview(first,attempt(2),'Asia/Taipei').dueDate).toBe('2026-10-19')
+    expect(nextReview(first,attempt(2),'Asia/Taipei').dueDate).toBe('2026-10-17')
+    expect(nextReview(first,{...attempt(2),submittedAt:'2026-10-17T02:00:00Z'},'Asia/Taipei').dueDate).toBe('2026-10-20')
     expect(nextReview({level:4,dueDate:'2099-01-01',lastAttemptId:'old'},attempt(3,false),'Asia/Taipei').level).toBe(0)
     const dst={...a,submittedAt:'2026-03-08T06:30:00Z'}
     expect(nextReview(undefined,dst,'America/New_York').dueDate).toBe('2026-03-09')
+  })
+  it('keeps tomorrow due after repeated same-day practice instead of advancing to thirty days',()=>{
+    let review=nextReview(undefined,attempt(1),'Asia/Taipei')
+    for(let n=2;n<=8;n++)review=nextReview(review,attempt(n),'Asia/Taipei')
+    expect(review).toMatchObject({level:0,dueDate:'2026-10-17'})
+  })
+  it('advances through 1/3/7/14/30 only on due reviews and resets hints without same-day erasure',()=>{
+    let review:ReturnType<typeof nextReview>|undefined
+    const days=[0,1,4,11,25,55],next=[1,4,11,25,55,85]
+    for(let i=0;i<days.length;i++){
+      review=nextReview(review,{...attempt(i),submittedAt:new Date(t0+days[i]*86400000).toISOString()},'Asia/Taipei')
+      expect(review.dueDate).toBe(localDay(t0+next[i]*86400000,'Asia/Taipei'))
+      expect(review.level).toBe(Math.min(i,4))
+    }
+    const hinted=nextReview(review,{...attempt(10,true,true),submittedAt:new Date(t0+56*86400000).toISOString()},'Asia/Taipei')
+    expect(hinted.level).toBe(0)
+    expect(nextReview(hinted,{...attempt(11),submittedAt:new Date(t0+56*86400000).toISOString()},'Asia/Taipei').dueDate).toBe(hinted.dueDate)
   })
   it('selects taught content and delays immediate remedial families', () => {
     expect(planQuestions([question],[],[],[])).toEqual([])

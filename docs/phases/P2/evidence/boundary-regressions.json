@@ -1,0 +1,46 @@
+{
+  "sourceBase": "274764dc4bf9d0b5aa4744d7f56288e5e077af49",
+  "scope": "isolated fixtures, real failed assertions before fixes; no child data",
+  "cases": [
+    {
+      "id": "checkpoint-invalid-same-version",
+      "expected": "reject normal save and preserve raw checkpoint",
+      "observedBefore": {
+        "resolved": true,
+        "position": {
+          "x": 8,
+          "y": 19
+        },
+        "storyFlags": [
+          "b",
+          "a",
+          "d"
+        ]
+      },
+      "fix": "validate currentWorld before ordinary writes; explicit backup/recover only"
+    },
+    {
+      "id": "corrupt-win-skipped-attempt",
+      "expected": "no receipt after a skipped last attempt with a corrupted won flag",
+      "observedBefore": {
+        "rewardAmount": 60,
+        "balanceAfter": 60
+      },
+      "fix": "require the owned current-turn correct first practice Attempt, matching item/version"
+    },
+    {
+      "id": "same-day-srs",
+      "expected": {
+        "level": 0,
+        "dueDate": "2026-10-17"
+      },
+      "observedBefore": {
+        "level": 4,
+        "dueDate": "2026-11-15"
+      },
+      "fix": "learning-v1.1-spaced; advance only on due review, archive and rebuild prior derived schedule from actual owned Attempts"
+    }
+  ],
+  "after": "See final CI and boundary regression tests; no human gate implied",
+  "recordedAt": "2026-10-16T06:22:30.787371+00:00"
+}

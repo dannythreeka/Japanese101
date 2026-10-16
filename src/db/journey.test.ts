@@ -7,6 +7,7 @@ import { BATTLE_RULES_VERSION, initialCombat, resolveTurn } from '../battle/rule
 import { findPath, near, town, walkable } from '../world/map'
 import type { UnitPack } from '../content/contracts'
 import { mastery } from '../learning/rules'
+import {LEARNING_RULES_VERSION} from '../learning/rules'
 
 const pack:UnitPack={id:'U01',version:'test-1',title:'fixture',reviewStatus:'DRAFT',reviewer:null,reviewedAt:null,vocabulary:[],kanji:[],grammar:[],readings:[],listening:[],teaching:[{id:'teach',title:'自己紹介',body:'わたしはアキです。',example:'わたしはアキです。',translation:'我是小秋。',skillIds:['G01']}],questions:Array.from({length:8},(_,n)=>({id:`q${n}`,version:'1',unitId:'U01',itemId:`item${n}`,itemFamilyId:`f${n}`,primarySkillId:'G01',skillIds:['G01'],teachingIds:['teach'],partition:'practice',kind:'choice',prompt:'えらぼう',choices:[{id:'a',text:'です'},{id:'b',text:'ます'}],answer:['a'],explanation:'名詞です。',distractorReasons:{b:'動詞ではありません。'},hint:'名詞です。',hintPolicy:'practice-only',audioPolicy:'optional',source:'isolated test fixture',reviewStatus:'DRAFT'}))}
 let repo:JourneyRepository
@@ -66,6 +67,9 @@ describe('P2-14 durable turn transactions',()=>{
     await expect(repo.reward('A',battle.id)).rejects.toThrow('victory')
     await db.battleSessions.put({...battle,id:'forged',phase:'finished',status:'won',enemyHp:0})
     await expect(repo.reward('A','forged')).rejects.toThrow('victory')
+    const corrupted=(await db.battleSessions.get(battle.id))!
+    await db.battleSessions.put({...corrupted,status:'won',enemyHp:0})
+    await expect(repo.reward('A',battle.id)).rejects.toThrow('victory')
     await db.battleSessions.update(battle.id,{rulesVersion:'old'})
     await expect(repo.chooseMove('A',battle.id,'attack')).rejects.toThrow('preserved')
     expect((await db.battleSessions.get(battle.id))?.rulesVersion).toBe('old')
@@ -167,6 +171,7 @@ describe('world and battle pure boundaries',()=>{
     await db.studyPlans.update(['A','U01'],{taughtCards:[] ,timeZone:'not-a-timezone'})
     await db.worldCheckpoints.update('A',{position:null as unknown as {x:number;y:number},storyFlags:'bad' as unknown as string[]})
     await expect(repo.openStudy('A')).rejects.toThrow('preserved')
+    await expect(repo.saveWorld('A',town.spawn,'down')).rejects.toThrow('preserved')
     await repo.recoverVersions('A')
     expect((await repo.openStudy('A')).timeZone).toBe('Asia/Taipei');expect((await repo.state('A')).world?.position).toEqual(town.spawn)
     const backup=(await db.migrationBackups.toArray())[0];expect(backup.tables.worldCheckpoints[0]).toMatchObject({position:null,storyFlags:'bad'})
@@ -238,5 +243,25 @@ describe('P2-04 independent checks',()=>{
     await expect(repo.continueCheck('B',check.id,4)).rejects.toThrow('belong')
     await repo.finishCheck('A',check.id)
     expect((await repo.exportJourney('A')).data.checks[0].phase).toBe('finished')
+  })
+})
+describe('P2-05 spaced review version recovery',()=>{
+  it('backs up a prior over-promoted schedule and rebuilds only from that player’s real attempts',async()=>{
+    const day=Date.parse('2026-10-16T02:00:00Z')
+    await repo.openStudy('A',1,day,'Asia/Taipei');await repo.teach('A','teach',day)
+    let battle=await repo.startBattle('A',day)
+    for(let turn=1;turn<=4;turn++){battle=await repo.chooseMove('A',battle.id,'attack');await repo.submitTurn('A',battle.id,turn,{answerIds:['a'],hintUsed:false,audioPlayCount:0,responseMs:1},day+turn*1000);battle=await repo.continueBattle('A',battle.id,turn)}
+    const original=(await repo.state('A')).reviews[0]
+    await db.skillReviews.put({...original,learningVersion:undefined,level:4,dueDate:'2026-11-15'})
+    vi.spyOn(db.migrationBackups,'add').mockRejectedValueOnce(new Error('backup quota'))
+    await expect(repo.openStudy('A',1,day,'Asia/Taipei')).rejects.toThrow('quota')
+    expect((await repo.state('A')).reviews[0].level).toBe(4)
+    await repo.openStudy('A',1,day,'Asia/Taipei')
+    expect((await repo.state('A')).reviews[0]).toMatchObject({level:0,dueDate:'2026-10-17',learningVersion:LEARNING_RULES_VERSION})
+    const backup=(await repo.exportJourney('A')).data.backups[0]
+    expect(backup.tables.skillReviews[0]).toMatchObject({level:4,dueDate:'2026-11-15'})
+    expect((await repo.exportJourney('B')).data.backups).toEqual([])
+    await repo.openStudy('A',1,day,'Asia/Taipei');expect((await repo.exportJourney('A')).data.backups).toHaveLength(1)
+    expect((await repo.state('A')).attempts).toHaveLength(4);expect((await repo.state('A')).coins).toBe(0)
   })
 })

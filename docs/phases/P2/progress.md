@@ -64,3 +64,9 @@ P2-03／04／05／12工程驗收DONE（Codex工程reviewer）；P2-11、U01-M已
 新審閱頁 /#/__review/content 可看全部65題與正解、14教材＋4居民WAV、四方向及三戰鬥姿態裝備；完全不寫Attempt／wallet或簽核。居民朗讀已改四段本地WAV，以免依賴平板是否有系統日語聲線；生成時遇429，保留已完成兩檔並經工作間隔有限續作，四檔均已完成DRAFT。美術v2背面視角修正、manifest frameWindows與三場景新截圖保存evidence/gear-visual；Codex已實際看圖，真人核准仍NOT_RUN。
 
 第四批提交前檢查：218 tests／24 files、typecheck、lint、validate:data、blueprint與validate:journey全PASS，審閱build PASS（444離線素材）。新P2 suite共20項，含兩頁同物競購、長閱讀五寬、平板768×1024／1024×768、200%文字、審閱頁無寫入及20次資源檢查；最新全suite待本批提交後重跑。詞／漢字／文法均有明確teaching refs，duplicate item revision壞fixture會失敗。
+
+存檔邊界補驗發現：同worldVersion但position=null／storyFlags型別壞掉時，普通saveWorld原本會覆蓋壞資料；新增拒絕fixture先真實失敗（回傳有效位置卻把bad拆成字元flag），改用完整currentWorld驗證後才允許普通寫入。保留原紀錄，僅明確recover流程先備份再恢復。此修正不改正常世界／戰鬥／學習規則。
+
+三個確定失敗的補驗已修正：同版本壞checkpoint不准普通覆寫；勝利必須有本battle當回合、同題版本的首次正確practice Attempt（跳過／舊回合／無題不發幣）；SRS同日八次答對原會推到11/15，與G2-3翌日複習衝突。已在project §5.4釐清只有到期複習前進間隔，普通未到期練習保留到期日，錯／提示仍回1天；新規則learning-v1.1-spaced，舊衍生排程先備份再依真實Attempt重建，失敗整筆rollback、不清原始作答。個人匯出亦納入只屬於該玩家的恢復快照，不匯出其他玩家或全庫legacy。新增下一天瀏覽器情境；P2 suite現21項。
+
+未領的當版勝利可從手帳／道館續回領取，不因離開結算頁消失；已領返回只導航、不重播獎勵。新檢查不降低五題族／兩日／48h／4/5門檻，工程釐清不代表真人內容核准。

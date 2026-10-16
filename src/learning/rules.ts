@@ -3,7 +3,8 @@ import { answerIsCorrect, attemptErrors } from '../content/contracts'
 
 export interface Clock { now: number; timeZone: string }
 export type MasteryState = 'not-started' | 'practicing' | 'stable' | 'due'
-export interface ReviewSchedule { level: number; dueDate: string; lastAttemptId: string }
+export const LEARNING_RULES_VERSION='learning-v1.1-spaced'
+export interface ReviewSchedule { level: number; dueDate: string; lastAttemptId: string; learningVersion?:string }
 const intervals = [1, 3, 7, 14, 30] as const
 export function localDay(time: number, timeZone: string): string {
   const parts = new Intl.DateTimeFormat('en-US', { timeZone, year:'numeric', month:'2-digit', day:'2-digit' }).formatToParts(time)
@@ -24,8 +25,10 @@ export function summarize(attempts: readonly Attempt[]) {
 export function nextReview(previous: ReviewSchedule | undefined, attempt: Attempt, timeZone: string): ReviewSchedule {
   if (previous?.lastAttemptId === attempt.id) return previous
   const success = attempt.firstAnswerCorrect === true && !attempt.hintUsed
+  const day=localDay(Date.parse(attempt.submittedAt),timeZone)
+  if(success && previous && day<previous.dueDate)return {...previous,lastAttemptId:attempt.id,learningVersion:LEARNING_RULES_VERSION}
   const level = success ? Math.min((previous?.level ?? -1)+1,intervals.length-1) : 0
-  return { level, dueDate: plusDays(localDay(Date.parse(attempt.submittedAt),timeZone),intervals[level]), lastAttemptId:attempt.id }
+  return { level, dueDate: plusDays(day,intervals[level]), lastAttemptId:attempt.id,learningVersion:LEARNING_RULES_VERSION }
 }
 export function mastery(attempts: readonly Attempt[], skillId: string, taughtAt: number | undefined, clock: Clock, schedule?: ReviewSchedule): MasteryState {
   const values = attempts.filter(a => a.primarySkillId === skillId && Date.parse(a.submittedAt) <= clock.now)

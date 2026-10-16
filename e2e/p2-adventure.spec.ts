@@ -127,6 +127,7 @@ test('town → taught practice → victory → atomic purchase → refresh → p
     await page.getByRole('button',{name:'繼續',exact:true}).click()
   }
   await expect(page.getByRole('heading',{name:'挑戰成功',exact:true})).toBeVisible()
+  await page.goto('/#/preview/adventure');await page.getByRole('button',{name:'旅行手帳',exact:true}).click();await page.getByRole('button',{name:'繼續挑戰',exact:true}).click();await expect(page.getByRole('heading',{name:'挑戰成功',exact:true})).toBeVisible()
   const second=await context.newPage();await second.goto(`/#/preview/adventure?scene=battle&id=${battle!.id}`)
   await expect(second.getByRole('button',{name:'保存獎勵並回到小鎮',exact:true})).toBeVisible()
   // Dispatch both rendered buttons without changing tab focus in between;
@@ -214,6 +215,15 @@ test('review console exposes all content and gear directions without granting ap
   for(const name of ['帽子','背包','圍巾','up'])await page.getByRole('button',{name,exact:true}).click()
   expect(await records(page,'learningAttempts')).toEqual([]);expect(await records(page,'inventory')).toEqual([]);expect(await records(page,'coinLedger')).toEqual([])
   expect(pack.reviewStatus).toBe('DRAFT')
+})
+test('tomorrow review appears after same-day learning and its durable queue survives reopening',async({page})=>{
+  test.setTimeout(90000);await page.clock.install({time:new Date('2026-10-16T02:00:00Z')});await open(page);await teach(page);await page.getByRole('button',{name:'練習對戰',exact:true}).click()
+  for(let turn=1;turn<=4;turn++){await page.getByRole('button',{name:'普通攻擊',exact:true}).click();await answer(page);await page.getByRole('button',{name:'繼續',exact:true}).click()}
+  expect((await records<{level:number;dueDate:string}>(page,'skillReviews'))[0]).toMatchObject({level:0,dueDate:'2026-10-17'})
+  await page.getByRole('button',{name:'保存獎勵並回到小鎮',exact:true}).click();await page.clock.setSystemTime(new Date('2026-10-17T02:00:00Z'));await page.reload()
+  await page.getByRole('button',{name:'旅行手帳',exact:true}).click();await expect(page.getByText('導師邀請你複習 (1)',{exact:true})).toBeVisible();await page.getByRole('button',{name:'初芽道館',exact:true}).click();await page.getByRole('button',{name:'練習對戰',exact:true}).click()
+  const battle=(await records<BattleSession>(page,'battleSessions')).find(b=>b.phase!=='finished')!;await page.reload();expect((await records<BattleSession>(page,'battleSessions')).find(b=>b.id===battle.id)?.questionIds).toEqual(battle.questionIds)
+  await page.getByRole('button',{name:'防守',exact:true}).click();await answer(page);expect((await records<{level:number;dueDate:string}>(page,'skillReviews'))[0]).toMatchObject({level:1,dueDate:'2026-10-20'})
 })
 test('twenty world/audio visits release RAF, intervals and playback timeout on departure',async({page})=>{
   test.setTimeout(90000)

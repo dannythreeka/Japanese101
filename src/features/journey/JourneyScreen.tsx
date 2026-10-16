@@ -59,6 +59,8 @@ export default function JourneyScreen(){
   const check=data.checks.find(c=>c.id===id)
   if(scene==='battle' && battle && !currentBattle(battle,u01) || scene==='check' && check && !currentCheck(check,u01))return <main className="journey journey-shell"><StatePanel state="retryable-error" title={t('versionError')} action={t('returnTown')} onAction={()=>go('town')}/></main>
   const activeBattle=data.battles.find(b=>b.phase!=='finished')
+  const pendingReward=data.battles.find(b=>b.phase==='finished' && b.status==='won' && currentBattle(b,u01) && !data.ledger.some(l=>l.kind==='reward' && l.battleId===b.id))
+  const resumeBattle=activeBattle ?? pendingReward
   const unfinishedCheck=data.checks.find(c=>c.phase!=='finished')
   const items=Object.values(data.equipment)
   const today=localDay(clock,data.study.timeZone)
@@ -67,7 +69,7 @@ export default function JourneyScreen(){
   const eligible=u01.questions.some(q=>q.partition==='practice' && q.teachingIds.every(id=>data.study!.taughtCards.includes(id)))
   const checkEligible=u01.questions.some(q=>q.partition==='check' && q.teachingIds.every(id=>data.study!.taughtCards.includes(id)))
   const worldOutdated=data.world && !currentWorld(data.world)
-  const startBattle=()=>{void perform(async()=>{const battle=await repo.startBattle(profileId);go('battle',battle.id)})}
+  const startBattle=()=>{if(resumeBattle){go('battle',resumeBattle.id);return}void perform(async()=>{const battle=await repo.startBattle(profileId);go('battle',battle.id)})}
   const startCheck=()=>{void perform(async()=>{const check=await repo.startCheck(profileId);go('check',check.id)})}
   return <JourneyPetContext.Provider value={pet}><main className="journey journey-shell" lang={lang==='ja'?'ja':'zh-Hant'}>
     <header className="journey-header"><div><small>{profile?.name}</small><h1>{t('title')}</h1><p>{t('coins')} {data.coins}</p></div><div className="journey-actions">
@@ -83,7 +85,7 @@ export default function JourneyScreen(){
     </>}
     {scene==='dojo' && <section className="journey-body journey-stack"><div className="journey-content-header"><h1>{t('dojo')}</h1><Button variant="secondary" onClick={()=>go('town')}>{t('returnTown')}</Button></div>
       <div className="journey-mentor"><img src={`${import.meta.env.BASE_URL}assets/img/journey/mentor.webp`} alt=""/><div><h2>{lang==='zh'?'歡迎，旅行者。':'ようこそ、たびびとさん。'}</h2><p>{t('learnFirst')}</p><p>{t('noDeadline')}</p></div></div>
-      <div className="journey-actions"><Button onClick={()=>go('learn')}>{t('teach')}</Button><Button disabled={pending || !eligible} onClick={startBattle}>{activeBattle ? t('resume'):t('practice')}</Button><Button variant="secondary" disabled={pending || !checkEligible} onClick={startCheck}>{unfinishedCheck ? t('resume'):t('check')}</Button><Button variant="quiet" onClick={()=>navigate('/play/gallery')}>{lang==='zh'?'先認識五十音':'かなをみる'}</Button></div>
+      <div className="journey-actions"><Button onClick={()=>go('learn')}>{t('teach')}</Button><Button disabled={pending || !eligible} onClick={startBattle}>{resumeBattle ? t('resume'):t('practice')}</Button><Button variant="secondary" disabled={pending || !checkEligible} onClick={startCheck}>{unfinishedCheck ? t('resume'):t('check')}</Button><Button variant="quiet" onClick={()=>navigate('/play/gallery')}>{lang==='zh'?'先認識五十音':'かなをみる'}</Button></div>
       {!eligible && <p>{t('learnFirst')}</p>}
     </section>}
     {scene==='learn' && <TeachingScene study={data.study} index={teachingIndex} onIndex={setTeachingIndex} onTeach={id=>{void perform(()=>repo.teach(profileId,id))}} onBack={()=>go('dojo')} pending={pending}/>}
@@ -97,7 +99,7 @@ export default function JourneyScreen(){
     <Dialog open={panel==='places'} title={t('places')} closeLabel={t('close')} onClose={()=>setPanel(null)}><div className="journey-stack">{town.destinations.map(d=><Button key={d.id} variant="secondary" disabled={pending} onClick={()=>enter(d,d.point,'up')}>{d.name[lang]}</Button>)}</div></Dialog>
     <Dialog open={panel==='journal'} title={t('journal')} closeLabel={t('close')} onClose={()=>setPanel(null)}><div className="journey-stack"><h3>{t('suggested')}</h3><p>{t('noDeadline')}</p><p>{t('sections')} {summary.completedSections} / {data.study.gradeBand+1}</p><Progress label={t('partial')} value={summary.partialSection} max={5}/><p>{due.length ? `${t('due')} (${due.length})`:t('noDue')}</p>
       <label>{t('grade')} <select value={data.study.gradeBand} onChange={e=>{const value=Number(e.target.value) as 1|2|3;void perform(()=>repo.setGradeBand(profileId,value))}} style={{minHeight:64,padding:12,maxWidth:'100%'}}>{([1,2,3] as const).map(g=><option key={g} value={g}>{t(g===1?'grade1':g===2?'grade2':'grade3')}</option>)}</select></label>
-      <Button onClick={()=>go('dojo')}>{t('dojo')}</Button>{activeBattle && <Button variant="secondary" onClick={()=>go('battle',activeBattle.id)}>{t('resume')}</Button>}{unfinishedCheck && <Button variant="secondary" onClick={()=>go('check',unfinishedCheck.id)}>{t('check')}</Button>}
+      <Button onClick={()=>go('dojo')}>{t('dojo')}</Button>{resumeBattle && <Button variant="secondary" onClick={()=>go('battle',resumeBattle.id)}>{t('resume')}</Button>}{unfinishedCheck && <Button variant="secondary" onClick={()=>go('check',unfinishedCheck.id)}>{t('check')}</Button>}
       <h3>{t('story')}</h3>{(Array.isArray(data.world?.storyFlags) ? data.world.storyFlags:[]).map(flag=><p key={flag}>{town.destinations.find(d=>d.id===flag)?.name[lang]}</p>)}
       <OfflinePack/>
     </div></Dialog>

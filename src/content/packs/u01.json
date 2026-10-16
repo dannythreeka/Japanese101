@@ -292,7 +292,16 @@
       "audioScript": "わたし。あなた。ともだち。せんせい。がくせい。ひと。なまえ。",
       "audioSrc": "/assets/audio/u01/teach-words-1.wav",
       "titleJa": "じぶんと、ともだち",
-      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。"
+      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。",
+      "vocabularyIds": [
+        "U01-V01",
+        "U01-V02",
+        "U01-V03",
+        "U01-V04",
+        "U01-V05",
+        "U01-V06",
+        "U01-V07"
+      ]
     },
     {
       "id": "teach-words-2",
@@ -307,7 +316,12 @@
       "audioScript": "くに。にほん。たいわん。",
       "audioSrc": "/assets/audio/u01/teach-words-2.wav",
       "titleJa": "なまえと、くに",
-      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。"
+      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。",
+      "vocabularyIds": [
+        "U01-V08",
+        "U01-V09",
+        "U01-V10"
+      ]
     },
     {
       "id": "teach-words-3",
@@ -322,7 +336,16 @@
       "audioScript": "ほん。えんぴつ。かばん。つくえ。いす。ねこ。いぬ。",
       "audioSrc": "/assets/audio/u01/teach-words-3.wav",
       "titleJa": "ものと、どうぶつ",
-      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。"
+      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。",
+      "vocabularyIds": [
+        "U01-V11",
+        "U01-V12",
+        "U01-V13",
+        "U01-V14",
+        "U01-V15",
+        "U01-V16",
+        "U01-V17"
+      ]
     },
     {
       "id": "teach-words-4",
@@ -337,7 +360,17 @@
       "audioScript": "はい。いいえ。はじめまして。こんにちは。ありがとう。よろしく。おねがいします。どういたしまして。",
       "audioSrc": "/assets/audio/u01/teach-words-4.wav",
       "titleJa": "はじめてのあいさつ",
-      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。"
+      "translationJa": "ゆっくりよもう。いまぜんぶおぼえなくても、だいじょうぶ。",
+      "vocabularyIds": [
+        "U01-V18",
+        "U01-V19",
+        "U01-V20",
+        "U01-V21",
+        "U01-V22",
+        "U01-V23",
+        "U01-V24",
+        "U01-V25"
+      ]
     },
     {
       "id": "teach-kanji",
@@ -357,7 +390,14 @@
       "audioSrc": "/assets/audio/u01/teach-kanji.wav",
       "titleJa": "5つのかんじをてちょうへ",
       "translationJa": "よみかたは、ことばによってかわります。このかでは「日」と「本」で「日本（にほん）」をつくります。",
-      "bodyJa": "私（わたし）：じぶん\n人（ひと）：ひと\n日（にち／ひ）：ひにち。「日本」では「に」\n本（ほん）：ほん。「日本」でも「ほん」\n名（な）：なまえの「な」"
+      "bodyJa": "私（わたし）：じぶん\n人（ひと）：ひと\n日（にち／ひ）：ひにち。「日本」では「に」\n本（ほん）：ほん。「日本」でも「ほん」\n名（な）：なまえの「な」",
+      "kanjiIds": [
+        "U01-K01",
+        "U01-K02",
+        "U01-K03",
+        "U01-K04",
+        "U01-K05"
+      ]
     },
     {
       "id": "teach-G01",
@@ -377,7 +417,10 @@
       "audioSrc": "/assets/audio/u01/teach-G01.wav",
       "titleJa": "わたしはだれ？",
       "translationJa": "じぶんが、がくせいだとつたえています。",
-      "bodyJa": "「AはBです」で、AがBだとしょうかいします。この「は」は「わ」とよみます。"
+      "bodyJa": "「AはBです」で、AがBだとしょうかいします。この「は」は「わ」とよみます。",
+      "grammarIds": [
+        "G01"
+      ]
     },
     {
       "id": "teach-G02",
@@ -398,7 +441,10 @@
       "audioSrc": "/assets/audio/u01/teach-G02.wav",
       "titleJa": "あいてにきいてみよう",
       "translationJa": "あいてが、せんせいかどうかをきいています。",
-      "bodyJa": "「です」のあとに「か」をつけると、しつもんになります。「はい／いいえ」でこたえられます。"
+      "bodyJa": "「です」のあとに「か」をつけると、しつもんになります。「はい／いいえ」でこたえられます。",
+      "grammarIds": [
+        "G02"
+      ]
     },
     {
       "id": "teach-G03",
@@ -418,7 +464,10 @@
       "audioSrc": "/assets/audio/u01/teach-G03.wav",
       "titleJa": "わたしも、おなじ！",
       "translationJa": "じぶんも、がくせいだとつたえています。",
-      "bodyJa": "まえのひとのみぶんがわかっているとき、「も」で、じぶんもおなじだとつたえます。このぶんでは「は」のかわりに「も」をつかい、「はも」にはしません。"
+      "bodyJa": "まえのひとのみぶんがわかっているとき、「も」で、じぶんもおなじだとつたえます。このぶんでは「は」のかわりに「も」をつかい、「はも」にはしません。",
+      "grammarIds": [
+        "G03"
+      ]
     },
     {
       "id": "teach-story",

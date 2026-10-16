@@ -1,4 +1,6 @@
 export const CATALOG_VERSION = 'economy-v0.1'
+/** Monotonic stored revision prevents an older open tab from replacing newer prices. */
+export const CATALOG_REVISION = 1
 export type EquipmentSlot = 'head' | 'back' | 'neck'
 export interface CatalogItem { id:string; slot:EquipmentSlot; target:'player'|'fox'; price:number; armor:number; name:{zh:string;ja:string}; description:{zh:string;ja:string} }
 export const catalog: readonly CatalogItem[] = [

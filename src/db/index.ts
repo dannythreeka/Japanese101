@@ -5,7 +5,7 @@ import type { Profile } from '../types/profile'
 import { normalizePreferences } from './models'
 import type { ScopedProgress, ScopedSession, ProfilePreferences, MigrationBackup, GameCheckpoint, LevelSession, RewardReceipt } from './models'
 import type { Attempt } from '../content/contracts'
-import type { WorldCheckpoint, StudyPlan, SkillReview, BattleSession, CoinWallet, CoinLedger, InventoryItem, Equipment, PurchaseReceipt, FirstWin, LearningCheck } from './journey-models'
+import type { WorldCheckpoint, StudyPlan, SkillReview, BattleSession, CoinWallet, CoinLedger, InventoryItem, Equipment, PurchaseReceipt, FirstWin, LearningCheck, CatalogVersion } from './journey-models'
 
 export class AppDB extends Dexie {
   progress!: Table<ProgressRecord, string> // Original, read-only legacy-shared records.
@@ -34,6 +34,7 @@ export class AppDB extends Dexie {
   purchaseReceipts!: Table<PurchaseReceipt,string>
   firstWins!: Table<FirstWin,[string,string]>
   learningChecks!: Table<LearningCheck,string>
+  catalogVersions!: Table<CatalogVersion,string>
   constructor(name = 'Japanese101DB') {
     super(name)
     this.version(1).stores({
@@ -99,6 +100,7 @@ export class AppDB extends Dexie {
     })
     // v6 was already pushed as a review build: add tables with a new schema version.
     this.version(7).stores({learningChecks:'id, profileId, [profileId+unitId]'})
+    this.version(8).stores({catalogVersions:'id'})
   }
 }
 

@@ -57,6 +57,7 @@ export interface Attempt {
 export interface TeachingCard {
   id: string; skillIds: string[]; title: string; body: string; example: string; translation: string; audioSrc?: string
   titleJa?:string;bodyJa?:string;translationJa?:string
+  vocabularyIds?:string[];kanjiIds?:string[];grammarIds?:string[]
   prerequisites?: string[]
   audioScript?: string
 }
@@ -116,6 +117,8 @@ export function validateQuestionBank(input: unknown): string[] {
   const errors = input.flatMap(questionErrors)
   const ids = input.filter(record).map(q => String(q.id))
   if (!unique(ids)) errors.push('bank: duplicate question ID')
+  const revisions=input.filter(record).map(q=>`${q.unitId}:${q.itemId}:${q.version}`)
+  if(!unique(revisions))errors.push('bank: duplicate item revision')
   const partitions = new Map<string, string>()
   for (const q of input.filter(record)) {
     const family = String(q.itemFamilyId)
@@ -158,6 +161,12 @@ export function unitPackErrors(input:unknown):string[] {
   }
   errors.push(...validateQuestionBank(input.questions))
   for(const field of ['vocabulary','kanji'])for(const item of lists[field])for(const key of ['text','reading','meaning'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)
+  for(const item of lists.readings)for(const key of ['text','skillId'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)
+  for(const item of lists.listening){
+    for(const key of ['script','audioSrc','skillId'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)
+    if(!['DRAFT','APPROVED'].includes(String(item.reviewStatus)))errors.push(`${item.id}: invalid audio review`)
+    if(input.reviewStatus==='APPROVED' && item.reviewStatus!=='APPROVED')errors.push(`${item.id}: unreviewed listening material`)
+  }
   const teachingIds=new Set(lists.teaching.map(t=>String(t.id)))
   const graph=new Map(lists.teaching.map(t=>[String(t.id),strings(t.prerequisites) ? t.prerequisites:[]]))
   const visited=new Set<string>()
@@ -185,6 +194,11 @@ export function unitPackErrors(input:unknown):string[] {
     if(input.reviewStatus==='APPROVED' && q.reviewStatus!=='APPROVED')errors.push(`${q.id}: unreviewed question in approved unit`)
   }
   if(input.id==='U01') {
+    for(const [field,ref] of [['vocabulary','vocabularyIds'],['kanji','kanjiIds'],['grammar','grammarIds']] as const){
+      const known=new Set(lists[field].map(item=>String(item.id)))
+      for(const card of lists.teaching)if(card[ref]!==undefined && (!strings(card[ref]) || !unique(card[ref]) || card[ref].some(id=>!known.has(id))))errors.push(`${card.id}: invalid ${ref}`)
+      for(const id of known)if(!lists.teaching.some(c=>strings(c[ref]) && c[ref].includes(id)))errors.push(`${id}: missing teaching entry`)
+    }
     for(const q of lists.questions)if(typeof q.difficulty!=='number' || ![1,2,3].includes(q.difficulty))errors.push(`${q.id}: missing difficulty`)
     for(const [field,count] of [['vocabulary',25],['kanji',5],['grammar',3],['readings',4],['listening',6]] as const)if(lists[field].length!==count)errors.push(`U01: requires ${count} ${field}`)
     if(lists.questions.filter(q=>q.partition==='practice').length!==50)errors.push('U01: requires 50 practice questions')

@@ -1,0 +1,8 @@
+{
+  "date": "2026-10-16T06:04:10.058Z",
+  "source": "dcab575 + pending v8/catalog/review UI",
+  "browser": "145.0.7632.6",
+  "fixture": "isolated Chromium context with explicit 180-coin fixture; not a real child or earned rewards",
+  "scope": "engineering visual inspection pending; human approval NOT_RUN",
+  "pageErrors": []
+}

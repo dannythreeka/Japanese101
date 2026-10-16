@@ -1,5 +1,5 @@
 {
-  "version": "0fb11bb3aafe0be8",
+  "version": "0caff4d5abd051bd",
   "assets": [
     {
       "path": "assets/audio/kana_a.wav",
@@ -1172,6 +1172,31 @@
       "sha256": "4560236b263329e2cc74f33c3b98ca6a709d00979666fd7515137a23303982c7"
     },
     {
+      "path": "assets/audio/world/gardener-1.wav",
+      "bytes": 171598,
+      "sha256": "285543ecd6003bc46f1171ec58a8568b5480fdc3d0df5378622d287af4241e6d"
+    },
+    {
+      "path": "assets/audio/world/gardener-2.wav",
+      "bytes": 233550,
+      "sha256": "756a56214ecaf365296e8f932722afa20e154202e09ee9075928de077386529c"
+    },
+    {
+      "path": "assets/audio/world/manifest.json",
+      "bytes": 2662,
+      "sha256": "39b3aa3f090c0004c69cbad2d36277b016d0488332c1f5389ad5b354f22bc286"
+    },
+    {
+      "path": "assets/audio/world/traveler-1.wav",
+      "bytes": 137294,
+      "sha256": "7e1dc4a5d835dfa3cf4a548fc2dd9eee60bcc2b1c44b921493620e8a79fe2b00"
+    },
+    {
+      "path": "assets/audio/world/traveler-2.wav",
+      "bytes": 199246,
+      "sha256": "5a8aa99cf25cf5bf239ab5621a326672005d7be3db9290cb44fe2c758b4140e5"
+    },
+    {
       "path": "assets/img/journey/dojo.webp",
       "bytes": 441334,
       "sha256": "debd6e8da9c4199e192cfda6074a15a4b6f30931c77c74c4e8ece3a4c56296e3"
@@ -1183,13 +1208,13 @@
     },
     {
       "path": "assets/img/journey/gear-hat.webp",
-      "bytes": 441806,
-      "sha256": "6c890d76fe8e218d25c4f3ed3cb0fd5c86beda057337e74eb899191bf55f57cd"
+      "bytes": 381818,
+      "sha256": "47880e170921437052ada12e324074db8c1aee3d3ac00026c9db85f359ed7d86"
     },
     {
       "path": "assets/img/journey/gear-pack.webp",
-      "bytes": 386432,
-      "sha256": "9778633e763a7c7ae94d622ce3b3d6fd4afa29b5c6085dbcb2975ba293b026db"
+      "bytes": 307004,
+      "sha256": "4753fd1dc07aba20ed2e2edcafe1c43794f6be4c38cc0082605dc24660c3d690"
     },
     {
       "path": "assets/img/journey/gear-scarf.webp",
@@ -1203,8 +1228,8 @@
     },
     {
       "path": "assets/img/journey/manifest.json",
-      "bytes": 10967,
-      "sha256": "ea2ed84379db6e98e4915dc202c0b9d49b6361e52338b5ac7a683bb9a004fae7"
+      "bytes": 16026,
+      "sha256": "bc7dfa5d8c7dcace82626c496ee1e272350a9c2510d4adf16c6df1c4151afb09"
     },
     {
       "path": "assets/img/journey/mentor.webp",

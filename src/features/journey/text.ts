@@ -24,6 +24,11 @@ export const journeyText={
   parent:{zh:'家長區',ja:'ほごしゃ'},profiles:{zh:'切換玩家',ja:'プレイヤーをかえる'},report:{zh:'學習摘要',ja:'まなびのきろく'},accuracy:{zh:'首次獨立答對率',ja:'さいしょのこたえのせいかいりつ'},sample:{zh:'作答樣本',ja:'こたえのかず'},noEvidence:{zh:'尚未檢核／樣本不足',ja:'まだたしかめていません'},export:{zh:'匯出這位玩家的冒險紀錄',ja:'このプレイヤーのきろくをかきだす'},
   preview:{zh:'教材審閱預覽',ja:'きょうざいのかくにん'},previewDetail:{zh:'此版本供教材與玩法審閱；正式教材與實機驗收尚待完成。',ja:'きょうざいとあそびかたをかくにんするバージョンです。さいしゅうかくにんはまだです。'},
   saved:{zh:'已保存',ja:'ほぞんしました'},rest:{zh:'休息一下，旅程會等你',ja:'ひとやすみ。たびはまたつづけられるよ'},story:{zh:'小鎮見聞',ja:'まちのできごと'},checkDone:{zh:'檢核已保存',ja:'たしかめたきろくをほぞんしました'},reviewAnswers:{zh:'查看解說',ja:'かいせつをみる'},
+  catalogChanged:{zh:'商品已更新，請重新開啟，確認金幣與已購裝備。',ja:'しょうひんがかわりました。ひらきなおして、コインとかったどうぐをたしかめよう。'},reload:{zh:'重新開啟',ja:'ひらきなおす'},
+  returnDojo:{zh:'回到道館',ja:'どうじょうにもどる'},
+  hideScene:{zh:'收合對戰場景',ja:'バトルのえをたたむ'},showScene:{zh:'展開對戰場景',ja:'バトルのえをひらく'},
+  changed:{zh:'資料已更新，請看看目前的金幣與裝備。',ja:'きろくがかわりました。いまのコインとそうびをたしかめよう。'},
+  voiceError:{zh:'暫時聽不到這段話，可以重試或繼續閱讀。',ja:'このおとはきけません。もういちどためしたり、ぶんをよんだりできます。'},
 } as const
 export type JourneyTextKey=keyof typeof journeyText
 export function useJourneyText(){const lang=useAppStore(s=>s.uiLang);return {lang,t:(key:JourneyTextKey):string=>journeyText[key][lang]}}

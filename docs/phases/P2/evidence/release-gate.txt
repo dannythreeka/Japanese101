@@ -1,0 +1,33 @@
+
+> japanese101@0.0.0 validate:journey:release
+> tsx scripts/validate-journey.ts --release
+
+U01: human review required
+terrain: human visual review required
+dojo: human visual review required
+shop: human visual review required
+home: human visual review required
+player-sheet: human visual review required
+fox-sheet: human visual review required
+npc-haru: human visual review required
+npc-ritsu: human visual review required
+mentor: human visual review required
+opponent-sheet: human visual review required
+gear-hat: human visual review required
+gear-pack: human visual review required
+gear-scarf: human visual review required
+u01-contexts: human visual review required
+U01-L01: human listening review required
+U01-L02: human listening review required
+U01-L03: human listening review required
+U01-L04: human listening review required
+U01-L05: human listening review required
+U01-L06: human listening review required
+teach-words-1: human listening review required
+teach-words-2: human listening review required
+teach-words-3: human listening review required
+teach-words-4: human listening review required
+teach-kanji: human listening review required
+teach-G01: human listening review required
+teach-G02: human listening review required
+teach-G03: human listening review required

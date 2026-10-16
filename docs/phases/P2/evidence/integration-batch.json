@@ -24,5 +24,19 @@
     "reviewStatus": "DRAFT",
     "humanListening": "NOT_RUN"
   },
-  "remaining": "See progress and handoff; not ENGINEERING_READY"
+  "remaining": "See progress and handoff; not ENGINEERING_READY",
+  "nextBatch": {
+    "unitTests": 218,
+    "files": 24,
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "validateData": "PASS",
+    "validateBlueprint": "PASS",
+    "validateJourney": "PASS",
+    "reviewBuild": "PASS",
+    "offlineAssets": 444,
+    "newP2BrowserCases": 20,
+    "latestFullBrowser": "PENDING latest commit; prior v8 partial version Chromium/Firefox16 each PASS",
+    "humanReviews": "NOT_RUN"
+  }
 }

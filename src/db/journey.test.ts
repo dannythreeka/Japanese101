@@ -72,12 +72,27 @@ describe('P2-14 durable turn transactions',()=>{
   })
 })
 describe('P2-15 wallet and inventory',()=>{
+  it('an older tab cannot purchase at an obsolete price or replace newer catalog metadata',async()=>{
+    const win=await victory();await repo.reward('A',win.id)
+    await db.catalogVersions.put({id:'active',version:'economy-v0.2',revision:2})
+    await expect(repo.purchase('A','gear-travel-hat','old-tab-purchase',CATALOG_VERSION)).rejects.toThrow('Catalog version')
+    await expect(repo.openStudy('A')).rejects.toThrow('Catalog version')
+    expect((await db.catalogVersions.get('active'))?.revision).toBe(2)
+    expect((await repo.state('A')).coins).toBe(60);expect((await repo.state('A')).inventory).toEqual([])
+  })
+  it('a content/UI challenge alias preserves the original first-win key',async()=>{
+    const first=await victory();await db.battleSessions.update(first.id,{challengeId:'U01:practice'});expect((await repo.reward('A',first.id)).amount).toBe(60)
+    const second=await victory();expect((await repo.reward('A',second.id)).amount).toBe(10)
+  })
   it('quarantines malformed balances instead of inventing a zero balance or overwriting the record',async()=>{
     const win=await victory();await db.coinWallets.put({profileId:'A',balance:-1})
     await expect(repo.state('A')).rejects.toThrow('preserved')
     await expect(repo.reward('A',win.id)).rejects.toThrow('preserved')
     expect((await repo.exportJourney('A')).data.wallets).toEqual([{profileId:'A',balance:-1}])
     expect(await db.coinLedger.count()).toBe(0)
+    await db.coinWallets.put({profileId:'A',balance:Number.MAX_SAFE_INTEGER})
+    await expect(repo.reward('A',win.id)).rejects.toThrow('overflow')
+    expect((await repo.state('A')).coins).toBe(Number.MAX_SAFE_INTEGER)
   })
   it('awards first victory once, repeats 10, never changes another player',async()=>{
     const first=await victory()
@@ -98,6 +113,8 @@ describe('P2-15 wallet and inventory',()=>{
     const item=state.inventory[0]
     await repo.purchase('A',item.itemId,item.purchaseId,CATALOG_VERSION)
     expect((await repo.state('A')).coins).toBe(state.coins)
+    expect(await repo.purchase('A',item.itemId,'another-tab-intent',CATALOG_VERSION)).toBe('already-owned')
+    expect(await db.purchaseReceipts.count()).toBe(1)
     await expect(repo.purchase('B',item.itemId,item.purchaseId,CATALOG_VERSION)).rejects.toThrow('identity')
     await expect(repo.purchase('A','gear-travel-pack','p3','obsolete')).rejects.toThrow('version')
   })

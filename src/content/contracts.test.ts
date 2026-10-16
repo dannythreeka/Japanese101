@@ -23,4 +23,10 @@ describe('U01 runtime content safety',()=>{
     const fewer=structuredClone(raw);fewer.questions.pop();fewer.questions.splice(0,1)
     expect(unitPackErrors(fewer)).toContain('U01: requires 50 practice questions')
   })
+  it('rejects an unteachable vocabulary ID and duplicate item revision under a different question ID',()=>{
+    const orphan=structuredClone(raw);orphan.teaching[0].vocabularyIds=[]
+    expect(unitPackErrors(orphan).join(' ')).toContain('U01-V01: missing teaching entry')
+    const duplicate=structuredClone(raw);duplicate.questions[1].itemId=duplicate.questions[0].itemId
+    expect(unitPackErrors(duplicate)).toContain('bank: duplicate item revision')
+  })
 })

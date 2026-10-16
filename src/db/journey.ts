@@ -3,7 +3,7 @@ import type { UnitPack, Question } from '../content/contracts'
 import { parseQuestion, validateQuestionBank } from '../content/contracts'
 import { createAttempt, localDay, nextReview, planQuestions, summarize } from '../learning/rules'
 import { BATTLE_RULES_VERSION, initialCombat, resolveTurn, type Move } from '../battle/rules'
-import { CATALOG_VERSION, armorFor, catalogItem } from '../economy/catalog'
+import { CATALOG_VERSION, CATALOG_REVISION, armorFor, catalogItem } from '../economy/catalog'
 import { WORLD_VERSION, safePoint, town, walkable, type Facing, type Point } from '../world/map'
 import type { BattleSession, CoinLedger, JourneyTables, StudyPlan, WorldCheckpoint, LearningCheck } from './journey-models'
 import {currentBattle,currentCheck,currentStudy,currentWorld} from './journey-compatibility'
@@ -25,6 +25,10 @@ export class JourneyRepository {
   }
   private async owned(profileId:string) {
     if(!await this.database.profiles.get(profileId)) throw new Error('Player no longer exists')
+  }
+  private async catalogCurrent():Promise<void>{
+    const current=await this.database.catalogVersions.get('active')
+    if(!current || current.version!==CATALOG_VERSION || current.revision!==CATALOG_REVISION)throw new Error('Catalog version changed; refresh before purchasing or equipping')
   }
   private question(id:string): Question {
     const question=this.pack.questions.find(q=>q.id===id)
@@ -55,8 +59,11 @@ export class JourneyRepository {
   }
   async openStudy(profileId:string, gradeBand:1|2|3=1, now=Date.now(), timeZone=Intl.DateTimeFormat().resolvedOptions().timeZone): Promise<StudyPlan> {
     const d=this.database
-    return d.transaction('rw',[d.profiles,d.studyPlans],async()=>{
+    return d.transaction('rw',[d.profiles,d.studyPlans,d.catalogVersions],async()=>{
       await this.owned(profileId)
+      const current=await d.catalogVersions.get('active')
+      if(current && (!Number.isSafeInteger(current.revision) || current.revision>CATALOG_REVISION || current.revision===CATALOG_REVISION && current.version!==CATALOG_VERSION))throw new Error('Catalog version changed; refresh to the current application')
+      if(!current || current.revision<CATALOG_REVISION)await d.catalogVersions.put({id:'active',version:CATALOG_VERSION,revision:CATALOG_REVISION})
       const previous=await d.studyPlans.get([profileId,this.pack.id])
       if(previous && !currentStudy(previous,this.pack)) throw new Error('Content version changed or study data incompatible; original study plan is preserved')
       if(previous) return previous
@@ -228,10 +235,10 @@ export class JourneyRepository {
       if(existing) return existing
       const attempt=battle.lastAttemptId && await d.learningAttempts.get(battle.lastAttemptId)
       if(battle.phase!=='finished' || battle.status!=='won' || battle.enemyHp!==0 || !attempt || attempt.profileId!==profileId || attempt.sessionId!==battleId) throw new Error('A verified victory is required')
-      const first=await d.firstWins.get([profileId,battle.challengeId])
+      const first=await d.firstWins.get([profileId,battle.challengeId]) ?? (battle.challengeId===`${this.pack.id}:dojo` ? await d.firstWins.get([profileId,`${this.pack.id}:practice`]):undefined)
       const amount=first ? 10:60
       const old=walletBalance(await d.coinWallets.get(profileId))
-      if(!Number.isSafeInteger(old) || old<0) throw new Error('Wallet is invalid; original data is preserved')
+      if(!Number.isSafeInteger(old+amount) || old<0) throw new Error('Wallet is invalid or would overflow; original data is preserved')
       const receipt:CoinLedger={id,profileId,kind:'reward',amount,balanceAfter:old+amount,battleId,createdAt:Date.now()}
       await d.coinWallets.put({profileId,balance:old+amount})
       await d.coinLedger.add(receipt)
@@ -239,19 +246,20 @@ export class JourneyRepository {
       return receipt
     })
   }
-  async purchase(profileId:string,itemId:string,purchaseId:string,catalogVersion:string): Promise<void> {
+  async purchase(profileId:string,itemId:string,purchaseId:string,catalogVersion:string): Promise<'purchased'|'already-owned'|'replayed'> {
     const item=catalogItem(itemId)
-    if(!purchaseId || purchaseId.length>200 || catalogVersion!==CATALOG_VERSION) throw new Error('Catalog version changed')
+    if(typeof purchaseId!=='string' || !purchaseId || purchaseId.trim()!==purchaseId || purchaseId.length>200 || catalogVersion!==CATALOG_VERSION) throw new Error('Catalog version or purchase identity changed')
     const d=this.database
-    await d.transaction('rw',[d.profiles,d.coinWallets,d.coinLedger,d.inventory,d.equipment,d.purchaseReceipts,d.battleSessions],async()=>{
+    return d.transaction('rw',[d.profiles,d.coinWallets,d.coinLedger,d.inventory,d.equipment,d.purchaseReceipts,d.battleSessions,d.catalogVersions],async()=>{
       await this.owned(profileId)
       const receipt=await d.purchaseReceipts.get(purchaseId)
       if(receipt) {
         if(receipt.profileId!==profileId || receipt.itemId!==itemId || receipt.catalogVersion!==catalogVersion) throw new Error('Purchase identity changed')
-        return
+        return 'replayed' as const
       }
+      await this.catalogCurrent()
       if((await d.battleSessions.where('profileId').equals(profileId).toArray()).some(b=>b.phase!=='finished')) throw new Error('Equipment is locked during battle')
-      if(await d.inventory.get([profileId,itemId])) throw new Error('Item already owned')
+      if(await d.inventory.get([profileId,itemId])) return 'already-owned' as const
       const balance=walletBalance(await d.coinWallets.get(profileId))
       if(!Number.isSafeInteger(balance) || balance<item.price) throw new Error('Not enough coins')
       const slots=(await d.equipment.get(profileId))?.slots ?? {}
@@ -260,12 +268,14 @@ export class JourneyRepository {
       await d.equipment.put({profileId,slots:{...slots,[item.slot]:itemId}})
       await d.purchaseReceipts.add({id:purchaseId,profileId,itemId,catalogVersion,price:item.price,createdAt:Date.now()})
       await d.coinLedger.add({id:`purchase:${purchaseId}`,profileId,kind:'purchase',amount:-item.price,balanceAfter:balance-item.price,purchaseId,createdAt:Date.now()})
+      return 'purchased' as const
     })
   }
   async equip(profileId:string,itemId:string,enabled:boolean): Promise<void> {
     const item=catalogItem(itemId);const d=this.database
-    await d.transaction('rw',[d.profiles,d.inventory,d.equipment,d.battleSessions],async()=>{
+    await d.transaction('rw',[d.profiles,d.inventory,d.equipment,d.battleSessions,d.catalogVersions],async()=>{
       await this.owned(profileId)
+      await this.catalogCurrent()
       if((await d.battleSessions.where('profileId').equals(profileId).toArray()).some(b=>b.phase!=='finished')) throw new Error('Equipment is locked during battle')
       if(!await d.inventory.get([profileId,itemId])) throw new Error('Item is not owned')
       const slots={...(await d.equipment.get(profileId))?.slots}
@@ -331,10 +341,10 @@ export class JourneyRepository {
   }
   async exportJourney(profileId:string): Promise<{version:'journey-backup-v1';profileId:string;data:JourneyTables;summary:ReturnType<typeof summarize>}> {
     const d=this.database
-    const tables=[d.profiles,d.learningAttempts,d.worldCheckpoints,d.studyPlans,d.skillReviews,d.battleSessions,d.coinWallets,d.coinLedger,d.inventory,d.equipment,d.purchaseReceipts,d.firstWins,d.learningChecks]
+    const tables=[d.profiles,d.learningAttempts,d.worldCheckpoints,d.studyPlans,d.skillReviews,d.battleSessions,d.coinWallets,d.coinLedger,d.inventory,d.equipment,d.purchaseReceipts,d.firstWins,d.learningChecks,d.catalogVersions]
     return d.transaction('r',tables,async()=>{
       await this.owned(profileId)
-      const data:JourneyTables={attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),world:await d.worldCheckpoints.where('profileId').equals(profileId).toArray(),plans:await d.studyPlans.where('profileId').equals(profileId).toArray(),reviews:await d.skillReviews.where('profileId').equals(profileId).toArray(),battles:await d.battleSessions.where('profileId').equals(profileId).toArray(),checks:await d.learningChecks.where('profileId').equals(profileId).toArray(),wallets:await d.coinWallets.where('profileId').equals(profileId).toArray(),ledger:await d.coinLedger.where('profileId').equals(profileId).toArray(),inventory:await d.inventory.where('profileId').equals(profileId).toArray(),equipment:await d.equipment.where('profileId').equals(profileId).toArray(),purchases:await d.purchaseReceipts.where('profileId').equals(profileId).toArray(),firstWins:await d.firstWins.where('profileId').equals(profileId).toArray()}
+      const data:JourneyTables={attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),world:await d.worldCheckpoints.where('profileId').equals(profileId).toArray(),plans:await d.studyPlans.where('profileId').equals(profileId).toArray(),reviews:await d.skillReviews.where('profileId').equals(profileId).toArray(),battles:await d.battleSessions.where('profileId').equals(profileId).toArray(),checks:await d.learningChecks.where('profileId').equals(profileId).toArray(),wallets:await d.coinWallets.where('profileId').equals(profileId).toArray(),ledger:await d.coinLedger.where('profileId').equals(profileId).toArray(),inventory:await d.inventory.where('profileId').equals(profileId).toArray(),equipment:await d.equipment.where('profileId').equals(profileId).toArray(),purchases:await d.purchaseReceipts.where('profileId').equals(profileId).toArray(),firstWins:await d.firstWins.where('profileId').equals(profileId).toArray(),catalogVersions:await d.catalogVersions.toArray()}
       return {version:'journey-backup-v1',profileId,data,summary:summarize(data.attempts)}
     })
   }

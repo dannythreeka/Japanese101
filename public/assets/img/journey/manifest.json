@@ -1,5 +1,5 @@
 {
-  "version": "journey-art-v1",
+  "version": "journey-art-v2",
   "reviewStatus": "DRAFT",
   "reviewer": null,
   "reviewedAt": null,
@@ -102,7 +102,99 @@
       "transparentPixels": 1089156,
       "columns": 3,
       "rows": 5,
-      "reviewStatus": "DRAFT"
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 324,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 648,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 0,
+          "y": 323,
+          "w": 323,
+          "h": 321
+        },
+        {
+          "x": 324,
+          "y": 323,
+          "w": 323,
+          "h": 321
+        },
+        {
+          "x": 648,
+          "y": 323,
+          "w": 323,
+          "h": 321
+        },
+        {
+          "x": 0,
+          "y": 644,
+          "w": 323,
+          "h": 324
+        },
+        {
+          "x": 324,
+          "y": 644,
+          "w": 323,
+          "h": 324
+        },
+        {
+          "x": 648,
+          "y": 644,
+          "w": 323,
+          "h": 324
+        },
+        {
+          "x": 0,
+          "y": 968,
+          "w": 323,
+          "h": 318
+        },
+        {
+          "x": 324,
+          "y": 968,
+          "w": 323,
+          "h": 318
+        },
+        {
+          "x": 648,
+          "y": 968,
+          "w": 323,
+          "h": 318
+        },
+        {
+          "x": 0,
+          "y": 1286,
+          "w": 323,
+          "h": 333
+        },
+        {
+          "x": 324,
+          "y": 1286,
+          "w": 323,
+          "h": 333
+        },
+        {
+          "x": 648,
+          "y": 1286,
+          "w": 323,
+          "h": 333
+        }
+      ]
     },
     {
       "id": "fox-sheet",
@@ -121,7 +213,99 @@
       "transparentPixels": 855245,
       "columns": 3,
       "rows": 5,
-      "reviewStatus": "DRAFT"
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 324,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 648,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 0,
+          "y": 323,
+          "w": 323,
+          "h": 296
+        },
+        {
+          "x": 324,
+          "y": 323,
+          "w": 323,
+          "h": 296
+        },
+        {
+          "x": 648,
+          "y": 323,
+          "w": 323,
+          "h": 296
+        },
+        {
+          "x": 0,
+          "y": 619,
+          "w": 323,
+          "h": 294
+        },
+        {
+          "x": 324,
+          "y": 619,
+          "w": 323,
+          "h": 294
+        },
+        {
+          "x": 648,
+          "y": 619,
+          "w": 323,
+          "h": 294
+        },
+        {
+          "x": 0,
+          "y": 913,
+          "w": 323,
+          "h": 320
+        },
+        {
+          "x": 324,
+          "y": 913,
+          "w": 323,
+          "h": 320
+        },
+        {
+          "x": 648,
+          "y": 913,
+          "w": 323,
+          "h": 320
+        },
+        {
+          "x": 0,
+          "y": 1233,
+          "w": 323,
+          "h": 386
+        },
+        {
+          "x": 324,
+          "y": 1233,
+          "w": 323,
+          "h": 386
+        },
+        {
+          "x": 648,
+          "y": 1233,
+          "w": 323,
+          "h": 386
+        }
+      ]
     },
     {
       "id": "npc-haru",
@@ -197,45 +381,117 @@
       "transparentPixels": 865089,
       "columns": 3,
       "rows": 1,
-      "reviewStatus": "DRAFT"
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 690,
+          "h": 724
+        },
+        {
+          "x": 715,
+          "y": 0,
+          "w": 690,
+          "h": 724
+        },
+        {
+          "x": 1475,
+          "y": 0,
+          "w": 690,
+          "h": 724
+        }
+      ]
     },
     {
       "id": "gear-hat",
       "src": "/assets/img/journey/gear-hat.webp",
-      "version": "1",
+      "version": "2",
       "source": "Built-in imagegen; original retained unchanged",
-      "sourceFile": "exec-2b634d9c-f0e5-4bc9-884e-2e3697aa5dfb.png",
-      "sourceSha256": "6463de28d2888ac6821fa54ffb2a1b527853719224088c4f82327110a3eeca8d",
-      "sourceBytes": 1882495,
+      "sourceFile": "exec-ee380d6b-f2c2-425d-bc46-111d8eca8f5d.png",
+      "sourceSha256": "7ba05fadc858fc6414a1368370a58d21ac2a4c179ae3ed9bbbc9171c498b2980",
+      "sourceBytes": 1873616,
       "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
-      "sha256": "6c890d76fe8e218d25c4f3ed3cb0fd5c86beda057337e74eb899191bf55f57cd",
-      "bytes": 441806,
+      "sha256": "47880e170921437052ada12e324074db8c1aee3d3ac00026c9db85f359ed7d86",
+      "bytes": 381818,
       "width": 1254,
       "height": 1254,
       "transparent": true,
-      "transparentPixels": 894883,
+      "transparentPixels": 859394,
       "columns": 2,
       "rows": 2,
-      "reviewStatus": "DRAFT"
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
     },
     {
       "id": "gear-pack",
       "src": "/assets/img/journey/gear-pack.webp",
-      "version": "1",
+      "version": "2",
       "source": "Built-in imagegen; original retained unchanged",
-      "sourceFile": "exec-10bf7d37-b0f4-4efd-b423-2dcd11cf2be1.png",
-      "sourceSha256": "b777d221e49347ac1af548d3633009816625ef55c5155421a01996db47342a97",
-      "sourceBytes": 1786068,
+      "sourceFile": "exec-4f678055-4556-4edf-b484-57106176a69a.png",
+      "sourceSha256": "74b50bd06fb9da49451e382ea2e13e2b4f272df6479e134d80d5434c92a199ec",
+      "sourceBytes": 1643921,
       "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
-      "sha256": "9778633e763a7c7ae94d622ce3b3d6fd4afa29b5c6085dbcb2975ba293b026db",
-      "bytes": 386432,
+      "sha256": "4753fd1dc07aba20ed2e2edcafe1c43794f6be4c38cc0082605dc24660c3d690",
+      "bytes": 307004,
       "width": 1254,
       "height": 1254,
       "transparent": true,
-      "transparentPixels": 898190,
+      "transparentPixels": 925786,
       "columns": 2,
       "rows": 2,
-      "reviewStatus": "DRAFT"
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
     },
     {
       "id": "gear-scarf",
@@ -254,7 +510,33 @@
       "transparentPixels": 1039376,
       "columns": 2,
       "rows": 2,
-      "reviewStatus": "DRAFT"
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
     },
     {
       "id": "u01-contexts",
@@ -273,7 +555,33 @@
       "transparentPixels": 0,
       "columns": 2,
       "rows": 2,
-      "reviewStatus": "DRAFT"
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
     }
   ]
 }

@@ -3,11 +3,15 @@ import { findPath, town, WORLD_VERSION } from './map'
 import { BATTLE_RULES_VERSION } from '../battle/rules'
 import { CATALOG_VERSION, catalog } from '../economy/catalog'
 import { journeyManifest } from './manifest'
-export interface ArtAsset {id:string;src:string;columns:number;rows:number;bytes:number;sha256:string;reviewStatus:string}
+export interface ArtAsset {id:string;src:string;columns:number;rows:number;width:number;height:number;bytes:number;sha256:string;reviewStatus:string;frameWindows?:{x:number;y:number;w:number;h:number}[]}
 export function journeyErrors(manifest:typeof journeyManifest,pack:UnitPack,assets:ArtAsset[],skillIds:string[],formal=false):string[]{
   const errors=unitPackErrors(pack);const assetIds=new Set(assets.map(a=>a.id));const ids=new Set<string>()
   const need=(id:string,label:string)=>{if(!assetIds.has(id))errors.push(`${label}: missing asset ${id}`)}
   if(assetIds.size!==assets.length)errors.push('assets: duplicate ID')
+  for(const a of assets)if(a.columns*a.rows>1){
+    if(a.frameWindows?.length!==a.columns*a.rows)errors.push(`${a.id}: missing frame windows`)
+    for(const f of a.frameWindows ?? [])if(![f.x,f.y,f.w,f.h].every(Number.isInteger) || f.x<0 || f.y<0 || f.w<=0 || f.h<=0 || f.x+f.w>a.width || f.y+f.h>a.height)errors.push(`${a.id}: invalid frame window`)
+  }
   if(manifest.worldVersion!==WORLD_VERSION || manifest.mapId!==town.id)errors.push('world: version/map mismatch')
   if(manifest.rulesVersion!==BATTLE_RULES_VERSION || manifest.catalogVersion!==CATALOG_VERSION)errors.push('rules/catalog: version mismatch')
   for(const destination of town.destinations){if(!findPath(town.spawn,destination.point))errors.push(`${destination.id}: unreachable`);if(destination.asset)need(destination.asset,destination.id)}

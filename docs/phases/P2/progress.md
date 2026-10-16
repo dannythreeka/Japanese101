@@ -54,3 +54,13 @@ U01草稿：25詞、5漢字、3文法、4閱讀、6聽力、50practice與15check
 Chromium與Firefox各15項新suite首次14 PASS／1 FAIL；FAIL為名字selector同時找到header與hidden dialog，已限定header並保持原隔離斷言，待重跑。兩引擎實際六聽力播放、音訊失敗不記錯、storage故障保留答案、版本備份、四播放器、完整金幣購物、五寬、200%文字及真斷站冷啟冒險已PASS（程式隨後加強同版本壞資料／錢包保全並升內容版本，需重跑受影響suite）。新資料損壞不默認清空或重設餘額，PIN後可匯出原始紀錄。
 
 商品版本跨新舊分頁的canonical價格檢查仍需補強，尚不標P2-15 DONE；其他工程task持續待完整三引擎CI與證據。真人review ledger在docs/content/U01/review-ledger.json，全部NOT_RUN。
+
+第四批：v8 catalogVersions保存單調遞增商品revision，舊分頁不能用舊價格購買或覆蓋新版；同物競購回傳already-owned不再假報儲存失敗，餘額競爭刷新實際狀態。題目／美術改版不重置舊practice首勝鍵。新增overflow與非法purchase identity邊界。217單元、typecheck、lint PASS。
+
+前一工程提交dcab575的Test&Build及三引擎全PASS，evidence/ci-dcab575.json；該結果不冒充尚未提交的v8／美術v2。v8局部版Chromium／Firefox各16項全過，包含真斷站冷啟與六WAV；新增長閱讀／防重播／雙分頁同物／審閱console與20次資源檢查待最新suite。Chromium20次世界移動、進出音訊後RAF／interval／45s播放timeout／active audio歸零已PASS，後續完整CI再驗。
+
+P2-03／04／05／12工程驗收DONE（Codex工程reviewer）；P2-11、U01-M已交可審閱結果，IN_REVIEW但真人尚NOT_RUN。其餘task依賴保持真實。U01-T／Q1／Q2／A／V／I正式依賴未滿，草稿可看不等於DONE。真人集中步驟見human-review.md。
+
+新審閱頁 /#/__review/content 可看全部65題與正解、14教材＋4居民WAV、四方向及三戰鬥姿態裝備；完全不寫Attempt／wallet或簽核。居民朗讀已改四段本地WAV，以免依賴平板是否有系統日語聲線；生成時遇429，保留已完成兩檔並經工作間隔有限續作，四檔均已完成DRAFT。美術v2背面視角修正、manifest frameWindows與三場景新截圖保存evidence/gear-visual；Codex已實際看圖，真人核准仍NOT_RUN。
+
+第四批提交前檢查：218 tests／24 files、typecheck、lint、validate:data、blueprint與validate:journey全PASS，審閱build PASS（444離線素材）。新P2 suite共20項，含兩頁同物競購、長閱讀五寬、平板768×1024／1024×768、200%文字、審閱頁無寫入及20次資源檢查；最新全suite待本批提交後重跑。詞／漢字／文法均有明確teaching refs，duplicate item revision壞fixture會失敗。

@@ -5,7 +5,8 @@ import type { Facing, Point } from '../world/map'
 import type { ReviewSchedule } from '../learning/rules'
 import type { MigrationBackup } from './models'
 export interface WorldCheckpoint { profileId:string; mapId:string; worldVersion:string; position:Point; facing:Facing; storyFlags:string[]; updatedAt:number }
-export interface StudyPlan { profileId:string; unitId:string; contentVersion:string; taughtCards:string[]; taughtAt:Record<string,number>; date:string; timeZone:string; gradeBand:1|2|3; questionIds:string[]; updatedAt:number }
+export type JourneyComfort='new'|'some'|'review'
+export interface StudyPlan { profileId:string; unitId:string; contentVersion:string; taughtCards:string[]; taughtAt:Record<string,number>; date:string; timeZone:string; gradeBand:1|2|3; questionIds:string[]; updatedAt:number; onboarding?:{comfort:JourneyComfort;skipped:boolean;updatedAt:number} }
 export interface SkillReview extends ReviewSchedule { profileId:string; skillId:string; timeZone:string }
 export interface BattleSession extends CombatState { id:string; profileId:string; challengeId:string; unitId:string; contentVersion:string; rulesVersion:string; phase:'choosing'|'question'|'feedback'|'finished'; move?:Move; questionIds:string[]; currentQuestionId?:string; lastAttemptId?:string; feedbackBefore?:{playerHp:number;enemyHp:number}; endReason?:'questions-complete'|'version-recovery'; loadoutSnapshot:string[]; createdAt:number; updatedAt:number }
 export interface CoinWallet { profileId:string; balance:number }

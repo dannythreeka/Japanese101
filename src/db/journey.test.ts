@@ -246,6 +246,16 @@ describe('P2-04 independent checks',()=>{
   })
 })
 describe('P2-05 spaced review version recovery',()=>{
+  it('saves first-journey preferences atomically without changing learning evidence or another player',async()=>{
+    await repo.openStudy('A')
+    vi.spyOn(db.studyPlans,'put').mockRejectedValueOnce(new Error('setup quota'))
+    const input={name:'初次旅行',gradeBand:3 as const,comfort:'some' as const,skipped:false}
+    await expect(repo.configureJourney('A',input)).rejects.toThrow('quota')
+    expect((await db.profiles.get('A'))?.name).toBe('A');expect((await repo.state('A')).study?.onboarding).toBeUndefined()
+    await repo.configureJourney('A',input)
+    expect((await repo.state('A')).study).toMatchObject({gradeBand:3,onboarding:{comfort:'some',skipped:false},taughtCards:[]})
+    expect((await db.profiles.get('B'))?.name).toBe('B');expect((await repo.state('A')).attempts).toEqual([]);expect((await repo.state('A')).reviews).toEqual([])
+  })
   it('backs up a prior over-promoted schedule and rebuilds only from that player’s real attempts',async()=>{
     const day=Date.parse('2026-10-16T02:00:00Z')
     await repo.openStudy('A',1,day,'Asia/Taipei');await repo.teach('A','teach',day)

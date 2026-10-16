@@ -29,6 +29,10 @@ export const journeyText={
   hideScene:{zh:'收合對戰場景',ja:'バトルのえをたたむ'},showScene:{zh:'展開對戰場景',ja:'バトルのえをひらく'},
   changed:{zh:'資料已更新，請看看目前的金幣與裝備。',ja:'きろくがかわりました。いまのコインとそうびをたしかめよう。'},
   voiceError:{zh:'暫時聽不到這段話，可以重試或繼續閱讀。',ja:'このおとはきけません。もういちどためしたり、ぶんをよんだりできます。'},
+  welcome:{zh:'歡迎來到青葉町',ja:'あおばまちへようこそ'},nickname:{zh:'旅行者的暱稱',ja:'たびびとのなまえ'},comfort:{zh:'現在對日語的感覺',ja:'いまのにほんご'},comfortNew:{zh:'我剛開始接觸',ja:'はじめて'},comfortSome:{zh:'我認識一些假名',ja:'かなをすこししっている'},comfortReview:{zh:'我想練習與複習',ja:'れんしゅうとふくしゅうがしたい'},
+  intro:{zh:'點地面就能散步，靠近居民或門口再互動。道館可以學日語，商店可以試穿裝備。會不會都沒關係，導師會陪你學。',ja:'じめんをおすとあるけるよ。ひとやいりぐちにちかづいて、はなしたりはいったりしよう。どうじょうでにほんご、おみせでそうび。せんせいといっしょにまなぼう。'},beginTown:{zh:'出發去小鎮',ja:'まちへしゅっぱつ'},skipIntro:{zh:'略過，先探索',ja:'あとで。まずたんけん'},replayIntro:{zh:'重看旅行說明',ja:'たびのせつめいをみる'},
+  unitGoal:{zh:'介紹自己，也聽懂新朋友的名字與身分。',ja:'じぶんをしょうかいして、ともだちのなまえとみぶんをきこう。'},
+  refreshError:{zh:'操作已處理，但暫時無法讀取最新畫面。請重試讀取。',ja:'そうさはおわりましたが、あたらしいきろくをよめません。もういちどよみこもう。'},
 } as const
 export type JourneyTextKey=keyof typeof journeyText
 export function useJourneyText(){const lang=useAppStore(s=>s.uiLang);return {lang,t:(key:JourneyTextKey):string=>journeyText[key][lang]}}

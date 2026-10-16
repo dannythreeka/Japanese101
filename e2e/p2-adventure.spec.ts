@@ -10,7 +10,12 @@ async function records<T>(page:Page,store:string):Promise<T[]> {
     request.onsuccess=()=>{const db=request.result,tx=db.transaction(store),read=tx.objectStore(store).getAll();read.onsuccess=()=>resolve(read.result);read.onerror=()=>reject(read.error);tx.oncomplete=()=>db.close()}
   }),store) as Promise<T[]>
 }
-async function open(page:Page){await page.goto('/#/preview/adventure');await expect(page.getByRole('heading',{name:'青葉町旅行手帳',exact:true})).toBeVisible()}
+async function open(page:Page){
+  await page.goto('/#/preview/adventure');await expect(page.getByRole('heading',{name:'青葉町旅行手帳',exact:true})).toBeVisible()
+  const id=await page.evaluate(()=>localStorage.getItem('activeProfileId') ?? 'player')
+  const study=(await records<{profileId:string;onboarding?:unknown;taughtCards:string[]}>(page,'studyPlans')).find(s=>s.profileId===id)
+  if(study && !study.onboarding && !study.taughtCards.length && !(await records<Attempt>(page,'learningAttempts')).some(a=>a.profileId===id))await page.getByRole('button',{name:'略過，先探索',exact:true}).click()
+}
 async function place(page:Page,name:string){await page.getByRole('button',{name:'地點清單',exact:true}).click();await page.getByRole('dialog').getByRole('button',{name,exact:true}).click()}
 async function teach(page:Page){
   await place(page,'初芽道館');await page.getByRole('button',{name:'認識新內容',exact:true}).click()
@@ -38,12 +43,30 @@ test('storage failure keeps the exact selected answer and turn; retry records on
   await open(page);await teach(page);await page.getByRole('button',{name:'練習對戰',exact:true}).click();await page.getByRole('button',{name:'普通攻擊',exact:true}).click()
   const battle=(await records<BattleSession>(page,'battleSessions'))[0];const question=pack.questions.find(q=>q.id===battle.currentQuestionId)!
   await page.getByRole('button',{name:question.choices.find(c=>c.id===question.answer[0])!.text,exact:true}).click()
+  await page.getByRole('button',{name:'暫停旅程',exact:true}).click();expect(await records(page,'learningAttempts')).toEqual([]);await page.getByRole('dialog').getByRole('button',{name:'繼續冒險',exact:true}).click();await expect(page.getByRole('button',{name:question.choices.find(c=>c.id===question.answer[0])!.text,exact:true})).toHaveAttribute('aria-pressed','true')
   await page.evaluate(()=>{const original=IDBObjectStore.prototype.add;IDBObjectStore.prototype.add=function(...args:Parameters<IDBObjectStore['add']>){if(this.name==='learningAttempts'){IDBObjectStore.prototype.add=original;throw new DOMException('P2 isolated quota fault','QuotaExceededError')}return original.apply(this,args)}})
   await page.getByRole('button',{name:'確認答案',exact:true}).click();await expect(page.getByRole('heading',{name:'還沒存好',exact:true})).toBeVisible()
   expect(await records(page,'learningAttempts')).toEqual([]);expect((await records<BattleSession>(page,'battleSessions'))[0]).toMatchObject({enemyHp:30,phase:'question'})
   await expect(page.getByRole('button',{name:question.choices.find(c=>c.id===question.answer[0])!.text,exact:true})).toHaveAttribute('aria-pressed','true')
   await page.getByRole('button',{name:'重試',exact:true}).click();await expect(page.getByRole('heading',{name:'答對了，一起記住這個重點。',exact:true})).toBeVisible()
   expect((await records<BattleSession>(page,'battleSessions'))[0].enemyHp).toBe(22);expect(await records(page,'learningAttempts')).toHaveLength(1)
+})
+test('a committed answer with a failed refresh retries only its read and never repeats damage',async({page})=>{
+  await open(page);await teach(page);await page.getByRole('button',{name:'練習對戰',exact:true}).click();await page.getByRole('button',{name:'普通攻擊',exact:true}).click()
+  const battle=(await records<BattleSession>(page,'battleSessions'))[0];const question=pack.questions.find(q=>q.id===battle.currentQuestionId)!
+  await page.getByRole('button',{name:question.choices.find(c=>c.id===question.answer[0])!.text,exact:true}).click()
+  await page.evaluate(()=>{const put=IDBObjectStore.prototype.put,get=IDBObjectStore.prototype.get;IDBObjectStore.prototype.put=function(...args:Parameters<IDBObjectStore['put']>){const request=put.apply(this,args);if(this.name==='skillReviews')request.addEventListener('success',()=>{IDBObjectStore.prototype.put=put;IDBObjectStore.prototype.get=function(...args:Parameters<IDBObjectStore['get']>){if(this.name==='studyPlans'){IDBObjectStore.prototype.get=get;throw new DOMException('P2 read after answer commit fault','UnknownError')}return get.apply(this,args)}},{once:true});return request}})
+  await page.getByRole('button',{name:'確認答案',exact:true}).click();await expect(page.getByRole('heading',{name:'操作已處理，但暫時無法讀取最新畫面。請重試讀取。',exact:true})).toBeVisible()
+  expect(await records(page,'learningAttempts')).toHaveLength(1);expect((await records<BattleSession>(page,'battleSessions'))[0].enemyHp).toBe(22)
+  await page.getByRole('button',{name:'重試',exact:true}).click();await expect(page.getByRole('heading',{name:'答對了，一起記住這個重點。',exact:true})).toBeVisible();expect(await records(page,'learningAttempts')).toHaveLength(1);expect((await records<BattleSession>(page,'battleSessions'))[0].enemyHp).toBe(22)
+})
+test('first journey setup stores nickname, grade and comfort without inventing ability; guide can replay',async({page})=>{
+  await page.goto('/#/preview/adventure');const guide=page.getByRole('dialog',{name:'歡迎來到青葉町',exact:true});await expect(guide).toBeVisible()
+  for(const width of [320,390,768,1024,1440]){await page.setViewportSize({width,height:width===768?1024:width===1024?768:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);expect(await guide.getByRole('button').evaluateAll(buttons=>buttons.every(b=>{const r=b.getBoundingClientRect();return r.width>=63.9 && r.height>=63.9}))).toBe(true)}
+  await guide.getByLabel('旅行者的暱稱',{exact:true}).fill('初次旅行');await guide.getByRole('button',{name:'小五～小六',exact:true}).click();await guide.getByRole('button',{name:'我認識一些假名',exact:true}).click();await guide.getByRole('button',{name:'出發去小鎮',exact:true}).click();await expect(guide).not.toBeVisible()
+  await expect(page.locator('header small')).toHaveText('初次旅行');expect(await records(page,'learningAttempts')).toEqual([]);expect(await records(page,'skillReviews')).toEqual([])
+  const plan=(await records<{gradeBand:number;onboarding:{comfort:string;skipped:boolean}}>(page,'studyPlans'))[0];expect(plan).toMatchObject({gradeBand:3,onboarding:{comfort:'some',skipped:false}})
+  await page.getByRole('button',{name:'旅行手帳',exact:true}).click();await page.getByRole('button',{name:'重看旅行說明',exact:true}).click();await expect(guide).toBeVisible();await page.keyboard.press('Escape');await expect(guide).not.toBeVisible();expect(await records(page,'learningAttempts')).toEqual([])
 })
 test('a changed catalog in another tab blocks obsolete purchases and preserves the wallet',async({page})=>{
   await open(page)
@@ -64,6 +87,16 @@ test('two tabs buying the same item save one debit, one ownership and one receip
   await Promise.all(buttons.map(button=>button!.evaluate(el=>(el as HTMLButtonElement).click())))
   await Promise.all(hats.map(hat=>expect(hat.getByText('已裝備',{exact:true})).toBeVisible()))
   expect((await records<{balance:number}>(page,'coinWallets'))[0].balance).toBe(20);expect(await records(page,'inventory')).toHaveLength(1);expect(await records(page,'purchaseReceipts')).toHaveLength(1);expect(await records(page,'coinLedger')).toHaveLength(1)
+})
+test('a saved purchase followed by a read failure is reported accurately and retry never charges again',async({page})=>{
+  await open(page);await updateRecord(page,'coinWallets','player',{profileId:'player',balance:60});await page.goto('/#/preview/adventure?scene=shop');await page.reload()
+  await page.evaluate(()=>{
+    const add=IDBObjectStore.prototype.add,get=IDBObjectStore.prototype.get
+    IDBObjectStore.prototype.add=function(...args:Parameters<IDBObjectStore['add']>){const request=add.apply(this,args);if(this.name==='purchaseReceipts')request.addEventListener('success',()=>{IDBObjectStore.prototype.add=add;IDBObjectStore.prototype.get=function(...args:Parameters<IDBObjectStore['get']>){if(this.name==='studyPlans'){IDBObjectStore.prototype.get=get;throw new DOMException('P2 read after commit fault','UnknownError')}return get.apply(this,args)}},{once:true});return request}
+  })
+  const hat=page.locator('article').filter({has:page.getByRole('heading',{name:'旅行帽',exact:true})});await hat.getByRole('button',{name:'購買並裝備',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'操作已處理，但暫時無法讀取最新畫面。請重試讀取。',exact:true})).toBeVisible()
+  expect((await records<{balance:number}>(page,'coinWallets'))[0].balance).toBe(20);await page.getByRole('button',{name:'重試',exact:true}).click();await expect(hat.getByText('已裝備',{exact:true})).toBeVisible();expect(await records(page,'purchaseReceipts')).toHaveLength(1);expect(await records(page,'coinLedger')).toHaveLength(1)
 })
 test('stale map/content/battle versions archive raw records and restart safely without coins',async({page})=>{
   await open(page);await teach(page);await page.getByRole('button',{name:'練習對戰',exact:true}).click()
@@ -220,7 +253,7 @@ test('tomorrow review appears after same-day learning and its durable queue surv
   test.setTimeout(90000);await page.clock.install({time:new Date('2026-10-16T02:00:00Z')});await open(page);await teach(page);await page.getByRole('button',{name:'練習對戰',exact:true}).click()
   for(let turn=1;turn<=4;turn++){await page.getByRole('button',{name:'普通攻擊',exact:true}).click();await answer(page);await page.getByRole('button',{name:'繼續',exact:true}).click()}
   expect((await records<{level:number;dueDate:string}>(page,'skillReviews'))[0]).toMatchObject({level:0,dueDate:'2026-10-17'})
-  await page.getByRole('button',{name:'保存獎勵並回到小鎮',exact:true}).click();await page.clock.setSystemTime(new Date('2026-10-17T02:00:00Z'));await page.reload()
+  await page.getByRole('button',{name:'保存獎勵並回到小鎮',exact:true}).click();await expect(page).toHaveURL(/#\/preview\/adventure$/);await page.clock.setSystemTime(new Date('2026-10-17T02:00:00Z'));await page.reload()
   await page.getByRole('button',{name:'旅行手帳',exact:true}).click();await expect(page.getByText('導師邀請你複習 (1)',{exact:true})).toBeVisible();await page.getByRole('button',{name:'初芽道館',exact:true}).click();await page.getByRole('button',{name:'練習對戰',exact:true}).click()
   const battle=(await records<BattleSession>(page,'battleSessions')).find(b=>b.phase!=='finished')!;await page.reload();expect((await records<BattleSession>(page,'battleSessions')).find(b=>b.id===battle.id)?.questionIds).toEqual(battle.questionIds)
   await page.getByRole('button',{name:'防守',exact:true}).click();await answer(page);expect((await records<{level:number;dueDate:string}>(page,'skillReviews'))[0]).toMatchObject({level:1,dueDate:'2026-10-20'})
@@ -256,7 +289,7 @@ test.describe('P2 verified offline town and unit pack',()=>{
   test('real origin outage and cold page restore allow exploring, WAV, combat, purchase and equip',async({page,context,browserName},info)=>{
     test.setTimeout(120000);const isolated=await offlineOrigin()
     try{
-      await page.goto(`${isolated.origin}/#/preview/adventure`);await expect(page.getByRole('heading',{name:'青葉町旅行手帳',exact:true})).toBeVisible();await teach(page)
+      await page.goto(`${isolated.origin}/#/preview/adventure`);await expect(page.getByRole('heading',{name:'青葉町旅行手帳',exact:true})).toBeVisible();await page.getByRole('button',{name:'略過，先探索',exact:true}).click();await teach(page)
       await page.getByRole('button',{name:'回到小鎮',exact:true}).click();await page.getByRole('button',{name:'旅行手帳',exact:true}).click();await page.getByRole('button',{name:'下載離線教材',exact:true}).click()
       await expect(page.getByText('教材下載完成，可離線練習。',{exact:true})).toBeVisible({timeout:60000});await page.keyboard.press('Escape');await expect.poll(()=>page.evaluate(()=>!!navigator.serviceWorker.controller)).toBe(true)
       await isolated.stop();if(browserName!=='webkit')await context.setOffline(true)

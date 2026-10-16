@@ -12,7 +12,7 @@ export function useJourney(){
   const [profile,setProfile]=useState<Profile|null>(null)
   const [profiles,setProfiles]=useState<Profile[]>([])
   const [pet,setPet]=useState<PetState|null>(null)
-  const [error,setError]=useState<'storage'|'version'|'catalog'|'conflict'|'unavailable'|null>(null)
+  const [error,setError]=useState<'storage'|'refresh'|'version'|'catalog'|'conflict'|'unavailable'|null>(null)
   const [pending,setPending]=useState(false)
   const mounted=useRef(false);const requests=useRef(0);const busy=useRef(false);const retryRef=useRef<(()=>Promise<void>)|null>(null)
   const reload=useCallback(async()=>{
@@ -30,12 +30,16 @@ export function useJourney(){
   const perform=useCallback(async(action:()=>Promise<void>)=>{
     if(busy.current)return
     busy.current=true;setPending(true);setError(null);retryRef.current=action
-    try{await action();await reload();if(mounted.current)retryRef.current=null}
+    let processed=false
+    try{await action();processed=true;await reload();if(mounted.current)retryRef.current=null}
     catch(e){
       if(e instanceof Error && /Not enough coins|locked during battle|Move unavailable/.test(e.message)){
         retryRef.current=null
         try{await reload();if(mounted.current)setError('conflict')}catch{if(mounted.current)setError('storage')}
-      }else if(mounted.current)setError(e instanceof Error && /Catalog/.test(e.message) ? 'catalog':e instanceof Error && /version/.test(e.message) ? 'version':'storage')
+      }else if(mounted.current){
+        if(processed)retryRef.current=null
+        setError(e instanceof Error && /Catalog/.test(e.message) ? 'catalog':e instanceof Error && /version/.test(e.message) ? 'version':processed ? 'refresh':'storage')
+      }
     }
     finally{busy.current=false;if(mounted.current)setPending(false)}
   },[reload])

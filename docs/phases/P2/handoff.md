@@ -57,3 +57,11 @@ P2-03／04／05／12工程驗收DONE（Codex工程reviewer）；P2-11、U01-M已
 第四批提交前檢查：218 tests／24 files、typecheck、lint、validate:data、blueprint與validate:journey全PASS，審閱build PASS（444離線素材）。新P2 suite共20項，含兩頁同物競購、長閱讀五寬、平板768×1024／1024×768、200%文字、審閱頁無寫入及20次資源檢查；最新全suite待本批提交後重跑。詞／漢字／文法均有明確teaching refs，duplicate item revision壞fixture會失敗。
 
 最新核心：SRS learning-v1.1-spaced只在到期日獨立答對前進；未到期不延後due，舊derived review會backup/replay真實Attempts。Journey export含profile-filtered backups，完整全庫匯入仍是P5。reward綁定最後有效當回合題目／版本，普通saveWorld必須先驗證原checkpoint完整；未知／壞原資料只能走先備份recover。未領獎勝利在手帳／道館優先續接，不能自動發或重播。21項P2新瀏覽器情境（含時鐘推一天）需用最新commit跑。
+
+## 第五批：首次引導與讀取失敗復原
+
+新增可略過／重播的暱稱、年級與初始偏好設定，只調整手帳建議量，不產生Attempt、複習或掌握紀錄。戰鬥可暫停且保留選項；結果列實際樣本、提示數及複習日。PIN後家長摘要顯示玩家暱稱、7／30天或全期、可讀技能名稱與弱項入口。
+
+實際故障注入發現「購買交易已提交、後續讀取失敗」誤報還沒存好，已區分交易失敗與刷新失敗，後者僅重讀，不重送購買；作答亦使用相同語義。新瀏覽器回歸驗證購買與答案各只記一次，暫停／續玩和隔日複習保留原斷言。先前CI eb25eb5的隔日情境因測試未等待領獎導航完成便reload而失敗，已等待真實導航後再推時鐘，不變更產品門檻。
+
+222單元／24files、typecheck、lint、data、blueprint11項、journey草稿關聯已PASS。新增作答刷新復原後再跑受影響檢查及完整三引擎；未以舊dcab575綠燈代替新版本驗收。所有P2人工審核與實體平板維持NOT_RUN。

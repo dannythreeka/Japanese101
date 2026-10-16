@@ -5,7 +5,7 @@ import { createAttempt, LEARNING_RULES_VERSION, localDay, nextReview, planQuesti
 import { BATTLE_RULES_VERSION, initialCombat, resolveTurn, type Move } from '../battle/rules'
 import { CATALOG_VERSION, CATALOG_REVISION, armorFor, catalogItem } from '../economy/catalog'
 import { WORLD_VERSION, safePoint, town, walkable, type Facing, type Point } from '../world/map'
-import type { BattleSession, CoinLedger, JourneyTables, StudyPlan, WorldCheckpoint, LearningCheck } from './journey-models'
+import type { BattleSession, CoinLedger, JourneyTables, StudyPlan, WorldCheckpoint, LearningCheck, JourneyComfort } from './journey-models'
 import {currentBattle,currentCheck,currentStudy,currentWorld} from './journey-compatibility'
 function walletBalance(wallet:{balance:number}|undefined):number{
   if(wallet===undefined)return 0
@@ -86,6 +86,16 @@ export class JourneyRepository {
       const plan:StudyPlan={profileId,unitId:this.pack.id,contentVersion:this.pack.version,taughtCards:[],taughtAt:{},date:localDay(now,timeZone),timeZone,gradeBand,questionIds:[],updatedAt:now}
       await d.studyPlans.add(plan)
       return plan
+    })
+  }
+  async configureJourney(profileId:string,input:{name?:string;gradeBand:1|2|3;comfort:JourneyComfort;skipped:boolean},now=Date.now()):Promise<void>{
+    if(![1,2,3].includes(input.gradeBand) || !['new','some','review'].includes(input.comfort) || typeof input.skipped!=='boolean' || input.name!==undefined && (typeof input.name!=='string' || !input.name.trim() || input.name.trim().length>8))throw new Error('Invalid journey preferences')
+    const d=this.database
+    await d.transaction('rw',[d.profiles,d.studyPlans],async()=>{
+      await this.owned(profileId)
+      const plan=await d.studyPlans.get([profileId,this.pack.id]);if(!plan || !currentStudy(plan,this.pack))throw new Error('Study plan unavailable')
+      if(input.name!==undefined)await d.profiles.update(profileId,{name:input.name.trim()})
+      await d.studyPlans.put({...plan,gradeBand:input.gradeBand,onboarding:{comfort:input.comfort,skipped:input.skipped,updatedAt:now},updatedAt:now})
     })
   }
   async setGradeBand(profileId:string,gradeBand:1|2|3): Promise<void> {

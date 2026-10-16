@@ -1,0 +1,23 @@
+{
+  "checkedAt": "2026-10-16T03:20:16.836942+00:00",
+  "baseCommit": "4d56991ffe46cd800657688defd8ce352f9f286d",
+  "result": "PASS_DOCUMENT_CONSISTENCY_ONLY",
+  "manifestVersion": "0.2-draft",
+  "unitQuotasMatchTasksAndBlueprint": 24,
+  "totals": {
+    "newVocabulary": 600,
+    "newKanji": 100,
+    "newGrammar": 60,
+    "reading": 96,
+    "listening": 144,
+    "practice": 1200
+  },
+  "taskStatusesAndDependenciesUnchanged": true,
+  "reviewer": null,
+  "reviewedAt": null,
+  "humanReview": "IN_REVIEW",
+  "blueprintValidation": "npm run validate:blueprint PASS on Node22.23.2; runner reported 1 passing test file, containing 10 declared cases",
+  "relativeLinksChecked": 18,
+  "diffCheck": "PASS",
+  "scope": "Planning manifest and handoff only; no runtime lesson or new adventure implementation"
+}

@@ -2,11 +2,13 @@
 
 這是一個專為 6-12 歲兒童設計的日語學習 Web App，結合了寵物養成與各種趣味小遊戲。
 
-## 開發入口（P0，2026-10-15）
+## 開發入口（規劃 v1.1，2026-10-16）
 
 [產品方向](PRODUCT_DIRECTION.md) · [路線／依賴](ROADMAP.md) · [UI／UX](UI_UX_SPEC.md) · [工程守則](ENGINEERING_RULES.md) · [內容藍圖](CONTENT_BLUEPRINT.md) · [驗收索引](ACCEPTANCE_MATRIX.md)
 
 主規範：[project.md](project.md)；任務狀態：[tasks.md](tasks.md)；[P0交接](docs/phases/P0/handoff.md)。先依`.nvmrc`使用Node 22，再`npm ci`。完整檢查命令與證據見工程守則。正式入口選用 [Vercel](https://japanese101-five.vercel.app)；Pages退役決策與實測見 [部署紀錄](docs/verification/deployment.md)。
+
+下一版已確認走「原創插畫＋自由探索＋日語道館戰鬥＋金幣裝備」；平板為主。見[冒險設計與規則](docs/design/ADVENTURE_RPG_SPEC.md)、[四張風格／畫面概念](docs/design/concepts/README.md)、[P2交接](docs/phases/P2/handoff.md)。這是規劃交付，現有應用尚未實作新冒險；P1人工gate與教材審核狀態不變。
 
 ## 語音合成 (VOICEVOX)
 

@@ -1,0 +1,105 @@
+{
+  "checkedAt": "2026-10-16T10:17:00.151285+08:00",
+  "baseCommit": "fd4ccd4a168c57c47cbe25ac7ee9408e37c01658",
+  "scope": "documentation and original concept copies only; no runtime tests or human/device signoff",
+  "status": "PASS",
+  "tasks": {
+    "total": 237,
+    "byPhase": {
+      "P0": 8,
+      "P1": 13,
+      "P2": 25,
+      "P3": 27,
+      "P4": 145,
+      "P5": 19
+    },
+    "uniqueIds": true,
+    "allDependenciesExist": true,
+    "acyclic": true,
+    "p2GateCoversAll25Tasks": true,
+    "p0P1TaskEvidenceUnchanged": true,
+    "all24UnitTasksUnchanged": true
+  },
+  "requirements": {
+    "G2": 15,
+    "UI": 14,
+    "statesPerUI": 6,
+    "uniqueIds": true
+  },
+  "links": {
+    "relativeLinksChecked": 99,
+    "missing": [],
+    "invalidAnchors": []
+  },
+  "assets": [
+    {
+      "file": "style-travel-journal.png",
+      "bytes": 2786615,
+      "sha256": "f91da5fa0e2fe7fe48cc20a3c049ae1b00a74798b70c5ddb4cc872722277279d",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "file": "town-exploration.png",
+      "bytes": 3799332,
+      "sha256": "cde73527e8fa7fea8df3c56563cb74d6db1baadbafd25541529f3b764c52fbd7",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "file": "equipment-shop.png",
+      "bytes": 2852731,
+      "sha256": "7bbd5b7cd2c4406ff36fc8196b6825eacc1bbfa53e013f3ed927d0207674666e",
+      "width": 1448,
+      "height": 1086
+    },
+    {
+      "file": "dojo-battle.png",
+      "bytes": 2756704,
+      "sha256": "7eb6e6dabeba8ad237373af3641ed178ec61b5b2b0b16a96e6f6db495092ca77",
+      "width": 1448,
+      "height": 1086
+    }
+  ],
+  "contrast": [
+    {
+      "foreground": "#FFFFFF",
+      "background": "#193B5C",
+      "ratio": 11.529,
+      "check": "static opaque colors; rendered UI NOT_RUN"
+    },
+    {
+      "foreground": "#193B5C",
+      "background": "#F7F1E5",
+      "ratio": 10.249,
+      "check": "static opaque colors; rendered UI NOT_RUN"
+    },
+    {
+      "foreground": "#22354A",
+      "background": "#FFFDF7",
+      "ratio": 12.317,
+      "check": "static opaque colors; rendered UI NOT_RUN"
+    },
+    {
+      "foreground": "#22354A",
+      "background": "#F7F1E5",
+      "ratio": 11.138,
+      "check": "static opaque colors; rendered UI NOT_RUN"
+    },
+    {
+      "foreground": "#4F6378",
+      "background": "#FFFDF7",
+      "ratio": 6.093,
+      "check": "static opaque colors; rendered UI NOT_RUN"
+    },
+    {
+      "foreground": "#4F6378",
+      "background": "#F7F1E5",
+      "ratio": 5.509,
+      "check": "static opaque colors; rendered UI NOT_RUN"
+    }
+  ],
+  "diffCheck": "PASS",
+  "runtimeChanged": false,
+  "reviewer": "Codex documentation review; not human UX/content/device approval"
+}

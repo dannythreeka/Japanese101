@@ -44,3 +44,14 @@ P2-10為文件DONE；P2-01～09、P2-11～18、U01-M／T／Q1／Q2／A／V／I�
 | G2-15 | 三引擎、實體平板、人工操作／可玩性 | NOT_RUN | P2-09及實際reviewer |
 
 每項正式證據需commit、環境、實際browser／裝置、步驟、預期／實際、trace／截圖與reviewer。概念圖不是測試截圖；人工審查與agent初審分開。正式模擬UI-08與完整備份匯入gate歸P5，P2仍須交付新增資料的匯出格式與既有設定回歸。
+
+## 第一批工程驗證
+
+| Task／範圍 | 預期與實際 | 證據／reviewer |
+|---|---|---|
+| P2-01 | runtime schema拒絕不明版本、錯誤答案／技能／素材契約；題族不跨partition；正誤／提示／跳過／重試／中斷fixture | DONE；src/content/contracts.ts、learning/rules.test.ts；Codex工程核對 |
+| P2-02 | 60%／無樣本、5不同題族／2日／48h、日曆時區／DST、複習與三題補救間隔 | DONE；src/learning/rules.ts及測試；Codex工程核對 |
+| P2-15與後續資料基礎 | 10次回合防重、競爭購買、故障rollback、換裝鎖定與快照、v5資料保留 | Unit PASS，整項與UI／雙分頁仍待驗；journey*.test.ts |
+| 工程檢查 | 205 tests／22 files、typecheck、lint | PASS；evidence/foundation-unit.txt、foundation-typecheck.txt、foundation-lint.txt；Codex；不作P2瀏覽器／實機結果 |
+
+G2表保留NOT_RUN，後續只有完整情境有操作證據才逐項更新。相關產品程式在本批提交後如再修改，需要重跑受影響檢查。

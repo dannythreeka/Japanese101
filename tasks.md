@@ -216,14 +216,14 @@
 
 #### P2-01｜建立題目、Attempt、skill與版本契約
 
-- 狀態：**IN_PROGRESS**；負責：工程／內容。
+- 狀態：**DONE**；負責：工程／內容。
 - 依賴：P1-12、P0-03。
 - 交付物：typed schema、runtime validation、fixtures及明確API。
 - 驗收：包含project.md §5最小欄位、教學/練習/評量分區、itemFamilyId、主測skill、音訊與提示規則。題目改版保留歷史；unknown輸入須驗證。正確/錯誤/跳過/提示/重試/中斷皆有fixture；戰鬥與Attempt透過ID關聯，HP、金幣、裝備不寫入能力分數。
 
 #### P2-02｜實作計分、掌握狀態與複習引擎
 
-- 狀態：**TODO**；負責：工程。
+- 狀態：**DONE**；負責：工程。
 - 依賴：P2-01。
 - 交付物：純函式learning模組與固定時鐘測試。
 - 驗收：60%案例、零分母顯示無資料、五題族跨日4/5且48h的穩定門檻全部有邊界測試。複習1/3/7/14/30天；補救間隔三題，不足移下小節；重複題族不能灌高能力；紀錄時區與日期邊界。勝利或換裝不改learning輸出。
@@ -320,7 +320,7 @@
 
 #### P2-15｜實作金幣、獎勵與購買資料交易
 
-- 狀態：**TODO**；負責：工程。
+- 狀態：**IN_PROGRESS**；負責：工程。
 - 依賴：P2-01、P2-10。
 - 原因：XP不能直接充當可消費且有交易紀錄的錢包。
 - 交付物：WalletLedger、RewardReceipt、Inventory、Equipment、PurchaseReceipt與版本化商品規則。

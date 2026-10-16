@@ -333,7 +333,7 @@ export default function KanaWriteGame() {
           <button
             type="button"
             onClick={() => adventure.submitResult(accuracy, xpGained)}
-            className="mt-2 px-8 py-3 rounded-2xl bg-indigo-500 text-white text-xl font-bold shadow hover:bg-indigo-600 transition-colors"
+            className="min-h-16 min-w-16 mt-2 px-8 py-3 rounded-2xl bg-indigo-500 text-white text-xl font-bold shadow hover:bg-indigo-600 transition-colors"
           >
             {t('adventureReturn')}
           </button>
@@ -341,7 +341,7 @@ export default function KanaWriteGame() {
           <button
             type="button"
             onClick={() => navigate('/play')}
-            className="mt-2 px-8 py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 transition-colors"
+            className="min-h-16 min-w-16 mt-2 px-8 py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 transition-colors"
           >
             {t('kanaWriteReturn')}
           </button>
@@ -458,7 +458,7 @@ export default function KanaWriteGame() {
             <button
               type="button"
               onClick={handleClear}
-              className="flex-1 py-3 rounded-2xl bg-gray-200 text-gray-700 text-lg font-bold shadow hover:bg-gray-300 transition-colors"
+              className="min-h-16 min-w-16 flex-1 py-3 rounded-2xl bg-gray-200 text-gray-700 text-lg font-bold shadow hover:bg-gray-300 transition-colors"
             >
               {t('kanaWriteClear')}
             </button>
@@ -466,7 +466,7 @@ export default function KanaWriteGame() {
               type="button"
               onClick={() => { void handleCheck() }}
               disabled={!hasStrokes}
-              className="flex-[2] py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+              className="min-h-16 min-w-16 flex-[2] py-3 rounded-2xl bg-emerald-500 text-white text-xl font-bold shadow hover:bg-emerald-600 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
             >
               {t('kanaWriteCheck')}
             </button>
@@ -475,7 +475,7 @@ export default function KanaWriteGame() {
             <button
               type="button"
               onClick={() => setShowDemo(true)}
-              className="px-5 py-2 rounded-full bg-sky-100 hover:bg-sky-200 text-sky-700 text-sm font-semibold transition-colors active:scale-95"
+              className="min-h-16 min-w-16 px-5 py-2 rounded-full bg-sky-100 hover:bg-sky-200 text-sky-700 text-sm font-semibold transition-colors active:scale-95"
             >
               {t('kanaWriteDemo')} ✍️
             </button>
@@ -485,7 +485,7 @@ export default function KanaWriteGame() {
         <button
           type="button"
           onClick={() => { void handleNext() }}
-          className="w-full max-w-sm py-4 rounded-2xl bg-sky-500 text-white text-xl font-bold shadow hover:bg-sky-600 transition-colors"
+          className="min-h-16 min-w-16 w-full max-w-sm py-4 rounded-2xl bg-sky-500 text-white text-xl font-bold shadow hover:bg-sky-600 transition-colors"
         >
           {isLast ? t('kanaWriteFinish') : t('kanaWriteNext')}
         </button>

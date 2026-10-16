@@ -40,11 +40,13 @@ export function AudioControl({src,labels,onComplete}: {src:string;labels:{play:s
   const audioRef=useRef<HTMLAudioElement|null>(null)
   const generation=useRef(0)
   const ownerStop=useRef<(()=>void)|null>(null)
+  const ownerCleanup=useRef<(()=>void)|null>(null)
   const completed=useRef(onComplete)
   useEffect(()=>{completed.current=onComplete},[onComplete])
   useEffect(()=>{
     const stop=()=>{
       generation.current++
+      ownerCleanup.current?.();ownerCleanup.current=null
       const audio=audioRef.current
       if(audio){audio.onended=null;audio.onerror=null;audio.onplaying=null;audio.pause();audio.removeAttribute('src');audio.load();audioRef.current=null}
       duckBgm(false)
@@ -54,14 +56,18 @@ export function AudioControl({src,labels,onComplete}: {src:string;labels:{play:s
   async function play(){
     stopJourneyAudio();stopSpeaking()
     generation.current++;const current=generation.current
-    const audio=new Audio(src.startsWith('/') ? `${import.meta.env.BASE_URL}${src.slice(1)}`:src)
+    let audio:HTMLAudioElement
+    try{audio=new Audio(src.startsWith('/') ? `${import.meta.env.BASE_URL}${src.slice(1)}`:src)}catch{setState('error');return}
     audioRef.current=audio;setState('loading');duckBgm(true)
-    const cleanup=()=>{audio.onended=null;audio.onerror=null;audio.onplaying=null;audio.pause();audio.removeAttribute('src');audio.load();if(audioRef.current===audio)audioRef.current=null;duckBgm(false)}
+    const cleanup=()=>{clearTimeout(timer);audio.onended=null;audio.onerror=null;audio.onplaying=null;audio.pause();audio.removeAttribute('src');audio.load();if(audioRef.current===audio)audioRef.current=null;if(ownerCleanup.current===cleanup)ownerCleanup.current=null;duckBgm(false)}
+    ownerCleanup.current=cleanup
     const stop=()=>{generation.current++;cleanup();setState('ready')}
     ownerStop.current=stop;claimJourneyAudio(stop)
     audio.onplaying=()=>{if(generation.current===current)setState('playing')}
     audio.onended=()=>{if(generation.current!==current)return;cleanup();setState('ready');releaseJourneyAudio(stop);completed.current()}
-    audio.onerror=()=>{if(generation.current!==current)return;cleanup();setState('error');releaseJourneyAudio(stop)}
+    const fail=()=>{if(generation.current!==current)return;cleanup();setState('error');releaseJourneyAudio(stop)}
+    audio.onerror=fail
+    const timer=setTimeout(fail,45000)
     try{await audio.play()}catch{if(generation.current===current){cleanup();setState('error');releaseJourneyAudio(stop)}}
   }
   return <div className="journey-audio"><Button variant="secondary" onClick={()=>{if(state==='playing' || state==='loading')stopJourneyAudio();else void play()}} aria-label={state==='playing' || state==='loading' ? labels.stop:labels.play}>

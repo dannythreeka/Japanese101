@@ -55,3 +55,13 @@ P2-10為文件DONE；P2-01～09、P2-11～18、U01-M／T／Q1／Q2／A／V／I�
 | 工程檢查 | 205 tests／22 files、typecheck、lint | PASS；evidence/foundation-unit.txt、foundation-typecheck.txt、foundation-lint.txt；Codex；不作P2瀏覽器／實機結果 |
 
 G2表保留NOT_RUN，後續只有完整情境有操作證據才逐項更新。相關產品程式在本批提交後如再修改，需要重跑受影響檢查。
+
+## 第二批隔離預覽（尚未完成gate）
+
+- 全單元209／23files PASS，typecheck與lint PASS；新增E2E後重查中。審閱build PASS。
+- 共用UI五寬、64px、Dialog Escape／焦點、390px模擬200%文字 PASS，evidence/ui-foundation/results.json；Codex已實際看圖。
+- 小鎮地點→道館教學→戰鬥第一題入口 PASS，evidence/adventure-integration/smoke.json；不是完整戰鬥／購物gate。
+- 新U01、13張正式分層草稿圖與10段新WAV僅工程草稿；日語內容／音訊審聽／真人視覺／實體平板 NOT_RUN。剩4段語音遇429，T13情境圖未補，i18n與版本恢復未完整。
+- 全部G2表維持原狀直到完整情境操作與證據齊備；此批不宣稱ENGINEERING_READY。
+
+第二批保存更新：語音429經工作間隔後恢復，14檔已完整生成，仍全為DRAFT。Chromium初次7項有6 PASS，完整循環因雙分頁focus hydration使領獎按鈕更新而timeout；已改以兩頁既有按鈕同時dispatch測競態，重跑待完成。版本恢復與移動dirty checkpoint保全亦已補，後續需驗證。工程摘要evidence/integration-batch.json。

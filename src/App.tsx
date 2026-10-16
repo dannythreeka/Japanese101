@@ -20,6 +20,8 @@ import LevelEntry from './features/adventure/LevelEntry'
 import LevelComplete from './features/adventure/LevelComplete'
 import ProfileSelector from './features/profiles/ProfileSelector'
 import ProfileCreate from './features/profiles/ProfileCreate'
+import UiReview from './features/journey/UiReview'
+import JourneyScreen from './features/journey/JourneyScreen'
 
 export default function App() {
   useEffect(() => { void loadVoices() }, [])
@@ -27,6 +29,8 @@ export default function App() {
   return (
     <RecoveryBoundary><ProfileGate><HashRouter>
       <Routes>
+        {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <Route path="/__review/ui" element={<UiReview/>}/>}
+        {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <Route path="/preview/adventure" element={<JourneyScreen/>}/>}
         {/* Profiles */}
         <Route path="/profiles" element={<ProfileSelector />} />
         <Route path="/profiles/new" element={<ProfileCreate />} />

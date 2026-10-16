@@ -1,5 +1,5 @@
 {
-  "version": "42c63ee6573e798c",
+  "version": "51d3edfc8e49d601",
   "assets": [
     {
       "path": "assets/audio/kana_a.wav",
@@ -545,6 +545,81 @@
       "path": "assets/audio/phrase_yatta.wav",
       "bytes": 29262,
       "sha256": "816e16f5e28c0360932f1863ea8afc2b1aac7dc510ba917a57b03d022c68aa07"
+    },
+    {
+      "path": "assets/audio/u01/listening-01.wav",
+      "bytes": 222798,
+      "sha256": "5be1b677eaa3fcc01c7d9511c7af272ef847e689b2ec00f51b6da3d6f4bf3f02"
+    },
+    {
+      "path": "assets/audio/u01/listening-02.wav",
+      "bytes": 169038,
+      "sha256": "b6e27025fc5685130d91bf7b9d4eefc85d1a7f8b09524bccb9b9e11383398562"
+    },
+    {
+      "path": "assets/audio/u01/listening-03.wav",
+      "bytes": 135246,
+      "sha256": "771f11ba00e4f2e7d8fdbc12935e79681d563420f1820569bc8349afe19b893b"
+    },
+    {
+      "path": "assets/audio/u01/listening-04.wav",
+      "bytes": 117838,
+      "sha256": "cdf1f671029e5892ee3d5ec3639545890ae1ae5b11e9d55341a788249f4b7fdc"
+    },
+    {
+      "path": "assets/audio/u01/listening-05.wav",
+      "bytes": 177742,
+      "sha256": "4a902767ca1629352a059ff29b84c3ca4bcd5fac8f64b0487c4cdc943141ca7a"
+    },
+    {
+      "path": "assets/audio/u01/listening-06.wav",
+      "bytes": 98894,
+      "sha256": "8e8bd46e828e0370c279249a1d786e03cbd09814c82b9a8c3aae033f1c957d85"
+    },
+    {
+      "path": "assets/audio/u01/manifest.json",
+      "bytes": 8469,
+      "sha256": "b68a7da0ff6a43c0c14e83ba6b59cd09fdacb01f692bd4f6adad709a40566edd"
+    },
+    {
+      "path": "assets/audio/u01/teach-G01.wav",
+      "bytes": 80974,
+      "sha256": "6e8d5fffd725f2a69949d5f87816a88c4c0e505e2fe0b70a42fd4b46be49c43d"
+    },
+    {
+      "path": "assets/audio/u01/teach-G02.wav",
+      "bytes": 89678,
+      "sha256": "12f9713bd3183ba180caad6a1886bebccaa771664cb133add24bdff5b753ec01"
+    },
+    {
+      "path": "assets/audio/u01/teach-G03.wav",
+      "bytes": 80462,
+      "sha256": "089ea1e2fbb5e0d23448913d5175812cd941e2d6c5ae9977a34e9f154d0a9b82"
+    },
+    {
+      "path": "assets/audio/u01/teach-kanji.wav",
+      "bytes": 151630,
+      "sha256": "76e997a8416d2dce2ceb70398a99a8ce2a1b1c1ca7933b5933ee6b754ff1c413"
+    },
+    {
+      "path": "assets/audio/u01/teach-words-1.wav",
+      "bytes": 223822,
+      "sha256": "a44afb76ad3b540ca53614875805b376f3a91ffda8a66c560dad5fcd0a4304ae"
+    },
+    {
+      "path": "assets/audio/u01/teach-words-2.wav",
+      "bytes": 89678,
+      "sha256": "ed6473e58194d8df004ea0bd74c0402c290f8799fcb681d877b7231dfffb1d37"
+    },
+    {
+      "path": "assets/audio/u01/teach-words-3.wav",
+      "bytes": 196686,
+      "sha256": "6f5564a93a6bade5b88a89a7fa7477669018177b69a22f77dcced39d73cea7db"
+    },
+    {
+      "path": "assets/audio/u01/teach-words-4.wav",
+      "bytes": 332366,
+      "sha256": "44915aedd53a50f10685597459517de24293f335759f2e8417c8f493f889a7c1"
     },
     {
       "path": "assets/audio/word_w_ajisai.wav",
@@ -1095,6 +1170,76 @@
       "path": "assets/audio/word_w_zaru.wav",
       "bytes": 23630,
       "sha256": "4560236b263329e2cc74f33c3b98ca6a709d00979666fd7515137a23303982c7"
+    },
+    {
+      "path": "assets/img/journey/dojo.webp",
+      "bytes": 441334,
+      "sha256": "debd6e8da9c4199e192cfda6074a15a4b6f30931c77c74c4e8ece3a4c56296e3"
+    },
+    {
+      "path": "assets/img/journey/fox-sheet.webp",
+      "bytes": 507324,
+      "sha256": "bfcf41f062948b7283f19bd6999d3391993ec4e8408137d0855739b49c658647"
+    },
+    {
+      "path": "assets/img/journey/gear-hat.webp",
+      "bytes": 441806,
+      "sha256": "6c890d76fe8e218d25c4f3ed3cb0fd5c86beda057337e74eb899191bf55f57cd"
+    },
+    {
+      "path": "assets/img/journey/gear-pack.webp",
+      "bytes": 386432,
+      "sha256": "9778633e763a7c7ae94d622ce3b3d6fd4afa29b5c6085dbcb2975ba293b026db"
+    },
+    {
+      "path": "assets/img/journey/gear-scarf.webp",
+      "bytes": 339536,
+      "sha256": "c2388ed6a85aab273e49c125a0ce53d1d7f817e2afdef20d7ebe14f9939dff56"
+    },
+    {
+      "path": "assets/img/journey/home.webp",
+      "bytes": 561062,
+      "sha256": "bfd2fb98b1f365a40f855983dd93605e1c32c1957cde7e0f58c70aad05143032"
+    },
+    {
+      "path": "assets/img/journey/manifest.json",
+      "bytes": 10201,
+      "sha256": "e8a1427f004aad53010feaafec19046be4290dde9a000a2ceaf2e4a607b43cca"
+    },
+    {
+      "path": "assets/img/journey/mentor.webp",
+      "bytes": 156720,
+      "sha256": "55aa5a897181b118d83f2035530fafde0a473c7bff939499fcb30020503303b4"
+    },
+    {
+      "path": "assets/img/journey/npc-haru.webp",
+      "bytes": 188372,
+      "sha256": "c2d19c809f2b9394ad8015a164c770d106ccd8fe0156592af20b8f584824be03"
+    },
+    {
+      "path": "assets/img/journey/npc-ritsu.webp",
+      "bytes": 197272,
+      "sha256": "b4213f9f4f88fa702163516b443f5b0904210f6374fc8030ab38c6197a180b94"
+    },
+    {
+      "path": "assets/img/journey/opponent-sheet.webp",
+      "bytes": 500682,
+      "sha256": "ecfde4f66650c8e28534688196f3b312d75e5cd7733829ea2d5c8c3c25f45664"
+    },
+    {
+      "path": "assets/img/journey/player-sheet.webp",
+      "bytes": 426806,
+      "sha256": "39758df3b65a08b72df76e49b821ecb5162b4e9c78955dd429b4c8e2358aaf14"
+    },
+    {
+      "path": "assets/img/journey/shop.webp",
+      "bytes": 522294,
+      "sha256": "7365a5dc8b6788db99b877150f7ec380e63a5b95976fc1a0dc1b7d7456495eaf"
+    },
+    {
+      "path": "assets/img/journey/terrain.webp",
+      "bytes": 507678,
+      "sha256": "16a1e88b40e92577049de97df818d20a5287a5302ea087bcc6cb71251c84f05a"
     },
     {
       "path": "assets/img/svg/w_ajisai.svg",

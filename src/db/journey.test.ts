@@ -6,6 +6,7 @@ import { CATALOG_VERSION } from '../economy/catalog'
 import { BATTLE_RULES_VERSION, initialCombat, resolveTurn } from '../battle/rules'
 import { findPath, near, town, walkable } from '../world/map'
 import type { UnitPack } from '../content/contracts'
+import { mastery } from '../learning/rules'
 
 const pack:UnitPack={id:'U01',version:'test-1',title:'fixture',reviewStatus:'DRAFT',reviewer:null,reviewedAt:null,vocabulary:[],kanji:[],grammar:[],readings:[],listening:[],teaching:[{id:'teach',title:'自己紹介',body:'わたしはアキです。',example:'わたしはアキです。',translation:'我是小秋。',skillIds:['G01']}],questions:Array.from({length:8},(_,n)=>({id:`q${n}`,version:'1',unitId:'U01',itemId:`item${n}`,itemFamilyId:`f${n}`,primarySkillId:'G01',skillIds:['G01'],teachingIds:['teach'],partition:'practice',kind:'choice',prompt:'えらぼう',choices:[{id:'a',text:'です'},{id:'b',text:'ます'}],answer:['a'],explanation:'名詞です。',distractorReasons:{b:'動詞ではありません。'},hint:'名詞です。',hintPolicy:'practice-only',audioPolicy:'optional',source:'isolated test fixture',reviewStatus:'DRAFT'}))}
 let repo:JourneyRepository
@@ -140,5 +141,37 @@ describe('world and battle pure boundaries',()=>{
     expect(resolveTurn({...initialCombat(),turn:8},'attack',false,0).status).toBe('lost')
     expect(resolveTurn(initialCombat(),'guard',false,99).playerHp).toBe(39)
     expect(()=>resolveTurn({...initialCombat(),partnerUsed:true},'partner',true,0)).toThrow('unavailable')
+  })
+})
+
+describe('P2-04 independent checks',()=>{
+  it('persists each answer without automatic advance, rejects hints and never applies combat or coins',async()=>{
+    const checkPack:UnitPack={...pack,questions:pack.questions.slice(0,5).map(q=>({...q,id:`check-${q.id}`,partition:'check',hintPolicy:'none'}))}
+    repo=new JourneyRepository(checkPack)
+    const day0=Date.parse('2026-10-16T00:00:00Z')
+    const day2=day0+48*3600000
+    await repo.openStudy('A',1,day0,'Asia/Taipei');await repo.teach('A','teach',day0)
+    let check=await repo.startCheck('A',day0)
+    await expect(repo.finishCheck('A',check.id)).rejects.toThrow('not finished')
+    await expect(repo.submitCheck('A',check.id,0,{answerIds:['a'],hintUsed:true,audioPlayCount:0,responseMs:1},day0)).rejects.toThrow('Hints')
+    for(let index=0;index<5;index++){
+      const input={answerIds:[index===0 ? 'b':'a'],hintUsed:false,audioPlayCount:0,responseMs:1}
+      await Promise.all(Array.from({length:10},()=>repo.submitCheck('A',check.id,index,input,index===0 ? day0:day2)))
+      check=(await repo.state('A')).checks[0]
+      expect(check.index).toBe(index)
+      expect(check.phase).toBe('acknowledge')
+      expect((await repo.startCheck('A')).id).toBe(check.id)
+      await Promise.all(Array.from({length:10},()=>repo.continueCheck('A',check.id,index)))
+      check=(await repo.state('A')).checks[0]
+    }
+    expect(check.phase).toBe('review')
+    const state=await repo.state('A')
+    expect(state.attempts).toHaveLength(5)
+    expect(state.coins).toBe(0)
+    expect(state.battles).toEqual([])
+    expect(mastery(state.attempts,'G01',day0,{now:day2,timeZone:'Asia/Taipei'})).toBe('stable')
+    await expect(repo.continueCheck('B',check.id,4)).rejects.toThrow('belong')
+    await repo.finishCheck('A',check.id)
+    expect((await repo.exportJourney('A')).data.checks[0].phase).toBe('finished')
   })
 })

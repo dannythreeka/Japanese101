@@ -25,6 +25,12 @@ export interface Question {
   audioPolicy: 'optional' | 'required'
   source: string
   reviewStatus: 'DRAFT' | 'APPROVED'
+  typeId?: string
+  materialId?: string
+  audioId?: string
+  promptJa?: string
+  explanationJa?: string
+  hintJa?: string
 }
 export interface Attempt {
   id: string
@@ -48,6 +54,8 @@ export interface Attempt {
 }
 export interface TeachingCard {
   id: string; skillIds: string[]; title: string; body: string; example: string; translation: string; audioSrc?: string
+  prerequisites?: string[]
+  audioScript?: string
 }
 export interface UnitPack {
   id: string; version: string; title: string; reviewStatus: 'DRAFT' | 'APPROVED'
@@ -127,4 +135,59 @@ export function attemptErrors(input: unknown): string[] {
   if (!Number.isFinite(Date.parse(String(input.submittedAt)))) errors.push('attempt: invalid date')
   if (!strings(input.answerIds)) errors.push('attempt: invalid answer IDs')
   return errors
+}
+
+export function unitPackErrors(input:unknown):string[] {
+  if(!record(input))return ['unit: expected object']
+  const errors:string[]=[]
+  for(const field of ['id','version','title'])if(!nonempty(input[field]))errors.push(`unit: missing ${field}`)
+  if(!['DRAFT','APPROVED'].includes(String(input.reviewStatus)))errors.push('unit: invalid review status')
+  if(input.reviewStatus==='APPROVED' && (!nonempty(input.reviewer) || !nonempty(input.reviewedAt) || !Number.isFinite(Date.parse(input.reviewedAt))))errors.push('unit: approval requires real reviewer and date')
+  const lists:Record<string,Record<string,unknown>[]>={}
+  for(const field of ['vocabulary','kanji','grammar','readings','listening','teaching','questions']) {
+    if(!Array.isArray(input[field]) || !input[field].every(record)){errors.push(`unit: invalid ${field}`);lists[field]=[]}
+    else lists[field]=input[field]
+    const ids=lists[field].map(item=>String(item.id))
+    if(ids.some(id=>!id || id==='undefined') || !unique(ids))errors.push(`unit: duplicate or missing ${field} IDs`)
+  }
+  errors.push(...validateQuestionBank(input.questions))
+  for(const field of ['vocabulary','kanji'])for(const item of lists[field])for(const key of ['text','reading','meaning'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)
+  const teachingIds=new Set(lists.teaching.map(t=>String(t.id)))
+  const graph=new Map(lists.teaching.map(t=>[String(t.id),strings(t.prerequisites) ? t.prerequisites:[]]))
+  const visited=new Set<string>()
+  function visit(id:string,stack:string[]){
+    if(stack.includes(id)){errors.push(`${id}: teaching cycle`);return}
+    if(visited.has(id))return
+    visited.add(id)
+    for(const dep of graph.get(id) ?? []) {
+      if(!teachingIds.has(dep))errors.push(`${id}: unknown teaching prerequisite ${dep}`)
+      else visit(dep,[...stack,id])
+    }
+  }
+  for(const card of lists.teaching) {
+    for(const key of ['title','body','example','translation'])if(!nonempty(card[key]))errors.push(`${card.id}: missing ${key}`)
+    if(!strings(card.skillIds) || !card.skillIds.length)errors.push(`${card.id}: missing teaching skills`)
+    visit(String(card.id),[])
+  }
+  const readingIds=new Set(lists.readings.map(item=>String(item.id)))
+  const audioIds=new Set(lists.listening.map(item=>String(item.id)))
+  for(const q of lists.questions) {
+    if(q.unitId!==input.id)errors.push(`${q.id}: wrong unit`)
+    if(!strings(q.teachingIds) || q.teachingIds.some(id=>!teachingIds.has(id)))errors.push(`${q.id}: unknown teaching reference`)
+    if(q.materialId && (!readingIds.has(String(q.materialId)) || lists.readings.find(r=>r.id===q.materialId)?.text!==q.material))errors.push(`${q.id}: invalid reading reference`)
+    if(q.audioId && (!audioIds.has(String(q.audioId)) || lists.listening.find(a=>a.id===q.audioId)?.audioSrc!==q.audioSrc))errors.push(`${q.id}: invalid audio reference`)
+    if(input.reviewStatus==='APPROVED' && q.reviewStatus!=='APPROVED')errors.push(`${q.id}: unreviewed question in approved unit`)
+  }
+  if(input.id==='U01') {
+    for(const [field,count] of [['vocabulary',25],['kanji',5],['grammar',3],['readings',4],['listening',6]] as const)if(lists[field].length!==count)errors.push(`U01: requires ${count} ${field}`)
+    if(lists.questions.filter(q=>q.partition==='practice').length!==50)errors.push('U01: requires 50 practice questions')
+    for(const material of lists.readings)if(!lists.questions.some(q=>q.materialId===material.id))errors.push(`${material.id}: unused reading`)
+    for(const audio of lists.listening)if(!lists.questions.some(q=>q.audioId===audio.id))errors.push(`${audio.id}: unused audio`)
+  }
+  return errors
+}
+export function parseUnitPack(input:unknown):UnitPack {
+  const errors=unitPackErrors(input)
+  if(errors.length)throw new Error(errors.join('; '))
+  return structuredClone(input) as UnitPack
 }

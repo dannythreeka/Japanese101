@@ -1,0 +1,70 @@
+{
+  "tool": "Built-in imagegen (not CLI)",
+  "assets": [
+    {
+      "id": "terrain",
+      "prompt": "Create a production game TERRAIN BASE ONLY for an original Japanese travel-journal watercolor RPG. Canvas 1280 by 960 landscape, elevated top-down orthographic view with minimal perspective. Beautiful warm ivory stone paths crossing a soft sage grassy village commons; gentle fine navy ink outlines, finely painted watercolor shrubs and tiny flowers along the outer edges only. Leave the central 85% open and freely walkable. NO buildings, trees, characters, river, signs, text, letters, UI, icons or shadows of objects. Paths curve naturally through a crossroads. It will be a ground layer underneath separate interactive buildings and sprites; do not make a whole town scene. Premium hand-painted illustrated children's travel book, restrained amber sunlight, cream paper, muted terracotta details. Keep readable without noisy texture, light colors. Full bleed ground, opaque.",
+      "transparent_background": false
+    },
+    {
+      "id": "dojo",
+      "prompt": "Create one isolated original Japanese village DOJO BUILDING game asset on a genuinely transparent background, no ground rectangle. Elevated 3/4 top-down view looking toward its south/front entrance. Entire single building fully visible, centered, tightly bounded with small transparent margins. Cream plaster and warm cedar timber, deep slate-blue tiled hip roof, open welcoming navy curtain framing central entrance, small stone steps attached. Fine navy ink contours and detailed watercolor painting, warm ivory travel-journal children's book art, muted terracotta accents, restrained sunny lighting. No people, creatures, other buildings, UI, labels, typography or letters; leave signboard BLANK for DOM text. Architectural detail at small size, consistent perspective, no photorealism, no pixel art, no app-style icons. Use 1024x1024 canvas. It will be independently positioned and collided in an RPG town, not a finished screenshot.",
+      "transparent_background": true
+    },
+    {
+      "id": "shop",
+      "prompt": "One isolated Japanese village equipment-shop building. Original refined Japanese travel-journal game illustration, fine navy ink contours, detailed watercolor, warm cream paper tones, slate navy and muted terracotta, gentle sunlight. No text, labels, typography, grid lines, UI, logos or background. Real transparent alpha. Elevated 3/4 top-down camera from the south/front, whole building centered and fully visible, 1024x1024. Warm cedar and ivory plaster, blue-gray tiled roof, charming TERRACOTTA striped canvas awning, blank wooden signboard, open doorway at center lower edge, tidy window displaying a hat and folded fabric, small potted plants attached at corners. No shopkeeper or creatures, no ground slab. Tight but uncropped silhouette and small transparent margins. Match a warm hand-painted traditional dojo aesthetic, not an icon.",
+      "transparent_background": true
+    },
+    {
+      "id": "home",
+      "prompt": "One isolated modest Japanese village traveler's house building. Original refined Japanese travel-journal game illustration, fine navy ink contours, detailed watercolor, warm cream paper tones, slate navy and muted terracotta, gentle sunlight. No text, labels, typography, grid lines, UI, logos or background. Real transparent alpha. Elevated 3/4 top-down camera from the south/front, whole building centered and fully visible, 1024x1024. Ivory plaster, warm cedar porch, dark slate tiled roof, red mailbox attached beside a welcoming central front door, tiny potted flowers. No people, creatures, ground slab or extra buildings. Blank signboard, no writing. Tight but uncropped silhouette, small transparent margins, premium game architectural watercolor asset.",
+      "transparent_background": true
+    },
+    {
+      "id": "player-sheet",
+      "prompt": "Production sprite sheet for ONE original child traveler, age about ten, warm light skin, short dark brown hair, cream shirt, navy vest and shorts, brown walking shoes. NO HAT, NO BACKPACK, NO SCARF; gear will be separate. Original refined Japanese travel-journal game illustration, fine navy ink contours, detailed watercolor, warm cream paper tones, slate navy and muted terracotta, gentle sunlight. No text, labels, typography, grid lines, UI, logos or background. Real transparent alpha. Exact layout: THREE equal columns, FIVE equal rows, 15 centered full-body sprites. Canvas ratio exactly 3:5; identical square cell size. Each sprite's feet align at 88% cell height, subject fills about 78% cell height, generous transparent gutters. Row 1 face DOWN/front: idle, walk left foot, walk right foot. Row 2 face LEFT: idle, walk left foot, walk right foot. Row 3 face RIGHT: idle, walk left foot, walk right foot. Row 4 face UP/back: idle, walk left foot, walk right foot. Row 5 facing RIGHT battle poses: calm ready idle, friendly open-palm casting gesture, surprised but unhurt feedback pose. Identical character anatomy/outfit in all 15 cells; elevated near-top-down handheld RPG viewpoint, not pixel art, not generic app icons. NO weapons or violence. Do not add props, ground shadows, frames or cell labels.",
+      "transparent_background": true
+    },
+    {
+      "id": "fox-sheet",
+      "prompt": "Production sprite sheet for ONE small friendly fox travel companion, creamy golden fur, large navy-tipped ears, white muzzle/belly, fluffy tail with navy tip. Ordinary cute fox anatomy, not an existing franchise creature. NO scarf or equipment; separate overlays will be applied. Original refined Japanese travel-journal game illustration, fine navy ink contours, detailed watercolor, warm cream paper tones, slate navy and muted terracotta, gentle sunlight. No text, labels, typography, grid lines, UI, logos or background. Real transparent alpha. Exact layout THREE equal columns, FIVE equal rows, 15 full-body poses, canvas ratio exactly 3:5 with equal square cells. Each fox's paws align at 88% cell height; subject fills 68% of square cell; matching transparent gutters and same scale throughout. Row 1 face DOWN/front: idle, walk step A, walk step B. Row 2 face LEFT: idle, walk step A, walk step B. Row 3 face RIGHT: idle, walk step A, walk step B. Row 4 face UP/back: idle, walk step A, walk step B. Row 5 facing RIGHT battle: calmly ready, cheerful little forward leap, startled but unhurt feedback. Gentle fine ink and watercolor, detailed coherent original design at small game size. NO sparkles outside cells, no labels, no ground, no weapons.",
+      "transparent_background": true
+    },
+    {
+      "id": "npc-haru",
+      "prompt": "A single full-body friendly young Japanese gardener character, short wavy dark hair, sage apron over cream shirt and navy trousers, holding a tiny watering can. Premium original Japanese travel-journal game asset, delicate navy ink contours, detailed watercolor, warm cream with muted terracotta and sage, gentle storybook depth. Real transparent background, NO text, letters, UI, icons, borders, ground or cast ground shadow. Elevated 3/4 near-top-down RPG view, facing south/front, feet together near bottom center, whole figure visible including shoes, 1024x1024. Warm expressive face and complete human anatomy; detailed painted clothing, not a flat symbol. Leave small transparent margins.",
+      "transparent_background": true
+    },
+    {
+      "id": "npc-ritsu",
+      "prompt": "A single full-body friendly older Japanese traveler character, silver-gray short hair, muted teal long coat over cream clothes, brown trousers and walking shoes, carrying a rolled travel map tucked at side. Premium original Japanese travel-journal game asset, delicate navy ink contours, detailed watercolor, warm cream with muted terracotta and sage, gentle storybook depth. Real transparent background, NO text, letters, UI, icons, borders, ground or cast ground shadow. Elevated 3/4 near-top-down RPG view, facing south/front, whole person centered and visible including feet. 1024x1024. Distinct from a child adventurer and a gardener; approachable, finely painted human character, not a flat icon.",
+      "transparent_background": true
+    },
+    {
+      "id": "mentor",
+      "prompt": "One full-body gentle Japanese dojo teacher in their thirties, tied-back dark hair, cream long-sleeved shirt, deep navy hakama-style loose trousers, muted coral waist sash, welcoming open hand. Premium original Japanese travel-journal game asset, delicate navy ink contours, detailed watercolor, warm cream with muted terracotta and sage, gentle storybook depth. Real transparent background, NO text, letters, UI, icons, borders, ground or cast ground shadow. Elevated 3/4 near-top-down game view, facing toward lower left, whole human visible, 1024x1024, no weapon or martial aggression. Detailed kind original character suitable for a children's learning adventure.",
+      "transparent_background": true
+    },
+    {
+      "id": "opponent-sheet",
+      "prompt": "A production battle sprite sheet of ONE original friendly little paper-lantern wind guardian, cream folded-paper body, small wooden feet, navy ribbon-like eyebrows and muted terracotta decorative cord, rounded welcoming face. Entirely original folk-craft creature, NO existing franchise character, not a fox or pet. Premium original Japanese travel-journal game asset, delicate navy ink contours, detailed watercolor, warm cream with muted terracotta and sage, gentle storybook depth. Real transparent background, NO text, letters, UI, icons, borders, ground or cast ground shadow. Exactly THREE equal square cells in ONE horizontal row, canvas ratio 3:1. Same scale and bottom baseline across all cells. All face LEFT toward a child opponent. Cell 1 calm idle; cell 2 friendly little puff of wind/action pose; cell 3 surprised but unharmed feedback pose. Full-body coherent forms; no scary features, weapons, labels or ground.",
+      "transparent_background": true
+    },
+    {
+      "id": "gear-hat",
+      "prompt": "Game equipment overlay sheet of ONE small straw travel hat with a narrow navy ribbon. Original refined travel-journal watercolor with fine navy ink, warm cream and muted terracotta details. Genuine transparent background. No writing, UI, borders, grid lines, character, animal or ground. Exact TWO columns and TWO rows of equal square cells: top-left front/down view, top-right left-facing side view, bottom-left right-facing side view, bottom-right back/up view. Same hat scale, centered in each cell, width 75% of cell, 1024x1024 canvas. Hat ONLY, without head, hair or person. Delicate painted straw texture, coherent overhead 3/4 perspective; clear rim and open underside where appropriate. Intended as an independent wearable overlay, not a product illustration scene.",
+      "transparent_background": true
+    },
+    {
+      "id": "gear-pack",
+      "prompt": "Game equipment overlay sheet of ONE small muted terracotta canvas travel backpack with navy straps and tiny brass buckles. Original refined travel-journal watercolor with fine navy ink, warm cream and muted terracotta details. Genuine transparent background. No writing, UI, borders, grid lines, character, animal or ground. Exact TWO columns TWO rows equal square cells. Top-left front/down view: show just the two shoulder straps with tiny backpack edges peeking around sides, transparent middle. Top-right left-facing side: visible pack body and one strap. Bottom-left right-facing side: mirrored anatomical pack view. Bottom-right back/up: full backpack outer back panel. Equal anchor and scale centered in each cell, 1024x1024. Equipment ONLY, absolutely NO person, silhouette, torso or mannequin. Warm delicate painted fabric, clear small-size forms.",
+      "transparent_background": true
+    },
+    {
+      "id": "gear-scarf",
+      "prompt": "Game equipment overlay sheet of ONE little muted terracotta neck scarf for a friendly small fox. Original refined travel-journal watercolor with fine navy ink, warm cream and muted terracotta details. Genuine transparent background. No writing, UI, borders, grid lines, character, animal or ground. Exact TWO columns and TWO rows equal square cells: top-left front/down scarf knot and two short tails; top-right left-facing wrap profile; bottom-left right-facing wrap profile; bottom-right back/up view of scarf wrapped at back. Identical scarf design and scale centered in each cell, object width around 70% cell. Scarf ONLY with transparent neck opening, no fox, fur, neck, mannequin or face. 1024x1024. Fine painted fabric folds, premium original illustration.",
+      "transparent_background": true
+    }
+  ]
+}

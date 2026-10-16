@@ -32,3 +32,19 @@ P2-15交易工程進行中：世界安全落點與BFS、版本化battle規則、
 首次npm ci在sandbox因esbuild子程序EPERM失敗；依lockfile在核准執行權限下成功，沒有改OS或依賴版本。初次測試定位到測試缺fake-indexeddb初始化與TypeScript不允許parameter property，已修正；lint要求共用音訊函式移到非元件檔，保留規則後通過。
 
 驗證：Node22.23.2，205 tests／22 files PASS，typecheck與lint PASS；紀錄在evidence/foundation-*。這是資料／單元基礎，不是P2三引擎、人工教材、美術或實機gate。imagegen已開始地形／建築／角色分層資產，原圖先保留工具來源，正式資產還需manifest與人工核對。
+
+## 第二批：隔離冒險預覽與U01草稿（執行中）
+
+入口為開發／preview專用 `/#/preview/adventure`；DRAFT教材不替換正式孩子入口。QuestionPlayer四種renderer、手動確認／繼續、獨立check全卷後解說、v7 learningChecks、位置／故事／教學／戰鬥／購物／背包／旅行手帳與PIN後家長報告已串接，完整gate仍待驗。CI建置顯式開啟審閱入口，不變更正式部署設定。
+
+U01草稿：25詞、5漢字、3文法、4閱讀、6聽力、50practice與15check候選，全部DRAFT，未編造reviewer。14類分配與教學先修已建，題族真實獨立性、教材自然度與新詞盤點仍待非作者日語審核。T13目前仍需正式情境圖，日文操作／教材翻譯、ruby亦待補完。
+
+13張原創分層WebP合計5,177,318bytes，來源prompt／hash／尺寸／透明區已存manifest；詳design/JOURNEY_ART.md。工程初看與實際1024畫面已核對；發現fox戰鬥耳朵裁切及對手鄰格殘影，改明確取樣窗後須再看截圖。真人視覺與跨場景裝備對位尚未通過。
+
+共用UI五寬／64px／dialog Escape焦點／模擬200%文字通過，evidence/ui-foundation；已實際看截圖，修正Tailwind reset造成dialog偏左上。初步小鎮→教學→戰鬥入口PASS，evidence/adventure-integration；不是完整循環或G2通過。新完整循環與五寬E2E在e2e/p2-adventure.spec.ts，首次執行中。
+
+本批已跑209 tests／23files PASS，typecheck／lint已通過（新增E2E後再檢查中）；審閱build PASS，預快取434教材資產。正式release審查尚未執行。語音六聽力與四詞卡共10段PCM WAV已生成並保留；首次後段請求逾時、有限次重試多完成一段後HTTP429，剩kanji與三grammar共4段缺件，不再對未變條件持續重試。音檔metadata/hash在public/assets/audio/u01/manifest.json，全部待真人審聽。
+
+下一步：修復新E2E暴露問題，完整版本安全恢復、離線冷啟、兩玩家／雙分頁／故障操作證據、世界／素材關聯validator、日文與ruby、缺圖音，再跑三引擎CI；保持draft PR57。
+
+第二批保存更新：語音429經工作間隔後恢復，14檔已完整生成，仍全為DRAFT。Chromium初次7項有6 PASS，完整循環因雙分頁focus hydration使領獎按鈕更新而timeout；已改以兩頁既有按鈕同時dispatch測競態，重跑待完成。版本恢復與移動dirty checkpoint保全亦已補，後續需驗證。工程摘要evidence/integration-batch.json。

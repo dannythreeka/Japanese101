@@ -48,6 +48,8 @@ jobs:
 
       - name: Build
         if: ${{ !cancelled() }}
+        env:
+          VITE_P2_REVIEW_PREVIEW: '1'
         run: npm run build
 
       - uses: actions/upload-artifact@v4
@@ -86,7 +88,7 @@ jobs:
           pactl load-module module-null-sink sink_name=japanese101_qa
           pactl set-default-sink japanese101_qa
           pactl list short sinks
-      - name: P1 browser regression
+      - name: P1 and P2 browser regression
         # WebKit page creation contends heavily on the shared runner at three workers.
         # Keep the same assertions and time budgets while limiting its concurrency.
         run: npm run test:e2e -- --project=${{ matrix.browser }} --workers=${{ matrix.browser == 'webkit' && '1' || '3' }}

@@ -1,4 +1,5 @@
 import LegacyBackup from '../../components/LegacyBackup'
+import JourneyReport from '../journey/JourneyReport'
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode, WriteDifficulty } from '../../types'
@@ -199,6 +200,7 @@ export default function ParentDashboard() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-4 pt-6">
       <LegacyBackup />
       <div className="max-w-lg mx-auto flex flex-col gap-6">
+        {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <JourneyReport key={profileId} profileId={profileId}/>}
 
         <div className="flex items-center gap-3">
           <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}

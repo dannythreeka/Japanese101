@@ -1,0 +1,28 @@
+{
+  "sourceBase": "62d62c0fd58c9887c6f7339a5c72602042db5f80",
+  "scope": "uncommitted second batch; commit containing this file identifies delivered source",
+  "node": "22.23.2",
+  "unit": {
+    "status": "PASS",
+    "files": 23,
+    "tests": 209
+  },
+  "typecheck": "PASS",
+  "lint": "PASS (0 errors / 0 warnings; paused movement effect fixed without disabling rules)",
+  "reviewBuild": "PASS",
+  "chromiumP2Initial": {
+    "passed": 6,
+    "failed": 1,
+    "reason": "two-tab focus hydration replaces claim button before sequential locator click; concurrency trigger revised, rerun pending",
+    "retry": "Complete town→teaching→battle→two-tab reward→purchase→refresh→PIN report PASS; other 6 tests still running"
+  },
+  "humanContentReview": "NOT_RUN",
+  "humanVisualReview": "NOT_RUN",
+  "physicalTablet": "NOT_RUN",
+  "audio": {
+    "generated": 14,
+    "reviewStatus": "DRAFT",
+    "humanListening": "NOT_RUN"
+  },
+  "remaining": "See progress and handoff; not ENGINEERING_READY"
+}

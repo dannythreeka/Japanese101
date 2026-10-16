@@ -1,7 +1,6 @@
 {
-  "date": "2026-10-16T06:53:23.456Z",
-  "sourceCommit": "0fc369de7a5c8ba19e396c67beb025d1b1d64405",
-  "subsequentCommit": "911fa44 changes only test timing and progress",
+  "date": "2026-10-16T07:13:32.944Z",
+  "sourceCommit": "e6444e541b710aaceaaea4807032d3904650390e",
   "browser": "145.0.7632.6",
   "viewport": [
     [
@@ -16,6 +15,7 @@
   "steps": "isolated context; first-time skippable guide; actual parent PIN setup 1234; no real child data",
   "reviewer": "Codex engineering visual inspection; human NOT_RUN",
   "pageErrors": [],
-  "inspection": "PASS engineering only: scrollable guide at320/1024 with visible close, no horizontal overflow; parent empty state has zero samples and no invented mastery. Also viewed actual four-answer result/report: sample4, independent100%, section0, practicing not stable, next-day review.",
-  "humanVisual": "NOT_RUN"
+  "humanReview": "NOT_RUN",
+  "inspection": "Codex engineering PASS; 320/1024 scrollable welcome, empty and four-answer report, battle result4 samples/0 five-question sections, long reading320/1024, shop768, 200% town. Last CSS sets mobile title32px and world instruction24px. Real human NOT_RUN.",
+  "layoutSource": "test-results/p2-font: 90fea81 working tree with exact CSS subsequently committed e6444e5; other final pictures recaptured after clean product commit."
 }

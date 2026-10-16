@@ -214,7 +214,7 @@
 
 2026-10-16啟動前歷史（其後P0／P1已獲使用者核准，見前置核准紀錄）：PR55已合併至P1分支，merge `0b1cb5e7194f2b46b944857e5817be8bdc1e65b7`，本機fetch後已包含。所有task狀態與依賴保留；P1-12仍BLOCKED、P0-03仍IN_REVIEW，P2-10文件DONE，其餘24項尚無全部依賴DONE的可啟動task。接續狀態、恢復入口及證據見[handoff](docs/phases/P2/handoff.md)；此紀錄不新增或重做task。
 
-2026-10-16工程交付：P2-01～07、P2-10、P2-12～18 共15項已完成工程驗證（reviewer：本session Codex）；P2-11與U01-M為IN_REVIEW。P2-08／09受正式教材、真人視覺／可玩性及實體平板阻擋；U01其餘6項保留TODO依賴。完整三引擎CI及Phase狀態以[acceptance](docs/phases/P2/acceptance.md)為準；工程DONE不冒充正式內容或Phase放行。所有未審素材只在隔離preview。
+2026-10-16工程交付：P2-01～07、P2-10、P2-12～18 共15項已完成工程驗證（reviewer：本session Codex）；P2-11與U01-M為IN_REVIEW。P2-08／09受正式教材、真人視覺／可玩性及實體平板阻擋；U01其餘6項保留TODO依賴。最終三引擎CI各42項、合計126全PASS；Phase為ENGINEERING_READY，完整gate仍待人工／實機。證據與Phase狀態以[acceptance](docs/phases/P2/acceptance.md)為準；工程DONE不冒充正式內容或Phase放行。所有未審素材只在隔離preview。
 
 #### P2-01｜建立題目、Attempt、skill與版本契約
 

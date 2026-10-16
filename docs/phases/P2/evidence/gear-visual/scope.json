@@ -1,9 +1,10 @@
 {
-  "date": "2026-10-16T06:50:36.714Z",
-  "source": "0fc369de7a5c8ba19e396c67beb025d1b1d64405",
+  "date": "2026-10-16T07:13:45.362Z",
+  "source": "e6444e541b710aaceaaea4807032d3904650390e",
   "browser": "145.0.7632.6",
   "fixture": "isolated Chromium context with explicit 180-coin fixture; not a real child or earned rewards",
-  "scope": "Codex engineering visual inspection PASS; real human art/playability and physical tablet NOT_RUN",
+  "scope": "Engineering visual inspection PASS; real human art/playability and physical tablet NOT_RUN",
   "pageErrors": [],
-  "inspection": "Viewed shop, town, battle, down/left/up and three battle poses; hat crown/face/ears intact, scarf below muzzle, side pack behind body, rear pack exterior. No human signoff."
+  "sourceCommit": "e6444e541b710aaceaaea4807032d3904650390e",
+  "humanReview": "NOT_RUN"
 }

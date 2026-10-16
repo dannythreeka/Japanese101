@@ -1,0 +1,12 @@
+Source run https://github.com/dannythreeka/Japanese101/actions/runs/38865806957
+Head e6444e541b710aaceaaea4807032d3904650390e
+
+2026-10-16T07:14:48.6141808Z > tsc -b --pretty false
+2026-10-16T07:14:57.7747092Z Blueprint structure PASS: 24 units, 75 skills, 14 types. Human review: APPROVED
+2026-10-16T07:14:58.2985390Z Journey structure PASS: 65 questions / 14 images / 14 unit + 4 world audio. Human reviews remain DRAFT.
+2026-10-16T07:14:58.4494732Z > eslint .
+2026-10-16T07:15:22.2175676Z  Test Files  24 passed (24)
+2026-10-16T07:15:22.2176920Z       Tests  222 passed (222)
+2026-10-16T07:15:22.4496439Z Offline manifest 0caff4d5abd051bd: 444 assets
+2026-10-16T07:15:22.4537167Z > tsc -b && vite build
+2026-10-16T07:15:33.1905199Z precache  466 entries (15184.27 KiB)

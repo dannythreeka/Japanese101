@@ -1,6 +1,6 @@
 {
   "date": "2026-10-16T07:12:09.488Z",
-  "source": "90fea81 + pending CSS font correction only",
+  "source": "90fea81 + exact CSS correction committed as e6444e541b710aaceaaea4807032d3904650390e",
   "browser": "145.0.7632.6",
   "method": "Actual getComputedStyle foreground/background; alpha composited through ancestors. Map label additionally bounded over pure black/white under-art; not a claim to human visual approval.",
   "rows": [
@@ -211,5 +211,6 @@
     "worldInstruction": "24px"
   },
   "result": "PASS",
-  "human": "NOT_RUN"
+  "human": "NOT_RUN",
+  "validatedProductCommit": "e6444e541b710aaceaaea4807032d3904650390e"
 }

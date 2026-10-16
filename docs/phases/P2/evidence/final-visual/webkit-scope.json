@@ -1,0 +1,27 @@
+{
+  "sourceCommit": "e6444e541b710aaceaaea4807032d3904650390e",
+  "testedMerge": "be544a77cee9e4a10304d811cef80bf9535203ba",
+  "artifactId": 12032027427,
+  "artifactUrl": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/artifacts/12032027427",
+  "browser": "WebKit26.0 on isolated ubuntu24.04 runner; not physical Safari",
+  "selected": [
+    {
+      "artifactFile": "test-results/p2-adventure-P2-town-dojo--ff94e-out-1024px-and-64px-targets-webkit/town-1024.png",
+      "savedFile": "webkit-town-1024.png",
+      "bytes": 3077981
+    },
+    {
+      "artifactFile": "test-results/p2-adventure-P2-town-dojo-shop-layout-768px-and-64px-targets-webkit/shop-768.png",
+      "savedFile": "webkit-shop-768.png",
+      "bytes": 754019
+    },
+    {
+      "artifactFile": "test-results/p2-adventure-long-reading--54e49-lapse-keyboard-and-200-text-webkit/reading-battle-320.png",
+      "savedFile": "webkit-reading-battle-320.png",
+      "bytes": 518784
+    }
+  ],
+  "download": "Server rejected byte ranges. Used bounded1MiB streaming to own temporary file, verified artifact digest and ZIP CRC, removed temporary archive after selecting3screens.",
+  "reviewer": "Codex engineering visual inspection PASS; real human NOT_RUN",
+  "inspection": "Viewed actual final CI WebKit shop768, town1024 and long reading320. Text and original layers readable, mobile long content scrolls, controls and scene stay within page. This is not physical Safari or a real human approval."
+}

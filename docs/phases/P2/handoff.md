@@ -6,8 +6,8 @@
 
 - worktree `/home/yyy/workspace/Japanese101-p2`；branch `phase/p2-adventure`；draft [PR57](https://github.com/dannythreeka/Japanese101/pull/57)。原 `/home/yyy/workspace/Japanese101` 保留，勿 reset 他人工作。
 - main 基準 `99b8805`；P0／P1 已由擁有者明確核准，證據 `evidence/predecessor-approval.json`。不用重做前置，也不把它當作新 P2 人審。
-- runtime `0fc369de7a5c8ba19e396c67beb025d1b1d64405`；測試／進度更新 `911fa44dcc813f244299dfa3f89a66c68a340018`；後續若只增證據文件，明確列差異，不假稱全套跑在文件 commit。
-- 最新完整 CI `38863606990` 仍執行中；結案看 acceptance 與 evidence/ci-final.json。不使用 dcab575 的舊綠燈。
+- runtime `e6444e541b710aaceaaea4807032d3904650390e`；0fc369d為主功能，後續測試時序與兩處規範字級已包含；後續若只增證據文件，明確列差異，不假稱全套跑在文件 commit。
+- 最新完整 CI `38865806957` 已全PASS：222單元、三引擎各42項，總126。工程ENGINEERING_READY；完整Phase仍待真人／實機，見acceptance與evidence/ci-final.json。不使用 dcab575 的舊綠燈。
 
 ## 本機恢復命令
 
@@ -31,7 +31,7 @@ Firefox 可同命令換 project 及 port／artifact 目錄。全 P1＋P2 三引�
 
 開發入口：`npm run dev -- --host 127.0.0.1 --port 4202 --strictPort`。若該 port 已由本 worktree 啟動，使用既有服務或換未用 port，不殺其他程序。`/#/preview/adventure` 為隔離冒險，`/#/__review/content` 是全內容／美術／音訊審閱，`/#/__review/ui` 為共用狀態。正式 production build 不設旗標時不開 preview，Vercel Preview 會開啟；舊正式首頁保留到依賴放行。
 
-Vercel 預覽 deployment success 不等於 agent 已驗對 SHA。無登入讀 /version.json 目前回登入 HTML，不能當 JSON 核對成功；請擁有者登入預覽後核對版本，再填真人紀錄。不要為此移除保護或貼帳密。預覽與核對結果見 evidence/preview-access.json（結案補存）。
+Vercel 預覽 deployment success 不等於 agent 已驗對 SHA。無登入讀 /version.json 目前回登入 HTML，不能當 JSON 核對成功；請擁有者登入預覽後核對版本，再填真人紀錄。不要為此移除保護或貼帳密。預覽與核對結果見 evidence/preview-access.json。
 
 ## 主要程式與資料
 
@@ -47,9 +47,19 @@ Vercel 預覽 deployment success 不等於 agent 已驗對 SHA。無登入讀 /v
 
 ## 還沒完成的工作
 
-1. 完成當前 CI 證據及 tasks 同步；程式若未再變，文件／畫面提交只查 links、diff 與範圍，不無故重跑所有慢套件。
-2. 非原作者日語負責人依 `human-review.md` 與 `docs/content/U01/review-ledger.json` 審核凍結 M→T／Q1／Q2／A→V；每筆都需真名／日期／版本／結果，不能一筆泛稱 PASS。
+1. 工程15項與CI證據／tasks已同步；不要重做已驗收工程。最後證據提交僅docs及獨立驗證腳本，runtime仍e6444e5；完整126綠燈對應該產品head。接續先確認真人ledger與依賴，不把缺人審的task改DONE。
+2. 非原作者日語負責人依 `human-review.md` 與 `docs/content/U01/review-ledger.json` 審核凍結 M→T／Q1／Q2／A→V；每筆都需可追溯的實際reviewer／日期／版本／結果，不能一筆泛稱 PASS。
 3. 真人 UX／產品看 14 素材與跨場景換裝、走完整冒險並記迷路／誤觸／策略／數值問題；至少一台實體平板測觸控、橫直向、音訊與離線冷啟。瀏覽器模擬不能當實機，成人／AI 喜好不能當兒童試用。
 4. 有缺陷由 agent 修正並升實際變動版本／重驗／重審；依賴齊後才 U01-I、P2-08、P2-09。完整 25 task／15 gate 都過才 COMPLETE。
 
 已授權本分支 commit／push／draft PR，未授權 merge main 或正式發布。P3 兒童招募／家長同意、後續量產、付費、抽獎或多人交易不在本 Phase。
+
+## 完整200%文字鍵盤循環重跑
+
+先啟動本worktree的本機review server，再執行：
+
+```sh
+P2_REVIEW_URL=http://127.0.0.1:4202 node scripts/verify-p2-keyboard.mjs
+```
+
+腳本每個viewport建立全新context，不寫真實玩家；需原生Tab巡訪才能找到每個控制，Enter／方向鍵操作，逐畫面重新套用200% computed font／line-height。320／768直向／1024橫向各54次操作全過。證據keyboard-200.json，trace在test-results/p2-keyboard-200；精選畫面final-visual/keyboard-shop-text200-*。這是桌面模擬，不能代替真人平板文字設定。

@@ -1,6 +1,6 @@
 # P2 驗收紀錄
 
-2026-10-16（Asia/Taipei）｜Phase **IN_PROGRESS：三引擎 CI 執行中**｜正式 gate **NO-GO**。
+2026-10-16（Asia/Taipei）｜Phase **ENGINEERING_READY**（完整Phase未完成）｜正式 gate **NO-GO**。
 
 工程 reviewer 為本 session Codex；真人 reviewer 尚待指派。P0／P1 真實擁有者核准已保存於 [predecessor-approval.json](evidence/predecessor-approval.json)，不延伸為 P2 教材、視覺或實機簽核。原始歷史與失敗沒有刪除，見 [execution-history.md](execution-history.md)。
 
@@ -9,8 +9,8 @@
 | 項目 | 真實值 |
 |---|---|
 | 基準 | main `99b8805bbb36db54237370bbfb4f3ad8d18efba2` |
-| 產品程式 | `0fc369de7a5c8ba19e396c67beb025d1b1d64405` |
-| 最新待驗 CI head | `911fa44dcc813f244299dfa3f89a66c68a340018`，只比產品版多 catalog 測試等待與 progress |
+| 產品程式 | `e6444e541b710aaceaaea4807032d3904650390e`（0fc369d 主功能＋e6444e5 兩處規範字級） |
+| 已驗 CI head | `e6444e541b710aaceaaea4807032d3904650390e` |
 | 工作分支／PR | `phase/p2-adventure`／[draft PR57](https://github.com/dannythreeka/Japanese101/pull/57) |
 | 本機環境 | Ubuntu 24.04，Node 22.23.2，npm 10.9.8，Playwright 1.58.0；依 lockfile，未更動 OS |
 | 教材／圖片 | `u01-2-draft`、item v2／`journey-art-v2`，全部 DRAFT |
@@ -18,7 +18,7 @@
 | 學習排程／DB | `learning-v1.1-spaced`／v8；舊資料先備份，不清真實資料 |
 | 正式入口 | 未切換；隔離 preview 與兩個 review route 不代表正式 U01 接入 |
 
-本機完整 Chromium 24 項 PASS；Firefox 24 項亦 PASS。最新完整三引擎 CI：[38863606990](https://github.com/dannythreeka/Japanese101/actions/runs/38863606990)，尚未結案。最終資料將保存 `evidence/ci-final.json`，不以 dcab575 舊綠燈代替。
+本機完整 Chromium 24 項 PASS；Firefox 24 項亦 PASS。最新完整三引擎 CI：[38865806957](https://github.com/dannythreeka/Japanese101/actions/runs/38865806957)已全PASS：各42項，合計126項。精確head／測試merge／環境／artifact見[ci-final.json](evidence/ci-final.json)，非引用dcab575舊綠燈。
 
 ## 完整 25 項 task 對照
 
@@ -28,11 +28,11 @@
 |---|---|---|
 | P2-01 | content/contracts runtime schema、版本歷史、Attempt 全 outcome fixtures、題族分區 | PASS／DONE |
 | P2-02 | learning/rules 固定時鐘：60%、零樣本、5 題族／2 日／48h／4/5、SRS 到期、三題補救間隔 | PASS／DONE |
-| P2-03 | 旅行手帳 tokens／7 共用元件、狀態頁、64px／焦點／五寬；修正 P1 詞卡長列表、書寫控制及精確存檔文案 | PASS／DONE |
+| P2-03 | 旅行手帳 tokens／7 共用元件、狀態頁、64px／焦點／五寬、15 實際對比；修正 P1 詞卡長列表、書寫控制及精確存檔文案 | PASS／DONE |
 | P2-04 | choice/order/reading/audio；確認、鎖定、手動繼續、鍵盤、真音訊門檻、失敗原答案重試、暫停 | PASS／DONE |
 | P2-05 | 固定計畫與續學、跨戰鬥有效樣本、小節不因提早勝利虛增、2/3/4 建議、隔日 due | PASS／DONE |
-| P2-06 | 原子 receipt 後顯示實領、refresh 不重播、PIN 後玩家／期間／樣本／逐題／能力摘要 | PASS／DONE，完整三引擎 gate 回歸中 |
-| P2-07 | 繁中／日文、教材 ja、教學 ruby、切語言保留答案、四類鍵盤與地點清單替代 | PASS／DONE，完整三引擎 gate 回歸中 |
+| P2-06 | 原子 receipt 後顯示實領、refresh 不重播、PIN 後玩家／期間／樣本／逐題／能力摘要 | PASS／DONE |
+| P2-07 | 繁中／日文、教材 ja、教學 ruby、切語言保留答案、四類鍵盤與地點清單替代 | PASS／DONE |
 | P2-08 | 完整循環隔離預覽已實作，正式 U01-I／P2-11 未放行 | BLOCKED：正式整合不可先 DONE |
 | P2-09 | 自動化／Codex 視覺工程證據已做；真人日語、視覺／可玩性與實體平板未做 | BLOCKED：十五完整 gate 未全過 |
 | P2-10 | 已驗收設計沿用，需求／原型參數分開 | PASS／DONE，未重做 |
@@ -40,7 +40,7 @@
 | P2-12 | BFS、方向／鍵盤／地點清單、障礙／鏡頭／安全落點、失焦與 pointercancel 停止 | PASS／DONE |
 | P2-13 | 2 居民、靠近互動／防重入、重讀／退出／4 本地 WAV、道館先修／教學入口 | PASS／DONE |
 | P2-14 | 3 行動、敵方預告、HP／Attempt 同交易、答錯／提示／跳過／耗盡／失敗／撤退／上限／重送 | PASS／DONE |
-| P2-15 | 首勝60／重玩10／失敗0；合法末回合 Attempt、receipt、雙分頁、防溢位／版本與原子購買 | PASS／DONE；最新 WebKit gate 回歸中 |
+| P2-15 | 首勝60／重玩10／失敗0；合法末回合 Attempt、receipt、雙分頁、防溢位／版本與原子購買 | PASS／DONE |
 | P2-16 | 試穿不改資料、買／穿／卸、空包、已擁有／不足／版本／失敗、戰鬥快照鎖定、手機／平板 | PASS／DONE |
 | P2-17 | v5→v8 保全、A/B 延遲隔離、世界／內容／戰鬥恢復、scoped backup 匯出、真斷站冷啟冒險 | PASS／DONE；全庫匯入仍 P5 |
 | P2-18 | world／encounter／equipment／question／skill／asset 引用驗證、壞 fixtures、正式拒絕 DRAFT | PASS／DONE |
@@ -63,7 +63,7 @@
 | G2-3 | 固定時鐘答題→隔日 due→手帳進道館→重開同 queue→到期答對進 3 天 | PASS | PASS 工程；非真實跨日人測 |
 | G2-4 | 五題三獨立正確＝60%，提示／跳過／重試與零分母邊界；遊戲規則不改 mastery | PASS | PASS 工程 |
 | G2-5 | A 世界／戰鬥／購買→切 B→分欄核對／匯出；舊 A 延遲仍限 A | PASS | PASS 工程 |
-| G2-6 | 五寬、768×1024／1024×768、200% CSS 文字、四 renderer 鍵盤與地點清單 | PASS 自動化 | BLOCKED：實體平板設定／觸控仍待 |
+| G2-6 | 五寬、768×1024／1024×768、200% CSS 文字、四 renderer 鍵盤與地點清單；另三種寬度以 Tab／Enter 完整走完戰鬥／購物／換裝／PIN 報告 | PASS 自動化 | BLOCKED：實體平板設定／觸控仍待 |
 | G2-7 | 注入 quota：無 Attempt／無 HP 變化；重試只有一筆。提交成功後讀取失敗僅重讀、不再扣款／傷害 | PASS | PASS 工程 |
 | G2-8 | 點地面／鍵盤走路、牆／河不可達、五目的地可達；keyup／blur／cancel 停止 | PASS | PASS 工程；實體觸控待 G2-15 |
 | G2-9 | 純規則邊界＋UI 三招／預告／撤退／手動繼續，無倒數；刷新保存回合 | PASS | PASS 工程；策略體感待真人 |
@@ -71,8 +71,8 @@
 | G2-11 | 同物雙頁只扣一次；不同物競爭、故障 rollback、canonical catalog revision、三件試穿／買／卸 | PASS | PASS 工程；商品數值適合度待真人 |
 | G2-12 | map／shop／battle 共來源、frameWindows 與三裝備對位；Codex 逐圖核對 | PASS 工程視覺 | BLOCKED：P2-11 真人來源／權利／視覺 |
 | G2-13 | v5 保留、同版壞資料／變版先備份、安全入口、不假發獎；匯出 owned 原始資料及 owned backups | PASS | PASS 工程；完整還原 P5 |
-| G2-14 | 下載完整包→原站真正停止→關頁／新頁冷啟→WAV／戰鬥／領幣／買裝備／重整仍在 | PASS Chromium／Firefox；WebKit gate 執行中 | BLOCKED 正式 U01-I；缺包不得報完成 |
-| G2-15 | 三引擎 CI 全 P1＋P2、screenshots／trace，Codex 實看畫面 | CI 執行中 | BLOCKED：實體平板、真人完整循環與可玩性 |
+| G2-14 | 下載完整包→原站真正停止→關頁／新頁冷啟→WAV／戰鬥／領幣／買裝備／重整仍在 | PASS 三引擎 | BLOCKED 正式 U01-I；缺包不得報完成 |
+| G2-15 | 三引擎 CI 全 P1＋P2、screenshots／trace，Codex 實看畫面 | PASS 三引擎自動化 | BLOCKED：實體平板、真人完整循環與可玩性 |
 
 ## UI-01～UI-14 與視覺工程核對
 
@@ -105,4 +105,14 @@
 - 真人逐項 ledger 全 NOT_RUN，見 [human-review.md](human-review.md) 與 [review-ledger](../../content/U01/review-ledger.json)。
 - P2 完整 gate 只有全部 25 task＋15 項及真人／實機證據通過才 COMPLETE；ENGINEERING_READY 也不等於正式放行或可自動合併。
 
-911fa44 CI實際結果：Firefox42項PASS；Chromium41 PASS／1 FAIL為首次引導尚未保存關閉就按方向鍵的測試時序，已補等待真實 dialog 關閉並以3workers／3重複／60進出PASS，未改產品或斷言。下一輪全CI仍須完成，不能引用前一失敗當全綠。
+911fa44 CI實際結果：Firefox42項PASS；Chromium41 PASS／1 FAIL為首次引導尚未保存關閉就按方向鍵的測試時序，已補等待真實 dialog 關閉並以3workers／3重複／60進出PASS，未改產品或斷言。最終e6444e5已全CI通過；保留前一失敗，不將歷史改寫成全綠。
+
+實際 computed style 對比補驗：[computed-contrast.json](evidence/computed-contrast.json)，15組最小5.02:1；地圖半透明標籤對黑／白底保守界限10.38:1，鍵盤外框3px／offset2px。修正手機標題32px與探索指令24px後，7項受影響layout重跑PASS。
+
+完整200%文字＋全鍵盤操作：[keyboard-200.json](evidence/keyboard-200.json)，320／768直向／1024橫向各54次原生鍵盤操作全PASS；實際賺60、買帽40、卸下再穿、refresh仍20幣／4 Attempt，PIN後報表100%／樣本4／五題小節0。腳本scripts/verify-p2-keyboard.mjs可重跑，並非只用程式focus跳過Tab或只看截圖。實體與真人仍NOT_RUN。
+
+CI的實際build artifact version.json亦已讀回核對：[ci-build-version.json](evidence/ci-build-version.json)。它對應本次PR測試merge與head，不冒充已通過受登入保護Vercel預覽的版本核對。既有主bundle約618kB的Vite警告仍可見，build通過；冒險／報告分chunk，實體平板效能仍待實測。
+
+最終交付差異：本證據文件提交相對e6444e5只改docs與獨立驗證腳本，不改應用程式／素材／依賴／build／CI。產品完整測試在e6444e5（GitHub測試merge be544a77），不是後續文件SHA；文件連結、JSON、diff及lint已另行核對。後續文件提交若觸發新CI，與此已通過產品測試分開記錄。
+
+三引擎的工程圖像核對：Chromium的final-visual／gear-visual、Firefox的firefox-*、實際CI WebKit的webkit-*；人工資格與實體平板仍完全NOT_RUN，不以本初審填P2-11／09 PASS。

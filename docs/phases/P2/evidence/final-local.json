@@ -56,5 +56,13 @@
     "source": "911fa44 + test-only wait for persisted onboarding dialog to close",
     "assertions": "movement must start; on every departure RAF/interval/playback timeout/media/speech equal baseline",
     "artifacts": "test-results/p2-resource-race"
+  },
+  "finalProductCommit": "e6444e541b710aaceaaea4807032d3904650390e",
+  "finalCssDelta": {
+    "mobileTitle": "28→32px",
+    "worldInstruction": "18→24px",
+    "checks": "review build PASS; 7 affected Chromium layouts/text200/long-reading PASS31.5s; computed15 actual contrast pairs PASS; complete final CI pending",
+    "source": "90fea81 + exact CSS committed e6444e5",
+    "artifacts": "test-results/p2-font"
   }
 }

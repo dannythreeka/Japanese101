@@ -4,6 +4,10 @@ Repository：`/home/yyy/workspace/Japanese101`；分支：`phase/p0-baseline`；
 
 目前Phase BLOCKED／NO-GO。DONE：ENV-01、P0-01、P0-02、P0-04。IN_REVIEW：P0-03、P0-05。BLOCKED：P0-06、P0-07。人工gate仍未過。2026-10-15使用者另明確授權merge PR53並開始P1、P0人工驗證並行；PR53已合併為bc2116ad789d247e3be44d2eba5b5a0e790b73ea。這是P0→P1執行順序例外，未代替P0簽核；P1狀態另見docs/phases/P1/。
 
+2026-10-16更新：PR54已依使用者指示合併main `4d56991ffe46cd800657688defd8ce352f9f286d`，包含P1工程與PR55設計。以下P0測試數量、舊lint與未merge授權說明是原始執行紀錄，不是目前P1結果。接續從最新main與本文件分支 `docs/p0-review-handoff` 的差異恢復，保留任何既有修改；不切回舊P0分支重跑完整prompt。
+
+先讀[next-actions.md](next-actions.md)：本次已將漢字配額同步為tasks的U01～U20各5、U21～U24複習，manifest 0.2-draft仍待真人審。正式網址已核對4d56991並保存工程smoke；preview保護未改。所有task狀態與P0／P1人工／實機缺口保持不變，不因merge開始P2產品工程。
+
 ## 重跑環境與檢查
 
 使用`.nvmrc`的22.23.2（已安裝）。非互動shell若nvm未載入，可把`/home/yyy/.nvm/versions/node/v22.23.2/bin`加到PATH；npmci不改主機apt。

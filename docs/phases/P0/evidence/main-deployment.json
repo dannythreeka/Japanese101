@@ -1,0 +1,18 @@
+{
+  "checkedAt": "2026-10-16T03:18:24.492Z",
+  "url": "https://japanese101-five.vercel.app/",
+  "sha": "4d56991ffe46cd800657688defd8ce352f9f286d",
+  "httpStatus": 200,
+  "versionHttpStatus": 200,
+  "browser": "Chromium 145.0.7632.6",
+  "viewport": {
+    "width": 1024,
+    "height": 768
+  },
+  "environment": "Headless browser, isolated anonymous context; not physical tablet",
+  "mainAdventureButtonVisible": true,
+  "pageErrors": [],
+  "result": "PASS_PUBLIC_DEPLOYMENT_SMOKE_ONLY",
+  "humanUXReview": "NOT_RUN",
+  "physicalDeviceReview": "NOT_RUN"
+}

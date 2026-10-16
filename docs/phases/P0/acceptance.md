@@ -2,6 +2,8 @@
 
 狀態：**BLOCKED／NO-GO**。可獨立執行的P0工程工作已交付；仍缺內容／UX真人審核、實際承接確認與可存取preview的SHA驗證。**不標COMPLETE，不解除P1-依賴。**
 
+2026-10-16定點更新：不用重做P0；PR54已合併main `4d56991ffe46cd800657688defd8ce352f9f286d`。本次將內容藍圖／manifest的漢字單元配額同步到主tasks，manifest 0.2-draft保留IN_REVIEW與空reviewer。正式版本已可讀且SHA核對正確，隔離Chromium首頁smoke通過，見[evidence/main-deployment.json](evidence/main-deployment.json)；這沒有解除原branch preview保護，也不代替人工／實機簽核。人類與agent補驗分工見[next-actions.md](next-actions.md)，以下歷史證據與task狀態不覆寫。
+
 基準：main@91006716d38a9afb63bb061bbb652577c7c79a26。工程分支phase/p0-baseline，draft PR [#53](https://github.com/dannythreeka/Japanese101/pull/53)。已提交批次：b481099（盤點）、935631a（規格／藍圖）、637ab42（工具／CI）、3b0d877（操作probe／狀態）。後續證據commit僅補文件／測試產物；最終SHA以PR head／git log為準。
 
 ## Task 驗收

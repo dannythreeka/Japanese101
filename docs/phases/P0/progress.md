@@ -1,6 +1,6 @@
 # P0 執行紀錄
 
-狀態：**BLOCKED／NO-GO**，所有可獨立推進的P0工作已完成並提交於PR #53；外部缺項見acceptance.md。目標未完成，未進P1。
+狀態：**BLOCKED／NO-GO**；原P0工程已交付於PR #53，外部缺項見acceptance.md。以下保留當時紀錄；P1後續已獲授權執行並合併，最新補驗分工見[本次接續](next-actions.md)，不以合併取代gate。
 基準main@9100671；分支phase/p0-baseline。工程與初步QA／視覺審視：本session Codex；真人審核與長期承接待確認。
 
 ## 已完成批次
@@ -29,3 +29,15 @@ Vercelproduction與branch部署由GitHub可核SHA，正式別名可讀。但bran
 下一步只需解除acceptance列出的真人審核／責任承接／preview存取；不重做已保存證據、不自動合併或正式發布。
 
 最終工具CI run38711924120：Node22.23.2，Chromium145／Firefox146／WebKit26三引擎PASS，其餘檢查除既有lint均PASS。證據ci-final具三份environment.json、home.png、trace.zip。228任務ID唯一，依賴無循環；新增／異動Markdown本機連結與fence檢查通過；diff掃描未包含實際憑證值。
+
+## 2026-10-16 定點同步與補驗準備
+
+使用者指示merge PR54；已在Test & Build與三引擎檢查全通過後合併為main `4d56991ffe46cd800657688defd8ce352f9f286d`。P0不整階段重做；P1維持工程已交付、人工／實機未通過，P2只交付方向設計。
+
+Agent核對發現主tasks與內容藍圖對漢字引入單元分配不同，雖然總數皆100而未觸發舊總量驗證。依tasks.md的每單元配額同步CONTENT_BLUEPRINT、manifest 0.2-draft及審核表；未變更詞彙／漢字總量、技能、題族或任何task狀態，未填人審姓名與日期。這是P0-03既有範圍的規格修正，不新增Phase或重做已完成項目。
+
+以Node22.23.2執行validate:blueprint通過（runner摘要為1個測試檔PASS，檔案內宣告10案例）；另逐一核對24單元的六類配額與tasks及Markdown表相同，確認總量600／100／60／96／144／1200不變。結果見[evidence/blueprint-alignment.json](evidence/blueprint-alignment.json)，不把結構通過當內容人工核准。
+
+正式網址的version.json已核對4d56991；隔離Chromium 1024×768實際開首頁、冒險按鈕可見且無pageerror，保存[evidence/main-deployment.json](evidence/main-deployment.json)與截圖。Agent已開啟截圖核對仍為舊UI，沒有把它當新RPG或實機／人工UX驗收。原受保護preview的狀態未變更；P0-06及其他gate狀態仍待既定驗收。
+
+人類與agent的可直接執行分工、所需欄位及P2起始順序見[next-actions.md](next-actions.md)。實際作者／工程核對為本session Codex；真人內容、UX與裝置reviewer待指派。

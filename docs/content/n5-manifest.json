@@ -1,5 +1,5 @@
 {
-  "version": "0.1-draft",
+  "version": "0.2-draft",
   "status": "IN_REVIEW",
   "reviewer": null,
   "reviewedAt": null,
@@ -270,7 +270,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 3,
         "reading": 4,
         "listening": 6,
@@ -328,7 +328,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 3,
         "reading": 4,
         "listening": 6,
@@ -386,7 +386,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 3,
         "reading": 4,
         "listening": 6,
@@ -444,7 +444,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 3,
         "reading": 4,
         "listening": 6,
@@ -502,7 +502,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 3,
         "reading": 4,
         "listening": 6,
@@ -560,7 +560,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 3,
         "reading": 4,
         "listening": 6,
@@ -618,7 +618,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 3,
         "reading": 4,
         "listening": 6,
@@ -676,7 +676,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 3,
         "reading": 4,
         "listening": 6,
@@ -732,7 +732,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -788,7 +788,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -844,7 +844,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -900,7 +900,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -956,7 +956,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -1012,7 +1012,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -1068,7 +1068,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -1124,7 +1124,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 5,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -1180,7 +1180,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 0,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -1236,7 +1236,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 0,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -1292,7 +1292,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 0,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,
@@ -1348,7 +1348,7 @@
       ],
       "quotas": {
         "newVocabulary": 25,
-        "newKanji": 4,
+        "newKanji": 0,
         "newGrammar": 2,
         "reading": 4,
         "listening": 6,

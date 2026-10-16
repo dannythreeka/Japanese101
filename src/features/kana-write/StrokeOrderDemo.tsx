@@ -62,7 +62,7 @@ export default function StrokeOrderDemo({ char, onClose }: Props) {
             type="button"
             aria-label={t('kanaWriteDemoClose')}
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-bold transition-colors"
+            className="min-w-16 min-h-16 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center text-gray-500 text-lg font-bold transition-colors"
           >
             ×
           </button>
@@ -105,7 +105,7 @@ export default function StrokeOrderDemo({ char, onClose }: Props) {
           <button
             type="button"
             onClick={() => setReplayKey((k) => k + 1)}
-            className="px-5 py-2 rounded-full bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-bold transition-colors active:scale-95"
+            className="min-w-16 min-h-16 px-5 py-2 rounded-full bg-indigo-50 hover:bg-indigo-100 text-indigo-700 text-sm font-bold transition-colors active:scale-95"
           >
             🔄 {t('kanaWriteDemoReplay')}
           </button>

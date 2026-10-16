@@ -1,0 +1,106 @@
+{
+  "recordedAt": "2026-10-16T07:37:29.350462+00:00",
+  "runId": 38865806957,
+  "runUrl": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957",
+  "conclusion": "success",
+  "headSha": "e6444e541b710aaceaaea4807032d3904650390e",
+  "testedMergeCommit": "be544a77cee9e4a10304d811cef80bf9535203ba",
+  "environment": {
+    "runner": "ubuntu-24.04 image20261012.334.1",
+    "node": "22.23.2",
+    "npm": "10.9.8",
+    "playwright": "1.58.0",
+    "browsers": {
+      "chromium": "145.0.7632.6",
+      "firefox": "146.0.1",
+      "webkit": "26.0 (engine, not physical Safari)"
+    }
+  },
+  "jobs": [
+    {
+      "id": 116858701191,
+      "name": "Test & Build",
+      "conclusion": "success",
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/job/116858701191",
+      "summary": {
+        "unitFiles": 24,
+        "unitTestsPassed": 222,
+        "typecheck": "PASS",
+        "lint": "PASS",
+        "data": "PASS",
+        "blueprint": "PASS11",
+        "journey": "PASS",
+        "build": "PASS"
+      }
+    },
+    {
+      "id": 116859113355,
+      "name": "Browser / webkit",
+      "conclusion": "success",
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/job/116859113355",
+      "summary": {
+        "browser": "webkit",
+        "testsPassed": 42,
+        "reportedDuration": "17.2m"
+      }
+    },
+    {
+      "id": 116859113417,
+      "name": "Browser / firefox",
+      "conclusion": "success",
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/job/116859113417",
+      "summary": {
+        "browser": "firefox",
+        "testsPassed": 42,
+        "reportedDuration": "5.3m"
+      }
+    },
+    {
+      "id": 116859113509,
+      "name": "Browser / chromium",
+      "conclusion": "success",
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/job/116859113509",
+      "summary": {
+        "browser": "chromium",
+        "testsPassed": 42,
+        "reportedDuration": "4.8m"
+      }
+    }
+  ],
+  "totalBrowserTestsPassed": 126,
+  "artifacts": [
+    {
+      "id": 12032027427,
+      "name": "playwright-P2-webkit-be544a77cee9e4a10304d811cef80bf9535203ba",
+      "bytes": 590811505,
+      "expiresAt": "2026-10-30T07:33:46Z",
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/artifacts/12032027427"
+    },
+    {
+      "id": 12031642221,
+      "name": "playwright-P2-chromium-be544a77cee9e4a10304d811cef80bf9535203ba",
+      "bytes": 706592966,
+      "expiresAt": "2026-10-30T07:21:28Z",
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/artifacts/12031642221"
+    },
+    {
+      "id": 12031620538,
+      "name": "project-build-be544a77cee9e4a10304d811cef80bf9535203ba",
+      "bytes": 12543071,
+      "expiresAt": "2026-10-30T07:15:33Z",
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/artifacts/12031620538"
+    },
+    {
+      "id": 12031192318,
+      "name": "playwright-P2-firefox-be544a77cee9e4a10304d811cef80bf9535203ba",
+      "bytes": 634534364,
+      "expiresAt": "2026-10-30T07:21:48Z",
+      "url": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957/artifacts/12031192318"
+    }
+  ],
+  "scope": "All P1+P2 automated regressions and draft preview build only; NOT formal content approval or physical tablet",
+  "humanJapanese": "NOT_RUN",
+  "humanVisualPlayability": "NOT_RUN",
+  "physicalTablet": "NOT_RUN",
+  "deliveryDifference": "A later evidence/docs/verification-script-only commit does not alter src/public/package/build/CI runtime. Its own CI may run separately; this success specifically proves the listed head."
+}

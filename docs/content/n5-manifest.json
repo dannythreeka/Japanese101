@@ -1,8 +1,8 @@
 {
   "version": "0.2-draft",
-  "status": "IN_REVIEW",
-  "reviewer": null,
-  "reviewedAt": null,
+  "status": "APPROVED",
+  "reviewer": "dannythreeka (P0 gate attestation)",
+  "reviewedAt": "2026-10-16T03:56:58.641960+00:00",
   "units": [
     {
       "id": "U01",

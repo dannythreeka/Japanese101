@@ -1,5 +1,7 @@
 # P0 可恢復交接
 
+> 最新狀態：**COMPLETE（專案擁有者gate確認）**。2026-10-16使用者於本對話確認「P0 and P1 驗證過了」，接受既有工程交付並放行P2。核准來源與基準見[前置核准](../P2/evidence/predecessor-approval.json)。下方先前NO-GO／IN_REVIEW／BLOCKED為歷史紀錄，保留原始證據；本次沒有虛構個別裝置、日語審核人名或重新測試結果。P2新教材、視覺與實體平板驗收不在此核准範圍。
+
 Repository：`/home/yyy/workspace/Japanese101`；分支：`phase/p0-baseline`；已合併 PR：[53](https://github.com/dannythreeka/Japanese101/pull/53)。先`git status`／`git log`，讀progress.md、acceptance.md、project.md、tasks.md，不重置或覆寫使用者修改。
 
 目前Phase BLOCKED／NO-GO。DONE：ENV-01、P0-01、P0-02、P0-04。IN_REVIEW：P0-03、P0-05。BLOCKED：P0-06、P0-07。人工gate仍未過。2026-10-15使用者另明確授權merge PR53並開始P1、P0人工驗證並行；PR53已合併為bc2116ad789d247e3be44d2eba5b5a0e790b73ea。這是P0→P1執行順序例外，未代替P0簽核；P1狀態另見docs/phases/P1/。

@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-16T04:33:39.347Z",
+  "browser": "Chromium 145.0.7632.6",
+  "source": "P2 worktree on 62d62c0 with pending shared UI/check-controller additions",
+  "scope": "Shared UI review only, not the complete RPG gate",
+  "viewportResults": [
+    {
+      "width": 320,
+      "scroll": 320,
+      "smallTargets": [],
+      "status": "PASS"
+    },
+    {
+      "width": 390,
+      "scroll": 390,
+      "smallTargets": [],
+      "status": "PASS"
+    },
+    {
+      "width": 768,
+      "scroll": 768,
+      "smallTargets": [],
+      "status": "PASS"
+    },
+    {
+      "width": 1024,
+      "scroll": 1024,
+      "smallTargets": [],
+      "status": "PASS"
+    },
+    {
+      "width": 1440,
+      "scroll": 1440,
+      "smallTargets": [],
+      "status": "PASS"
+    }
+  ],
+  "dialogEscapeAndFocus": "PASS",
+  "text200": {
+    "width": 390,
+    "scroll": 390,
+    "status": "PASS",
+    "method": "computed font-size/line-height doubled; not native device text setting"
+  },
+  "pageErrors": [],
+  "physicalDevice": "NOT_RUN",
+  "humanReview": "NOT_RUN"
+}

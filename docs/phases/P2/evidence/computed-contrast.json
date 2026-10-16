@@ -1,0 +1,216 @@
+{
+  "date": "2026-10-16T07:12:09.488Z",
+  "source": "90fea81 + exact CSS correction committed as e6444e541b710aaceaaea4807032d3904650390e",
+  "browser": "145.0.7632.6",
+  "method": "Actual getComputedStyle foreground/background; alpha composited through ancestors. Map label additionally bounded over pure black/white under-art; not a claim to human visual approval.",
+  "rows": [
+    {
+      "name": "primary button",
+      "color": "rgb(255, 255, 255)",
+      "background": "rgb(25, 59, 92)",
+      "compositedBackground": [
+        25,
+        59,
+        92
+      ],
+      "contrast": 11.53,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "secondary button",
+      "color": "rgb(25, 59, 92)",
+      "background": "rgb(247, 241, 229)",
+      "compositedBackground": [
+        247,
+        241,
+        229
+      ],
+      "contrast": 10.25,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "disabled button",
+      "color": "rgb(79, 99, 120)",
+      "background": "rgb(227, 232, 235)",
+      "compositedBackground": [
+        227,
+        232,
+        235
+      ],
+      "contrast": 5.02,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "default choice",
+      "color": "rgb(25, 59, 92)",
+      "background": "rgb(255, 255, 255)",
+      "compositedBackground": [
+        255,
+        255,
+        255
+      ],
+      "contrast": 11.53,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "selected choice",
+      "color": "rgb(25, 59, 92)",
+      "background": "rgb(252, 253, 253)",
+      "compositedBackground": [
+        252,
+        253,
+        253
+      ],
+      "contrast": 11.31,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "feedback explanation",
+      "color": "rgb(113, 51, 6)",
+      "background": "rgba(0, 0, 0, 0)",
+      "compositedBackground": [
+        254,
+        243,
+        199
+      ],
+      "contrast": 8.66,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "error state",
+      "color": "rgb(113, 51, 6)",
+      "background": "rgba(0, 0, 0, 0)",
+      "compositedBackground": [
+        254,
+        243,
+        199
+      ],
+      "contrast": 8.66,
+      "fontSize": "32px",
+      "lineHeight": "43.2px"
+    },
+    {
+      "name": "progress label",
+      "color": "rgb(79, 99, 120)",
+      "background": "rgba(0, 0, 0, 0)",
+      "compositedBackground": [
+        255,
+        253,
+        247
+      ],
+      "contrast": 6.09,
+      "fontSize": "16px",
+      "lineHeight": "24px"
+    },
+    {
+      "name": "dialog heading",
+      "color": "rgb(34, 53, 74)",
+      "background": "rgba(0, 0, 0, 0)",
+      "compositedBackground": [
+        255,
+        253,
+        247
+      ],
+      "contrast": 12.32,
+      "fontSize": "32px",
+      "lineHeight": "43.2px"
+    },
+    {
+      "name": "quiet dialog action",
+      "color": "rgb(25, 59, 92)",
+      "background": "rgba(0, 0, 0, 0)",
+      "compositedBackground": [
+        255,
+        253,
+        247
+      ],
+      "contrast": 11.33,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "world instruction",
+      "color": "rgb(34, 53, 74)",
+      "background": "rgb(255, 253, 247)",
+      "compositedBackground": [
+        255,
+        253,
+        247
+      ],
+      "contrast": 12.32,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    },
+    {
+      "name": "transparent map label",
+      "color": "rgb(25, 59, 92)",
+      "background": "rgba(255, 253, 247, 0.96)",
+      "compositedBackground": [
+        253.32,
+        251.76,
+        244.28
+      ],
+      "contrast": 11.2,
+      "fontSize": "18px",
+      "lineHeight": "27px",
+      "artAlphaConservativeMin": 10.379283841561858
+    },
+    {
+      "name": "mobile title",
+      "color": "rgb(34, 53, 74)",
+      "background": "rgba(0, 0, 0, 0)",
+      "compositedBackground": [
+        255,
+        253,
+        247
+      ],
+      "contrast": 12.32,
+      "fontSize": "32px",
+      "lineHeight": "43.2px"
+    },
+    {
+      "name": "muted battle guidance",
+      "color": "rgb(79, 99, 120)",
+      "background": "rgba(0, 0, 0, 0)",
+      "compositedBackground": [
+        255,
+        253,
+        247
+      ],
+      "contrast": 6.09,
+      "fontSize": "18px",
+      "lineHeight": "27px"
+    },
+    {
+      "name": "correct feedback",
+      "color": "rgb(22, 101, 52)",
+      "background": "rgba(0, 0, 0, 0)",
+      "compositedBackground": [
+        220,
+        252,
+        231
+      ],
+      "contrast": 6.49,
+      "fontSize": "24px",
+      "lineHeight": "36px"
+    }
+  ],
+  "focus": {
+    "outlineColor": "rgb(15, 118, 110)",
+    "outlineWidth": "3px",
+    "outlineOffset": "2px"
+  },
+  "fontRequirements": {
+    "mobileTitle": "32px",
+    "worldInstruction": "24px"
+  },
+  "result": "PASS",
+  "human": "NOT_RUN",
+  "validatedProductCommit": "e6444e541b710aaceaaea4807032d3904650390e"
+}

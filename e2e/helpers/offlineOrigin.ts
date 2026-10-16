@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises'
 import { resolve, sep, extname } from 'node:path'
 import type { AddressInfo } from 'node:net'
 
-const types:Record<string,string>={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.png':'image/png','.ico':'image/x-icon','.wav':'audio/wav','.mp3':'audio/mpeg'}
+const types:Record<string,string>={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webmanifest':'application/manifest+json','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.ico':'image/x-icon','.wav':'audio/wav','.mp3':'audio/mpeg'}
 /** Test-owned origin: shutting it down proves cached navigation works without touching the shared preview. */
 export async function offlineOrigin(){
   const root=resolve('dist')

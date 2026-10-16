@@ -1,0 +1,587 @@
+{
+  "version": "journey-art-v2",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "companion": {
+    "species": "fox",
+    "petId": "existing profile-scoped petId; unchanged",
+    "note": "Visual remake only; existing growth and other species retained"
+  },
+  "assets": [
+    {
+      "id": "terrain",
+      "src": "/assets/img/journey/terrain.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-fb545cb6-4e52-422b-bf5b-ecb6ef2a65ca.png",
+      "sourceSha256": "be04d453589fb7c28557a3d81c840a0c5d01d7a2ada3510b6692555e9b5c540d",
+      "sourceBytes": 3153383,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "16a1e88b40e92577049de97df818d20a5287a5302ea087bcc6cb71251c84f05a",
+      "bytes": 507678,
+      "width": 1448,
+      "height": 1086,
+      "transparent": false,
+      "transparentPixels": 0,
+      "columns": 1,
+      "rows": 1,
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "dojo",
+      "src": "/assets/img/journey/dojo.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-af89cceb-6adb-489e-af75-d8ede8ab6380.png",
+      "sourceSha256": "7a5f6011ac61cd2fbe4915a50a0acf5437e07c42d4b02d07535dc86ec4d456e6",
+      "sourceBytes": 2255241,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "debd6e8da9c4199e192cfda6074a15a4b6f30931c77c74c4e8ece3a4c56296e3",
+      "bytes": 441334,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 715135,
+      "columns": 1,
+      "rows": 1,
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "shop",
+      "src": "/assets/img/journey/shop.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-b5aa8c7b-5bc1-4b5d-8f09-a513290afdae.png",
+      "sourceSha256": "d3cfacb28a16e584d5fd98eedb0f2596d83d5730ca7b648db18066a2656bad75",
+      "sourceBytes": 2773482,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "7365a5dc8b6788db99b877150f7ec380e63a5b95976fc1a0dc1b7d7456495eaf",
+      "bytes": 522294,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 559849,
+      "columns": 1,
+      "rows": 1,
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "home",
+      "src": "/assets/img/journey/home.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-f74557c2-a0de-49e5-8ff1-dfc7dbfaaa1f.png",
+      "sourceSha256": "8c14db8423d3d8fa7b9b854cddc509ebb8820031d699a8552a802b2eacdbcbfc",
+      "sourceBytes": 2728764,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "bfd2fb98b1f365a40f855983dd93605e1c32c1957cde7e0f58c70aad05143032",
+      "bytes": 561062,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 608814,
+      "columns": 1,
+      "rows": 1,
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "player-sheet",
+      "src": "/assets/img/journey/player-sheet.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-7c98218c-044c-4345-b486-c5638a94509b.png",
+      "sourceSha256": "3c156f8434f73244ed4ef72e10a6d501ed3baf43acc23b760887aba570ea15ab",
+      "sourceBytes": 1380900,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "39758df3b65a08b72df76e49b821ecb5162b4e9c78955dd429b4c8e2358aaf14",
+      "bytes": 426806,
+      "width": 971,
+      "height": 1619,
+      "transparent": true,
+      "transparentPixels": 1089156,
+      "columns": 3,
+      "rows": 5,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 324,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 648,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 0,
+          "y": 323,
+          "w": 323,
+          "h": 321
+        },
+        {
+          "x": 324,
+          "y": 323,
+          "w": 323,
+          "h": 321
+        },
+        {
+          "x": 648,
+          "y": 323,
+          "w": 323,
+          "h": 321
+        },
+        {
+          "x": 0,
+          "y": 644,
+          "w": 323,
+          "h": 324
+        },
+        {
+          "x": 324,
+          "y": 644,
+          "w": 323,
+          "h": 324
+        },
+        {
+          "x": 648,
+          "y": 644,
+          "w": 323,
+          "h": 324
+        },
+        {
+          "x": 0,
+          "y": 968,
+          "w": 323,
+          "h": 318
+        },
+        {
+          "x": 324,
+          "y": 968,
+          "w": 323,
+          "h": 318
+        },
+        {
+          "x": 648,
+          "y": 968,
+          "w": 323,
+          "h": 318
+        },
+        {
+          "x": 0,
+          "y": 1286,
+          "w": 323,
+          "h": 333
+        },
+        {
+          "x": 324,
+          "y": 1286,
+          "w": 323,
+          "h": 333
+        },
+        {
+          "x": 648,
+          "y": 1286,
+          "w": 323,
+          "h": 333
+        }
+      ]
+    },
+    {
+      "id": "fox-sheet",
+      "src": "/assets/img/journey/fox-sheet.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-9d6eaca8-261a-4f7a-89c1-e9cb943d7598.png",
+      "sourceSha256": "e53616c42f324c2fafa49083903cb3d6fd5b73dda093c7a00e45b217a21698e7",
+      "sourceBytes": 1754353,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "bfcf41f062948b7283f19bd6999d3391993ec4e8408137d0855739b49c658647",
+      "bytes": 507324,
+      "width": 971,
+      "height": 1619,
+      "transparent": true,
+      "transparentPixels": 855245,
+      "columns": 3,
+      "rows": 5,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 324,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 648,
+          "y": 0,
+          "w": 323,
+          "h": 323
+        },
+        {
+          "x": 0,
+          "y": 323,
+          "w": 323,
+          "h": 296
+        },
+        {
+          "x": 324,
+          "y": 323,
+          "w": 323,
+          "h": 296
+        },
+        {
+          "x": 648,
+          "y": 323,
+          "w": 323,
+          "h": 296
+        },
+        {
+          "x": 0,
+          "y": 619,
+          "w": 323,
+          "h": 294
+        },
+        {
+          "x": 324,
+          "y": 619,
+          "w": 323,
+          "h": 294
+        },
+        {
+          "x": 648,
+          "y": 619,
+          "w": 323,
+          "h": 294
+        },
+        {
+          "x": 0,
+          "y": 913,
+          "w": 323,
+          "h": 320
+        },
+        {
+          "x": 324,
+          "y": 913,
+          "w": 323,
+          "h": 320
+        },
+        {
+          "x": 648,
+          "y": 913,
+          "w": 323,
+          "h": 320
+        },
+        {
+          "x": 0,
+          "y": 1233,
+          "w": 323,
+          "h": 386
+        },
+        {
+          "x": 324,
+          "y": 1233,
+          "w": 323,
+          "h": 386
+        },
+        {
+          "x": 648,
+          "y": 1233,
+          "w": 323,
+          "h": 386
+        }
+      ]
+    },
+    {
+      "id": "npc-haru",
+      "src": "/assets/img/journey/npc-haru.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-3a9af559-83ef-44b4-be55-19026f365641.png",
+      "sourceSha256": "23174c91ba3379d21cf7338ff2a6675c28a86238061efa72d2d61733f61cf10a",
+      "sourceBytes": 895087,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "c2d19c809f2b9394ad8015a164c770d106ccd8fe0156592af20b8f584824be03",
+      "bytes": 188372,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 1254879,
+      "columns": 1,
+      "rows": 1,
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "npc-ritsu",
+      "src": "/assets/img/journey/npc-ritsu.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-e0c43fe4-7159-4711-82cd-20a2576ee78e.png",
+      "sourceSha256": "ae41f11d35f5379e2adb15f73ffc1853b6e881ba918bb627d5fe5c7b12b4d198",
+      "sourceBytes": 1110875,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "b4213f9f4f88fa702163516b443f5b0904210f6374fc8030ab38c6197a180b94",
+      "bytes": 197272,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 1145733,
+      "columns": 1,
+      "rows": 1,
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "mentor",
+      "src": "/assets/img/journey/mentor.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-f7ac56f4-fa56-4c71-89d6-04264caaf7a6.png",
+      "sourceSha256": "88609e9cfeab3cbce61c83d085ff8c316c5c440b7b01dbf73b79ca510ba644d4",
+      "sourceBytes": 883675,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "55aa5a897181b118d83f2035530fafde0a473c7bff939499fcb30020503303b4",
+      "bytes": 156720,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 1195463,
+      "columns": 1,
+      "rows": 1,
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "opponent-sheet",
+      "src": "/assets/img/journey/opponent-sheet.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-1c3be3d8-5cd3-4143-ab8d-4c9cff1088f1.png",
+      "sourceSha256": "8ddb429b70a4bd2fe9269b37714843bc57913a7d59cf79665a70bc050e3dbcd5",
+      "sourceBytes": 1822906,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "ecfde4f66650c8e28534688196f3b312d75e5cd7733829ea2d5c8c3c25f45664",
+      "bytes": 500682,
+      "width": 2172,
+      "height": 724,
+      "transparent": true,
+      "transparentPixels": 865089,
+      "columns": 3,
+      "rows": 1,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 690,
+          "h": 724
+        },
+        {
+          "x": 715,
+          "y": 0,
+          "w": 690,
+          "h": 724
+        },
+        {
+          "x": 1475,
+          "y": 0,
+          "w": 690,
+          "h": 724
+        }
+      ]
+    },
+    {
+      "id": "gear-hat",
+      "src": "/assets/img/journey/gear-hat.webp",
+      "version": "2",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-ee380d6b-f2c2-425d-bc46-111d8eca8f5d.png",
+      "sourceSha256": "7ba05fadc858fc6414a1368370a58d21ac2a4c179ae3ed9bbbc9171c498b2980",
+      "sourceBytes": 1873616,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "47880e170921437052ada12e324074db8c1aee3d3ac00026c9db85f359ed7d86",
+      "bytes": 381818,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 859394,
+      "columns": 2,
+      "rows": 2,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
+    },
+    {
+      "id": "gear-pack",
+      "src": "/assets/img/journey/gear-pack.webp",
+      "version": "2",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-4f678055-4556-4edf-b484-57106176a69a.png",
+      "sourceSha256": "74b50bd06fb9da49451e382ea2e13e2b4f272df6479e134d80d5434c92a199ec",
+      "sourceBytes": 1643921,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "4753fd1dc07aba20ed2e2edcafe1c43794f6be4c38cc0082605dc24660c3d690",
+      "bytes": 307004,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 925786,
+      "columns": 2,
+      "rows": 2,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
+    },
+    {
+      "id": "gear-scarf",
+      "src": "/assets/img/journey/gear-scarf.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-b77da72f-6a89-41d5-8ab7-d70294915f5f.png",
+      "sourceSha256": "db9ad71c9b6c76a4d19f1a5f8b422a0427dc394cf4096627f2ef3569cbcb95db",
+      "sourceBytes": 1468744,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "c2388ed6a85aab273e49c125a0ce53d1d7f817e2afdef20d7ebe14f9939dff56",
+      "bytes": 339536,
+      "width": 1254,
+      "height": 1254,
+      "transparent": true,
+      "transparentPixels": 1039376,
+      "columns": 2,
+      "rows": 2,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
+    },
+    {
+      "id": "u01-contexts",
+      "src": "/assets/img/journey/u01-contexts.webp",
+      "version": "1",
+      "source": "Built-in imagegen; original retained unchanged",
+      "sourceFile": "exec-17c9f16a-5cca-455e-a106-81a524e5acd1.png",
+      "sourceSha256": "d1580a48ec103e75836130b11e35fa7bef8c1f4f84c92f1360fb3a4358572035",
+      "sourceBytes": 2966694,
+      "derivation": "Browser WebP encoding at quality .9, original dimensions and alpha preserved; no creative edits",
+      "sha256": "ecc1517a66b5956eca457424d6e88bcdaf92521636124163552ae158af789b2f",
+      "bytes": 452402,
+      "width": 1254,
+      "height": 1254,
+      "transparent": false,
+      "transparentPixels": 0,
+      "columns": 2,
+      "rows": 2,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
+    }
+  ]
+}

@@ -65,7 +65,7 @@ export default function LevelComplete() {
     navigate('/adventure')
   }
 
-  if (loadError) return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => { setLoadError(false); setRevision(r=>r+1) }}>{t('retry')}</button><button className="min-h-16 px-6" onClick={goToMap}>{t('levelCompleteBack')}</button></div>
+  if (loadError) return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('resultUnavailable')}</p><button className="min-h-16 px-6" onClick={() => { setLoadError(false); setRevision(r=>r+1) }}>{t('retry')}</button><button className="min-h-16 px-6" onClick={goToMap}>{t('levelCompleteBack')}</button></div>
   if (!loaded) return <p role="status">{t('loading')}</p>
   const starsDisplay = '★'.repeat(stars) + '☆'.repeat(3 - stars)
 

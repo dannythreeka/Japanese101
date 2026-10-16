@@ -1,0 +1,28 @@
+{
+  "headSha": "dcab5753b5c6cf11e7dc0d573db9b7641fa54bb1",
+  "htmlUrl": "https://github.com/dannythreeka/Japanese101/actions/runs/38855895489",
+  "conclusion": "success",
+  "scope": "dcab575, before pending v8/catalog/gear adjustments; not final P2 human gate",
+  "jobs": [
+    {
+      "name": "Test & Build",
+      "conclusion": "success",
+      "htmlUrl": "https://github.com/dannythreeka/Japanese101/actions/runs/38855895489/job/116827159505"
+    },
+    {
+      "name": "Browser / webkit",
+      "conclusion": "success",
+      "htmlUrl": "https://github.com/dannythreeka/Japanese101/actions/runs/38855895489/job/116827442264"
+    },
+    {
+      "name": "Browser / firefox",
+      "conclusion": "success",
+      "htmlUrl": "https://github.com/dannythreeka/Japanese101/actions/runs/38855895489/job/116827442270"
+    },
+    {
+      "name": "Browser / chromium",
+      "conclusion": "success",
+      "htmlUrl": "https://github.com/dannythreeka/Japanese101/actions/runs/38855895489/job/116827442334"
+    }
+  ]
+}

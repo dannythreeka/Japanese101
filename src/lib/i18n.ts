@@ -24,6 +24,7 @@ export const T = {
   firstAccuracy: { ja: '最初の答えの正答率', zh: '首次獨立答對率' },
   practiceCompletion: { ja: '練習の完了', zh: '練習完成率' },
   questionUnavailable: { ja: '問題を用意できませんでした。もどるか、もう一度ためしてください。', zh: '目前無法準備題目，可以返回或重試。' },
+  resultUnavailable: { ja: 'けっかをよみこめませんでした。きろくはけしていません。もういちどよみこめます。', zh: '暫時無法讀取這次結果，原有紀錄未刪除。請重試讀取。' },
   retry: { ja: 'もう一度ためす', zh: '重試' },
   skipQuestion: { ja: 'あとで練習する', zh: '先跳過，稍後複習' },
 

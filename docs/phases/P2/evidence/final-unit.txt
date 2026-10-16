@@ -1,0 +1,13 @@
+
+> japanese101@0.0.0 test
+> vitest run
+
+
+ RUN  v4.1.11 /home/yyy/workspace/Japanese101-p2
+
+
+ Test Files  24 passed (24)
+      Tests  222 passed (222)
+   Start at  14:54:44
+   Duration  19.02s (transform 1.77s, setup 3.00s, import 3.32s, tests 3.07s, environment 39.28s)
+

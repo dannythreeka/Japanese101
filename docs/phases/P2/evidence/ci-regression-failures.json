@@ -1,0 +1,25 @@
+{
+  "scope": "Actual previous CI failures preserved; no human gate claimed",
+  "cases": [
+    {
+      "run": 38860939114,
+      "head": "eb25eb57ce6705ee486b605d2d710bcedcb146e2",
+      "job": 116843146762,
+      "browser": "webkit",
+      "actual": "38 passed,1 failed; obsolete catalog scenario waited for disabled purchase button",
+      "cause": "Catalog switched while shop entry checkpoint/reload pending; UI rejected new catalog before test could click",
+      "fix": "911fa44 waits for completed shop entry before later catalog deployment; all wallet/revision/no ownership assertions retained"
+    },
+    {
+      "run": 38863606990,
+      "head": "911fa44dcc813f244299dfa3f89a66c68a340018",
+      "job": 116852031820,
+      "browser": "chromium",
+      "actual": "41 passed,1 failed; resource loop first spawn x8 did not move after keydown",
+      "diagnosis": "Test open helper returned before async first-time skip persisted/closed. Source world pauses while guide/pending. This ordering diagnosis is supported by spawn8 failure and subsequent stress results.",
+      "fix": "90fea81 waits for real guide closure; no timeout increase or force click;3 workers x3 repeats x20 visits PASS49.9s",
+      "otherBrowser": "Firefox42 PASS on same head; WebKit cancelled by superseding commit"
+    }
+  ],
+  "latest": "See ci-final.json for final product e6444e5 run; previous failures not rewritten as green"
+}

@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getOrCreatePet } from '../../db'
@@ -10,6 +11,7 @@ import { useT } from '../../hooks/useT'
 import type { PetState } from '../../types'
 
 export default function PlayScreen() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { totalStars, micMode, uiLang, setUiLang } = useAppStore()
   const t = useT()
@@ -18,10 +20,14 @@ export default function PlayScreen() {
 
   const stageLabels = [t('stageEgg'), t('stageBaby'), t('stageKid'), t('stageAdult')]
 
+  const [failed,setFailed]=useState(false)
   useEffect(() => {
+    let active=true
     preloadSfx(['tap', 'correct', 'levelup'])
-    getOrCreatePet().then(setPet)
-  }, [])
+    void getOrCreatePet(profileId).then(p=>{if(active)setPet(p)}).catch(()=>{if(active)setFailed(true)})
+    return()=>{active=false}
+  }, [profileId])
+  if(failed)throw new Error('Player data unavailable; data retained')
 
   const handleGameNav = (path: string) => {
     playSfx('tap')

@@ -1,18 +1,25 @@
+import { setSfxEnabled as applySfx, setGlobalVolume as applyVolume } from '../lib/audio'
 import { create } from 'zustand'
+import { getActiveProfileId, getProfilePreferences, saveProfilePreferences, db } from '../db'
+import { defaultPreferences } from '../db/models'
+import type { ProfilePreferences } from '../db/models'
 import type { KanaMode, KanaDifficulty, AgeMode, MicMode, WriteDifficulty } from '../types'
 import type { UiLang } from '../lib/i18n'
 
-export interface AdventureSession {
-  levelId: string
-  pending: {
-    challengeId: string
-    gameMode: string
-    configOverrides: Record<string, unknown>
-  } | null
-  results: Record<string, { accuracy: number; xpGained: number }>
-}
+import type { AdventureSession } from '../db/models'
+export type { AdventureSession } from '../db/models'
 
 interface AppState {
+  profileId: string
+  enhancedConsent: boolean
+  sfxEnabled: boolean
+  sfxVolume: number
+  setSfxEnabled: (enabled: boolean) => void
+  setGlobalVolume: (volume: number) => void
+  storageError: string | null
+  hydrateProfile: (profileId: string) => Promise<void>
+  retryStorage: () => Promise<void>
+
   kanaMode: KanaMode
   kanaDifficulty: KanaDifficulty
   ageMode: AgeMode
@@ -29,56 +36,60 @@ interface AppState {
   setKanaMode: (mode: KanaMode) => void
   setKanaDifficulty: (level: KanaDifficulty) => void
   setAgeMode: (mode: AgeMode) => void
-  setMicMode: (mode: MicMode) => void
+  setMicMode: (mode: MicMode, explicitEnhancedConsent?: boolean) => void
   setUiLang: (lang: UiLang) => void
   toggleUnit: (unitId: string) => void
   startSession: () => void
   endSession: () => number
-  addStars: (n: number) => void
   setParentUnlocked: (v: boolean) => void
-  initAdventureSession: (levelId: string) => void
-  launchChallenge: (challengeId: string, gameMode: string, overrides: Record<string, unknown>) => void
-  recordChallengeResult: (challengeId: string, accuracy: number, xpGained: number) => void
-  cancelAdventureChallenge: () => void
   clearAdventureSession: () => void
 }
 
-export const useAppStore = create<AppState>((set, get) => ({
-  kanaMode: 'hiragana',
-  kanaDifficulty: 1,
-  ageMode: (localStorage.getItem('ageMode') as AgeMode | null) ?? 'young',
-  micMode: (localStorage.getItem('micMode') as MicMode | null) ?? 'offline',
-  uiLang: (localStorage.getItem('uiLang') as UiLang | null) ?? 'ja',
-  disabledUnits: JSON.parse(localStorage.getItem('disabledUnits') ?? '[]') as string[],
+const pendingPreferences = new Map<string, ProfilePreferences>()
+let preferenceChain = Promise.resolve()
+export const useAppStore = create<AppState>((set, get) => {
+  const persist = (patch: Partial<ProfilePreferences>) => {
+    const snapshot = { ...get() }
+    const profileId = snapshot.profileId
+    const preferences: ProfilePreferences = {
+      profileId, kanaMode: snapshot.kanaMode, kanaDifficulty: snapshot.kanaDifficulty,
+      ageMode: snapshot.ageMode, micMode: snapshot.micMode, enhancedConsent: snapshot.enhancedConsent,
+      sfxEnabled: snapshot.sfxEnabled, sfxVolume: snapshot.sfxVolume,
+      uiLang: snapshot.uiLang, disabledUnits: snapshot.disabledUnits, writeDifficulty: snapshot.writeDifficulty, ...patch,
+    }
+    set(patch)
+    if (patch.sfxEnabled !== undefined) applySfx(patch.sfxEnabled)
+    if (patch.sfxVolume !== undefined) applyVolume(patch.sfxVolume)
+    pendingPreferences.set(profileId, preferences)
+    preferenceChain = preferenceChain.then(async () => {
+      if (pendingPreferences.get(profileId) !== preferences) return
+      try { await saveProfilePreferences(preferences); if(pendingPreferences.get(profileId)===preferences)pendingPreferences.delete(profileId); if(!pendingPreferences.size)set({storageError:null}) }
+      catch(error) {set({storageError:String(error)})}
+    })
+  }
+  return {
+  ...defaultPreferences(getActiveProfileId()),
+  storageError: null,
   sessionStartTime: null,
-  totalStars: Number(localStorage.getItem('totalStars') ?? 0),
+  totalStars: 0,
   parentUnlocked: false,
   adventureSession: null,
-  writeDifficulty: (Number(localStorage.getItem('writeDifficulty')) || 1) as WriteDifficulty,
-
-  setWriteDifficulty: (d) => { localStorage.setItem('writeDifficulty', String(d)); set({ writeDifficulty: d }) },
-  setKanaMode: (mode) => set({ kanaMode: mode }),
-  setKanaDifficulty: (level) => set({ kanaDifficulty: level }),
-  setAgeMode: (mode) => {
-    localStorage.setItem('ageMode', mode)
-    set({ ageMode: mode })
+  hydrateProfile: async (profileId) => {
+    const [preferences, wallet, levels] = await Promise.all([getProfilePreferences(profileId), db.wallets.get(profileId), db.levelSessions.where('profileId').equals(profileId).toArray()])
+    if (getActiveProfileId() !== profileId) return
+    applySfx(preferences.sfxEnabled); applyVolume(preferences.sfxVolume)
+    set({ ...preferences, totalStars: wallet?.stars ?? 0, adventureSession: levels.sort((a,b)=>(b.updatedAt ?? b.startedAt)-(a.updatedAt ?? a.startedAt))[0] ?? null, sessionStartTime: null, parentUnlocked: false })
   },
-  setMicMode: (mode) => {
-    localStorage.setItem('micMode', mode)
-    set({ micMode: mode })
-  },
-  setUiLang: (lang) => {
-    localStorage.setItem('uiLang', lang)
-    set({ uiLang: lang })
-  },
-  toggleUnit: (unitId: string) => {
-    const current = get().disabledUnits
-    const next = current.includes(unitId)
-      ? current.filter(id => id !== unitId)
-      : [...current, unitId]
-    localStorage.setItem('disabledUnits', JSON.stringify(next))
-    set({ disabledUnits: next })
-  },
+  retryStorage: async () => { await preferenceChain; for(const [id,preferences] of pendingPreferences) { await saveProfilePreferences(preferences); if(pendingPreferences.get(id)===preferences)pendingPreferences.delete(id) }; if(!pendingPreferences.size)set({storageError:null}) },
+  setSfxEnabled: (sfxEnabled) => persist({ sfxEnabled }),
+  setGlobalVolume: (sfxVolume) => persist({ sfxVolume }),
+  setWriteDifficulty: (writeDifficulty) => persist({ writeDifficulty }),
+  setKanaMode: (kanaMode) => persist({ kanaMode }),
+  setKanaDifficulty: (kanaDifficulty) => persist({ kanaDifficulty }),
+  setAgeMode: (ageMode) => persist({ ageMode }),
+  setMicMode: (micMode, explicitEnhancedConsent = false) => persist({ micMode: micMode === 'enhanced' && !explicitEnhancedConsent ? 'off' : micMode, enhancedConsent: micMode === 'enhanced' && explicitEnhancedConsent }),
+  setUiLang: (uiLang) => persist({ uiLang }),
+  toggleUnit: (unitId) => { const current = get().disabledUnits; persist({ disabledUnits: current.includes(unitId) ? current.filter(id => id !== unitId) : [...current, unitId] }) },
 
   startSession: () => set({ sessionStartTime: Date.now() }),
 
@@ -89,43 +100,8 @@ export const useAppStore = create<AppState>((set, get) => ({
     return duration
   },
 
-  addStars: (n) => {
-    const next = get().totalStars + n
-    localStorage.setItem('totalStars', String(next))
-    set({ totalStars: next })
-  },
-
   setParentUnlocked: (v) => set({ parentUnlocked: v }),
 
-  initAdventureSession: (levelId) => {
-    const current = get().adventureSession
-    if (current?.levelId === levelId) return  // keep existing results for replay
-    set({ adventureSession: { levelId, pending: null, results: {} } })
-  },
-
-  launchChallenge: (challengeId, gameMode, overrides) => {
-    const current = get().adventureSession
-    if (!current) return
-    set({ adventureSession: { ...current, pending: { challengeId, gameMode, configOverrides: overrides } } })
-  },
-
-  recordChallengeResult: (challengeId, accuracy, xpGained) => {
-    const current = get().adventureSession
-    if (!current) return
-    set({
-      adventureSession: {
-        ...current,
-        pending: null,
-        results: { ...current.results, [challengeId]: { accuracy, xpGained } },
-      },
-    })
-  },
-
-  cancelAdventureChallenge: () => {
-    const current = get().adventureSession
-    if (!current) return
-    set({ adventureSession: { ...current, pending: null } })
-  },
-
   clearAdventureSession: () => set({ adventureSession: null }),
-}))
+  }
+})

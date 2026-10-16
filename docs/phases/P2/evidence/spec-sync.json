@@ -1,0 +1,97 @@
+{
+  "checkedAt": "2026-10-16T10:43:35.026937+08:00",
+  "result": "PASS_SPEC_SYNC_ONLY",
+  "scope": "Specification integration and handoff maintenance; no runtime tests or human/device signoff",
+  "branch": "phase/p1-reliability",
+  "integrationCommit": "0b1cb5e7194f2b46b944857e5817be8bdc1e65b7",
+  "fetchedRemoteHead": "0b1cb5e7194f2b46b944857e5817be8bdc1e65b7",
+  "requiredCommitIsAncestor": true,
+  "githubSnapshot": {
+    "source": "GitHub connector get_pr_info",
+    "pullRequests": [
+      {
+        "number": 54,
+        "url": "https://github.com/dannythreeka/Japanese101/pull/54",
+        "state": "open",
+        "draft": true,
+        "merged": false,
+        "base": "main",
+        "base_sha": "bc2116ad789d247e3be44d2eba5b5a0e790b73ea",
+        "head": "phase/p1-reliability",
+        "head_sha": "0b1cb5e7194f2b46b944857e5817be8bdc1e65b7",
+        "merge_commit_sha": "c8a8060d15dd0f90ac7cb652a2b0c5f44562c0b5",
+        "merged_at": null
+      },
+      {
+        "number": 55,
+        "url": "https://github.com/dannythreeka/Japanese101/pull/55",
+        "state": "closed",
+        "draft": false,
+        "merged": true,
+        "base": "phase/p1-reliability",
+        "base_sha": "fd4ccd4a168c57c47cbe25ac7ee9408e37c01658",
+        "head": "design/adventure-rpg-p2",
+        "head_sha": "225ab6e7a70583980f6a9d27bdc3759cfc87c77f",
+        "merge_commit_sha": "0b1cb5e7194f2b46b944857e5817be8bdc1e65b7",
+        "merged_at": "2026-10-16T02:32:12Z"
+      }
+    ]
+  },
+  "sourceDocumentsAtIntegrationCommit": {
+    "project.md": "2ba5dbc36d91eee4edf9082e2bca69f2a798d92045782728229366e47eb40dfc",
+    "tasks.md": "ba05a86261688cb8957b7b421681c4d8c25681daf0287146d8f8151bae6c9386",
+    "docs/design/ADVENTURE_RPG_SPEC.md": "04860a45eadca24576d220bf7fc5b349edcc9d9d8ba5aa5136516b40c70e010a",
+    "docs/phases/P1/acceptance.md": "84984a2461197861e5ba38db1fd2ace069e36940cadf19db10c82759b59ae199",
+    "docs/phases/P2/handoff.md": "b02ab0d11dd9d95a7c0e4d3ed17e4aa9933dbe90fb6a57fe1f4b2abfb29a6ed1",
+    "docs/agent-prompts/P2.md": "8d39f863023febe35fe0566effc5bbd47e5840c9210276a47354392a3dc9dddc"
+  },
+  "tasks": {
+    "total": 237,
+    "statesAndDependenciesUnchanged": true,
+    "acyclic": true,
+    "p2Count": 25,
+    "p2States": {
+      "TODO": 24,
+      "DONE": 1
+    },
+    "p2GateCoversAll25": true,
+    "G2Count": 15,
+    "unfinishedTasksWithAllDependenciesDone": [],
+    "entryDependencies": {
+      "P2-01": {
+        "P1-12": "BLOCKED",
+        "P0-03": "IN_REVIEW"
+      },
+      "P2-03": {
+        "P1-12": "BLOCKED",
+        "P0-02": "DONE",
+        "P2-10": "DONE"
+      },
+      "P2-11": {
+        "P1-12": "BLOCKED",
+        "P2-10": "DONE"
+      },
+      "U01-M": {
+        "P0-03": "IN_REVIEW"
+      }
+    }
+  },
+  "phaseStates": {
+    "P1": "ENGINEERING_READY / NO-GO",
+    "P1-12": "BLOCKED",
+    "P2": "IN_PROGRESS (design only) / NO-GO"
+  },
+  "runtimeDifferenceFromPreviouslyTestedP1Head": {
+    "head": "036a7806f5c58676edf26393fe79b1f821b9a29b",
+    "changedRuntimeTestOrCIPaths": []
+  },
+  "newRuntimeTests": "NOT_RUN",
+  "newHumanOrPhysicalDeviceEvidence": "NOT_RUN",
+  "reviewer": "Codex specification and dependency check; no new human approval",
+  "diffCheck": "PASS",
+  "relativeLinksAndAnchors": {
+    "checked": 30,
+    "missing": 0,
+    "invalidAnchors": 0
+  }
+}

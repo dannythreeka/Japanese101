@@ -1,0 +1,23 @@
+
+> japanese101@0.0.0 test:e2e
+> playwright test --project=chromium --project=firefox --grep level settlement|direct completion --output=/tmp/p1-last-settlement --reporter=list
+
+[WebServer] (node:44) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/p1-reliability.spec.ts:75:1 › direct completion/locked URLs never reward; stale sessions recover without erasure (2.6s)
+  ✓  2 [chromium] › e2e/p1-reliability.spec.ts:371:1 › level settlement failure shows recovery and never celebrates or pays before commit (8.3s)
+(node:146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:146) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [firefox] › e2e/p1-reliability.spec.ts:75:1 › direct completion/locked URLs never reward; stale sessions recover without erasure (4.3s)
+  ✓  4 [firefox] › e2e/p1-reliability.spec.ts:371:1 › level settlement failure shows recovery and never celebrates or pays before commit (7.6s)
+
+  4 passed (31.3s)

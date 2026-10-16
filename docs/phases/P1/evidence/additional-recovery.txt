@@ -1,0 +1,25 @@
+
+> japanese101@0.0.0 test:e2e
+> playwright test --project=chromium --project=firefox --grep offline to enhanced|blocked IndexedDB|parent can export --output=/tmp/p1-additional-recovery --reporter=list
+
+[WebServer] (node:44) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 1 worker
+
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/p1-reliability.spec.ts:226:1 › offline to enhanced requires a new explicit parent consent; denial/cancel never opts in (2.7s)
+  ✓  2 [chromium] › e2e/p1-reliability.spec.ts:247:1 › blocked IndexedDB and malformed checkpoints show recovery instead of a blank screen (1.6s)
+  ✓  3 [chromium] › e2e/p1-reliability.spec.ts:264:1 › parent can export preserved legacy-shared data without assigning it to a child (1.6s)
+(node:164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:164) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [firefox] › e2e/p1-reliability.spec.ts:226:1 › offline to enhanced requires a new explicit parent consent; denial/cancel never opts in (6.8s)
+  ✓  5 [firefox] › e2e/p1-reliability.spec.ts:247:1 › blocked IndexedDB and malformed checkpoints show recovery instead of a blank screen (3.5s)
+  ✓  6 [firefox] › e2e/p1-reliability.spec.ts:264:1 › parent can export preserved legacy-shared data without assigning it to a child (2.4s)
+
+  6 passed (28.1s)

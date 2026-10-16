@@ -651,7 +651,8 @@
               "mitsumura_g1_u7_chouon",
               "mitsumura_g1_u8_youon"
             ]
-          }
+          },
+          "required_for_completion": false
         }
       ]
     }

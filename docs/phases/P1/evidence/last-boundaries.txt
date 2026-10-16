@@ -1,0 +1,23 @@
+
+> japanese101@0.0.0 test:e2e
+> playwright test --project=chromium --project=firefox --grep late parent|catch exit --output=/tmp/p1-last-boundaries --reporter=list
+
+[WebServer] (node:44) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 4 tests using 1 worker
+
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/p1-reliability.spec.ts:280:1 › catch exit resumes its saved question; explicit mode change preserves history in a new session (4.2s)
+  ✓  2 [chromium] › e2e/p1-reliability.spec.ts:312:1 › late parent permission from A stops its stream and never enables B (2.2s)
+(node:144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:144) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [firefox] › e2e/p1-reliability.spec.ts:280:1 › catch exit resumes its saved question; explicit mode change preserves history in a new session (5.7s)
+  ✓  4 [firefox] › e2e/p1-reliability.spec.ts:312:1 › late parent permission from A stops its stream and never enables B (1.9s)
+
+  4 passed (21.5s)

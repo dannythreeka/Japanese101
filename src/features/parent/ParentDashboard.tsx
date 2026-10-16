@@ -1,10 +1,11 @@
-import { useEffect, useState } from 'react'
+import LegacyBackup from '../../components/LegacyBackup'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode, WriteDifficulty } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
 import { requestMicPermission } from '../../lib/mic'
 import { getAllProgress, getRecentSessions, getTotalStudyTime, getOrCreateAdventureProgress, getAllProfiles, deleteProfile, resetProfileProgress, getActiveProfileId, setActiveProfileId } from '../../db'
-import { setSfxEnabled, setGlobalVolume, isSfxEnabled, getGlobalVolume } from '../../lib/audio'
+import { isSfxEnabled, getGlobalVolume } from '../../lib/audio'
 import { lessonData, levelsData } from '../../data/loaders'
 import { getFirstLevelId } from '../adventure/adventureEngine'
 import { formatTime, last7DayCounts, featureAccuracy } from './dashboardUtils'
@@ -22,10 +23,11 @@ function getStoredPin(): string {
 }
 
 export default function ParentDashboard() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const {
     kanaMode, kanaDifficulty, ageMode, disabledUnits, totalStars, micMode,
-    writeDifficulty, setWriteDifficulty,
+    writeDifficulty, setWriteDifficulty, setSfxEnabled, setGlobalVolume,
     setKanaMode, setKanaDifficulty, setAgeMode, toggleUnit, setMicMode,
   } = useAppStore()
 
@@ -35,6 +37,10 @@ export default function ParentDashboard() {
   const [showMicModal, setShowMicModal] = useState(false)
   const [pendingMicMode, setPendingMicMode] = useState<Exclude<MicMode, 'off'>>('offline')
   const [micPermError, setMicPermError] = useState(false)
+  const [micPending,setMicPending] = useState(false)
+  const consentGeneration = useRef(0)
+  const micRequest = useRef(false)
+  useEffect(()=>()=>{consentGeneration.current++},[])
 
   const [pinInput, setPinInput] = useState('')
   const [pinError, setPinError] = useState(false)
@@ -44,31 +50,38 @@ export default function ParentDashboard() {
   const [progressRecords, setProgressRecords] = useState<ProgressRecord[]>([])
   const [sessions, setSessions] = useState<SessionRecord[]>([])
   const [adventureProgress, setAdventureProgress] = useState<AdventureProgress | null>(null)
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(true)
+  const [loadError, setLoadError] = useState(false)
+  const [revision, setRevision] = useState(0)
 
   const [profiles, setProfiles] = useState<Profile[]>([])
   const [confirmAction, setConfirmAction] = useState<{ type: 'reset' | 'delete'; profileId: string } | null>(null)
 
   const t = useT()
+  const pinTimer = useRef<ReturnType<typeof setTimeout> | null>(null)
+  useEffect(() => () => { if (pinTimer.current) clearTimeout(pinTimer.current) }, [])
 
   useEffect(() => {
     if (!unlocked) return
-    setLoading(true)
-    Promise.all([
-      getTotalStudyTime(),
-      getAllProgress(),
-      getRecentSessions(100),
-      getOrCreateAdventureProgress(getFirstLevelId()),
+    let active = true
+    void Promise.all([
+      getTotalStudyTime(profileId),
+      getAllProgress(profileId),
+      getRecentSessions(profileId, 100),
+      getOrCreateAdventureProgress(getFirstLevelId(), profileId),
       getAllProfiles(),
     ]).then(([time, recs, sess, adv, profs]) => {
+      if (!active) return
+      setLoadError(false)
       setStudyTime(time)
       setProgressRecords(recs)
       setSessions(sess)
       setAdventureProgress(adv)
       setProfiles(profs)
       setLoading(false)
-    })
-  }, [unlocked])
+    }).catch(() => { if (active) setLoadError(true) })
+    return () => { active = false }
+  }, [unlocked, profileId, revision])
 
   async function handleResetProfile(profileId: string) {
     await resetProfileProgress(profileId)
@@ -96,7 +109,8 @@ export default function ParentDashboard() {
         setUnlocked(true)
       } else {
         setPinError(true)
-        setTimeout(() => setPinInput(''), 600)
+        if (pinTimer.current) clearTimeout(pinTimer.current)
+        pinTimer.current = setTimeout(() => setPinInput(''), 600)
       }
     }
   }
@@ -150,6 +164,8 @@ export default function ParentDashboard() {
     )
   }
 
+  if (loadError) return <div role="alert"><p>{t('sessionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => setRevision(r=>r+1)}>{t('retry')}</button></div>
+
   const kanaAcc = featureAccuracy(progressRecords, 'kana')
   const vocabAcc = featureAccuracy(progressRecords, 'vocab')
   const dayCounts = last7DayCounts(sessions)
@@ -181,6 +197,7 @@ export default function ParentDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-4 pt-6">
+      <LegacyBackup />
       <div className="max-w-lg mx-auto flex flex-col gap-6">
 
         <div className="flex items-center gap-3">
@@ -457,12 +474,13 @@ export default function ParentDashboard() {
                     key={mode}
                     type="button"
                     onClick={() => {
-                      if (mode !== 'off' && micMode === 'off') {
+                      if (mode !== 'off' && mode !== micMode) {
+                        consentGeneration.current++
                         setPendingMicMode(mode)
                         setMicPermError(false)
                         setShowMicModal(true)
                       } else {
-                        setMicMode(mode)
+                        if (mode === 'off') { consentGeneration.current++; setMicMode(mode) }
                       }
                     }}
                     className={`px-5 py-2 rounded-2xl text-xl font-bold transition-all ${
@@ -482,7 +500,7 @@ export default function ParentDashboard() {
                   ? t('parentMicStatusOfl')
                   : t('parentMicStatusEnh')}
               </p>
-              <p className="text-sm text-gray-400">{t('parentMicPrivacy')}</p>
+              <p className="text-sm text-gray-700">{t(micMode === 'enhanced' ? 'parentMicEnhancedPrivacy' : 'parentMicPrivacy')}</p>
             </div>
           </>
         )}
@@ -532,8 +550,8 @@ export default function ParentDashboard() {
             <h3 id="mic-modal-title" className="text-2xl font-bold text-gray-800">{t('parentMicModalTitle')}</h3>
             <p className="text-lg text-gray-600">{t('parentMicModalDesc')}</p>
             <ul className="text-base text-gray-500 list-disc pl-5 flex flex-col gap-1">
-              <li>{t('parentMicBullet1')}</li>
-              <li>{t('parentMicBullet2')}</li>
+              <li>{t(pendingMicMode==='enhanced'?'parentMicEnhancedPrivacy':'parentMicBullet1')}</li>
+              {pendingMicMode==='offline'&&<li>{t('parentMicBullet2')}</li>}
               <li>{t('parentMicBullet3')}</li>
             </ul>
             {micPermError && (
@@ -542,17 +560,24 @@ export default function ParentDashboard() {
             <div className="flex gap-3 mt-1">
               <button
                 type="button"
-                onClick={() => { setShowMicModal(false); setMicPermError(false) }}
+                onClick={() => { consentGeneration.current++; setShowMicModal(false); setMicPermError(false); setMicPending(false) }}
                 className="flex-1 py-3 rounded-2xl bg-gray-100 text-xl font-bold hover:bg-gray-200 transition-colors"
               >
                 {t('parentMicCancel')}
               </button>
               <button
                 type="button"
+                disabled={micPending}
                 onClick={async () => {
+                  if(micRequest.current)return
+                  micRequest.current=true;setMicPending(true)
+                  const generation=consentGeneration.current
                   const granted = await requestMicPermission()
+                  micRequest.current=false
+                  if(generation!==consentGeneration.current || useAppStore.getState().profileId!==profileId)return
+                  setMicPending(false)
                   if (granted) {
-                    setMicMode(pendingMicMode)
+                    setMicMode(pendingMicMode, pendingMicMode==='enhanced')
                     setShowMicModal(false)
                     setMicPermError(false)
                   } else {

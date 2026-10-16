@@ -1,0 +1,21 @@
+
+> japanese101@0.0.0 test:e2e
+> playwright test --project=chromium --project=firefox --grep download all --output=/tmp/p1-origin-stopped --reporter=list
+
+[WebServer] (node:44) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › e2e/p1-reliability.spec.ts:205:3 › verified offline application and material pack › download all assets then close page and reopen offline with real WAV playback (14.9s)
+(node:173) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:173) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [firefox] › e2e/p1-reliability.spec.ts:205:3 › verified offline application and material pack › download all assets then close page and reopen offline with real WAV playback (21.9s)
+
+  2 passed (45.1s)

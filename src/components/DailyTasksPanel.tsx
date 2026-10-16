@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react'
 import { useAppStore } from '../store/useAppStore'
 import { useT } from '../hooks/useT'
-import { getRecentSessions } from '../db'
+import { db, getRecentSessions } from '../db'
+import { claimDailyTask } from '../db/profile-data'
 import {
   getTodayTasks, filterTodaySessions, computeProgress,
-  getCompletedToday, markCompleted,
+  todayKey,
 } from '../lib/dailyTasks'
 import type { DailyTask } from '../lib/dailyTasks'
 import type { SessionRecord } from '../types'
@@ -50,34 +51,42 @@ function TaskRow({ task, progress, completed, justRewarded }: TaskRowProps) {
 }
 
 export default function DailyTasksPanel() {
-  const { addStars } = useAppStore()
+  const profileId = useAppStore(s => s.profileId)
   const t = useT()
   const [tasks] = useState(() => getTodayTasks())
+  const [loadError, setLoadError] = useState(false)
+  const [revision, setRevision] = useState(0)
   const [todaySessions, setTodaySessions] = useState<SessionRecord[]>([])
-  const [completedToday, setCompletedToday] = useState<string[]>(() => getCompletedToday())
+  const [completedToday, setCompletedToday] = useState<string[]>([])
   const [justRewarded, setJustRewarded] = useState<string[]>([])
-  const rewarded = useRef<Set<string>>(new Set(getCompletedToday()))
+  const rewarded = useRef<Set<string>>(new Set<string>())
 
   useEffect(() => {
-    getRecentSessions(50).then(sessions => {
+    let active = true
+    const timers: ReturnType<typeof setTimeout>[] = []
+    void (async () => {
+      const [sessions, claims] = await Promise.all([getRecentSessions(profileId, 500), db.dailyClaims.where('profileId').equals(profileId).toArray()])
+      if (!active) return
       const today = filterTodaySessions(sessions)
-      setTodaySessions(today)
-
-      // Check for newly completed tasks
+      const completed = claims.filter(c => c.date === todayKey()).map(c => c.taskId)
+      setTodaySessions(today); setCompletedToday(completed)
+      rewarded.current = new Set(completed)
       for (const task of tasks) {
-        if (rewarded.current.has(task.id)) continue
-        const progress = computeProgress(task, today)
-        if (progress >= task.target) {
+        if (computeProgress(task, today) < task.target || rewarded.current.has(task.id)) continue
+        if (await claimDailyTask(profileId, todayKey(), task.id, BONUS_STARS)) {
+          if (!active) return
           rewarded.current.add(task.id)
-          markCompleted(task.id)
-          addStars(BONUS_STARS)
-          setCompletedToday(getCompletedToday())
-          setJustRewarded(prev => [...prev, task.id])
-          setTimeout(() => setJustRewarded(prev => prev.filter(id => id !== task.id)), 2000)
+          setCompletedToday(prev => [...prev, task.id]); setJustRewarded(prev => [...prev, task.id])
+          const wallet = await db.wallets.get(profileId)
+          if (useAppStore.getState().profileId === profileId) useAppStore.setState({ totalStars: wallet?.stars ?? 0 })
+          timers.push(setTimeout(() => { if (active) setJustRewarded(prev => prev.filter(id => id !== task.id)) }, 2000))
         }
       }
-    })
-  }, [tasks, addStars])
+    })().catch(() => { if (active) setLoadError(true) })
+    return () => { active = false; timers.forEach(clearTimeout) }
+  }, [tasks, profileId, revision])
+
+  if (loadError) return <div role="alert"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => { setLoadError(false); setRevision(r => r + 1) }}>{t('retry')}</button></div>
 
   return (
     <div className="w-full max-w-sm bg-white/80 rounded-3xl shadow-md p-4 flex flex-col gap-4">

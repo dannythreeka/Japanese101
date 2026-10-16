@@ -1,5 +1,8 @@
+import RecoveryBoundary from './components/RecoveryBoundary'
+import PracticeSession from './components/PracticeSession'
 import { useEffect } from 'react'
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
+import ProfileGate from './components/ProfileGate'
 import { loadVoices } from './lib/tts'
 import HomeScreen from './features/home/HomeScreen'
 import PlayScreen from './features/play/PlayScreen'
@@ -22,7 +25,7 @@ export default function App() {
   useEffect(() => { void loadVoices() }, [])
 
   return (
-    <HashRouter>
+    <RecoveryBoundary><ProfileGate><HashRouter>
       <Routes>
         {/* Profiles */}
         <Route path="/profiles" element={<ProfileSelector />} />
@@ -34,14 +37,14 @@ export default function App() {
         <Route path="/adventure/level/:levelId/complete" element={<LevelComplete />} />
         {/* Free play routes */}
         <Route path="/play" element={<PlayScreen />} />
-        <Route path="/play/kana" element={<KanaMatchGame />} />
-        <Route path="/play/flashcard" element={<FlashCardDeck />} />
-        <Route path="/play/quiz" element={<ListenQuiz />} />
+        <Route path="/play/kana" element={<PracticeSession feature="kana"><KanaMatchGame /></PracticeSession>} />
+        <Route path="/play/flashcard" element={<PracticeSession feature="flashcard"><FlashCardDeck /></PracticeSession>} />
+        <Route path="/play/quiz" element={<PracticeSession feature="quiz"><ListenQuiz /></PracticeSession>} />
         <Route path="/play/gallery" element={<KanaGallery />} />
-        <Route path="/play/kana-catch" element={<KanaCatchGame />} />
-        <Route path="/play/dakuten-drag" element={<DakutenDragGame />} />
-        <Route path="/play/kana-write" element={<KanaWriteGame />} />
-        <Route path="/play/kotodama" element={<KotodamaGame />} />
+        <Route path="/play/kana-catch" element={<PracticeSession feature="kana_catch"><KanaCatchGame /></PracticeSession>} />
+        <Route path="/play/dakuten-drag" element={<PracticeSession feature="dakuten_drag"><DakutenDragGame /></PracticeSession>} />
+        <Route path="/play/kana-write" element={<PracticeSession feature="kana_write"><KanaWriteGame /></PracticeSession>} />
+        <Route path="/play/kotodama" element={<PracticeSession feature="kotodama"><KotodamaGame /></PracticeSession>} />
         <Route path="/parent" element={<ParentDashboard />} />
         {/* Legacy redirects */}
         <Route path="/kid" element={<Navigate to="/" replace />} />
@@ -50,6 +53,6 @@ export default function App() {
         <Route path="/kid/quiz" element={<Navigate to="/play/quiz" replace />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </HashRouter>
+    </HashRouter></ProfileGate></RecoveryBoundary>
   )
 }

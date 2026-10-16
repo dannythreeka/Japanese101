@@ -66,3 +66,12 @@ describe('buildKotodamaRound', () => {
     expect(round.length).toBeGreaterThanOrEqual(3)
   })
 })
+
+
+import { buildConfiguredKotodamaRound } from './KotodamaEngine'
+it('uses explicitly configured words and never replaces missing IDs with random words',()=>{
+  expect(buildConfiguredKotodamaRound({targetWords:['w_tamago'],roundLength:1})).toMatchObject([{id:'w_tamago',word:'たまご'}])
+  expect(buildConfiguredKotodamaRound({targetWords:['missing']})).toEqual([])
+  expect(buildConfiguredKotodamaRound({unitId:'missing'})).toEqual([])
+  expect(buildConfiguredKotodamaRound({unitPool:[]})).toEqual([])
+})

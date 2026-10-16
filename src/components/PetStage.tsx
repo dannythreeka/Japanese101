@@ -11,7 +11,6 @@ export default function PetStage({ stage, animate = true, onShake, size = 200 }:
   const s = Math.min(Math.max(stage, 0), 5)  // clamp
   const floatClass = animate ? 'pet-float' : ''
   const [blink, setBlink] = useState(false)
-  const [shaking, setShaking] = useState(false)
   const blinkTimer = useRef<ReturnType<typeof setTimeout> | undefined>(undefined)
 
   // Blink every 5s for stages 2-5
@@ -20,22 +19,14 @@ export default function PetStage({ stage, animate = true, onShake, size = 200 }:
     const schedule = () => {
       blinkTimer.current = setTimeout(() => {
         setBlink(true)
-        setTimeout(() => { setBlink(false); schedule() }, 200)
+        blinkTimer.current = setTimeout(() => { setBlink(false); schedule() }, 200)
       }, 5000 + Math.random() * 2000)
     }
     schedule()
     return () => clearTimeout(blinkTimer.current)
   }, [animate, s])
 
-  // Shake when onShake prop changes to true
-  useEffect(() => {
-    if (!onShake) return
-    setShaking(true)
-    const t = setTimeout(() => setShaking(false), 500)
-    return () => clearTimeout(t)
-  }, [onShake])
-
-  const shakeClass = shaking ? 'pet-shake' : ''
+  const shakeClass = onShake ? 'pet-shake' : ''
 
   return (
     <div

@@ -1,11 +1,14 @@
 import type { Kana, Word, ConceptWord, ProgressRecord, AgeMode, KanaDifficulty } from '../../types'
 import { getAllProgress } from '../../db'
 import type { BubbleItem, QuestionConfig } from './KanaCatchEngine'
+import { vocabData } from '../../data/loaders'
+
+const emptyQuestion = (): QuestionConfig => ({ items: [], targetId: '', ttsText: '' })
 
 // ── SRS helpers ───────────────────────────────────────────────────────────────
 
-export async function loadProgressMap(): Promise<Map<string, ProgressRecord>> {
-  const all = await getAllProgress()
+export async function loadProgressMap(profileId: string): Promise<Map<string, ProgressRecord>> {
+  const all = await getAllProgress(profileId)
   return new Map(all.map(r => [r.id, r]))
 }
 
@@ -59,6 +62,7 @@ export function makeListenGenerator(
   let idx = 0
   let lastId = ''
   return () => {
+    if (kanaPool.length < 2 || maxBubbles < 2) return emptyQuestion()
     if (idx >= queue.length) idx = 0
     const window = queue.slice(idx, idx + Math.min(10, queue.length))
     const available = window.length > 1 ? window.filter(k => k.id !== lastId) : window
@@ -85,6 +89,7 @@ export function makeKatakanaListenGenerator(
   let idx = 0
   let lastId = ''
   return () => {
+    if (kanaPool.length < 2 || maxBubbles < 2) return emptyQuestion()
     if (idx >= queue.length) idx = 0
     const window = queue.slice(idx, idx + Math.min(10, queue.length))
     const available = window.length > 1 ? window.filter(k => k.id !== lastId) : window
@@ -107,27 +112,28 @@ export function makeMinimalPairGenerator(
   allKana: Kana[],
   maxBubbles: number,
   pMap: Map<string, ProgressRecord>,
+  vocabulary: Word[] = vocabData(),
 ): () => QuestionConfig {
   const kanaByHiragana = new Map(allKana.map(k => [k.hiragana, k]))
-  // flatten all kana that appear in pairs
-  const pairKana: Kana[] = [...new Set(pairs.flat())]
-    .map(h => kanaByHiragana.get(h))
-    .filter((k): k is Kana => k !== undefined)
-
-  const queue = [...shuffled(pairKana)]
-  let idx = 0
+  const vocabByKana = new Map(vocabulary.map(w => [w.kana, w]))
+  const resolve = (text: string): BubbleItem | undefined => {
+    const kana = kanaByHiragana.get(text)
+    if (kana) return { id: kana.id, display: kana.hiragana, romaji: kana.romaji }
+    const word = vocabByKana.get(text)
+    if (word) return { id: word.id, display: word.kana, romaji: word.romaji }
+  }
+  const groups = pairs.map(pair => [...new Set(pair)].map(resolve))
+    .filter((group): group is BubbleItem[] => group.length >= 2 && group.every(item => item !== undefined))
+  const pool = [...new Map(groups.flat().map(item => [item.id, item])).values()]
   let lastId = ''
   return () => {
-    if (idx >= queue.length) idx = 0
-    const available = queue.length > 1 ? queue.filter(k => k.id !== lastId) : queue
-    const correct = srsWeightedPick(available, k => k.id, pMap)
+    if (pool.length < 2 || maxBubbles < 2) return emptyQuestion()
+    const available = pool.filter(item => item.id !== lastId)
+    const correct = srsWeightedPick(available, item => item.id, pMap)
     lastId = correct.id
-    idx++
-    const distractors = shuffled(pairKana.filter(k => k.id !== correct.id)).slice(0, maxBubbles - 1)
-    const items: BubbleItem[] = shuffled([correct, ...distractors]).map(k => ({
-      id: k.id, display: k.hiragana, romaji: k.romaji,
-    }))
-    return { items, targetId: correct.id, ttsText: correct.hiragana }
+    const group = groups.find(items => items.some(item => item.id === correct.id))!
+    const distractors = shuffled(group.filter(item => item.id !== correct.id)).slice(0, maxBubbles - 1)
+    return { items: shuffled([correct, ...distractors]), targetId: correct.id, ttsText: correct.display }
   }
 }
 
@@ -147,8 +153,8 @@ export function makeWordToImageGenerator(
   let idx = 0
   let lastId = ''
   return () => {
-    if (validConcepts.length === 0) {
-      return { items: [], targetId: '', ttsText: '' }
+    if (validConcepts.length < 2 || maxBubbles < 2) {
+      return emptyQuestion()
     }
     if (idx >= queue.length) idx = 0
     const available = queue.length > 1 ? queue.filter(cw => cw.id !== lastId) : queue

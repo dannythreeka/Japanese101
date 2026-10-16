@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitest/config'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
+import pack from './public/offline-manifest.json' with { type: 'json' }
 import { VitePWA } from 'vite-plugin-pwa'
 
 const base = process.env.VITE_BASE_PATH ?? '/'
@@ -13,7 +14,8 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       workbox: {
-        globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3,json}'],
+        globPatterns: ['**/*.{js,css,html,ico,png,svg,mp3,wav,json}'],
+        runtimeCaching: [{ urlPattern: /\/(assets\/(audio|img)|stroke-svgs|sfx)\//, handler: 'CacheFirst', options: { cacheName: `japanese101-pack-${pack.version}` } }],
       },
       manifest: {
         name: '日本語101 - にほんごがくしゅう',

@@ -1,3 +1,4 @@
+import { getActiveProfileId } from '../../db'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../../store/useAppStore'
@@ -17,16 +18,22 @@ const TYPE_LABEL: Record<string, string> = {
 const KANA_TYPES = ['seion', 'dakuon', 'handakuon', 'youon'] as const
 
 export default function KanaGallery() {
+  const [profileId] = useState(getActiveProfileId)
   const navigate = useNavigate()
   const { kanaMode } = useAppStore()
   const t = useT()
   const [collected, setCollected] = useState<Set<string>>(new Set())
 
+  const [failed,setFailed]=useState(false)
   useEffect(() => {
-    getOrCreatePet().then((pet) => {
+    let active=true
+    void getOrCreatePet(profileId).then((pet) => {
+      if(!active)return
       setCollected(new Set(pet.collection))
-    })
-  }, [])
+    }).catch(()=>{if(active)setFailed(true)})
+    return()=>{active=false}
+  }, [profileId])
+  if(failed)throw new Error('Player data unavailable; data retained')
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-100 to-white p-4 pt-6 pb-10">

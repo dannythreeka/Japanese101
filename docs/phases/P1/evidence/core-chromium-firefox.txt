@@ -1,0 +1,43 @@
+
+> japanese101@0.0.0 test:e2e
+> playwright test --project=chromium --project=firefox --grep-invert L0 --output=/tmp/p1-core-reviewed --reporter=list
+
+[WebServer] (node:44) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 24 tests using 1 worker
+
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:64) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   1 [chromium] › e2e/p1-reliability.spec.ts:44:1 › first answers survive retry/refresh, ten clicks and two-page finalization pay once (3.2s)
+  ✓   2 [chromium] › e2e/p1-reliability.spec.ts:74:1 › direct completion/locked URLs never reward; stale sessions recover without erasure (1.2s)
+  ✓   3 [chromium] › e2e/p1-reliability.spec.ts:142:1 › storage failure retains pending answer until retry; B starts isolated (1.5s)
+  ✓   4 [chromium] › e2e/p1-reliability.spec.ts:167:1 › 20 game entries/leaves release animation frames and timers in the same document (3.6s)
+  ✓   5 [chromium] › e2e/p1-reliability.spec.ts:201:3 › verified offline application and material pack › download all assets then close page and reopen offline with real WAV playback (13.2s)
+  ✓   6 [chromium] › e2e/p1-reliability.spec.ts:226:1 › offline to enhanced requires a new explicit parent consent; denial/cancel never opts in (1.6s)
+  ✓   7 [chromium] › e2e/p1-reliability.spec.ts:247:1 › blocked IndexedDB and malformed checkpoints show recovery instead of a blank screen (1.0s)
+  ✓   8 [chromium] › e2e/p1-reliability.spec.ts:264:1 › parent can export preserved legacy-shared data without assigning it to a child (931ms)
+  ✓   9 [chromium] › e2e/p1-reliability.spec.ts:280:1 › catch exit resumes its saved question; explicit mode change preserves history in a new session (2.2s)
+  ✓  10 [chromium] › e2e/p1-visual.spec.ts:4:1 › P1 affected screens at specified viewports and 200% layout zoom (3.8s)
+  ✓  11 [chromium] › e2e/p1-visual.spec.ts:27:1 › vocabulary illustration contact sheet has no broken images (1.2s)
+  ✓  12 [chromium] › e2e/smoke.spec.ts:4:1 › home, profile creation, adventure and PIN entry work in an isolated context (1.3s)
+(node:307) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:307) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  13 [firefox] › e2e/p1-reliability.spec.ts:44:1 › first answers survive retry/refresh, ten clicks and two-page finalization pay once (6.7s)
+  ✓  14 [firefox] › e2e/p1-reliability.spec.ts:74:1 › direct completion/locked URLs never reward; stale sessions recover without erasure (2.1s)
+  ✓  15 [firefox] › e2e/p1-reliability.spec.ts:142:1 › storage failure retains pending answer until retry; B starts isolated (1.8s)
+  ✓  16 [firefox] › e2e/p1-reliability.spec.ts:167:1 › 20 game entries/leaves release animation frames and timers in the same document (4.0s)
+  ✓  17 [firefox] › e2e/p1-reliability.spec.ts:201:3 › verified offline application and material pack › download all assets then close page and reopen offline with real WAV playback (22.0s)
+  ✓  18 [firefox] › e2e/p1-reliability.spec.ts:226:1 › offline to enhanced requires a new explicit parent consent; denial/cancel never opts in (2.1s)
+  ✓  19 [firefox] › e2e/p1-reliability.spec.ts:247:1 › blocked IndexedDB and malformed checkpoints show recovery instead of a blank screen (2.1s)
+  ✓  20 [firefox] › e2e/p1-reliability.spec.ts:264:1 › parent can export preserved legacy-shared data without assigning it to a child (1.3s)
+  ✓  21 [firefox] › e2e/p1-reliability.spec.ts:280:1 › catch exit resumes its saved question; explicit mode change preserves history in a new session (2.8s)
+  ✓  22 [firefox] › e2e/p1-visual.spec.ts:4:1 › P1 affected screens at specified viewports and 200% layout zoom (3.8s)
+  ✓  23 [firefox] › e2e/p1-visual.spec.ts:27:1 › vocabulary illustration contact sheet has no broken images (1.6s)
+  ✓  24 [firefox] › e2e/smoke.spec.ts:4:1 › home, profile creation, adventure and PIN entry work in an isolated context (1.5s)
+
+  24 passed (1.6m)

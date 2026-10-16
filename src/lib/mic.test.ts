@@ -55,3 +55,55 @@ describe('determineOutcome', () => {
     expect(determineOutcome(200, DEFAULT_CONFIG, false)).toBe('weak')
   })
 })
+
+import { afterEach, vi } from 'vitest'
+import { createMicSession } from './mic'
+afterEach(() => { vi.unstubAllGlobals(); vi.restoreAllMocks() })
+
+function mockMic() {
+  const track = { stop: vi.fn(), addEventListener: vi.fn() }
+  const getUserMedia = vi.fn().mockResolvedValue({ getTracks: () => [track] })
+  Object.defineProperty(navigator, 'mediaDevices', { configurable: true, value: { getUserMedia } })
+  const close = vi.fn().mockResolvedValue(undefined)
+  vi.stubGlobal('AudioContext', class { createMediaStreamSource() { return { connect() {} } } createAnalyser() { return { fftSize: 512, getByteTimeDomainData() {} } } close = close })
+  vi.stubGlobal('requestAnimationFrame', vi.fn().mockReturnValue(1))
+  vi.stubGlobal('cancelAnimationFrame', vi.fn())
+  const start = vi.fn(), stop = vi.fn(), construct = vi.fn()
+  const SR = class { constructor() { construct() } start = start; stop = stop }
+  Object.defineProperty(window, 'SpeechRecognition', { configurable: true, value: SR })
+  return { track, getUserMedia, close, start, stop, construct }
+}
+
+it('off and enhanced without parent consent never request a microphone', async () => {
+  const mock = mockMic()
+  await expect(createMicSession(DEFAULT_CONFIG, 'off', 'ねこ')).rejects.toMatchObject({ name: 'NotAllowedError' })
+  await expect(createMicSession(DEFAULT_CONFIG, 'enhanced', 'ねこ')).rejects.toMatchObject({ name: 'NotAllowedError' })
+  expect(mock.getUserMedia).not.toHaveBeenCalled()
+})
+it('offline never constructs SR; enhanced stops SR, audio context and tracks exactly once', async () => {
+  const mock = mockMic()
+  const offline = await createMicSession(DEFAULT_CONFIG, 'offline', 'ねこ')
+  offline.stop(); offline.stop()
+  expect(mock.construct).not.toHaveBeenCalled()
+  expect(mock.track.stop).toHaveBeenCalledTimes(1)
+  const enhanced = await createMicSession(DEFAULT_CONFIG, 'enhanced', 'ねこ', { enhancedConsent: true })
+  enhanced.stop(); enhanced.stop()
+  expect(mock.construct).toHaveBeenCalledTimes(1); expect(mock.start).toHaveBeenCalledTimes(1); expect(mock.stop).toHaveBeenCalledTimes(1)
+})
+it('releases a stream whose permission request resolves after unmount', async () => {
+  const mock = mockMic(); const controller = new AbortController()
+  const pending = createMicSession(DEFAULT_CONFIG, 'offline', 'ねこ', { signal: controller.signal })
+  controller.abort()
+  await expect(pending).rejects.toMatchObject({ name: 'AbortError' })
+  expect(mock.track.stop).toHaveBeenCalledTimes(1)
+})
+
+it('enhanced does not silently fall back when recognition is unsupported or start fails',async()=>{
+  const mock=mockMic()
+  Object.defineProperty(window,'SpeechRecognition',{configurable:true,value:undefined})
+  await expect(createMicSession(DEFAULT_CONFIG,'enhanced','ねこ',{enhancedConsent:true})).rejects.toMatchObject({name:'NotSupportedError'})
+  expect(mock.getUserMedia).not.toHaveBeenCalled()
+  Object.defineProperty(window,'SpeechRecognition',{configurable:true,value:class {start(){throw new DOMException('revoked','NotAllowedError')}stop(){}}})
+  await expect(createMicSession(DEFAULT_CONFIG,'enhanced','ねこ',{enhancedConsent:true})).rejects.toMatchObject({name:'NotAllowedError'})
+  expect(mock.track.stop).toHaveBeenCalledOnce()
+})

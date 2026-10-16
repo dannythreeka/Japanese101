@@ -1,0 +1,46 @@
+[
+  {
+    "file": "style-travel-journal.png",
+    "title": "第二張：美術參考",
+    "sourceFile": "exec-2272b26f-7e56-4313-ab46-3eb30b065ec5.png",
+    "sha256": "f91da5fa0e2fe7fe48cc20a3c049ae1b00a74798b70c5ddb4cc872722277279d",
+    "bytes": 2786615,
+    "source": "Codex image_gen; original concept generated in this conversation",
+    "use": "design reference only",
+    "generationDate": "2026-10-16",
+    "runtimeApproved": false
+  },
+  {
+    "file": "town-exploration.png",
+    "title": "小鎮探索",
+    "sourceFile": "exec-533a0b1c-2e86-4992-827c-f8e178261065.png",
+    "sha256": "cde73527e8fa7fea8df3c56563cb74d6db1baadbafd25541529f3b764c52fbd7",
+    "bytes": 3799332,
+    "source": "Codex image_gen; original concept generated in this conversation",
+    "use": "design reference only",
+    "generationDate": "2026-10-16",
+    "runtimeApproved": false
+  },
+  {
+    "file": "equipment-shop.png",
+    "title": "裝備商店",
+    "sourceFile": "exec-1d859cf2-85ec-4eae-b774-576ea7a82b8d.png",
+    "sha256": "7bbd5b7cd2c4406ff36fc8196b6825eacc1bbfa53e013f3ed927d0207674666e",
+    "bytes": 2852731,
+    "source": "Codex image_gen; original concept generated in this conversation",
+    "use": "design reference only",
+    "generationDate": "2026-10-16",
+    "runtimeApproved": false
+  },
+  {
+    "file": "dojo-battle.png",
+    "title": "道館戰鬥",
+    "sourceFile": "exec-41b2e89c-f5e6-4db7-9386-cd63bc22f8b4.png",
+    "sha256": "7eb6e6dabeba8ad237373af3641ed178ec61b5b2b0b16a96e6f6db495092ca77",
+    "bytes": 2756704,
+    "source": "Codex image_gen; original concept generated in this conversation",
+    "use": "design reference only",
+    "generationDate": "2026-10-16",
+    "runtimeApproved": false
+  }
+]

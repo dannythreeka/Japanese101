@@ -1,90 +1,53 @@
-import { useEffect, useRef, useState } from 'react'
+import { getActiveProfileId } from '../../db'
+import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { getOrCreateAdventureProgress } from '../../db'
+import { getPetState, getAdventureProgress } from '../../db'
+import { finishLevel } from '../../db/level-sessions'
 import { levelsData } from '../../data/loaders'
-import { addXpToPet, applyLevelEvolution } from '../../lib/pet'
 import { useAppStore } from '../../store/useAppStore'
 import { useT } from '../../hooks/useT'
-import { computeStars, completeLevel, getFirstLevelId } from './adventureEngine'
 import PetAvatar from '../../components/PetAvatar'
-import LevelUpModal from '../play/LevelUpModal'
 import VictoryCutscene from './VictoryCutscene'
 import { getStageInfo } from '../../lib/petEvolution'
-import type { Level } from '../../types/adventure'
 import type { PetState } from '../../types'
-import type { XpResult } from '../../lib/pet'
 
-const COMPLETION_BONUS = 50
-const PERFECT_BONUS = 30
 
 export default function LevelComplete() {
+  const [profileId] = useState(getActiveProfileId)
   const { levelId } = useParams<{ levelId: string }>()
   const navigate = useNavigate()
   const t = useT()
   const { adventureSession, clearAdventureSession } = useAppStore()
   const [pet, setPet] = useState<PetState | null>(null)
-  const [xpResult, setXpResult] = useState<XpResult | null>(null)
   const [stars, setStars] = useState<1 | 2 | 3>(1)
   const [bonusXp, setBonusXp] = useState(0)
-  const [level, setLevel] = useState<Level | null>(null)
+  const level = levelsData().levels.find(l=>l.level_id===levelId) ?? null
+  const [loadError, setLoadError] = useState(false)
+  const [loaded, setLoaded] = useState(false)
+  const [revision, setRevision] = useState(0)
   const [hasNextLevel, setHasNextLevel] = useState(false)
   const [evolvedToStage, setEvolvedToStage] = useState<number | null>(null)
   const [showEvolutionAnim, setShowEvolutionAnim] = useState(false)
   const [showVictoryCutscene, setShowVictoryCutscene] = useState(false)
-  const savedRef = useRef(false)
-
+  const sessionId = adventureSession?.id
   useEffect(() => {
-    if (savedRef.current) return
-    savedRef.current = true
-
-    const { levels } = levelsData()
-    const found = levels.find((l) => l.level_id === levelId) ?? null
-    setLevel(found)
-    if (!found) return
-
-    const results = (adventureSession && adventureSession.levelId === levelId) ? adventureSession.results : {}
-    const earnedStars = computeStars(found, results)
-    setStars(earnedStars)
-
-    const bonus = COMPLETION_BONUS + (earnedStars === 3 ? PERFECT_BONUS : 0)
-    setBonusXp(bonus)
-
-    const bestAccuracy = Object.values(results).reduce((max, r) => Math.max(max, r.accuracy), 0)
-
-    getOrCreateAdventureProgress(getFirstLevelId()).then(async (progress) => {
-      const existingRecord = progress.completed_levels[found.level_id]
-      const playCount = existingRecord?.times_played ?? 0
-      let decayedBonus = bonus
-      if (playCount >= 3) decayedBonus = Math.round(bonus * 0.1)
-      else if (playCount === 2) decayedBonus = Math.round(bonus * 0.25)
-      else if (playCount === 1) decayedBonus = Math.round(bonus * 0.5)
-      setBonusXp(decayedBonus)
-
-      const [xpRes, updated] = await Promise.all([
-        addXpToPet(decayedBonus),
-        completeLevel(progress, found, earnedStars, bestAccuracy),
-      ])
-      setPet(xpRes.pet)
-      if (xpRes.leveledUp) setXpResult(xpRes)
-
-      const evoRes = await applyLevelEvolution(Object.keys(updated.completed_levels))
-      if (found.level_type === 'boss') {
-        // Always show victory cutscene for boss levels
-        setShowVictoryCutscene(true)
+    let active = true
+    void (async () => {
+      if (!level || !levelId || !sessionId) throw new Error('No verified level session')
+      const previous = await getPetState(profileId)
+      const result = await finishLevel(profileId, sessionId, levelId)
+      const [nextPet, progress] = await Promise.all([getPetState(profileId), getAdventureProgress(profileId)])
+      if (!active) return
+      setStars(result.stars); setBonusXp(result.receipt.xp); setPet(nextPet)
+      setHasNextLevel(progress?.current_level_id !== levelId)
+      if (!result.alreadyCompleted) {
+        if (level.level_type === 'boss') setShowVictoryCutscene(true)
+        if (nextPet && nextPet.evolutionStage > (previous?.evolutionStage ?? 0)) { setEvolvedToStage(nextPet.evolutionStage); setShowEvolutionAnim(level.level_type !== 'boss') }
       }
-      if (evoRes.newStage !== null) {
-        setPet(evoRes.pet)
-        setEvolvedToStage(evoRes.newStage)
-        if (found.level_type !== 'boss') setShowEvolutionAnim(true)
-      }
-
-      const sortedIds = levelsData().levels
-        .sort((a, b) => a.level_number - b.level_number)
-        .map((l) => l.level_id)
-      const idx = sortedIds.indexOf(found.level_id)
-      setHasNextLevel(idx >= 0 && idx < sortedIds.length - 1 && updated.current_level_id !== found.level_id)
-    })
-  }, [levelId, adventureSession]) // eslint-disable-line react-hooks/exhaustive-deps
+      setLoaded(true); setLoadError(false)
+    })().catch(() => { if (active) setLoadError(true) })
+    return () => { active = false }
+  }, [level, levelId, profileId, sessionId, revision])
 
   useEffect(() => {
     if (!showEvolutionAnim) return
@@ -102,6 +65,8 @@ export default function LevelComplete() {
     navigate('/adventure')
   }
 
+  if (loadError) return <div role="alert" className="min-h-screen flex flex-col items-center justify-center gap-4 p-6"><p>{t('questionUnavailable')}</p><button className="min-h-16 px-6" onClick={() => { setLoadError(false); setRevision(r=>r+1) }}>{t('retry')}</button><button className="min-h-16 px-6" onClick={goToMap}>{t('levelCompleteBack')}</button></div>
+  if (!loaded) return <p role="status">{t('loading')}</p>
   const starsDisplay = '★'.repeat(stars) + '☆'.repeat(3 - stars)
 
   return (
@@ -113,13 +78,7 @@ export default function LevelComplete() {
           onComplete={() => setShowVictoryCutscene(false)}
         />
       )}
-      {xpResult?.leveledUp && (
-        <LevelUpModal
-          newLevel={xpResult.pet.level}
-          evolvedToStage={xpResult.evolvedToStage}
-          onClose={() => setXpResult(null)}
-        />
-      )}
+
 
       {/* Title */}
       <h1 className="text-4xl font-bold text-indigo-700">{t('levelCompleteTitle')}</h1>
@@ -155,7 +114,7 @@ export default function LevelComplete() {
 
       {/* Evolution animation overlay — unskippable, auto-dismiss 2.5s */}
       {showEvolutionAnim && evolvedToStage !== null && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 pointer-events-none gap-4">
+        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black/80 gap-4">
           <span className="text-9xl animate-bounce-in">
             {pet ? (
               <PetAvatar pet={pet} size="lg" animate />
@@ -163,7 +122,7 @@ export default function LevelComplete() {
           </span>
           <p className="text-5xl font-black text-yellow-300 tracking-widest">{t('evolutionAnim')}</p>
           <p className="text-xl font-bold text-white">{getStageInfo(evolvedToStage).name_ja}</p>
-          <p className="text-base text-yellow-100">{t('evolutionNewForm')}</p>
+          <p className="text-base text-yellow-100">{t('evolutionNewForm')}</p><button className="min-h-16 px-6 rounded-2xl bg-white" onClick={()=>setShowEvolutionAnim(false)}>{t('nextQuestion')}</button>
         </div>
       )}
 

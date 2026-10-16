@@ -8,13 +8,13 @@ export function getNextReview(record: ProgressRecord): number {
   return Date.now() + INTERVALS[streakIdx] * ONE_DAY
 }
 
-export function updateAfterCorrect(record: ProgressRecord): ProgressRecord {
+export function updateAfterCorrect<T extends ProgressRecord>(record: T): T {
   const updated = { ...record, correct: record.correct + 1, streak: record.streak + 1, lastSeen: Date.now() }
   updated.nextReview = getNextReview(updated)
   return updated
 }
 
-export function updateAfterIncorrect(record: ProgressRecord): ProgressRecord {
+export function updateAfterIncorrect<T extends ProgressRecord>(record: T): T {
   return {
     ...record,
     incorrect: record.incorrect + 1,

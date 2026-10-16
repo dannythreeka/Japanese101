@@ -1,3 +1,4 @@
+import OfflinePack from '../../components/OfflinePack'
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { getOrCreatePet, getOrCreateAdventureProgress, getProfile, getActiveProfileId, ensureDefaultProfile, updateProfileLastPlayed } from '../../db'
@@ -20,21 +21,26 @@ export default function HomeScreen() {
   const [activeProfile, setActiveProfile] = useState<Profile | null>(null)
   const [showSync, setShowSync] = useState(false)
 
+  const [failed,setFailed]=useState(false)
   useEffect(() => {
+    let active=true
     const firstId = getFirstLevelId()
     const profileId = getActiveProfileId()
-    Promise.all([
+    void Promise.all([
       ensureDefaultProfile(),
       getOrCreatePet(profileId),
       getOrCreateAdventureProgress(firstId, profileId),
       getProfile(profileId),
     ]).then(([, p, adv, prof]) => {
+      if(!active)return
       setPet(p)
       setAdventureProgress(adv)
       setActiveProfile(prof)
-      void updateProfileLastPlayed(profileId)
-    })
+      void updateProfileLastPlayed(profileId).catch(()=>{if(active)setFailed(true)})
+    }).catch(()=>{if(active)setFailed(true)})
+    return()=>{active=false}
   }, [])
+  if(failed)throw new Error('Player summary unavailable; data retained')
 
   const hasStarted = adventureProgress
     ? Object.keys(adventureProgress.completed_levels).length > 0
@@ -47,7 +53,7 @@ export default function HomeScreen() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-sky-200 to-emerald-100 flex flex-col items-center px-4 pt-8 pb-6 gap-6">
 
-      {showSync && <SyncModal onClose={() => setShowSync(false)} />}
+      {import.meta.env.VITE_EXPERIMENTAL_SYNC === 'true' && showSync && <SyncModal onClose={() => setShowSync(false)} />}
 
       {/* Header */}
       <div className="w-full max-w-sm flex justify-between items-center">
@@ -55,6 +61,7 @@ export default function HomeScreen() {
         <div className="flex items-center gap-2">
           <button
             type="button"
+            hidden={import.meta.env.VITE_EXPERIMENTAL_SYNC !== 'true'}
             aria-label={t('syncBtnAria')}
             onClick={() => setShowSync(true)}
             className="w-10 h-10 rounded-full bg-white/70 text-xl flex items-center justify-center shadow hover:bg-white transition-colors"
@@ -114,6 +121,8 @@ export default function HomeScreen() {
           </div>
         )}
       </div>
+
+      <OfflinePack />
 
       {/* Main action buttons */}
       <div className="w-full max-w-sm flex flex-col gap-4 mt-2">

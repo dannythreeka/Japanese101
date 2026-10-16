@@ -85,3 +85,11 @@ d648000三引擎合計50 PASS／1 FAIL：Firefox與Chromium各17 PASS；WebKit16
 完整CI https://github.com/dannythreeka/Japanese101/actions/runs/38743653858 head `036a7806f5c58676edf26393fe79b1f821b9a29b`、實際merge checkout `a5fb128ba3a5119076478c2f1130205a3a070ccd`：187單元／19檔、typecheck、資料／blueprint、lint0/0、build全PASS；三引擎各18項，54 PASS／0 FAIL／0 SKIP。WebKit改單worker後保留全部斷言與原逾時通過。最終產品程式仍4f2c948；本批只有驗收文件／索引與選定證據，未把文件commit當實測程式版本。已實際檢視最終WebKit離線／錯誤結算／重玩預覽圖。
 
 全部可獨立推進工程工作已完成。P1-01～11／13保留IN_REVIEW；P1-12因P0責任人／內容／UX／preview及P1指定實機／素材人審BLOCKED。Phase報ENGINEERING_READY、正式gate NO-GO；沒有真人人名／設備證據就不填DONE／COMPLETE。最小承接動作見acceptance與device-checklist。PR54維持draft，不合併或發布、不啟動P2。
+
+## 2026-10-16 新規格同步
+
+依使用者本次指示fetch並確認：PR55已合併至本分支，merge `0b1cb5e7194f2b46b944857e5817be8bdc1e65b7`；PR54仍open／draft、未合併main。起始工作目錄乾淨，本地與遠端head一致，不需重複merge。接續執行與文件核對為本session Codex，沒有新增人工reviewer或實機結果。
+
+已重讀project.md、tasks.md、冒險設計及P1／P2驗收與交接。新版改為平板原創插畫、自由探索、日語戰鬥、金幣及裝備；這些UI／世界工程按P2進行，不改P1既有程式或把原54／187 PASS宣稱為新冒險驗收。P1既有37張SVG語義、麥克風與Safari／PWA實機補驗仍有效，新風格不抵銷舊版本可靠度驗收。
+
+本次更新兩Phase的progress／acceptance／handoff與tasks同步說明；所有task狀態與依賴不變。P1-12仍BLOCKED，P2-10文件DONE；其餘P2／U01的24項無一符合全部依賴DONE，產品工程未啟動。核對證據：[P2 spec-sync.json](../P2/evidence/spec-sync.json)。最小外部動作仍依acceptance／device-checklist，沒有新的主機操作需求。

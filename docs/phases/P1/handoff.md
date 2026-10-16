@@ -6,6 +6,8 @@
 
 狀態：ENGINEERING_READY，正式gate NO-GO。測試head `036a7806f5c58676edf26393fe79b1f821b9a29b`，產品程式 `4f2c948d2eba3e5666e99bf5769d9b87227c06d5`，完整CI [54/54](https://github.com/dannythreeka/Japanese101/actions/runs/38743653858)；測試實際checkout與文件後續提交差異見acceptance。P1-12剩外部補驗，勿重做已通過工程或直接啟動P2。
 
+2026-10-16同步：本機及遠端P1分支已包含PR55 merge `0b1cb5e7194f2b46b944857e5817be8bdc1e65b7`；當前checkout仍為本文件下方路徑，PR54仍draft／未合併main。設計與本次交接維護不改runtime、測試或CI。恢復時也讀[冒險設計](../../design/ADVENTURE_RPG_SPEC.md)、[P2 handoff](../P2/handoff.md)及[P2 prompt](../../agent-prompts/P2.md)，以新版25項task／15 gate接續，不沿用舊Today清單／編號關卡的UI方向。P2-10已交付不重做；P1-12前置仍未放行，187／54 PASS不可挪作新玩法證據。
+
 ## 恢復與驗證
 
 目前程式變更已整合七遊戲作答／結算／checkpoint、v5玩家資料、音訊／mic、離線包、素材關聯、lint與相容依賴修補。187個單元測試通過；完整L0～L10三種mic情境33關實際UI通過；Chrome／Firefox核心與邊界另見evidence文字紀錄。三引擎完整CI及最終狀態見acceptance.md，勿沿用舊失敗run當新結果。

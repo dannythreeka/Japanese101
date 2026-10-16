@@ -17,6 +17,10 @@ gear-hat: human visual review required
 gear-pack: human visual review required
 gear-scarf: human visual review required
 u01-contexts: human visual review required
+gardener:0: human dialogue listening review required
+gardener:1: human dialogue listening review required
+traveler:0: human dialogue listening review required
+traveler:1: human dialogue listening review required
 U01-L01: human listening review required
 U01-L02: human listening review required
 U01-L03: human listening review required

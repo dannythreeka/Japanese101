@@ -1,0 +1,13 @@
+{
+  "recordedAt": "2026-10-16T07:02:57.980040+00:00",
+  "deploymentId": 7112892451,
+  "deploymentSourceSha": "911fa44dcc813f244299dfa3f89a66c68a340018",
+  "deploymentState": "success",
+  "previewUrl": "https://japanese101-38adwewhc-dannythreekas-projects.vercel.app",
+  "adventureUrl": "https://japanese101-38adwewhc-dannythreekas-projects.vercel.app/#/preview/adventure",
+  "reviewUrl": "https://japanese101-38adwewhc-dannythreekas-projects.vercel.app/#/__review/content",
+  "humanReview": "NOT_RUN",
+  "httpStatus": 200,
+  "contentType": "text/html; charset=utf-8",
+  "versionVerdict": "NOT_VERIFIED: response is HTML; owner sign-in required"
+}

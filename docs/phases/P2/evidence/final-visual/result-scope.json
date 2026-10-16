@@ -1,0 +1,7 @@
+{
+  "date": "2026-10-16T07:02:39.099Z",
+  "sourceCommit": "0fc369de7a5c8ba19e396c67beb025d1b1d64405",
+  "browser": "145.0.7632.6",
+  "fixture": "isolated QA context; actual UI taught card and submitted 4 correct practice answers, won/claimed; actual PIN setup. No child data. Not human playability.",
+  "reviewer": "Codex engineering visual inspection; real human NOT_RUN"
+}

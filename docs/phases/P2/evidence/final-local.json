@@ -1,0 +1,60 @@
+{
+  "recordedAt": "2026-10-16T07:00:39.305582+00:00",
+  "productCommit": "0fc369de7a5c8ba19e396c67beb025d1b1d64405",
+  "currentHead": "911fa44dcc813f244299dfa3f89a66c68a340018",
+  "headDifference": "test timing/progress only; no runtime change",
+  "node": "22.23.2",
+  "npm": "10.9.8",
+  "playwright": "1.58.0",
+  "unit": {
+    "files": 24,
+    "passed": 222
+  },
+  "checks": {
+    "typecheck": "PASS",
+    "lint": "PASS",
+    "data": "PASS",
+    "blueprint": "PASS (11 tests)",
+    "journey": "PASS (65 questions,14 images,14 unit +4 world audio)",
+    "reviewBuild": "PASS",
+    "formalRelease": "EXPECTED_REJECTION: DRAFT human reviews"
+  },
+  "browser": {
+    "chromium": {
+      "version": "145.0.7632.6",
+      "tests": 24,
+      "result": "PASS",
+      "artifacts": "test-results/p2-final; playwright-report/p2-final",
+      "source": "0fc369d; catalog test before 911fa44 timing fix",
+      "reportedDuration": "3.5m"
+    },
+    "firefox": {
+      "tests": 24,
+      "result": "PASS",
+      "artifacts": "test-results/p2-final-firefox; playwright-report/p2-final-firefox",
+      "source": "911fa44 test timing, same product0fc369d",
+      "version": "146.0.1",
+      "reportedDuration": "4.2m"
+    }
+  },
+  "scope": [
+    "isolated contexts only",
+    "real six WAV playback, not human listening",
+    "actual local origin stopped for offline cold start",
+    "200% computed font-size/line-height desktop simulation",
+    "768x1024 and1024x768 emulated viewport, not a physical tablet"
+  ],
+  "humanJapanese": "NOT_RUN",
+  "humanVisualPlayability": "NOT_RUN",
+  "physicalTablet": "NOT_RUN",
+  "resourceRaceRegression": {
+    "result": "PASS",
+    "workers": 3,
+    "repetitions": 3,
+    "visitsPerRepetition": 20,
+    "reportedDuration": "49.9s",
+    "source": "911fa44 + test-only wait for persisted onboarding dialog to close",
+    "assertions": "movement must start; on every departure RAF/interval/playback timeout/media/speech equal baseline",
+    "artifacts": "test-results/p2-resource-race"
+  }
+}

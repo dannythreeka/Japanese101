@@ -14,7 +14,11 @@ async function open(page:Page){
   await page.goto('/#/preview/adventure');await expect(page.getByRole('heading',{name:'青葉町旅行手帳',exact:true})).toBeVisible()
   const id=await page.evaluate(()=>localStorage.getItem('activeProfileId') ?? 'player')
   const study=(await records<{profileId:string;onboarding?:unknown;taughtCards:string[]}>(page,'studyPlans')).find(s=>s.profileId===id)
-  if(study && !study.onboarding && !study.taughtCards.length && !(await records<Attempt>(page,'learningAttempts')).some(a=>a.profileId===id))await page.getByRole('button',{name:'略過，先探索',exact:true}).click()
+  if(study && !study.onboarding && !study.taughtCards.length && !(await records<Attempt>(page,'learningAttempts')).some(a=>a.profileId===id)){
+    await page.getByRole('button',{name:'略過，先探索',exact:true}).click()
+    // The skip is persisted asynchronously; the world remains paused until it closes.
+    await expect(page.getByRole('dialog',{name:'歡迎來到青葉町',exact:true})).not.toBeVisible()
+  }
 }
 async function place(page:Page,name:string){await page.getByRole('button',{name:'地點清單',exact:true}).click();await page.getByRole('dialog').getByRole('button',{name,exact:true}).click()}
 async function teach(page:Page){

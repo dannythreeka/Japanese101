@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-16T06:53:23.456Z",
+  "sourceCommit": "0fc369de7a5c8ba19e396c67beb025d1b1d64405",
+  "subsequentCommit": "911fa44 changes only test timing and progress",
+  "browser": "145.0.7632.6",
+  "viewport": [
+    [
+      320,
+      900
+    ],
+    [
+      1024,
+      768
+    ]
+  ],
+  "steps": "isolated context; first-time skippable guide; actual parent PIN setup 1234; no real child data",
+  "reviewer": "Codex engineering visual inspection; human NOT_RUN",
+  "pageErrors": [],
+  "inspection": "PASS engineering only: scrollable guide at320/1024 with visible close, no horizontal overflow; parent empty state has zero samples and no invented mastery. Also viewed actual four-answer result/report: sample4, independent100%, section0, practicing not stable, next-day review.",
+  "humanVisual": "NOT_RUN"
+}

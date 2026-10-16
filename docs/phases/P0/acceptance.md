@@ -1,5 +1,7 @@
 # P0 gate 與驗收結果
 
+> 最新狀態：**COMPLETE（專案擁有者gate確認）**。2026-10-16使用者於本對話確認「P0 and P1 驗證過了」，接受既有工程交付並放行P2。核准來源與基準見[前置核准](../P2/evidence/predecessor-approval.json)。下方先前NO-GO／IN_REVIEW／BLOCKED為歷史紀錄，保留原始證據；本次沒有虛構個別裝置、日語審核人名或重新測試結果。P2新教材、視覺與實體平板驗收不在此核准範圍。
+
 狀態：**BLOCKED／NO-GO**。可獨立執行的P0工程工作已交付；仍缺內容／UX真人審核、實際承接確認與可存取preview的SHA驗證。**不標COMPLETE，不解除P1-依賴。**
 
 2026-10-16定點更新：不用重做P0；PR54已合併main `4d56991ffe46cd800657688defd8ce352f9f286d`。本次將內容藍圖／manifest的漢字單元配額同步到主tasks，manifest 0.2-draft保留IN_REVIEW與空reviewer。正式版本已可讀且SHA核對正確，隔離Chromium首頁smoke通過，見[evidence/main-deployment.json](evidence/main-deployment.json)；這沒有解除原branch preview保護，也不代替人工／實機簽核。人類與agent補驗分工見[next-actions.md](next-actions.md)，以下歷史證據與task狀態不覆寫。

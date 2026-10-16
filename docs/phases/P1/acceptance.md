@@ -1,5 +1,7 @@
 # P1 驗收
 
+> 最新狀態：**COMPLETE（專案擁有者gate確認）**。2026-10-16使用者於本對話確認「P0 and P1 驗證過了」，接受既有工程交付並放行P2。核准來源與基準見[前置核准](../P2/evidence/predecessor-approval.json)。下方先前NO-GO／IN_REVIEW／BLOCKED為歷史紀錄，保留原始證據；本次沒有虛構個別裝置、日語審核人名或重新測試結果。P2新教材、視覺與實體平板驗收不在此核准範圍。
+
 狀態：**ENGINEERING_READY**；正式 Phase gate **NO-GO**，不是 COMPLETE。P1-01～11、P1-13工程已交付並驗證，task仍IN_REVIEW；P1-12因P0簽核與指定人工／實機補驗為BLOCKED。
 
 基準：PR #53已依使用者指示合併，merge `bc2116ad789d247e3be44d2eba5b5a0e790b73ea`。使用者2026-10-15允許P0人審與P1工程並行，沒有把P0 gate補填PASS。工程執行／自動化初審：本session Codex；真人日語、UX／產品與實機reviewer待實際指派／簽核。

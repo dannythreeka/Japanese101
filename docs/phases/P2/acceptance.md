@@ -1,10 +1,14 @@
 # P2 驗收紀錄
 
-2026-10-16（Asia/Taipei）｜Phase **IN_PROGRESS：僅設計交付**｜正式gate **NO-GO**
+2026-10-16（Asia/Taipei）｜Phase **IN_PROGRESS：工程執行中**｜正式gate **NO-GO**
 
 基準 `fd4ccd4a168c57c47cbe25ac7ee9408e37c01658`；本文件所屬commit交付文件及概念圖，產品程式沒有變更。P1的187單元／54瀏覽器測試是P1證據，不能當本次新冒險測試結果。此次不宣稱P2 ENGINEERING_READY。
 
 2026-10-16同步基準：PR55已合併為 `0b1cb5e7194f2b46b944857e5817be8bdc1e65b7`，已fetch並包含於本機P1工作分支。PR54仍draft／未合併。以下設計驗收沿用原證據；同步維護不重新完成P2-10，不改P1-12或任何人工／實機狀態。
+
+## 最新前置與執行狀態
+
+使用者已確認P0／P1通過，來源[evidence/predecessor-approval.json](evidence/predecessor-approval.json)。前面關於P1-12未過的段落是本次啟動前歷史；已依真實使用者核准放行P2，沒有產生新的P2人工內容或實機證據。以下原設計證據保留，G2尚未測試者維持NOT_RUN。
 
 ## 本次文件驗收
 

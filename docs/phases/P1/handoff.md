@@ -1,5 +1,7 @@
 # P1 可恢復交接
 
+> 最新狀態：**COMPLETE（專案擁有者gate確認）**。2026-10-16使用者於本對話確認「P0 and P1 驗證過了」，接受既有工程交付並放行P2。核准來源與基準見[前置核准](../P2/evidence/predecessor-approval.json)。下方先前NO-GO／IN_REVIEW／BLOCKED為歷史紀錄，保留原始證據；本次沒有虛構個別裝置、日語審核人名或重新測試結果。P2新教材、視覺與實體平板驗收不在此核准範圍。
+
 分支 `phase/p1-reliability`；draft PR [54](https://github.com/dannythreeka/Japanese101/pull/54)。基準是已按使用者指示合併的PR [53](https://github.com/dannythreeka/Japanese101/pull/53)，merge `bc2116ad789d247e3be44d2eba5b5a0e790b73ea`。先讀project.md、tasks.md、P0及P1的progress／acceptance，不重置使用者修改。
 
 使用者允許P0人審與P1工程並行；P0未驗收項目保留，這不是P2放行或正式發布許可。P1外部驗收未齊前維持draft，不自動merge main／發布。狀態與最後已驗證commit以acceptance.md為準，不能只看到本地build或PR就標COMPLETE。

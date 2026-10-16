@@ -72,8 +72,11 @@ test('a changed catalog in another tab blocks obsolete purchases and preserves t
   await open(page)
   // Isolated affordable shop fixture; the full cycle earns its actual 60 coins.
   await updateRecord(page,'coinWallets','player',{profileId:'player',balance:60});await page.reload();await place(page,'小路裝備店')
+  const hat=page.locator('article').filter({has:page.getByRole('heading',{name:'旅行帽',exact:true})})
+  // Finish the entry checkpoint/read before simulating a later catalog deployment.
+  await expect(hat.getByRole('button',{name:'購買並裝備',exact:true})).toBeEnabled()
   await updateRecord(page,'catalogVersions','active',{version:'economy-v0.2',revision:2})
-  const hat=page.locator('article').filter({has:page.getByRole('heading',{name:'旅行帽',exact:true})});await hat.getByRole('button',{name:'購買並裝備',exact:true}).click()
+  await hat.getByRole('button',{name:'購買並裝備',exact:true}).click()
   await expect(page.getByRole('heading',{name:'商品已更新，請重新開啟，確認金幣與已購裝備。',exact:true})).toBeVisible()
   expect((await records<{balance:number}>(page,'coinWallets'))[0].balance).toBe(60);expect(await records(page,'inventory')).toEqual([])
   expect((await records<{revision:number}>(page,'catalogVersions'))[0].revision).toBe(2)

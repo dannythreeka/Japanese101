@@ -31,3 +31,28 @@
 | 359項教材音訊人審、實機、兒童 | NOT_RUN | docs/content/kana/review-ledger.json |
 
 上述檢查對應本次P3-01提交的產品內容。提交前後只追加驗證紀錄、CI的validate:kana步驟與tasks狀態敘述，沒有在瀏覽器驗證後修改產品。三引擎新CI待push後確認。
+
+## U02與多單元整合驗收（2026-10-30）
+
+工程owner／執行者：本session Codex；非原作者日語、實體裝置與兒童reviewer待指派。內容135筆NOT_RUN，P3整體IN_PROGRESS，不是完整Phase通過。
+
+| Task／需求 | 預期與實際 | 證據 |
+|---|---|---|
+| U02-M/T/Q1/Q2 | 實際25詞5漢字3文法4閱讀6聽力50練習＋15獨立check候選；manifest配比／去重／先修／引用PASS，真人待審 | docs/content/U02/README.md、coverage.json、src/content/packs/u02.json |
+| U02-A | 16真WAV（6聽力＋10教學）、來源hash與PCM PASS；6段聽力實際Chromium播完，真人審聽NOT_RUN | public/assets/audio/u02/manifest.json、e2e/p3-u02.spec.ts |
+| U02-V | BLOCKED，沒有實際審核者與135筆簽核 | docs/content/U02/review-ledger.json |
+| U02-I隔離預覽 | 真UI教學後四主線各一題、4個正確Attempt、重整續戰、報告按unit隔離PASS | e2e/p3-u02.spec.ts第一項；為可重現測試設定四題queue，非真實孩子資料 |
+| P3-02家長匯出 | 所有unit戰鬥／檢核都保存，不再漏U02，另一玩家不混入PASS | src/db/journey.test.ts新增跨單元export；實際瀏覽器下載JSON含U02 battle及4 Attempts |
+| P3-02報告 | G04採U02真教學時間，依教材篩選樣本，練習連結保留unit PASS | src/learning/report.test.ts、e2e/p3-u02.spec.ts |
+| P2-18多單元關聯 | 四個真實pack皆有可達dojo、教學／practice／check完整引用，未知unit或漏encounter會FAIL | src/world/validation.test.ts、npm run validate:journey |
+| 新素材離線 | 下載467素材；關閉測試專屬origin再關頁冷啟，U02教學／真音訊／新插畫仍可用PASS | e2e/p3-u02.spec.ts第三項；沒有停止共用preview或真主機網路 |
+| 視覺 | 320／390／768／1024／1440無橫向溢出；已實際檢視320與768截圖，插畫裁格正確、作答按鈕可見於頁面且可捲動 | evidence/u02-context-*.png；工程檢視，不代替真人核對 |
+| 整合回歸 | 240單元／29檔、lint／typecheck／build PASS；P2＋假名＋U02共31 Chromium PASS（5.0m） | test-results/p3-integration、playwright-report/p3-integration；Playwright1.58，Node22.23.2 |
+| 正式release gate | 預期FAIL、exit1：缺人審及U03～U24，不把草稿當完整課程 | npm run validate:units:release |
+| P3-03人測材料 | 材料已寫，實際九人招募／同意／試用NOT_RUN；fixture待補 | usability/README.md、session-script.md與CSV空表 |
+
+31項回歸的產品版本為4f02a5c基準上的本批工作樹。最後另有U02原稿文字修正：学校促音說明及避免未教否定變化（不改音訊、不改正解ID、也不改P2／假名程式）；受影響內容／世界測試與U02三流程會另重跑，結果追加下方。不要把舊31項綠燈描述為這些文字修訂後已全量重跑。
+
+CI40920767848三引擎各45/46通過；唯一失敗為P2審閱新增教材選單後未命名combobox歧義。測試已明確指定「選擇題目」，31項本機回歸已通過；新提交三引擎CI尚待確認。
+
+最後U02文字修訂後：6項內容／世界關聯測試PASS，型別與preview build PASS；U02三項Chromium再次全部PASS（1.2m），含全部六段音訊與真正來源停機的離線冷啟。證據test-results/p3-u02-text-final、playwright-report/p3-u02-text-final。最後測試後只新增本段證據文字，產品未再修改。

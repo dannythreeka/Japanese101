@@ -4,8 +4,9 @@ import { BATTLE_RULES_VERSION } from '../battle/rules'
 import { CATALOG_VERSION, catalog } from '../economy/catalog'
 import { journeyManifest } from './manifest'
 export interface ArtAsset {id:string;src:string;columns:number;rows:number;width:number;height:number;bytes:number;sha256:string;reviewStatus:string;frameWindows?:{x:number;y:number;w:number;h:number}[]}
-export function journeyErrors(manifest:typeof journeyManifest,pack:UnitPack,assets:ArtAsset[],skillIds:string[],formal=false):string[]{
-  const errors=unitPackErrors(pack);const assetIds=new Set(assets.map(a=>a.id));const ids=new Set<string>()
+export function journeyErrors(manifest:typeof journeyManifest,content:UnitPack|readonly UnitPack[],assets:ArtAsset[],skillIds:string[],formal=false):string[]{
+  const packs:readonly UnitPack[]=Array.isArray(content)?content:[content as UnitPack]
+  const errors=packs.flatMap(unitPackErrors);const assetIds=new Set(assets.map(a=>a.id));const ids=new Set<string>()
   const need=(id:string,label:string)=>{if(!assetIds.has(id))errors.push(`${label}: missing asset ${id}`)}
   if(assetIds.size!==assets.length)errors.push('assets: duplicate ID')
   for(const a of assets)if(a.columns*a.rows>1){
@@ -27,15 +28,17 @@ export function journeyErrors(manifest:typeof journeyManifest,pack:UnitPack,asse
     if(!ref || ref.slot!==item.slot)errors.push(`${item.id}: equipment slot mismatch`)
     if(ref){need(ref.asset,item.id);const a=assets.find(a=>a.id===ref.asset);if(a && (a.rows!==2 || a.columns!==2))errors.push(`${item.id}: missing equipment directions`)}
   }
-  for(const q of pack.questions){
+  for(const pack of packs)for(const q of pack.questions){
     for(const skill of q.skillIds)if(!skillIds.includes(skill))errors.push(`${q.id}: unknown skill ${skill}`)
     if(q.image && !assets.some(a=>a.src===q.image!.src))errors.push(`${q.id}: missing context image`)
   }
-  for(const card of pack.teaching)for(const skill of card.skillIds)if(!skillIds.includes(skill))errors.push(`${card.id}: unknown teaching skill ${skill}`)
+  for(const pack of packs)for(const card of pack.teaching)for(const skill of card.skillIds)if(!skillIds.includes(skill))errors.push(`${card.id}: unknown teaching skill ${skill}`)
   for(const encounter of manifest.encounters){
     if(ids.has(encounter.id))errors.push(`${encounter.id}: duplicate encounter`);ids.add(encounter.id)
     if(encounter.mapId!==town.id || !town.destinations.some(d=>d.id===encounter.destinationId && d.kind==='dojo'))errors.push(`${encounter.id}: unknown map/dojo`)
-    if(encounter.unitId!==pack.id || encounter.contentVersion!==pack.version)errors.push(`${encounter.id}: content version mismatch`)
+    const pack=packs.find(p=>p.id===encounter.unitId)
+    if(!pack){errors.push(`${encounter.id}: missing unit ${encounter.unitId}`);continue}
+    if(encounter.contentVersion!==pack.version)errors.push(`${encounter.id}: content version mismatch`)
     for(const id of encounter.teachingIds)if(!pack.teaching.some(t=>t.id===id))errors.push(`${encounter.id}: missing teaching ${id}`)
     for(const [mode,questions] of [['practice',encounter.practiceIds],['check',encounter.checkIds]] as const){
       if(!questions.length)errors.push(`${encounter.id}: empty ${mode}`)
@@ -45,6 +48,7 @@ export function journeyErrors(manifest:typeof journeyManifest,pack:UnitPack,asse
     if(['attack','guard','partner'].some(move=>!encounter.moves.includes(move)))errors.push(`${encounter.id}: missing move`)
   }
   if(!manifest.encounters.length)errors.push('world: missing encounter')
-  if(formal){if(pack.reviewStatus!=='APPROVED')errors.push(`${pack.id}: human review required`);for(const a of assets)if(a.reviewStatus!=='APPROVED')errors.push(`${a.id}: human visual review required`)}
+  for(const pack of packs)if(!manifest.encounters.some(e=>e.unitId===pack.id))errors.push(`${pack.id}: missing encounter`)
+  if(formal){for(const pack of packs)if(pack.reviewStatus!=='APPROVED')errors.push(`${pack.id}: human review required`);for(const a of assets)if(a.reviewStatus!=='APPROVED')errors.push(`${a.id}: human visual review required`)}
   return errors
 }

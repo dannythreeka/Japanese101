@@ -1,13 +1,30 @@
 # P3 恢復
 
-先讀 ../full-experience.md、progress.md、acceptance.md、project.md、tasks.md；worktree Japanese101-p2，branch phase/full-experience，勿切回P1覆寫。
+先讀 ../full-experience.md、progress.md、acceptance.md、project.md、tasks.md。worktree Japanese101-p2，branch phase/full-experience；原P1 checkout勿碰。goal仍ACTIVE，使用者授權完整體驗跨phase工程，不得假造人工gate。
 
-新入口：/#/preview/adventure?unit=KANA-HIRA&scene=learn、KANA-KATA；道館有選課與獨立先修檢核。kana-2-draft每script46教學＋46單字音practice＋46詞語位置check。僅完整完成的合法無提示Attempt給略過先修資格，不寫taughtAt或stable。不要把184假名題算入正式1200練習配額。
+## 已交付
 
-下一步：U02～U04實際教材、音訊、inventory、審閱與多單元報告／複習。U02草案構思尚未寫入檔案；依manifest的G04/G05/G06（これそれあれ／このそのあの＋N／NのN）、25新詞5漢字3文法4閱讀6聽力50練習編寫。去除U01既有詞彙；同義變體與名字替換不可灌題族。現有registry只3個真實pack，勿將24單元blueprint當完成教材。
+- kana-2-draft：平片各46教學、46練習、46獨立詞語檢核；整組完成才給略過先修資格，不寫taughtAt／stable。359人審NOT_RUN，commit4f02a5c已push至draft PR58。
+- U02：25新詞5漢字3文法4閱讀6聽力50practice＋15check候選，10教學卡16真WAV、原創四格WebP。135人審NOT_RUN。入口`/#/preview/adventure?unit=U02&scene=dojo`、審閱`/#/__review/content?unit=U02`。
+- 新registry實際4pack。world manifest由registry產可達dojo關聯；generic inventory盤點真實U01/U02，明列其餘22單元未完成，release確實阻擋。
+- exportJourney修正全玩家所有單元battle/check匯出，state仍只取目前unit；勿再把兩處同樣篩選。家長報告讀全部plan，用實際教學時間，選課篩選與正確續學連結。
+- 31項P2＋假名＋U02 Chromium已全PASS；240單元／29檔、typecheck、lint、build PASS。最後U02作者稿僅修學校促音說明和去掉未教否定前提，最後6項相關測試及三流程已重驗PASS，詳acceptance。此批是否已commit/push以git log/status為準。
+- P3-03試用材料在usability/，匿名9空名額非已招募，fixture尚未準備；真人同意／兒童操作NOT_RUN。
 
-本批231單元、lint、型別、build、4項ChromiumPASS；新release validator已實際以exit1阻擋359項人審NOT_RUN。證據evidence/kana-placement-result.png已檢視；trace為ignored test-results/p3-placement-final、playwright-report/p3-placement。審閱頁用明確aria-label避免select內容污染label。
+## 下一工作
 
-Node22：export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH。npm test；npm run validate:kana；VITE_P2_REVIEW_PREVIEW=1 npm run build；P0_E2E_PORT=4248 npm run test:e2e -- e2e/p3-kana.spec.ts --project=chromium。
+先保存此批最新驗證／commit／push並更新draft PR58，確認CI。4f02a5c的CI三引擎唯一失敗為舊P2 reviewer combobox定位歧義，已改明確名稱並在31項回歸通過；不能直接宣稱新CI全綠。
 
-不要在交易主機apt install或重啟網路。CI在隔離runner裝三引擎。P2人審、kana人審與實體平板仍NOT_RUN，但完整體驗目標授權繼續工程；不阻塞全部後續工作。PR57已merge9c415fd；後續PR58 draft，push目標phase/full-experience。最新SHA由git log確認。
+接續U03／U04：依docs/content/n5-manifest.json與tasks配額，先去重U01/U02新詞／漢字。教學內容／練習／獨立check需原創，不靠換名灌family。`scripts/author-u02.py`只作已寫出的U02作者稿，別直接換單元ID來湊新課程。腳本語法／素材來源／hash檢查可重用；新音訊用`npm run gen:voice:unit -- U03`，明確檢查已有檔稿版本。
+
+P3-02最終四單元100詞20漢字至少10文法16閱讀24聽力200練習尚未達標。P4、P5全部仍待工程／內容，goal不可COMPLETE或BLOCKED。U02等主task須有人審後才能DONE。
+
+## 命令與證據
+
+Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`。
+`npm run validate:units`、`npm run validate:journey`、`npm run validate:kana`；人審清單產出`node --import tsx scripts/unit-inventory.ts --write`（相同ID/hash才保留原review）。
+`VITE_P2_REVIEW_PREVIEW=1 npm run build`；`P0_E2E_PORT=4248 npm run test:e2e -- e2e/p2-adventure.spec.ts e2e/p3-kana.spec.ts e2e/p3-u02.spec.ts --project=chromium`。
+
+Playwright trace：ignored test-results/p3-integration，最後U02文字版test-results/p3-u02-text-final。選定畫面docs/phases/P3/evidence，320與768已看；未檢視寬度不可偷填人審。新原創圖及完整prompt見docs/content/U02/art-prompt.md；PNG曾超2MiB，已用原尺寸WebP385050bytes，沒有放寬上限。
+
+勿apt install、改kernel/Wi-Fi/Tailscale或重啟交易主機。WebKit依賴只在CI隔離runner安裝。push目標phase/full-experience，憑證helper見完整體驗交接，勿印token。PR57已merge9c415fd，PR58維持draft。

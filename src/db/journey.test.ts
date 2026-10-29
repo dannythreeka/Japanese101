@@ -319,3 +319,19 @@ describe('P3-02 multiple unit isolation',()=>{
     expect(await db.learningAttempts.count()).toBe(0)
   })
 })
+
+describe('P3-02 complete player export across units',()=>{
+  it('includes every unit battle and check even when exported from U01, while excluding other players',async()=>{
+    const first=await start('A');await start('B')
+    const secondPack={...structuredClone(pack),id:'U02',questions:pack.questions.map(q=>({...q,unitId:'U02'}))}
+    const second=new JourneyRepository(secondPack);await second.openStudy('A');await second.teach('A','teach');const other=await second.startBattle('A')
+    const checkRepo=new JourneyRepository({...secondPack,questions:secondPack.questions.map(q=>({...q,partition:'check' as const,hintPolicy:'none' as const}))})
+    const check=await checkRepo.startCheck('A')
+    const backup=await repo.exportJourney('A')
+    expect(backup.data.battles.map(b=>b.id).sort()).toEqual([first.id,other.id].sort())
+    expect(backup.data.checks.map(c=>c.id)).toEqual([check.id])
+    expect(backup.data.plans.map(p=>p.unitId).sort()).toEqual(['U01','U02'])
+    expect(backup.data.battles.every(b=>b.profileId==='A')).toBe(true)
+    expect((await second.exportJourney('A')).data).toEqual(backup.data)
+  })
+})

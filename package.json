@@ -24,7 +24,10 @@
     "gen:voice:u01": "tsx scripts/generate-u01-audio.ts",
     "gen:voice:world": "tsx scripts/generate-world-audio.ts",
     "validate:kana": "tsx scripts/kana-inventory.ts",
-    "validate:kana:release": "tsx scripts/kana-inventory.ts --release"
+    "validate:kana:release": "tsx scripts/kana-inventory.ts --release",
+    "validate:units": "tsx scripts/unit-inventory.ts",
+    "validate:units:release": "tsx scripts/unit-inventory.ts --release",
+    "gen:voice:unit": "tsx scripts/generate-unit-audio.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

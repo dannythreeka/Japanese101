@@ -2,8 +2,13 @@
 const delay=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms))
 function trusted(url:string){const parsed=new URL(url);if(parsed.protocol!=='https:' || !/^audio\d*\.tts\.quest$/.test(parsed.hostname))throw new Error('Unexpected audio host');return parsed.href}
 export async function synthesize(script:string):Promise<Buffer>{
-  for(let request=0;request<2;request++){
+  for(let request=0;request<3;request++){
     const response=await fetch(`https://api.tts.quest/v3/voicevox/synthesis?text=${encodeURIComponent(script)}&speaker=2`,{signal:AbortSignal.timeout(15000)})
+    if(response.status===429 && request<2){
+      const retry=response.headers.get('retry-after')
+      const seconds=retry===null ? 5*(request+1) : /^\d+$/.test(retry) ? Number(retry) : Math.ceil((Date.parse(retry)-Date.now())/1000)
+      if(Number.isFinite(seconds)&&seconds>=0&&seconds<=30){await delay(Math.max(2,seconds)*1000);continue}
+    }
     if(!response.ok)throw new Error(`Synthesis HTTP ${response.status}`)
     const job=await response.json() as {success:boolean;retryAfter?:number;audioStatusUrl:string;wavDownloadUrl:string;speakerName?:string}
     if(!job.success){if(request===0 && job.retryAfter && job.retryAfter<=30){await delay(job.retryAfter*1000);continue}throw new Error('Synthesis unavailable or rate-limited')}

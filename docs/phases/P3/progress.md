@@ -20,3 +20,17 @@
 - 失敗與修正：Node匯入JSON補import attribute；重整測試先等待已保存的回饋；修正測試與實際返回按鈕文字差異；原生select的label文字包含options造成getByLabel exact失配，已補明確aria-label，保留92個選項斷言及實際selectOption操作。沒有放寬斷言或宣稱未跑項目通過。
 - 工程已檢視kana-placement-result.png：5/46先修通過、可練習、一般延後檢核仍鎖定。兒童畫面尚有KANA-HIRA/KATA技術ID，下一批選課整理時移除；不把工程視覺檢查當真人核准。
 - P3-01主task仍TODO（P2人工gate及內容人審尚缺）；P3全體IN_PROGRESS。
+
+## U02、多單元報告與離線資產（2026-10-30）
+
+- U02實際作者稿、可操作教材與原創四格插畫已製作：25詞／5漢字／3文法／4閱讀／6聽力／50practice＋15獨立check候選，10教學卡、16真實WAV；135筆人工ledger全部NOT_RUN。U02-M/T/Q1/Q2/A進IN_REVIEW，V因缺實際審核者BLOCKED，I工程IN_PROGRESS，未通過前置gate的正式整合沒有冒稱DONE。
+- 修正作者稿中的學校促音說明，去掉未教的否定變化作為理解前提；同一聽力稿不同問題共享family，獨立check五family/skill仍待教學審查。
+- registry只加入真實U02；世界manifest追蹤四pack（平／片假名＋U01/U02）的教學、practice、check與可達道館；漏單元或失效關聯驗證會失敗。
+- P3-02實際缺陷：exportJourney過濾目前unit，導致U01家長匯出漏掉U02戰鬥與檢核。已改全玩家所有unit匯出並加回歸，仍排除另一玩家。報告改讀所有plan，G04不再誤用U01教學時間；按教材看樣本、弱項連回正確單元。兒童畫面移除KANA-HIRA/KATA技術ID。
+- 通用inventory僅盤點真實教材，配額、去重、四主線、題型分配、教學先修、真WAV／插畫hash都檢查；明列U03～U24未完成。release檢查已實際exit1，不能以草稿數量宣稱完整24單元。
+- 音訊首次合成遇429，加入尊重Retry-After、最多3次且≤30秒等待的有限處理與測試，完成16檔，未換假音檔。新版generator檢查音檔來源與文字稿hash才重用。
+- 原PNG超過既有2MiB離線上限，轉為原尺寸WebP385,050bytes；保留原作於generated_images並記出處，不放寬上限。offline manifest改收全部素材子目錄manifest與PNG，避免新增教材資產遺漏。
+- 240單元／29檔PASS、lint／typecheck／build PASS，467個離線資產；三項U02瀏覽器首次因測試誤用音訊按鈕可見文字作accessible name失敗，按實際「停止播放」名稱與兩頁實際播放文字修正。舊P2審閱測試在4f02a5c三引擎CI均因未命名combobox定位不唯一失敗；已指定「選擇題目」，未放寬斷言。完整新回歸進行中，以最後acceptance紀錄為準。
+- P3-03已產九人試用材料與匿名CSV空表。沒有招募、家長同意或兒童紀錄；不能把九個名額當九位參與者。試用fixture、reviewer與人測仍待完成。
+
+本批最後結果：31項Chromium整合全部PASS（5.0m）；最後U02文字小修後6項相關單元及三項U02Chromium再次PASS（1.2m），完整建置PASS。剩下為新提交CI與真人依賴；工程可接續U03，不重做U02已驗證流程。

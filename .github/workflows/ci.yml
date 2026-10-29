@@ -46,6 +46,10 @@ jobs:
         if: ${{ !cancelled() }}
         run: npm run validate:kana
 
+      - name: Validate actual curriculum and media inventory
+        if: ${{ !cancelled() }}
+        run: npm run validate:units
+
       - name: Lint
         if: ${{ !cancelled() }}
         run: npm run lint

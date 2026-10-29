@@ -1,13 +1,12 @@
+import {allUnitArt} from '../content/packs/media'
 import { expect, it } from 'vitest'
 import { journeyErrors } from './validation'
 import { journeyManifest } from './manifest'
 import { u01 } from '../content/packs/u01'
 import {availablePacks} from '../content/packs/registry'
-import u02Art from '../../public/assets/img/u02/manifest.json'
-import u03Art from '../../public/assets/img/u03/manifest.json'
 import art from '../../public/assets/img/journey/manifest.json'
 import blueprint from '../../docs/content/n5-manifest.json'
-const allArt=[...art.assets,...u02Art.assets,...u03Art.assets]
+const allArt=[...art.assets,...allUnitArt]
 const skills=[...blueprint.skills.map(s=>s.id),...availablePacks.filter(p=>p.id.startsWith('KANA-')).flatMap(p=>p.teaching.flatMap(c=>c.skillIds))]
 it('traces all draft unit encounters, assets and four renderers without false release approval',()=>{
   expect(journeyErrors(journeyManifest,availablePacks,allArt,skills)).toEqual([])

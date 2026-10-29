@@ -1,0 +1,75 @@
+{
+  "unitId": "U04",
+  "version": "u04-1-draft",
+  "mode": "isolated draft structure",
+  "skills": [
+    {
+      "id": "G10",
+      "prerequisites": [
+        "K-HIRA",
+        "G09"
+      ],
+      "teaching": [
+        "U04-teach-G10"
+      ],
+      "practice": [
+        "U04-Q18",
+        "U04-Q19"
+      ],
+      "checkFamilies": [
+        "U04-CHECK-classify-new-person",
+        "U04-CHECK-repair-inanimate-existence",
+        "U04-CHECK-absence-of-animal",
+        "U04-CHECK-absence-of-object",
+        "U04-CHECK-two-category-table"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G11",
+      "prerequisites": [
+        "K-HIRA",
+        "G10"
+      ],
+      "teaching": [
+        "U04-teach-G11"
+      ],
+      "practice": [
+        "U04-Q20"
+      ],
+      "checkFamilies": [
+        "U04-CHECK-construct-place-first",
+        "U04-CHECK-repair-transposed-particles",
+        "U04-CHECK-box-contents-question",
+        "U04-CHECK-two-place-contrast",
+        "U04-CHECK-order-introduction"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G12",
+      "prerequisites": [
+        "K-HIRA",
+        "G11"
+      ],
+      "teaching": [
+        "U04-teach-G12"
+      ],
+      "practice": [
+        "U04-Q21",
+        "U04-Q22"
+      ],
+      "checkFamilies": [
+        "U04-CHECK-known-teacher-location",
+        "U04-CHECK-change-topic-preserve-fact",
+        "U04-CHECK-order-known-animal",
+        "U04-CHECK-trace-nested-location",
+        "U04-CHECK-reply-location-question"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    }
+  ],
+  "audio": 16,
+  "images": 1,
+  "reviewItems": 135
+}

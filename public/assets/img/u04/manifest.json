@@ -1,0 +1,50 @@
+{
+  "version": "u04-art-1-draft",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "assets": [
+    {
+      "id": "u04-positions",
+      "src": "/assets/img/u04/positions.webp",
+      "sha256": "fd68a94051feb947167dcc30c3a6d971ccf251c67cd1000d0ac46c15b1388bd5",
+      "bytes": 466134,
+      "columns": 2,
+      "rows": 2,
+      "source": "Original image generated with built-in image_gen, 2026-10-30",
+      "humanReview": "NOT_RUN",
+      "promptFile": "docs/content/U04/art-prompt.md",
+      "width": 1254,
+      "height": 1254,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ],
+      "originalPngSha256": "7609b81284147e7ab48dac31faa6ff78de99986d1c80c5943fe338c6017fb8c6",
+      "encoding": "WebP quality 0.9, original dimensions, browser Canvas encoder; no composition changes"
+    }
+  ]
+}

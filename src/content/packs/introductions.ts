@@ -1,0 +1,10 @@
+const introductions:Record<string,{zh:string;ja:string}>={
+  U01:{zh:'介紹自己，也聽懂新朋友的名字與身分。',ja:'じぶんをしょうかいして、ともだちのなまえとみぶんをきこう。'},
+  U02:{zh:'認識教室物品，幫居民說清楚是哪一件、是誰的。',ja:'きょうしつのものと、もちぬしをたしかめましょう。'},
+  U03:{zh:'讀懂時刻，和居民一起安排起床、吃飯與學習的一天。',ja:'じこくをよんで、いちにちのよていをつたえましょう。'},
+  U04:{zh:'看看誰在小鎮裡，幫居民說清楚人、動物與物品在哪裡。',ja:'ひとやものが、どこにいるか、どこにあるかをつたえましょう。'},
+}
+export function unitIntroduction(id:string,lang:'zh'|'ja'):string{
+  if(id.startsWith('KANA-'))return lang==='zh'?'先聽讀音、觀察字形，再用戰鬥練習。平假名和片假名會分開記錄。':'おととかたちをまなんで、れんしゅうしましょう。'
+  return introductions[id]?.[lang]??''
+}

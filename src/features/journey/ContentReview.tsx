@@ -4,12 +4,8 @@ import { AudioControl, Button } from '../../components/ui/journey-ui'
 import type {UnitPack} from '../../content/contracts'
 import {availablePacks,findPack} from '../../content/packs/registry'
 import kanaLedger from '../../../docs/content/kana/review-ledger.json'
+import {unitAudio,unitArt} from '../../content/packs/media'
 import art from '../../../public/assets/img/journey/manifest.json'
-import audio from '../../../public/assets/audio/u01/manifest.json'
-import u02Audio from '../../../public/assets/audio/u02/manifest.json'
-import u03Audio from '../../../public/assets/audio/u03/manifest.json'
-import u02Art from '../../../public/assets/img/u02/manifest.json'
-import u03Art from '../../../public/assets/img/u03/manifest.json'
 import worldAudio from '../../../public/assets/audio/world/manifest.json'
 import Character from './Character'
 import type {Facing} from '../../world/map'
@@ -35,13 +31,13 @@ function Review({pack:u01}:{pack:UnitPack}){
       <h2>教學、閱讀與完整聽力稿</h2>{u01.teaching.map(c=><details key={c.id} className="journey-card"><summary style={{minHeight:64}}>{c.id} · {c.title}</summary><p style={{whiteSpace:'pre-wrap'}}>{c.body}</p><p lang="ja">{c.example}</p><p>{c.translation}</p><p lang="ja">{c.titleJa} · {c.bodyJa} · {c.translationJa}</p></details>)}
       {u01.readings.map(r=><details key={r.id} className="journey-card"><summary style={{minHeight:64}}>{r.id} · {r.skillId}</summary><p lang="ja" style={{whiteSpace:'pre-wrap'}}>{r.text}</p></details>)}
       {u01.id.startsWith('KANA-') && <><h2>假名音訊逐段審聽</h2>{kanaLedger.items.filter(a=>a.kind==='audio').map(a=><details key={a.id} className="journey-card"><summary style={{minHeight:64}}>{a.id}</summary><p lang="ja">{'script' in a ? String(a.script):''}</p>{'src' in a && <AudioControl src={String(a.src)} labels={{play:'播放音訊',playing:'播放中',loading:'載入中',error:'播放失敗，請重試。',stop:'停止播放'}} onComplete={()=>{}}/>}<p>{a.status}</p></details>)}</>}
-      {!u01.id.startsWith('KANA-') && <><h2>教材音訊逐段審聽</h2>{(u01.id==='U03' ? u03Audio.assets:u01.id==='U02' ? u02Audio.assets:[...audio.assets,...worldAudio.assets]).map(a=><details key={a.id} className="journey-card"><summary style={{minHeight:64}}>{a.id} · {a.durationSeconds}s · {a.bytes} bytes</summary><p lang="ja">{a.script}</p><AudioControl src={a.src} labels={{play:'播放音訊',playing:'播放中',loading:'載入中',error:'播放失敗，請重試。',stop:'停止播放'}} onComplete={()=>{}}/><p>VOICEVOX:四国めたん · {a.reviewStatus}</p></details>)}
+      {!u01.id.startsWith('KANA-') && <><h2>教材音訊逐段審聽</h2>{[...(unitAudio(u01.id)?.assets??[]),...(u01.id==='U01'?worldAudio.assets:[])].map(a=><details key={a.id} className="journey-card"><summary style={{minHeight:64}}>{a.id} · {a.durationSeconds}s · {a.bytes} bytes</summary><p lang="ja">{a.script}</p><AudioControl src={a.src} labels={{play:'播放音訊',playing:'播放中',loading:'載入中',error:'播放失敗，請重試。',stop:'停止播放'}} onComplete={()=>{}}/><p>VOICEVOX:四国めたん · {a.reviewStatus}</p></details>)}
       </>}<h2>方向與裝備工程預覽</h2><p>只改本頁試穿，不消費或保存；必須再到小鎮／商店／戰鬥核對實際定位。真人視覺與可玩性尚未核准。</p>
       <div className="journey-actions">{(['down','left','right','up'] as Facing[]).map(f=><Button key={f} variant="secondary" aria-pressed={f===facing} onClick={()=>setFacing(f)}>{f}</Button>)}</div>
       <div className="journey-actions">{[['gear-travel-hat','帽子'],['gear-travel-pack','背包'],['gear-companion-scarf','圍巾']].map(([id,name])=><Button key={id} variant="secondary" aria-pressed={gear.includes(id)} onClick={()=>setGear(gear.includes(id)?gear.filter(x=>x!==id):[...gear,id])}>{name}</Button>)}</div>
       <div className="journey-card journey-actions" style={{paddingTop:64}}><Character facing={facing} items={gear} size={220}/><Character kind="fox" facing={facing} items={gear} size={160}/></div>
       <div className="journey-card journey-actions" style={{paddingTop:64}}>{[0,1,2].map(frame=><span key={frame}><Character battle frame={frame} facing="right" items={gear} size={170}/><Character kind="fox" battle frame={frame} facing="right" items={gear} size={120}/></span>)}</div>
-      <h2>插畫來源／版本／容量</h2>{[...art.assets,...(u01.id==='U03'?u03Art.assets:u01.id==='U02'?u02Art.assets:[])].map(a=><details key={a.id} className="journey-card"><summary style={{minHeight:64}}>{a.id} · {a.bytes} bytes · {a.columns}×{a.rows}</summary><img loading="lazy" src={`${import.meta.env.BASE_URL}${a.src.slice(1)}`} alt={`${a.id} 原創插畫資產`} style={{width:'100%',maxHeight:700,objectFit:'contain'}}/><p style={{overflowWrap:'anywhere'}}>{a.sha256}</p></details>)}
+      <h2>插畫來源／版本／容量</h2>{[...art.assets,...unitArt(u01.id)].map(a=><details key={a.id} className="journey-card"><summary style={{minHeight:64}}>{a.id} · {a.bytes} bytes · {a.columns}×{a.rows}</summary><img loading="lazy" src={`${import.meta.env.BASE_URL}${a.src.slice(1)}`} alt={`${a.id} 原創插畫資產`} style={{width:'100%',maxHeight:700,objectFit:'contain'}}/><p style={{overflowWrap:'anywhere'}}>{a.sha256}</p></details>)}
     </section>
   </main>
 }

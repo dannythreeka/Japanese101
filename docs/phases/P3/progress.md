@@ -42,3 +42,15 @@ Owner：Codex；真人審核人待指派。基準3289f0（U02 CI40925952499三�
 失敗與修復：音訊G07長稿40s排程等待超時，未刪已生成12檔；單job等待設120s截止並新增長稿及永久pending測試，剩餘4檔成功。首次手動Node檢查省略副檔名載到JSON而非TS，補.ts後配額檢查PASS，未改產品來掩蓋。
 
 7項U02/U03 Chromium PASS（2.5m）：四主線、真音訊、重整／匯出／離線及否定錯答保存；五寬度截圖，已看320與768。release仍exit1是正確防護。準備提交／推送並接續U04，不重做U02與已驗證假名。
+
+## 2026-10-30 首四單元與試用 fixture
+
+U03已commit/push3982b5c，CI40930288466建置／Chromium／Firefox成功，WebKit最後查詢仍進行中。現在U04原創內容／16真音訊／位置插畫完成，四課100唯一詞20漢字12文法16閱讀24聽力200練習達工程配額；135筆U04人審NOT_RUN。U04-M/T/Q1/Q2/A IN_REVIEW，V BLOCKED，I仍IN_PROGRESS，不替人審簽核。
+
+將unit素材／介紹改集中registry，未知單元不再回退U01音訊或教室介紹。新增首四課配額與跨課續戰測試。第一次media測試誤以為每張U01卡都自帶audioScript；實際既有卡重用listening稿，修正為以相同audioSrc找原稿並仍要求稿存在與完全相符，沒有跳過來源核對。246測試／30檔、lint、build PASS，39 Chromium P2/P3整合PASS（8.0m）。
+
+最後編輯發現U04提示沿用時間課的用語，改成位置／人物與物品提示，另加實際看圖聽音用提示測試；新內容已重跑inventory，受影響U04／四課切換／fixture重驗進行中，不能把39項舊版結果當新提示已測。
+
+P3-03本機fixture可建立全新匿名快照，40合成初始金幣、零學習資料，拒絕既有教學或財務紀錄；prepare/restore/shop工程測試PASS。代碼對齊participants.csv為A-1～C-3，依組別設定gradeBand，未預填教學與能力。CLI有實際輸出檔與0600權限檢查；headful、平板交付、九人招募與同意未完成。新版fixture增加工作樹dirty與預覽hash，避免把基準commit冒稱成完整未提交版本。
+
+最終受影響7項Chromium全PASS（2.0m），10內容／素材單元檢查PASS，lint／型別／build PASS；位置提示圖已實際檢視。fixture mjs缺TS宣告曾使build失敗，已補明確usability-fixture.d.mts介面，不使用any或關閉strict。CLI測試服務結束造成connection refused後改專用4250重驗。U03 CI40930288466三引擎最後已全部success。本批可提交／push，不表示人工gate通過。

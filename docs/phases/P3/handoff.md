@@ -1,32 +1,27 @@
 # P3 恢復
 
-先讀 ../full-experience.md、progress.md、acceptance.md、project.md、tasks.md。worktree Japanese101-p2，branch phase/full-experience；原P1 checkout勿碰。goal仍ACTIVE，使用者授權完整體驗跨phase工程，不得假造人工gate。
+先讀../full-experience.md、progress.md、acceptance.md、project.md與tasks.md。目錄Japanese101-p2，分支phase/full-experience，原P1 checkout勿碰。完整體驗goal仍ACTIVE；使用者授權跨phase草稿工程，未取消任何人工gate。
 
-## 已交付
+## 目前交付
 
-- kana-2-draft：平片各46教學、46練習、46獨立詞語檢核；整組完成才給略過先修資格，不寫taughtAt／stable。359人審NOT_RUN，commit4f02a5c已push至draft PR58。
-- U02：25新詞5漢字3文法4閱讀6聽力50practice＋15check候選，10教學卡16真WAV、原創四格WebP。135人審NOT_RUN。入口`/#/preview/adventure?unit=U02&scene=dojo`、審閱`/#/__review/content?unit=U02`。
-- 新registry實際4pack。world manifest由registry產可達dojo關聯；generic inventory盤點真實U01/U02，明列其餘22單元未完成，release確實阻擋。
-- exportJourney修正全玩家所有單元battle/check匯出，state仍只取目前unit；勿再把兩處同樣篩選。家長報告讀全部plan，用實際教學時間，選課篩選與正確續學連結。
-- 31項P2＋假名＋U02 Chromium已全PASS；240單元／29檔、typecheck、lint、build PASS。最後U02作者稿僅修學校促音說明和去掉未教否定前提，最後6項相關測試及三流程已重驗PASS，詳acceptance。此批是否已commit/push以git log/status為準。
-- P3-03試用材料在usability/，匿名9空名額非已招募，fixture尚未準備；真人同意／兒童操作NOT_RUN。
+- 已push3982b5c（U03），draft PR58；CI40930288466建置及三引擎success。前3289f0（U02）CI40925952499同樣成功。
+- 假名各46教學／46練習／46詞語檢核，359人審NOT_RUN；只以完整合法check給略過資格，不寫假taughtAt或stable。
+- U01～04四課真實JSON，合計100唯一詞20漢字12文法16閱讀24聽力200練習。U02／03／04各10教學16音訊65題、原創四格圖、135筆人審NOT_RUN；U01既有149筆gate原狀。
+- 四課都有世界／道館／教學／練習／check與家長報告。media.ts集中實際素材，introductions.ts集中介紹，不回退錯單元。exportJourney保留該玩家全課戰鬥／check，state仍取當課，勿混為一處篩選。
+- 本批U04／fixture是否已commit/push看git log/status。246單元／30檔、39 Chromium P2/P3整合PASS（8.0m）；39之後僅U04提示改位置用語，最終7項重驗全PASS（2.0m），位置提示圖已檢視，詳acceptance。
+- P3-03 scripts/usability-fixture.mjs可建立本機新context匿名40金幣補助與零作答快照，拒覆寫已有紀錄；A-1～C-3對應年級組，.d.mts提供TS介面。headful／平板、人員／同意／真試用均未通過。詳usability/README。
 
-## 下一工作
+## 下一步
 
-U02批次已commit/push3289f0，CI40925952499建置與三引擎均success。原combobox歧義已解決。當前U03作者稿／65題／16音訊／插畫／registry已寫，7項內容世界測試通過，U02/U03 Chromium七項已PASS（2.5m），包括否定錯答與離線；證據test-results/p3-u03與acceptance。以最新進度／git status確認後續提交。
+1. U04最後7項瀏覽器重驗與截圖檢視已完成，保存證據／commit／push PR58，維持draft。讀實際CI，不用舊版CI替代。
+2. P3-02達工程配額仍不是task DONE：U01～04人審、P3-03～06九人與實機gate未滿。
+3. 繼續已授權P4工程：先補P4-02全課skill／五題族缺口與review檢查，再製作U05～24真實原創內容與音訊；目前只有G01～12的獨立grammar檢核，其他共通skill仍需全課coverage盤點，不假稱全部skill已滿五題族。
+4. P4需600詞100漢字60文法96閱讀144聽力1200練習。P5需三份原創80題卷、計時／中斷／冪等交卷、原始分數報告、完整備份還原、安全SW更新。這些仍有大量獨立工程可做，不把goal標COMPLETE或BLOCKED。
 
-接續U04：依docs/content/n5-manifest.json與tasks配額，先去重U01/U02新詞／漢字。教學內容／練習／獨立check需原創，不靠換名灌family。`scripts/author-u02.py`只作已寫出的U02作者稿，別直接換單元ID來湊新課程。腳本語法／素材來源／hash檢查可重用；新音訊用`npm run gen:voice:unit -- U03`，明確檢查已有檔稿版本。
-
-P3-02最終四單元100詞20漢字至少10文法16閱讀24聽力200練習尚未達標。P4、P5全部仍待工程／內容，goal不可COMPLETE或BLOCKED。U02／U03等主task須有人審後才能DONE。U03有135人審NOT_RUN；三單元75詞15漢字9文法12閱讀18聽力150練習，尚缺U04。
-
-## 命令與證據
+## 命令與限制
 
 Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`。
-`npm run validate:units`、`npm run validate:journey`、`npm run validate:kana`；人審清單產出`node --import tsx scripts/unit-inventory.ts --write`（相同ID/hash才保留原review）。
-`VITE_P2_REVIEW_PREVIEW=1 npm run build`；`P0_E2E_PORT=4248 npm run test:e2e -- e2e/p2-adventure.spec.ts e2e/p3-kana.spec.ts e2e/p3-u02.spec.ts --project=chromium`。
-
-Playwright trace：ignored test-results/p3-integration，最後U02文字版test-results/p3-u02-text-final。選定畫面docs/phases/P3/evidence，320與768已看；未檢視寬度不可偷填人審。新原創圖及完整prompt見docs/content/U02/art-prompt.md；PNG曾超2MiB，已用原尺寸WebP385050bytes，沒有放寬上限。
-
-勿apt install、改kernel/Wi-Fi/Tailscale或重啟交易主機。WebKit依賴只在CI隔離runner安裝。push目標phase/full-experience，憑證helper見完整體驗交接，勿印token。PR57已merge9c415fd，PR58維持draft。
-
-U03已生成16音訊，G07原40s超時後改單job120s截止；4個音訊排程測試PASS。無須再次產生或重新下載既有音訊。`scripts/author-u03.py`經共用序列化產JSON，遇APPROVED稿拒絕覆蓋。新圖412212bytes，完整prompt及來源在docs/content/U03。
+`node --import tsx scripts/unit-inventory.ts --write`；`npm run validate:journey`；`npm run validate:kana`。
+`VITE_P2_REVIEW_PREVIEW=1 npm run build`；`P0_E2E_PORT=4248 npm run test:e2e -- e2e/p3-u04.spec.ts e2e/p3-curriculum.spec.ts e2e/p3-fixture.spec.ts --project=chromium`。
+真音訊來源核對後才重用，長稿單job120s截止；別重產已成功素材。作者稿拒覆蓋APPROVED內容；新稿需人審，review-ledger只保留同ID／hash簽核。
+禁止主機apt、kernel、WiFi、Tailscale、交易程式或重啟變更。WebKit依賴只在CI隔離runner裝；不要為本機測試改主機。

@@ -1,22 +1,22 @@
+import {allUnitArt,unitAudio} from '../src/content/packs/media'
 import {readFileSync,existsSync,writeFileSync} from 'node:fs'
 import {createHash} from 'node:crypto'
 import {journeyErrors} from '../src/world/validation'
 import {journeyManifest} from '../src/world/manifest'
 import {u01} from '../src/content/packs/u01'
 import {availablePacks} from '../src/content/packs/registry'
-import u02Art from '../public/assets/img/u02/manifest.json'
-import u03Art from '../public/assets/img/u03/manifest.json'
 import art from '../public/assets/img/journey/manifest.json'
 import audio from '../public/assets/audio/u01/manifest.json'
 import worldAudio from '../public/assets/audio/world/manifest.json'
 import blueprint from '../docs/content/n5-manifest.json'
 import {town,WORLD_VERSION} from '../src/world/map'
 const formal=process.argv.includes('--release')
-const assets=[...art.assets,...u02Art.assets,...u03Art.assets]
+const assets=[...art.assets,...allUnitArt]
+const curriculumAudio=availablePacks.flatMap(pack=>unitAudio(pack.id)?.assets??[])
 const knownSkills=[...blueprint.skills.map(s=>s.id),...availablePacks.filter(p=>p.id.startsWith('KANA-')).flatMap(p=>p.teaching.flatMap(c=>c.skillIds))]
 const errors=journeyErrors(journeyManifest,availablePacks,assets,knownSkills,formal)
 const hash=(b:string|Uint8Array)=>createHash('sha256').update(b).digest('hex')
-for(const asset of [...assets,...audio.assets,...worldAudio.assets]){
+for(const asset of [...assets,...curriculumAudio,...worldAudio.assets]){
   const file=`public${asset.src}`
   if(!existsSync(file)){errors.push(`${asset.id}: missing file ${asset.src}`);continue}
   const data=readFileSync(file);if(data.length!==asset.bytes || hash(data)!==asset.sha256)errors.push(`${asset.id}: asset bytes/hash mismatch`)
@@ -44,4 +44,4 @@ for(const [type,count] of Object.entries(blueprint.units[0].typeCounts))if(typeC
 const skills=[...new Set(u01.questions.map(q=>q.primarySkillId))].map(id=>({id,teaching:u01.teaching.filter(c=>c.skillIds.includes(id)).map(c=>c.id),practice:u01.questions.filter(q=>q.primarySkillId===id && q.partition==='practice').map(q=>q.id),checkFamilies:[...new Set(u01.questions.filter(q=>q.primarySkillId===id && q.partition==='check').map(q=>q.itemFamilyId))]}))
 const report={version:u01.version,mode:formal?'release':'isolated draft structure',status:errors.length?'FAIL':'PASS',humanReview:u01.reviewStatus,audioHumanReview:audio.reviewStatus,visualHumanReview:art.reviewStatus,typeCounts,skills,errors}
 if(process.argv.includes('--report'))writeFileSync('docs/content/U01/coverage.json',JSON.stringify(report,null,2)+'\n')
-if(errors.length){console.error(errors.join('\n'));process.exitCode=1}else console.log(`Journey structure PASS: ${availablePacks.length} playable packs / ${assets.length} images / ${audio.assets.length} unit + ${worldAudio.assets.length} world audio. Human reviews remain ${u01.reviewStatus}.`)
+if(errors.length){console.error(errors.join('\n'));process.exitCode=1}else console.log(`Journey structure PASS: ${availablePacks.length} playable packs / ${assets.length} images / ${curriculumAudio.length} curriculum + ${worldAudio.assets.length} world audio. Human reviews remain ${u01.reviewStatus}.`)

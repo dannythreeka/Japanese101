@@ -80,3 +80,32 @@ U02提交3289f0ae477fb745e62f6b6a4b31b38adcd5439e已push，CI40925952499 Test & 
 U03不改戰鬥／經濟數值，不把新單元或先修檢核當已熟練。共享Playwright教學／播放／queue helpers只作用於新建測試context，不修改真玩家。作者序列化拒絕直接覆蓋已APPROVED教材。上述瀏覽器之後未修改產品內容；最終單元回歸結果另記下方。
 
 最終全量單元回歸：243 tests／29 files全部PASS（21.36s），涵蓋新增長稿等待／永久pending終止測試。與七項Chromium使用相同產品內容，後續僅追加交接與驗證紀錄。
+
+U03提交3982b5cc42e00a933c80da7e8e3a4cf3dadc17bc的CI40930288466：Test & Build、Chromium、Firefox、WebKit全部success；不是下方U04尚未提交工作樹的CI。
+
+## U04／首四單元工程驗收（2026-10-30）
+
+基準3982b5c＋本批U04與fixture。工程執行者Codex，Playwright1.58／Chromium145.0.7632.6／Node22.23.2。非原作者日語、實體平板、真人可玩性與兒童試用仍NOT_RUN，P3整體IN_PROGRESS。
+
+| Task／條件 | 實際狀態 | 證據 |
+|---|---|---|
+| U04-M/T/Q1/Q2 | 25新詞5漢字G10～12，10教學卡4閱讀6聽力50practice＋15check候選；原創稿與逐項引用、配比PASS | docs/content/U04/README.md、coverage.json、scripts/author-u04.py |
+| U04-A | 16真WAV來源／腳本hash／PCM PASS；六聽力實際Chromium播放完 | public/assets/audio/u04/manifest.json、e2e/p3-u04.spec.ts |
+| U04-V | BLOCKED；135筆人審NOT_RUN | docs/content/U04/review-ledger.json |
+| P3-02內容量 | 真實U01～04合計100唯一詞、20漢字、12文法、16閱讀、24聽力、200練習，達工程配額；review依賴仍未通過 | src/content/inventory.test.ts、validate:units |
+| 素材完整關聯 | 六個實際pack含兩套假名；17插畫、62課程音訊＋4世界音訊hash／路徑PASS，另有假名專用inventory | scripts/validate-journey.ts、src/content/packs/media.ts |
+| 四課切換 | 真UI完成每課教學與一個正確Attempt，各自保存feedback／HP／題目，逐課返回重整仍正確，四Attempt無複製 | e2e/p3-curriculum.spec.ts，16.7s |
+| 整合回歸 | 246單元／30檔、lint／typecheck／build PASS；39 Chromium P2＋P3 PASS，8.0m，包含存檔故障、雙分頁、版本恢復、四播放器、音訊、離線、玩家隔離及五寬度 | test-results/p3-four-unit、playwright-report/p3-four-unit |
+| 視覺 | 原創位置圖與320／768畫面實際工程檢視；五寬度無橫向溢出。長頁需垂直捲動，可收合對戰場景 | evidence/u04-context-*.png、art-prompt.md；不等於真人／實機驗收 |
+| P3-03 fixture | prepare／storageState還原／40初始補助購物／拒覆寫兩項PASS；零假作答／教學／獎勵。初次CLI實際輸出0600檔，匿名B-1對應gradeBand2 | scripts/usability-fixture.mjs、e2e/p3-fixture.spec.ts、usability/README.md |
+| release gate | 預期exit1：缺U01～04真人核准與U05～24內容 | validate:units:release；不是把未做內容視為PASS |
+
+已處理的驗證失敗：media測試最初未考慮U01教學重用同audioSrc的listening稿，改為解析實際已存在來源並仍要求稿完全相符；新增fixture mjs供TS測試使用時缺型別，新增明確.d.mts介面，未關閉strict檢查。
+
+39項整合後有一項教材修改：U04練習提示從時間／動作用語改為位置／存在用語，不改正解、音訊或戰鬥規則；另將fixture代碼與年級組對齊既有匿名空表，新增基準工作樹與預覽hash記錄。受影響的10個內容／素材單元檢查已PASS；新位置圖＋提示、U04既有流程、四課切換與fixture共7項須以後續重建結果為準，不以39項替代。Headful操作、實體平板fixture交付、九人招募／同意／試用沒有發生。
+
+最終重建與受影響驗證：10個內容／media／world單元檢查PASS，lint／型別／build PASS；U04四項＋四課切換＋fixture兩項共7 Chromium全部PASS（2.0m），結果test-results/p3-u04-final、playwright-report/p3-u04-final。已實際檢視evidence/u04-position-hint-768.png：單格貓在桌下裁切正確、音訊按鈕與中文位置提示可讀、選項換行保留內容；這不是真人核准。
+
+fixture最終代碼C2正規化C-2且gradeBand3有實測；已有教學紀錄拒覆寫且原計畫保留。CLI首次借用測試埠時遇測試完成自動關閉服務而connection refused，改用自己專用4250服務，未改產品或放寬測試。
+
+最終fixture CLI於專用4250成功；evidence/fixture-cli.json保存基準3982b5c、workingTreeDirty=true、預覽入口hash、Chromium版本、匿名B-1／gradeBand2、0600檔權限及零battle／Attempt／check／ledger計數。完整瀏覽器state只留本機/tmp，未提交。最終測試後僅更新文件／證據，無產品修改。

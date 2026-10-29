@@ -1,0 +1,37 @@
+{
+  "date": "2026-10-16T07:20:35.248Z",
+  "sourceCommit": "e6444e541b710aaceaaea4807032d3904650390e",
+  "browser": "145.0.7632.6",
+  "method": "Actual Tab focus traversal and native Enter/arrow keys; 200% computed font/line-height restored/reapplied at every screen; desktop viewport simulation, not physical tablet or native device text scaling",
+  "fixture": "fresh isolated context at each width; actual 4 correct UI answers and60coin win,40coin hat; no real child data",
+  "results": [
+    {
+      "width": 320,
+      "height": 900,
+      "result": "PASS",
+      "keyActivations": 54,
+      "actualAttempts": 4,
+      "finalCoins": 20
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "result": "PASS",
+      "keyActivations": 54,
+      "actualAttempts": 4,
+      "finalCoins": 20
+    },
+    {
+      "width": 1024,
+      "height": 768,
+      "result": "PASS",
+      "keyActivations": 54,
+      "actualAttempts": 4,
+      "finalCoins": 20
+    }
+  ],
+  "expected": 3,
+  "result": "PASS",
+  "traces": "test-results/p2-keyboard-200/{320,768,1024}/trace.zip",
+  "human": "NOT_RUN"
+}

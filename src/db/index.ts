@@ -4,6 +4,8 @@ import type { AdventureProgress } from '../types/adventure'
 import type { Profile } from '../types/profile'
 import { normalizePreferences } from './models'
 import type { ScopedProgress, ScopedSession, ProfilePreferences, MigrationBackup, GameCheckpoint, LevelSession, RewardReceipt } from './models'
+import type { Attempt } from '../content/contracts'
+import type { WorldCheckpoint, StudyPlan, SkillReview, BattleSession, CoinWallet, CoinLedger, InventoryItem, Equipment, PurchaseReceipt, FirstWin, LearningCheck, CatalogVersion } from './journey-models'
 
 export class AppDB extends Dexie {
   progress!: Table<ProgressRecord, string> // Original, read-only legacy-shared records.
@@ -20,6 +22,19 @@ export class AppDB extends Dexie {
   rewardReceipts!: Table<RewardReceipt, string>
   dailyClaims!: Table<{ profileId: string; date: string; taskId: string }, [string, string, string]>
   migrationBackups!: Table<MigrationBackup, string>
+  learningAttempts!: Table<Attempt,string>
+  worldCheckpoints!: Table<WorldCheckpoint,string>
+  studyPlans!: Table<StudyPlan,[string,string]>
+  skillReviews!: Table<SkillReview,[string,string]>
+  battleSessions!: Table<BattleSession,string>
+  coinWallets!: Table<CoinWallet,string>
+  coinLedger!: Table<CoinLedger,string>
+  inventory!: Table<InventoryItem,[string,string]>
+  equipment!: Table<Equipment,string>
+  purchaseReceipts!: Table<PurchaseReceipt,string>
+  firstWins!: Table<FirstWin,[string,string]>
+  learningChecks!: Table<LearningCheck,string>
+  catalogVersions!: Table<CatalogVersion,string>
   constructor(name = 'Japanese101DB') {
     super(name)
     this.version(1).stores({
@@ -72,6 +87,20 @@ export class AppDB extends Dexie {
       await tx.table('migrationBackups').put({ id: 'pre-v5', createdAt: Date.now(), tables, localPreferences })
       // Legacy progress/sessions are unassignable: keep original tables, never guess an owner.
     })
+    this.version(6).stores({
+      learningAttempts:'id, profileId, [profileId+primarySkillId], sessionId',
+      worldCheckpoints:'profileId',studyPlans:'[profileId+unitId], profileId',skillReviews:'[profileId+skillId], profileId, [profileId+dueDate]',
+      battleSessions:'id, profileId, [profileId+challengeId], status',coinWallets:'profileId',coinLedger:'id, profileId',
+      inventory:'[profileId+itemId], profileId',equipment:'profileId',purchaseReceipts:'id, profileId',firstWins:'[profileId+challengeId], profileId',
+    }).upgrade(async tx => {
+      const tables:Record<string,unknown[]>={}
+      for(const name of ['progress','sessions','pets','adventureProgress','profiles','playerProgress','playerSessions','preferences','wallets','gameCheckpoints','levelSessions','rewardReceipts','dailyClaims']) tables[name]=await tx.table(name).toArray()
+      await tx.table('migrationBackups').put({id:'pre-v6',createdAt:Date.now(),tables,localPreferences:{}})
+      // New journey state starts separately. Existing coins/stars/pets are never converted or reset.
+    })
+    // v6 was already pushed as a review build: add tables with a new schema version.
+    this.version(7).stores({learningChecks:'id, profileId, [profileId+unitId]'})
+    this.version(8).stores({catalogVersions:'id'})
   }
 }
 
@@ -117,8 +146,9 @@ export async function updateProfileLastPlayed(profileId: string): Promise<void> 
 }
 
 export async function resetProfileProgress(profileId: string, notify = true): Promise<void> {
-  await db.transaction('rw', [db.pets, db.adventureProgress, db.playerProgress, db.playerSessions, db.gameCheckpoints, db.levelSessions, db.rewardReceipts, db.dailyClaims, db.wallets], async () => {
-    for (const table of [db.playerProgress, db.playerSessions, db.gameCheckpoints, db.levelSessions, db.rewardReceipts, db.dailyClaims]) await table.where('profileId').equals(profileId).delete()
+  const journey=[db.learningAttempts,db.worldCheckpoints,db.studyPlans,db.skillReviews,db.battleSessions,db.coinWallets,db.coinLedger,db.inventory,db.equipment,db.purchaseReceipts,db.firstWins,db.learningChecks]
+  await db.transaction('rw', [db.pets, db.adventureProgress, db.playerProgress, db.playerSessions, db.gameCheckpoints, db.levelSessions, db.rewardReceipts, db.dailyClaims, db.wallets,...journey], async () => {
+    for (const table of [db.playerProgress, db.playerSessions, db.gameCheckpoints, db.levelSessions, db.rewardReceipts, db.dailyClaims,...journey]) await table.where('profileId').equals(profileId).delete()
     await db.pets.delete(profileId)
     await db.adventureProgress.delete(profileId)
     await db.wallets.delete(profileId)

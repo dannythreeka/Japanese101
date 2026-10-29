@@ -1,0 +1,5 @@
+
+> japanese101@0.0.0 validate:journey
+> tsx scripts/validate-journey.ts
+
+Journey structure PASS: 65 questions / 14 images / 14 unit + 4 world audio. Human reviews remain DRAFT.

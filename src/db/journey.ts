@@ -1,0 +1,382 @@
+import { AppDB, db as defaultDb } from './index'
+import type { UnitPack, Question } from '../content/contracts'
+import { attemptErrors, parseQuestion, validateQuestionBank } from '../content/contracts'
+import { createAttempt, LEARNING_RULES_VERSION, localDay, nextReview, planQuestions, summarize, type ReviewSchedule } from '../learning/rules'
+import { BATTLE_RULES_VERSION, initialCombat, resolveTurn, type Move } from '../battle/rules'
+import { CATALOG_VERSION, CATALOG_REVISION, armorFor, catalogItem } from '../economy/catalog'
+import { WORLD_VERSION, safePoint, town, walkable, type Facing, type Point } from '../world/map'
+import type { BattleSession, CoinLedger, JourneyTables, StudyPlan, WorldCheckpoint, LearningCheck, JourneyComfort } from './journey-models'
+import {currentBattle,currentCheck,currentStudy,currentWorld} from './journey-compatibility'
+function walletBalance(wallet:{balance:number}|undefined):number{
+  if(wallet===undefined)return 0
+  if(!Number.isSafeInteger(wallet.balance) || wallet.balance<0)throw new Error('Wallet invalid; original data is preserved for export')
+  return wallet.balance
+}
+
+export class JourneyRepository {
+  private readonly pack: UnitPack
+  private readonly database: AppDB
+  constructor(pack: UnitPack, database: AppDB = defaultDb) {
+    const errors=validateQuestionBank(pack.questions)
+    if(errors.length) throw new Error(errors.join('; '))
+    this.pack=structuredClone(pack)
+    this.database=database
+    this.pack.questions=pack.questions.map(parseQuestion)
+  }
+  private async owned(profileId:string) {
+    if(!await this.database.profiles.get(profileId)) throw new Error('Player no longer exists')
+  }
+  private async catalogCurrent():Promise<void>{
+    const current=await this.database.catalogVersions.get('active')
+    if(!current || current.version!==CATALOG_VERSION || current.revision!==CATALOG_REVISION)throw new Error('Catalog version changed; refresh before purchasing or equipping')
+  }
+  private async rebuildLearningReviews(profileId:string,now:number):Promise<void>{
+    const d=this.database
+    const old=(await d.skillReviews.where('profileId').equals(profileId).toArray()).filter(r=>r.learningVersion!==LEARNING_RULES_VERSION)
+    if(!old.length)return
+    const attempts=(await d.learningAttempts.where('profileId').equals(profileId).toArray()).sort((a,b)=>Date.parse(a.submittedAt)-Date.parse(b.submittedAt) || a.id.localeCompare(b.id))
+    const rebuilt=old.map(row=>{
+      const evidence=attempts.filter(a=>a.primarySkillId===row.skillId)
+      if(!evidence.length || evidence.some(a=>attemptErrors(a).length))throw new Error('Learning review cannot be verified; original data is preserved for export')
+      let next:ReviewSchedule|undefined
+      for(const a of evidence)next=nextReview(next,a,row.timeZone)
+      return {...row,...next,learningVersion:LEARNING_RULES_VERSION}
+    })
+    await d.migrationBackups.add({id:`learning:${profileId}:${crypto.randomUUID()}`,createdAt:now,tables:{skillReviews:old},localPreferences:{}})
+    await d.skillReviews.bulkPut(rebuilt)
+  }
+  private question(id:string): Question {
+    const question=this.pack.questions.find(q=>q.id===id)
+    if(!question) throw new Error('Question unavailable; previous answers are preserved')
+    return question
+  }
+  private async activeBattle(profileId:string,id:string): Promise<BattleSession> {
+    await this.owned(profileId)
+    const battle=await this.database.battleSessions.get(id)
+    if(!battle || battle.profileId!==profileId) throw new Error('Battle does not belong to this player')
+    if(!currentBattle(battle,this.pack)) throw new Error('Battle version changed or data incompatible; original data is preserved')
+    return battle
+  }
+  async state(profileId:string) {
+    await this.owned(profileId)
+    const d=this.database
+    return d.transaction('r',[d.profiles,d.worldCheckpoints,d.studyPlans,d.learningAttempts,d.battleSessions,d.coinWallets,d.inventory,d.equipment,d.skillReviews,d.learningChecks,d.coinLedger], async()=>({
+      world:await d.worldCheckpoints.get(profileId), study:await d.studyPlans.get([profileId,this.pack.id]),
+      attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),
+      battles:await d.battleSessions.where('profileId').equals(profileId).toArray(),
+      coins:walletBalance(await d.coinWallets.get(profileId)),
+      inventory:await d.inventory.where('profileId').equals(profileId).toArray(),
+      equipment:(await d.equipment.get(profileId))?.slots ?? {},
+      reviews:await d.skillReviews.where('profileId').equals(profileId).toArray(),
+      checks:await d.learningChecks.where('profileId').equals(profileId).toArray(),
+      ledger:await d.coinLedger.where('profileId').equals(profileId).toArray(),
+    }))
+  }
+  async openStudy(profileId:string, gradeBand:1|2|3=1, now=Date.now(), timeZone=Intl.DateTimeFormat().resolvedOptions().timeZone): Promise<StudyPlan> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.studyPlans,d.catalogVersions,d.skillReviews,d.learningAttempts,d.migrationBackups],async()=>{
+      await this.owned(profileId)
+      const current=await d.catalogVersions.get('active')
+      if(current && (!Number.isSafeInteger(current.revision) || current.revision>CATALOG_REVISION || current.revision===CATALOG_REVISION && current.version!==CATALOG_VERSION))throw new Error('Catalog version changed; refresh to the current application')
+      if(!current || current.revision<CATALOG_REVISION)await d.catalogVersions.put({id:'active',version:CATALOG_VERSION,revision:CATALOG_REVISION})
+      const previous=await d.studyPlans.get([profileId,this.pack.id])
+      if(previous && !currentStudy(previous,this.pack)) throw new Error('Content version changed or study data incompatible; original study plan is preserved')
+      await this.rebuildLearningReviews(profileId,now)
+      if(previous) return previous
+      const plan:StudyPlan={profileId,unitId:this.pack.id,contentVersion:this.pack.version,taughtCards:[],taughtAt:{},date:localDay(now,timeZone),timeZone,gradeBand,questionIds:[],updatedAt:now}
+      await d.studyPlans.add(plan)
+      return plan
+    })
+  }
+  async configureJourney(profileId:string,input:{name?:string;gradeBand:1|2|3;comfort:JourneyComfort;skipped:boolean},now=Date.now()):Promise<void>{
+    if(![1,2,3].includes(input.gradeBand) || !['new','some','review'].includes(input.comfort) || typeof input.skipped!=='boolean' || input.name!==undefined && (typeof input.name!=='string' || !input.name.trim() || input.name.trim().length>8))throw new Error('Invalid journey preferences')
+    const d=this.database
+    await d.transaction('rw',[d.profiles,d.studyPlans],async()=>{
+      await this.owned(profileId)
+      const plan=await d.studyPlans.get([profileId,this.pack.id]);if(!plan || !currentStudy(plan,this.pack))throw new Error('Study plan unavailable')
+      if(input.name!==undefined)await d.profiles.update(profileId,{name:input.name.trim()})
+      await d.studyPlans.put({...plan,gradeBand:input.gradeBand,onboarding:{comfort:input.comfort,skipped:input.skipped,updatedAt:now},updatedAt:now})
+    })
+  }
+  async setGradeBand(profileId:string,gradeBand:1|2|3): Promise<void> {
+    if(![1,2,3].includes(gradeBand)) throw new Error('Invalid grade band')
+    const d=this.database
+    await d.transaction('rw',[d.profiles,d.studyPlans],async()=>{
+      await this.owned(profileId)
+      const plan=await d.studyPlans.get([profileId,this.pack.id])
+      if(!plan || plan.contentVersion!==this.pack.version) throw new Error('Study plan unavailable')
+      await d.studyPlans.put({...plan,gradeBand})
+    })
+  }
+  async teach(profileId:string,cardId:string,now=Date.now()): Promise<void> {
+    const card=this.pack.teaching.find(c=>c.id===cardId)
+    if(!card) throw new Error('Teaching card unavailable')
+    const d=this.database
+    await d.transaction('rw',[d.profiles,d.studyPlans],async()=>{
+      await this.owned(profileId)
+      const plan=await d.studyPlans.get([profileId,this.pack.id])
+      if(!plan || plan.contentVersion!==this.pack.version) throw new Error('Study plan unavailable')
+      if(card.prerequisites?.some(id=>!plan.taughtCards.includes(id)))throw new Error('Learn the prerequisite teaching card first')
+      const taughtAt={...plan.taughtAt}
+      for(const skill of card.skillIds) taughtAt[skill] ??=now
+      await d.studyPlans.put({...plan,taughtAt,taughtCards:[...new Set([...plan.taughtCards,cardId])],updatedAt:now})
+    })
+  }
+  async saveWorld(profileId:string,position:Point,facing:Facing,storyFlag?:string,now=Date.now()): Promise<WorldCheckpoint> {
+    if(!walkable(position) || !['up','down','left','right'].includes(facing)) throw new Error('Unsafe world position')
+    if(storyFlag && !town.destinations.some(d=>d.id===storyFlag)) throw new Error('Unknown story flag')
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.worldCheckpoints],async()=>{
+      await this.owned(profileId)
+      const previous=await d.worldCheckpoints.get(profileId)
+      if(previous && !currentWorld(previous)) throw new Error('World version changed or checkpoint is invalid; original position is preserved')
+      const world:WorldCheckpoint={profileId,mapId:town.id,worldVersion:WORLD_VERSION,position:{...position},facing,storyFlags:[...new Set([...(previous?.storyFlags ?? []),...(storyFlag ? [storyFlag]:[])])],updatedAt:now}
+      await d.worldCheckpoints.put(world)
+      return world
+    })
+  }
+  async recoverWorld(profileId:string): Promise<void> {
+    const d=this.database
+    await d.transaction('rw',[d.profiles,d.worldCheckpoints,d.migrationBackups],async()=>{
+      await this.owned(profileId)
+      const old=await d.worldCheckpoints.get(profileId)
+      if(old) await d.migrationBackups.put({id:`world:${profileId}:${old.updatedAt}`,createdAt:Date.now(),tables:{worldCheckpoints:[old]},localPreferences:{}})
+      await d.worldCheckpoints.put({profileId,mapId:town.id,worldVersion:WORLD_VERSION,position:safePoint(town.spawn),facing:'down',storyFlags:Array.isArray(old?.storyFlags) ? old.storyFlags.filter(id=>town.destinations.some(d=>d.id===id)):[],updatedAt:Date.now()})
+    })
+  }
+  /** Archive affected records before a safe restart. Answers and coins remain intact. */
+  async recoverVersions(profileId:string,now=Date.now()):Promise<void> {
+    const d=this.database
+    await d.transaction('rw',[d.profiles,d.studyPlans,d.battleSessions,d.learningChecks,d.worldCheckpoints,d.migrationBackups],async()=>{
+      await this.owned(profileId)
+      const plan=await d.studyPlans.get([profileId,this.pack.id])
+      const battles=(await d.battleSessions.where('profileId').equals(profileId).toArray()).filter(b=>b.phase!=='finished' && !currentBattle(b,this.pack))
+      const checks=(await d.learningChecks.where('profileId').equals(profileId).toArray()).filter(c=>c.phase!=='finished' && !currentCheck(c,this.pack))
+      const world=await d.worldCheckpoints.get(profileId)
+      const badWorld=world && !currentWorld(world)
+      const badPlan=plan && !currentStudy(plan,this.pack)
+      if(!badPlan && !battles.length && !checks.length && !badWorld)return
+      await d.migrationBackups.add({id:`journey:${profileId}:${crypto.randomUUID()}`,createdAt:now,tables:{studyPlans:badPlan ? [plan]:[],battleSessions:battles,learningChecks:checks,worldCheckpoints:badWorld ? [world]:[]},localPreferences:{}})
+      for(const battle of battles)await d.battleSessions.put({...battle,status:'retreated',phase:'finished',endReason:'version-recovery',updatedAt:now})
+      for(const check of checks)await d.learningChecks.put({...check,phase:'finished',updatedAt:now})
+      if(badWorld)await d.worldCheckpoints.put({profileId,mapId:town.id,worldVersion:WORLD_VERSION,position:{...town.spawn},facing:'down',storyFlags:Array.isArray(world.storyFlags) ? world.storyFlags.filter(id=>town.destinations.some(d=>d.id===id)):[],updatedAt:now})
+      if(badPlan){let zone=typeof plan.timeZone==='string' ? plan.timeZone:'Asia/Taipei';try{localDay(now,zone)}catch{zone='Asia/Taipei'}await d.studyPlans.put({profileId,unitId:this.pack.id,contentVersion:this.pack.version,taughtCards:[],taughtAt:{},date:localDay(now,zone),timeZone:zone,gradeBand:[1,2,3].includes(plan.gradeBand) ? plan.gradeBand:1,questionIds:[],updatedAt:now})}
+    })
+  }
+  async startBattle(profileId:string,now=Date.now()): Promise<BattleSession> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.studyPlans,d.skillReviews,d.learningAttempts,d.battleSessions,d.equipment],async()=>{
+      await this.owned(profileId)
+      const existing=(await d.battleSessions.where('profileId').equals(profileId).toArray()).find(b=>b.phase!=='finished')
+      if(existing) return this.activeBattle(profileId,existing.id)
+      const plan=await d.studyPlans.get([profileId,this.pack.id])
+      if(!plan || plan.contentVersion!==this.pack.version) throw new Error('Study plan unavailable')
+      const questions=this.pack.questions.filter(q=>q.partition==='practice' && q.teachingIds.every(id=>plan.taughtCards.includes(id)))
+      const attempts=(await d.learningAttempts.where('profileId').equals(profileId).toArray()).sort((a,b)=>Date.parse(a.submittedAt)-Date.parse(b.submittedAt) || a.id.localeCompare(b.id))
+      const due=(await d.skillReviews.where('profileId').equals(profileId).toArray()).filter(s=>s.dueDate<=localDay(now,plan.timeZone)).map(s=>s.skillId)
+      const today=localDay(now,plan.timeZone)
+      let ids=plan.date===today ? plan.questionIds.filter(id=>questions.some(q=>q.id===id)):[]
+      const used=new Set(attempts.filter(a=>localDay(Date.parse(a.submittedAt),plan.timeZone)===today).map(a=>a.itemId+':'+a.itemFamilyId))
+      let queue=ids.filter(id=>!used.has(this.question(id).itemId+':'+this.question(id).itemFamilyId))
+      if(!queue.length) {
+        const planned=planQuestions(questions,due,Object.keys(plan.taughtAt),attempts,questions.length)
+        ids=planned
+        queue=planned
+      }
+      if(!queue.length) throw new Error('Learn the teaching cards first; no eligible questions')
+      await d.studyPlans.put({...plan,date:today,questionIds:ids,updatedAt:now})
+      const slots=(await d.equipment.get(profileId))?.slots ?? {}
+      const battle:BattleSession={...initialCombat(),id:crypto.randomUUID(),profileId,unitId:this.pack.id,challengeId:`${this.pack.id}:dojo`,contentVersion:this.pack.version,rulesVersion:BATTLE_RULES_VERSION,phase:'choosing',questionIds:queue,loadoutSnapshot:Object.values(slots),createdAt:now,updatedAt:now}
+      await d.battleSessions.add(battle)
+      return battle
+    })
+  }
+  async chooseMove(profileId:string,battleId:string,move:Move): Promise<BattleSession> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.battleSessions,d.learningAttempts],async()=>{
+      const battle=await this.activeBattle(profileId,battleId)
+      if(battle.phase!=='choosing' || battle.status!=='active') return battle
+      if(!['attack','guard','partner'].includes(move) || move==='partner' && battle.partnerUsed) throw new Error('Move unavailable')
+      const recent=(await d.learningAttempts.where('profileId').equals(profileId).toArray()).sort((a,b)=>Date.parse(a.submittedAt)-Date.parse(b.submittedAt) || a.id.localeCompare(b.id)).slice(-3)
+      const blocked=new Set(recent.filter(a=>!a.firstAnswerCorrect || a.hintUsed).map(a=>a.itemFamilyId))
+      const questionIds=[...battle.questionIds]
+      const index=questionIds.findIndex((id,n)=>n>=battle.turn-1 && !blocked.has(this.question(id).itemFamilyId))
+      if(index<0){const ended:BattleSession={...battle,status:'lost',phase:'finished',endReason:'questions-complete',updatedAt:Date.now()};await d.battleSessions.put(ended);return ended}
+      ;[questionIds[battle.turn-1],questionIds[index]]=[questionIds[index],questionIds[battle.turn-1]]
+      const questionId=questionIds[battle.turn-1]
+      this.question(questionId)
+      const next={...battle,questionIds,phase:'question' as const,move,currentQuestionId:questionId,updatedAt:Date.now()}
+      await d.battleSessions.put(next)
+      return next
+    })
+  }
+  async submitTurn(profileId:string,battleId:string,turn:number,input:{answerIds:string[]|null;hintUsed:boolean;audioPlayCount:number;responseMs:number},now=Date.now()): Promise<BattleSession> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.battleSessions,d.learningAttempts,d.studyPlans,d.skillReviews],async()=>{
+      const battle=await this.activeBattle(profileId,battleId)
+      const instance=`turn-${turn}`
+      const id=`${battleId}:${instance}`
+      // The identity check comes before reading the current phase: stale replays are harmless.
+      if(await d.learningAttempts.get(id)) return battle
+      if(battle.turn!==turn || battle.phase!=='question' || !battle.currentQuestionId || !battle.move || battle.status!=='active') throw new Error('Turn is not accepting an answer')
+      const question=this.question(battle.currentQuestionId)
+      const attempt=createAttempt(question,{...input,profileId,sessionId:battleId,questionInstanceId:instance,submittedAt:now})
+      const next={...battle,...resolveTurn(battle,battle.move,attempt.outcome==='correct',armorFor(battle.loadoutSnapshot)),feedbackBefore:{playerHp:battle.playerHp,enemyHp:battle.enemyHp},phase:'feedback' as const,lastAttemptId:attempt.id,updatedAt:now}
+      // A short eligible pool ends naturally without duplicating questions or inventing learning.
+      if(next.status==='active' && battle.turn>=battle.questionIds.length){next.status='lost';Object.assign(next,{endReason:'questions-complete'})}
+      await d.learningAttempts.add(attempt)
+      await d.battleSessions.put(next)
+      const plan=await d.studyPlans.get([profileId,this.pack.id])
+      if(!plan) throw new Error('Study plan unavailable')
+      const old=await d.skillReviews.get([profileId,attempt.primarySkillId])
+      await d.skillReviews.put({...nextReview(old,attempt,plan.timeZone),profileId,skillId:attempt.primarySkillId,timeZone:plan.timeZone})
+      return next
+    })
+  }
+  async continueBattle(profileId:string,battleId:string,turn:number): Promise<BattleSession> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.battleSessions],async()=>{
+      const battle=await this.activeBattle(profileId,battleId)
+      if(battle.turn!==turn || battle.phase!=='feedback') return battle
+      const next:BattleSession=battle.status==='active' ? {...battle,phase:'choosing',turn:battle.turn+1,move:undefined,currentQuestionId:undefined,updatedAt:Date.now()}:{...battle,phase:'finished',updatedAt:Date.now()}
+      await d.battleSessions.put(next)
+      return next
+    })
+  }
+  async retreat(profileId:string,battleId:string): Promise<void> {
+    const d=this.database
+    await d.transaction('rw',[d.profiles,d.battleSessions],async()=>{
+      const battle=await this.activeBattle(profileId,battleId)
+      if(battle.phase==='finished') return
+      if(battle.status==='won' || battle.status==='lost') throw new Error('Continue to the saved result first')
+      await d.battleSessions.put({...battle,status:'retreated',phase:'finished',updatedAt:Date.now()})
+    })
+  }
+  async reward(profileId:string,battleId:string): Promise<CoinLedger> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.battleSessions,d.learningAttempts,d.coinWallets,d.coinLedger,d.firstWins],async()=>{
+      const battle=await this.activeBattle(profileId,battleId)
+      const id=`win:${battleId}`
+      const existing=await d.coinLedger.get(id)
+      if(existing) return existing
+      const attempt=battle.lastAttemptId && await d.learningAttempts.get(battle.lastAttemptId)
+      const question=this.pack.questions.find(q=>q.id===battle.currentQuestionId)
+      if(battle.phase!=='finished' || battle.status!=='won' || battle.enemyHp!==0 || !attempt || !question || attempt.profileId!==profileId || attempt.sessionId!==battleId || attempt.outcome!=='correct' || attempt.firstAnswerCorrect!==true || attempt.retryCount!==0 || attempt.mode!=='practice' || attempt.questionInstanceId!==`turn-${battle.turn}` || attempt.itemId!==question.itemId || attempt.itemVersion!==question.version) throw new Error('A verified victory is required')
+      const first=await d.firstWins.get([profileId,battle.challengeId]) ?? (battle.challengeId===`${this.pack.id}:dojo` ? await d.firstWins.get([profileId,`${this.pack.id}:practice`]):undefined)
+      const amount=first ? 10:60
+      const old=walletBalance(await d.coinWallets.get(profileId))
+      if(!Number.isSafeInteger(old+amount) || old<0) throw new Error('Wallet is invalid or would overflow; original data is preserved')
+      const receipt:CoinLedger={id,profileId,kind:'reward',amount,balanceAfter:old+amount,battleId,createdAt:Date.now()}
+      await d.coinWallets.put({profileId,balance:old+amount})
+      await d.coinLedger.add(receipt)
+      if(!first) await d.firstWins.add({profileId,challengeId:battle.challengeId,battleId})
+      return receipt
+    })
+  }
+  async purchase(profileId:string,itemId:string,purchaseId:string,catalogVersion:string): Promise<'purchased'|'already-owned'|'replayed'> {
+    const item=catalogItem(itemId)
+    if(typeof purchaseId!=='string' || !purchaseId || purchaseId.trim()!==purchaseId || purchaseId.length>200 || catalogVersion!==CATALOG_VERSION) throw new Error('Catalog version or purchase identity changed')
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.coinWallets,d.coinLedger,d.inventory,d.equipment,d.purchaseReceipts,d.battleSessions,d.catalogVersions],async()=>{
+      await this.owned(profileId)
+      const receipt=await d.purchaseReceipts.get(purchaseId)
+      if(receipt) {
+        if(receipt.profileId!==profileId || receipt.itemId!==itemId || receipt.catalogVersion!==catalogVersion) throw new Error('Purchase identity changed')
+        return 'replayed' as const
+      }
+      await this.catalogCurrent()
+      if((await d.battleSessions.where('profileId').equals(profileId).toArray()).some(b=>b.phase!=='finished')) throw new Error('Equipment is locked during battle')
+      if(await d.inventory.get([profileId,itemId])) return 'already-owned' as const
+      const balance=walletBalance(await d.coinWallets.get(profileId))
+      if(!Number.isSafeInteger(balance) || balance<item.price) throw new Error('Not enough coins')
+      const slots=(await d.equipment.get(profileId))?.slots ?? {}
+      await d.coinWallets.put({profileId,balance:balance-item.price})
+      await d.inventory.add({profileId,itemId,purchaseId,acquiredAt:Date.now()})
+      await d.equipment.put({profileId,slots:{...slots,[item.slot]:itemId}})
+      await d.purchaseReceipts.add({id:purchaseId,profileId,itemId,catalogVersion,price:item.price,createdAt:Date.now()})
+      await d.coinLedger.add({id:`purchase:${purchaseId}`,profileId,kind:'purchase',amount:-item.price,balanceAfter:balance-item.price,purchaseId,createdAt:Date.now()})
+      return 'purchased' as const
+    })
+  }
+  async equip(profileId:string,itemId:string,enabled:boolean): Promise<void> {
+    const item=catalogItem(itemId);const d=this.database
+    await d.transaction('rw',[d.profiles,d.inventory,d.equipment,d.battleSessions,d.catalogVersions],async()=>{
+      await this.owned(profileId)
+      await this.catalogCurrent()
+      if((await d.battleSessions.where('profileId').equals(profileId).toArray()).some(b=>b.phase!=='finished')) throw new Error('Equipment is locked during battle')
+      if(!await d.inventory.get([profileId,itemId])) throw new Error('Item is not owned')
+      const slots={...(await d.equipment.get(profileId))?.slots}
+      if(enabled) slots[item.slot]=itemId
+      else if(slots[item.slot]===itemId) delete slots[item.slot]
+      await d.equipment.put({profileId,slots})
+    })
+  }
+  private async ownedCheck(profileId:string,id:string):Promise<LearningCheck> {
+    await this.owned(profileId)
+    const check=await this.database.learningChecks.get(id)
+    if(!check || check.profileId!==profileId)throw new Error('Check does not belong to this player')
+    if(!currentCheck(check,this.pack))throw new Error('Check version changed or data incompatible; original answers are preserved')
+    return check
+  }
+  async startCheck(profileId:string,now=Date.now()):Promise<LearningCheck> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.studyPlans,d.learningChecks],async()=>{
+      await this.owned(profileId)
+      const existing=(await d.learningChecks.where('[profileId+unitId]').equals([profileId,this.pack.id]).toArray()).find(c=>c.phase!=='finished')
+      if(existing)return this.ownedCheck(profileId,existing.id)
+      const plan=await d.studyPlans.get([profileId,this.pack.id])
+      if(!plan || plan.contentVersion!==this.pack.version)throw new Error('Study plan unavailable')
+      const questionIds=this.pack.questions.filter(q=>q.partition==='check' && q.teachingIds.every(id=>plan.taughtCards.includes(id))).map(q=>q.id).sort()
+      if(!questionIds.length)throw new Error('Learn the teaching cards first; no eligible check')
+      const check:LearningCheck={id:crypto.randomUUID(),profileId,unitId:this.pack.id,contentVersion:this.pack.version,questionIds,index:0,phase:'question',createdAt:now,updatedAt:now}
+      await d.learningChecks.add(check);return check
+    })
+  }
+  async submitCheck(profileId:string,id:string,index:number,input:{answerIds:string[]|null;hintUsed:boolean;audioPlayCount:number;responseMs:number},now=Date.now()):Promise<LearningCheck> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.learningChecks,d.learningAttempts,d.studyPlans,d.skillReviews],async()=>{
+      const check=await this.ownedCheck(profileId,id)
+      const instance=`check-${index}`
+      if(await d.learningAttempts.get(`${id}:${instance}`))return check
+      if(check.index!==index || check.phase!=='question')throw new Error('Check is not accepting this answer')
+      const question=this.question(check.questionIds[index])
+      const attempt=createAttempt(question,{...input,profileId,sessionId:id,questionInstanceId:instance,submittedAt:now})
+      const plan=await d.studyPlans.get([profileId,this.pack.id]);if(!plan)throw new Error('Study plan unavailable')
+      const previous=await d.skillReviews.get([profileId,attempt.primarySkillId])
+      await d.learningAttempts.add(attempt)
+      await d.skillReviews.put({...nextReview(previous,attempt,plan.timeZone),profileId,skillId:attempt.primarySkillId,timeZone:plan.timeZone})
+      const saved={...check,phase:'acknowledge' as const,updatedAt:now}
+      await d.learningChecks.put(saved);return saved
+    })
+  }
+  async continueCheck(profileId:string,id:string,index:number):Promise<LearningCheck> {
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.learningChecks],async()=>{
+      const check=await this.ownedCheck(profileId,id)
+      if(check.index!==index || check.phase!=='acknowledge')return check
+      const next:LearningCheck={...check,index:Math.min(check.index+1,check.questionIds.length-1),phase:check.index+1===check.questionIds.length ? 'review':'question',updatedAt:Date.now()}
+      await d.learningChecks.put(next);return next
+    })
+  }
+  async finishCheck(profileId:string,id:string):Promise<void> {
+    const d=this.database
+    await d.transaction('rw',[d.profiles,d.learningChecks],async()=>{
+      const check=await this.ownedCheck(profileId,id)
+      if(check.phase!=='review' && check.phase!=='finished')throw new Error('Check is not finished')
+      await d.learningChecks.put({...check,phase:'finished',updatedAt:Date.now()})
+    })
+  }
+  async exportJourney(profileId:string): Promise<{version:'journey-backup-v1';profileId:string;data:JourneyTables;summary:ReturnType<typeof summarize>}> {
+    const d=this.database
+    const tables=[d.profiles,d.learningAttempts,d.worldCheckpoints,d.studyPlans,d.skillReviews,d.battleSessions,d.coinWallets,d.coinLedger,d.inventory,d.equipment,d.purchaseReceipts,d.firstWins,d.learningChecks,d.catalogVersions,d.migrationBackups]
+    return d.transaction('r',tables,async()=>{
+      await this.owned(profileId)
+      const backups=(await d.migrationBackups.toArray()).flatMap(backup=>{
+        const tables=Object.fromEntries(Object.entries(backup.tables).filter(([name])=>['worldCheckpoints','studyPlans','skillReviews','battleSessions','learningChecks'].includes(name)).map(([name,rows])=>[name,rows.filter(row=>!!row && typeof row==='object' && 'profileId' in row && row.profileId===profileId)]).filter(([,rows])=>rows.length))
+        return Object.keys(tables).length ? [{...backup,tables,localPreferences:{}}]:[]
+      })
+      const data:JourneyTables={attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),world:await d.worldCheckpoints.where('profileId').equals(profileId).toArray(),plans:await d.studyPlans.where('profileId').equals(profileId).toArray(),reviews:await d.skillReviews.where('profileId').equals(profileId).toArray(),battles:await d.battleSessions.where('profileId').equals(profileId).toArray(),checks:await d.learningChecks.where('profileId').equals(profileId).toArray(),wallets:await d.coinWallets.where('profileId').equals(profileId).toArray(),ledger:await d.coinLedger.where('profileId').equals(profileId).toArray(),inventory:await d.inventory.where('profileId').equals(profileId).toArray(),equipment:await d.equipment.where('profileId').equals(profileId).toArray(),purchases:await d.purchaseReceipts.where('profileId').equals(profileId).toArray(),firstWins:await d.firstWins.where('profileId').equals(profileId).toArray(),catalogVersions:await d.catalogVersions.toArray(),backups}
+      return {version:'journey-backup-v1',profileId,data,summary:summarize(data.attempts)}
+    })
+  }
+}

@@ -1,5 +1,7 @@
 # N5 內容 blueprint（待人工審核）
 
+> 最新狀態：APPROVED，依專案擁有者2026-10-16的P0／P1驗收確認；manifest與來源見[前置核准](docs/phases/P2/evidence/predecessor-approval.json)。下方草案／待審說明保留為前次紀錄；U01及後續實際教材仍需逐項人工審核。
+
 來源：[project §2、§3.3–3.6、§5](project.md)。狀態 **IN_REVIEW**。作者：本 session Codex；真人日語審核者、日期與簽核尚缺，不可稱已凍結。
 
 機器可讀清單：[n5-manifest.json](docs/content/n5-manifest.json)。此為規劃資料，不供既有遊戲直接載入、不修改共用 lesson schema。U01–U24是新N5單元，與既有九個lesson ID、十一關不同；舊資料需逐項審核後才可映射，不按筆數自動抵配額。

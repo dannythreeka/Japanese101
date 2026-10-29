@@ -1,5 +1,7 @@
 # P0 執行紀錄
 
+> 最新狀態：**COMPLETE（專案擁有者gate確認）**。2026-10-16使用者於本對話確認「P0 and P1 驗證過了」，接受既有工程交付並放行P2。核准來源與基準見[前置核准](../P2/evidence/predecessor-approval.json)。下方先前NO-GO／IN_REVIEW／BLOCKED為歷史紀錄，保留原始證據；本次沒有虛構個別裝置、日語審核人名或重新測試結果。P2新教材、視覺與實體平板驗收不在此核准範圍。
+
 狀態：**BLOCKED／NO-GO**；原P0工程已交付於PR #53，外部缺項見acceptance.md。以下保留當時紀錄；P1後續已獲授權執行並合併，最新補驗分工見[本次接續](next-actions.md)，不以合併取代gate。
 基準main@9100671；分支phase/p0-baseline。工程與初步QA／視覺審視：本session Codex；真人審核與長期承接待確認。
 

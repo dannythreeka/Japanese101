@@ -1,5 +1,5 @@
 import LegacyBackup from '../../components/LegacyBackup'
-import { useEffect, useRef, useState } from 'react'
+import { lazy, Suspense, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import type { KanaMode, KanaDifficulty, ProgressRecord, SessionRecord, MicMode, WriteDifficulty } from '../../types'
 import { useAppStore } from '../../store/useAppStore'
@@ -14,6 +14,7 @@ import type { AdventureProgress } from '../../types/adventure'
 import type { Profile } from '../../types/profile'
 
 const LESSONS = lessonData()
+const JourneyReport=lazy(()=>import('../journey/JourneyReport'))
 
 const DEFAULT_PIN = '1234'
 const PIN_KEY = 'parentPin'
@@ -199,6 +200,7 @@ export default function ParentDashboard() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-4 pt-6">
       <LegacyBackup />
       <div className="max-w-lg mx-auto flex flex-col gap-6">
+        {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <Suspense fallback={<p role="status">正在讀取學習摘要…</p>}><JourneyReport key={profileId} profileId={profileId} profileName={profiles.find(p=>p.profile_id===profileId)?.name}/></Suspense>}
 
         <div className="flex items-center gap-3">
           <button type="button" aria-label={t('homeAria')} onClick={() => navigate('/play')}

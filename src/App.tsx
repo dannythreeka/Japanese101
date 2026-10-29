@@ -1,6 +1,6 @@
 import RecoveryBoundary from './components/RecoveryBoundary'
 import PracticeSession from './components/PracticeSession'
-import { useEffect } from 'react'
+import { lazy, Suspense, useEffect } from 'react'
 import { HashRouter, Routes, Route, Navigate } from 'react-router-dom'
 import ProfileGate from './components/ProfileGate'
 import { loadVoices } from './lib/tts'
@@ -20,6 +20,9 @@ import LevelEntry from './features/adventure/LevelEntry'
 import LevelComplete from './features/adventure/LevelComplete'
 import ProfileSelector from './features/profiles/ProfileSelector'
 import ProfileCreate from './features/profiles/ProfileCreate'
+const UiReview=lazy(()=>import('./features/journey/UiReview'))
+const JourneyScreen=lazy(()=>import('./features/journey/JourneyScreen'))
+const ContentReview=lazy(()=>import('./features/journey/ContentReview'))
 
 export default function App() {
   useEffect(() => { void loadVoices() }, [])
@@ -27,6 +30,9 @@ export default function App() {
   return (
     <RecoveryBoundary><ProfileGate><HashRouter>
       <Routes>
+        {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <Route path="/__review/ui" element={<Suspense fallback={<p role="status">準備畫面中…</p>}><UiReview/></Suspense>}/>}
+        {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <Route path="/__review/content" element={<Suspense fallback={<p role="status">準備審閱資料中…</p>}><ContentReview/></Suspense>}/>}
+        {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <Route path="/preview/adventure" element={<Suspense fallback={<p role="status">準備旅程中…</p>}><JourneyScreen/></Suspense>}/>}
         {/* Profiles */}
         <Route path="/profiles" element={<ProfileSelector />} />
         <Route path="/profiles/new" element={<ProfileCreate />} />

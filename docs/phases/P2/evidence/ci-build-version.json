@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-10-16T07:16:50.382712+00:00",
+  "runId": 38865806957,
+  "runUrl": "https://github.com/dannythreeka/Japanese101/actions/runs/38865806957",
+  "headSha": "e6444e541b710aaceaaea4807032d3904650390e",
+  "artifactId": 12031620538,
+  "artifactName": "project-build-be544a77cee9e4a10304d811cef80bf9535203ba",
+  "artifactBytes": 12543071,
+  "versionJson": {
+    "sha": "be544a77cee9e4a10304d811cef80bf9535203ba"
+  },
+  "testedCommitParents": [
+    "99b8805bbb36db54237370bbfb4f3ad8d18efba2",
+    "e6444e541b710aaceaaea4807032d3904650390e"
+  ],
+  "verdict": "PASS: actual uploaded CI build version matches PR test merge with this head",
+  "previewVersionVerdict": "separate protected Vercel preview still requires owner sign-in; not proven by this CI artifact"
+}

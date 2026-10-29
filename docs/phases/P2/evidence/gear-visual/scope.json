@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-16T07:13:45.362Z",
+  "source": "e6444e541b710aaceaaea4807032d3904650390e",
+  "browser": "145.0.7632.6",
+  "fixture": "isolated Chromium context with explicit 180-coin fixture; not a real child or earned rewards",
+  "scope": "Engineering visual inspection PASS; real human art/playability and physical tablet NOT_RUN",
+  "pageErrors": [],
+  "sourceCommit": "e6444e541b710aaceaaea4807032d3904650390e",
+  "humanReview": "NOT_RUN"
+}

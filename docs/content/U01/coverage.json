@@ -1,0 +1,214 @@
+{
+  "version": "u01-2-draft",
+  "mode": "isolated draft structure",
+  "status": "PASS",
+  "humanReview": "DRAFT",
+  "audioHumanReview": "DRAFT",
+  "visualHumanReview": "DRAFT",
+  "typeCounts": {
+    "T01": 4,
+    "T02": 4,
+    "T03": 6,
+    "T04": 3,
+    "T05": 5,
+    "T06": 3,
+    "T07": 3,
+    "T08": 2,
+    "T09": 2,
+    "T10": 2,
+    "T11": 4,
+    "T12": 4,
+    "T13": 4,
+    "T14": 4
+  },
+  "skills": [
+    {
+      "id": "K-SCRIPT",
+      "teaching": [
+        "teach-kanji"
+      ],
+      "practice": [
+        "U01-Q01",
+        "U01-Q02",
+        "U01-Q03",
+        "U01-Q04",
+        "U01-Q05",
+        "U01-Q06",
+        "U01-Q07",
+        "U01-Q08"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "V-CONTEXT",
+      "teaching": [
+        "teach-words-1",
+        "teach-words-2",
+        "teach-words-3"
+      ],
+      "practice": [
+        "U01-Q09",
+        "U01-Q10",
+        "U01-Q11",
+        "U01-Q12",
+        "U01-Q13",
+        "U01-Q14"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "V-PARA",
+      "teaching": [
+        "teach-words-4"
+      ],
+      "practice": [
+        "U01-Q15",
+        "U01-Q16",
+        "U01-Q17"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "G01",
+      "teaching": [
+        "teach-G01"
+      ],
+      "practice": [
+        "U01-Q18",
+        "U01-Q19",
+        "U01-Q23",
+        "U01-Q26"
+      ],
+      "checkFamilies": [
+        "U01-F-check-G01-two-field-record",
+        "U01-F-check-G01-speaker-attribution",
+        "U01-F-check-G01-error-repair",
+        "U01-F-check-G01-label-vs-value",
+        "U01-F-check-G01-detect-conflict"
+      ]
+    },
+    {
+      "id": "G02",
+      "teaching": [
+        "teach-G02"
+      ],
+      "practice": [
+        "U01-Q20",
+        "U01-Q22",
+        "U01-Q24",
+        "U01-Q28"
+      ],
+      "checkFamilies": [
+        "U01-F-check-G02-identify-intention",
+        "U01-F-check-G02-clause-boundary",
+        "U01-F-check-G02-infer-prior-question",
+        "U01-F-check-G02-uncertainty",
+        "U01-F-check-G02-dialogue-turn"
+      ]
+    },
+    {
+      "id": "G03",
+      "teaching": [
+        "teach-G03"
+      ],
+      "practice": [
+        "U01-Q21",
+        "U01-Q25",
+        "U01-Q27"
+      ],
+      "checkFamilies": [
+        "U01-F-check-G03-shared-records",
+        "U01-F-check-G03-membership-conflict",
+        "U01-F-check-G03-transfer-to-role",
+        "U01-F-check-G03-ellipsis",
+        "U01-F-check-G03-unshared-predicate"
+      ]
+    },
+    {
+      "id": "R-SHORT",
+      "teaching": [
+        "teach-story"
+      ],
+      "practice": [
+        "U01-Q29",
+        "U01-Q30"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "R-MID",
+      "teaching": [
+        "teach-story"
+      ],
+      "practice": [
+        "U01-Q31",
+        "U01-Q32"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "R-INFO",
+      "teaching": [
+        "teach-story"
+      ],
+      "practice": [
+        "U01-Q33",
+        "U01-Q34"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "L-TASK",
+      "teaching": [
+        "teach-story"
+      ],
+      "practice": [
+        "U01-Q35",
+        "U01-Q36",
+        "U01-Q37",
+        "U01-Q38"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "L-KEY",
+      "teaching": [
+        "teach-story"
+      ],
+      "practice": [
+        "U01-Q39",
+        "U01-Q40",
+        "U01-Q41",
+        "U01-Q42"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "L-EXPR",
+      "teaching": [
+        "teach-story"
+      ],
+      "practice": [
+        "U01-Q43",
+        "U01-Q44",
+        "U01-Q45",
+        "U01-Q46"
+      ],
+      "checkFamilies": []
+    },
+    {
+      "id": "L-RESP",
+      "teaching": [
+        "teach-story"
+      ],
+      "practice": [
+        "U01-Q47",
+        "U01-Q48",
+        "U01-Q49",
+        "U01-Q50"
+      ],
+      "checkFamilies": []
+    }
+  ],
+  "errors": []
+}

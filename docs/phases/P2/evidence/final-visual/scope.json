@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-16T07:13:32.944Z",
+  "sourceCommit": "e6444e541b710aaceaaea4807032d3904650390e",
+  "browser": "145.0.7632.6",
+  "viewport": [
+    [
+      320,
+      900
+    ],
+    [
+      1024,
+      768
+    ]
+  ],
+  "steps": "isolated context; first-time skippable guide; actual parent PIN setup 1234; no real child data",
+  "reviewer": "Codex engineering visual inspection; human NOT_RUN",
+  "pageErrors": [],
+  "humanReview": "NOT_RUN",
+  "inspection": "Codex engineering PASS; 320/1024 scrollable welcome, empty and four-answer report, battle result4 samples/0 five-question sections, long reading320/1024, shop768, 200% town. Last CSS sets mobile title32px and world instruction24px. Real human NOT_RUN.",
+  "layoutSource": "test-results/p2-font: 90fea81 working tree with exact CSS subsequently committed e6444e5; other final pictures recaptured after clean product commit."
+}

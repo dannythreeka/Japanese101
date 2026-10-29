@@ -25,3 +25,22 @@
 本批驗證：225項單元／24檔案PASS（含新增3項跨單元回歸）；typecheck、lint、Preview build PASS。24項Chromium全PASS（3.8分鐘），對應40269c2多單元基礎提交；後續假名入口需另驗。先完成此批commit再開始下一批。
 
 P3-01首批已實作與驗證，細節見P3 handoff；227單元、型別、lint PASS；2項新Chromium真音訊／切單元／重整測試與3寬截圖通過。獨立check仍缺，勿誤標DONE。PR57 WebKit仍在跑（開始2026-10-29T16:28:03Z），其他3jobs success。
+
+
+## 最新恢復點（2026-10-30）
+
+- PR57已實際合併：`9c415fd1a690228838fbfab0afdc8a4e5ef92436`；head327ec61，CI40911695545的Test & Build及Chromium／Firefox／WebKit全部success。第一次平台核准服務capacity失敗未執行，原請求重試成功，沒有繞過審查。
+- 後續PR58：https://github.com/dannythreeka/Japanese101/pull/58 ，draft；branch `phase/full-experience`，最新產品提交 `bb1aa45d916582dbf21fd64c0f05818d723d50f1`，已push。40269c2為多單元基礎。此文件後續提交只更新交接。
+- goal仍active：完成所有Phase／完整體驗。沒有token預算，尚不能complete，也沒有理由blocked（仍有大量可實作工程）。P2人審未完成仍保留，但依最新使用者授權繼續獨立工程。
+- 本機工作目錄仍`/home/yyy/workspace/Japanese101-p2`，不要因命名p2誤切舊分支。後續git push目標必須phase/full-experience，勿再執行固定推p2的/tmp/j101-push-p2.py。
+- Git credential helper仍可用：`git -c credential.helper= -c 'credential.helper=!python3 /tmp/japanese101-recovery/git-credential.py' -c credential.useHttpPath=true push origin phase/full-experience`；網路需平台核准require_escalated，勿印token。
+
+### 下一實作批次：P3-01獨立檢核
+
+目前kata／hira只提供practice，獨立check確實未作。既有110個詞語中可找到涵蓋45基本字且不含小ゃゅょっ或長音符的2字以上詞；`を`缺詞例。可以用完整詞語音訊要求辨識指定音拍，比單字音對字形的practice不同；同一詞語不同位置仍共用一個題族，不能逐位置假增family。需要逐例確認音拍與可理解的指示。`を`可另產真實句子音訊，例如「ほんをよみます」，但還未生成；synthesis與PCM驗證在scripts/audio-source.ts（既有免費tts.quest/VOICEVOX四国めたん、限次重試、不買服務、不補假WAV）。
+
+先修檢核必須允許未教已會者實測略過，同時不捏造taughtAt／stable mastery，不能把練習變成5題族通過證據。現有startCheck需先teach；應設計明確的先修診斷入口與持久狀態／測試，不能解除所有正式check的先修限制。題目與音訊仍DRAFT，人工review另列。
+
+### 後續重驗
+
+227單元／typecheck／lint最後PASS。U01的24項ChromiumPASS對應40269c2；假名2項ChromiumPASS對應bb1aa45除最後due篩選一行（已在單元／型別通過，完整PR58 CI負責最後整合）。下一批開始前查PR58 CI，處理任何新失敗，不以舊綠燈代替。3幅最後kana-teaching截圖已視覺檢查；46按鈕改select是實際修正，不再引用前版長頁截圖。

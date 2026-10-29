@@ -50,3 +50,12 @@ Codex 已實際看新手引導、空資料報告、長閱讀、小鎮與商店�
 交付狀態：DONE為P2-01～07、P2-10、P2-12～18（15項）；IN_REVIEW為P2-11與U01-M；P2-08／09 BLOCKED；U01-T／Q1／Q2／A／V／I維持TODO依賴（合計10項未完成）。正式release仍按預期拒絕DRAFT。真人可先讀[可玩性基準](playability-baseline.md)，並依human-review逐項記錄；沒有虛構兒童或平板證據。
 
 最後證據提交僅文件、精選畫面與獨立驗證腳本scripts/verify-p2-keyboard.mjs，未改src／public／package／build／CI。完整綠燈對應產品e6444e5及CI測試merge be544a77；文件／JSON／links／lint另驗，不把不同提交混稱同一輪測試。
+
+
+## 2026-10-30 接續：預覽入口與合併授權
+
+使用者回報從分支預覽首頁只能看到舊版。本次 P2-09-R1 在首頁加入明確的新小鎮連結，沿用既有 DEV／VITE_P2_REVIEW_PREVIEW 旗標；正式 build 的入口條件不變。原有 25 項 task／15 gate 與人工紀錄不因此通過。驗證結果見 evidence/preview-entry-20261030.json。
+
+GitHub 查核 PR #57 為 open、非 draft，先前本文 draft 記錄屬歷史狀態。使用者本次明確授權「都 merge」，範圍為 Japanese101；待本次變更驗證及 CI 後合併。此授權不等於日語、真人視覺或實體平板簽核；Phase 保持 ENGINEERING_READY，P2-09 保持 BLOCKED。實際合併 SHA 以 PR 記錄為準。
+
+本次局部驗證 PASS：typecheck、lint、Preview build（postbuild 的 git 子程序先遇 sandbox EPERM，獲准後完成）、正式 build；Chromium 145.0.7632.6 在320／768／1024寬度無橫向溢出、入口高度64px、中日文切換、原生Tab／Enter抵達新小鎮。正式 build 不顯示預覽入口。已實際檢視320寬截圖，沒有裁切／遮擋。證據 preview-entry-20261030.json、production-entry-20261030.json 與 preview-entry-*.png；記錄基準commit及變更檔hash，CI結果以PR最新head為準。

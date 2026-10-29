@@ -1,6 +1,6 @@
 import OfflinePack from '../../components/OfflinePack'
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { getOrCreatePet, getOrCreateAdventureProgress, getProfile, getActiveProfileId, ensureDefaultProfile, updateProfileLastPlayed } from '../../db'
 import { useAppStore } from '../../store/useAppStore'
 import { xpProgress, xpToNextLevel } from '../../lib/pet'
@@ -86,6 +86,20 @@ export default function HomeScreen() {
           </button>
         </div>
       </div>
+
+      {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && (
+        <section aria-labelledby="journey-preview-title" className="w-full max-w-sm rounded-2xl bg-white p-5 text-slate-800 shadow-sm">
+          <h2 id="journey-preview-title" className="text-2xl font-bold">
+            {uiLang === 'ja' ? '新しい町の冒険' : '新版小鎮冒險'}
+          </h2>
+          <p className="mt-2 text-lg">
+            {uiLang === 'ja' ? 'プレビュー版です。町を歩き、道場やお店を訪れてみましょう。' : '這是預覽版。走進小鎮，探索道館與商店。'}
+          </p>
+          <Link to="/preview/adventure" className="mt-4 flex min-h-16 items-center justify-center rounded-xl bg-emerald-800 px-4 py-3 text-xl font-bold text-white hover:bg-emerald-900 focus-visible:outline-4 focus-visible:outline-offset-4 focus-visible:outline-emerald-800">
+            {uiLang === 'ja' ? '新しい町を探索する' : '探索新版小鎮'}
+          </Link>
+        </section>
+      )}
 
       {/* Active player indicator */}
       {activeProfile && (

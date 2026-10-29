@@ -116,3 +116,12 @@ CI的實際build artifact version.json亦已讀回核對：[ci-build-version.jso
 最終交付差異：本證據文件提交相對e6444e5只改docs與獨立驗證腳本，不改應用程式／素材／依賴／build／CI。產品完整測試在e6444e5（GitHub測試merge be544a77），不是後續文件SHA；文件連結、JSON、diff及lint已另行核對。後續文件提交若觸發新CI，與此已通過產品測試分開記錄。
 
 三引擎的工程圖像核對：Chromium的final-visual／gear-visual、Firefox的firefox-*、實際CI WebKit的webkit-*；人工資格與實體平板仍完全NOT_RUN，不以本初審填P2-11／09 PASS。
+
+
+## 2026-10-30 接續：預覽入口與合併授權
+
+使用者回報從分支預覽首頁只能看到舊版。本次 P2-09-R1 在首頁加入明確的新小鎮連結，沿用既有 DEV／VITE_P2_REVIEW_PREVIEW 旗標；正式 build 的入口條件不變。原有 25 項 task／15 gate 與人工紀錄不因此通過。驗證結果見 evidence/preview-entry-20261030.json。
+
+GitHub 查核 PR #57 為 open、非 draft，先前本文 draft 記錄屬歷史狀態。使用者本次明確授權「都 merge」，範圍為 Japanese101；待本次變更驗證及 CI 後合併。此授權不等於日語、真人視覺或實體平板簽核；Phase 保持 ENGINEERING_READY，P2-09 保持 BLOCKED。實際合併 SHA 以 PR 記錄為準。
+
+本次局部驗證 PASS：typecheck、lint、Preview build（postbuild 的 git 子程序先遇 sandbox EPERM，獲准後完成）、正式 build；Chromium 145.0.7632.6 在320／768／1024寬度無橫向溢出、入口高度64px、中日文切換、原生Tab／Enter抵達新小鎮。正式 build 不顯示預覽入口。已實際檢視320寬截圖，沒有裁切／遮擋。證據 preview-entry-20261030.json、production-entry-20261030.json 與 preview-entry-*.png；記錄基準commit及變更檔hash，CI結果以PR最新head為準。

@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-30",
+  "mode": "preview",
+  "browser": "145.0.7632.6",
+  "results": [
+    {
+      "width": 320,
+      "overflow": false,
+      "targetHeight": 64
+    },
+    {
+      "width": 768,
+      "overflow": false,
+      "targetHeight": 64
+    },
+    {
+      "width": 1024,
+      "overflow": false,
+      "targetHeight": 64
+    },
+    "Japanese/Chinese labels, native Tab/Enter navigation, journey arrival PASS"
+  ],
+  "baseCommit": "d2f58660ecc31c7c889df7c59452eb44ffdc015f",
+  "homeScreenSha256": "55a9605e4079d35f287262fbd6d502f4ed1bae3d154f1982d956f1c026ab8e69",
+  "reviewer": "Codex engineering check; not human signoff"
+}

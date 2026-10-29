@@ -63,3 +63,12 @@ P2_REVIEW_URL=http://127.0.0.1:4202 node scripts/verify-p2-keyboard.mjs
 ```
 
 腳本每個viewport建立全新context，不寫真實玩家；需原生Tab巡訪才能找到每個控制，Enter／方向鍵操作，逐畫面重新套用200% computed font／line-height。320／768直向／1024橫向各54次操作全過。證據keyboard-200.json，trace在test-results/p2-keyboard-200；精選畫面final-visual/keyboard-shop-text200-*。這是桌面模擬，不能代替真人平板文字設定。
+
+
+## 2026-10-30 接續：預覽入口與合併授權
+
+使用者回報從分支預覽首頁只能看到舊版。本次 P2-09-R1 在首頁加入明確的新小鎮連結，沿用既有 DEV／VITE_P2_REVIEW_PREVIEW 旗標；正式 build 的入口條件不變。原有 25 項 task／15 gate 與人工紀錄不因此通過。驗證結果見 evidence/preview-entry-20261030.json。
+
+GitHub 查核 PR #57 為 open、非 draft，先前本文 draft 記錄屬歷史狀態。使用者本次明確授權「都 merge」，範圍為 Japanese101；待本次變更驗證及 CI 後合併。此授權不等於日語、真人視覺或實體平板簽核；Phase 保持 ENGINEERING_READY，P2-09 保持 BLOCKED。實際合併 SHA 以 PR 記錄為準。
+
+本次局部驗證 PASS：typecheck、lint、Preview build（postbuild 的 git 子程序先遇 sandbox EPERM，獲准後完成）、正式 build；Chromium 145.0.7632.6 在320／768／1024寬度無橫向溢出、入口高度64px、中日文切換、原生Tab／Enter抵達新小鎮。正式 build 不顯示預覽入口。已實際檢視320寬截圖，沒有裁切／遮擋。證據 preview-entry-20261030.json、production-entry-20261030.json 與 preview-entry-*.png；記錄基準commit及變更檔hash，CI結果以PR最新head為準。

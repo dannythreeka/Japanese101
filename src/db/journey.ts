@@ -63,12 +63,12 @@ export class JourneyRepository {
     return d.transaction('r',[d.profiles,d.worldCheckpoints,d.studyPlans,d.learningAttempts,d.battleSessions,d.coinWallets,d.inventory,d.equipment,d.skillReviews,d.learningChecks,d.coinLedger], async()=>({
       world:await d.worldCheckpoints.get(profileId), study:await d.studyPlans.get([profileId,this.pack.id]),
       attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),
-      battles:await d.battleSessions.where('profileId').equals(profileId).toArray(),
+      battles:(await d.battleSessions.where('profileId').equals(profileId).toArray()).filter(b=>b.unitId===this.pack.id),
       coins:walletBalance(await d.coinWallets.get(profileId)),
       inventory:await d.inventory.where('profileId').equals(profileId).toArray(),
       equipment:(await d.equipment.get(profileId))?.slots ?? {},
       reviews:await d.skillReviews.where('profileId').equals(profileId).toArray(),
-      checks:await d.learningChecks.where('profileId').equals(profileId).toArray(),
+      checks:(await d.learningChecks.where('profileId').equals(profileId).toArray()).filter(c=>c.unitId===this.pack.id),
       ledger:await d.coinLedger.where('profileId').equals(profileId).toArray(),
     }))
   }
@@ -150,8 +150,8 @@ export class JourneyRepository {
     await d.transaction('rw',[d.profiles,d.studyPlans,d.battleSessions,d.learningChecks,d.worldCheckpoints,d.migrationBackups],async()=>{
       await this.owned(profileId)
       const plan=await d.studyPlans.get([profileId,this.pack.id])
-      const battles=(await d.battleSessions.where('profileId').equals(profileId).toArray()).filter(b=>b.phase!=='finished' && !currentBattle(b,this.pack))
-      const checks=(await d.learningChecks.where('profileId').equals(profileId).toArray()).filter(c=>c.phase!=='finished' && !currentCheck(c,this.pack))
+      const battles=(await d.battleSessions.where('profileId').equals(profileId).toArray()).filter(b=>b.unitId===this.pack.id && b.phase!=='finished' && !currentBattle(b,this.pack))
+      const checks=(await d.learningChecks.where('profileId').equals(profileId).toArray()).filter(c=>c.unitId===this.pack.id && c.phase!=='finished' && !currentCheck(c,this.pack))
       const world=await d.worldCheckpoints.get(profileId)
       const badWorld=world && !currentWorld(world)
       const badPlan=plan && !currentStudy(plan,this.pack)
@@ -167,7 +167,7 @@ export class JourneyRepository {
     const d=this.database
     return d.transaction('rw',[d.profiles,d.studyPlans,d.skillReviews,d.learningAttempts,d.battleSessions,d.equipment],async()=>{
       await this.owned(profileId)
-      const existing=(await d.battleSessions.where('profileId').equals(profileId).toArray()).find(b=>b.phase!=='finished')
+      const existing=(await d.battleSessions.where('profileId').equals(profileId).toArray()).find(b=>b.unitId===this.pack.id && b.phase!=='finished')
       if(existing) return this.activeBattle(profileId,existing.id)
       const plan=await d.studyPlans.get([profileId,this.pack.id])
       if(!plan || plan.contentVersion!==this.pack.version) throw new Error('Study plan unavailable')
@@ -375,7 +375,7 @@ export class JourneyRepository {
         const tables=Object.fromEntries(Object.entries(backup.tables).filter(([name])=>['worldCheckpoints','studyPlans','skillReviews','battleSessions','learningChecks'].includes(name)).map(([name,rows])=>[name,rows.filter(row=>!!row && typeof row==='object' && 'profileId' in row && row.profileId===profileId)]).filter(([,rows])=>rows.length))
         return Object.keys(tables).length ? [{...backup,tables,localPreferences:{}}]:[]
       })
-      const data:JourneyTables={attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),world:await d.worldCheckpoints.where('profileId').equals(profileId).toArray(),plans:await d.studyPlans.where('profileId').equals(profileId).toArray(),reviews:await d.skillReviews.where('profileId').equals(profileId).toArray(),battles:await d.battleSessions.where('profileId').equals(profileId).toArray(),checks:await d.learningChecks.where('profileId').equals(profileId).toArray(),wallets:await d.coinWallets.where('profileId').equals(profileId).toArray(),ledger:await d.coinLedger.where('profileId').equals(profileId).toArray(),inventory:await d.inventory.where('profileId').equals(profileId).toArray(),equipment:await d.equipment.where('profileId').equals(profileId).toArray(),purchases:await d.purchaseReceipts.where('profileId').equals(profileId).toArray(),firstWins:await d.firstWins.where('profileId').equals(profileId).toArray(),catalogVersions:await d.catalogVersions.toArray(),backups}
+      const data:JourneyTables={attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),world:await d.worldCheckpoints.where('profileId').equals(profileId).toArray(),plans:await d.studyPlans.where('profileId').equals(profileId).toArray(),reviews:await d.skillReviews.where('profileId').equals(profileId).toArray(),battles:(await d.battleSessions.where('profileId').equals(profileId).toArray()).filter(b=>b.unitId===this.pack.id),checks:(await d.learningChecks.where('profileId').equals(profileId).toArray()).filter(c=>c.unitId===this.pack.id),wallets:await d.coinWallets.where('profileId').equals(profileId).toArray(),ledger:await d.coinLedger.where('profileId').equals(profileId).toArray(),inventory:await d.inventory.where('profileId').equals(profileId).toArray(),equipment:await d.equipment.where('profileId').equals(profileId).toArray(),purchases:await d.purchaseReceipts.where('profileId').equals(profileId).toArray(),firstWins:await d.firstWins.where('profileId').equals(profileId).toArray(),catalogVersions:await d.catalogVersions.toArray(),backups}
       return {version:'journey-backup-v1',profileId,data,summary:summarize(data.attempts)}
     })
   }

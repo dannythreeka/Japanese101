@@ -1,13 +1,14 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { getActiveProfileId, getProfile, getAllProfiles, getOrCreatePet } from '../../db'
 import { JourneyRepository } from '../../db/journey'
+import type { UnitPack } from '../../content/contracts'
 import { u01 } from '../../content/packs/u01'
 import type { Profile } from '../../types/profile'
 import type { PetState } from '../../types'
 export type JourneyState=Awaited<ReturnType<JourneyRepository['state']>>
-export function useJourney(){
+export function useJourney(pack:UnitPack=u01){
   const [profileId]=useState(getActiveProfileId)
-  const repo=useMemo(()=>new JourneyRepository(u01),[])
+  const repo=useMemo(()=>new JourneyRepository(pack),[pack])
   const [data,setData]=useState<JourneyState>()
   const [profile,setProfile]=useState<Profile|null>(null)
   const [profiles,setProfiles]=useState<Profile[]>([])

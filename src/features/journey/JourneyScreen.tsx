@@ -3,7 +3,8 @@ import { useNavigate, useSearchParams } from 'react-router-dom'
 import { AudioControl, Button, Dialog, Progress, StatePanel } from '../../components/ui/journey-ui'
 import OfflinePack from '../../components/OfflinePack'
 import { setActiveProfileId } from '../../db'
-import { u01 } from '../../content/packs/u01'
+import type { UnitPack } from '../../content/contracts'
+import { u01 as defaultPack } from '../../content/packs/u01'
 import { CATALOG_VERSION } from '../../economy/catalog'
 import {currentBattle,currentCheck,currentWorld} from '../../db/journey-compatibility'
 import { localDay, summarize } from '../../learning/rules'
@@ -23,9 +24,9 @@ import WelcomeSetup from './WelcomeSetup'
 import './journey.css'
 
 type Panel='journal'|'places'|'profiles'|'pause'|'welcome'|null
-export default function JourneyScreen(){
+export default function JourneyScreen({pack:u01=defaultPack}:{pack?:UnitPack}){
   const {lang,t}=useJourneyText();const navigate=useNavigate();const [params,setParams]=useSearchParams()
-  const {profileId,repo,data,setData,profile,profiles,pet,error,setError,pending,perform,reload,retry}=useJourney()
+  const {profileId,repo,data,setData,profile,profiles,pet,error,setError,pending,perform,reload,retry}=useJourney(u01)
   const [panel,setPanel]=useState<Panel>(null);const [resident,setResident]=useState<Destination|null>(null);const [line,setLine]=useState(0)
   const [teachingIndex,setTeachingIndex]=useState(0);const [notice,setNotice]=useState('')
   const [clock,setClock]=useState(()=>Date.now())
@@ -87,13 +88,13 @@ export default function JourneyScreen(){
       {worldOutdated ? <StatePanel state="retryable-error" title={t('versionError')} action={t('continueJourney')} onAction={()=>{void perform(()=>repo.recoverWorld(profileId))}}/>:<WorldScene key={`${data.world?.worldVersion ?? WORLD_VERSION}:${warp}`} initialPosition={data.world?.position ?? town.spawn} initialFacing={data.world?.facing ?? 'down'} items={items} paused={!!panel || !!resident || pending || !!error || welcomeOpen} onPersist={persist} onEnter={enter} onPause={()=>setPanel('pause')}/>}
     </>}
     {scene==='dojo' && <section className="journey-body journey-stack"><div className="journey-content-header"><h1>{t('dojo')}</h1><Button variant="secondary" onClick={()=>go('town')}>{t('returnTown')}</Button></div>
-      <div className="journey-mentor"><img src={`${import.meta.env.BASE_URL}assets/img/journey/mentor.webp`} alt=""/><div><h2>{lang==='zh'?'歡迎，旅行者。':'ようこそ、たびびとさん。'}</h2><p>{t('unitGoal')}</p><p>{t('learnFirst')}</p><p>{t('noDeadline')}</p></div></div>
+      <div className="journey-mentor"><img src={`${import.meta.env.BASE_URL}assets/img/journey/mentor.webp`} alt=""/><div><h2>{lang==='zh'?'歡迎，旅行者。':'ようこそ、たびびとさん。'}</h2><p>{u01.id} · {u01.title}</p><p>{t('unitGoal')}</p><p>{t('learnFirst')}</p><p>{t('noDeadline')}</p></div></div>
       <div className="journey-actions"><Button onClick={()=>go('learn')}>{t('teach')}</Button><Button disabled={pending || !eligible} onClick={startBattle}>{resumeBattle ? t('resume'):t('practice')}</Button><Button variant="secondary" disabled={pending || !checkEligible} onClick={startCheck}>{unfinishedCheck ? t('resume'):t('check')}</Button><Button variant="quiet" onClick={()=>navigate('/play/gallery')}>{lang==='zh'?'先認識五十音':'かなをみる'}</Button></div>
       {!eligible && <p>{t('learnFirst')}</p>}
     </section>}
-    {scene==='learn' && <TeachingScene study={data.study} index={teachingIndex} onIndex={setTeachingIndex} onTeach={id=>{void perform(()=>repo.teach(profileId,id))}} onBack={()=>go('dojo')} pending={pending}/>}
-    {scene==='battle' && (battle ? <BattleScene battle={battle} attempts={data.attempts} reviewDate={data.reviews.filter(r=>data.attempts.some(a=>a.sessionId===battle.id && a.primarySkillId===r.skillId)).map(r=>r.dueDate).sort()[0]} receipt={data.ledger.find(l=>l.battleId===battle.id)} pending={pending} onReturn={()=>{setNotice('');go('town')}} onPause={()=>{stopJourneyAudio();stopSpeaking();setPanel('pause')}} onChoose={move=>{void perform(async()=>{await repo.chooseMove(profileId,battle.id,move)})}} onSubmit={input=>saveAnswerAndRefresh(()=>repo.submitTurn(profileId,battle.id,battle.turn,input),reload)} onContinue={()=>{void perform(async()=>{await repo.continueBattle(profileId,battle.id,battle.turn)})}} onClaim={()=>{void perform(async()=>{const receipt=await repo.reward(profileId,battle.id);setNotice(`${t('claimed')} +${receipt.amount}`);go('town')})}} onRetreat={()=>{void perform(async()=>{await repo.retreat(profileId,battle.id);go('dojo')})}}/>:<StatePanel state="retryable-error" title={t('error')} action={t('returnTown')} onAction={()=>go('town')}/>)}
-    {scene==='check' && (check ? <CheckScene check={check} attempts={data.attempts} pending={pending} onSubmit={input=>saveAnswerAndRefresh(()=>repo.submitCheck(profileId,check.id,check.index,input),reload)} onContinue={()=>{void perform(async()=>{await repo.continueCheck(profileId,check.id,check.index)})}} onFinish={()=>{void perform(async()=>{await repo.finishCheck(profileId,check.id);go('town')})}}/>:<StatePanel state="retryable-error" title={t('error')} action={t('returnTown')} onAction={()=>go('town')}/>)}
+    {scene==='learn' && <TeachingScene pack={u01} study={data.study} index={teachingIndex} onIndex={setTeachingIndex} onTeach={id=>{void perform(()=>repo.teach(profileId,id))}} onBack={()=>go('dojo')} pending={pending}/>}
+    {scene==='battle' && (battle ? <BattleScene pack={u01} battle={battle} attempts={data.attempts} reviewDate={data.reviews.filter(r=>data.attempts.some(a=>a.sessionId===battle.id && a.primarySkillId===r.skillId)).map(r=>r.dueDate).sort()[0]} receipt={data.ledger.find(l=>l.battleId===battle.id)} pending={pending} onReturn={()=>{setNotice('');go('town')}} onPause={()=>{stopJourneyAudio();stopSpeaking();setPanel('pause')}} onChoose={move=>{void perform(async()=>{await repo.chooseMove(profileId,battle.id,move)})}} onSubmit={input=>saveAnswerAndRefresh(()=>repo.submitTurn(profileId,battle.id,battle.turn,input),reload)} onContinue={()=>{void perform(async()=>{await repo.continueBattle(profileId,battle.id,battle.turn)})}} onClaim={()=>{void perform(async()=>{const receipt=await repo.reward(profileId,battle.id);setNotice(`${t('claimed')} +${receipt.amount}`);go('town')})}} onRetreat={()=>{void perform(async()=>{await repo.retreat(profileId,battle.id);go('dojo')})}}/>:<StatePanel state="retryable-error" title={t('error')} action={t('returnTown')} onAction={()=>go('town')}/>)}
+    {scene==='check' && (check ? <CheckScene pack={u01} check={check} attempts={data.attempts} pending={pending} onSubmit={input=>saveAnswerAndRefresh(()=>repo.submitCheck(profileId,check.id,check.index,input),reload)} onContinue={()=>{void perform(async()=>{await repo.continueCheck(profileId,check.id,check.index)})}} onFinish={()=>{void perform(async()=>{await repo.finishCheck(profileId,check.id);go('town')})}}/>:<StatePanel state="retryable-error" title={t('error')} action={t('returnTown')} onAction={()=>go('town')}/>)}
     {(scene==='shop' || scene==='bag') && <ShopScene bag={scene==='bag'} coins={data.coins} inventory={data.inventory} equipment={data.equipment} pending={pending || error==='catalog'} locked={!!activeBattle} onBack={()=>go('town')} onBuy={itemId=>{
       const purchaseId=purchaseIds.current.get(itemId) ?? crypto.randomUUID();purchaseIds.current.set(itemId,purchaseId)
       void perform(async()=>{const result=await repo.purchase(profileId,itemId,purchaseId,CATALOG_VERSION);purchaseIds.current.delete(itemId);setNotice(t(result==='already-owned'?'owned':'saved'))})

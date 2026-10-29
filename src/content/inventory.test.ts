@@ -2,6 +2,7 @@ import {describe,expect,it} from 'vitest'
 import {curriculumErrors} from './inventory'
 import {u01} from './packs/u01'
 import {u02} from './packs/u02'
+import {u03} from './packs/u03'
 import blueprint from '../../docs/content/n5-manifest.json'
 describe('actual curriculum inventory',()=>{
   it('accepts two authored drafts without claiming the remaining blueprint units exist',()=>{
@@ -10,6 +11,18 @@ describe('actual curriculum inventory',()=>{
     expect(u02.questions.filter(q=>q.partition==='check')).toHaveLength(15)
     for(const g of u02.grammar)expect(new Set(u02.questions.filter(q=>q.partition==='check'&&q.primarySkillId===g.id).map(q=>q.itemFamilyId)).size).toBe(5)
     expect(u02.reviewStatus).toBe('DRAFT')
+  })
+  it('keeps U03 original counts, prerequisites, check families and listening families consistent',()=>{
+    expect(curriculumErrors([u01,u02,u03],blueprint.units)).toEqual([])
+    expect(u03.questions.filter(q=>q.partition==='practice')).toHaveLength(50)
+    expect(u03.questions.filter(q=>q.partition==='check')).toHaveLength(15)
+    for(const g of u03.grammar){
+      const checks=u03.questions.filter(q=>q.partition==='check'&&q.primarySkillId===g.id)
+      expect(new Set(checks.map(q=>q.itemFamilyId)).size).toBe(5)
+      expect(checks.every(q=>q.teachingIds.includes(`U03-teach-${g.id}`))).toBe(true)
+    }
+    for(const audio of u03.listening)expect(new Set(u03.questions.filter(q=>q.audioId===audio.id).map(q=>q.itemFamilyId)).size).toBe(1)
+    expect(u03.reviewStatus).toBe('DRAFT')
   })
   it('rejects reused new vocabulary, orphan teaching and incomplete counts',()=>{
     const copy=structuredClone(u02);copy.vocabulary[0].reading=u01.vocabulary[0].reading

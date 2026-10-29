@@ -56,3 +56,27 @@
 CI40920767848三引擎各45/46通過；唯一失敗為P2審閱新增教材選單後未命名combobox歧義。測試已明確指定「選擇題目」，31項本機回歸已通過；新提交三引擎CI尚待確認。
 
 最後U02文字修訂後：6項內容／世界關聯測試PASS，型別與preview build PASS；U02三項Chromium再次全部PASS（1.2m），含全部六段音訊與真正來源停機的離線冷啟。證據test-results/p3-u02-text-final、playwright-report/p3-u02-text-final。最後測試後只新增本段證據文字，產品未再修改。
+
+U02提交3289f0ae477fb745e62f6b6a4b31b38adcd5439e已push，CI40925952499 Test & Build、Chromium、Firefox、WebKit全部success。這是3289f0的結果，不能替代後續U03工作樹的驗證。
+
+## U03 時間與日常工程驗收（2026-10-30）
+
+基準3289f0＋本次U03變更；執行者Codex，Playwright1.58／Node22.23.2。P3整體IN_PROGRESS，真人日語／音訊／實機／兒童均NOT_RUN。
+
+| 需求 | 實際結果 | 證據 |
+|---|---|---|
+| U03-M/T/Q1/Q2 | 25新詞5漢字G07～09、10教學、4閱讀6聽力、50practice＋15check候選；跨U01～03去重及14類配比PASS | docs/content/U03/README.md、coverage.json、scripts/author-u03.py |
+| U03-A | 16真WAV來源／稿hash／檔hash／PCM PASS；六段聽力實際播放完 | public/assets/audio/u03/manifest.json、e2e/p3-u03.spec.ts |
+| U03-V | BLOCKED，135筆真實人審NOT_RUN；檢核題族與語音自然度尚未核准 | docs/content/U03/review-ledger.json |
+| U03-I四主線 | 教學真UI、四題測試queue、4真Attempt，重整保留回饋，報告與匯出歸屬U03 PASS | e2e/p3-u03.spec.ts第一項 |
+| 肯否混淆 | 把べんきょうしません誤選成します，解說與唯一錯答重整後仍在，敵HP不減、不寫假檢核 PASS | e2e/p3-u03.spec.ts第四項 |
+| 離線與新圖 | 下載486素材，關閉測試專屬來源及頁面後冷啟，U03教學、插畫與聽力可用 PASS | 第三項；只停止測試來源，不改主機網路 |
+| U02回歸 | 四主線、六音訊、離線冷啟全PASS；共7個Chromium流程PASS，2.5m | test-results/p3-u03、playwright-report/p3-u03 |
+| 音訊服務長稿 | 原40s等待在G07超時；保留前12檔，改單一已接受job最長120s後完成剩餘4檔；永久pending確實超時、不中途重送，4測試PASS | src/content/audio-source.test.ts、scripts/audio-source.ts |
+| 插畫與畫面 | 四格原稿與320／768截圖實際工程檢視；五寬度320/390/768/1024/1440無橫向溢出，窄版長頁可捲動 | evidence/u03-context-*.png、public/assets/img/u03/daily-routine.webp；非真人／實機PASS |
+| 靜態檢查 | typecheck、lint、preview build、unit inventory、journey關聯PASS；7項內容／世界單元測試PASS | 本次命令結果；離線PWA506entries，約22.2MiB |
+| 正式release | 預期FAIL（exit1）：U01～03缺人審，U04～24尚缺21單元 | node --import tsx scripts/unit-inventory.ts --release |
+
+U03不改戰鬥／經濟數值，不把新單元或先修檢核當已熟練。共享Playwright教學／播放／queue helpers只作用於新建測試context，不修改真玩家。作者序列化拒絕直接覆蓋已APPROVED教材。上述瀏覽器之後未修改產品內容；最終單元回歸結果另記下方。
+
+最終全量單元回歸：243 tests／29 files全部PASS（21.36s），涵蓋新增長稿等待／永久pending終止測試。與七項Chromium使用相同產品內容，後續僅追加交接與驗證紀錄。

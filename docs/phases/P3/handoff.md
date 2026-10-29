@@ -13,11 +13,11 @@
 
 ## 下一工作
 
-先保存此批最新驗證／commit／push並更新draft PR58，確認CI。4f02a5c的CI三引擎唯一失敗為舊P2 reviewer combobox定位歧義，已改明確名稱並在31項回歸通過；不能直接宣稱新CI全綠。
+U02批次已commit/push3289f0，CI40925952499建置與三引擎均success。原combobox歧義已解決。當前U03作者稿／65題／16音訊／插畫／registry已寫，7項內容世界測試通過，U02/U03 Chromium七項已PASS（2.5m），包括否定錯答與離線；證據test-results/p3-u03與acceptance。以最新進度／git status確認後續提交。
 
-接續U03／U04：依docs/content/n5-manifest.json與tasks配額，先去重U01/U02新詞／漢字。教學內容／練習／獨立check需原創，不靠換名灌family。`scripts/author-u02.py`只作已寫出的U02作者稿，別直接換單元ID來湊新課程。腳本語法／素材來源／hash檢查可重用；新音訊用`npm run gen:voice:unit -- U03`，明確檢查已有檔稿版本。
+接續U04：依docs/content/n5-manifest.json與tasks配額，先去重U01/U02新詞／漢字。教學內容／練習／獨立check需原創，不靠換名灌family。`scripts/author-u02.py`只作已寫出的U02作者稿，別直接換單元ID來湊新課程。腳本語法／素材來源／hash檢查可重用；新音訊用`npm run gen:voice:unit -- U03`，明確檢查已有檔稿版本。
 
-P3-02最終四單元100詞20漢字至少10文法16閱讀24聽力200練習尚未達標。P4、P5全部仍待工程／內容，goal不可COMPLETE或BLOCKED。U02等主task須有人審後才能DONE。
+P3-02最終四單元100詞20漢字至少10文法16閱讀24聽力200練習尚未達標。P4、P5全部仍待工程／內容，goal不可COMPLETE或BLOCKED。U02／U03等主task須有人審後才能DONE。U03有135人審NOT_RUN；三單元75詞15漢字9文法12閱讀18聽力150練習，尚缺U04。
 
 ## 命令與證據
 
@@ -28,3 +28,5 @@ Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`。
 Playwright trace：ignored test-results/p3-integration，最後U02文字版test-results/p3-u02-text-final。選定畫面docs/phases/P3/evidence，320與768已看；未檢視寬度不可偷填人審。新原創圖及完整prompt見docs/content/U02/art-prompt.md；PNG曾超2MiB，已用原尺寸WebP385050bytes，沒有放寬上限。
 
 勿apt install、改kernel/Wi-Fi/Tailscale或重啟交易主機。WebKit依賴只在CI隔離runner安裝。push目標phase/full-experience，憑證helper見完整體驗交接，勿印token。PR57已merge9c415fd，PR58維持draft。
+
+U03已生成16音訊，G07原40s超時後改單job120s截止；4個音訊排程測試PASS。無須再次產生或重新下載既有音訊。`scripts/author-u03.py`經共用序列化產JSON，遇APPROVED稿拒絕覆蓋。新圖412212bytes，完整prompt及來源在docs/content/U03。

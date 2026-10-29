@@ -13,9 +13,13 @@ export async function synthesize(script:string):Promise<Buffer>{
     const job=await response.json() as {success:boolean;retryAfter?:number;audioStatusUrl:string;wavDownloadUrl:string;speakerName?:string}
     if(!job.success){if(request===0 && job.retryAfter && job.retryAfter<=30){await delay(job.retryAfter*1000);continue}throw new Error('Synthesis unavailable or rate-limited')}
     if(job.speakerName && !job.speakerName.includes('四国めたん'))throw new Error('Unexpected voice identity')
-    for(let poll=0;poll<20;poll++){
-      await delay(2000)
-      const status=await fetch(trusted(job.audioStatusUrl),{signal:AbortSignal.timeout(10000)})
+    // Longer teaching scripts can exceed the old 40s queue allowance. Keep one
+    // accepted job and a wall-clock deadline; do not submit duplicate synthesis.
+    const deadline=Date.now()+120000
+    for(let poll=0;poll<60 && Date.now()<deadline;poll++){
+      await delay(Math.min(2000,deadline-Date.now()))
+      const remaining=deadline-Date.now();if(remaining<=0)break
+      const status=await fetch(trusted(job.audioStatusUrl),{signal:AbortSignal.timeout(Math.min(10000,remaining))})
       if(!status.ok)throw new Error(`Audio status HTTP ${status.status}`)
       const state=await status.json() as {isAudioReady:boolean;isAudioError:boolean}
       if(state.isAudioError)throw new Error('Voice engine rejected the text')

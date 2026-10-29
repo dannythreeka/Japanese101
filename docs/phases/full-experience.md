@@ -6,9 +6,9 @@
 
 - worktree `/home/yyy/workspace/Japanese101-p2`，branch `phase/full-experience`。命名p2不代表仍只做P2。原P1 checkout勿碰。
 - PR57已merge：`9c415fd1a690228838fbfab0afdc8a4e5ef92436`，head327ec61；CI40911695545三瀏覽器全綠。
-- 後續draft PR58：https://github.com/dannythreeka/Japanese101/pull/58 。最新已push `4f02a5ca832989be5bd0be746c71e178821895e6`（假名先修檢核）。40269c2多單元基礎、bb1aa45假名教學、f7a9cf2交接。
-- **本批U02等尚待完成測試與commit/push**；以git status/log確認，不假稱已提交。所有未提交修改為本session，沒有混入他人修改。
-- 4f02a5c的CI40920767848：Test & Build成功；三瀏覽器各45PASS/1FAIL，同一P2審閱測試使用未命名combobox，新增教材select後strict violation。已改明確「選擇題目」，需新CI確認。上一版f7的CI40916267390三引擎全綠，不拿它替代新結果。
+- 後續draft PR58：https://github.com/dannythreeka/Japanese101/pull/58 。最新已push `3289f0ae477fb745e62f6b6a4b31b38adcd5439e`（U02、完整跨單元匯出與試用材料）；前一提交`4f02a5ca832989be5bd0be746c71e178821895e6`為假名先修檢核。40269c2多單元基礎、bb1aa45假名教學、f7a9cf2交接。
+- **本批U03七項瀏覽器已PASS，尚待commit/push**；以git status/log確認，不假稱已提交。所有未提交修改為本session，沒有混入他人修改。
+- 4f02a5c的CI40920767848：Test & Build成功；三瀏覽器各45PASS/1FAIL，同一P2審閱測試使用未命名combobox，新增教材select後strict violation。已改明確「選擇題目」，3289f0的CI40925952499建置與三瀏覽器均success。上一版f7的CI40916267390三引擎全綠，不拿它替代新結果。
 
 ## 真實工程狀態
 
@@ -22,8 +22,8 @@
 
 ## 下一步
 
-1. 本批31項回歸與最後文字修訂重驗均已PASS，截圖已檢視；完成commit/push及PR58更新，維持draft。CI若再失敗，查實際job log再修。
-2. 製作U03／U04實際教材與音訊，沿用registry／generic inventory／authoring與review ledger，不用換人名或選項灌family；P3-02需四單元100詞20漢字至少10文法16閱讀24聽力200practice。補P3-03隔離試用fixture。
+1. U02批次已commit/push，CI40925952499三引擎success。當前U03已完成教材、16音訊、4格插畫與7項內容關聯測試；U02/U03七項Chromium已PASS、素材與320/768圖已檢視；完成commit／push及PR58更新。
+2. U03已完成草稿工程（65題、16音訊、135人審NOT_RUN）；繼續製作U04實際教材與音訊，沿用registry／generic inventory／authoring與review ledger，不用換人名或選項灌family；P3-02需四單元100詞20漢字至少10文法16閱讀24聽力200practice。補P3-03隔離試用fixture。
 3. P4全部24單元共600詞100漢字60文法96閱讀144聽力1200練習。獨立檢核不同family且跨日至少48h規則不變；真人語言與音訊審核未取得仍DRAFT。
 4. P5原創A/B/C各80題（25/30/25），與練習／check及互相題族隔離；20/40/30分鐘狀態機、交卷冪等、分段／中斷／重做標示、raw報告與7日兩卷內部指標、家長完整備份還原、SW安全更新。
 5. 真人／實機、九人與18人14天試用據實處理；不自動招募、發訊息或買服務。現在仍有大量獨立工程，goal不應blocked。

@@ -5,13 +5,14 @@ import {journeyManifest} from '../src/world/manifest'
 import {u01} from '../src/content/packs/u01'
 import {availablePacks} from '../src/content/packs/registry'
 import u02Art from '../public/assets/img/u02/manifest.json'
+import u03Art from '../public/assets/img/u03/manifest.json'
 import art from '../public/assets/img/journey/manifest.json'
 import audio from '../public/assets/audio/u01/manifest.json'
 import worldAudio from '../public/assets/audio/world/manifest.json'
 import blueprint from '../docs/content/n5-manifest.json'
 import {town,WORLD_VERSION} from '../src/world/map'
 const formal=process.argv.includes('--release')
-const assets=[...art.assets,...u02Art.assets]
+const assets=[...art.assets,...u02Art.assets,...u03Art.assets]
 const knownSkills=[...blueprint.skills.map(s=>s.id),...availablePacks.filter(p=>p.id.startsWith('KANA-')).flatMap(p=>p.teaching.flatMap(c=>c.skillIds))]
 const errors=journeyErrors(journeyManifest,availablePacks,assets,knownSkills,formal)
 const hash=(b:string|Uint8Array)=>createHash('sha256').update(b).digest('hex')

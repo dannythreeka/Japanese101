@@ -1,31 +1,16 @@
-import {test,expect,type Page} from '@playwright/test'
+import {test,expect} from '@playwright/test'
 import {readFile} from 'node:fs/promises'
 import type {UnitPack,Attempt} from '../src/content/contracts'
 import type {BattleSession} from '../src/db/journey-models'
 import {offlineOrigin} from './helpers/offlineOrigin'
+import {records,teach,play,queueQuestions} from './helpers/unitJourney'
 const pack=JSON.parse(await readFile('src/content/packs/u02.json','utf8')) as UnitPack
-async function records<T>(page:Page,store:string):Promise<T[]>{return page.evaluate(store=>new Promise((resolve,reject)=>{const r=indexedDB.open('Japanese101DB');r.onsuccess=()=>{const db=r.result,tx=db.transaction(store),q=tx.objectStore(store).getAll();q.onsuccess=()=>resolve(q.result);q.onerror=()=>reject(q.error);tx.oncomplete=()=>db.close()}}),store)}
-async function teach(page:Page){
-  await page.getByRole('button',{name:'認識新內容',exact:true}).click()
-  const nav=page.getByRole('navigation',{name:'認識新內容',exact:true})
-  for(let n=0;n<pack.teaching.length;n++){
-    await nav.getByRole('button').nth(n).click()
-    await page.getByRole('button',{name:'讀過了，記在手帳',exact:true}).click()
-    await expect(page.getByRole('button',{name:'已保存',exact:true})).toBeVisible()
-  }
-  await page.getByRole('button',{name:'返回',exact:true}).first().click()
-}
-async function play(page:Page){
-  await page.getByRole('button',{name:'播放音訊',exact:true}).click()
-  await expect(page.getByRole('button',{name:'停止播放',exact:true})).toContainText(/正在播放|播放中/)
-  await expect(page.getByRole('button',{name:'播放音訊',exact:true})).toBeVisible({timeout:15000})
-}
 test('U02 four strands save real attempts, retain illustrated feedback and export into the correct parent unit',async({page})=>{
   test.setTimeout(60000)
-  await page.goto('/#/preview/adventure?unit=U02&scene=dojo');await teach(page)
+  await page.goto('/#/preview/adventure?unit=U02&scene=dojo');await teach(page,pack)
   // Isolated test queue selects one item in each strand; teaching and all answers use the actual UI.
   const queue=['T03','T05','T08','T11'].map(type=>pack.questions.find(q=>q.typeId===type)!.id)
-  await page.evaluate(ids=>new Promise<void>((resolve,reject)=>{const r=indexedDB.open('Japanese101DB');r.onsuccess=()=>{const db=r.result,tx=db.transaction('studyPlans','readwrite'),store=tx.objectStore('studyPlans'),q=store.get(['player','U02']);q.onsuccess=()=>store.put({...q.result,questionIds:ids});tx.oncomplete=()=>{db.close();resolve()};tx.onerror=()=>reject(tx.error)}}),queue)
+  await queueQuestions(page,pack.id,queue)
   await page.getByRole('button',{name:'練習對戰',exact:true}).click()
   for(let n=0;n<queue.length;n++){
     await page.getByRole('button',{name:'普通攻擊',exact:true}).click()

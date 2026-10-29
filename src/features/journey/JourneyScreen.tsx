@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { Link, useNavigate, useSearchParams } from 'react-router-dom'
 import { AudioControl, Button, Dialog, Progress, StatePanel } from '../../components/ui/journey-ui'
 import OfflinePack from '../../components/OfflinePack'
 import { setActiveProfileId } from '../../db'
 import type { UnitPack } from '../../content/contracts'
+import { availablePacks } from '../../content/packs/registry'
 import { u01 as defaultPack } from '../../content/packs/u01'
 import { CATALOG_VERSION } from '../../economy/catalog'
 import {currentBattle,currentCheck,currentWorld} from '../../db/journey-compatibility'
@@ -34,7 +35,7 @@ export default function JourneyScreen({pack:u01=defaultPack}:{pack?:UnitPack}){
   const failedWorld=useRef<{position:Point;facing:Facing}|null>(null)
   const entering=useRef(false);const purchaseIds=useRef(new Map<string,string>())
   const scene=params.get('scene') ?? 'town';const id=params.get('id')
-  const go=(scene:string,id?:string)=>{setPanel(null);setParams(scene==='town' ? {}:{scene,...(id ? {id}:{})})}
+  const go=(scene:string,id?:string)=>{setPanel(null);setParams({...(u01.id==='U01'?{}:{unit:u01.id}),...(scene==='town'?{}:{scene}),...(id?{id}:{})})}
   useEffect(()=>{stopJourneyAudio();stopSpeaking();return ()=>{stopJourneyAudio();stopSpeaking()}},[scene,profileId])
   useEffect(()=>{const update=()=>{void reload().catch(()=>setError('unavailable'))};window.addEventListener('focus',update);return()=>window.removeEventListener('focus',update)},[reload,setError])
   useEffect(()=>{const timer=setInterval(()=>setClock(Date.now()),30000);return()=>clearInterval(timer)},[])
@@ -68,11 +69,11 @@ export default function JourneyScreen({pack:u01=defaultPack}:{pack?:UnitPack}){
   const items=Object.values(data.equipment)
   const today=localDay(clock,data.study.timeZone)
   const summary=summarize(data.attempts.filter(a=>localDay(Date.parse(a.submittedAt),data.study!.timeZone)===today))
-  const due=data.reviews.filter(r=>r.dueDate<=today)
+  const due=data.reviews.filter(r=>r.dueDate<=today && u01.questions.some(q=>q.skillIds.includes(r.skillId)))
   const eligible=u01.questions.some(q=>q.partition==='practice' && q.teachingIds.every(id=>data.study!.taughtCards.includes(id)))
   const checkEligible=u01.questions.some(q=>q.partition==='check' && q.teachingIds.every(id=>data.study!.taughtCards.includes(id)))
   const worldOutdated=data.world && !currentWorld(data.world)
-  const welcomeOpen=panel==='welcome' || !data.study.onboarding && !data.attempts.length && !data.study.taughtCards.length && scene==='town'
+  const welcomeOpen=panel==='welcome' || u01.id==='U01' && !data.study.onboarding && !data.attempts.length && !data.study.taughtCards.length && scene==='town'
   const startBattle=()=>{if(resumeBattle){go('battle',resumeBattle.id);return}void perform(async()=>{const battle=await repo.startBattle(profileId);go('battle',battle.id)})}
   const startCheck=()=>{void perform(async()=>{const check=await repo.startCheck(profileId);go('check',check.id)})}
   return <JourneyPetContext.Provider value={pet}><main className="journey journey-shell" lang={lang==='ja'?'ja':'zh-Hant'}>
@@ -88,8 +89,8 @@ export default function JourneyScreen({pack:u01=defaultPack}:{pack?:UnitPack}){
       {worldOutdated ? <StatePanel state="retryable-error" title={t('versionError')} action={t('continueJourney')} onAction={()=>{void perform(()=>repo.recoverWorld(profileId))}}/>:<WorldScene key={`${data.world?.worldVersion ?? WORLD_VERSION}:${warp}`} initialPosition={data.world?.position ?? town.spawn} initialFacing={data.world?.facing ?? 'down'} items={items} paused={!!panel || !!resident || pending || !!error || welcomeOpen} onPersist={persist} onEnter={enter} onPause={()=>setPanel('pause')}/>}
     </>}
     {scene==='dojo' && <section className="journey-body journey-stack"><div className="journey-content-header"><h1>{t('dojo')}</h1><Button variant="secondary" onClick={()=>go('town')}>{t('returnTown')}</Button></div>
-      <div className="journey-mentor"><img src={`${import.meta.env.BASE_URL}assets/img/journey/mentor.webp`} alt=""/><div><h2>{lang==='zh'?'歡迎，旅行者。':'ようこそ、たびびとさん。'}</h2><p>{u01.id} · {u01.title}</p><p>{t('unitGoal')}</p><p>{t('learnFirst')}</p><p>{t('noDeadline')}</p></div></div>
-      <div className="journey-actions"><Button onClick={()=>go('learn')}>{t('teach')}</Button><Button disabled={pending || !eligible} onClick={startBattle}>{resumeBattle ? t('resume'):t('practice')}</Button><Button variant="secondary" disabled={pending || !checkEligible} onClick={startCheck}>{unfinishedCheck ? t('resume'):t('check')}</Button><Button variant="quiet" onClick={()=>navigate('/play/gallery')}>{lang==='zh'?'先認識五十音':'かなをみる'}</Button></div>
+      <nav aria-label={lang==='zh'?'選擇教材':'きょうざいをえらぶ'} className="journey-actions">{availablePacks.map(pack=><Link key={pack.id} className="journey-button journey-button--secondary" aria-current={u01.id===pack.id?'page':undefined} to={`/preview/adventure?unit=${pack.id}&scene=dojo`}>{pack.id} · {pack.title}</Link>)}</nav><div className="journey-mentor"><img src={`${import.meta.env.BASE_URL}assets/img/journey/mentor.webp`} alt=""/><div><h2>{lang==='zh'?'歡迎，旅行者。':'ようこそ、たびびとさん。'}</h2><p>{u01.id} · {u01.title}</p><p>{u01.id==='U01' ? t('unitGoal'):lang==='zh'?'先聽讀音、觀察字形，再用戰鬥練習。平假名和片假名會分開記錄。':'おととかたちをまなんで、れんしゅうしましょう。'}</p><p>{t('learnFirst')}</p><p>{t('noDeadline')}</p></div></div>
+      <div className="journey-actions"><Button onClick={()=>go('learn')}>{t('teach')}</Button><Button disabled={pending || !eligible} onClick={startBattle}>{resumeBattle ? t('resume'):t('practice')}</Button><Button variant="secondary" disabled={pending || !checkEligible} onClick={startCheck}>{unfinishedCheck ? t('resume'):t('check')}</Button><Button variant="quiet" onClick={()=>navigate('/preview/adventure?unit=KANA-HIRA&scene=learn')}>{lang==='zh'?'先認識五十音':'かなをみる'}</Button></div>
       {!eligible && <p>{t('learnFirst')}</p>}
     </section>}
     {scene==='learn' && <TeachingScene pack={u01} study={data.study} index={teachingIndex} onIndex={setTeachingIndex} onTeach={id=>{void perform(()=>repo.teach(profileId,id))}} onBack={()=>go('dojo')} pending={pending}/>}

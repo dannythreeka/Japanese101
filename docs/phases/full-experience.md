@@ -22,4 +22,6 @@
 
 先讀本檔、project.md、tasks.md、P2 handoff、git status/log。Node22路徑見P2 handoff。禁止更動交易主機apt/kernel/Wi-Fi等。不要重做已通過工程、不要碰原P1 checkout。新目標取代先前單一P2被blocked的範圍，勿因同一人工缺口停止全部可獨立工程。
 
-本批驗證：225項單元／24檔案PASS（含新增3項跨單元回歸）；typecheck、lint、Preview build PASS。24項Chromium正在執行，session43558；檢查完成後更新結果。先完成此批commit再開始下一批。
+本批驗證：225項單元／24檔案PASS（含新增3項跨單元回歸）；typecheck、lint、Preview build PASS。24項Chromium全PASS（3.8分鐘），對應40269c2多單元基礎提交；後續假名入口需另驗。先完成此批commit再開始下一批。
+
+P3-01首批已實作與驗證，細節見P3 handoff；227單元、型別、lint PASS；2項新Chromium真音訊／切單元／重整測試與3寬截圖通過。獨立check仍缺，勿誤標DONE。PR57 WebKit仍在跑（開始2026-10-29T16:28:03Z），其他3jobs success。

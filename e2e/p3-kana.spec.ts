@@ -1,0 +1,37 @@
+import {test,expect} from '@playwright/test'
+
+test('kana lessons and audio battle persist separately for each script and link back to U01',async({page})=>{
+  await page.goto('/#/preview/adventure?unit=KANA-HIRA&scene=learn')
+  const nav=page.getByRole('navigation',{name:'認識新內容',exact:true})
+  await expect(nav.getByRole('option')).toHaveCount(46)
+  for(const width of [320,768,1024]){await page.setViewportSize({width,height:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);await page.screenshot({path:`docs/phases/P3/evidence/kana-teaching-${width}.png`,fullPage:true})}
+  await page.getByRole('button',{name:'讀過了，記在手帳',exact:true}).click()
+  await expect(page.getByRole('button',{name:'已保存',exact:true})).toBeVisible()
+  await page.reload();await expect(page.getByRole('button',{name:'已保存',exact:true})).toBeVisible()
+  await page.getByRole('button',{name:'返回',exact:true}).first().click()
+  await page.getByRole('button',{name:'練習對戰',exact:true}).click()
+  await page.getByRole('button',{name:'普通攻擊',exact:true}).click()
+  await expect(page.getByRole('button',{name:'確認答案',exact:true})).toBeDisabled()
+  await page.getByRole('button',{name:'播放音訊',exact:true}).click()
+  await page.getByRole('button',{name:'あ',exact:true}).click()
+  await expect(page.getByRole('button',{name:'確認答案',exact:true})).toBeEnabled({timeout:15000})
+  await page.getByRole('button',{name:'確認答案',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'答對了，一起記住這個重點。',exact:true})).toBeVisible()
+  await page.goto('/#/preview/adventure?unit=KANA-KATA&scene=learn')
+  await expect(nav.getByRole('option')).toHaveCount(46)
+  await expect(page.getByRole('button',{name:'讀過了，記在手帳',exact:true})).toBeVisible()
+  await page.getByRole('button',{name:'返回',exact:true}).first().click()
+  await expect(page.getByRole('button',{name:'練習對戰',exact:true})).toBeDisabled()
+  await page.getByRole('link',{name:'U01 · 自我介紹：認識小鎮的新朋友',exact:false}).click()
+  await expect(page).toHaveURL(/unit=U01&scene=dojo/)
+  await page.goto('/#/preview/adventure?unit=KANA-HIRA&scene=dojo')
+  await page.getByRole('button',{name:'繼續挑戰',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'答對了，一起記住這個重點。',exact:true})).toBeVisible()
+})
+
+test('unknown units have a recoverable route and do not silently open another pack',async({page})=>{
+  await page.goto('/#/preview/adventure?unit=UNAVAILABLE')
+  await expect(page.getByRole('heading',{name:'找不到這份教材 / きょうざいがありません',exact:true})).toBeVisible()
+  await page.getByRole('button',{name:'返回小鎮 / まちへ',exact:true}).click()
+  await expect(page.getByRole('heading',{name:'青葉町旅行手帳',exact:true})).toBeVisible()
+})

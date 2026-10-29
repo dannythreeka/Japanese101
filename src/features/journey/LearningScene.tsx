@@ -11,7 +11,7 @@ export function TeachingScene({pack:u01=defaultPack,study,index,onIndex,onTeach,
   const {lang,t}=useJourneyText();const card=u01.teaching[Math.max(0,Math.min(index,u01.teaching.length-1))]
   const ready=card.prerequisites?.every(id=>study.taughtCards.includes(id)) ?? true
   return <div className="journey-body journey-stack"><div className="journey-content-header"><h1>{t('teach')}</h1><Button variant="secondary" onClick={onBack}>{t('back')}</Button></div>
-    <nav className="journey-lesson-nav" aria-label={t('teach')}>{u01.teaching.map((c,n)=><Button key={c.id} variant="secondary" aria-pressed={index===n} onClick={()=>onIndex(n)}>{n+1}{study.taughtCards.includes(c.id) ? ' ✓':''}</Button>)}</nav>
+    <nav className="journey-lesson-nav" aria-label={t('teach')}>{u01.teaching.length>12 ? <label>{lang==='zh'?'選擇假名':'かなをえらぶ'} <select value={index} onChange={e=>onIndex(Number(e.target.value))} style={{minHeight:64,maxWidth:'100%',fontSize:'inherit',padding:12}}>{u01.teaching.map((c,n)=><option key={c.id} value={n}>{n+1}. {c.title}{study.taughtCards.includes(c.id)?' ✓':''}</option>)}</select></label>:u01.teaching.map((c,n)=><Button key={c.id} variant="secondary" aria-pressed={index===n} onClick={()=>onIndex(n)}>{n+1}{study.taughtCards.includes(c.id) ? ' ✓':''}</Button>)}</nav>
     <article className="journey-card journey-stack"><h2>{lang==='ja' ? card.titleJa ?? card.title:card.title}</h2>
       <div lang={lang==='ja' && card.bodyJa ? 'ja':'zh-Hant'} style={{whiteSpace:'pre-wrap'}}>{lang==='ja' ? card.bodyJa ?? card.body:card.body}</div>
       <p><JapaneseText text={card.example}/></p><p>{lang==='ja' ? card.translationJa ?? card.translation:card.translation}</p>

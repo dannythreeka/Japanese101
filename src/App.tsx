@@ -21,7 +21,7 @@ import LevelComplete from './features/adventure/LevelComplete'
 import ProfileSelector from './features/profiles/ProfileSelector'
 import ProfileCreate from './features/profiles/ProfileCreate'
 const UiReview=lazy(()=>import('./features/journey/UiReview'))
-const JourneyScreen=lazy(()=>import('./features/journey/JourneyScreen'))
+const JourneyScreen=lazy(()=>import('./features/journey/JourneyEntry'))
 const ContentReview=lazy(()=>import('./features/journey/ContentReview'))
 
 export default function App() {

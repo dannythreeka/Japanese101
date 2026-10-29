@@ -415,15 +415,25 @@ P2-09-R1（2026-10-30，入口修正，依賴 P2-12）：使用者從 Preview �
 
 #### P4-02｜內容檢查與審核工具
 
-- 狀態：**TODO**；負責：工程／內容。
+- 狀態：**IN_PROGRESS**；工程：Codex；負責：工程／內容。
 - 依賴：P4-01、P1-11、P2-01。
 - 交付物：content inventory/coverage/review scripts與審核預覽。
 - 驗收：一鍵列unique詞/漢字/文法、閱讀/音訊/練習數、14題型覆蓋、5題族/skill缺口、broken refs及review狀態。能指出精確item ID；未審/缺音/重複題族可讓release檢查失敗。
 
+- 2026-10-30 依完整體驗授權提前完成工具工程：validate:units整合全課skill／題族覆蓋與逐項hash審核，產[實際缺口報告](docs/content/curriculum-coverage.json)。75節點中12有檢核候選、63有缺口；554筆內容／素材審核均未核准。既有人工前置未補DONE。
+
+#### P4-GAP-01｜補齊共通能力的獨立延後檢核
+
+- 狀態：**TODO**；工程／草稿作者：Codex；實際日語審核者待指派。
+- 原因：全課盤點發現K-HIRA、K-KATA、K-CONTRAST、K-SCRIPT、V-CONTEXT、V-PARA、R-SHORT、R-MID、R-INFO、L-TASK、L-KEY、L-EXPR、L-RESP、G-ORDER、G-TEXT共15項尚無primary check題族；前三項也缺全課主測量practice。不能只以G01～12文法候選或假名先修分組取代。
+- 依賴：P4-02、P4-01（正式內容放行）；跨phase隔離草稿依project.md 2026-10-30授權可先推進。
+- 交付物：逐skill的教學／primary practice／check題目與素材映射，至少五個語意獨立題族／skill，音訊與適齡審核紀錄；接入既有延後複習，不把check塞進50題practice配額。
+- 驗收：15項的教學與主要測量完整，機械重複、練習／檢核交叉、失效hash審核皆被擋；非原作者確認題族獨立性、無提示／音訊政策與原有48h跨兩天規則，實際播放器及離線可用。不以重排、換人名、次要skill標籤或先修略過資格補數。
+
 #### P4-03｜完成24單元跨單元教學審核
 
 - 狀態：**TODO**；負責：內容審核者。
-- 依賴：P4-02、U01-I、U02-I、U03-I、U04-I、U05-I、U06-I、U07-I、U08-I、U09-I、U10-I、U11-I、U12-I、U13-I、U14-I、U15-I、U16-I、U17-I、U18-I、U19-I、U20-I、U21-I、U22-I、U23-I、U24-I。
+- 依賴：P4-02、P4-GAP-01、U01-I、U02-I、U03-I、U04-I、U05-I、U06-I、U07-I、U08-I、U09-I、U10-I、U11-I、U12-I、U13-I、U14-I、U15-I、U16-I、U17-I、U18-I、U19-I、U20-I、U21-I、U22-I、U23-I、U24-I。
 - 交付物：先備知識、自然語言、題型分布與難度覆蓋報告。
 - 驗收：新概念未教先考、答案歧義、題族假重複、字幕洩漏、漢字提示洩漏逐項排除。24單元滿足配額與14題型；所有技能都有教學、練習、延後檢核和至少五題族；缺口須開明確內容task修正。
 

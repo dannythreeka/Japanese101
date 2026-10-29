@@ -1,0 +1,47 @@
+{
+  "baseCommit": "93a5dbda648fa8bc6637cdade3a5a1647e3d997c",
+  "workingTree": "P4-02 tooling changes only; no runtime UI change",
+  "command": "node --import tsx scripts/unit-inventory.ts --release",
+  "exitCode": 1,
+  "expectedResult": "REJECTED_MISSING_CONTENT_AND_HUMAN_REVIEW",
+  "errorCount": 644,
+  "coverage": {
+    "skills": 75,
+    "withCandidateCoverage": 12,
+    "withGaps": 63,
+    "mechanicalDuplicateGroups": 0
+  },
+  "review": {
+    "items": 554,
+    "validMetadata": 0
+  },
+  "missingUnits": [
+    "U05",
+    "U06",
+    "U07",
+    "U08",
+    "U09",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U18",
+    "U19",
+    "U20",
+    "U21",
+    "U22",
+    "U23",
+    "U24"
+  ],
+  "examples": [
+    "/assets/img/journey/u01-contexts.webp: release requires image approval",
+    "terrain: release requires art approval",
+    "Full curriculum incomplete: U05, U06, U07, U08, U09, U10, U11, U12, U13, U14, U15, U16, U17, U18, U19, U20, U21, U22, U23, U24",
+    "K-HIRA: primary practice, primary independent check, independent families 0/5"
+  ],
+  "coverageReportSha256": "2a221461e26c79feb18494d46eac31a1b225ead8ca6dac4dad6e8b5cc86d3da5"
+}

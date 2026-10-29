@@ -7,8 +7,8 @@
 - `/home/yyy/workspace/Japanese101-p2`，branch `phase/full-experience`；原P1 checkout勿碰。所有本次未提交修改均本session工作。
 - PR57已merge9c415fd1a690228838fbfab0afdc8a4e5ef92436，CI40911695545全綠。
 - 後續draft PR58：https://github.com/dannythreeka/Japanese101/pull/58 ，不要自動merge／正式發布。
-- 已push3982b5cc42e00a933c80da7e8e3a4cf3dadc17bc（U03）。CI40930288466建置及三引擎success；前3289f0（U02）CI40925952499亦全綠。更早4f02a5c是假名先修檢核。
-- 本批U04／首四課整合／fixture狀態以git log/status確認；最終產品測試紀錄在docs/phases/P3/acceptance.md。不要拿舊commit CI替代新變更。
+- 最新已push93a5dbda648fa8bc6637cdade3a5a1647e3d997c（首四課與fixture），CI40934773054進行中；前3982b5cc42e00a933c80da7e8e3a4cf3dadc17bc為U03。CI40930288466建置及三引擎success；前3289f0（U02）CI40925952499亦全綠。更早4f02a5c是假名先修檢核。
+- U04／首四課整合／fixture已提交93a5dbd；本批P4-02工具狀態以git log/status確認；最終產品測試紀錄在docs/phases/P3/acceptance.md。不要拿舊commit CI替代新變更。
 
 ## 實際工程狀態
 
@@ -22,8 +22,8 @@
 
 ## 接續工作
 
-1. U04最後驗證與位置提示圖檢視已完成；commit／push／更新draft PR58並查CI。若已完成，以最新handoff與git log接續，勿重做。
-2. P4-02工程：完整unique配額／14題型／skill教學與延後check五題族缺口／hash-based review報告。現有G01～12有grammar check，但不能宣稱共通詞彙／閱讀／聽力skill均已有五獨立family。
+1. U04已commit/push93a5dbd並更新draft PR58；查CI40934773054。本批P4-02工具與新task P4-GAP-01保存／提交狀態看git log；先讀P4/handoff再接續。
+2. P4-02工具已實作完整配額／14題型／skill五題族缺口／逐項hash簽核。報告curriculum-coverage.json：75節點12有候選63缺口，554筆簽核全未核准；P4-GAP-01補15共通skill的primary practice/check，P4 task總146項。下一步開始真實補題，不能宣稱共通skill已覆蓋。
 3. 製作U05～24真實原創內容與音訊；不能只換人名／選項來灌family。P4總量600詞100漢字60文法96閱讀144聽力1200practice，人工審核未完成仍DRAFT。
 4. P5三份原創80題卷（25/30/25，20/40/30分鐘）及互相／練習題族隔離；時鐘／中斷／冪等交卷、raw報告、7日兩卷指標、完整備份還原、安全SW更新。
 5. 真人／實機、九人及18人14天試用只能記真實結果；不自動招募、買服務或發訊息。仍有大量獨立工程，不把goal標BLOCKED或COMPLETE。

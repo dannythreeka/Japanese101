@@ -1,5 +1,5 @@
 {
-  "version": "0caff4d5abd051bd",
+  "version": "aaecf5abff5a4e3c",
   "assets": [
     {
       "path": "assets/audio/kana_a.wav",
@@ -520,6 +520,11 @@
       "path": "assets/audio/kana_zu.wav",
       "bytes": 19534,
       "sha256": "5ff0f30bcbd7f96a71fd6ccd64890acf30789475a8114aa841b50ed203e1235d"
+    },
+    {
+      "path": "assets/audio/kana-placement/hon-wo.wav",
+      "bytes": 52814,
+      "sha256": "132d798d56b92509ef8edc63096e385ec7c38844cb3d914205206a4d7430737f"
     },
     {
       "path": "assets/audio/phrase_gambare.wav",

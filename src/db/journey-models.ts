@@ -16,5 +16,5 @@ export interface InventoryItem { profileId:string; itemId:string; acquiredAt:num
 export interface Equipment { profileId:string; slots:Partial<Record<EquipmentSlot,string>> }
 export interface PurchaseReceipt { id:string; profileId:string; itemId:string; catalogVersion:string; price:number; createdAt:number }
 export interface FirstWin { profileId:string; challengeId:string; battleId:string }
-export interface LearningCheck { id:string; profileId:string; unitId:string; contentVersion:string; questionIds:string[]; index:number; phase:'question'|'acknowledge'|'review'|'finished'; createdAt:number; updatedAt:number }
+export interface LearningCheck { purpose?:'kana-placement'; group?:number; id:string; profileId:string; unitId:string; contentVersion:string; questionIds:string[]; index:number; phase:'question'|'acknowledge'|'review'|'finished'; createdAt:number; updatedAt:number }
 export interface JourneyTables { attempts:Attempt[]; world:WorldCheckpoint[]; plans:StudyPlan[]; reviews:SkillReview[]; battles:BattleSession[]; checks:LearningCheck[]; wallets:CoinWallet[]; ledger:CoinLedger[]; inventory:InventoryItem[]; equipment:Equipment[]; purchases:PurchaseReceipt[]; firstWins:FirstWin[]; catalogVersions:CatalogVersion[]; backups:MigrationBackup[] }

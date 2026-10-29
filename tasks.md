@@ -358,7 +358,7 @@ P2-09-R1（2026-10-30，入口修正，依賴 P2-12）：使用者從 Preview �
 
 #### P3-01｜整合92個基本假名先修路徑
 
-- 2026-10-30 部分工程交付：92字教學／聽音practice與獨立script進度，細節見docs/phases/P3/progress.md；跳級檢核與真人審核未完成，主task維持TODO。
+- 2026-10-30 部分工程交付：92字教學／聽音practice、獨立詞語音訊先修檢核與script進度已實作；359筆內容／音訊等待真人審核，細節見docs/phases/P3/progress.md，主task維持TODO。
 
 - 狀態：**TODO**；負責：工程／內容。
 - 依賴：P2-09。

@@ -1,3 +1,4 @@
+import {passedPlacementSkills,eligibleTeachingIds} from '../learning/placement'
 import { AppDB, db as defaultDb } from './index'
 import type { UnitPack, Question } from '../content/contracts'
 import { attemptErrors, parseQuestion, validateQuestionBank } from '../content/contracts'
@@ -57,10 +58,16 @@ export class JourneyRepository {
     if(!currentBattle(battle,this.pack)) throw new Error('Battle version changed or data incompatible; original data is preserved')
     return battle
   }
+  private async placementSkills(profileId:string):Promise<string[]> {
+    const checks=await this.database.learningChecks.where('[profileId+unitId]').equals([profileId,this.pack.id]).toArray()
+    const attempts=await this.database.learningAttempts.where('profileId').equals(profileId).toArray()
+    return passedPlacementSkills(this.pack,checks,attempts)
+  }
   async state(profileId:string) {
     await this.owned(profileId)
     const d=this.database
     return d.transaction('r',[d.profiles,d.worldCheckpoints,d.studyPlans,d.learningAttempts,d.battleSessions,d.coinWallets,d.inventory,d.equipment,d.skillReviews,d.learningChecks,d.coinLedger], async()=>({
+      placementSkills:await this.placementSkills(profileId),
       world:await d.worldCheckpoints.get(profileId), study:await d.studyPlans.get([profileId,this.pack.id]),
       attempts:await d.learningAttempts.where('profileId').equals(profileId).toArray(),
       battles:(await d.battleSessions.where('profileId').equals(profileId).toArray()).filter(b=>b.unitId===this.pack.id),
@@ -165,13 +172,14 @@ export class JourneyRepository {
   }
   async startBattle(profileId:string,now=Date.now()): Promise<BattleSession> {
     const d=this.database
-    return d.transaction('rw',[d.profiles,d.studyPlans,d.skillReviews,d.learningAttempts,d.battleSessions,d.equipment],async()=>{
+    return d.transaction('rw',[d.profiles,d.studyPlans,d.skillReviews,d.learningAttempts,d.battleSessions,d.equipment,d.learningChecks],async()=>{
       await this.owned(profileId)
       const existing=(await d.battleSessions.where('profileId').equals(profileId).toArray()).find(b=>b.unitId===this.pack.id && b.phase!=='finished')
       if(existing) return this.activeBattle(profileId,existing.id)
       const plan=await d.studyPlans.get([profileId,this.pack.id])
       if(!plan || plan.contentVersion!==this.pack.version) throw new Error('Study plan unavailable')
-      const questions=this.pack.questions.filter(q=>q.partition==='practice' && q.teachingIds.every(id=>plan.taughtCards.includes(id)))
+      const eligible=eligibleTeachingIds(this.pack,plan.taughtCards,await this.placementSkills(profileId))
+      const questions=this.pack.questions.filter(q=>q.partition==='practice' && q.teachingIds.every(id=>eligible.includes(id)))
       const attempts=(await d.learningAttempts.where('profileId').equals(profileId).toArray()).sort((a,b)=>Date.parse(a.submittedAt)-Date.parse(b.submittedAt) || a.id.localeCompare(b.id))
       const due=(await d.skillReviews.where('profileId').equals(profileId).toArray()).filter(s=>s.dueDate<=localDay(now,plan.timeZone)).map(s=>s.skillId)
       const today=localDay(now,plan.timeZone)
@@ -179,7 +187,7 @@ export class JourneyRepository {
       const used=new Set(attempts.filter(a=>localDay(Date.parse(a.submittedAt),plan.timeZone)===today).map(a=>a.itemId+':'+a.itemFamilyId))
       let queue=ids.filter(id=>!used.has(this.question(id).itemId+':'+this.question(id).itemFamilyId))
       if(!queue.length) {
-        const planned=planQuestions(questions,due,Object.keys(plan.taughtAt),attempts,questions.length)
+        const planned=planQuestions(questions,due,[...Object.keys(plan.taughtAt),...await this.placementSkills(profileId)],attempts,questions.length)
         ids=planned
         queue=planned
       }
@@ -317,6 +325,21 @@ export class JourneyRepository {
     if(!check || check.profileId!==profileId)throw new Error('Check does not belong to this player')
     if(!currentCheck(check,this.pack))throw new Error('Check version changed or data incompatible; original answers are preserved')
     return check
+  }
+  async startKanaPlacement(profileId:string,group:number,now=Date.now()):Promise<LearningCheck>{
+    if(!['KANA-HIRA','KANA-KATA'].includes(this.pack.id) || !Number.isInteger(group) || group<0 || group>9)throw new Error('Invalid kana placement group')
+    const d=this.database
+    return d.transaction('rw',[d.profiles,d.studyPlans,d.learningChecks],async()=>{
+      await this.owned(profileId)
+      const plan=await d.studyPlans.get([profileId,this.pack.id])
+      if(!plan || !currentStudy(plan,this.pack))throw new Error('Study plan unavailable')
+      const existing=(await d.learningChecks.where('[profileId+unitId]').equals([profileId,this.pack.id]).toArray()).find(c=>c.phase!=='finished')
+      if(existing)return this.ownedCheck(profileId,existing.id)
+      const questionIds=this.pack.questions.filter(q=>q.partition==='check').slice(group*5,group*5+5).map(q=>q.id)
+      if(!questionIds.length)throw new Error('Empty kana placement group')
+      const check:LearningCheck={id:crypto.randomUUID(),profileId,unitId:this.pack.id,contentVersion:this.pack.version,purpose:'kana-placement',group,questionIds,index:0,phase:'question',createdAt:now,updatedAt:now}
+      await d.learningChecks.add(check);return check
+    })
   }
   async startCheck(profileId:string,now=Date.now()):Promise<LearningCheck> {
     const d=this.database

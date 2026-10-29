@@ -22,10 +22,10 @@ export function TeachingScene({pack:u01=defaultPack,study,index,onIndex,onTeach,
     <div className="journey-actions"><Button variant="secondary" disabled={index===0} onClick={()=>onIndex(index-1)}>{t('back')}</Button><Button disabled={index>=u01.teaching.length-1} onClick={()=>onIndex(index+1)}>{t('next')}</Button></div>
   </div>
 }
-export function CheckScene({pack:u01=defaultPack,check,attempts,onSubmit,onContinue,onFinish,pending}: {pack?:UnitPack;check:LearningCheck;attempts:Attempt[];onSubmit:(input:AnswerInput)=>Promise<void>;onContinue:()=>void;onFinish:()=>void;pending:boolean}){
+export function CheckScene({pack:u01=defaultPack,onPause,check,attempts,onSubmit,onContinue,onFinish,pending}: {pack?:UnitPack;onPause?:()=>void;check:LearningCheck;attempts:Attempt[];onSubmit:(input:AnswerInput)=>Promise<void>;onContinue:()=>void;onFinish:()=>void;pending:boolean}){
   const {lang,t}=useJourneyText();const question=u01.questions.find(q=>q.id===check.questionIds[check.index])
   const attempt=attempts.find(a=>a.id===`${check.id}:check-${check.index}`)
-  return <div className="journey-body journey-stack"><h1>{t('check')} · {check.index+1} / {check.questionIds.length}</h1>
+  return <div className="journey-body journey-stack"><h1>{t('check')} · {check.index+1} / {check.questionIds.length}</h1>{check.purpose==='kana-placement' && <p>{lang==='zh'?'先修檢核：答對可略過該字的先修教學，不代表已長期掌握。':'できたもじのせつめいは、とばしてれんしゅうできます。'}</p>}{onPause && check.phase!=='finished' && <Button variant="secondary" onClick={onPause}>{lang==='zh'?'暫停，下次繼續':'やすんで、あとでつづける'}</Button>}
     {(check.phase==='review' || check.phase==='finished') ? <>
       <StatePanel state="success" title={t('checkDone')}><p>{t('sample')}：{attempts.filter(a=>a.sessionId===check.id).length}</p></StatePanel>
       {check.questionIds.map((id,index)=>{const q=u01.questions.find(q=>q.id===id)!;const a=attempts.find(a=>a.id===`${check.id}:check-${index}`);return <details key={id} className="journey-card"><summary style={{minHeight:64,padding:12}}>{index+1}. {lang==='ja' ? q.promptJa:q.prompt}</summary><p>{t('yourAnswer')}：{a?.answerIds.map(id=>q.choices.find(c=>c.id===id)?.text).join(' ') || '—'}</p><p>{t('rightAnswer')}：<span lang="ja">{q.answer.map(id=>q.choices.find(c=>c.id===id)?.text).join(' ')}</span></p><p>{lang==='ja' ? q.explanationJa:q.explanation}</p></details>})}

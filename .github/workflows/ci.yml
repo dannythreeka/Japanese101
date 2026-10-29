@@ -42,6 +42,10 @@ jobs:
         if: ${{ !cancelled() }}
         run: npm run validate:journey
 
+      - name: Validate kana content and audio
+        if: ${{ !cancelled() }}
+        run: npm run validate:kana
+
       - name: Lint
         if: ${{ !cancelled() }}
         run: npm run lint

@@ -22,5 +22,10 @@ export function currentBattle(v:unknown,pack:UnitPack):boolean{
   return true
 }
 export function currentCheck(v:unknown,pack:UnitPack):boolean{
-  return object(v) && v.unitId===pack.id && v.contentVersion===pack.version && ['question','acknowledge','review','finished'].includes(String(v.phase)) && list(v.questionIds) && v.questionIds.length>0 && unique(v.questionIds) && v.questionIds.every(id=>pack.questions.some(q=>q.id===id && q.partition==='check')) && typeof v.index==='number' && Number.isInteger(v.index) && v.index>=0 && v.index<v.questionIds.length
+  if(object(v) && v.purpose==='kana-placement'){
+    if(!Number.isInteger(v.group) || Number(v.group)<0 || Number(v.group)>9)return false
+    const expected=pack.questions.filter(q=>q.partition==='check').slice(Number(v.group)*5,Number(v.group)*5+5).map(q=>q.id)
+    if(!expected.length || JSON.stringify(v.questionIds)!==JSON.stringify(expected))return false
+  }
+  return object(v) && (v.purpose===undefined || v.purpose==='kana-placement' && ['KANA-HIRA','KANA-KATA'].includes(pack.id) && Number.isInteger(v.group) && Number(v.group)>=0 && Number(v.group)<=9) && v.unitId===pack.id && v.contentVersion===pack.version && ['question','acknowledge','review','finished'].includes(String(v.phase)) && list(v.questionIds) && v.questionIds.length>0 && unique(v.questionIds) && v.questionIds.every(id=>pack.questions.some(q=>q.id===id && q.partition==='check')) && typeof v.index==='number' && Number.isInteger(v.index) && v.index>=0 && v.index<v.questionIds.length
 }

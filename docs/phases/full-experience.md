@@ -44,3 +44,9 @@ P3-01首批已實作與驗證，細節見P3 handoff；227單元、型別、lint 
 ### 後續重驗
 
 227單元／typecheck／lint最後PASS。U01的24項ChromiumPASS對應40269c2；假名2項ChromiumPASS對應bb1aa45除最後due篩選一行（已在單元／型別通過，完整PR58 CI負責最後整合）。下一批開始前查PR58 CI，處理任何新失敗，不以舊綠燈代替。3幅最後kana-teaching截圖已視覺檢查；46按鈕改select是實際修正，不再引用前版長頁截圖。
+
+## 先修檢核已實作，下一批轉U02（2026-10-30）
+
+上方「下一實作批次P3-01獨立檢核」已完成工程，勿再重做。kana-2-draft兩script各46獨立詞語題、完成組才給先修credit、不偽造教學／stable；實際音訊與359筆review ledger俱備。231單元／lint／型別／build、4ChromiumPASS，新release人審缺口確實阻擋。詳細P3 handoff。最新未人審task仍不能DONE。
+
+PR58上一版f7a9cf2的CI40916267390已確認Test & Build及三瀏覽器全綠。新提交需新CI。接續U02～U04、P4/P5工程及真人材料；goal持續active。全部尚未完成，不可終止為COMPLETE或BLOCKED。

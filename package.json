@@ -22,7 +22,9 @@
     "validate:journey": "tsx scripts/validate-journey.ts",
     "validate:journey:release": "tsx scripts/validate-journey.ts --release",
     "gen:voice:u01": "tsx scripts/generate-u01-audio.ts",
-    "gen:voice:world": "tsx scripts/generate-world-audio.ts"
+    "gen:voice:world": "tsx scripts/generate-world-audio.ts",
+    "validate:kana": "tsx scripts/kana-inventory.ts",
+    "validate:kana:release": "tsx scripts/kana-inventory.ts --release"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

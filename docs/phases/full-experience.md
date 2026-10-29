@@ -44,3 +44,9 @@ U05已完成工程草稿（真25詞5漢字3文法4閱讀6聽力50題＋15check�
 CI ecb6c25 Firefox發現真實領獎非同步導覽競態（59/60）；已新增P2-09-R2真交易延遲測試，修正前重現、修正後Chromium／FirefoxPASS，不再把已進家長區的使用者拉回舊小鎮。最新提交SHA請git log確認。
 
 下一批正在獨立實作P5：docs/design/MOCK_EXAM_SPEC.md重新查官方20/40/30並訂自有25/30/25分配；src/mock藍圖、隔離檢查器與狀態機尚未接UI，沒有實際模擬卷，不能當完成。U06～24／共通15skill、P5保存／UI／備份／人審仍要繼續。
+
+## P5工程批次（2026-10-30）
+
+U05／導航已push4d928ccf68cbbd921ae0ac617fd76f16db184967，CI40941122926建置與Chromium成功、其餘進行中。P5-01／02／03提前工程：官方來源藍圖、題族／材料隔離檢查、固定計時狀態機、raw與B/C首次七日指標、DB v9新增mockSessions／mockCommandReceipts與原子保存。284單元、後補12相關測試、型別lintbuild通過；兩引擎真實v8升級與導航總四項PASS，見P5 acceptance。
+
+下一步P5-04完整備份還原；目前journey-export-v1不含mock表，不應接真實mockUI前略過。所有mock合成題僅test-fixtures，沒有實際MA／MB／MC，沒有操作介面。U06～24、共通15skill與真人驗收仍未完成，goal ACTIVE不要停止。最新commit/push看git log，PR保持draft。

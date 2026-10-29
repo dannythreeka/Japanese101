@@ -1,5 +1,5 @@
 {
-  "version": "2a169442d79dc5a8",
+  "version": "aeac341577a88642",
   "assets": [
     {
       "path": "assets/audio/kana_a.wav",
@@ -885,6 +885,91 @@
       "path": "assets/audio/u04/U04-teach-words-5.wav",
       "bytes": 151630,
       "sha256": "9794feeb71f5264edec39fdf2c21adccc63533ee3501a99a3d359cbe9e857bea"
+    },
+    {
+      "path": "assets/audio/u05/listening-01.wav",
+      "bytes": 147022,
+      "sha256": "b5df89840faf71992755114e66b3c3b07da02a72e5962e524c9c3ce6bd45e0e1"
+    },
+    {
+      "path": "assets/audio/u05/listening-02.wav",
+      "bytes": 458830,
+      "sha256": "98bd83ce5611c747493639db2298f7e505a6cacc8d8efd2e18373b67653bc3b7"
+    },
+    {
+      "path": "assets/audio/u05/listening-03.wav",
+      "bytes": 221774,
+      "sha256": "8bd11c0358137e7df1ff23237906331c1f30260417f66dfac643f03b076973c5"
+    },
+    {
+      "path": "assets/audio/u05/listening-04.wav",
+      "bytes": 120398,
+      "sha256": "4d1951fde37448d60e501dc43414ecd3750ffc8972c7290fcc84f0fbe0170df5"
+    },
+    {
+      "path": "assets/audio/u05/listening-05.wav",
+      "bytes": 73806,
+      "sha256": "14156b1ebe34093e89becb71c3a35fd2bb9591f6788108933b4220a08c9474c8"
+    },
+    {
+      "path": "assets/audio/u05/listening-06.wav",
+      "bytes": 88654,
+      "sha256": "579aaf68af3c03cfaf963b69fd909d4937d35336ef08100bb6c994641cd9796b"
+    },
+    {
+      "path": "assets/audio/u05/manifest.json",
+      "bytes": 10083,
+      "sha256": "bc586d22261903aca5c7fd2a474c861af0b70308d43cb75d73a1fb9f99e4e0cd"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-G13.wav",
+      "bytes": 263246,
+      "sha256": "a45a586174a0e055da373a0007a99d648a9a72ed6152be9d47af83a99e0ceb0e"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-G14.wav",
+      "bytes": 277582,
+      "sha256": "9cc519ff5c495d3575960d403389aaf36314e89909ceb41db8c22991ddf49bc1"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-G15.wav",
+      "bytes": 326222,
+      "sha256": "8fa622b62512892dd5124ee4425a238ebd240009fc9f78a3371d9dd3dbab542c"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-kanji.wav",
+      "bytes": 163406,
+      "sha256": "2d4ca603e8aa938654831025fa78dfe01b5a248974ca8a817992efbdd1ccf14e"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-story.wav",
+      "bytes": 222798,
+      "sha256": "33c34d8aca165b7ab6a68755c0de62cbf8f8c07f2cf13a7eb37bd5033c8cfde1"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-words-1.wav",
+      "bytes": 144974,
+      "sha256": "b086096bd60877b1a5233f52fc361e2cd0c7ca86f4c19372d7e733e00e97671e"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-words-2.wav",
+      "bytes": 164942,
+      "sha256": "f1082eeac80f57a5f9867e65ef67fe1eda67dc863a342378a670832b8ab3361d"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-words-3.wav",
+      "bytes": 185934,
+      "sha256": "256139d3039102008bec17e827916489279df58a13a91c78d8426cd198e6524c"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-words-4.wav",
+      "bytes": 181326,
+      "sha256": "4c0f2e7d1d5a88278058b0f288aa7e517df97b335cf98fcc37d6379343dd4173"
+    },
+    {
+      "path": "assets/audio/u05/U05-teach-words-5.wav",
+      "bytes": 151118,
+      "sha256": "37cde8bb2b1639e3f3290697e4a6e4ef9c2857919b3e72b37ae49863480f7a77"
     },
     {
       "path": "assets/audio/word_w_ajisai.wav",
@@ -2135,6 +2220,16 @@
       "path": "assets/img/u04/positions.webp",
       "bytes": 466134,
       "sha256": "fd68a94051feb947167dcc30c3a6d971ccf251c67cd1000d0ac46c15b1388bd5"
+    },
+    {
+      "path": "assets/img/u05/manifest.json",
+      "bytes": 1228,
+      "sha256": "d7b60467cacbc2c1935b3b25a56bbac6e9c89ccf214a2bd6114d0bb18453b73c"
+    },
+    {
+      "path": "assets/img/u05/people-counts.webp",
+      "bytes": 467082,
+      "sha256": "e507afa9b1fc394ce7723a33fd9e0e8ccc2a16dac3fdf8ca5d2f2b6d4e170115"
     },
     {
       "path": "favicon.svg",

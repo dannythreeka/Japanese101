@@ -9,3 +9,5 @@ P4-GAP-01新增共通15技能的主測量與延後check，P4總146tasks，prompt
 `npm run validate:units`同時查數量、素材、skill與簽核。`node --import tsx scripts/unit-inventory.ts --write`更新機器報告與新單元ledger（不動U01原格式）；`npm run validate:units:release`應拒絕現有缺口。大篇release輸出可寫本機/tmp後只摘統計，不刪錯誤。
 
 不要修改已APPROVED稿；不要把候選題族數當人工語意獨立驗證。不要動交易主機apt／kernel／網路。先讀最新交接與commit，不重做U01～04／假名工程。
+
+最新U05工程已寫並驗證：25詞5漢字3文法50practice＋15check，16WAV、人數原創圖。能力報告目前15候選完整／60缺口、689簽核0有效。P2-09-R2領獎導覽競態修正同批保存，257單元、Chromium5與Firefox7通過；詳acceptance。P5藍圖／題族檢查器與狀態機正另批開發，未接UI或聲稱卷已製作。U06～24與15共通skill仍有獨立工作。

@@ -1,0 +1,7 @@
+# U05 人數插畫
+
+原創生成：內建 image_gen，2026-10-30。旅行手帳水彩／色鉛筆；角色與場景不來自既有商業作品。四等分人數依序1、2、3、4；圖片只測人數，不從外觀推測親屬。Codex已檢視四格人數與邊界；真人視覺／日語教學審核NOT_RUN。
+
+原始提示：
+
+Create one original 2x2 illustration sheet for a Japanese-learning travel-journal adventure for primary-school children. Square 1254x1254 if possible, four EXACTLY equal square panels, no titles, no text, no numbers, no icons, no UI, no printed border. Warm cream paper with hand-painted watercolor and colored-pencil detail, gentle mature storybook quality, full human figures, tasteful blue/terracotta/sage clothes, believable proportions, lovely calm rural Japanese town garden surroundings. This is for COUNTING PEOPLE, so counts must be unmistakable. Top-left: EXACTLY ONE child standing alone in a little garden, empty background, no other human or animal. Top-right: EXACTLY TWO people, one older adult and one child, standing side by side, ample separation, no extra figures. Bottom-left: EXACTLY THREE people, two children and one adult, standing in a shallow line, all fully visible, no extra figures. Bottom-right: EXACTLY FOUR people, one older adult, one younger adult, and two children, all four clearly separate, no extra figures. Do not portray family roles as inferable solely from appearances; these are simply groups of people. No people in windows, pictures, shadows that look like extra people, pets, mannequins, dolls, cropped figures or crowds. Each panel's figures remain comfortably inside their own quadrant with large padding away from seams. Opaque cream background. Equal 2x2 grid composition.

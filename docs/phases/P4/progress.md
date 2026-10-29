@@ -11,3 +11,5 @@
 工具保留U01原有canonical sorted JSON hash與PASS/version格式，不覆寫舊ledger；新單元用現行hash／APPROVED。過期hash、缺reviewer、日期無效、作者自審、重複簽核均不能過release；--write遇重複記錄保留原檔，不挑一筆批准洗掉矛盾。
 
 新增隔離CLI實測：複製U02到臨時目錄，製造矛盾簽核後--write確實exit1且原ledger逐字不變；過期核准hash會重置NOT_RUN／清除reviewer與日期；正式工作樹ledger不變。首輪14項相關測試、型別與lint通過。後續補上小數標點不被當成同題的測試，最終結果見acceptance。
+
+U05草稿與16音訊／人數插畫已整合，135人審NOT_RUN；目前五課，能力候選15／75，缺60，689審核0有效。U05-M／T／Q1／Q2／A IN_REVIEW，V BLOCKED缺真人，I IN_PROGRESS。P2-09-R2修正CI發現的領獎後覆蓋家長區導覽：真交易延遲重現前FAIL、修正後Chromium與FirefoxPASS；詳acceptance。257單元與兩引擎新課回歸通過，未改經濟或掌握門檻。

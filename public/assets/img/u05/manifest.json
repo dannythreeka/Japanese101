@@ -1,0 +1,50 @@
+{
+  "version": "u05-art-1-draft",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "assets": [
+    {
+      "id": "u05-people-counts",
+      "src": "/assets/img/u05/people-counts.webp",
+      "sha256": "e507afa9b1fc394ce7723a33fd9e0e8ccc2a16dac3fdf8ca5d2f2b6d4e170115",
+      "bytes": 467082,
+      "columns": 2,
+      "rows": 2,
+      "source": "Original image generated with built-in image_gen, 2026-10-30",
+      "humanReview": "NOT_RUN",
+      "promptFile": "docs/content/U05/art-prompt.md",
+      "width": 1254,
+      "height": 1254,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ],
+      "originalPngSha256": "14b16c2d22b86b723c9baee9e30edda68f7499a4b0c46732216615f82f7c7aab",
+      "encoding": "WebP quality 0.9, original dimensions, browser Canvas encoder; no composition changes"
+    }
+  ]
+}

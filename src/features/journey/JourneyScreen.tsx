@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react'
-import { Link, useNavigate, useSearchParams } from 'react-router-dom'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { AudioControl, Button, Dialog, Progress, StatePanel } from '../../components/ui/journey-ui'
 import OfflinePack from '../../components/OfflinePack'
 import { setActiveProfileId } from '../../db'
@@ -29,6 +29,10 @@ import './journey.css'
 type Panel='journal'|'places'|'profiles'|'pause'|'welcome'|null
 export default function JourneyScreen({pack:u01=defaultPack}:{pack?:UnitPack}){
   const {lang,t}=useJourneyText();const navigate=useNavigate();const [params,setParams]=useSearchParams()
+  const location=useLocation();const activeRoute=useRef<string|null>(null)
+  // A durable write may finish after the user leaves. Its old callback must not replace the newer route.
+  useLayoutEffect(()=>{activeRoute.current=location.key;return()=>{activeRoute.current=null}},[location.key])
+  const routeIsCurrent=()=>activeRoute.current===location.key
   const {profileId,repo,data,setData,profile,profiles,pet,error,setError,pending,perform,reload,retry}=useJourney(u01)
   const [panel,setPanel]=useState<Panel>(null);const [resident,setResident]=useState<Destination|null>(null);const [line,setLine]=useState(0)
   const [teachingIndex,setTeachingIndex]=useState(0);const [notice,setNotice]=useState('')
@@ -37,7 +41,7 @@ export default function JourneyScreen({pack:u01=defaultPack}:{pack?:UnitPack}){
   const failedWorld=useRef<{position:Point;facing:Facing}|null>(null)
   const entering=useRef(false);const purchaseIds=useRef(new Map<string,string>())
   const scene=params.get('scene') ?? 'town';const id=params.get('id')
-  const go=(scene:string,id?:string)=>{setPanel(null);setParams({...(u01.id==='U01'?{}:{unit:u01.id}),...(scene==='town'?{}:{scene}),...(id?{id}:{})})}
+  const go=(scene:string,id?:string)=>{if(!routeIsCurrent())return;setPanel(null);setParams({...(u01.id==='U01'?{}:{unit:u01.id}),...(scene==='town'?{}:{scene}),...(id?{id}:{})})}
   useEffect(()=>{stopJourneyAudio();stopSpeaking();return ()=>{stopJourneyAudio();stopSpeaking()}},[scene,profileId])
   useEffect(()=>{const update=()=>{void reload().catch(()=>setError('unavailable'))};window.addEventListener('focus',update);return()=>window.removeEventListener('focus',update)},[reload,setError])
   useEffect(()=>{const timer=setInterval(()=>setClock(Date.now()),30000);return()=>clearInterval(timer)},[])
@@ -50,6 +54,7 @@ export default function JourneyScreen({pack:u01=defaultPack}:{pack?:UnitPack}){
     entering.current=true
     void perform(async()=>{
       const world=await repo.saveWorld(profileId,position,facing,destination.id)
+      if(!routeIsCurrent())return
       setData(old=>old ? {...old,world}:old)
       setWarp(value=>value+1)
       if(destination.kind==='npc'){setPanel(null);setLine(0);setResident(destination)}

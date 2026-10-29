@@ -7,7 +7,7 @@
 - `/home/yyy/workspace/Japanese101-p2`，branch `phase/full-experience`；原P1 checkout勿碰。所有本次未提交修改均本session工作。
 - PR57已merge9c415fd1a690228838fbfab0afdc8a4e5ef92436，CI40911695545全綠。
 - 後續draft PR58：https://github.com/dannythreeka/Japanese101/pull/58 ，不要自動merge／正式發布。
-- 最新已push93a5dbda648fa8bc6637cdade3a5a1647e3d997c（首四課與fixture），CI40934773054進行中；前3982b5cc42e00a933c80da7e8e3a4cf3dadc17bc為U03。CI40930288466建置及三引擎success；前3289f0（U02）CI40925952499亦全綠。更早4f02a5c是假名先修檢核。
+- 最新已push工具ecb6c257443d2677736d549cce17a33730c36a07；其CI40937397439發現Firefox領獎導覽競態，正在修正。前93a5dbda648fa8bc6637cdade3a5a1647e3d997c（首四課與fixture）CI40934773054建置／Chromium／Firefox成功，WebKit取消；前3982b5cc42e00a933c80da7e8e3a4cf3dadc17bc為U03。CI40930288466建置及三引擎success；前3289f0（U02）CI40925952499亦全綠。更早4f02a5c是假名先修檢核。
 - U04／首四課整合／fixture已提交93a5dbd；本批P4-02工具狀態以git log/status確認；最終產品測試紀錄在docs/phases/P3/acceptance.md。不要拿舊commit CI替代新變更。
 
 ## 實際工程狀態
@@ -36,3 +36,11 @@ Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`；default
 需要spawn/browser/network用平台範圍核准require_escalated；禁止改交易主機apt、kernel、Broadcom、WiFi、Tailscale、交易排程或重啟。WebKit依賴只在CI隔離runner裝。
 push：`git -c credential.helper= -c 'credential.helper=!python3 /tmp/japanese101-recovery/git-credential.py' -c credential.useHttpPath=true push origin phase/full-experience`。沿用已授權token不輸出；別用固定推p2的/tmp/j101-push-p2.py。
 trace／report在ignored test-results、playwright-report；選定截圖在docs/phases/P3/evidence。作者稿拒覆APPROVED內容；音訊只在稿／檔hash吻合時重用，不重產已成功檔。
+
+## 2026-10-30 接續更新：U05與導覽
+
+U05已完成工程草稿（真25詞5漢字3文法4閱讀6聽力50題＋15check、16WAV、原創人數圖），135人審NOT_RUN。全課目前5課＋2假名pack，125詞250practice，75節點15候選完整／60缺口，689人審0有效。257單元、Chromium5、Firefox7新課與回歸通過；P4/acceptance有來源／步驟／證據。
+
+CI ecb6c25 Firefox發現真實領獎非同步導覽競態（59/60）；已新增P2-09-R2真交易延遲測試，修正前重現、修正後Chromium／FirefoxPASS，不再把已進家長區的使用者拉回舊小鎮。最新提交SHA請git log確認。
+
+下一批正在獨立實作P5：docs/design/MOCK_EXAM_SPEC.md重新查官方20/40/30並訂自有25/30/25分配；src/mock藍圖、隔離檢查器與狀態機尚未接UI，沒有實際模擬卷，不能當完成。U06～24／共通15skill、P5保存／UI／備份／人審仍要繼續。

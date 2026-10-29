@@ -1,0 +1,75 @@
+{
+  "unitId": "U05",
+  "version": "u05-1-draft",
+  "mode": "isolated draft structure",
+  "skills": [
+    {
+      "id": "G13",
+      "prerequisites": [
+        "K-HIRA",
+        "G12"
+      ],
+      "teaching": [
+        "U05-teach-G13"
+      ],
+      "practice": [
+        "U05-Q18",
+        "U05-Q19"
+      ],
+      "checkFamilies": [
+        "U05-CHECK-contrast-list-possessive",
+        "U05-CHECK-repair-list-order",
+        "U05-CHECK-recover-omitted-member",
+        "U05-CHECK-join-two-statements",
+        "U05-CHECK-list-not-age"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G14",
+      "prerequisites": [
+        "K-HIRA",
+        "G13"
+      ],
+      "teaching": [
+        "U05-teach-G14"
+      ],
+      "practice": [
+        "U05-Q20",
+        "U05-Q21"
+      ],
+      "checkFamilies": [
+        "U05-CHECK-single-irregular",
+        "U05-CHECK-four-counter-sound",
+        "U05-CHECK-exclude-nonhuman",
+        "U05-CHECK-match-count-question",
+        "U05-CHECK-keep-speaker-count"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G15",
+      "prerequisites": [
+        "K-HIRA",
+        "G14"
+      ],
+      "teaching": [
+        "U05-teach-G15"
+      ],
+      "practice": [
+        "U05-Q22"
+      ],
+      "checkFamilies": [
+        "U05-CHECK-count-position",
+        "U05-CHECK-correct-absence-reply",
+        "U05-CHECK-introduce-brother-order",
+        "U05-CHECK-existence-not-identity",
+        "U05-CHECK-distinguish-younger-older"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    }
+  ],
+  "audio": 16,
+  "images": 1,
+  "reviewItems": 135
+}

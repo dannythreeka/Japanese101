@@ -1,7 +1,7 @@
 import {useEffect,useRef,useState} from 'react'
 import {BackupService,type RestorePreview} from '../../backup/service'
 import {BackupError} from '../../backup/schema'
-import {availablePacks} from '../../content/packs/registry'
+import {packCatalog as availablePacks} from '../../content/packs/loader'
 import {getActiveProfileId,setActiveProfileId} from '../../db'
 import {useAppStore} from '../../store/useAppStore'
 import {Button,Dialog,StatePanel} from '../../components/ui/journey-ui'

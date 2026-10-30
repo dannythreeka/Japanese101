@@ -1,15 +1,22 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Button, StatePanel } from '../../components/ui/journey-ui'
 import { JourneyRepository } from '../../db/journey'
-import { u01 } from '../../content/packs/u01'
+import type {UnitPack} from '../../content/contracts'
 import { localDay, mastery, summarize } from '../../learning/rules'
 import { useJourneyText } from './text'
 import type { JourneyTables } from '../../db/journey-models'
-import {availablePacks} from '../../content/packs/registry'
+import {loadAllPacks} from '../../content/packs/loader'
 import {attemptUnit,teachingEvidence} from '../../learning/report'
 import {skillLabel} from '../../learning/labels'
-export default function JourneyReport({profileId,profileName}: {profileId:string;profileName?:string}){
-  const {lang,t}=useJourneyText();const repo=useMemo(()=>new JourneyRepository(u01),[])
+type ReportProps={profileId:string;profileName?:string}
+export default function JourneyReport(props:ReportProps){
+  const [packs,setPacks]=useState<UnitPack[]>(),[error,setError]=useState(false)
+  useEffect(()=>{let active=true;void loadAllPacks().then(p=>{if(active){setPacks(p);setError(false)}}).catch(()=>{if(active)setError(true)});return()=>{active=false}},[])
+  if(!packs)return <div className="journey"><StatePanel state={error?'retryable-error':'loading'} title={error?'學習教材暫時無法載入':'正在準備學習摘要'} action={error?'重新載入':undefined} onAction={error?()=>window.location.reload():undefined}/></div>
+  return <LoadedJourneyReport {...props} availablePacks={packs}/>
+}
+function LoadedJourneyReport({profileId,profileName,availablePacks}:ReportProps & {availablePacks:UnitPack[]}){
+  const {lang,t}=useJourneyText();const repo=useMemo(()=>new JourneyRepository(availablePacks.find(p=>p.id==='U01')!),[availablePacks])
   const [unit,setUnit]=useState('all');const [data,setData]=useState<JourneyTables>();const [error,setError]=useState(false);const [message,setMessage]=useState('');const [days,setDays]=useState(7);const [now]=useState(()=>Date.now())
   useEffect(()=>{let active=true;void repo.exportJourney(profileId).then(result=>{if(active)setData(result.data)}).catch(()=>{if(active)setError(true)});return()=>{active=false}},[repo,profileId])
   if(error)return <div className="journey"><StatePanel state="retryable-error" title={t('error')} action={t('retry')} onAction={()=>{void repo.exportJourney(profileId).then(next=>{setData(next.data);setError(false)}).catch(()=>setError(true))}}/><Button variant="secondary" onClick={()=>{void download()}}>{t('export')}</Button><p role="status">{message}</p></div>

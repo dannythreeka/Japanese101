@@ -50,3 +50,18 @@ Firefox操作重驗進行中，最後結果待追加；真人審聽／視覺、�
 另外讀取ec8419a CI40987944460：build／Chromium成功；Firefox69PASS1FAIL1SKIP、WebKit69PASS1FAIL1SKIP，同一backup320px量到326px。實際讀取CI失敗截圖／DOM，待定位修正，沒有冒稱三引擎全綠。GitHub連接器拒絕1.1GiB artifact，改用有授權的GitHub下載redirect及HTTP Range，只取ZIP目錄和兩個失敗證據檔，未下載整包或輸出憑證。
 
 U06最終Firefox146.0.1四項PASS（2.2m），來源同Chromium，trace/report在test-results/p4-u06-firefox、playwright-report/p4-u06-firefox；最終768圖像截圖已再檢視。dist/index.html SHA256 `69e2252d7d42de0b940562880a72289792fd72d3c5ea4a3b93c1c166556a7cec`。驗證後僅補紀錄與base來源防覆寫，產品未變更。七天圖表已另加回歸測試，修正前Firefox真實重現382px溢出，屬下一獨立修正批次。
+
+
+## P4-04 課程與路由載入拆分
+
+基準0d440ebb8c14328c59338c96c03f4f59583d6230＋本批。src/content/packs/catalog.json僅真實id／title／version，固定loader每課非同步import、共享成功請求、失敗移除promise、核對實際內容版本；catalog工具與CI／單元核對真registry。選課／家長備份不再同步帶入所有題庫，家長報告才載入實際全課，審閱只載所選課；舊遊戲與家長／玩家畫面按route載入。移除冒險子元件隱性U01 default，必須傳明確pack。
+
+初build拆課後index仍620k，進一步拆舊route後index439123 bytes（原620k），每課100～110k，634k registry同步包消失。scripts/check-build-budget.mjs對真JS檔做500000bytes硬性postbuild檢查，結果dist/build-budget.json；沒有提高Vite warning限額。Chromium乾淨U06道館實際14個JS、722211bytes，900000bytes預算內，只請求u06題庫而未請求U01～05；原始數據evidence/u06-runtime-script-budget.json。完整離線素材543個33865276bytes（32.3MiB），PWA597entries約34MiB；JS拆分不是刪除離線教材。
+
+294單元／39檔PASS（30.23s），後補真實延遲hook競態＋loader一致性三測試PASS（2.13s）；型別／lint／Preview build通過。兩引擎三情境共六測試PASS（17.5s）：單課載入、503後明確重開恢復且不寫Attempt、等待U06時切到U02不顯示／保存舊課。來源e2e/p4-pack-loading.spec.ts，trace/report：test-results/p4-loading、playwright-report/p4-loading。錯誤提供使用者重開，避免瀏覽器ES module失敗快取導致原地retry永久失敗；沒有自動重載。
+
+完整Chromium79項回歸進行中。發現原20次進出測試在lazy畫面出現前就檢查可選setup，結果漏點模式而等不到canvas；不是把zero timers斷言放寬。首修只等setup heading，但第二次是已恢復canvas，因而失敗；已改等實際setup或canvas後再操作，原20次進出、RAF歸零、timer歸零、零mic呼叫全保留。修正後Chromium／Firefox兩項PASS（30.6s），證據test-results/p4-lifecycle-final、playwright-report/p4-lifecycle-final。完整回歸原輪這一失敗需與針對重驗分開記，不宣稱原輪全綠。
+
+預算規範docs/design/PERFORMANCE_BUDGET.md。build宣告0d440eb＋本批，dist/index.html SHA256 `d2a5927d6bd0dcda09dd3b0bb04d09c1fa8af8df98111b35296cc7ecef86b621`。其他引擎全套／實體平板／全部24課仍未完成，P4-04 IN_PROGRESS。
+
+P4-04完整Chromium回歸最終78PASS／1FAIL（23.1m），唯一失敗為上述未等待lazy setup的舊測試；針對修正後該case兩引擎各20次PASS，原輪其餘78項不受測試等待修改影響，涵蓋L0～10三種mic狀態、離線、冒險、所有六課、全備份、升級與SW等待。未把原輪寫成79/79。最終typecheck／lint PASS；code產品與已測build不變。CI0d440 build／Chromium成功，Firefox另發現U02報告匯出無download；已下載真trace確認點擊後尚有約44秒等待，不是時間不足，另開P5-04-R2並以延後anchor dispatch100ms在修正前重現無下載。

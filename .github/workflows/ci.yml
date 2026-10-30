@@ -48,7 +48,7 @@ jobs:
 
       - name: Validate actual curriculum and media inventory
         if: ${{ !cancelled() }}
-        run: npm run validate:units
+        run: npm run validate:units && npm run validate:packs
 
       - name: Lint
         if: ${{ !cancelled() }}

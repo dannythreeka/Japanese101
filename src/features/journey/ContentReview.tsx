@@ -1,8 +1,9 @@
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { AudioControl, Button } from '../../components/ui/journey-ui'
+import { AudioControl, Button, StatePanel } from '../../components/ui/journey-ui'
 import type {UnitPack} from '../../content/contracts'
-import {availablePacks,findPack} from '../../content/packs/registry'
+import {packCatalog as availablePacks} from '../../content/packs/loader'
+import {usePack} from './usePack'
 import kanaLedger from '../../../docs/content/kana/review-ledger.json'
 import {unitAudio,unitArt} from '../../content/packs/media'
 import art from '../../../public/assets/img/journey/manifest.json'
@@ -11,9 +12,9 @@ import Character from './Character'
 import type {Facing} from '../../world/map'
 import './journey.css'
 export default function ContentReview(){
-  const [params,setParams]=useSearchParams();const pack=findPack(params.get('unit') ?? 'U01')
-  if(!pack)return <main className="journey journey-shell"><h1>找不到教材</h1><Button onClick={()=>setParams({})}>返回審閱</Button></main>
-  return <><nav className="journey journey-shell" aria-label="審閱教材"><label>選擇教材 <select aria-label="選擇教材" value={pack.id} onChange={e=>setParams({unit:e.target.value})} style={{minHeight:64,maxWidth:'100%',fontSize:20}}>{availablePacks.map(p=><option key={p.id} value={p.id}>{p.id} · {p.title}</option>)}</select></label></nav><Review key={pack.id} pack={pack}/></>
+  const [params,setParams]=useSearchParams();const id=params.get('unit') ?? 'U01';const {pack,error,retry}=usePack(id)
+  if(!availablePacks.some(p=>p.id===id))return <main className="journey journey-shell"><h1>找不到教材</h1><Button onClick={()=>setParams({})}>返回審閱</Button></main>
+  return <><nav className="journey journey-shell" aria-label="審閱教材"><label>選擇教材 <select aria-label="選擇教材" value={id} onChange={e=>setParams({unit:e.target.value})} style={{minHeight:64,maxWidth:'100%',fontSize:20}}>{availablePacks.map(p=><option key={p.id} value={p.id}>{p.id} · {p.title}</option>)}</select></label></nav><>{pack?<Review key={pack.id} pack={pack}/>:<StatePanel state={error?'retryable-error':'loading'} title={error?'教材暫時無法載入':'正在準備教材'} action={error?'重新載入教材':undefined} onAction={error?retry:undefined}/>}</></>
 }
 function Review({pack:u01}:{pack:UnitPack}){
   const [questionId,setQuestionId]=useState(u01.questions[0].id);const [facing,setFacing]=useState<Facing>('down');const [gear,setGear]=useState<string[]>([])

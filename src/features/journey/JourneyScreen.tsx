@@ -5,8 +5,7 @@ import OfflinePack from '../../components/OfflinePack'
 import { setActiveProfileId } from '../../db'
 import type { UnitPack } from '../../content/contracts'
 import {unitIntroduction} from '../../content/packs/introductions'
-import { availablePacks } from '../../content/packs/registry'
-import { u01 as defaultPack } from '../../content/packs/u01'
+import { packCatalog as availablePacks } from '../../content/packs/loader'
 import { CATALOG_VERSION } from '../../economy/catalog'
 import {currentBattle,currentCheck,currentWorld} from '../../db/journey-compatibility'
 import {eligibleTeachingIds} from '../../learning/placement'
@@ -27,7 +26,7 @@ import WelcomeSetup from './WelcomeSetup'
 import './journey.css'
 
 type Panel='journal'|'places'|'profiles'|'pause'|'welcome'|null
-export default function JourneyScreen({pack:u01=defaultPack}:{pack?:UnitPack}){
+export default function JourneyScreen({pack:u01}:{pack:UnitPack}){
   const {lang,t}=useJourneyText();const navigate=useNavigate();const [params,setParams]=useSearchParams()
   const location=useLocation();const activeRoute=useRef<string|null>(null)
   // A durable write may finish after the user leaves. Its old callback must not replace the newer route.

@@ -1,13 +1,12 @@
 import { AudioControl, Button, StatePanel } from '../../components/ui/journey-ui'
 import type { UnitPack } from '../../content/contracts'
-import { u01 as defaultPack } from '../../content/packs/u01'
 import type { StudyPlan, LearningCheck } from '../../db/journey-models'
 import type { Attempt } from '../../content/contracts'
 import QuestionPlayer, { type AnswerInput } from './QuestionPlayer'
 import { useJourneyText } from './text'
 import JapaneseText from './JapaneseText'
 
-export function TeachingScene({pack:u01=defaultPack,study,index,onIndex,onTeach,onBack,pending}: {pack?:UnitPack;study:StudyPlan;index:number;onIndex:(index:number)=>void;onTeach:(id:string)=>void;onBack:()=>void;pending:boolean}){
+export function TeachingScene({pack:u01,study,index,onIndex,onTeach,onBack,pending}: {pack:UnitPack;study:StudyPlan;index:number;onIndex:(index:number)=>void;onTeach:(id:string)=>void;onBack:()=>void;pending:boolean}){
   const {lang,t}=useJourneyText();const card=u01.teaching[Math.max(0,Math.min(index,u01.teaching.length-1))]
   const ready=card.prerequisites?.every(id=>study.taughtCards.includes(id)) ?? true
   return <div className="journey-body journey-stack"><div className="journey-content-header"><h1>{t('teach')}</h1><Button variant="secondary" onClick={onBack}>{t('back')}</Button></div>
@@ -22,7 +21,7 @@ export function TeachingScene({pack:u01=defaultPack,study,index,onIndex,onTeach,
     <div className="journey-actions"><Button variant="secondary" disabled={index===0} onClick={()=>onIndex(index-1)}>{t('back')}</Button><Button disabled={index>=u01.teaching.length-1} onClick={()=>onIndex(index+1)}>{t('next')}</Button></div>
   </div>
 }
-export function CheckScene({pack:u01=defaultPack,onPause,check,attempts,onSubmit,onContinue,onFinish,pending}: {pack?:UnitPack;onPause?:()=>void;check:LearningCheck;attempts:Attempt[];onSubmit:(input:AnswerInput)=>Promise<void>;onContinue:()=>void;onFinish:()=>void;pending:boolean}){
+export function CheckScene({pack:u01,onPause,check,attempts,onSubmit,onContinue,onFinish,pending}: {pack:UnitPack;onPause?:()=>void;check:LearningCheck;attempts:Attempt[];onSubmit:(input:AnswerInput)=>Promise<void>;onContinue:()=>void;onFinish:()=>void;pending:boolean}){
   const {lang,t}=useJourneyText();const question=u01.questions.find(q=>q.id===check.questionIds[check.index])
   const attempt=attempts.find(a=>a.id===`${check.id}:check-${check.index}`)
   return <div className="journey-body journey-stack"><h1>{t('check')} · {check.index+1} / {check.questionIds.length}</h1>{check.purpose==='kana-placement' && <p>{lang==='zh'?'先修檢核：答對可略過該字的先修教學，不代表已長期掌握。':'できたもじのせつめいは、とばしてれんしゅうできます。'}</p>}{onPause && check.phase!=='finished' && <Button variant="secondary" onClick={onPause}>{lang==='zh'?'暫停，下次繼續':'やすんで、あとでつづける'}</Button>}

@@ -4,13 +4,12 @@ import type { BattleSession, CoinLedger } from '../../db/journey-models'
 import type { Move } from '../../battle/rules'
 import { enemyIntent } from '../../battle/rules'
 import { Button, Progress, StatePanel } from '../../components/ui/journey-ui'
-import { u01 } from '../../content/packs/u01'
 import { summarize } from '../../learning/rules'
 import QuestionPlayer, { type AnswerInput } from './QuestionPlayer'
 import Character from './Character'
 import { useJourneyText } from './text'
 
-export default function BattleScene({pack=u01,battle,attempts,receipt,reviewDate,pending,onChoose,onSubmit,onContinue,onClaim,onRetreat,onReturn,onPause}: {pack?:UnitPack;battle:BattleSession;attempts:Attempt[];receipt?:CoinLedger;reviewDate?:string;pending:boolean;onChoose:(move:Move)=>void;onSubmit:(input:AnswerInput)=>Promise<void>;onContinue:()=>void;onClaim:()=>void;onRetreat:()=>void;onReturn:()=>void;onPause:()=>void}){
+export default function BattleScene({pack,battle,attempts,receipt,reviewDate,pending,onChoose,onSubmit,onContinue,onClaim,onRetreat,onReturn,onPause}: {pack:UnitPack;battle:BattleSession;attempts:Attempt[];receipt?:CoinLedger;reviewDate?:string;pending:boolean;onChoose:(move:Move)=>void;onSubmit:(input:AnswerInput)=>Promise<void>;onContinue:()=>void;onClaim:()=>void;onRetreat:()=>void;onReturn:()=>void;onPause:()=>void}){
   const {lang,t}=useJourneyText();const [collapsed,setCollapsed]=useState(false)
   const shown=battle.phase==='feedback' && battle.feedbackBefore ? battle.feedbackBefore:battle
   const attempt=battle.phase==='feedback' ? attempts.find(a=>a.id===battle.lastAttemptId):undefined

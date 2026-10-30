@@ -15,7 +15,7 @@
     "server": "tsx server/index.ts",
     "server:dev": "tsx watch server/index.ts",
     "typecheck": "tsc -b --pretty false",
-    "postbuild": "node scripts/build-version.mjs",
+    "postbuild": "node scripts/build-version.mjs && node scripts/check-build-budget.mjs",
     "test:e2e": "playwright test",
     "validate:blueprint": "node scripts/blueprint.mjs && node --test scripts/blueprint.test.mjs",
     "prebuild": "node scripts/offline-manifest.mjs",
@@ -27,7 +27,8 @@
     "validate:kana:release": "tsx scripts/kana-inventory.ts --release",
     "validate:units": "tsx scripts/unit-inventory.ts",
     "validate:units:release": "tsx scripts/unit-inventory.ts --release",
-    "gen:voice:unit": "tsx scripts/generate-unit-audio.ts"
+    "gen:voice:unit": "tsx scripts/generate-unit-audio.ts",
+    "validate:packs": "tsx scripts/pack-catalog.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

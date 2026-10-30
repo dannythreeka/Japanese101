@@ -13,3 +13,8 @@ P5-03：只算raw55／25／80；未完成或版本不符拒絕報告。各玩家
 初輪35項相關測試PASS，型別檢查發現constructor參數屬性不符erasableSyntaxOnly；已改明確欄位宣告，不關閉TS規則。最終驗證見acceptance。
 
 最終284單元PASS，型別／lint／build通過；後補計分邊界12相關測試PASS。Chromium／Firefox真實v8升v9及領獎導覽四測試PASS。狀態仍IN_PROGRESS；下一步P5-04備份／還原後，回到實際內容製作與mock UI。
+
+
+2026-10-30 完整備份接續：P5-04 IN_PROGRESS，src/backup schema/service與家長PIN後FullBackup UI已實作；29表包括mock與原始legacy，全域ID／profile／引用檢查、預覽後變動拒絕、明確同ID取代、原子歸檔與回滾。7核心及Chromium四項操作通過，五寬度／200%／鍵盤截圖已檢視，最終Firefox與單元結果見P5 acceptance。上一批已push f9dcc50，CI40943000160建置／Chromium／Firefox成功、WebKit最後查仍進行中。
+
+下一步仍須安全SW更新：現有vite.config.ts registerType autoUpdate可能打斷未提交作答，需改成延後啟用且驗證多分頁、下載失敗、斷網及舊cache保存；不能清DB或自動強制重載。接著回到U06～24真實內容、15共通skill延後check、三份真mock與UI。不要停在工程函式，goal仍ACTIVE。PR58保持draft。Node22；npx vitest run src/backup、npm test/typecheck/lint；VITE_P2_REVIEW_PREVIEW=1 npm run build；Playwright e2e/p5-backup.spec.ts。測試用隔離context，不操作真實孩子資料。提交SHA以git log為準。

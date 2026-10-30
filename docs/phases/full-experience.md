@@ -50,3 +50,8 @@ CI ecb6c25 Firefox發現真實領獎非同步導覽競態（59/60）；已新增
 U05／導航已push4d928ccf68cbbd921ae0ac617fd76f16db184967，CI40941122926建置與Chromium成功、其餘進行中。P5-01／02／03提前工程：官方來源藍圖、題族／材料隔離檢查、固定計時狀態機、raw與B/C首次七日指標、DB v9新增mockSessions／mockCommandReceipts與原子保存。284單元、後補12相關測試、型別lintbuild通過；兩引擎真實v8升級與導航總四項PASS，見P5 acceptance。
 
 下一步P5-04完整備份還原；目前journey-export-v1不含mock表，不應接真實mockUI前略過。所有mock合成題僅test-fixtures，沒有實際MA／MB／MC，沒有操作介面。U06～24、共通15skill與真人驗收仍未完成，goal ACTIVE不要停止。最新commit/push看git log，PR保持draft。
+
+
+2026-10-30 完整備份接續：P5-04 IN_PROGRESS，src/backup schema/service與家長PIN後FullBackup UI已實作；29表包括mock與原始legacy，全域ID／profile／引用檢查、預覽後變動拒絕、明確同ID取代、原子歸檔與回滾。7核心及Chromium四項操作通過，五寬度／200%／鍵盤截圖已檢視，最終Firefox與單元結果見P5 acceptance。上一批已push f9dcc50，CI40943000160建置／Chromium／Firefox成功、WebKit最後查仍進行中。
+
+下一步仍須安全SW更新：現有vite.config.ts registerType autoUpdate可能打斷未提交作答，需改成延後啟用且驗證多分頁、下載失敗、斷網及舊cache保存；不能清DB或自動強制重載。接著回到U06～24真實內容、15共通skill延後check、三份真mock與UI。不要停在工程函式，goal仍ACTIVE。PR58保持draft。Node22；npx vitest run src/backup、npm test/typecheck/lint；VITE_P2_REVIEW_PREVIEW=1 npm run build；Playwright e2e/p5-backup.spec.ts。測試用隔離context，不操作真實孩子資料。提交SHA以git log為準。

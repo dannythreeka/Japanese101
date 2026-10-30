@@ -65,3 +65,5 @@ U06完整工程接續：50真練習＋15check、16真WAV、原創水／麵包／
 P4-04提前工程：課程metadata＋各課lazy import、明確pack、不再隱性載U01；舊route也lazy。index439123bytes、U06首次JS722211bytes、單chunk500000硬性build guard。catalog需新增課後執行pack-catalog.ts --write及validate:packs，CI會核對。兩引擎載入／503重開／延遲切換六項PASS，294單元＋三相關PASS。完整Chromium79項跑在session4992、port4258，原第7項生命週期setup等待失敗，已修等待實際setup或已恢復canvas，針對兩引擎各20次資源歸零PASS；原全套最後結果待取。U07作者稿／65題與真音訊／蘋果圖正獨立製作，未註冊，不要在session4992結束前改runtime或重建dist。工程與U07分批提交。
 
 載入優化最終：完整Chromium78PASS／1舊setup等待競態FAIL（23.1m），該case修正後兩引擎20次進出／零RAF／零timers PASS；其他78項產品驗證有效。新載入六項與294單元＋三相關、型別lint及439k build通過。下一步先修Firefox下載：CI trace點擊後還有44s但無download，延後anchor dispatch100ms已在現版重現；JourneyReport與LegacyBackup立即revokeObjectURL，FullBackup已延後，需統一可靠下載helper並真實驗證。U07已65題＋16WAV＋蘋果圖完成素材，尚未registry／loader／catalog／media註冊；要整合後再跑操作。session4992已終止，不重跑79整套，除非後續實質改動需再擴驗。
+
+下載修正最終：三種匯出共用downloadJSON，anchor掛DOM且blob/link延後一秒清理；延後100ms原生派送的兩引擎四項真下載與JSON讀回PASS，Firefox原U02流程／完整備份等九項PASS。typecheck/lint/build與500k guard通過。session33497、48145皆已成功終止，不重跑；恢復先查git log。本批提交後即可接U07註冊：作者65題、16WAV、426556-byte蘋果圖已實際製作但未進registry／loader／catalog／media；e2e/p4-u07.spec.ts已準備。U08～24與共通skill／真mock／人審仍未做，goal ACTIVE。

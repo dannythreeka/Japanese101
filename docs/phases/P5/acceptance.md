@@ -60,3 +60,14 @@ Chromium真實Workbox核心生命週期測試PASS（18.0s）：同源舊版、�
 修正只改七天圖表：七個minmax(0,1fr)欄、每欄min-width:0、日期寬度限制與必要換行；保留全部日期與字級，沒有overflow:hidden或降低驗收門檻。新測試檢查七個完整月／日字串、每個標籤無內部溢出與整頁320px界線。最終Firefox／Chromium五寬度／200%／鍵盤與寬字型回歸結果待追加。WebKit留CI驗證，不自行安裝主機套件。
 
 P5-04-R1最終：Preview build／型別通過，改動兩檔lint PASS；Chromium／Firefox五寬度／200%文字／鍵盤＋寬字型四項PASS（23.4s）；另補兩引擎圖表截圖兩項PASS（20.5s）。證據test-results/p5-weekly-fixed、playwright-report/p5-weekly-fixed及p5-weekly-visual；evidence/weekly-dates-{chromium,firefox}-320.png。實際檢視Firefox圖，七個日期完整換行、未裁切，沒有水平溢出。WebKit待新commit的CI，不能拿當地兩引擎宣稱全綠。
+
+
+## P5-04-R2 Firefox匯出下載生命週期
+
+0d440eb CI40997708995 Firefox74PASS／1FAIL／1SKIP：U02冒險報告匯出等不到download。實際CI trace顯示export點擊約366565ms、wait下載到410675ms才timeout，還有約44秒，所以不是測試只剩不足時間；未加長原60s門檻。原始證據以GitHub Range取回/tmp/japanese101-recovery/ci-0d440/trace.zip，未下載整份1.3GiB artifact。
+
+檢查舊程式發現JourneyReport／LegacyBackup在anchor.click後立刻revokeObjectURL，FullBackup已有延後但anchor沒掛入DOM。新增真實Firefox測試把原生anchor dispatch延後100ms，修正前確實10秒無download而失敗，來源e2e/p5-download.spec.ts、test-results/p5-download-before與playwright-report/p5-download-before。這證明原實作無法承受延後派送；對CI原始偶發的精確瀏覽器排程仍是有證據支持的推斷，不冒稱直接觀測到revoke內部時序。
+
+修正集中src/lib/downloadJSON.ts：序列化前檢查、anchor加入DOM，click後保留link／blob一秒再清理；同步錯誤也清理。三個家長匯出共用，不自動重載或改寫DB。最終原生下載／U02真流程／完整還原重驗進行中，結果待追加。
+
+P5-04-R2最終本機：typecheck／lint／Preview build／500k預算PASS。Firefox原U02全流程（含報告匯出與真音訊／離線）、完整備份還原、寬字型與延後派送共九項PASS（2.4m）。另兩引擎各測journey／full／legacy三種延後下載，四項PASS（28.4s），實際讀回JSON、核對原玩家及legacy資料，hidden anchor最終歸零。證據test-results/p5-download-fixed、playwright-report/p5-download-fixed及p5-download-all。測試build宣告d35fa60＋本批；本機public同時有待註冊U07素材，因此離線precache含那些素材，沒有以此宣稱U07可玩或本批CI完整包完全一致；下載helper不依賴這些素材。原CI精確排程推斷仍保留，待新commit CI，不標P5 gate完成。

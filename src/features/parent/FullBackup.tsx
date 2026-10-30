@@ -8,6 +8,7 @@ import {Button,Dialog,StatePanel} from '../../components/ui/journey-ui'
 import '../journey/journey.css'
 import './full-backup.css'
 import AppUpdate from './AppUpdate'
+import {downloadJSON} from '../../lib/downloadJSON'
 
 export default function FullBackup(){
   const lang=useAppStore(s=>s.uiLang),ja=lang==='ja',say=(zh:string,jp:string)=>ja?jp:zh
@@ -31,8 +32,7 @@ export default function FullBackup(){
     try{
       const backup=await service.export(Object.fromEntries(availablePacks.map(p=>[p.id,p.version])),getActiveProfileId())
       if(token!==generation.current)return
-      const url=URL.createObjectURL(new Blob([JSON.stringify(backup,null,2)],{type:'application/json'})),a=document.createElement('a')
-      a.href=url;a.download=`Japanese101-full-backup-${new Date().toISOString().slice(0,10)}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)
+      downloadJSON(backup,`Japanese101-full-backup-${new Date().toISOString().slice(0,10)}.json`)
       setMessage(say('完整備份已下載。檔案包含玩家與學習紀錄，請由家長妥善保存。','すべてのバックアップをほぞんしました。ほごしゃがたいせつにほかんしてください。'))
     }catch(e){if(token===generation.current){setError(true);setMessage(errorText(e))}}finally{pending.current=false;if(token===generation.current)setBusy(false)}
   }

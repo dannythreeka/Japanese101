@@ -18,3 +18,7 @@ Node22；npx vitest run src/mock src/db/mock.test.ts；npm run typecheck/lint/te
 SW後續結果：Chromium生命週期PASS18s、U05停止origin冷啟PASS25.3s，備份四項PASS；最終型別lint看acceptance與git log。目前還沒有真MA/B/C與mock UI，下一步回到U06與共通skill內容。實機與跨真實部署仍NOT_RUN，不標P5完成。
 
 P5-04-R1新修正：ec8419 CI FF/WK 320px=326px，真證據已讀；Firefox元素探針定位七天圖表日期min-content，16px回歸修前實際382px失敗。已改等寬grid、min-width:0及標籤必要換行，最終重驗看acceptance。U06已commit95def27（292單元、兩引擎各四操作通過）；下一步推送本批，CI重驗後接U07／共通skill與真mock。
+
+當前P5-04-R2：新增downloadJSON.ts統一三匯出，source已改但未提交。session41881正在typecheck／lint／build後跑Firefox p5-download／p3-u02／p5-backup，port4260，report p5-download-fixed。修前延後原生anchor100ms的Firefox測試確實無下載（26265已終止FAIL），CI trace也證明點擊後仍有44秒不是timeout太短。不要宣稱已fix直到操作通過；不改time limits。
+
+下載修正最終：三種匯出共用downloadJSON，anchor掛DOM且blob/link延後一秒清理；延後100ms原生派送的兩引擎四項真下載與JSON讀回PASS，Firefox原U02流程／完整備份等九項PASS。typecheck/lint/build與500k guard通過。session33497、48145皆已成功終止，不重跑；恢復先查git log。本批提交後即可接U07註冊：作者65題、16WAV、426556-byte蘋果圖已實際製作但未進registry／loader／catalog／media；e2e/p4-u07.spec.ts已準備。U08～24與共通skill／真mock／人審仍未做，goal ACTIVE。

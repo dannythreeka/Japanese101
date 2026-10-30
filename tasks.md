@@ -579,6 +579,8 @@ P2-09-R2（2026-10-30，非同步導覽修正，依賴 P2-15）：CI Firefox發�
 
 - P5-04-R1：CI Firefox／WebKit在320px發現七天圖表日期受字型最小寬度影響，已新增寬字型回歸，修正前真實重現382px；改七等寬可換行欄位，驗證紀錄見P5 acceptance。此為既有task缺陷修正，不增加Phase task數。
 
+- P5-04-R2：Firefox報告匯出CI失敗，trace證實有44秒等待，原生anchor延後100ms在修前重現；統一DOM連結／blob延後釋放。兩引擎三匯出四項＋Firefox原流程九項PASS，新CI待確認。詳P5 acceptance，未加長下載門檻。
+
 #### P5-05｜執行完整裝置、視覺與無障礙驗收
 
 - 狀態：**TODO**；負責：QA／UX。

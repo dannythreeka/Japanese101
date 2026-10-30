@@ -22,3 +22,5 @@ P5-03：只算raw55／25／80；未完成或版本不符拒絕報告。各玩家
 安全SW工程接續：原生註冊、等待全部舊client關閉、無SKIP_WAITING／自動reload；家長區更新訊息。Chromium實際Workbox生命週期18.0s PASS，備份四項回歸PASS，U05下載後停止origin冷啟真音訊25.3s PASS。跨部署內容變版、其他引擎與實機仍待驗，P5-04 IN_PROGRESS。下一步U06～24與共通skill、真MA/B/C及模擬UI；不得把內容／人審欠項算完成。
 
 P5-04-R1新修正：ec8419 CI FF/WK 320px=326px，真證據已讀；Firefox元素探針定位七天圖表日期min-content，16px回歸修前實際382px失敗。已改等寬grid、min-width:0及標籤必要換行，最終重驗看acceptance。U06已commit95def27（292單元、兩引擎各四操作通過）；下一步推送本批，CI重驗後接U07／共通skill與真mock。
+
+下載修正最終：三種匯出共用downloadJSON，anchor掛DOM且blob/link延後一秒清理；延後100ms原生派送的兩引擎四項真下載與JSON讀回PASS，Firefox原U02流程／完整備份等九項PASS。typecheck/lint/build與500k guard通過。session33497、48145皆已成功終止，不重跑；恢復先查git log。本批提交後即可接U07註冊：作者65題、16WAV、426556-byte蘋果圖已實際製作但未進registry／loader／catalog／media；e2e/p4-u07.spec.ts已準備。U08～24與共通skill／真mock／人審仍未做，goal ACTIVE。

@@ -5,6 +5,7 @@ import type {UnitPack} from '../../content/contracts'
 import { localDay, mastery, summarize } from '../../learning/rules'
 import { useJourneyText } from './text'
 import type { JourneyTables } from '../../db/journey-models'
+import {downloadJSON} from '../../lib/downloadJSON'
 import {loadAllPacks} from '../../content/packs/loader'
 import {attemptUnit,teachingEvidence} from '../../learning/report'
 import {skillLabel} from '../../learning/labels'
@@ -27,7 +28,7 @@ function LoadedJourneyReport({profileId,profileName,availablePacks}:ReportProps 
   const skills=[...new Set(attempts.map(a=>a.primarySkillId))]
   const statusNames=lang==='zh' ? {'not-started':'尚未開始',practicing:'練習中',stable:'初步穩定',due:'待複習'}:{'not-started':'まだはじめていません',practicing:'れんしゅうちゅう',stable:'だいたいあんてい',due:'ふくしゅう'}
   async function download(){
-    try{const backup=await repo.exportJourney(profileId);const url=URL.createObjectURL(new Blob([JSON.stringify(backup,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=`Japanese101-journey-${profileId}.json`;a.click();URL.revokeObjectURL(url);setMessage(t('saved'))}catch{setMessage(t('storageDetail'))}
+    try{const backup=await repo.exportJourney(profileId);downloadJSON(backup,`Japanese101-journey-${profileId}.json`);setMessage(t('saved'))}catch{setMessage(t('storageDetail'))}
   }
   return <section className="journey journey-card journey-report"><h2>{t('report')}</h2><p>{profileName ?? (lang==='zh'?'目前玩家':'いまのプレイヤー')} · {days===36500 ? lang==='zh'?'全部紀錄':'すべてのきろく':`${new Date(cutoff).toLocaleString()} – ${new Date(now).toLocaleString()}`}</p>
     <label>{lang==='zh' ? '期間':'きかん'} <select value={days} onChange={e=>setDays(Number(e.target.value))} style={{minHeight:44,padding:8,border:'1px solid #4f6378'}}><option value={7}>7 {lang==='zh'?'天':'にち'}</option><option value={30}>30 {lang==='zh'?'天':'にち'}</option><option value={36500}>{lang==='zh'?'全部':'ぜんぶ'}</option></select></label>

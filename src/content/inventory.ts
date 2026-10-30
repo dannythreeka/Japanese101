@@ -3,6 +3,25 @@ import {unitPackErrors} from './contracts'
 export interface UnitBlueprint {
   id:string;skillIds:string[];grammarIds:string[];quotas:{newVocabulary:number;newKanji:number;newGrammar:number;reading:number;listening:number;practice:number};typeCounts:Record<string,number>
 }
+/** The approved ability graph owns prerequisites; author drafts must not silently fork it. */
+export function grammarPrerequisiteErrors(packs:readonly UnitPack[],skills:readonly {id:string;prerequisites:string[]}[]):string[]{
+  const errors:string[]=[],known=new Map(skills.map(s=>[s.id,s]))
+  for(const pack of packs){
+    const cards=new Map(pack.teaching.map(c=>[c.id,c])),local=new Set(pack.grammar.map(g=>g.id))
+    for(const grammar of pack.grammar){
+      const spec=known.get(grammar.id)
+      if(!spec){errors.push(`${pack.id}/${grammar.id}: unknown ability`);continue}
+      if(!Array.isArray(grammar.prerequisites)||grammar.prerequisites.some(p=>typeof p!=='string')||new Set(grammar.prerequisites).size!==grammar.prerequisites.length||JSON.stringify([...grammar.prerequisites].sort())!==JSON.stringify([...spec.prerequisites].sort()))errors.push(`${pack.id}/${grammar.id}: prerequisites differ from ability blueprint`)
+      for(const card of pack.teaching.filter(c=>c.grammarIds?.includes(grammar.id)))for(const dep of spec.prerequisites.filter(id=>local.has(id))){
+        if(card.grammarIds?.includes(dep))continue
+        const seen=new Set<string>(),pending=[...(card.prerequisites??[])];let found=false
+        while(pending.length){const id=pending.pop()!;if(seen.has(id))continue;seen.add(id);const prior=cards.get(id);if(prior?.grammarIds?.includes(dep)){found=true;break}pending.push(...(prior?.prerequisites??[]))}
+        if(!found)errors.push(`${pack.id}/${card.id}: teaching bypasses local prerequisite ${dep}`)
+      }
+    }
+  }
+  return errors
+}
 /** Cross-unit counting uses actual authored packs; a blueprint row is never playable inventory. */
 export function curriculumErrors(packs:readonly UnitPack[],blueprints:readonly UnitBlueprint[]):string[]{
   const errors:string[]=[]

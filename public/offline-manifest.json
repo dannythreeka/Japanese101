@@ -1,5 +1,5 @@
 {
-  "version": "2c4f1fc6a2e84960",
+  "version": "1432f98b295f1801",
   "assets": [
     {
       "path": "assets/audio/kana_a.wav",
@@ -589,7 +589,7 @@
     {
       "path": "assets/audio/u01/manifest.json",
       "bytes": 8469,
-      "sha256": "bb2d9172f888d576ce3359f3ece63f5b1963df87509d118f11e0fdf01b179aa3"
+      "sha256": "742d685bbcf96c297aa6f1cac828aac2cb5d4e9f5144a150d5b725766173714b"
     },
     {
       "path": "assets/audio/u01/teach-G01.wav",
@@ -1004,7 +1004,7 @@
     {
       "path": "assets/audio/u06/manifest.json",
       "bytes": 10403,
-      "sha256": "d73efd8ae6e6b6b6c346716b2bffa1ba1d1354fca9b72fd48c4e55504b92fed1"
+      "sha256": "745d43550719a4c37c768d443e4cde43719de8cb47df2e45569543eab057ac51"
     },
     {
       "path": "assets/audio/u06/U06-teach-context.wav",

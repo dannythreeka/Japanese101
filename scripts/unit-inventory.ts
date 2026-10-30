@@ -1,7 +1,7 @@
 import {readFile,writeFile,readdir,mkdir} from 'node:fs/promises'
 import {createHash} from 'node:crypto'
 import {parseUnitPack} from '../src/content/contracts'
-import {curriculumErrors} from '../src/content/inventory'
+import {curriculumErrors,grammarPrerequisiteErrors} from '../src/content/inventory'
 import {curriculumCoverage} from '../src/content/coverage'
 import {auditReviews,type ReviewRecord,type ReviewTarget} from '../src/content/review-audit'
 import blueprint from '../docs/content/n5-manifest.json' with {type:'json'}
@@ -11,6 +11,7 @@ const hash=(value:string|Buffer)=>createHash('sha256').update(value).digest('hex
 const files=(await readdir('src/content/packs')).filter(f=>/^u\d{2}\.json$/.test(f)).sort()
 const packs=await Promise.all(files.map(async f=>parseUnitPack(JSON.parse(await readFile(`src/content/packs/${f}`,'utf8')))))
 const errors=curriculumErrors(packs,blueprint.units),release=process.argv.includes('--release')
+errors.push(...grammarPrerequisiteErrors(packs,blueprint.skills))
 const coverage=curriculumCoverage(packs,blueprint.skills)
 errors.push(...coverage.errors)
 const reviewAudit:{unitId:string;items:ReturnType<typeof auditReviews>}[]=[]

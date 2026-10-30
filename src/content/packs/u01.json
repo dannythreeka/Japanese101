@@ -1,6 +1,6 @@
 {
   "id": "U01",
-  "version": "u01-2-draft",
+  "version": "u01-3-draft",
   "title": "自我介紹：認識小鎮的新朋友",
   "reviewStatus": "DRAFT",
   "reviewer": null,
@@ -201,6 +201,7 @@
       "id": "G02",
       "title": "NはNですか",
       "prerequisites": [
+        "K-HIRA",
         "G01"
       ]
     },
@@ -208,7 +209,8 @@
       "id": "G03",
       "title": "NもNです",
       "prerequisites": [
-        "G01"
+        "K-HIRA",
+        "G02"
       ]
     }
   ],
@@ -458,7 +460,7 @@
       "example": "わたしも がくせいです。",
       "translation": "我也是學生。",
       "prerequisites": [
-        "teach-G01"
+        "teach-G02"
       ],
       "audioScript": "わたしも がくせいです。",
       "audioSrc": "/assets/audio/u01/teach-G03.wav",

@@ -1,13 +1,13 @@
 {
   "unitId": "U06",
-  "version": "u06-1-draft",
+  "version": "u06-2-draft",
   "mode": "isolated draft structure",
   "skills": [
     {
       "id": "G16",
       "prerequisites": [
         "K-HIRA",
-        "G08"
+        "G15"
       ],
       "teaching": [
         "U06-teach-G16"

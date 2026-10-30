@@ -4,11 +4,11 @@ from pathlib import Path
 from content_authoring import DraftUnit
 
 def make_unit():
- u=DraftUnit('U06','飲食：小鎮食堂的午餐');p=u.pack
+ u=DraftUnit('U06','飲食：小鎮食堂的午餐');p=u.pack;p['version']='u06-2-draft'
  words=[('ごはん','飯；餐點'),('パン','麵包'),('みず','水'),('おちゃ','茶'),('ぎゅうにゅう','牛奶'),('ジュース','果汁'),('にく','肉'),('さかな','魚'),('やさい','蔬菜'),('くだもの','水果'),('りんご','蘋果'),('バナナ','香蕉'),('たまご','蛋'),('スープ','湯'),('カレー','咖哩'),('うどん','烏龍麵'),('おにぎり','飯糰'),('サラダ','沙拉'),('おべんとう','便當'),('あさごはん','早餐'),('ひるごはん','午餐'),('ばんごはん','晚餐'),('すき','喜歡'),('きらい','不喜歡；討厭'),('ください','請給我（配合名詞使用）')]
  p['vocabulary']=[dict(id=f'U06-V{i:02}',text=t,reading=t,meaning=m) for i,(t,m) in enumerate(words,1)]
  p['kanji']=[dict(id=f'U06-K{i:02}',text=t,reading=r,meaning=m) for i,(t,r,m) in enumerate([('食','た','吃；食べます的食讀た'),('飲','の','喝；飲みます的飲讀の'),('水','みず','水'),('魚','さかな','魚'),('肉','にく','肉')],1)]
- p['grammar']=[dict(id=g,title=t,prerequisites=['K-HIRA',dep]) for g,t,dep in [('G16','NをVます：吃什麼、喝什麼','G08'),('G17','Nが好きです／嫌いです：表達喜好','G16'),('G18','Nをください：點餐與請求','G17')]]
+ p['grammar']=[dict(id=g,title=t,prerequisites=['K-HIRA',dep]) for g,t,dep in [('G16','NをVます：吃什麼、喝什麼','G15'),('G17','Nが好きです／嫌いです：表達喜好','G16'),('G18','Nをください：點餐與請求','G17')]]
  for n,(title,jp) in enumerate([('飯與飲料','ごはんとのみもの'),('魚肉與蔬果','さかな・にく・やさい'),('食堂的菜單','しょくどうのメニュー'),('便當與三餐','おべんとうとさんどのごはん'),('喜好與請求','すき・きらい・ください')],1):
   vs=p['vocabulary'][(n-1)*5:n*5];body='\n'.join(f"{v['text']}：{v['meaning']}" for v in vs)
   if n==1:body+='\nごはん可以指白飯，也能指一餐。みず是水，おちゃ是茶，不把所有飲料都叫みず。'

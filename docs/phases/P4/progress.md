@@ -23,3 +23,5 @@ P4-04提前工程：課程metadata＋各課lazy import、明確pack、不再隱�
 載入優化最終：完整Chromium78PASS／1舊setup等待競態FAIL（23.1m），該case修正後兩引擎20次進出／零RAF／零timers PASS；其他78項產品驗證有效。新載入六項與294單元＋三相關、型別lint及439k build通過。下一步先修Firefox下載：CI trace點擊後還有44s但無download，延後anchor dispatch100ms已在現版重現；JourneyReport與LegacyBackup立即revokeObjectURL，FullBackup已延後，需統一可靠下載helper並真實驗證。U07已65題＋16WAV＋蘋果圖完成素材，尚未registry／loader／catalog／media註冊；要整合後再跑操作。session4992已終止，不重跑79整套，除非後續實質改動需再擴驗。
 
 U07整合：50真練習＋15候選、16WAV、蘋果圖已接9pack，七課175詞350practice、21候選54缺口、959人審0核准。初輪兩引擎14PASS；目視發現不均勻圖格，改DOM依manifest.frameWindows（非編輯位圖），297單元及型別lintbuild／500k guard通過，兩引擎補10PASS，四格FF實圖已逐張檢視。舊U04相容測試session46024結果待取。U08作者來源已25詞5漢字10教學4閱讀6聽力稿，未出題／音訊／圖／註冊。接續P4-03-R1：local prerequisites U01G02/G03、U06G16與已核能力圖不一致，U01教學G03也少G02；需保留舊稿／review、採新draft版本與來源hash，不能悄改已發布版本。先保存U07，再修此缺口與新增防回歸檢查。
+
+2026-10-30 P4-03-R1工程完成：U01升u01-3-draft、U06升u06-2-draft，依既有P0先修圖修四處漂移，舊ledger原文封存，新增全課grammar／教學鏈檢查。d35221c真UI舊存檔已兩引擎6PASS，保留四筆Attempt、20coin、帽裝備與交易，歸檔舊plan／未完戰鬥後安全重開；302單元PASS。trace／hash／命令見acceptance與evidence/prerequisite-upgrade.json。勿重跑capture覆寫舊fixture；不更動已完成工程或真人狀態。下一步U08完整65題／16WAV／原創交通插畫／註冊，再續U09～24／共通15skill／真模擬考及UI。P4-03主task仍TODO，959審核0真人核准，goal ACTIVE。

@@ -13,3 +13,5 @@ G16候選：修正對象助詞、辨識被吃的對象、動作否定意義、�
 review-ledger.json的135筆保留NOT_RUN。人審重點：漢字讀音與兒童可理解性、好き／嫌い情境自然度、請求與動作的唯一解、四序聽力不看稿辨識、音訊是否截斷或太快、菜單的明示資訊、圖片水與牛奶區別。工程驗證結果見docs/phases/P4/acceptance.md，不代表正式教材放行。
 
 恢復：Node22，`python3 scripts/author-u06.py`、`npm run gen:voice:unit -- U06`、`node --import tsx scripts/unit-inventory.ts --write`。音檔只在稿／檔hash吻合時重用，禁止覆寫APPROVED內容。
+
+2026-10-30先修修訂：u06-2-draft的G16依K-HIRA／G15，對齊核准能力圖；G08已由上游鏈涵蓋，不再另建局部替代圖。舊review原文封存review-ledger.u06-1-draft.json，現版135項仍NOT_RUN。未改題目／音訊腳本或音檔，更新來源與音訊manifest版本。舊存檔升版實測見P4-03-R1。

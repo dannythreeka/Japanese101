@@ -82,3 +82,16 @@ P4-04完整Chromium回歸最終78PASS／1FAIL（23.1m），唯一失敗為上述
 舊U04均勻圖格相容重驗進行中，最後結果待追加。WebKit／實機／人工審聽／真視覺仍NOT_RUN或待CI，不標P4完成。另核對先修時發現U01 G02/G03與U06 G16的local grammar prerequisites與P0能力圖不同，U01 teach-G03也少了G02；這是後續P4-03-R1，尚未修正，不把本次機械coverage說成全規格通過。
 
 U07圖格最終相容：舊U04帶圖提示作答Chromium／Firefox兩項PASS（39.2s），test-results/p4-context-compat、playwright-report/p4-context-compat；原畫面與均勻格語意保留。驗證後僅補紀錄，未改產品。
+
+## P4-03-R1：先修漂移與真舊存檔升級（2026-10-30）
+
+工程owner／執行者Codex；baseline d35221c850d92c3b41a1010d2fadba3617e24ec6＋本批來源，測試來源hash與dist index在evidence/prerequisite-upgrade.json，交付後只有紀錄／舊ledger封存差異。P4及真人內容gate仍未完成。
+
+- 新測試先重現四個失敗：U01 G02少K-HIRA、G03少K-HIRA且依錯G01、teach-G03跳過G02；U06 G16依G08而非已核G15。現版u01-3-draft／u06-2-draft對齊既有P0圖，未改P0標準；新增CLI全課比對與教學DAG可達檢查，禁止改名／缺先修／未知能力／局部教學捷徑。transitive真教學鏈允許。
+- 原ledger以review-ledger.u01-2-draft.json／review-ledger.u06-1-draft.json原文封存；U01 canonical hash及版本更新、U06現有hash機制重算。959項仍0真人核准，不把舊版結果當新版核准。題目itemVersion與音訊腳本／位元組不變。
+- d35221c實際UI各保存四次作答、首勝60、花40購買並裝備旅行帽、開始未完戰鬥，再經PIN完整匯出；兩份匿名QA檔evidence/prerequisite-{u01,u06}-old.json附原build。新瀏覽器只在隔離context注入這些真操作結果，再走實際升版UI；不碰真實玩家。
+- Chromium145.0.7632.6／Firefox146.0.1各三項，共6PASS（31.3s）。原始Attempt、wallet20、inventory／equipment／purchase／coinLedger／firstWins／skillReviews逐字相等；舊完結勝利不變；未完戰鬥與教學plan原文歸檔，舊戰鬥標version-recovery撤退，plan改新內容版本；刷新不重複歸檔。G03在G02前按鈕disabled，完成G02才可保存，教學不偽造Attempt。
+- 302單元／42檔PASS（31.01s），lint／typecheck／preview build／draft inventory與catalog通過，最大chunk439136/500000。局部教學修訂不改畫面樣式，未新增人工視覺核准；不是實體平板證據。trace／報告見evidence JSON本機位置，重現命令下方。
+- 失敗紀錄：預設sandbox spawnSync回EPERM，限定提權執行CLI及完整單元後PASS；第一輪建置漏VITE_P2_REVIEW_PREVIEW而無preview路由，已停止該無效測試、正確重建並清理此輪殘留4264 server；不把無效輪報PASS。沒有改timeout或刪斷言。
+
+重現：Node22；`VITE_P2_REVIEW_PREVIEW=1 npm run build`，`P0_E2E_PORT=4264 npx playwright test e2e/p4-prerequisites.spec.ts --project=chromium --project=firefox`。舊fixture只能從d35221c相符build重建；capture腳本拒絕覆寫，不在新版重跑。

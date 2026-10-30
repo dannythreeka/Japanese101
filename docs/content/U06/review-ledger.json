@@ -1,6 +1,6 @@
 {
   "unitId": "U06",
-  "version": "u06-1-draft",
+  "version": "u06-2-draft",
   "reviewStatus": "DRAFT",
   "items": [
     {
@@ -246,7 +246,7 @@
     {
       "id": "G16",
       "kind": "grammar",
-      "sha256": "619c7f9d8bb46943fc1b925fb33a41b391f8be341ccd65d82f06e440b7464a4a",
+      "sha256": "c2f86f1e3633d63c8d65eafd0b442025f78061b293c6c1d0a84af561bbb77173",
       "status": "NOT_RUN",
       "reviewer": null,
       "reviewedAt": null

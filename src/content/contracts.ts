@@ -161,6 +161,7 @@ export function unitPackErrors(input:unknown):string[] {
   }
   errors.push(...validateQuestionBank(input.questions))
   for(const field of ['vocabulary','kanji'])for(const item of lists[field])for(const key of ['text','reading','meaning'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)
+  for(const item of lists.grammar)if(!nonempty(item.title)||!strings(item.prerequisites)||!unique(item.prerequisites))errors.push(`${item.id}: invalid grammar metadata`)
   for(const item of lists.readings)for(const key of ['text','skillId'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)
   for(const item of lists.listening){
     for(const key of ['script','audioSrc','skillId'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)

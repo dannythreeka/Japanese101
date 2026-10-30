@@ -439,6 +439,8 @@ P2-09-R2（2026-10-30，非同步導覽修正，依賴 P2-15）：CI Firefox發�
 - 交付物：先備知識、自然語言、題型分布與難度覆蓋報告。
 - 驗收：新概念未教先考、答案歧義、題族假重複、字幕洩漏、漢字提示洩漏逐項排除。24單元滿足配額與14題型；所有技能都有教學、練習、延後檢核和至少五題族；缺口須開明確內容task修正。
 
+- P4-03-R1（工程修復，非新增Phase task）：U01 G02/G03、U06 G16先修與P0能力圖不一致；U01教學G03繞過G02。Codex修復為u01-3-draft／u06-2-draft，封存舊review-ledger，新增跨單元先修與教學鏈檢查。以d35221c真UI舊存檔驗證保留原始答案／金幣／持有物／裝備／receipt、歸檔舊進度再重開；實際結果見P4 acceptance。P4-03仍TODO，24課與真人審核未完成。
+
 #### P4-04｜全內容教材包、效能與離線回歸
 
 - 狀態：**IN_PROGRESS**；負責：工程／QA。
@@ -888,6 +890,8 @@ P2-09-R2（2026-10-30，非同步導覽修正，依賴 P2-15）：CI Firefox發�
 
 ### U06 — 飲食（P4）
 
+- 2026-10-30 Codex工程：50真練習＋15check、16真WAV與原創食堂插畫已接registry／media，內容盤點無錯；六課150詞300practice。U06-V缺真實非原作者reviewer，135筆NOT_RUN；其餘IN_REVIEW不是DONE。操作與最終檢查結果見P4 acceptance。
+
 #### U06-M｜凍結單元清單
 
 - 狀態：**IN_REVIEW**；負責：日語內容負責人；依賴：P4-01。
@@ -934,7 +938,7 @@ P2-09-R2（2026-10-30，非同步導覽修正，依賴 P2-15）：CI Firefox發�
 
 ### U07 — 購物數量（P4）
 
-- 2026-10-30 Codex工程：50真練習＋15check、16真WAV與原創食堂插畫已接registry／media，內容盤點無錯；六課150詞300practice。U06-V缺真實非原作者reviewer，135筆NOT_RUN；其餘IN_REVIEW不是DONE。操作與最終檢查結果見P4 acceptance。
+- 2026-10-30 Codex工程：25新詞5漢字、G19～21、50真練習＋15check候選、16真WAV與蘋果數量圖已接registry／loader／catalog／media。初輪兩引擎14項通過；畫面發現非均勻圖格裁切，改按manifest.frameWindows顯示，補四格視覺與舊圖相容驗證，結果見P4 acceptance。135人審NOT_RUN；V缺真實reviewer受阻，其他不能標DONE。
 
 #### U07-M｜凍結單元清單
 
@@ -979,8 +983,6 @@ P2-09-R2（2026-10-30，非同步導覽修正，依賴 P2-15）：CI Firefox發�
 - 驗收：內容 schema、ID、素材連結及 50 題計數檢查通過；在隔離測試玩家完成四主線各 1 題，確認 Attempt 與結果正確；至少播放全部 6 段聽力，重整可續學。下載本單元教材後切離線，教學／題目／音訊可用；保存 commit、瀏覽器及測試紀錄。
 
 ### U08 — 交通與目的地（P4）
-
-- 2026-10-30 Codex工程：25新詞5漢字、G19～21、50真練習＋15check候選、16真WAV與蘋果數量圖已接registry／loader／catalog／media。初輪兩引擎14項通過；畫面發現非均勻圖格裁切，改按manifest.frameWindows顯示，補四格視覺與舊圖相容驗證，結果見P4 acceptance。135人審NOT_RUN；V缺真實reviewer受阻，其他不能標DONE。
 
 #### U08-M｜凍結單元清單
 

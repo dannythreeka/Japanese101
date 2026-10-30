@@ -1,6 +1,6 @@
 # U01 教材／音訊審核包（草稿）
 
-作者：Codex，2026-10-16；版本 u01-2-draft；真人reviewer、日期與簽核未取得。這是新P2內容，不包含於先前P0／P1核准。
+作者：Codex，2026-10-30；版本 u01-3-draft；真人reviewer、日期與簽核未取得。這是新P2內容，不包含於先前P0／P1核准。
 
 來源：src/content/packs/u01.json。25新詞、5漢字、G01／G02／G03、4閱讀、6聽力稿、50practice題及額外15check候選。前25題為Q1、後25題為Q2；check不抵50練習配額。所有題目與材料為本專案原創草稿，未抄官方試題或課本。
 
@@ -18,3 +18,5 @@
 工程初審已補65題日文操作／解說與各提示的對應翻譯、難度1／2／3、教學專用ruby；四種題型保留原有答案ID與session，檢核不顯示ruby或即時正解。日文翻譯亦須納入真人審核。coverage.json列13種主測能力與各check family；目前G01／02／03各5個check候選，其他能力的全課五題族覆蓋依blueprint由後續單元補齊，不能在U01直接宣稱全部穩定。
 
 版本2保留前版archive/u01-1-draft.json；65題item version升為2，新增日文、情境圖與難度；R02擴為六輪、多角色的連貫對話，Q32明確限定第二行以免多角色歧義。舊Attempt.itemVersion不改，教材更新需先備份舊計畫／session再安全重啟，金幣不重發。
+
+2026-10-30先修修訂：G02依K-HIRA／G01，G03依K-HIRA／G02；teach-G03必須先完成teach-G02。舊版審核原文封存在review-ledger.u01-2-draft.json，現版ledger按canonical hash更新，149項仍NOT_RUN；音訊文字與位元組不變，只同步pack版本。舊存檔保留Attempt與經濟記錄，舊教學計畫／未完戰鬥先歸檔再重新學習，見P4-03-R1。

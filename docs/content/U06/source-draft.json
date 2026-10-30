@@ -1,6 +1,6 @@
 {
   "id": "U06",
-  "version": "u06-1-draft",
+  "version": "u06-2-draft",
   "title": "飲食：小鎮食堂的午餐",
   "reviewStatus": "DRAFT",
   "reviewer": null,
@@ -195,7 +195,7 @@
       "title": "NをVます：吃什麼、喝什麼",
       "prerequisites": [
         "K-HIRA",
-        "G08"
+        "G15"
       ]
     },
     {

@@ -13,8 +13,11 @@ export default defineConfig({
     react(),
     tailwindcss(),
     VitePWA({
-      registerType: 'autoUpdate',
+      registerType: 'prompt',
+      injectRegister: false,
       workbox: {
+        skipWaiting: false,
+        clientsClaim: true,
         globPatterns: ['**/*.{js,css,html,ico,png,svg,webp,mp3,wav,json}'],
         runtimeCaching: [{ urlPattern: /\/(assets\/(audio|img)|stroke-svgs|sfx)\//, handler: 'CacheFirst', options: { cacheName: `japanese101-pack-${pack.version}` } }],
       },

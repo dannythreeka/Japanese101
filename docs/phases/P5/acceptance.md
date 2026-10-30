@@ -38,3 +38,16 @@ Phase IN_PROGRESS，人工gate未通過。基準4d928cc＋本批工程；執行�
 人工視覺、實體裝置與SW更新：NOT_RUN；本批不宣稱P5-04 DONE。
 
 最終重驗：291單元／38檔PASS（40.77s），typecheck／lint PASS。Firefox146.0.1備份四項＋導航回歸五項PASS（1.2m），trace/report：test-results/p5-backup-final、playwright-report/p5-backup-final。Chromium145.0.7632.6四項見上。dist/index.html SHA256 `1f97629277ec6ca69029906b20cb29a2fdf9f26fa3200efb9876e79480b9dbba`。驗證後僅更新紀錄，未改產品程式；人工／實機不計為PASS。
+
+
+## P5-04 延後版本啟用工程
+
+基準a0073aa＋本批。移除自動更新重載；以原生register保留worker waiting，不傳SKIP_WAITING、不重載其他分頁。新安裝可claim離線控制；更新等待所有舊client關閉後自然啟用，家長區可檢查與讀取等待／失敗訊息。沒有清理DB、沒有把倒退程式版本當資料回復；格式舊版應使用經驗證的備份與相容版本，不能直接降schema。
+
+Chromium真實Workbox核心生命週期測試PASS（18.0s）：同源舊版、未提交選項、第二分頁；新worker install gate回503時失敗、舊worker與選項保留；修復安裝後waiting，關閉家長分頁仍不啟用；孩子提交一次保存Attempt，最後舊client關閉才啟用，重開保留完全相同Attempt。測試wrapper僅加入版本標記與失敗門檻，不是產品release版本，也不代表教材內容變版完整驗收。首輪測試誤選已redundant的舊worker，改依測試版本標記選新worker後通過，未放寬生命週期斷言。來源e2e/p5-update.spec.ts；trace/report：test-results/p5-update-final、playwright-report/p5-update-final。
+
+本次build後備份Chromium四項重驗PASS。新家長更新區與實際部署版本升級、Firefox/WebKit、實體裝置仍待完整驗證；不能以此標P5-04 DONE。全內容效能警告仍存在，未提高警告門檻。
+
+另驗U05下載完成後停止origin冷啟、插畫與真音訊PASS（25.3s），證據test-results/p5-update-offline、playwright-report/p5-update-offline。測試worker的self.registration型別原被DOM推斷為Window，改成明確worker probe型別，未改runtime。
+
+最終typecheck／lint PASS；最後修改只為測試型別與紀錄，產品build與已通過操作不變。

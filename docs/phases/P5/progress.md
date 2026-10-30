@@ -18,3 +18,5 @@ P5-03：只算raw55／25／80；未完成或版本不符拒絕報告。各玩家
 2026-10-30 完整備份接續：P5-04 IN_PROGRESS，src/backup schema/service與家長PIN後FullBackup UI已實作；29表包括mock與原始legacy，全域ID／profile／引用檢查、預覽後變動拒絕、明確同ID取代、原子歸檔與回滾。7核心及Chromium四項操作通過，五寬度／200%／鍵盤截圖已檢視，最終Firefox與單元結果見P5 acceptance。上一批已push f9dcc50，CI40943000160建置／Chromium／Firefox成功、WebKit最後查仍進行中。
 
 下一步仍須安全SW更新：現有vite.config.ts registerType autoUpdate可能打斷未提交作答，需改成延後啟用且驗證多分頁、下載失敗、斷網及舊cache保存；不能清DB或自動強制重載。接著回到U06～24真實內容、15共通skill延後check、三份真mock與UI。不要停在工程函式，goal仍ACTIVE。PR58保持draft。Node22；npx vitest run src/backup、npm test/typecheck/lint；VITE_P2_REVIEW_PREVIEW=1 npm run build；Playwright e2e/p5-backup.spec.ts。測試用隔離context，不操作真實孩子資料。提交SHA以git log為準。
+
+安全SW工程接續：原生註冊、等待全部舊client關閉、無SKIP_WAITING／自動reload；家長區更新訊息。Chromium實際Workbox生命週期18.0s PASS，備份四項回歸PASS，U05下載後停止origin冷啟真音訊25.3s PASS。跨部署內容變版、其他引擎與實機仍待驗，P5-04 IN_PROGRESS。下一步U06～24與共通skill、真MA/B/C及模擬UI；不得把內容／人審欠項算完成。

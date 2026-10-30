@@ -7,6 +7,7 @@ import {useAppStore} from '../../store/useAppStore'
 import {Button,Dialog,StatePanel} from '../../components/ui/journey-ui'
 import '../journey/journey.css'
 import './full-backup.css'
+import AppUpdate from './AppUpdate'
 
 export default function FullBackup(){
   const lang=useAppStore(s=>s.uiLang),ja=lang==='ja',say=(zh:string,jp:string)=>ja?jp:zh
@@ -52,7 +53,7 @@ export default function FullBackup(){
   }
   const replacements=preview?.players.filter(p=>p.replaces)??[]
   const canRestore=!!preview&&!preview.globalCollisions.length&&replacements.every(p=>approved.includes(p.id))&&!busy
-  return <section className="journey journey-card journey-stack full-backup" aria-labelledby="full-backup-title" aria-busy={busy}>
+  return <><section className="journey journey-card journey-stack full-backup" aria-labelledby="full-backup-title" aria-busy={busy}>
     <h2 id="full-backup-title">{say('完整備份與還原','すべてのバックアップとふくげん')}</h2>
     <p>{say('包含這個瀏覽器的所有玩家、學習紀錄、冒險進度、裝備與模擬紀錄。下載檔案後，可在另一台裝置的家長區還原。','このブラウザーのすべてのプレイヤー、まなび、ぼうけん、そうび、もぎテストをほぞんします。ほかのたんまつのほごしゃエリアでふくげんできます。')}</p>
     <Button disabled={busy||!!restored} onClick={()=>{void download()}}>{say('匯出完整備份','すべてのバックアップ')}</Button>
@@ -75,5 +76,5 @@ export default function FullBackup(){
       <p>{say('紀錄已保存。重新開啟後，請再次輸入家長PIN以查看報告。','きろくをほぞんしました。ひらきなおしてから、ほごしゃPINをいれてください。')}</p>
       <Button onClick={reopen}>{say('重新開啟學習紀錄','まなびのきろくをひらく')}</Button>
     </Dialog>
-  </section>
+  </section><AppUpdate/></>
 }

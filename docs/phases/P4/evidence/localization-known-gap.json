@@ -1,6 +1,6 @@
 {
   "task": "P4-03-R2",
-  "status": "IN_PROGRESS; full-curriculum repair not complete",
+  "status": "RESOLVED_FOR_U08_AUTHOR_DRAFT; remaining curriculum audit IN_PROGRESS",
   "sourceUnit": "U08",
   "sourceVersion": "u08-1-draft",
   "itemId": "U08-Q47",
@@ -14,5 +14,11 @@
     "promptJa": "九時にはじめ、十時におわります。おとで、なにをきかれたかたしかめて、こたえましょう。",
     "explanationJa": "なんじからですか、は、はじまりをきいています。九時からです、があいます。"
   },
-  "humanReviewer": null
+  "humanReviewer": null,
+  "resolution": {
+    "version": "u08-2-draft",
+    "promptJa": "あねと行くよていです。おとのしつもんにあうこたえをえらびましょう。",
+    "humanApproval": false,
+    "remaining": "Audit U01–U07 prompt/teaching/feedback semantics, plus U09 choice/translation metadata; all actual human approval remains required"
+  }
 }

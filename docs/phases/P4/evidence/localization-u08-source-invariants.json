@@ -1,0 +1,23 @@
+{
+  "baseline": "48167bddeedffc89f356025a7014de4ed0a2989d",
+  "oldVersion": "u08-1-draft",
+  "newVersion": "u08-2-draft",
+  "oldSourceSha256": "637d5d3468f27a1d0dff72f966964332c9daa5c1e986217897ef626b0cdaecd5",
+  "newSourceSha256": "5e0b592cd644759a51dd173363379a5da42d38d52ca27b9d646e1255b1a24bf5",
+  "preserved": [
+    "all Chinese prompts, explanations, choice text, hints",
+    "all question/item/family IDs, answer IDs, partitions, skills and difficulty",
+    "vocabulary, kanji, grammar, readings and listening",
+    "all sixteen audio asset bytes/scripts/provenance",
+    "old review ledger byte-for-byte"
+  ],
+  "questionRevisions": {
+    "1 to 2": 65
+  },
+  "choiceLanguages": {
+    "ja": 145,
+    "zh-Hant": 112
+  },
+  "reviewLedgerArchiveSha256": "8a4eab0e0e9689c962cfcb2328a81298a3f91922d852f43cfe9d5eb1913d672c",
+  "humanReview": "NOT_RUN"
+}

@@ -3,10 +3,11 @@ import {readFile} from 'node:fs/promises'
 import {records} from './helpers/unitJourney'
 import type {UnitPack} from '../src/content/contracts'
 
-for(const unit of ['U01','U06'])test(`${unit} genuine old UI save upgrades without changing answers, money or equipment`,async({page})=>{
- const fixture=JSON.parse(await readFile(`docs/phases/P4/evidence/prerequisite-${unit.toLowerCase()}-old.json`,'utf8'))
+for(const unit of ['U01','U06','U08'])test(`${unit} genuine old UI save upgrades without changing answers, money or equipment`,async({page})=>{
+ const fixture=JSON.parse(await readFile(`docs/phases/P4/evidence/${unit==='U08'?'localization':'prerequisite'}-${unit.toLowerCase()}-old.json`,'utf8'))
  const pack=JSON.parse(await readFile(`src/content/packs/${unit.toLowerCase()}.json`,'utf8')) as UnitPack
- expect(fixture.provenance.build.sha).toBe('d35221c850d92c3b41a1010d2fadba3617e24ec6')
+ expect(fixture.provenance.build.sha).toBe(unit==='U08'?'48167bddeedffc89f356025a7014de4ed0a2989d':'d35221c850d92c3b41a1010d2fadba3617e24ec6')
+ if(unit==='U08')expect(fixture.provenance.unitSourceSha256).toBe('637d5d3468f27a1d0dff72f966964332c9daa5c1e986217897ef626b0cdaecd5')
  expect(pack.version).not.toBe(fixture.provenance.contentVersion)
  // Only the fresh, isolated Playwright context receives the frozen QA backup.
  await page.goto('/#/parent');await expect(page.getByRole('button',{name:'1',exact:true})).toBeVisible()

@@ -1,0 +1,31 @@
+{
+  "command": "node --import tsx scripts/unit-inventory.ts --release",
+  "exitCode": 1,
+  "missingChoiceLanguageQuestions": 520,
+  "unit08Missing": 0,
+  "review": {
+    "items": 1229,
+    "validMetadata": 0
+  },
+  "missingUnits": [
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U18",
+    "U19",
+    "U20",
+    "U21",
+    "U22",
+    "U23",
+    "U24"
+  ],
+  "errors": 1834,
+  "output": "/tmp/japanese101-recovery/r2-release.json",
+  "outputSha256": "8b1b9a9048025d752d0889d08178ce6666d7c0dbd363764bdc2ba10beb688a1d",
+  "note": "Explicit annotation is necessary but does not replace human language review"
+}

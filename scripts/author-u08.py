@@ -2,6 +2,7 @@
 import runpy,json
 from pathlib import Path
 from collections import Counter
+from u08_localization import localize_questions
 u=runpy.run_path('scripts/author-u08-base.py')['make_unit']();p=u.pack;q=u.question
 for typ,fam,stem,answer,wrong,why in [
  ('T01','read-go','「行きます」の読み方は？','いきます',[('きます','這是来ます。'),('かえります','這是帰ります。'),('のみます','這是飲みます。')],'行きます讀いきます，行的部分讀い。'),
@@ -93,6 +94,7 @@ for item in p['questions']:
   item['hint']='先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。'
   item['hintJa']='どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。'
 assert len(p['questions'])==65
+localize_questions(p)
 u.write()
 source=Path('docs/content/U08/source-draft.json')
 if source.exists() and json.loads(source.read_text()).get('reviewStatus')=='APPROVED':raise ValueError('Refusing approved source overwrite')

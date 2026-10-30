@@ -1,7 +1,15 @@
 import { describe, expect, it } from 'vitest'
 import raw from './packs/u01.json'
-import { parseUnitPack, unitPackErrors } from './contracts'
+import { parseQuestion, parseUnitPack, unitPackErrors } from './contracts'
 describe('U01 runtime content safety',()=>{
+  it('accepts explicit Chinese and Japanese choices while rejecting unsupported language metadata',()=>{
+    const q={...raw.questions[0],choices:raw.questions[0].choices.map((c,n)=>({...c,lang:n%2?'ja':'zh-Hant'}))}
+    expect(parseQuestion(q).choices[0].lang).toBe('zh-Hant')
+    for(const lang of ['en',null,['ja'],{code:'ja'}]){
+      const invalid={...q,choices:[{...q.choices[0],lang},...q.choices.slice(1)]}
+      expect(()=>parseQuestion(invalid)).toThrow('invalid choice language')
+    }
+  })
   it('counts 50 practice questions separately from check candidates and preserves draft review',()=>{
     const unit=parseUnitPack(raw)
     expect(unit.questions.filter(q=>q.partition==='practice')).toHaveLength(50)

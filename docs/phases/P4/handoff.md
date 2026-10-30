@@ -34,3 +34,10 @@ Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`。`npm te
 U09來源已保存：scripts/author-u09-base.py與docs/content/U09/{README,source-draft,production-plan}，25不重複詞、5新漢字見聞読書話、G25～27先修與P0一致、10教學4閱讀6聽力稿；尚無50題／check／音檔／圖／runtime註冊。M/T IN_PROGRESS，其餘TODO。接續需寫完整author-u09.py，不能宣稱九課可玩或改五題族／人審門檻。前一fa15ff9為U08及離線修正；本批只加未註冊作者來源與交接，已測runtime不變。
 
 2026-10-30 U09工程完成：25新詞5字G25～27、50practice＋15check、16WAV4106464bytes及活動圖555154bytes已接入；九課225詞450practice。65組完整日文題幹／解析與10教學仍是待人審作者稿。播放器群組名稱跟可見題幹一致，雙語切換保留情境／選取／音訊門檻與唯一Attempt。310單元與18兩引擎case通過，見evidence/u09-engineering.json。27能力候選48缺口、1229人審0有效；P4-03-R2已記舊課泛用日文漏情境與語言標記，仍IN_PROGRESS。U09-V缺真人，其他非DONE。接續先修R2真漏項、共通15skill、U10～24、真模擬卷與UI；goal ACTIVE。
+
+2026-10-30 P4-03-R2 U08修復：u08-2-draft與65題revision2，完整日文情境／解析、10教學／例句說明及257明確choice.lang已交付。舊真48167bd存檔升版保留v1答案、20coin、帽裝備與交易、原文歸檔後安全重開。312單元＋30不同兩引擎case PASS，最終引用／用詞四次重驗與JS預算1PASS，詳acceptance及localization-u08-engineering.json。release拒絕520缺語言舊題；人審仍1229筆0有效，U08新版135NOT_RUN。R2整體仍IN_PROGRESS，接續U01～07語意／其他含U09語言資料、共通15skill、U10～24、正式模擬卷／UI，goal ACTIVE。
+
+下一優先P4-04-R2：head48167bd的CI41011202850已完成，Build／Chrome／FF成功，WebKit100PASS／1FAIL／1SKIP，失敗是503教材chunk後reload仍錯誤。trace只有第一次u06請求503，reload後未再請求，SW明確blocked；快取假設待驗，不能只加timeout或讓測試不再模擬錯誤。最小失敗證據已入evidence/webkit-retry-48167bd（含trace），先讀summary.json與test-source再修。這個新缺口未被U08語言修復解決，goal仍ACTIVE。
+
+
+2026-10-30 使用者要求：本批 U08 語言修正收尾後暫停，避免繼續消耗用量。已完成的 U01～U09 草稿工程及本批測試保留；未開始 U10，不繼續 WebKit 重試修復。整體尚未完成，goal PAUSED。恢復時先核對本次 commit 與工作樹，再接 P4-04-R2；真人審核與實機 gate 維持原狀。

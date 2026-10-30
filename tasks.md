@@ -441,7 +441,7 @@ P2-09-R2（2026-10-30，非同步導覽修正，依賴 P2-15）：CI Firefox發�
 
 - P4-03-R1（工程修復，非新增Phase task）：U01 G02/G03、U06 G16先修與P0能力圖不一致；U01教學G03繞過G02。Codex修復為u01-3-draft／u06-2-draft，封存舊review-ledger，新增跨單元先修與教學鏈檢查。以d35221c真UI舊存檔驗證保留原始答案／金幣／持有物／裝備／receipt、歸檔舊進度再重開；實際結果見P4 acceptance。P4-03仍TODO，24課與真人審核未完成。
 
-- P4-03-R2（必要內容修復，非新增Phase task，IN_PROGRESS，工程owner Codex／實際日語reviewer待指派）：語言切換會以promptJa／bodyJa／explanationJa取代原文，但既有草稿含泛用指令，已確認U08-Q47缺「和姊姊」設定，日文模式無法取得原題條件。U09已逐題撰寫65個完整日文題幹／解析與10段教學，不能把其完成當全課修復。依賴P4-02／各單元作者稿；交付為U01～24逐題條件與解說對照、過期hash重審、播放器與無障礙label一致。驗收：中日切換保持全部人物／時刻／限制，不改答案或選項選取、不偽造Attempt；日文教學實際說明規則，解說說明正解依據；實際雙語作答／刷新與非原作者核對，不以欄位非空代替語意驗證。主P4-03仍TODO。
+- P4-03-R2（必要內容修復，非新增Phase task，IN_PROGRESS，工程owner Codex／實際日語reviewer待指派）：語言切換會以promptJa／bodyJa／explanationJa取代原文，但既有草稿含泛用指令，原U08-Q47缺「和姊姊」設定；現U08 u08-2-draft與U09已逐題撰寫完整日文作者稿，U08另明示257選項語言。真舊版升級保留答案與交易；正式檢查拒絕仍缺明確語言的520個舊題。其他課的題意／教學／解析與U09選項語言仍須修復及人審，不能把這批當全課完成。依賴P4-02／各單元作者稿；交付為U01～24逐題條件與解說對照、過期hash重審、播放器與無障礙label一致。驗收：中日切換保持全部人物／時刻／限制，不改答案或選項選取、不偽造Attempt；日文教學實際說明規則，解說說明正解依據；實際雙語作答／刷新與非原作者核對，不以欄位非空代替語意驗證。主P4-03仍TODO。
 
 #### P4-04｜全內容教材包、效能與離線回歸
 
@@ -453,6 +453,8 @@ P2-09-R2（2026-10-30，非同步導覽修正，依賴 P2-15）：CI Firefox發�
 - 2026-10-30 工程owner Codex：實作每課動態載入、真registry選單metadata一致性檢查、舊畫面按route載入、500000-byte chunk guard與單課900000-byte實際JS預算；index439123／U06首次JS722211 bytes。兩引擎載入失敗重開／延遲切換六項通過；全部24課與實機仍未完成，詳細見PERFORMANCE_BUDGET.md及P4 acceptance。
 
 - P4-04-R1（工程修復，非新增Phase task）：八課離線包使ServiceWorker.ready的固定8秒截止在有效安裝時誤報失敗。改用真生命週期、可取消等待、真註冊失敗與重試；新增中日準備狀態。舊版真ready延後測試已FAIL，修正與停止來源後冷啟驗證見P4 acceptance。主task仍IN_PROGRESS，24課／實機未完成。
+
+- P4-04-R2（必要工程修復，非新增Phase task，TODO，owner Codex）：CI41011202850的WebKit100PASS／1FAIL／1SKIP，失敗為教材503後明確重新載入仍停錯誤畫面。trace只記一個失敗u06請求，reload後沒有第二請求，Service Worker被阻擋；原因尚待最小重現，不把資源快取假設當定論。依賴P4-04載入器；交付為跨三引擎可靠retry、版本／白名單安全、重整與離線行為、原始Attempt不變及真WebKit證據；不得只延長timeout、放寬assertion或改測試503來假綠。失敗原圖／context／trace／run ID在P4/evidence/webkit-retry-48167bd。既有Chrome／FF成功不抵此缺口。
 
 #### P4-05｜P4內容完整gate
 

@@ -26,8 +26,8 @@ function Review({pack:u01}:{pack:UnitPack}){
       <article className="journey-card journey-stack"><h3>{q.id} v{q.version} · {q.primarySkillId} · {q.itemFamilyId}</h3><p>{q.prompt}</p><p lang="ja">{q.promptJa}</p>{q.material && <p lang="ja" style={{whiteSpace:'pre-wrap'}}>{q.material}</p>}
         {q.image && <ContextImage image={q.image} lang="zh"/>}
         {q.audioSrc && <AudioControl key={q.id} src={q.audioSrc} labels={{play:'播放音訊',playing:'播放中',loading:'載入中',error:'播放失敗，請重試。',stop:'停止播放'}} onComplete={()=>{}}/>}
-        {q.choices.map(c=><p key={c.id}>{q.answer.includes(c.id)?'正解':'干擾項'}：{c.text}{q.distractorReasons[c.id] && <small style={{display:'block'}}>{q.distractorReasons[c.id]}</small>}</p>)}
-        <p>正解順序：{q.answer.map(id=>q.choices.find(c=>c.id===id)?.text).join(' → ')}</p><p>{q.explanation}</p><p lang="ja">{q.explanationJa}</p><p>先修：{q.teachingIds.join('、')}；難度 {q.difficulty}；提示政策 {q.hintPolicy}</p>
+        {q.choices.map(c=><p key={c.id}>{q.answer.includes(c.id)?'正解':'干擾項'}：<span lang={c.lang}>{c.text}</span>{q.distractorReasons[c.id] && <small style={{display:'block'}}>{q.distractorReasons[c.id]}</small>}</p>)}
+        <p>正解順序：{q.answer.map((id,index)=>{const choice=q.choices.find(c=>c.id===id);return <span key={id} lang={choice?.lang}>{index?' → ':''}{choice?.text}</span>})}</p><p>{q.explanation}</p><p lang="ja">{q.explanationJa}</p><p>先修：{q.teachingIds.join('、')}；難度 {q.difficulty}；提示政策 {q.hintPolicy}</p>
       </article>
       <div className="journey-actions"><Button disabled={q.id===u01.questions[0].id} onClick={()=>setQuestionId(u01.questions[u01.questions.findIndex(x=>x.id===q.id)-1].id)}>上一題</Button><Button disabled={q.id===u01.questions.at(-1)!.id} onClick={()=>setQuestionId(u01.questions[u01.questions.findIndex(x=>x.id===q.id)+1].id)}>下一題</Button></div>
       <h2>教學、閱讀與完整聽力稿</h2>{u01.teaching.map(c=><details key={c.id} className="journey-card"><summary style={{minHeight:64}}>{c.id} · {c.title}</summary><p style={{whiteSpace:'pre-wrap'}}>{c.body}</p><p lang="ja">{c.example}</p><p>{c.translation}</p><p lang="ja">{c.titleJa} · {c.bodyJa} · {c.translationJa}</p></details>)}

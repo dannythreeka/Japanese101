@@ -125,3 +125,24 @@ baseline27f9eef7dc5d317afb9939338e32b84e20d866c1＋本批來源，owner／執行
 - 最大chunk439788/500000，U06初載JS730598/900000，離線600資產47278244bytes、PWA657entries48250.98KiB；未改預算或宣稱FPS。75能力27候選、48缺口（15共通＋33未製作文法）；1229審核0有效，U09共135NOT_RUN。release實際exit1拒絕缺人審／能力／U10～24，見u09-release-rejection.json。
 
 U09-M/T/Q1/Q2/A IN_REVIEW，V BLOCKED缺真人，I IN_PROGRESS；P4-03-R2仍IN_PROGRESS、主gate未滿。重現：Node22，VITE_P2_REVIEW_PREVIEW=1 npm run build；核心P0_E2E_PORT=4273 npx playwright test e2e/p4-u09.spec.ts e2e/p4-pack-loading.spec.ts --project=chromium --project=firefox --grep-invert 'reviewer can play|download includes'；媒體只跑同單元--grep 'reviewer can play|download includes'。大trace／log在/tmp/japanese101-recovery/p4-u09-{chromium,firefox}-{core,media}-*，JSON有完整結果及hash，截圖與素材納入git。
+
+## P4-03-R2：U08雙語升版與逐選項語言（2026-10-30）
+
+baseline48167bddeedffc89f356025a7014de4ed0a2989d＋本批來源；owner／執行者Codex，真人reviewer待指派。evidence/localization-u08-engineering.json保存最終來源hash、30個不同browser/case與批次log；三輪build的實際index SHA由trace HTML抽取，未將舊build冒充最終build。最終indexe7db3cef6e8b8caeed693066ccae00e639e97e0ca85a66e952f8e58a27e76099。驗證後僅補記錄／文件。
+
+- U08升u08-2-draft，65題item revision升2；完整撰寫65份日文題幹／解析與10段教學／例句說明。Q47保留「あねと行くよてい」，不再只顯示泛用指令。明示257選項的實際語言（145ja／112zh-Hant），由作者指定，不用字形猜；選項、已排序文字、你的答案／正解與審閱頁沿用相同聲明。有效lang不等於語言標示或翻譯已被真人核准。
+- 中／日切換不改選取、答案ID、難度、材料、題族與音訊門檻。原中文、選項文字、所有item／family／answer IDs、全部16音檔bytes／腳本／provenance逐項不變；舊ledger原文封存review-ledger.u08-1-draft.json。真檢查見localization-u08-source-invariants.json，不重製已成功PCM。
+- 先以真正48167bd畫面完成10教學、四次T01作答、首勝60、花40買帽並裝備、開未完戰鬥，再PIN匯出。匿名fixture localization-u08-old.json附精確build SHA與舊unit source hash。新context只注入這份QA存檔，兩引擎實際升版：四筆v1 Attempt、20coin、裝備、持有物、receipt／ledger／firstWins／skillReviews逐字不變；舊plan／未完戰鬥原文歸檔，新plan版本2、舊戰鬥version-recovery撤退；舊勝利不變，刷新不重複歸檔。未碰真實孩子資料。
+- 312單元／44檔PASS（40.56s）、型別／lint／最終build／draft盤點通過。後加release guard針對CLI重跑1PASS（1.98s）。正式盤點實際exit1，拒絕520個仍缺明確選項語言的舊題（U08缺0）及原有人審／缺課門檻，見localization-release-rejection.json；draft保持舊稿相容，不把預設ja當核准。
+- Chromium145.0.7632.6／Firefox146.0.1各15個不同case，共30PASS，按case去重不把重跑算新測試。核心首輪各5PASS＋1測試定位錯誤：審閱題幹實際是段落，錯找heading；保留失敗，改為精確核對v2 metadata heading及中日段落後，在journey與delivery重跑通過，未改timeout或刪除題意要求。
+- 實際覆蓋舊存檔、完整日文教學與姊姊情境、選取後切語言／真音訊／單筆v2作答／切回中文刷新；中文答案在日文介面的選項及兩份回饋均明示zh-Hant；日文排序保留指定順序、選取與回饋語言。另回歸U09日文、U08四主線／家長真匯出／提示／文法／四格、三項按需載入、六段原音訊及停止來源後的離線冷啟。
+- 最終審閱頁語言span修改只影響審閱頁，已在journey／media重驗；最後目視補正G23「で」引用並用已教行く表達Q47，僅重跑受影響的教學／題目／審閱兩引擎四次PASS（20.8s／26.7s）。其他先前成功case的相關runtime不變；JSON逐批說明差異與trace索引。
+- 320／390／768／1024／1440新版專屬context圖與四格、提示、完整日文教學／問題／中文回饋已保存。Codex實際檢視最終FF768教學、FF768情境、Chrome768中文答案回饋；正文可讀、選取與條件完整。舊U09截圖原文保留，這輪回歸另存localization-u09-regression-*；不是人工視覺簽核或實體平板證據。
+
+最大chunk439788/500000；最終U06初載730802/900000重新實測1PASS（4.3s），不是改舊檔名推算。600離線素材47278244bytes，九課數量／能力候選27／缺口48未變；1229人審仍0有效，U08新版135NOT_RUN。P4-03-R2整體仍IN_PROGRESS：U01～07需語意核對／修復，U09與其他舊選項仍需明確語言；真人教學／題族／音訊／適齡、實機gate未滿，U08／Phase都不能標DONE或COMPLETE。
+
+恢復：Node22，VITE_P2_REVIEW_PREVIEW=1 npm run build。主測試e2e/p4-localization.spec.ts、p4-prerequisites.spec.ts的U08、p4-u08.spec.ts、p4-pack-loading.spec.ts與p4-u09.spec.ts的Japanese mode；命令／逐case／原始log與trace在evidence JSON索引及/tmp/japanese101-recovery/p4-r2-*。capture-localization-fixture.ts只允許舊版1及48167bd，拒覆寫；不要在新版重跑覆蓋fixture。
+
+最終契約再嚴格拒絕lang陣列／物件，不將其字串化冒充ja；受影響parser／全pack loader 7PASS（2.36s）、型別／build／lint及同一初載JS個案1PASS（4.3s）。合法資料與UI行為未變，原30case的有效輸入行為證據保留，最終source／index與預算已更新。
+
+另查實際CI41011202850（head48167bd／merge f47358e）：Build／Chrome／Firefox成功，WebKit100PASS／1FAIL／1SKIP（33.2m），教材503後reload仍錯誤。已保留原錯誤圖、context及142928-byte trace至evidence/webkit-retry-48167bd，新增P4-04-R2，尚未修好或稱三引擎全綠。原1.9GB artifact只取三項失敗證據並驗CRC，不將GitHub憑證轉送blob來源。

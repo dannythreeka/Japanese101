@@ -1,0 +1,342 @@
+{
+  "task": "P4-03-R2",
+  "baseline": "48167bddeedffc89f356025a7014de4ed0a2989d",
+  "owner": "Codex",
+  "humanReviewer": null,
+  "status": "U08 engineering verified; curriculum-wide repair IN_PROGRESS",
+  "sources": {
+    "scripts/u08_localization.py": "a73bbe3a015e248809de78f77f0e0403c1298bbebda9f93ce1a9b55b0f7f1f36",
+    "scripts/author-u08.py": "4cd8162fccec425fde7507ea44c188210527a3669eb46a3cfe9ec5acaa466a17",
+    "scripts/author-u08-base.py": "d641d9071b8da1fe0347fcaf63b280bfbe7a9212d49d3abb85f30010ee2e10e8",
+    "src/content/packs/u08.json": "5e0b592cd644759a51dd173363379a5da42d38d52ca27b9d646e1255b1a24bf5",
+    "src/content/contracts.ts": "78c37f60e1594fc73434a5efe93ac7f3fa41b3f8e14d0a04b28e5471e13c758f",
+    "src/features/journey/QuestionPlayer.tsx": "4b89b3195420dc31bb2029b7bf4167f10bb3fdac64470c2cf836c93bed852b56",
+    "src/features/journey/ContentReview.tsx": "48b41af88f6c8e93043ab398b055ede160156cf2b467dd4cf5aa38672d63aa6f",
+    "scripts/unit-inventory.ts": "dda43e4d947e88c0d4f231f99937cfc57086622c684eb6117cbdc8696e798a96",
+    "e2e/p4-localization.spec.ts": "bbea81637c99874167f84cdbf098dc9877ff10a7657f0004d4b3d572cd2882ed",
+    "e2e/p4-prerequisites.spec.ts": "415b85558e270d687b81d3a0aebc47d6abb327503c45acb4cccfeb6c11245306",
+    "e2e/p4-u08.spec.ts": "bbf49a055badc82cb05c1e000ff18b8019ec86144b709c89b4d43ad055a0f6c5"
+  },
+  "build": {
+    "finalIndexSha256": "e7db3cef6e8b8caeed693066ccae00e639e97e0ca85a66e952f8e58a27e76099",
+    "tracedBuilds": [
+      {
+        "batch": "core",
+        "indexSha256": "327b789386df5a077b9a8e93f66c38d2d2b53d49c4855995ca4a0e3f5b2fe5e9",
+        "trace": "/tmp/japanese101-recovery/p4-r2-chromium-core-results/p4-localization-Chinese-an-95cc5--and-a-replay-after-refresh-chromium/trace.zip",
+        "resource": "0b37332d340613ce2a3dd304853945d20e0c2871.html"
+      },
+      {
+        "batch": "journey",
+        "indexSha256": "eb4a9cf82d578aad0ef9b4a3957216c9a24551a1caf541269eeba6f1a013c721",
+        "trace": "/tmp/japanese101-recovery/p4-r2-chromium-journey-results/p4-localization-the-revise-993d2--without-creating-an-answer-chromium/trace.zip",
+        "resource": "71b0e0068ae8384f165c16723e731f23f0f3e809.html"
+      },
+      {
+        "batch": "delivery",
+        "indexSha256": "43f3fffed6b53120a5e31e11ca75a74d342fd3dcf6c4e98287f920e4ab5921f8",
+        "trace": "/tmp/japanese101-recovery/p4-r2-chromium-delivery-results/p4-localization-U08-Japane-9db0d-wer-across-language-changes-chromium/trace.zip",
+        "resource": "db99dbc4aae2a94b44d020922a3bba76ccf85747.html"
+      }
+    ],
+    "scope": "First core five passes do not load ContentReview; its language-span change was rechecked in journey/media. Final changes only quote the G23 particle and simplify Q47 wording; both affected cases rerun in delivery. Final contract narrowing only rejects non-string lang values; parser/all-pack loader tests and initial-JS smoke reverified valid data.",
+    "maximumChunkBytes": 439788,
+    "u06InitialJavaScriptBytes": 730802,
+    "offlineAssets": 600,
+    "offlineBytes": 47278244
+  },
+  "unit": {
+    "passed": 312,
+    "files": 44,
+    "durationSeconds": 40.56,
+    "afterReleaseGuardTargetedCliPassed": 1,
+    "afterStrictLanguageGuardParserLoaderPassed": 7
+  },
+  "browser": {
+    "distinctPassed": 30,
+    "cases": [
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-localization.spec.ts:6:1 › U08 Japanese teaching and sister-setting question retain the instruction and preserve one answer across language changes",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-localization.spec.ts:6:1 › U08 Japanese teaching and sister-setting question retain the instruction and preserve one answer across language changes (12.9s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-delivery.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-localization.spec.ts:39:1 › Chinese answer language is explicit in Japanese mode, the saved feedback and a replay after refresh",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-localization.spec.ts:39:1 › Chinese answer language is explicit in Japanese mode, the saved feedback and a replay after refresh (7.8s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-localization.spec.ts:55:1 › a Japanese ordering question keeps its specified order and marks the chosen words and feedback correctly",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-localization.spec.ts:55:1 › a Japanese ordering question keeps its specified order and marks the chosen words and feedback correctly (6.5s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-prerequisites.spec.ts:6:39 › U08 genuine old UI save upgrades without changing answers, money or equipment",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-prerequisites.spec.ts:6:39 › U08 genuine old UI save upgrades without changing answers, money or equipment (4.1s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u09.spec.ts:97:1 › U09 Japanese mode retains the complete setting, selection, audio gate and saved explanation",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u09.spec.ts:97:1 › U09 Japanese mode retains the complete setting, selection, audio gate and saved explanation (7.9s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-localization.spec.ts:6:1 › U08 Japanese teaching and sister-setting question retain the instruction and preserve one answer across language changes",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-localization.spec.ts:6:1 › U08 Japanese teaching and sister-setting question retain the instruction and preserve one answer across language changes (16.5s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-delivery.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-localization.spec.ts:39:1 › Chinese answer language is explicit in Japanese mode, the saved feedback and a replay after refresh",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-localization.spec.ts:39:1 › Chinese answer language is explicit in Japanese mode, the saved feedback and a replay after refresh (8.7s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-localization.spec.ts:55:1 › a Japanese ordering question keeps its specified order and marks the chosen words and feedback correctly",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-localization.spec.ts:55:1 › a Japanese ordering question keeps its specified order and marks the chosen words and feedback correctly (6.9s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-prerequisites.spec.ts:6:39 › U08 genuine old UI save upgrades without changing answers, money or equipment",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-prerequisites.spec.ts:6:39 › U08 genuine old UI save upgrades without changing answers, money or equipment (5.9s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u09.spec.ts:97:1 › U09 Japanese mode retains the complete setting, selection, audio gate and saved explanation",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u09.spec.ts:97:1 › U09 Japanese mode retains the complete setting, selection, audio gate and saved explanation (9.9s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-localization.spec.ts:69:1 › the revised Q47 can be reviewed with its actual audio without creating an answer",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-localization.spec.ts:69:1 › the revised Q47 can be reviewed with its actual audio without creating an answer (4.0s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-delivery.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:5:1 › opening U06 loads only its content; menus expose other real units without downloading their questions",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-pack-loading.spec.ts:5:1 › opening U06 loads only its content; menus expose other real units without downloading their questions (1.9s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-journey.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:21:1 › a failed content chunk gives a recoverable state and a deliberate reload retries without creating attempts",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-pack-loading.spec.ts:21:1 › a failed content chunk gives a recoverable state and a deliberate reload retries without creating attempts (2.6s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-journey.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:31:1 › switching units while their chunk is delayed cannot render or save the old unit",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-pack-loading.spec.ts:31:1 › switching units while their chunk is delayed cannot render or save the old unit (888ms)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-journey.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:8:1 › U08 four strands save real attempts, retain illustrated feedback and export into the correct parent unit",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:8:1 › U08 four strands save real attempts, retain illustrated feedback and export into the correct parent unit (20.2s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-journey.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:68:1 › U08 illustrated transport-match practice gives a relevant hint and retains hinted evidence",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:68:1 › U08 illustrated transport-match practice gives a relevant hint and retains hinted evidence (14.6s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-journey.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:88:1 › U08 four actual vehicle crops remain complete and separately recognizable",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:88:1 › U08 four actual vehicle crops remain complete and separately recognizable (2.6s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-journey.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:97:1 › U08 transport grammar uses the taught kana and saves the actual method answer",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:97:1 › U08 transport grammar uses the taught kana and saves the actual method answer (4.9s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-journey.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-localization.spec.ts:69:1 › the revised Q47 can be reviewed with its actual audio without creating an answer",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-localization.spec.ts:69:1 › the revised Q47 can be reviewed with its actual audio without creating an answer (4.2s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-delivery.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:5:1 › opening U06 loads only its content; menus expose other real units without downloading their questions",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-pack-loading.spec.ts:5:1 › opening U06 loads only its content; menus expose other real units without downloading their questions (2.3s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-journey.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:21:1 › a failed content chunk gives a recoverable state and a deliberate reload retries without creating attempts",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-pack-loading.spec.ts:21:1 › a failed content chunk gives a recoverable state and a deliberate reload retries without creating attempts (3.4s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-journey.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:31:1 › switching units while their chunk is delayed cannot render or save the old unit",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-pack-loading.spec.ts:31:1 › switching units while their chunk is delayed cannot render or save the old unit (2.7s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-journey.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:8:1 › U08 four strands save real attempts, retain illustrated feedback and export into the correct parent unit",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:8:1 › U08 four strands save real attempts, retain illustrated feedback and export into the correct parent unit (20.5s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-journey.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:68:1 › U08 illustrated transport-match practice gives a relevant hint and retains hinted evidence",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:68:1 › U08 illustrated transport-match practice gives a relevant hint and retains hinted evidence (16.6s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-journey.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:88:1 › U08 four actual vehicle crops remain complete and separately recognizable",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:88:1 › U08 four actual vehicle crops remain complete and separately recognizable (2.7s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-journey.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:97:1 › U08 transport grammar uses the taught kana and saves the actual method answer",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:97:1 › U08 transport grammar uses the taught kana and saves the actual method answer (6.3s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-journey.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:37:1 › U08 reviewer can play all six real listening tracks without creating learner answers",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:37:1 › U08 reviewer can play all six real listening tracks without creating learner answers (36.1s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-media.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:48:3 › U08 complete offline pack › download includes new artwork, then a stopped origin can cold-open U08 teaching, illustration and listening",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:48:3 › U08 complete offline pack › download includes new artwork, then a stopped origin can cold-open U08 teaching, illustration and listening (35.2s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-chromium-media.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:37:1 › U08 reviewer can play all six real listening tracks without creating learner answers",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:37:1 › U08 reviewer can play all six real listening tracks without creating learner answers (39.0s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-media.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:48:3 › U08 complete offline pack › download includes new artwork, then a stopped origin can cold-open U08 teaching, illustration and listening",
+        "status": "PASS",
+        "latestPassingLine": "e2e/p4-u08.spec.ts:48:3 › U08 complete offline pack › download includes new artwork, then a stopped origin can cold-open U08 teaching, illustration and listening (45.1s)",
+        "latestPassingLog": "/tmp/japanese101-recovery/r2-firefox-media.log"
+      }
+    ],
+    "batches": [
+      {
+        "log": "/tmp/japanese101-recovery/r2-chromium-core.log",
+        "sha256": "7fcfb18f16aacbff2d18dddb02b72282a3815e93b03e886a80290845a6b55428",
+        "passingCases": 5,
+        "status": "five passes; one wrong heading locator failed and was separately corrected"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/r2-firefox-core.log",
+        "sha256": "e0f3d6629e9ccce17c28504a1984f1b48bcb88b4d3317a4296e9f07637481bff",
+        "passingCases": 5,
+        "status": "five passes; one wrong heading locator failed and was separately corrected"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/r2-chromium-journey.log",
+        "sha256": "fc6270cd60fce8d9d44541dd66538f9d9c72056edc560bd7b64d5a2e8360ae6b",
+        "passingCases": 8,
+        "status": "  8 passed (58.7s)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/r2-firefox-journey.log",
+        "sha256": "dd855ee6b3fa5854d977ebfac4657429337d56794f407cd8aa50076fd405d418",
+        "passingCases": 8,
+        "status": "  8 passed (1.1m)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/r2-chromium-media.log",
+        "sha256": "9f77a4f2c35b22c2a3c70ccf21f6f5ac75a6573173475878c0c922c417ff7937",
+        "passingCases": 2,
+        "status": "  2 passed (1.3m)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/r2-firefox-media.log",
+        "sha256": "10bf67f7138c074fa31cc72d7094acd424ead776cab3f0c5fb31cca698841c48",
+        "passingCases": 2,
+        "status": "  2 passed (1.6m)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/r2-chromium-delivery.log",
+        "sha256": "b7863fd367e9c6995740eec58c400addad83c378faf552a6c5ac89a118a07c9f",
+        "passingCases": 2,
+        "status": "  2 passed (20.8s)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/r2-firefox-delivery.log",
+        "sha256": "dce765cd7b7695c0c775a752b853c6b367eb632244c3b189896aa273f4a50650",
+        "passingCases": 2,
+        "status": "  2 passed (26.7s)"
+      }
+    ],
+    "engines": {
+      "chromium": "145.0.7632.6",
+      "firefox": "146.0.1"
+    },
+    "physicalDevice": "NOT_RUN"
+  },
+  "data": {
+    "oldPack": "u08-1-draft",
+    "newPack": "u08-2-draft",
+    "itemRevisions": "1→2 for 65 questions",
+    "choiceLanguages": {
+      "ja": 145,
+      "zh-Hant": 112
+    },
+    "allCurriculumUnits": 9,
+    "allReviewItems": 1229,
+    "approvedHumanItems": 0
+  },
+  "limitations": [
+    "Other units still need Japanese semantic/choice-language audit",
+    "Release rejects 520 legacy questions missing explicit language",
+    "Human Japanese, audio, visual and physical-device approvals remain absent"
+  ]
+}

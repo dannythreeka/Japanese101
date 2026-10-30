@@ -1,0 +1,246 @@
+{
+  "scope": "individual minified JavaScript chunks; not total offline media",
+  "limitBytes": 500000,
+  "assets": [
+    {
+      "file": "index-BBeVLhTx.js",
+      "bytes": 439788,
+      "gzipBytes": 141064
+    },
+    {
+      "file": "ContentReview-BNdyL17a.js",
+      "bytes": 142167,
+      "gzipBytes": 39100
+    },
+    {
+      "file": "u08-BoV43vod.js",
+      "bytes": 121398,
+      "gzipBytes": 18095
+    },
+    {
+      "file": "u09-BIFqwIfL.js",
+      "bytes": 118883,
+      "gzipBytes": 18334
+    },
+    {
+      "file": "u01-GyzI0neR.js",
+      "bytes": 109916,
+      "gzipBytes": 15806
+    },
+    {
+      "file": "u02-CGGnjxwI.js",
+      "bytes": 106548,
+      "gzipBytes": 16935
+    },
+    {
+      "file": "u06-B9Gz0Xy9.js",
+      "bytes": 105207,
+      "gzipBytes": 13940
+    },
+    {
+      "file": "u07-BJpQ3Of4.js",
+      "bytes": 102766,
+      "gzipBytes": 14251
+    },
+    {
+      "file": "u05-ltB6r7uY.js",
+      "bytes": 100943,
+      "gzipBytes": 15093
+    },
+    {
+      "file": "u04-8OMRdiHR.js",
+      "bytes": 100897,
+      "gzipBytes": 14696
+    },
+    {
+      "file": "u03-CXIKTKqq.js",
+      "bytes": 100382,
+      "gzipBytes": 15136
+    },
+    {
+      "file": "scenes-CXFX3wk5.js",
+      "bytes": 66284,
+      "gzipBytes": 10421
+    },
+    {
+      "file": "vocabulary-OdqLAx0x.js",
+      "bytes": 45569,
+      "gzipBytes": 5992
+    },
+    {
+      "file": "JourneyEntry-CimQUWL_.js",
+      "bytes": 41248,
+      "gzipBytes": 13266
+    },
+    {
+      "file": "journey-DSLqFUtT.js",
+      "bytes": 32292,
+      "gzipBytes": 9120
+    },
+    {
+      "file": "FullBackup-DRlTW2Bi.js",
+      "bytes": 24766,
+      "gzipBytes": 9220
+    },
+    {
+      "file": "KanaCatchGame-CaX8Jdw_.js",
+      "bytes": 21897,
+      "gzipBytes": 6959
+    },
+    {
+      "file": "ParentDashboard-D5AsUJ9x.js",
+      "bytes": 19869,
+      "gzipBytes": 5568
+    },
+    {
+      "file": "Character-aVxVGssu.js",
+      "bytes": 19154,
+      "gzipBytes": 5430
+    },
+    {
+      "file": "LevelComplete-f8EWKcPR.js",
+      "bytes": 18772,
+      "gzipBytes": 6965
+    },
+    {
+      "file": "AdventureMap-w0JfGy-j.js",
+      "bytes": 14260,
+      "gzipBytes": 4841
+    },
+    {
+      "file": "KanaWriteGame-Bn-Ao-W0.js",
+      "bytes": 14210,
+      "gzipBytes": 4974
+    },
+    {
+      "file": "PetAvatar-DOIMGkpP.js",
+      "bytes": 10512,
+      "gzipBytes": 2611
+    },
+    {
+      "file": "PlayScreen-jh7JWMmQ.js",
+      "bytes": 10285,
+      "gzipBytes": 3223
+    },
+    {
+      "file": "text-CEOolVX5.js",
+      "bytes": 9841,
+      "gzipBytes": 4192
+    },
+    {
+      "file": "audio-DclSjBQj.js",
+      "bytes": 9698,
+      "gzipBytes": 3734
+    },
+    {
+      "file": "JourneyReport-Di40Rlpl.js",
+      "bytes": 9087,
+      "gzipBytes": 4204
+    },
+    {
+      "file": "contracts-tQ9gPk5o.js",
+      "bytes": 8085,
+      "gzipBytes": 2541
+    },
+    {
+      "file": "LevelEntry-CNUZ2ZUA.js",
+      "bytes": 7091,
+      "gzipBytes": 2621
+    },
+    {
+      "file": "KotodamaGame-7ShuDWda.js",
+      "bytes": 6848,
+      "gzipBytes": 2639
+    },
+    {
+      "file": "ChoicePractice-nMjGYJ4P.js",
+      "bytes": 5680,
+      "gzipBytes": 2103
+    },
+    {
+      "file": "DakutenDragGame-DmCDCmrO.js",
+      "bytes": 5126,
+      "gzipBytes": 2139
+    },
+    {
+      "file": "FlashCardDeck-vlskCNG-.js",
+      "bytes": 4961,
+      "gzipBytes": 2074
+    },
+    {
+      "file": "HomeScreen-xPPYaHGz.js",
+      "bytes": 4594,
+      "gzipBytes": 1867
+    },
+    {
+      "file": "journey-ui-CVXo2VYB.js",
+      "bytes": 3540,
+      "gzipBytes": 1414
+    },
+    {
+      "file": "kana-B6GF2kt1.js",
+      "bytes": 3107,
+      "gzipBytes": 1674
+    },
+    {
+      "file": "loader-DLKRcc76.js",
+      "bytes": 2675,
+      "gzipBytes": 1200
+    },
+    {
+      "file": "ProfileCreate-BPPPxoAa.js",
+      "bytes": 2507,
+      "gzipBytes": 1116
+    },
+    {
+      "file": "KanaGallery-D61XHLcL.js",
+      "bytes": 2358,
+      "gzipBytes": 1052
+    },
+    {
+      "file": "mic-KpGQ9lWP.js",
+      "bytes": 2205,
+      "gzipBytes": 1048
+    },
+    {
+      "file": "OfflinePack-CxqS251D.js",
+      "bytes": 2190,
+      "gzipBytes": 1135
+    },
+    {
+      "file": "ProfileSelector-BqGwmUYA.js",
+      "bytes": 2094,
+      "gzipBytes": 896
+    },
+    {
+      "file": "UiReview-CXtIskpQ.js",
+      "bytes": 1631,
+      "gzipBytes": 786
+    },
+    {
+      "file": "catalog-Cnt6mP_v.js",
+      "bytes": 1003,
+      "gzipBytes": 596
+    },
+    {
+      "file": "SpeakButton-BbQAfhwY.js",
+      "bytes": 985,
+      "gzipBytes": 621
+    },
+    {
+      "file": "useAdventureChallenge-0MVQhZS0.js",
+      "bytes": 667,
+      "gzipBytes": 358
+    },
+    {
+      "file": "KanaMatchGame-B7q5DDeP.js",
+      "bytes": 161,
+      "gzipBytes": 157
+    },
+    {
+      "file": "ListenQuiz-Djmw08XI.js",
+      "bytes": 161,
+      "gzipBytes": 158
+    }
+  ]
+}

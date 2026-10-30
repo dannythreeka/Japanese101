@@ -2,9 +2,10 @@
 import json
 from pathlib import Path
 from content_authoring import DraftUnit
+from u08_localization import localize_teaching
 
 def make_unit():
- u=DraftUnit('U08','交通與目的地：小鎮出發的約定');p=u.pack
+ u=DraftUnit('U08','交通與目的地：小鎮出發的約定');p=u.pack;p['version']='u08-2-draft'
  words=[('いく','去'),('くる','來'),('かえる','回去；回家'),('あるいて','步行；以固定搭配あるいて行きます學習'),('のる','搭乘'),('おりる','下車；下交通工具'),('でんしゃ','電車'),('バス','公車'),('じてんしゃ','腳踏車'),('くるま','汽車'),('タクシー','計程車'),('ひこうき','飛機'),('ふね','船'),('ちかてつ','地下鐵'),('きっぷ','車票／船票等票券'),('びょういん','醫院'),('ぎんこう','銀行'),('ゆうびんきょく','郵局'),('としょかん','圖書館'),('くうこう','機場'),('バスてい','公車站'),('いりぐち','入口'),('でぐち','出口'),('いっしょに','一起'),('だれと','和誰；詢問同行者的固定問法')]
  p['vocabulary']=[dict(id=f'U08-V{i:02}',text=t,reading=t,meaning=m) for i,(t,m) in enumerate(words,1)]
  p['kanji']=[dict(id=f'U08-K{i:02}',text=t,reading=r,meaning=m) for i,(t,r,m) in enumerate([('行','い','去；行きます的行讀い'),('来','き','來；来ます的来讀き'),('車','くるま','汽車'),('入','いり','進入；入口的入讀いり'),('出','で','出去；出口的出讀で')],1)]
@@ -25,6 +26,7 @@ def make_unit():
  p['readings']=[dict(id='U08-R01',text='わたしは としょかんへ 行きます。バスで 行きます。あねと 行きます。',skillId='R-SHORT'),dict(id='U08-R02',text='ともだちは ぎんこうへ 行きます。車で 行きます。わたしは えきへ あるいて 行きます。',skillId='R-SHORT'),dict(id='U08-R03',text='あさです。わたしと あには 学校へ 行きます。きょうは バスで 行きません。じてんしゃで 行きます。ははは びょういんへ 行きます。ははは タクシーで 行きます。わたしは ははと 行きません。',skillId='R-MID'),dict(id='U08-R04',text='きょうの よてい\nあに：学校／じてんしゃ\nあね：としょかん／バス\nはは：びょういん／タクシー\nわたし：えき／あるいて',skillId='R-INFO')]
  scripts=[('L-TASK','としょかんへいきます。あねと、ばすでいきます。ぎんこうへはいきません。'),('L-TASK','えきへいきます。きょうは、でんしゃでいきません。あるいていきます。'),('L-KEY','わたしは、ともだちと、がっこうへいきます。あには、ひとりで、としょかんへいきます。'),('L-KEY','ははは、びょういんへ、たくしーでいきます。あねは、ぎんこうへ、ばすでいきます。'),('L-EXPR','いどうのほうほうです。いちばん。ばすでいきます。にばん。くるまでいきます。さんばん。でんしゃでいきます。よんばん。じてんしゃでいきます。'),('L-RESP','だれといきますか。')]
  p['listening']=[dict(id=f'U08-L{i:02}',script=s,audioSrc=f'/assets/audio/u08/listening-{i:02}.wav',skillId=k,reviewStatus='DRAFT') for i,(k,s) in enumerate(scripts,1)]
+ localize_teaching(p)
  return u
 
 if __name__=='__main__':

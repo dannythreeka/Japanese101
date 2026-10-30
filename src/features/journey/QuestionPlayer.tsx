@@ -27,25 +27,26 @@ export default function QuestionPlayer({question,attempt,onSubmit,onContinue,hid
     pending.current=input;setSaving(true);setFailed(false)
     try{if(refreshOnly.current)await refreshOnly.current();else await onSubmit(input);pending.current=null;refreshOnly.current=null}catch(error){if(error instanceof AnswerRefreshError)refreshOnly.current=error.refresh;setFailed(refreshOnly.current?'refresh':'storage')}finally{setSaving(false)}
   }
-  const chosen=(attempt?.answerIds ?? selected).map(id=>question.choices.find(c=>c.id===id)?.text ?? '').join(' ')
-  return <section className="journey-stack" aria-busy={saving}>
-    <h2>{prompt}</h2>
+  const chosen=attempt?.answerIds ?? selected
+  const choiceLabels=(ids:readonly string[])=>ids.map((id,index)=>{const choice=question.choices.find(c=>c.id===id);return <span key={id} lang={choice?.lang ?? 'ja'}>{index ? ' ':''}{choice?.text ?? ''}</span>})
+  return <section className="journey-stack" aria-busy={saving} lang={lang==='ja'?'ja':'zh-Hant'}>
+    <h2 lang={lang==='ja'&&question.promptJa?'ja':'zh-Hant'}>{prompt}</h2>
     {question.image && <ContextImage image={question.image} lang={lang}/>}
     {question.material && <div className="journey-card" lang="ja" style={{whiteSpace:'pre-wrap'}}>{question.material}</div>}
     {question.audioSrc && <AudioControl src={question.audioSrc} labels={{play:t('play'),playing:t('playing'),loading:t('audioLoading'),error:t('audioError'),stop:t('stopAudio')}} onComplete={()=>setAudioPlayCount(n=>n+1)}/>}
     {question.kind==='order' ? <>
       <p className="journey-muted">{t('sortInstruction')}</p>
-      <div className="journey-actions" role="group" aria-label={t('chosenWords')}>{selected.map((id,index)=><Button key={id} variant="secondary" disabled={locked} onClick={()=>setSelected(selected.filter(value=>value!==id))}><span className="journey-muted">{index+1}.</span><span lang="ja">{question.choices.find(c=>c.id===id)?.text}</span></Button>)}</div>
-      <div className="journey-actions" role="group" aria-label={t('availableWords')}>{question.choices.map(choice=><Button key={choice.id} variant="secondary" disabled={locked || selected.includes(choice.id)} onClick={()=>setSelected([...selected,choice.id])}><span lang="ja">{choice.text}</span></Button>)}</div>
-    </>:<div className="journey-grid" role="group" aria-label={prompt}>{question.choices.map(choice=><ChoiceCard key={choice.id} selected={(attempt?.answerIds ?? selected).includes(choice.id)} disabled={locked} onClick={()=>setSelected([choice.id])}><span lang="ja">{choice.text}</span></ChoiceCard>)}</div>}
+      <div className="journey-actions" role="group" aria-label={t('chosenWords')}>{selected.map((id,index)=><Button key={id} variant="secondary" disabled={locked} onClick={()=>setSelected(selected.filter(value=>value!==id))}><span className="journey-muted">{index+1}.</span>{choiceLabels([id])}</Button>)}</div>
+      <div className="journey-actions" role="group" aria-label={t('availableWords')}>{question.choices.map(choice=><Button key={choice.id} variant="secondary" disabled={locked || selected.includes(choice.id)} onClick={()=>setSelected([...selected,choice.id])}><span lang={choice.lang ?? 'ja'}>{choice.text}</span></Button>)}</div>
+    </>:<div className="journey-grid" role="group" aria-label={prompt}>{question.choices.map(choice=><ChoiceCard key={choice.id} selected={(attempt?.answerIds ?? selected).includes(choice.id)} disabled={locked} onClick={()=>setSelected([choice.id])}><span lang={choice.lang ?? 'ja'}>{choice.text}</span></ChoiceCard>)}</div>}
     {!attempt && <>
-      {question.partition==='practice' && question.hintPolicy==='practice-only' && <div>{hintUsed ? <p className="journey-card">{lang==='ja' ? question.hintJa ?? question.hint:question.hint}</p>:<Button variant="quiet" disabled={saving || !!failed} onClick={()=>setHintUsed(true)}>{t('hint')}</Button>}</div>}
+      {question.partition==='practice' && question.hintPolicy==='practice-only' && <div>{hintUsed ? <p className="journey-card" lang={lang==='ja'&&question.hintJa?'ja':'zh-Hant'}>{lang==='ja' ? question.hintJa ?? question.hint:question.hint}</p>:<Button variant="quiet" disabled={saving || !!failed} onClick={()=>setHintUsed(true)}>{t('hint')}</Button>}</div>}
       {failed && <StatePanel state="storage-error" title={t(failed==='refresh'?'refreshError':'storageError')} action={t('retry')} onAction={()=>{void submit()}}>{failed==='storage' && <p>{t('storageDetail')}</p>}</StatePanel>}
       <div className="journey-actions"><Button disabled={!complete || !audioReady || locked} onClick={()=>{void submit()}}>{saving ? t('loading'):t('confirm')}</Button><Button variant="quiet" disabled={!audioReady || locked} onClick={()=>{void submit(true)}}>{t('skip')}</Button></div>
     </>}
     {attempt && (hideAssessmentFeedback ? <Button onClick={onContinue}>{t('next')}</Button>:<Feedback correct={attempt.outcome==='correct'} title={attempt.outcome==='skipped' ? t('skipped'):attempt.outcome==='correct' ? t('correct'):t('incorrect')}>
-      <p>{t('yourAnswer')}：<span lang="ja">{chosen || '—'}</span></p><p>{t('rightAnswer')}：<span lang="ja">{question.answer.map(id=>question.choices.find(c=>c.id===id)?.text).join(' ')}</span></p>
-      <p>{lang==='ja' ? question.explanationJa ?? question.explanation:question.explanation}</p><Button onClick={onContinue}>{t('next')}</Button>
+      <p>{t('yourAnswer')}：{chosen.length ? choiceLabels(chosen):'—'}</p><p>{t('rightAnswer')}：{choiceLabels(question.answer)}</p>
+      <p lang={lang==='ja'&&question.explanationJa?'ja':'zh-Hant'}>{lang==='ja' ? question.explanationJa ?? question.explanation:question.explanation}</p><Button onClick={onContinue}>{t('next')}</Button>
     </Feedback>)}
   </section>
 }

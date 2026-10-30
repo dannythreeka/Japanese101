@@ -22,6 +22,7 @@ for(const pack of packs){
   for(const field of ['vocabulary','kanji','grammar','teaching','readings','listening','questions'] as const)for(const item of pack[field])rows.push({id:item.id,kind:field,sha256:hash(JSON.stringify(item)),status:'NOT_RUN',reviewer:null,reviewedAt:null})
   const audio=JSON.parse(await readFile(`${audioDir}/manifest.json`,'utf8')) as {version:string;reviewStatus:string;assets:{id:string;src:string;script:string;scriptSha256:string;sha256:string;bytes:number;reviewStatus:string}[]}
   if(audio.version!==pack.version)errors.push(`${pack.id}: audio version mismatch`)
+  if(release)for(const q of pack.questions)if(q.choices.some(c=>!c.lang))errors.push(`${q.id}: release requires explicit choice languages`)
   const required=new Map<string,string>()
   for(const a of pack.listening)required.set(a.audioSrc,a.script)
   for(const c of pack.teaching)if(c.audioSrc){if(c.audioScript)required.set(c.audioSrc,c.audioScript);else if(!required.has(c.audioSrc))errors.push(`${c.id}: missing teaching script`)}

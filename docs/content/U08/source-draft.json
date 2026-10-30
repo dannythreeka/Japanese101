@@ -1,6 +1,6 @@
 {
   "id": "U08",
-  "version": "u08-1-draft",
+  "version": "u08-2-draft",
   "title": "交通與目的地：小鎮出發的約定",
   "reviewStatus": "DRAFT",
   "reviewer": null,
@@ -287,10 +287,10 @@
       "title": "來去與步行",
       "titleJa": "いく・くる・あるいて",
       "body": "いく：去\nくる：來\nかえる：回去；回家\nあるいて：步行；以固定搭配あるいて行きます學習\nのる：搭乘\n行きます＝いきます，来ます＝きます，帰ります＝かえります。以說話者目前位置區分「去」與「來」。あるいて行きます是本課固定搭配，不說あるいてで行きます。",
-      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "bodyJa": "行きます＝いきます、来ます＝きます、かえります、あるいて行きます、のります。行きますは、ここからべつのところへいくことです。来ますは、はなすひとのいるところにむかうことです。あるいて行きますは、ひとつのいいかたです。あるいてで行きます、とはいいません。",
       "example": "いく",
       "translation": "去",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "ここからべつのところへいくことです。",
       "skillIds": [
         "V-CONTEXT",
         "V-PARA",
@@ -312,10 +312,10 @@
       "title": "搭乘與常見交通",
       "titleJa": "のりものとおりる",
       "body": "おりる：下車；下交通工具\nでんしゃ：電車\nバス：公車\nじてんしゃ：腳踏車\nくるま：汽車\n電車、公車、腳踏車與汽車分開辨識。おりる表示離開搭乘的交通工具，與のる相反。",
-      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "bodyJa": "おりるは、のっているのりものからそとにでることです。のるとは、ぎゃくのこうどうです。でんしゃ、バス、じてんしゃ、車は、それぞれちがうのりものです。このかでは、ことばのいみをたしかめます。",
       "example": "おりる",
       "translation": "下車；下交通工具",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "のっているのりものから、そとにでることです。",
       "skillIds": [
         "V-CONTEXT",
         "V-PARA",
@@ -337,10 +337,10 @@
       "title": "票券與其他交通",
       "titleJa": "きっぷとほかののりもの",
       "body": "タクシー：計程車\nひこうき：飛機\nふね：船\nちかてつ：地下鐵\nきっぷ：車票／船票等票券\nタクシー、ひこうき、ふね、ちかてつ是不同移動工具。きっぷ是票券，不是車輛名稱。",
-      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "bodyJa": "タクシー、ひこうき、ふね、ちかてつは、のりものです。きっぷは、のりものにのるときにつかうけんです。きっぷを、のりもののなまえとまちがえないようにしましょう。",
       "example": "タクシー",
       "translation": "計程車",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "いきたいところまで、うんてんしてもらう車です。おかねをはらいます。",
       "skillIds": [
         "V-CONTEXT",
         "V-PARA",
@@ -362,10 +362,10 @@
       "title": "小鎮外的目的地",
       "titleJa": "いくところ",
       "body": "びょういん：醫院\nぎんこう：銀行\nゆうびんきょく：郵局\nとしょかん：圖書館\nくうこう：機場\nびょういん有小ょう，表示醫院。這課只談虛構居民去哪裡，不詢問孩子的住址、實際移動路線或定位。",
-      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "bodyJa": "びょういん、ぎんこう、ゆうびんきょく、としょかん、くうこうは、いくところです。びょういんの、ょう、は、ちいさくかきます。このかは、おはなしのひとのいくところをたしかめます。じぶんのじゅうしょや、ほんとうのいどうのしかたをこたえるひつようはありません。",
       "example": "びょういん",
       "translation": "醫院",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "びょうきをみてもらうところです。",
       "skillIds": [
         "V-CONTEXT",
         "V-PARA",
@@ -387,10 +387,10 @@
       "title": "集合與出入口",
       "titleJa": "いっしょに・いりぐち・でぐち",
       "body": "バスてい：公車站\nいりぐち：入口\nでぐち：出口\nいっしょに：一起\nだれと：和誰；詢問同行者的固定問法\n入口＝いりぐち，出口＝でぐち；文字標示要分清楚，不從門在圖片的左右位置猜。だれと問和誰一起去，不是在問去哪裡。",
-      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "bodyJa": "バスていは、バスにのったりおりたりするところです。入口＝いりぐち、出口＝でぐち。はいったりでたりするところです。みぎかひだりかだけで、入口や出口をきめません。いっしょには、ともにすることです。だれとは、いっしょにいくひとをきくいいかたです。",
       "example": "バスてい",
       "translation": "公車站",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "バスにのったりおりたりするところです。",
       "skillIds": [
         "V-CONTEXT",
         "V-PARA",
@@ -412,10 +412,10 @@
       "title": "看懂來去與出入口",
       "titleJa": "いく・くる・いりぐち・でぐち",
       "body": "行きます＝いきます、来ます＝きます、車＝くるま、入口＝いりぐち、出口＝でぐち。\n本課行讀い、来讀き，指的是這兩個完整詞形，不把所有複合詞都讀成一樣。入口的入讀いり，出口的出讀で，後面口在這些詞裡讀ぐち。\n這裡來去指故事人物的移動，不要求孩子真的出門。",
-      "bodyJa": "いきます、きます、くるま、いりぐち、でぐち。よみかたをたしかめましょう。",
+      "bodyJa": "行きます＝いきます、来ます＝きます、車＝くるま、入口＝いりぐち、出口＝でぐち。行は、このことばでは、い、とよみます。来は、き、です。入口の入は、いり、出口の出は、で、です。口は、ここでは、ぐち、とよみます。ほかのことばでも、ぜんぶおなじよみかただとはきめません。",
       "example": "入口と 出口",
       "translation": "入口與出口。",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "入口と出口は、いりぐちとでぐちです。",
       "skillIds": [
         "K-SCRIPT"
       ],
@@ -441,10 +441,10 @@
       "title": "說清楚目的地",
       "titleJa": "どこへいきますか",
       "body": "「場所へ行きます」和「場所に行きます」都可表達去某個目的地。へ作助詞讀え。\nえきへ行きます／えきに行きます：兩者都可以，本課不把其中一個當錯誤選項。\n「どこへ行きますか」問去哪裡；「なんじに行きますか」問時間，不能混在一起。\n行きます與来ます以說話位置為準；這課的目的地問答先用行きます。",
-      "bodyJa": "えきへいきます。えきにいきます。どちらも、いくところをつたえます。じょしのへは、えとよみます。",
+      "bodyJa": "「ばしょへ行きます」と「ばしょに行きます」は、どちらもいくところをつたえられます。えきへ行きます、えきに行きます、は、どちらもつかえます。じょしのへは、え、とよみます。「どこへ行きますか」はいくところ、「なんじに行きますか」はじこくをききます。行きますと来ますは、はなすひとのいるところをかんがえてつかいます。",
       "example": "としょかんへ 行きます。",
       "translation": "去圖書館。",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "いくところは、としょかんです。",
       "skillIds": [
         "G22"
       ],
@@ -462,10 +462,10 @@
       "title": "說明怎麼去",
       "titleJa": "なにでいきますか",
       "body": "「交通工具で行きます」說明移動方法。バスで行きます＝搭公車去；でんしゃで行きます＝搭電車去。\n這裡で是方法，不是目的地；「バスへ行きます」不是同樣的意思。\n步行用固定搭配「あるいて行きます」，不加で。\n「学校へ バスで 行きます」同時說目的地與方法；題目只依文字／聲音，不猜孩子的真實交通習慣。",
-      "bodyJa": "バスでいきます。でんしゃでいきます。あるいていきます。",
+      "bodyJa": "「のりもので行きます」は、いどうのほうほうをつたえます。バスで行きます。でんしゃで行きます。ここでの「で」は、いくところではなく、いどうのほうほうです。バスへ行きます、とはいみがちがいます。あるいて行きますは、あるくことです。あるいてのあとに、で、をつけません。学校へバスで行きます、は、いくところとほうほうをつたえています。",
       "example": "学校へ バスで 行きます。",
       "translation": "搭公車去學校。",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "学校へいくほうほうは、バスです。",
       "skillIds": [
         "G23"
       ],
@@ -483,10 +483,10 @@
       "title": "介紹同行的人",
       "titleJa": "だれといきますか",
       "body": "「人と行きます」說明和誰一起去。あねと行きます＝和姊姊一起去。\n「だれと行きますか」問同行者；「なにで行きますか」問方法；「どこへ行きますか」問目的地。\n「ともだちと バスで 学校へ 行きます」裡，ともだちは同行者、バス是方法、学校是目的地。\n「ともだちと」中的と不表示朋友變成交通工具；區分人と與工具で。ひとりで行きます表示獨自去，是本課一起認識的固定搭配。",
-      "bodyJa": "あねといきます。だれといきますか。ともだちといきます。",
+      "bodyJa": "「ひとと行きます」は、いっしょにいくひとをつたえます。あねと行きます。だれとは、ひとを、なにでは、ほうほうを、どこへは、いくところをききます。ともだちと、バスで、学校へ行きます、では、ともだちがいっしょにいくひと、バスがほうほう、学校がいくところです。ひとりで行きますは、いっしょにいくひとがいないことをつたえる、ひとつのいいかたです。",
       "example": "ともだちと 学校へ 行きます。",
       "translation": "和朋友一起去學校。",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "いっしょにいくひとは、ともだちです。",
       "skillIds": [
         "G24"
       ],
@@ -504,10 +504,10 @@
       "title": "把誰、去哪裡、怎麼去分開",
       "titleJa": "だれと・どこへ・なにで",
       "body": "讀行程卡時，先分同行者、目的地、方法三欄，不把交通工具當目的地或人物。\n表格同時有多個居民時，要先核對人物，再取正確那一列。\n「先去銀行，再去車站」只在題目明確說順序時按順序讀；沒有寫的目的地、時間或同伴不能自行加上。\n插畫只是教學場景，不表示地圖新增車站或多座城鎮。",
-      "bodyJa": "だれと、どこへ、なにでいくか、わけてたしかめましょう。",
+      "bodyJa": "よていをよむときは、いっしょにいくひと、いくところ、ほうほうをわけます。ひとが二人いじょういるひょうでは、まず、だれのらんかたしかめましょう。じゅんばんがいわれているときだけ、そのじゅんにとります。まだいわれていないひと、ばしょ、じこくを、かってにつけたしません。えのばしょが、そのままゲームのあたらしいまちになるわけではありません。",
       "example": "あねと／としょかんへ／バスで",
       "translation": "和姊姊／去圖書館／搭公車。",
-      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "translationJa": "あねがいっしょにいくひと、としょかんがいくところ、バスがほうほうです。",
       "skillIds": [
         "R-SHORT",
         "R-MID",
@@ -527,7 +527,7 @@
   "questions": [
     {
       "id": "U08-Q01",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q01",
       "itemFamilyId": "U08-F-read-go",
@@ -546,30 +546,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「行きます」の読み方は？",
-      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "promptJa": "「行きます」は、なんとよみますか。",
       "choices": [
         {
           "id": "U08-Q01-o1",
-          "text": "きます"
+          "text": "きます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q01-o2",
-          "text": "かえります"
+          "text": "かえります",
+          "lang": "ja"
         },
         {
           "id": "U08-Q01-o3",
-          "text": "のみます"
+          "text": "のみます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q01-o0",
-          "text": "いきます"
+          "text": "いきます",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q01-o0"
       ],
       "explanation": "行きます讀いきます，行的部分讀い。",
-      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "explanationJa": "行きますは、いきます、とよみます。行のぶぶんは、い、です。",
       "distractorReasons": {
         "U08-Q01-o1": "這是来ます。",
         "U08-Q01-o2": "這是帰ります。",
@@ -586,7 +590,7 @@
     },
     {
       "id": "U08-Q02",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q02",
       "itemFamilyId": "U08-F-read-come",
@@ -605,30 +609,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「来ます」の読み方は？",
-      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "promptJa": "「来ます」は、なんとよみますか。",
       "choices": [
         {
           "id": "U08-Q02-o2",
-          "text": "みます"
+          "text": "みます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q02-o3",
-          "text": "きります"
+          "text": "きります",
+          "lang": "ja"
         },
         {
           "id": "U08-Q02-o0",
-          "text": "きます"
+          "text": "きます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q02-o1",
-          "text": "いきます"
+          "text": "いきます",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q02-o0"
       ],
       "explanation": "来ます讀きます。",
-      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "explanationJa": "来ますは、きます、とよみます。",
       "distractorReasons": {
         "U08-Q02-o1": "這是行きます。",
         "U08-Q02-o2": "這是見ます。",
@@ -645,7 +653,7 @@
     },
     {
       "id": "U08-Q03",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q03",
       "itemFamilyId": "U08-F-read-car",
@@ -664,30 +672,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「車」の読み方は？",
-      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "promptJa": "このかの「車」は、なんとよみますか。",
       "choices": [
         {
           "id": "U08-Q03-o3",
-          "text": "ふね"
+          "text": "ふね",
+          "lang": "ja"
         },
         {
           "id": "U08-Q03-o0",
-          "text": "くるま"
+          "text": "くるま",
+          "lang": "ja"
         },
         {
           "id": "U08-Q03-o1",
-          "text": "でんしゃ"
+          "text": "でんしゃ",
+          "lang": "ja"
         },
         {
           "id": "U08-Q03-o2",
-          "text": "きっぷ"
+          "text": "きっぷ",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q03-o0"
       ],
       "explanation": "單獨的車在本課讀くるま。",
-      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "explanationJa": "ひとつのことばの車は、くるま、とよみます。",
       "distractorReasons": {
         "U08-Q03-o1": "電車是另一個完整詞。",
         "U08-Q03-o2": "這是票券。",
@@ -704,7 +716,7 @@
     },
     {
       "id": "U08-Q04",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q04",
       "itemFamilyId": "U08-F-read-exit",
@@ -723,30 +735,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「出口」の読み方は？",
-      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "promptJa": "「出口」は、なんとよみますか。",
       "choices": [
         {
           "id": "U08-Q04-o0",
-          "text": "でぐち"
+          "text": "でぐち",
+          "lang": "ja"
         },
         {
           "id": "U08-Q04-o1",
-          "text": "いりぐち"
+          "text": "いりぐち",
+          "lang": "ja"
         },
         {
           "id": "U08-Q04-o2",
-          "text": "くうこう"
+          "text": "くうこう",
+          "lang": "ja"
         },
         {
           "id": "U08-Q04-o3",
-          "text": "でんしゃ"
+          "text": "でんしゃ",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q04-o0"
       ],
       "explanation": "出口讀でぐち，出的部分讀で。",
-      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "explanationJa": "出口は、でぐち、とよみます。出のぶぶんは、で、です。",
       "distractorReasons": {
         "U08-Q04-o1": "這是入口。",
         "U08-Q04-o2": "這是機場。",
@@ -763,7 +779,7 @@
     },
     {
       "id": "U08-Q05",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q05",
       "itemFamilyId": "U08-F-write-go",
@@ -782,30 +798,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「いきます」對應哪個寫法？",
-      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "promptJa": "「いきます」のかきかたは、どれですか。",
       "choices": [
         {
           "id": "U08-Q05-o1",
-          "text": "来ます"
+          "text": "来ます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q05-o2",
-          "text": "行ます"
+          "text": "行ます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q05-o3",
-          "text": "入りきます"
+          "text": "入りきます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q05-o0",
-          "text": "行きます"
+          "text": "行きます",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q05-o0"
       ],
       "explanation": "行後面接きます。",
-      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "explanationJa": "行のあとにきますをつけて、行きますです。",
       "distractorReasons": {
         "U08-Q05-o1": "這讀きます。",
         "U08-Q05-o2": "漏掉送り仮名き。",
@@ -822,7 +842,7 @@
     },
     {
       "id": "U08-Q06",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q06",
       "itemFamilyId": "U08-F-write-come",
@@ -841,30 +861,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「きます」對應哪個寫法？",
-      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "promptJa": "「きます」のかきかたは、どれですか。",
       "choices": [
         {
           "id": "U08-Q06-o2",
-          "text": "来きます"
+          "text": "来きます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q06-o3",
-          "text": "車ます"
+          "text": "車ます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q06-o0",
-          "text": "来ます"
+          "text": "来ます",
+          "lang": "ja"
         },
         {
           "id": "U08-Q06-o1",
-          "text": "行きます"
+          "text": "行きます",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q06-o0"
       ],
       "explanation": "来接ます，合起來讀きます。",
-      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "explanationJa": "来のあとにますをつけて、来ますです。きは、もうひとつつけません。",
       "distractorReasons": {
         "U08-Q06-o1": "這讀いきます。",
         "U08-Q06-o2": "多了一個き。",
@@ -881,7 +905,7 @@
     },
     {
       "id": "U08-Q07",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q07",
       "itemFamilyId": "U08-F-write-entrance",
@@ -900,30 +924,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「いりぐち」是哪個標示？",
-      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "promptJa": "「いりぐち」は、どのしるしですか。",
       "choices": [
         {
           "id": "U08-Q07-o3",
-          "text": "来口"
+          "text": "来口",
+          "lang": "ja"
         },
         {
           "id": "U08-Q07-o0",
-          "text": "入口"
+          "text": "入口",
+          "lang": "ja"
         },
         {
           "id": "U08-Q07-o1",
-          "text": "出口"
+          "text": "出口",
+          "lang": "ja"
         },
         {
           "id": "U08-Q07-o2",
-          "text": "車"
+          "text": "車",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q07-o0"
       ],
       "explanation": "入口是進入的口，讀いりぐち。",
-      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "explanationJa": "入口は、はいるところです。いりぐち、とよみます。",
       "distractorReasons": {
         "U08-Q07-o1": "這讀でぐち。",
         "U08-Q07-o2": "這讀くるま。",
@@ -940,7 +968,7 @@
     },
     {
       "id": "U08-Q08",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q08",
       "itemFamilyId": "U08-F-write-exit",
@@ -959,30 +987,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「でぐち」是哪個標示？",
-      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "promptJa": "「でぐち」は、どのしるしですか。",
       "choices": [
         {
           "id": "U08-Q08-o0",
-          "text": "出口"
+          "text": "出口",
+          "lang": "ja"
         },
         {
           "id": "U08-Q08-o1",
-          "text": "入口"
+          "text": "入口",
+          "lang": "ja"
         },
         {
           "id": "U08-Q08-o2",
-          "text": "出車"
+          "text": "出車",
+          "lang": "ja"
         },
         {
           "id": "U08-Q08-o3",
-          "text": "行口"
+          "text": "行口",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q08-o0"
       ],
       "explanation": "出口讀でぐち，不依門在左右判定。",
-      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "explanationJa": "出口は、でぐち、とよみます。ドアがみぎかひだりかで、よみかたをきめません。",
       "distractorReasons": {
         "U08-Q08-o1": "這是いりぐち。",
         "U08-Q08-o2": "不是出口的寫法。",
@@ -999,7 +1031,7 @@
     },
     {
       "id": "U08-Q09",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q09",
       "itemFamilyId": "U08-F-ticket-not-vehicle",
@@ -1017,30 +1049,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「きっぷ」指哪一項？",
-      "promptJa": "ことばのいみをえらびましょう。",
+      "promptJa": "「きっぷ」は、どれですか。",
       "choices": [
         {
           "id": "U08-Q09-o1",
-          "text": "汽車本身。"
+          "text": "汽車本身。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q09-o2",
-          "text": "機場。"
+          "text": "機場。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q09-o3",
-          "text": "一起去的人。"
+          "text": "一起去的人。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q09-o0",
-          "text": "搭乘交通工具的票券。"
+          "text": "搭乘交通工具的票券。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q09-o0"
       ],
       "explanation": "きっぷ是票券，不是車輛。",
-      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "explanationJa": "きっぷは、のりものにのるときにつかうけんです。車そのものではありません。",
       "distractorReasons": {
         "U08-Q09-o1": "汽車是くるま。",
         "U08-Q09-o2": "機場是くうこう。",
@@ -1057,7 +1093,7 @@
     },
     {
       "id": "U08-Q10",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q10",
       "itemFamilyId": "U08-F-hospital-not-bank",
@@ -1075,30 +1111,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "故事說人物要去「びょういん」。目的地是哪裡？",
-      "promptJa": "ことばのいみをえらびましょう。",
+      "promptJa": "おはなしのひとは、びょういんへ行きます。いくところは、どれですか。",
       "choices": [
         {
           "id": "U08-Q10-o2",
-          "text": "郵局"
+          "text": "郵局",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q10-o3",
-          "text": "公車站"
+          "text": "公車站",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q10-o0",
-          "text": "醫院"
+          "text": "醫院",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q10-o1",
-          "text": "銀行"
+          "text": "銀行",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q10-o0"
       ],
       "explanation": "びょういん有小ょう，表示醫院。",
-      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "explanationJa": "びょういんは、びょうきをみてもらうところです。ちいさいょうが入っています。",
       "distractorReasons": {
         "U08-Q10-o1": "銀行是ぎんこう。",
         "U08-Q10-o2": "郵局是ゆうびんきょく。",
@@ -1115,7 +1155,7 @@
     },
     {
       "id": "U08-Q11",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q11",
       "itemFamilyId": "U08-F-getting-off",
@@ -1133,30 +1173,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「おりる」表示什麼動作？",
-      "promptJa": "ことばのいみをえらびましょう。",
+      "promptJa": "「おりる」は、なにをすることですか。",
       "choices": [
         {
           "id": "U08-Q11-o3",
-          "text": "一起走。"
+          "text": "一起走。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q11-o0",
-          "text": "下車；離開搭乘的交通工具。"
+          "text": "下車；離開搭乘的交通工具。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q11-o1",
-          "text": "上車。"
+          "text": "上車。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q11-o2",
-          "text": "買票。"
+          "text": "買票。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q11-o0"
       ],
       "explanation": "おりる與のる表示相反的搭乘動作。",
-      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "explanationJa": "おりるは、のっているのりものからでることです。のるとは、ぎゃくのこうどうです。",
       "distractorReasons": {
         "U08-Q11-o1": "上車是のる。",
         "U08-Q11-o2": "不是買票這個動作。",
@@ -1173,7 +1217,7 @@
     },
     {
       "id": "U08-Q12",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q12",
       "itemFamilyId": "U08-F-airport-not-plane",
@@ -1191,30 +1235,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「くうこう」是哪一種地方？",
-      "promptJa": "ことばのいみをえらびましょう。",
+      "promptJa": "「くうこう」は、どんなところですか。",
       "choices": [
         {
           "id": "U08-Q12-o0",
-          "text": "機場"
+          "text": "機場",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q12-o1",
-          "text": "飛機"
+          "text": "飛機",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q12-o2",
-          "text": "地下鐵"
+          "text": "地下鐵",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q12-o3",
-          "text": "車票"
+          "text": "車票",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q12-o0"
       ],
       "explanation": "くうこう是地方，ひこうき是交通工具。",
-      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "explanationJa": "くうこうは、ひこうきにのったりおりたりするところです。ひこうきそのものとはちがいます。",
       "distractorReasons": {
         "U08-Q12-o1": "飛機是ひこうき，不是地方。",
         "U08-Q12-o2": "地下鐵是ちかてつ。",
@@ -1231,7 +1279,7 @@
     },
     {
       "id": "U08-Q13",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q13",
       "itemFamilyId": "U08-F-walking-phrase",
@@ -1249,30 +1297,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「あるいて 行きます」說的是？",
-      "promptJa": "ことばのいみをえらびましょう。",
+      "promptJa": "「あるいて行きます」は、どのようにいくことですか。",
       "choices": [
         {
           "id": "U08-Q13-o1",
-          "text": "搭公車前往。"
+          "text": "搭公車前往。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q13-o2",
-          "text": "搭船前往。"
+          "text": "搭船前往。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q13-o3",
-          "text": "一定和朋友同行。"
+          "text": "一定和朋友同行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q13-o0",
-          "text": "步行前往。"
+          "text": "步行前往。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q13-o0"
       ],
       "explanation": "あるいて行きます是步行前往的固定搭配。",
-      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "explanationJa": "あるいて行きますは、あるくことです。バスやふねにのることではありません。",
       "distractorReasons": {
         "U08-Q13-o1": "公車用バスで。",
         "U08-Q13-o2": "船用ふねで。",
@@ -1289,7 +1341,7 @@
     },
     {
       "id": "U08-Q14",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q14",
       "itemFamilyId": "U08-F-together-meaning",
@@ -1307,30 +1359,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「いっしょに」意思是？",
-      "promptJa": "ことばのいみをえらびましょう。",
+      "promptJa": "「いっしょに」は、どんないみですか。",
       "choices": [
         {
           "id": "U08-Q14-o2",
-          "text": "獨自一人"
+          "text": "獨自一人",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q14-o3",
-          "text": "車票"
+          "text": "車票",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q14-o0",
-          "text": "一起"
+          "text": "一起",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q14-o1",
-          "text": "出口"
+          "text": "出口",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q14-o0"
       ],
       "explanation": "いっしょに表示一起。",
-      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "explanationJa": "いっしょには、ともにすることです。ひとりで、とはちがいます。",
       "distractorReasons": {
         "U08-Q14-o1": "出口是でぐち。",
         "U08-Q14-o2": "ひとりで才表示獨自。",
@@ -1347,7 +1403,7 @@
     },
     {
       "id": "U08-Q15",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q15",
       "itemFamilyId": "U08-F-paraphrase-transport",
@@ -1365,30 +1421,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「学校へ バスで 行きます。」意思最接近？",
-      "promptJa": "おなじいみをえらびましょう。",
+      "promptJa": "「学校へバスで行きます」とおなじいみは、どれですか。",
       "choices": [
         {
           "id": "U08-Q15-o3",
-          "text": "步行去學校。"
+          "text": "步行去學校。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q15-o0",
-          "text": "搭公車去學校。"
+          "text": "搭公車去學校。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q15-o1",
-          "text": "去公車裡讀書。"
+          "text": "去公車裡讀書。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q15-o2",
-          "text": "和公車一起去學校。"
+          "text": "和公車一起去學校。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q15-o0"
       ],
       "explanation": "学校へ是目的地，バスで是方法。",
-      "explanationJa": "ことばと、ぶんぜんたいのいみをたしかめましょう。",
+      "explanationJa": "学校へがいくところ、バスでがいどうのほうほうです。",
       "distractorReasons": {
         "U08-Q15-o1": "バスで在這裡是移動方法。",
         "U08-Q15-o2": "同行者不是公車。",
@@ -1405,7 +1465,7 @@
     },
     {
       "id": "U08-Q16",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q16",
       "itemFamilyId": "U08-F-paraphrase-companion",
@@ -1423,30 +1483,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「あねと としょかんへ 行きます。」意思最接近？",
-      "promptJa": "おなじいみをえらびましょう。",
+      "promptJa": "「あねととしょかんへ行きます」とおなじいみは、どれですか。",
       "choices": [
         {
           "id": "U08-Q16-o0",
-          "text": "和姊姊去圖書館。"
+          "text": "和姊姊去圖書館。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q16-o1",
-          "text": "姊姊是一種交通工具。"
+          "text": "姊姊是一種交通工具。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q16-o2",
-          "text": "獨自去銀行。"
+          "text": "獨自去銀行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q16-o3",
-          "text": "已從圖書館回家。"
+          "text": "已從圖書館回家。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q16-o0"
       ],
       "explanation": "あねと表示和姊姊，圖書館是目的地。",
-      "explanationJa": "ことばと、ぶんぜんたいのいみをたしかめましょう。",
+      "explanationJa": "あねとがいっしょにいくひと、としょかんへがいくところです。",
       "distractorReasons": {
         "U08-Q16-o1": "と標出同行者。",
         "U08-Q16-o2": "人物與地方都不符。",
@@ -1463,7 +1527,7 @@
     },
     {
       "id": "U08-Q17",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q17",
       "itemFamilyId": "U08-F-paraphrase-entry-exit",
@@ -1481,30 +1545,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「入口と 出口」指哪一組？",
-      "promptJa": "おなじいみをえらびましょう。",
+      "promptJa": "「入口と出口」は、どんな二つのところですか。",
       "choices": [
         {
           "id": "U08-Q17-o1",
-          "text": "兩個一定都能進入的口。"
+          "text": "兩個一定都能進入的口。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q17-o2",
-          "text": "銀行與郵局。"
+          "text": "銀行與郵局。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q17-o3",
-          "text": "電車與公車。"
+          "text": "電車與公車。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q17-o0",
-          "text": "進入的口與離開的口。"
+          "text": "進入的口與離開的口。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q17-o0"
       ],
       "explanation": "標示說明出入用途，不是交通方式。",
-      "explanationJa": "ことばと、ぶんぜんたいのいみをたしかめましょう。",
+      "explanationJa": "はいるところと、でるところです。のりもののしゅるいではありません。",
       "distractorReasons": {
         "U08-Q17-o1": "出口是離開的口。",
         "U08-Q17-o2": "不是兩個機構。",
@@ -1521,7 +1589,7 @@
     },
     {
       "id": "U08-Q18",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q18",
       "itemFamilyId": "U08-F-destination-slot",
@@ -1544,30 +1612,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「としょかん（　）行きます。」本課哪個選項可標目的地？",
-      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "promptJa": "「としょかん（　）行きます」。このかのえらべることばで、いくところをつたえるのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q18-o2",
-          "text": "が"
+          "text": "が",
+          "lang": "ja"
         },
         {
           "id": "U08-Q18-o3",
-          "text": "の"
+          "text": "の",
+          "lang": "ja"
         },
         {
           "id": "U08-Q18-o0",
-          "text": "へ"
+          "text": "へ",
+          "lang": "ja"
         },
         {
           "id": "U08-Q18-o1",
-          "text": "を"
+          "text": "を",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q18-o0"
       ],
       "explanation": "場所へ行きます；に也可，但本題選項沒有に。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "ばしょへ行きます、がつかえます。にもつかえますが、このもんだいのえらべることばにはありません。",
       "distractorReasons": {
         "U08-Q18-o1": "這裡不是動作對象。",
         "U08-Q18-o2": "這裡不是主語位置。",
@@ -1584,7 +1656,7 @@
     },
     {
       "id": "U08-Q19",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q19",
       "itemFamilyId": "U08-F-destination-question",
@@ -1607,30 +1679,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "想問對方要去哪裡，應選哪一句？",
-      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "promptJa": "あいてが、どこにいくか、ききたいです。どのしつもんがあいますか。",
       "choices": [
         {
           "id": "U08-Q19-o3",
-          "text": "なにで 行きますか。"
+          "text": "なにで 行きますか。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q19-o0",
-          "text": "どこへ 行きますか。"
+          "text": "どこへ 行きますか。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q19-o1",
-          "text": "なんじに 行きますか。"
+          "text": "なんじに 行きますか。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q19-o2",
-          "text": "だれと 行きますか。"
+          "text": "だれと 行きますか。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q19-o0"
       ],
       "explanation": "どこへ問目的地。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "どこへ行きますか、がいくところをききます。ほかのしつもんは、じこく、ひと、ほうほうをきいています。",
       "distractorReasons": {
         "U08-Q19-o1": "這問時間。",
         "U08-Q19-o2": "這問同行者。",
@@ -1647,7 +1723,7 @@
     },
     {
       "id": "U08-Q20",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q20",
       "itemFamilyId": "U08-F-transport-slot",
@@ -1670,30 +1746,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「でんしゃ（　）行きます。」要表達搭電車去，選哪個？",
-      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "promptJa": "でんしゃにのっていくことをつたえます。「でんしゃ（　）行きます」に入るのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q20-o0",
-          "text": "で"
+          "text": "で",
+          "lang": "ja"
         },
         {
           "id": "U08-Q20-o1",
-          "text": "へ"
+          "text": "へ",
+          "lang": "ja"
         },
         {
           "id": "U08-Q20-o2",
-          "text": "と"
+          "text": "と",
+          "lang": "ja"
         },
         {
           "id": "U08-Q20-o3",
-          "text": "の"
+          "text": "の",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q20-o0"
       ],
       "explanation": "交通工具で行きます。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "のりもので行きます、なので、でんしゃで行きます、です。",
       "distractorReasons": {
         "U08-Q20-o1": "へ標目的地，意思不同。",
         "U08-Q20-o2": "本課交通方法用で。",
@@ -1710,7 +1790,7 @@
     },
     {
       "id": "U08-Q21",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q21",
       "itemFamilyId": "U08-F-companion-slot",
@@ -1733,30 +1813,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "「ともだち（　）行きます。」要表達和朋友去，選哪個？",
-      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "promptJa": "ともだちといっしょにいきます。「ともだち（　）行きます」に入るのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q21-o1",
-          "text": "で"
+          "text": "で",
+          "lang": "ja"
         },
         {
           "id": "U08-Q21-o2",
-          "text": "を"
+          "text": "を",
+          "lang": "ja"
         },
         {
           "id": "U08-Q21-o3",
-          "text": "の"
+          "text": "の",
+          "lang": "ja"
         },
         {
           "id": "U08-Q21-o0",
-          "text": "と"
+          "text": "と",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q21-o0"
       ],
       "explanation": "人と行きます，表示同行者。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "いっしょにいくひとは、と、でつたえます。ともだちと行きます。",
       "distractorReasons": {
         "U08-Q21-o1": "不能把朋友當交通方法。",
         "U08-Q21-o2": "不是動作對象。",
@@ -1773,7 +1857,7 @@
     },
     {
       "id": "U08-Q22",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q22",
       "itemFamilyId": "U08-F-walking-no-extra-de",
@@ -1796,30 +1880,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "哪一句正確表達步行去車站？",
-      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "promptJa": "あるいて、えきへいくことをつたえるぶんは、どれですか。",
       "choices": [
         {
           "id": "U08-Q22-o2",
-          "text": "えきへ あるいてと 行きます。"
+          "text": "えきへ あるいてと 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q22-o3",
-          "text": "えきへ バスで 行きます。"
+          "text": "えきへ バスで 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q22-o0",
-          "text": "えきへ あるいて 行きます。"
+          "text": "えきへ あるいて 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q22-o1",
-          "text": "えきへ あるいてで 行きます。"
+          "text": "えきへ あるいてで 行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q22-o0"
       ],
       "explanation": "あるいて行きます是已教的固定搭配。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "えきへあるいて行きます、です。あるいてのあとに、でやとをつけません。",
       "distractorReasons": {
         "U08-Q22-o1": "固定搭配あるいて後不加で。",
         "U08-Q22-o2": "と不是步行的接法。",
@@ -1836,7 +1924,7 @@
     },
     {
       "id": "U08-Q23",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q23",
       "itemFamilyId": "U08-F-order-destination-first",
@@ -1859,19 +1947,22 @@
       "partition": "practice",
       "kind": "order",
       "prompt": "請依「我→目的地→動作」排列，表達我去圖書館。",
-      "promptJa": "していのじゅんにならべましょう。",
+      "promptJa": "わたしが、としょかんへ行きます。わたし→いくところ→すること、のじゅんにならべましょう。",
       "choices": [
         {
           "id": "U08-Q23-o2",
-          "text": "行きます。"
+          "text": "行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q23-o0",
-          "text": "わたしは"
+          "text": "わたしは",
+          "lang": "ja"
         },
         {
           "id": "U08-Q23-o1",
-          "text": "としょかんへ"
+          "text": "としょかんへ",
+          "lang": "ja"
         }
       ],
       "answer": [
@@ -1880,7 +1971,7 @@
         "U08-Q23-o2"
       ],
       "explanation": "依題目指定順序，は標主題、へ標目的地。",
-      "explanationJa": "していのじゅんに、ひと、ばしょ、ほうほうをならべましょう。",
+      "explanationJa": "わたしは、としょかんへ、行きます、のじゅんです。",
       "distractorReasons": {},
       "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
       "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
@@ -1893,7 +1984,7 @@
     },
     {
       "id": "U08-Q24",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q24",
       "itemFamilyId": "U08-F-order-method-last",
@@ -1916,19 +2007,22 @@
       "partition": "practice",
       "kind": "order",
       "prompt": "請依「目的地→方法→動作」排列，表達搭公車去學校。",
-      "promptJa": "していのじゅんにならべましょう。",
+      "promptJa": "バスで学校へ行きます。いくところ→ほうほう→すること、のじゅんにならべましょう。",
       "choices": [
         {
           "id": "U08-Q24-o0",
-          "text": "学校へ"
+          "text": "学校へ",
+          "lang": "ja"
         },
         {
           "id": "U08-Q24-o1",
-          "text": "バスで"
+          "text": "バスで",
+          "lang": "ja"
         },
         {
           "id": "U08-Q24-o2",
-          "text": "行きます。"
+          "text": "行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
@@ -1937,7 +2031,7 @@
         "U08-Q24-o2"
       ],
       "explanation": "依指定順序，目的地在前、方法在後。",
-      "explanationJa": "していのじゅんに、ひと、ばしょ、ほうほうをならべましょう。",
+      "explanationJa": "学校へ、バスで、行きます、のじゅんです。じゅんばんは、このもんだいでしていされています。",
       "distractorReasons": {},
       "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
       "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
@@ -1950,7 +2044,7 @@
     },
     {
       "id": "U08-Q25",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q25",
       "itemFamilyId": "U08-F-order-companion-first",
@@ -1973,19 +2067,22 @@
       "partition": "practice",
       "kind": "order",
       "prompt": "請依「同行者→目的地→動作」排列，表達和姊姊去銀行。",
-      "promptJa": "していのじゅんにならべましょう。",
+      "promptJa": "あねとぎんこうへ行きます。いっしょにいくひと→いくところ→すること、のじゅんにならべましょう。",
       "choices": [
         {
           "id": "U08-Q25-o1",
-          "text": "ぎんこうへ"
+          "text": "ぎんこうへ",
+          "lang": "ja"
         },
         {
           "id": "U08-Q25-o2",
-          "text": "行きます。"
+          "text": "行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q25-o0",
-          "text": "あねと"
+          "text": "あねと",
+          "lang": "ja"
         }
       ],
       "answer": [
@@ -1994,7 +2091,7 @@
         "U08-Q25-o2"
       ],
       "explanation": "と放在同行者後，へ放在目的地後。",
-      "explanationJa": "していのじゅんに、ひと、ばしょ、ほうほうをならべましょう。",
+      "explanationJa": "あねと、ぎんこうへ、行きます、のじゅんです。ひとのあとにと、ばしょのあとにへをつけます。",
       "distractorReasons": {},
       "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
       "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
@@ -2007,7 +2104,7 @@
     },
     {
       "id": "U08-Q26",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q26",
       "itemFamilyId": "U08-F-context-destination-response",
@@ -2030,30 +2127,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "居民說：としょかんへ行きます。你要記下目的地，應記哪項？",
-      "promptJa": "ばめんにあうこたえをえらびましょう。",
+      "promptJa": "ひとは「としょかんへ行きます」といっています。いくところをメモするなら、どれですか。",
       "choices": [
         {
           "id": "U08-Q26-o2",
-          "text": "あね"
+          "text": "あね",
+          "lang": "ja"
         },
         {
           "id": "U08-Q26-o3",
-          "text": "三時"
+          "text": "三時",
+          "lang": "ja"
         },
         {
           "id": "U08-Q26-o0",
-          "text": "としょかん"
+          "text": "としょかん",
+          "lang": "ja"
         },
         {
           "id": "U08-Q26-o1",
-          "text": "バス"
+          "text": "バス",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q26-o0"
       ],
       "explanation": "へ前面的としょかん是目的地。",
-      "explanationJa": "だれと、どこへ、なにで、をわけましょう。",
+      "explanationJa": "へのまえの、としょかんが、いくところです。",
       "distractorReasons": {
         "U08-Q26-o1": "原句沒有說方法。",
         "U08-Q26-o2": "原句沒有說同行者。",
@@ -2070,7 +2171,7 @@
     },
     {
       "id": "U08-Q27",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q27",
       "itemFamilyId": "U08-F-context-method-question",
@@ -2093,30 +2194,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "旅伴只想知道怎麼去，你應回答哪一句？",
-      "promptJa": "ばめんにあうこたえをえらびましょう。",
+      "promptJa": "たびのあいては、どのようにいくかだけをしりたいです。ほうほうをこたえるぶんは、どれですか。",
       "choices": [
         {
           "id": "U08-Q27-o3",
-          "text": "三時に 行きます。"
+          "text": "三時に 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q27-o0",
-          "text": "じてんしゃで 行きます。"
+          "text": "じてんしゃで 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q27-o1",
-          "text": "学校へ 行きます。"
+          "text": "学校へ 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q27-o2",
-          "text": "ともだちと 行きます。"
+          "text": "ともだちと 行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q27-o0"
       ],
       "explanation": "じてんしゃで明確回答方法。",
-      "explanationJa": "だれと、どこへ、なにで、をわけましょう。",
+      "explanationJa": "じてんしゃで行きます、がほうほうをこたえています。",
       "distractorReasons": {
         "U08-Q27-o1": "只回答目的地。",
         "U08-Q27-o2": "只回答同行者。",
@@ -2133,7 +2238,7 @@
     },
     {
       "id": "U08-Q28",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q28",
       "itemFamilyId": "U08-F-context-alone",
@@ -2156,30 +2261,34 @@
       "partition": "practice",
       "kind": "choice",
       "prompt": "故事人物明說ひとりで行きます。哪一項符合？",
-      "promptJa": "ばめんにあうこたえをえらびましょう。",
+      "promptJa": "ひとは「ひとりで行きます」といっています。このぶんからわかることは、どれですか。",
       "choices": [
         {
           "id": "U08-Q28-o0",
-          "text": "他是獨自去。"
+          "text": "他是獨自去。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q28-o1",
-          "text": "他和朋友一起去。"
+          "text": "他和朋友一起去。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q28-o2",
-          "text": "他一定步行。"
+          "text": "他一定步行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q28-o3",
-          "text": "他一定去銀行。"
+          "text": "他一定去銀行。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q28-o0"
       ],
       "explanation": "ひとりで是獨自前往，不能推論方法或地方。",
-      "explanationJa": "だれと、どこへ、なにで、をわけましょう。",
+      "explanationJa": "ひとりで行きますは、いっしょにいくひとがいないことです。ほうほうやばしょは、まだわかりません。",
       "distractorReasons": {
         "U08-Q28-o1": "與ひとりで不符。",
         "U08-Q28-o2": "獨自不代表步行。",
@@ -2196,7 +2305,7 @@
     },
     {
       "id": "U08-Q29",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q29",
       "itemFamilyId": "U08-F-library-companion",
@@ -2219,30 +2328,34 @@
       "partition": "practice",
       "kind": "reading",
       "prompt": "說話者和誰去圖書館？",
-      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "promptJa": "わたしは、だれととしょかんへ行きますか。",
       "choices": [
         {
           "id": "U08-Q29-o1",
-          "text": "あに"
+          "text": "あに",
+          "lang": "ja"
         },
         {
           "id": "U08-Q29-o2",
-          "text": "ともだち"
+          "text": "ともだち",
+          "lang": "ja"
         },
         {
           "id": "U08-Q29-o3",
-          "text": "ひとり"
+          "text": "ひとり",
+          "lang": "ja"
         },
         {
           "id": "U08-Q29-o0",
-          "text": "あね"
+          "text": "あね",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q29-o0"
       ],
       "explanation": "あねと行きます。",
-      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "explanationJa": "あねと行きます、とあります。いっしょにいくひとは、あねです。",
       "distractorReasons": {
         "U08-Q29-o1": "原文不是哥哥。",
         "U08-Q29-o2": "原文不是朋友。",
@@ -2261,7 +2374,7 @@
     },
     {
       "id": "U08-Q30",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q30",
       "itemFamilyId": "U08-F-narrator-method",
@@ -2284,30 +2397,34 @@
       "partition": "practice",
       "kind": "reading",
       "prompt": "說話者怎麼去車站？",
-      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "promptJa": "わたしは、どのようにえきへ行きますか。",
       "choices": [
         {
           "id": "U08-Q30-o2",
-          "text": "でんしゃで"
+          "text": "でんしゃで",
+          "lang": "ja"
         },
         {
           "id": "U08-Q30-o3",
-          "text": "バスで"
+          "text": "バスで",
+          "lang": "ja"
         },
         {
           "id": "U08-Q30-o0",
-          "text": "あるいて"
+          "text": "あるいて",
+          "lang": "ja"
         },
         {
           "id": "U08-Q30-o1",
-          "text": "車で"
+          "text": "車で",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q30-o0"
       ],
       "explanation": "わたしはえきへあるいて行きます。",
-      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "explanationJa": "わたしはえきへあるいて行きます、とあります。車は、ともだちのほうほうです。",
       "distractorReasons": {
         "U08-Q30-o1": "這是朋友的移動方法。",
         "U08-Q30-o2": "原文沒有說搭電車。",
@@ -2326,7 +2443,7 @@
     },
     {
       "id": "U08-Q31",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q31",
       "itemFamilyId": "U08-F-school-pair-method",
@@ -2349,30 +2466,34 @@
       "partition": "practice",
       "kind": "reading",
       "prompt": "說話者與哥哥今天怎麼去學校？",
-      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "promptJa": "わたしとあには、きょう、どのように学校へ行きますか。",
       "choices": [
         {
           "id": "U08-Q31-o3",
-          "text": "あるいて"
+          "text": "あるいて",
+          "lang": "ja"
         },
         {
           "id": "U08-Q31-o0",
-          "text": "じてんしゃで"
+          "text": "じてんしゃで",
+          "lang": "ja"
         },
         {
           "id": "U08-Q31-o1",
-          "text": "バスで"
+          "text": "バスで",
+          "lang": "ja"
         },
         {
           "id": "U08-Q31-o2",
-          "text": "タクシーで"
+          "text": "タクシーで",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q31-o0"
       ],
       "explanation": "きょうはバスで行きません，じてんしゃで行きます。",
-      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "explanationJa": "きょうはバスで行きません、じてんしゃで行きます、とあります。",
       "distractorReasons": {
         "U08-Q31-o1": "今天明說不搭公車。",
         "U08-Q31-o2": "這是媽媽的方法。",
@@ -2391,7 +2512,7 @@
     },
     {
       "id": "U08-Q32",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q32",
       "itemFamilyId": "U08-F-mother-separate",
@@ -2414,30 +2535,34 @@
       "partition": "practice",
       "kind": "reading",
       "prompt": "依短文，哪一項是正確的？",
-      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "promptJa": "このぶんのひとのよていとあうのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q32-o0",
-          "text": "媽媽搭計程車去醫院，說話者不和她去。"
+          "text": "媽媽搭計程車去醫院，說話者不和她去。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q32-o1",
-          "text": "大家一起搭計程車去醫院。"
+          "text": "大家一起搭計程車去醫院。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q32-o2",
-          "text": "媽媽騎腳踏車去學校。"
+          "text": "媽媽騎腳踏車去學校。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q32-o3",
-          "text": "說話者與哥哥搭公車去學校。"
+          "text": "說話者與哥哥搭公車去學校。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q32-o0"
       ],
       "explanation": "分別讀人物、目的地與交通方法。",
-      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "explanationJa": "はははタクシーでびょういんへ行きます。わたしは、ははと行きません。ひとのよていをまぜません。",
       "distractorReasons": {
         "U08-Q32-o1": "わたしはははと行きません。",
         "U08-Q32-o2": "把兩組人物資訊交換。",
@@ -2456,7 +2581,7 @@
     },
     {
       "id": "U08-Q33",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q33",
       "itemFamilyId": "U08-F-table-sister-method",
@@ -2479,30 +2604,34 @@
       "partition": "practice",
       "kind": "reading",
       "prompt": "行程表裡，姊姊去圖書館用哪個方法？",
-      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "promptJa": "ひょうのあねは、どのようにとしょかんへ行きますか。",
       "choices": [
         {
           "id": "U08-Q33-o1",
-          "text": "じてんしゃ"
+          "text": "じてんしゃ",
+          "lang": "ja"
         },
         {
           "id": "U08-Q33-o2",
-          "text": "タクシー"
+          "text": "タクシー",
+          "lang": "ja"
         },
         {
           "id": "U08-Q33-o3",
-          "text": "あるいて"
+          "text": "あるいて",
+          "lang": "ja"
         },
         {
           "id": "U08-Q33-o0",
-          "text": "バス"
+          "text": "バス",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q33-o0"
       ],
       "explanation": "あね那一列是としょかん／バス。",
-      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "explanationJa": "あねのらんは、としょかん、バス、です。",
       "distractorReasons": {
         "U08-Q33-o1": "這是哥哥的方法。",
         "U08-Q33-o2": "這是媽媽的方法。",
@@ -2521,7 +2650,7 @@
     },
     {
       "id": "U08-Q34",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q34",
       "itemFamilyId": "U08-F-table-walker-destination",
@@ -2544,30 +2673,34 @@
       "partition": "practice",
       "kind": "reading",
       "prompt": "表格中步行的那位，目的地是哪裡？",
-      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "promptJa": "ひょうで、あるいていくひとは、どこへ行きますか。",
       "choices": [
         {
           "id": "U08-Q34-o2",
-          "text": "としょかん"
+          "text": "としょかん",
+          "lang": "ja"
         },
         {
           "id": "U08-Q34-o3",
-          "text": "びょういん"
+          "text": "びょういん",
+          "lang": "ja"
         },
         {
           "id": "U08-Q34-o0",
-          "text": "えき"
+          "text": "えき",
+          "lang": "ja"
         },
         {
           "id": "U08-Q34-o1",
-          "text": "学校"
+          "text": "学校",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q34-o0"
       ],
       "explanation": "あるいて出現在わたし那一列，目的地是えき。",
-      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "explanationJa": "あるいていくのは、わたしです。おなじらんの、えきがいくところです。",
       "distractorReasons": {
         "U08-Q34-o1": "這一列用腳踏車。",
         "U08-Q34-o2": "這一列搭公車。",
@@ -2586,7 +2719,7 @@
     },
     {
       "id": "U08-Q35",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q35",
       "itemFamilyId": "U08-F-listening-01",
@@ -2609,30 +2742,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "聽完約定，人物要去哪裡？",
-      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "promptJa": "おとのよていでは、どこへ行きますか。",
       "choices": [
         {
           "id": "U08-Q35-o3",
-          "text": "くうこう"
+          "text": "くうこう",
+          "lang": "ja"
         },
         {
           "id": "U08-Q35-o0",
-          "text": "としょかん"
+          "text": "としょかん",
+          "lang": "ja"
         },
         {
           "id": "U08-Q35-o1",
-          "text": "ぎんこう"
+          "text": "ぎんこう",
+          "lang": "ja"
         },
         {
           "id": "U08-Q35-o2",
-          "text": "びょういん"
+          "text": "びょういん",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q35-o0"
       ],
       "explanation": "としょかんへいきます。",
-      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "explanationJa": "としょかんへいきます、ときこえます。ぎんこうへは、いきません。",
       "distractorReasons": {
         "U08-Q35-o1": "音訊說不去銀行。",
         "U08-Q35-o2": "未說去醫院。",
@@ -2651,7 +2788,7 @@
     },
     {
       "id": "U08-Q36",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q36",
       "itemFamilyId": "U08-F-listening-01",
@@ -2674,30 +2811,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "同一個約定，要用哪個方法前往？",
-      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "promptJa": "おなじよていで、どのように行きますか。",
       "choices": [
         {
           "id": "U08-Q36-o0",
-          "text": "バスで"
+          "text": "バスで",
+          "lang": "ja"
         },
         {
           "id": "U08-Q36-o1",
-          "text": "車で"
+          "text": "車で",
+          "lang": "ja"
         },
         {
           "id": "U08-Q36-o2",
-          "text": "でんしゃで"
+          "text": "でんしゃで",
+          "lang": "ja"
         },
         {
           "id": "U08-Q36-o3",
-          "text": "ひとりで"
+          "text": "ひとりで",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q36-o0"
       ],
       "explanation": "あねと、ばすでいきます。",
-      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "explanationJa": "あねと、バスでいきます、ときこえます。ほうほうはバスです。",
       "distractorReasons": {
         "U08-Q36-o1": "音訊不是くるま。",
         "U08-Q36-o2": "音訊不是でんしゃ。",
@@ -2716,7 +2857,7 @@
     },
     {
       "id": "U08-Q37",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q37",
       "itemFamilyId": "U08-F-listening-02",
@@ -2739,30 +2880,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "聽音訊，今天要怎樣去車站？",
-      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "promptJa": "おとをききましょう。きょうは、どのようにえきへ行きますか。",
       "choices": [
         {
           "id": "U08-Q37-o1",
-          "text": "搭電車"
+          "text": "搭電車",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q37-o2",
-          "text": "搭船"
+          "text": "搭船",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q37-o3",
-          "text": "搭計程車"
+          "text": "搭計程車",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q37-o0",
-          "text": "步行"
+          "text": "步行",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q37-o0"
       ],
       "explanation": "きょうはでんしゃでいきません，あるいていきます。",
-      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "explanationJa": "きょうはでんしゃでいきません、あるいていきます、ときこえます。",
       "distractorReasons": {
         "U08-Q37-o1": "今天明說不搭電車。",
         "U08-Q37-o2": "未說搭船。",
@@ -2781,7 +2926,7 @@
     },
     {
       "id": "U08-Q38",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q38",
       "itemFamilyId": "U08-F-listening-02",
@@ -2804,30 +2949,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "哪張行程卡符合音訊？",
-      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "promptJa": "きいたよていと、いくところもほうほうもあうカードは、どれですか。",
       "choices": [
         {
           "id": "U08-Q38-o2",
-          "text": "目的地：車站；方法：電車。"
+          "text": "目的地：車站；方法：電車。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q38-o3",
-          "text": "目的地：機場；方法：飛機。"
+          "text": "目的地：機場；方法：飛機。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q38-o0",
-          "text": "目的地：車站；方法：步行。"
+          "text": "目的地：車站；方法：步行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q38-o1",
-          "text": "目的地：圖書館；方法：步行。"
+          "text": "目的地：圖書館；方法：步行。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q38-o0"
       ],
       "explanation": "把えき與あるいて配成同一個行程。",
-      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "explanationJa": "いくところはえき、ほうほうはあるいて、です。",
       "distractorReasons": {
         "U08-Q38-o1": "地方錯了。",
         "U08-Q38-o2": "方法與否定句不符。",
@@ -2846,7 +2995,7 @@
     },
     {
       "id": "U08-Q39",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q39",
       "itemFamilyId": "U08-F-listening-03",
@@ -2869,30 +3018,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "哥哥要去哪裡？",
-      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "promptJa": "あには、どこへ行きますか。",
       "choices": [
         {
           "id": "U08-Q39-o3",
-          "text": "ゆうびんきょく"
+          "text": "ゆうびんきょく",
+          "lang": "ja"
         },
         {
           "id": "U08-Q39-o0",
-          "text": "としょかん"
+          "text": "としょかん",
+          "lang": "ja"
         },
         {
           "id": "U08-Q39-o1",
-          "text": "学校"
+          "text": "学校",
+          "lang": "ja"
         },
         {
           "id": "U08-Q39-o2",
-          "text": "ぎんこう"
+          "text": "ぎんこう",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q39-o0"
       ],
       "explanation": "あにはひとりでとしょかんへいきます。",
-      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "explanationJa": "あには、ひとりで、としょかんへいきます、ときこえます。",
       "distractorReasons": {
         "U08-Q39-o1": "這是說話者的目的地。",
         "U08-Q39-o2": "未提到去銀行。",
@@ -2911,7 +3064,7 @@
     },
     {
       "id": "U08-Q40",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q40",
       "itemFamilyId": "U08-F-listening-03",
@@ -2934,30 +3087,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "說話者和誰去學校？",
-      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "promptJa": "わたしは、だれと学校へ行きますか。",
       "choices": [
         {
           "id": "U08-Q40-o0",
-          "text": "ともだち"
+          "text": "ともだち",
+          "lang": "ja"
         },
         {
           "id": "U08-Q40-o1",
-          "text": "あに"
+          "text": "あに",
+          "lang": "ja"
         },
         {
           "id": "U08-Q40-o2",
-          "text": "はは"
+          "text": "はは",
+          "lang": "ja"
         },
         {
           "id": "U08-Q40-o3",
-          "text": "ひとり"
+          "text": "ひとり",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q40-o0"
       ],
       "explanation": "わたしはともだちとがっこうへいきます。",
-      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "explanationJa": "わたしは、ともだちと、がっこうへいきます、ときこえます。",
       "distractorReasons": {
         "U08-Q40-o1": "哥哥自己去圖書館。",
         "U08-Q40-o2": "音訊沒有這個同行者。",
@@ -2976,7 +3133,7 @@
     },
     {
       "id": "U08-Q41",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q41",
       "itemFamilyId": "U08-F-listening-04",
@@ -2999,30 +3156,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "媽媽去醫院用哪個方法？",
-      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "promptJa": "ははは、どのようにびょういんへ行きますか。",
       "choices": [
         {
           "id": "U08-Q41-o1",
-          "text": "バス"
+          "text": "バス",
+          "lang": "ja"
         },
         {
           "id": "U08-Q41-o2",
-          "text": "じてんしゃ"
+          "text": "じてんしゃ",
+          "lang": "ja"
         },
         {
           "id": "U08-Q41-o3",
-          "text": "でんしゃ"
+          "text": "でんしゃ",
+          "lang": "ja"
         },
         {
           "id": "U08-Q41-o0",
-          "text": "タクシー"
+          "text": "タクシー",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q41-o0"
       ],
       "explanation": "はははびょういんへたくしーでいきます。",
-      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "explanationJa": "ははは、びょういんへ、タクシーでいきます、ときこえます。",
       "distractorReasons": {
         "U08-Q41-o1": "公車是姊姊的方法。",
         "U08-Q41-o2": "音訊未說腳踏車。",
@@ -3041,7 +3202,7 @@
     },
     {
       "id": "U08-Q42",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q42",
       "itemFamilyId": "U08-F-listening-04",
@@ -3064,30 +3225,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "姊姊的行程是哪一組？",
-      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "promptJa": "あねのいくところとほうほうが、どちらもあうのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q42-o2",
-          "text": "ぎんこう／タクシー"
+          "text": "ぎんこう／タクシー",
+          "lang": "ja"
         },
         {
           "id": "U08-Q42-o3",
-          "text": "としょかん／バス"
+          "text": "としょかん／バス",
+          "lang": "ja"
         },
         {
           "id": "U08-Q42-o0",
-          "text": "ぎんこう／バス"
+          "text": "ぎんこう／バス",
+          "lang": "ja"
         },
         {
           "id": "U08-Q42-o1",
-          "text": "びょういん／タクシー"
+          "text": "びょういん／タクシー",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q42-o0"
       ],
       "explanation": "あねはぎんこうへばすでいきます。",
-      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "explanationJa": "あねはぎんこうへバスでいきます、ときこえます。ははのよていとまぜません。",
       "distractorReasons": {
         "U08-Q42-o1": "這是媽媽的行程。",
         "U08-Q42-o2": "把媽媽的方法混過來。",
@@ -3106,7 +3271,7 @@
     },
     {
       "id": "U08-Q43",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q43",
       "itemFamilyId": "U08-F-listening-05",
@@ -3129,30 +3294,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "看圖並聽四個說法。哪個說法的方法符合圖片？",
-      "promptJa": "えとおとをくらべましょう。のりものがあうのは、どれですか。",
+      "promptJa": "えと四つのいいかたをくらべましょう。えののりものとあうのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q43-o3",
-          "text": "第4個說法"
+          "text": "第4個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q43-o0",
-          "text": "第1個說法"
+          "text": "第1個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q43-o1",
-          "text": "第2個說法"
+          "text": "第2個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q43-o2",
-          "text": "第3個說法"
+          "text": "第3個說法",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q43-o0"
       ],
       "explanation": "圖片是公車，符合第1個說法。",
-      "explanationJa": "えののりものと、きいたほうほうをくらべましょう。",
+      "explanationJa": "えはバスです。一ばんの、バスでいきます、があいます。",
       "distractorReasons": {
         "U08-Q43-o1": "這個說法的交通工具不是圖片中的公車。",
         "U08-Q43-o2": "這個說法的交通工具不是圖片中的公車。",
@@ -3179,7 +3348,7 @@
     },
     {
       "id": "U08-Q44",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q44",
       "itemFamilyId": "U08-F-listening-05",
@@ -3202,30 +3371,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "看圖並聽四個說法。哪個說法的方法符合圖片？",
-      "promptJa": "えとおとをくらべましょう。のりものがあうのは、どれですか。",
+      "promptJa": "えと四つのいいかたをくらべましょう。えののりものとあうのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q44-o0",
-          "text": "第3個說法"
+          "text": "第3個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q44-o1",
-          "text": "第1個說法"
+          "text": "第1個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q44-o2",
-          "text": "第2個說法"
+          "text": "第2個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q44-o3",
-          "text": "第4個說法"
+          "text": "第4個說法",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q44-o0"
       ],
       "explanation": "圖片是電車，符合第3個說法。",
-      "explanationJa": "えののりものと、きいたほうほうをくらべましょう。",
+      "explanationJa": "えはでんしゃです。三ばんの、でんしゃでいきます、があいます。",
       "distractorReasons": {
         "U08-Q44-o1": "這個說法的交通工具不是圖片中的電車。",
         "U08-Q44-o2": "這個說法的交通工具不是圖片中的電車。",
@@ -3252,7 +3425,7 @@
     },
     {
       "id": "U08-Q45",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q45",
       "itemFamilyId": "U08-F-listening-05",
@@ -3275,30 +3448,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "看圖並聽四個說法。哪個說法的方法符合圖片？",
-      "promptJa": "えとおとをくらべましょう。のりものがあうのは、どれですか。",
+      "promptJa": "えと四つのいいかたをくらべましょう。えののりものとあうのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q45-o1",
-          "text": "第1個說法"
+          "text": "第1個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q45-o2",
-          "text": "第3個說法"
+          "text": "第3個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q45-o3",
-          "text": "第4個說法"
+          "text": "第4個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q45-o0",
-          "text": "第2個說法"
+          "text": "第2個說法",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q45-o0"
       ],
       "explanation": "圖片是汽車，符合第2個說法。",
-      "explanationJa": "えののりものと、きいたほうほうをくらべましょう。",
+      "explanationJa": "えは車です。二ばんの、車でいきます、があいます。",
       "distractorReasons": {
         "U08-Q45-o1": "這個說法的交通工具不是圖片中的汽車。",
         "U08-Q45-o2": "這個說法的交通工具不是圖片中的汽車。",
@@ -3325,7 +3502,7 @@
     },
     {
       "id": "U08-Q46",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q46",
       "itemFamilyId": "U08-F-listening-05",
@@ -3348,30 +3525,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "看圖並聽四個說法。哪個說法的方法符合圖片？",
-      "promptJa": "えとおとをくらべましょう。のりものがあうのは、どれですか。",
+      "promptJa": "えと四つのいいかたをくらべましょう。えののりものとあうのは、どれですか。",
       "choices": [
         {
           "id": "U08-Q46-o2",
-          "text": "第2個說法"
+          "text": "第2個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q46-o3",
-          "text": "第3個說法"
+          "text": "第3個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q46-o0",
-          "text": "第4個說法"
+          "text": "第4個說法",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-Q46-o1",
-          "text": "第1個說法"
+          "text": "第1個說法",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-Q46-o0"
       ],
       "explanation": "圖片是腳踏車，符合第4個說法。",
-      "explanationJa": "えののりものと、きいたほうほうをくらべましょう。",
+      "explanationJa": "えはじてんしゃです。四ばんの、じてんしゃでいきます、があいます。",
       "distractorReasons": {
         "U08-Q46-o1": "這個說法的交通工具不是圖片中的腳踏車。",
         "U08-Q46-o2": "這個說法的交通工具不是圖片中的腳踏車。",
@@ -3398,7 +3579,7 @@
     },
     {
       "id": "U08-Q47",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q47",
       "itemFamilyId": "U08-F-listening-06",
@@ -3421,30 +3602,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "設定：人物要和姊姊出發。聽問題，選合適回答。",
-      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "promptJa": "あねと行くよていです。おとのしつもんにあうこたえをえらびましょう。",
       "choices": [
         {
           "id": "U08-Q47-o3",
-          "text": "三時に 行きます。"
+          "text": "三時に 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q47-o0",
-          "text": "あねと 行きます。"
+          "text": "あねと 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q47-o1",
-          "text": "バスで 行きます。"
+          "text": "バスで 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q47-o2",
-          "text": "学校へ 行きます。"
+          "text": "学校へ 行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q47-o0"
       ],
       "explanation": "だれと問同行者，應回答姊姊。",
-      "explanationJa": "いっしょにいくひとをこたえましょう。",
+      "explanationJa": "だれといきますか、は、いっしょにいくひとをきいています。あねと行きます、があいます。",
       "distractorReasons": {
         "U08-Q47-o1": "這只回答方法。",
         "U08-Q47-o2": "這只回答目的地。",
@@ -3463,7 +3648,7 @@
     },
     {
       "id": "U08-Q48",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q48",
       "itemFamilyId": "U08-F-listening-06",
@@ -3486,30 +3671,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "設定：人物和朋友一起去。聽問題，選合適回答。",
-      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "promptJa": "ともだちといっしょに行きます。おとのしつもんにあうこたえをえらびましょう。",
       "choices": [
         {
           "id": "U08-Q48-o0",
-          "text": "ともだちと 行きます。"
+          "text": "ともだちと 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q48-o1",
-          "text": "としょかんへ 行きます。"
+          "text": "としょかんへ 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q48-o2",
-          "text": "車で 行きます。"
+          "text": "車で 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q48-o3",
-          "text": "ひとりで 行きます。"
+          "text": "ひとりで 行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q48-o0"
       ],
       "explanation": "和朋友同行，用ともだちと。",
-      "explanationJa": "いっしょにいくひとをこたえましょう。",
+      "explanationJa": "ともだちと行きます、がいっしょにいくひとをこたえています。",
       "distractorReasons": {
         "U08-Q48-o1": "這回答目的地。",
         "U08-Q48-o2": "這回答方法。",
@@ -3528,7 +3717,7 @@
     },
     {
       "id": "U08-Q49",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q49",
       "itemFamilyId": "U08-F-listening-06",
@@ -3551,30 +3740,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "設定：故事人物這次獨自前往。聽問題，選合適回答。",
-      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "promptJa": "おはなしのひとは、こんかいはひとりで行きます。おとのしつもんにあうこたえをえらびましょう。",
       "choices": [
         {
           "id": "U08-Q49-o1",
-          "text": "あにと 行きます。"
+          "text": "あにと 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q49-o2",
-          "text": "あるいて 行きます。"
+          "text": "あるいて 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q49-o3",
-          "text": "えきへ 行きます。"
+          "text": "えきへ 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q49-o0",
-          "text": "ひとりで 行きます。"
+          "text": "ひとりで 行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q49-o0"
       ],
       "explanation": "ひとりで說明沒有同行者。",
-      "explanationJa": "いっしょにいくひとをこたえましょう。",
+      "explanationJa": "ひとりで行きます、があいます。あるいて、はほうほうだけで、ひとりかどうかをつたえません。",
       "distractorReasons": {
         "U08-Q49-o1": "設定沒有哥哥同行。",
         "U08-Q49-o2": "這只說方法，不表示獨自。",
@@ -3593,7 +3786,7 @@
     },
     {
       "id": "U08-Q50",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-Q50",
       "itemFamilyId": "U08-F-listening-06",
@@ -3616,30 +3809,34 @@
       "partition": "practice",
       "kind": "audio",
       "prompt": "設定：人物要和媽媽一起去。聽問題，選合適回答。",
-      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "promptJa": "ははといっしょに行きます。おとのしつもんにあうこたえをえらびましょう。",
       "choices": [
         {
           "id": "U08-Q50-o2",
-          "text": "バスていへ 行きます。"
+          "text": "バスていへ 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q50-o3",
-          "text": "でんしゃで 行きます。"
+          "text": "でんしゃで 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q50-o0",
-          "text": "ははと 行きます。"
+          "text": "ははと 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-Q50-o1",
-          "text": "ははは タクシーで 行きます。"
+          "text": "ははは タクシーで 行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-Q50-o0"
       ],
       "explanation": "ははと直接回答同行者是媽媽。",
-      "explanationJa": "いっしょにいくひとをこたえましょう。",
+      "explanationJa": "ははと行きます、がいっしょにいくひとをこたえています。ははのほうほうをいっているだけのぶんとはちがいます。",
       "distractorReasons": {
         "U08-Q50-o1": "只說媽媽的方法，沒有回答自己和誰去。",
         "U08-Q50-o2": "這是目的地。",
@@ -3658,7 +3855,7 @@
     },
     {
       "id": "U08-C01",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C01",
       "itemFamilyId": "U08-CHECK-valid-alternatives",
@@ -3681,30 +3878,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "兩位居民分別說「えきへ行きます」「えきに行きます」。哪個判斷正確？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "二人が「えきへ行きます」「えきに行きます」といっています。このかで、どのかんがえがあいますか。",
       "choices": [
         {
           "id": "U08-C01-o1",
-          "text": "只有へ合法。"
+          "text": "只有へ合法。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C01-o2",
-          "text": "只有に合法。"
+          "text": "只有に合法。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C01-o3",
-          "text": "兩句都表示獨自去。"
+          "text": "兩句都表示獨自去。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C01-o0",
-          "text": "兩句都能把車站當成目的地。"
+          "text": "兩句都能把車站當成目的地。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C01-o0"
       ],
       "explanation": "へ／に都可配行きます表目的地，不能排除另一合法形式。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "へもにも、いくところをつたえられます。どちらかだけをまちがいにしません。",
       "distractorReasons": {
         "U08-C01-o1": "本課に也可標目的地。",
         "U08-C01-o2": "本課へ也可標目的地。",
@@ -3721,7 +3922,7 @@
     },
     {
       "id": "U08-C02",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C02",
       "itemFamilyId": "U08-CHECK-particle-pronunciation",
@@ -3744,30 +3945,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "要朗讀「学校へ行きます」中的助詞へ，應讀什麼？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "「学校へ行きます」の、じょしのへは、なんとよみますか。",
       "choices": [
         {
           "id": "U08-C02-o2",
-          "text": "に"
+          "text": "に",
+          "lang": "ja"
         },
         {
           "id": "U08-C02-o3",
-          "text": "で"
+          "text": "で",
+          "lang": "ja"
         },
         {
           "id": "U08-C02-o0",
-          "text": "え"
+          "text": "え",
+          "lang": "ja"
         },
         {
           "id": "U08-C02-o1",
-          "text": "へ"
+          "text": "へ",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-C02-o0"
       ],
       "explanation": "へ作目的地助詞時讀え。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "いくところをつたえるじょしのへは、え、とよみます。ににかえるのは、へをよむこととはちがいます。",
       "distractorReasons": {
         "U08-C02-o1": "此處へ作助詞，讀え。",
         "U08-C02-o2": "不能把字換成另一個合法目的地助詞。",
@@ -3784,7 +3989,7 @@
     },
     {
       "id": "U08-C03",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C03",
       "itemFamilyId": "U08-CHECK-movement-viewpoint",
@@ -3807,30 +4012,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "說話者在學校，對家裡的朋友說「学校へ来ますか」。這個來的方向如何理解？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "はなすひとは学校にいます。うちにいるともだちに「学校へ来ますか」といいます。どちらにむかうことをきいていますか。",
       "choices": [
         {
           "id": "U08-C03-o3",
-          "text": "一定是問搭什麼車。"
+          "text": "一定是問搭什麼車。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C03-o0",
-          "text": "問朋友是否朝說話者所在的學校來。"
+          "text": "問朋友是否朝說話者所在的學校來。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C03-o1",
-          "text": "問說話者是否回朋友家。"
+          "text": "問說話者是否回朋友家。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C03-o2",
-          "text": "一定是問朋友幾點出發。"
+          "text": "一定是問朋友幾點出發。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C03-o0"
       ],
       "explanation": "来ます以說話者這裡為參照；學校是朝向的地方。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "来ますは、はなすひとのいるところにむかうことです。学校が、むかうところです。",
       "distractorReasons": {
         "U08-C03-o1": "把動作主體與方向交換。",
         "U08-C03-o2": "沒有時間問詞。",
@@ -3847,7 +4056,7 @@
     },
     {
       "id": "U08-C04",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C04",
       "itemFamilyId": "U08-CHECK-destination-not-arrival-proof",
@@ -3870,30 +4079,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "行程卡只有「ぎんこうへ行きます」。能確認哪一項？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "よていには「ぎんこうへ行きます」とだけあります。どこまでたしかにわかりますか。",
       "choices": [
         {
           "id": "U08-C04-o0",
-          "text": "行程的目的地是銀行，但未證明已經抵達。"
+          "text": "行程的目的地是銀行，但未證明已經抵達。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C04-o1",
-          "text": "已經抵達銀行。"
+          "text": "已經抵達銀行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C04-o2",
-          "text": "一定已從銀行回家。"
+          "text": "一定已從銀行回家。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C04-o3",
-          "text": "一定搭公車。"
+          "text": "一定搭公車。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C04-o0"
       ],
       "explanation": "へ行きます可交代行程目的地，不能自添抵達狀態。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "いくところはぎんこうです。でも、もうついたかどうかや、ほうほうまでは、まだわかりません。",
       "distractorReasons": {
         "U08-C04-o1": "行程描述不證明已到達。",
         "U08-C04-o2": "沒有回家資訊。",
@@ -3910,7 +4123,7 @@
     },
     {
       "id": "U08-C05",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C05",
       "itemFamilyId": "U08-CHECK-negative-place-scope",
@@ -3933,30 +4146,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "人物只說「びょういんへ行きません」。可以確定什麼？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "ひとは「びょういんへ行きません」とだけいっています。たしかにわかるのは、どれですか。",
       "choices": [
         {
           "id": "U08-C05-o1",
-          "text": "一定去銀行。"
+          "text": "一定去銀行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C05-o2",
-          "text": "一定哪裡都不去。"
+          "text": "一定哪裡都不去。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C05-o3",
-          "text": "已經到醫院了。"
+          "text": "已經到醫院了。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C05-o0",
-          "text": "不去醫院；還不知道其他目的地。"
+          "text": "不去醫院；還不知道其他目的地。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C05-o0"
       ],
       "explanation": "否定只限制明說的目的地，不自行推論其他行程。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "びょういんへはいかないことだけがわかります。ほかのいくところや、どこにもいかないことは、きめられません。",
       "distractorReasons": {
         "U08-C05-o1": "沒有說替代目的地。",
         "U08-C05-o2": "否定醫院不等於否定所有地方。",
@@ -3973,7 +4190,7 @@
     },
     {
       "id": "U08-C06",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C06",
       "itemFamilyId": "U08-CHECK-tool-vs-companion-repair",
@@ -3996,30 +4213,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "「バスと行きます」想表達搭公車去，怎樣改正最合適？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "「バスと行きます」を、バスにのっていくいみにしたいです。どうなおしますか。",
       "choices": [
         {
           "id": "U08-C06-o2",
-          "text": "バスの行きます。"
+          "text": "バスの行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C06-o3",
-          "text": "バスが行きます。"
+          "text": "バスが行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C06-o0",
-          "text": "バスで行きます。"
+          "text": "バスで行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C06-o1",
-          "text": "バスへ行きます。"
+          "text": "バスへ行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-C06-o0"
       ],
       "explanation": "方法用で；不能把工具改成同行者。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "ほうほうをつたえるので、バスで行きます、にします。バスへ、は、いくところにしてしまいます。",
       "distractorReasons": {
         "U08-C06-o1": "改成以公車為目的地，不同意思。",
         "U08-C06-o2": "不是本課句型。",
@@ -4036,7 +4257,7 @@
     },
     {
       "id": "U08-C07",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C07",
       "itemFamilyId": "U08-CHECK-shared-destination-different-method",
@@ -4059,30 +4280,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "甲：学校へバスで行きます。乙：学校へあるいて行きます。兩人有什麼相同與不同？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "Aは「学校へバスで行きます」、Bは「学校へあるいて行きます」といっています。おなじところと、ちがうところは、なんですか。",
       "choices": [
         {
           "id": "U08-C07-o3",
-          "text": "兩人一定同時抵達。"
+          "text": "兩人一定同時抵達。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C07-o0",
-          "text": "目的地相同，方法不同。"
+          "text": "目的地相同，方法不同。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C07-o1",
-          "text": "方法相同，目的地不同。"
+          "text": "方法相同，目的地不同。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C07-o2",
-          "text": "兩人一定同行。"
+          "text": "兩人一定同行。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C07-o0"
       ],
       "explanation": "分别比對学校へ與バスで／あるいて。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "いくところは学校でおなじです。バスとあるいてで、ほうほうがちがいます。いっしょにいくかどうかまでは、わかりません。",
       "distractorReasons": {
         "U08-C07-o1": "把兩個欄位顛倒。",
         "U08-C07-o2": "沒有說一起走。",
@@ -4099,7 +4324,7 @@
     },
     {
       "id": "U08-C08",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C08",
       "itemFamilyId": "U08-CHECK-transport-not-location",
@@ -4122,30 +4347,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "「としょかんへでんしゃで行きます」中的でんしゃで，主要告訴我們什麼？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "「としょかんへでんしゃで行きます」の、でんしゃでは、おもになにをつたえますか。",
       "choices": [
         {
           "id": "U08-C08-o0",
-          "text": "前往的方法，不是圖書館位在電車裡。"
+          "text": "前往的方法，不是圖書館位在電車裡。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C08-o1",
-          "text": "圖書館就在電車內。"
+          "text": "圖書館就在電車內。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C08-o2",
-          "text": "電車是同行者的名字。"
+          "text": "電車是同行者的名字。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C08-o3",
-          "text": "圖書館的價格。"
+          "text": "圖書館的價格。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C08-o0"
       ],
       "explanation": "交通工具で行きます說方法，不能改成目的地位置。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "でんしゃでは、いどうのほうほうです。としょかんがでんしゃのなかにある、といういみではありません。",
       "distractorReasons": {
         "U08-C08-o1": "方法助詞不能當位置說明。",
         "U08-C08-o2": "這裡指交通工具。",
@@ -4162,7 +4391,7 @@
     },
     {
       "id": "U08-C09",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C09",
       "itemFamilyId": "U08-CHECK-method-unknown",
@@ -4185,30 +4414,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "人物只說「あねとくうこうへ行きます」。能知道怎樣去嗎？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "「あねとくうこうへ行きます」とだけいっています。どのようにいくか、わかりますか。",
       "choices": [
         {
           "id": "U08-C09-o1",
-          "text": "一定搭飛機。"
+          "text": "一定搭飛機。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C09-o2",
-          "text": "一定搭公車。"
+          "text": "一定搭公車。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C09-o3",
-          "text": "一定步行。"
+          "text": "一定步行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C09-o0",
-          "text": "不能，知道同行者與地方，還沒說方法。"
+          "text": "不能，知道同行者與地方，還沒說方法。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C09-o0"
       ],
       "explanation": "目的地是機場不代表搭飛機前往機場。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "いっしょにいくひとと、いくところはわかりますが、ほうほうはまだわかりません。くうこうへいくからひこうきにのる、ときめません。",
       "distractorReasons": {
         "U08-C09-o1": "機場是目的地，不能推論到機場的方法。",
         "U08-C09-o2": "沒有提供這個方法。",
@@ -4225,7 +4458,7 @@
     },
     {
       "id": "U08-C10",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C10",
       "itemFamilyId": "U08-CHECK-multiple-legs",
@@ -4248,30 +4481,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "行程有兩段：先步行到車站，接著搭電車去圖書館。哪組日語摘要同時符合？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "まず、あるいてえきへいきます。そのあと、でんしゃでとしょかんへいきます。二つのぶんが、どちらもあうのは、どれですか。",
       "choices": [
         {
           "id": "U08-C10-o2",
-          "text": "えきへあるいて行きます／としょかんへあるいて行きます。"
+          "text": "えきへあるいて行きます／としょかんへあるいて行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C10-o3",
-          "text": "えきへでんしゃで行きます／としょかんへでんしゃで行きます。"
+          "text": "えきへでんしゃで行きます／としょかんへでんしゃで行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C10-o0",
-          "text": "えきへあるいて行きます／としょかんへでんしゃで行きます。"
+          "text": "えきへあるいて行きます／としょかんへでんしゃで行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C10-o1",
-          "text": "えきへでんしゃで行きます／としょかんへあるいて行きます。"
+          "text": "えきへでんしゃで行きます／としょかんへあるいて行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-C10-o0"
       ],
       "explanation": "把目的地與方法綁回各自的路段，保留あるいて及でんしゃで兩種接法。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "えきへのほうほうはあるいて、としょかんへのほうほうはでんしゃです。二つのばしょとほうほうをいれかえません。",
       "distractorReasons": {
         "U08-C10-o1": "把兩段的方法交換。",
         "U08-C10-o2": "漏掉後段搭電車的資訊。",
@@ -4288,7 +4525,7 @@
     },
     {
       "id": "U08-C11",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C11",
       "itemFamilyId": "U08-CHECK-person-tool-boundaries",
@@ -4311,30 +4548,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "「ともだちと車で行きます」中的ともだち和車各是什麼角色？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "「ともだちと車で行きます」の、ともだちと車は、それぞれどんなやくわりですか。",
       "choices": [
         {
           "id": "U08-C11-o3",
-          "text": "朋友是車的名字。"
+          "text": "朋友是車的名字。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C11-o0",
-          "text": "朋友是同行者，汽車是方法。"
+          "text": "朋友是同行者，汽車是方法。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C11-o1",
-          "text": "朋友是方法，汽車是同行者。"
+          "text": "朋友是方法，汽車是同行者。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C11-o2",
-          "text": "朋友是目的地，汽車是時間。"
+          "text": "朋友是目的地，汽車是時間。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C11-o0"
       ],
       "explanation": "人と和交通工具で是不同欄位。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "ともだちはいっしょにいくひと、車はいどうのほうほうです。",
       "distractorReasons": {
         "U08-C11-o1": "交換了と與で的角色。",
         "U08-C11-o2": "兩者都不符句型。",
@@ -4351,7 +4592,7 @@
     },
     {
       "id": "U08-C12",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C12",
       "itemFamilyId": "U08-CHECK-companion-not-entourage",
@@ -4374,30 +4615,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "只知道「あねと行きます」，能確定朋友也同行嗎？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "「あねと行きます」とだけわかっています。ともだちもいっしょにいくか、きめられますか。",
       "choices": [
         {
           "id": "U08-C12-o0",
-          "text": "不能；已知姊姊同行，朋友的情況沒說。"
+          "text": "不能；已知姊姊同行，朋友的情況沒說。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C12-o1",
-          "text": "能，朋友一定同行。"
+          "text": "能，朋友一定同行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C12-o2",
-          "text": "能，朋友一定不同行。"
+          "text": "能，朋友一定不同行。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C12-o3",
-          "text": "能，姊姊一定獨自去。"
+          "text": "能，姊姊一定獨自去。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C12-o0"
       ],
       "explanation": "肯定一位同行者，不自動肯定或排除其他人。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "あねがいっしょにいくことはわかります。でも、ともだちがいくか、いかないかは、まだわかりません。",
       "distractorReasons": {
         "U08-C12-o1": "不能增加沒說的人。",
         "U08-C12-o2": "原句也沒有排除朋友。",
@@ -4414,7 +4659,7 @@
     },
     {
       "id": "U08-C13",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C13",
       "itemFamilyId": "U08-CHECK-who-vs-how-relevance",
@@ -4437,30 +4682,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "對方問「だれと行きますか」，只回答「バスで」少了什麼？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "「だれと行きますか」ときかれ、「バスで」とだけこたえました。なにがまだこたえられていませんか。",
       "choices": [
         {
           "id": "U08-C13-o1",
-          "text": "還沒說巴士顏色。"
+          "text": "還沒說巴士顏色。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C13-o2",
-          "text": "還沒報價格。"
+          "text": "還沒報價格。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C13-o3",
-          "text": "還沒說要買幾張票。"
+          "text": "還沒說要買幾張票。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C13-o0",
-          "text": "還沒說和誰一起去。"
+          "text": "還沒說和誰一起去。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C13-o0"
       ],
       "explanation": "交通方法沒有回答同行者。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "バスでは、ほうほうです。だれと、は、いっしょにいくひとなので、まだこたえていません。",
       "distractorReasons": {
         "U08-C13-o1": "不是問題需要的資訊。",
         "U08-C13-o2": "だれと不問價格。",
@@ -4477,7 +4726,7 @@
     },
     {
       "id": "U08-C14",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C14",
       "itemFamilyId": "U08-CHECK-alone-not-walking",
@@ -4500,30 +4749,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "「ひとりで行きます」能推論「一定あるいて行きます」嗎？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "「ひとりで行きます」から、かならずあるいていくと、きめられますか。",
       "choices": [
         {
           "id": "U08-C14-o2",
-          "text": "可以，獨自一定搭電車。"
+          "text": "可以，獨自一定搭電車。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C14-o3",
-          "text": "可以，獨自代表和哥哥一起。"
+          "text": "可以，獨自代表和哥哥一起。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C14-o0",
-          "text": "不能，獨自去仍可能使用不同方法。"
+          "text": "不能，獨自去仍可能使用不同方法。",
+          "lang": "zh-Hant"
         },
         {
           "id": "U08-C14-o1",
-          "text": "可以，獨自一定只能步行。"
+          "text": "可以，獨自一定只能步行。",
+          "lang": "zh-Hant"
         }
       ],
       "answer": [
         "U08-C14-o0"
       ],
       "explanation": "ひとりで限制同行情況，不指定移動工具。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "ひとりでは、いっしょにいくひとについてつたえます。のりものをつかうかどうかは、べつのじょうほうです。",
       "distractorReasons": {
         "U08-C14-o1": "把人數情況當方法。",
         "U08-C14-o2": "同樣沒有方法資訊。",
@@ -4540,7 +4793,7 @@
     },
     {
       "id": "U08-C15",
-      "version": "1",
+      "version": "2",
       "unitId": "U08",
       "itemId": "U08-C15",
       "itemFamilyId": "U08-CHECK-independent-person-binding",
@@ -4563,30 +4816,34 @@
       "partition": "check",
       "kind": "choice",
       "prompt": "行程有兩列：甲和媽媽去郵局；乙獨自去銀行。日語摘要哪句正確描述甲？",
-      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "promptJa": "Aは、ははとゆうびんきょくへいきます。Bは、ひとりでぎんこうへいきます。Aについて、あうぶんは、どれですか。",
       "choices": [
         {
           "id": "U08-C15-o3",
-          "text": "ひとりで ぎんこうへ 行きます。"
+          "text": "ひとりで ぎんこうへ 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C15-o0",
-          "text": "ははと ゆうびんきょくへ 行きます。"
+          "text": "ははと ゆうびんきょくへ 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C15-o1",
-          "text": "ひとりで ゆうびんきょくへ 行きます。"
+          "text": "ひとりで ゆうびんきょくへ 行きます。",
+          "lang": "ja"
         },
         {
           "id": "U08-C15-o2",
-          "text": "ははと ぎんこうへ 行きます。"
+          "text": "ははと ぎんこうへ 行きます。",
+          "lang": "ja"
         }
       ],
       "answer": [
         "U08-C15-o0"
       ],
       "explanation": "先對人物，再把同行者與目的地放回同一列。",
-      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "explanationJa": "Aは、ははとゆうびんきょくへ行きます。Bのいくところやひとりで、をAにあわせません。",
       "distractorReasons": {
         "U08-C15-o1": "拿乙的同行情況套到甲。",
         "U08-C15-o2": "拿乙的目的地套到甲。",

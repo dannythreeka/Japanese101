@@ -5,7 +5,7 @@ import type {BattleSession} from '../src/db/journey-models'
 import {offlineOrigin} from './helpers/offlineOrigin'
 import {records,teach,play,queueQuestions} from './helpers/unitJourney'
 const pack=JSON.parse(await readFile('src/content/packs/u08.json','utf8')) as UnitPack
-test('U08 four strands save real attempts, retain illustrated feedback and export into the correct parent unit',async({page})=>{
+test('U08 four strands save real attempts, retain illustrated feedback and export into the correct parent unit',async({page,browserName})=>{
   test.setTimeout(60000)
   await page.goto('/#/preview/adventure?unit=U08&scene=dojo');await teach(page,pack)
   // Isolated test queue selects one item in each strand; teaching and all answers use the actual UI.
@@ -16,7 +16,7 @@ test('U08 four strands save real attempts, retain illustrated feedback and expor
     await page.getByRole('button',{name:'普通攻擊',exact:true}).click()
     const q=pack.questions.find(q=>q.id===queue[n])!
     await expect(page.getByText(q.prompt,{exact:true})).toBeVisible()
-    if(n===1){for(const width of [320,390,768,1024,1440]){await page.setViewportSize({width,height:width===768?1024:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);await page.screenshot({path:`docs/phases/P4/evidence/u08-context-${width}.png`,fullPage:true})}}
+    if(n===1){for(const width of [320,390,768,1024,1440]){await page.setViewportSize({width,height:width===768?1024:900});expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(width);await page.screenshot({path:`docs/phases/P4/evidence/${pack.version}-context-${width}-${browserName}.png`,fullPage:true})}}
     if(q.audioPolicy==='required')await play(page)
     await page.getByRole('button',{name:q.choices.find(c=>c.id===q.answer[0])!.text,exact:true}).click()
     await page.getByRole('button',{name:'確認答案',exact:true}).click()
@@ -65,7 +65,7 @@ test.describe('U08 complete offline pack',()=>{
 })
 
 
-test('U08 illustrated transport-match practice gives a relevant hint and retains hinted evidence',async({page})=>{
+test('U08 illustrated transport-match practice gives a relevant hint and retains hinted evidence',async({page,browserName})=>{
   test.setTimeout(45000);await page.setViewportSize({width:768,height:1024})
   await page.goto('/#/preview/adventure?unit=U08&scene=dojo');await teach(page,pack)
   const q=pack.questions.find(q=>q.typeId==='T13')!
@@ -77,7 +77,7 @@ test('U08 illustrated transport-match practice gives a relevant hint and retains
   await page.getByRole('button',{name:'看看提示',exact:true}).click()
   await expect(page.getByText(q.hint,{exact:true})).toBeVisible()
   await play(page)
-  await page.screenshot({path:'docs/phases/P4/evidence/u08-transport-match-hint-768.png',fullPage:true})
+  await page.screenshot({path:`docs/phases/P4/evidence/${pack.version}-transport-match-hint-768-${browserName}.png`,fullPage:true})
   await page.getByRole('button',{name:q.choices.find(c=>c.id===q.answer[0])!.text,exact:true}).click()
   await page.getByRole('button',{name:'確認答案',exact:true}).click()
   await expect(page.getByRole('heading',{name:'答對了，一起記住這個重點。',exact:true})).toBeVisible()
@@ -91,7 +91,7 @@ test('U08 four actual vehicle crops remain complete and separately recognizable'
   await page.getByLabel('選擇題目',{exact:true}).selectOption(q.id)
   const frame=page.getByRole('img',{name:q.image!.alt.zh,exact:true}),rect=await frame.boundingBox()
   expect(rect).not.toBeNull();expect(rect!.width/rect!.height).toBeCloseTo(1,2)
-  await frame.screenshot({path:`docs/phases/P4/evidence/u08-frame-${q.image!.cell}-${browserName}.png`})
+  await frame.screenshot({path:`docs/phases/P4/evidence/${pack.version}-frame-${q.image!.cell}-${browserName}.png`})
  }
 })
 test('U08 transport grammar uses the taught kana and saves the actual method answer',async({page})=>{

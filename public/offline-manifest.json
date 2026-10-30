@@ -1,5 +1,5 @@
 {
-  "version": "c42b33c4e884d978",
+  "version": "5a717bc5f3de3e10",
   "assets": [
     {
       "path": "assets/audio/kana_a.wav",
@@ -1174,7 +1174,7 @@
     {
       "path": "assets/audio/u08/manifest.json",
       "bytes": 10420,
-      "sha256": "76966787997d42bd47ab832ddf84459f9a04935ea5f9442c5f6de25e5707dd73"
+      "sha256": "605d61c532317b2ceafc681baf7cd5d1f546862b690b20ffb8363ff6f0039eb7"
     },
     {
       "path": "assets/audio/u08/U08-teach-context.wav",

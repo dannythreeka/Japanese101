@@ -30,3 +30,5 @@ Phase IN_PROGRESS，不是正式P4通過。基準93a5dbd＋本批工具，執行
 CI40937397439：Build、Chromium成功；Firefox59/60，U02領獎後進家長區逾時。以保持coinLedger真實交易再釋放，修正前穩定重現：先到#/parent，交易完成又回#/preview/adventure?unit=U02。JourneyScreen以React Router location.key與卸載保護舊go回呼，保存成功不覆蓋新的路由。修正後兩引擎延遲交易測試均PASS，只有一筆reward與四筆Attempt。沒有延長timeout／刪斷言／重試洗掉失敗。第一個注入嘗試包裝IDBDatabase.transaction未觸發（Dexie已快取），已改成實際coinLedger.add注入；記錄保留此失敗。
 
 完整trace/report：test-results/p4-navigation-before（修正前真正重現），test-results/p4-u05-chromium、test-results/p4-u05-firefox；對應playwright-report目錄。以上本機大檔ignored，選定圖片與重現測試已入repo。WebKit由隔離CI執行，本批結果以實際新run為準，不把舊WebKit未完成當PASS。
+
+U06作者稿批次：基準ec8419a＋本批。python3 scripts/author-u06-base.py實際PASS：25詞與5漢字各自唯一，與U01～05無首次引入重複，10教學／4閱讀／6聽力稿及G16～18吻合manifest。僅作者來源，50題與15check、16音檔、插畫、runtime操作全部NOT_RUN／NOT_PRODUCED，不影響既有可玩pack；不宣稱U06-M/T或P4 DONE。證據docs/content/U06及腳本。

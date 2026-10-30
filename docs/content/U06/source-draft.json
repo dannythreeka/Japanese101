@@ -1,0 +1,528 @@
+{
+  "id": "U06",
+  "version": "u06-1-draft",
+  "title": "飲食：小鎮食堂的午餐",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "vocabulary": [
+    {
+      "id": "U06-V01",
+      "text": "ごはん",
+      "reading": "ごはん",
+      "meaning": "飯；餐點"
+    },
+    {
+      "id": "U06-V02",
+      "text": "パン",
+      "reading": "パン",
+      "meaning": "麵包"
+    },
+    {
+      "id": "U06-V03",
+      "text": "みず",
+      "reading": "みず",
+      "meaning": "水"
+    },
+    {
+      "id": "U06-V04",
+      "text": "おちゃ",
+      "reading": "おちゃ",
+      "meaning": "茶"
+    },
+    {
+      "id": "U06-V05",
+      "text": "ぎゅうにゅう",
+      "reading": "ぎゅうにゅう",
+      "meaning": "牛奶"
+    },
+    {
+      "id": "U06-V06",
+      "text": "ジュース",
+      "reading": "ジュース",
+      "meaning": "果汁"
+    },
+    {
+      "id": "U06-V07",
+      "text": "にく",
+      "reading": "にく",
+      "meaning": "肉"
+    },
+    {
+      "id": "U06-V08",
+      "text": "さかな",
+      "reading": "さかな",
+      "meaning": "魚"
+    },
+    {
+      "id": "U06-V09",
+      "text": "やさい",
+      "reading": "やさい",
+      "meaning": "蔬菜"
+    },
+    {
+      "id": "U06-V10",
+      "text": "くだもの",
+      "reading": "くだもの",
+      "meaning": "水果"
+    },
+    {
+      "id": "U06-V11",
+      "text": "りんご",
+      "reading": "りんご",
+      "meaning": "蘋果"
+    },
+    {
+      "id": "U06-V12",
+      "text": "バナナ",
+      "reading": "バナナ",
+      "meaning": "香蕉"
+    },
+    {
+      "id": "U06-V13",
+      "text": "たまご",
+      "reading": "たまご",
+      "meaning": "蛋"
+    },
+    {
+      "id": "U06-V14",
+      "text": "スープ",
+      "reading": "スープ",
+      "meaning": "湯"
+    },
+    {
+      "id": "U06-V15",
+      "text": "カレー",
+      "reading": "カレー",
+      "meaning": "咖哩"
+    },
+    {
+      "id": "U06-V16",
+      "text": "うどん",
+      "reading": "うどん",
+      "meaning": "烏龍麵"
+    },
+    {
+      "id": "U06-V17",
+      "text": "おにぎり",
+      "reading": "おにぎり",
+      "meaning": "飯糰"
+    },
+    {
+      "id": "U06-V18",
+      "text": "サラダ",
+      "reading": "サラダ",
+      "meaning": "沙拉"
+    },
+    {
+      "id": "U06-V19",
+      "text": "おべんとう",
+      "reading": "おべんとう",
+      "meaning": "便當"
+    },
+    {
+      "id": "U06-V20",
+      "text": "あさごはん",
+      "reading": "あさごはん",
+      "meaning": "早餐"
+    },
+    {
+      "id": "U06-V21",
+      "text": "ひるごはん",
+      "reading": "ひるごはん",
+      "meaning": "午餐"
+    },
+    {
+      "id": "U06-V22",
+      "text": "ばんごはん",
+      "reading": "ばんごはん",
+      "meaning": "晚餐"
+    },
+    {
+      "id": "U06-V23",
+      "text": "すき",
+      "reading": "すき",
+      "meaning": "喜歡"
+    },
+    {
+      "id": "U06-V24",
+      "text": "きらい",
+      "reading": "きらい",
+      "meaning": "不喜歡；討厭"
+    },
+    {
+      "id": "U06-V25",
+      "text": "ください",
+      "reading": "ください",
+      "meaning": "請給我（配合名詞使用）"
+    }
+  ],
+  "kanji": [
+    {
+      "id": "U06-K01",
+      "text": "食",
+      "reading": "た",
+      "meaning": "吃；食べます的食讀た"
+    },
+    {
+      "id": "U06-K02",
+      "text": "飲",
+      "reading": "の",
+      "meaning": "喝；飲みます的飲讀の"
+    },
+    {
+      "id": "U06-K03",
+      "text": "水",
+      "reading": "みず",
+      "meaning": "水"
+    },
+    {
+      "id": "U06-K04",
+      "text": "魚",
+      "reading": "さかな",
+      "meaning": "魚"
+    },
+    {
+      "id": "U06-K05",
+      "text": "肉",
+      "reading": "にく",
+      "meaning": "肉"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G16",
+      "title": "NをVます：吃什麼、喝什麼",
+      "prerequisites": [
+        "K-HIRA",
+        "G08"
+      ]
+    },
+    {
+      "id": "G17",
+      "title": "Nが好きです／嫌いです：表達喜好",
+      "prerequisites": [
+        "K-HIRA",
+        "G16"
+      ]
+    },
+    {
+      "id": "G18",
+      "title": "Nをください：點餐與請求",
+      "prerequisites": [
+        "K-HIRA",
+        "G17"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "U06-R01",
+      "text": "あさです。わたしは パンを 食べます。ぎゅうにゅうを 飲みます。ジュースは 飲みません。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U06-R02",
+      "text": "わたしは りんごが 好きです。バナナが 嫌いです。きょうは りんごを 食べます。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U06-R03",
+      "text": "ひるです。わたしと ともだちは みせに います。わたしは おにぎりを 食べます。ともだちは うどんを 食べます。わたしは みずを 飲みます。ともだちも みずを 飲みます。わたしは うどんも 好きです。でも、きょうは おにぎりです。",
+      "skillId": "R-MID"
+    },
+    {
+      "id": "U06-R04",
+      "text": "きょうの メニュー\nパン：あります\nおにぎり：ありません\nスープ：あります\nみず：あります\nぎゅうにゅう：ありません",
+      "skillId": "R-INFO"
+    }
+  ],
+  "listening": [
+    {
+      "id": "U06-L01",
+      "script": "パンとみずは、あります。おにぎりは、ありません。パンがすきです。ひるごはんは、パンにします。パンをください。",
+      "audioSrc": "/assets/audio/u06/listening-01.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U06-L02",
+      "script": "あさごはんは、パンです。のみものは、ぎゅうにゅうです。ぎゅうにゅうをください。",
+      "audioSrc": "/assets/audio/u06/listening-02.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U06-L03",
+      "script": "わたしは、さかながすきです。きょうは、さかなをたべません。にくをたべます。",
+      "audioSrc": "/assets/audio/u06/listening-03.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U06-L04",
+      "script": "あには、りんごがすきです。わたしは、バナナがすきです。あねは、りんごがきらいです。",
+      "audioSrc": "/assets/audio/u06/listening-04.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U06-L05",
+      "script": "しょくどうにいます。みずをのみます。みずをください。",
+      "audioSrc": "/assets/audio/u06/listening-05.wav",
+      "skillId": "L-EXPR",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U06-L06",
+      "script": "なにをたべますか。",
+      "audioSrc": "/assets/audio/u06/listening-06.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "U06-teach-words-1",
+      "title": "飯與飲料",
+      "titleJa": "ごはんとのみもの",
+      "body": "ごはん：飯；餐點\nパン：麵包\nみず：水\nおちゃ：茶\nぎゅうにゅう：牛奶\nごはん可以指白飯，也能指一餐。みず是水，おちゃ是茶，不把所有飲料都叫みず。",
+      "bodyJa": "ことばをきいて、いみをたしかめましょう。",
+      "example": "ごはん",
+      "translation": "飯；餐點",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "ごはん。パン。みず。おちゃ。ぎゅうにゅう。",
+      "audioSrc": "/assets/audio/u06/U06-teach-words-1.wav",
+      "vocabularyIds": [
+        "U06-V01",
+        "U06-V02",
+        "U06-V03",
+        "U06-V04",
+        "U06-V05"
+      ]
+    },
+    {
+      "id": "U06-teach-words-2",
+      "title": "魚肉與蔬果",
+      "titleJa": "さかな・にく・やさい",
+      "body": "ジュース：果汁\nにく：肉\nさかな：魚\nやさい：蔬菜\nくだもの：水果\nさかな是魚，にく是肉；這課讀菜單，不要求孩子吃特定食物或公開飲食限制。",
+      "bodyJa": "ことばをきいて、いみをたしかめましょう。",
+      "example": "ジュース",
+      "translation": "果汁",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "ジュース。にく。さかな。やさい。くだもの。",
+      "audioSrc": "/assets/audio/u06/U06-teach-words-2.wav",
+      "vocabularyIds": [
+        "U06-V06",
+        "U06-V07",
+        "U06-V08",
+        "U06-V09",
+        "U06-V10"
+      ]
+    },
+    {
+      "id": "U06-teach-words-3",
+      "title": "食堂的菜單",
+      "titleJa": "しょくどうのメニュー",
+      "body": "りんご：蘋果\nバナナ：香蕉\nたまご：蛋\nスープ：湯\nカレー：咖哩\nたまご是蛋，スープ是湯。カレー是咖哩，不把パン或スープ當成同義詞。",
+      "bodyJa": "ことばをきいて、いみをたしかめましょう。",
+      "example": "りんご",
+      "translation": "蘋果",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "りんご。バナナ。たまご。スープ。カレー。",
+      "audioSrc": "/assets/audio/u06/U06-teach-words-3.wav",
+      "vocabularyIds": [
+        "U06-V11",
+        "U06-V12",
+        "U06-V13",
+        "U06-V14",
+        "U06-V15"
+      ]
+    },
+    {
+      "id": "U06-teach-words-4",
+      "title": "便當與三餐",
+      "titleJa": "おべんとうとさんどのごはん",
+      "body": "うどん：烏龍麵\nおにぎり：飯糰\nサラダ：沙拉\nおべんとう：便當\nあさごはん：早餐\nあさごはん是早餐，ひるごはん是午餐，ばんごはん是晚餐。おべんとう指便當，不限定一定中午吃。",
+      "bodyJa": "ことばをきいて、いみをたしかめましょう。",
+      "example": "うどん",
+      "translation": "烏龍麵",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "うどん。おにぎり。サラダ。おべんとう。あさごはん。",
+      "audioSrc": "/assets/audio/u06/U06-teach-words-4.wav",
+      "vocabularyIds": [
+        "U06-V16",
+        "U06-V17",
+        "U06-V18",
+        "U06-V19",
+        "U06-V20"
+      ]
+    },
+    {
+      "id": "U06-teach-words-5",
+      "title": "喜好與請求",
+      "titleJa": "すき・きらい・ください",
+      "body": "ひるごはん：午餐\nばんごはん：晚餐\nすき：喜歡\nきらい：不喜歡；討厭\nください：請給我（配合名詞使用）\nすき／きらい表示個人喜好，沒有誰的喜好比較好。ください在本課搭配物品：みずをください。不能用它表達自己喜歡水。",
+      "bodyJa": "ことばをきいて、いみをたしかめましょう。",
+      "example": "ひるごはん",
+      "translation": "午餐",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "ひるごはん。ばんごはん。すき。きらい。ください。",
+      "audioSrc": "/assets/audio/u06/U06-teach-words-5.wav",
+      "vocabularyIds": [
+        "U06-V21",
+        "U06-V22",
+        "U06-V23",
+        "U06-V24",
+        "U06-V25"
+      ]
+    },
+    {
+      "id": "U06-teach-kanji",
+      "title": "讀懂食堂的漢字",
+      "titleJa": "しょくどうのかんじ",
+      "body": "食べます＝たべます、飲みます＝のみます、水＝みず、魚＝さかな、肉＝にく。\n食べます裡的食讀た，不能把整個たべます都當成單一漢字的讀音。飲みます也是同樣道理。\n這課先讀五個已標示的詞形，不推論所有複合詞都用相同讀音。",
+      "bodyJa": "食べますは、たべます。飲みますは、のみます。水、魚、肉。",
+      "example": "魚を 食べます。水を 飲みます。",
+      "translation": "吃魚，喝水。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "audioScript": "たべます。のみます。みず。さかな。にく。さかなをたべます。みずをのみます。",
+      "audioSrc": "/assets/audio/u06/U06-teach-kanji.wav",
+      "kanjiIds": [
+        "U06-K01",
+        "U06-K02",
+        "U06-K03",
+        "U06-K04",
+        "U06-K05"
+      ],
+      "prerequisites": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ]
+    },
+    {
+      "id": "U06-teach-G16",
+      "title": "說清楚吃什麼、喝什麼",
+      "titleJa": "なにをたべますか",
+      "body": "「食物を 食べます」「飲料を 飲みます」。を標出動作的對象；助詞を讀お。\nパンを食べます＝吃麵包。みずを飲みます＝喝水。\n反例：パンが食べます會把パン當作做動作的主體，不能用來表達我吃麵包。\n食べません／飲みません是否定。物品的位置用に，不用に代替這裡的を。",
+      "bodyJa": "パンをたべます。みずをのみます。じょしのをは、おとよみます。",
+      "example": "わたしは パンを 食べます。",
+      "translation": "我吃麵包。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G16"
+      ],
+      "audioScript": "パンをたべます。みずをのみます。さかなはたべません。なにをたべますか。おにぎりをたべます。",
+      "audioSrc": "/assets/audio/u06/U06-teach-G16.wav",
+      "grammarIds": [
+        "G16"
+      ],
+      "prerequisites": [
+        "U06-teach-kanji"
+      ]
+    },
+    {
+      "id": "U06-teach-G17",
+      "title": "尊重每個人的飲食喜好",
+      "titleJa": "すきなものをつたえる",
+      "body": "「Nが 好きです」表示喜歡N；「Nが 嫌いです」表示不喜歡N。好き讀すき，嫌い讀きらい。\nりんごが好きです＝喜歡蘋果。りんごを好きです不是這課的句型。\n「魚は食べません」只說不吃魚，不能因此認定討厭魚；可能有其他原因。\n題目只依故事明說的喜好作答，不要求孩子透露自己的過敏、宗教或飲食情況。",
+      "bodyJa": "りんごがすきです。すきなものは、ひとによってちがいます。",
+      "example": "わたしは りんごが 好きです。",
+      "translation": "我喜歡蘋果。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G17"
+      ],
+      "audioScript": "りんごがすきです。バナナがきらいです。ひとによって、すきなものはちがいます。",
+      "audioSrc": "/assets/audio/u06/U06-teach-G17.wav",
+      "grammarIds": [
+        "G17"
+      ],
+      "prerequisites": [
+        "U06-teach-G16"
+      ]
+    },
+    {
+      "id": "U06-teach-G18",
+      "title": "向食堂提出請求",
+      "titleJa": "しょくどうでたのむ",
+      "body": "「Nを ください」表示請給我N。みずをください＝請給我水。\n這是提出請求，不等於已經收到、已經喝完，也不表示一定喜歡。\n反例：みずがください不是本課的請求句型。\n本課只請求名詞物品；動詞てください會在後續單元另外學。",
+      "bodyJa": "みずをください。パンをください。ものをたのみます。",
+      "example": "おにぎりを ください。",
+      "translation": "請給我飯糰。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G18"
+      ],
+      "audioScript": "みずをください。パンをください。おにぎりをください。これは、ものをたのむいいかたです。",
+      "audioSrc": "/assets/audio/u06/U06-teach-G18.wav",
+      "grammarIds": [
+        "G18"
+      ],
+      "prerequisites": [
+        "U06-teach-G17"
+      ]
+    },
+    {
+      "id": "U06-teach-context",
+      "title": "讀懂點餐與喜好",
+      "titleJa": "メニューとちゅうもん",
+      "body": "菜單先找物品，再分清楚句子在說喜好、動作或請求。\nパンが好きです：喜歡。パンを食べます：吃。パンをください：請給我。\n告示寫「みず：あります／ぎゅうにゅう：ありません」時，請求水符合現有供應，不能把沒有的牛奶當作已供應。\n故事未提到的事情標為不知道，不自行猜測喜好。",
+      "bodyJa": "メニューをみて、すきなもの、たべるもの、たのむものをわけましょう。",
+      "example": "みずは あります。みずを ください。",
+      "translation": "有供應水；請給我水。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "R-SHORT",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-KEY",
+        "L-EXPR",
+        "L-RESP"
+      ],
+      "audioScript": "パンがすきです。パンをたべます。パンをください。みずはあります。ぎゅうにゅうはありません。",
+      "audioSrc": "/assets/audio/u06/U06-teach-context.wav",
+      "prerequisites": [
+        "U06-teach-G18"
+      ]
+    }
+  ],
+  "questions": []
+}

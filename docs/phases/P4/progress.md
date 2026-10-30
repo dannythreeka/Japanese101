@@ -13,3 +13,5 @@
 新增隔離CLI實測：複製U02到臨時目錄，製造矛盾簽核後--write確實exit1且原ledger逐字不變；過期核准hash會重置NOT_RUN／清除reviewer與日期；正式工作樹ledger不變。首輪14項相關測試、型別與lint通過。後續補上小數標點不被當成同題的測試，最終結果見acceptance。
 
 U05草稿與16音訊／人數插畫已整合，135人審NOT_RUN；目前五課，能力候選15／75，缺60，689審核0有效。U05-M／T／Q1／Q2／A IN_REVIEW，V BLOCKED缺真人，I IN_PROGRESS。P2-09-R2修正CI發現的領獎後覆蓋家長區導覽：真交易延遲重現前FAIL、修正後Chromium與FirefoxPASS；詳acceptance。257單元與兩引擎新課回歸通過，未改經濟或掌握門檻。
+
+2026-10-30 U06開始：scripts/author-u06-base.py與docs/content/U06/source-draft.json交付25不重複新詞、5新漢字、G16～18、10教學、4閱讀、6聽力文字。production-plan固定14題型與素材預定題ID；尚無真題／音訊／插畫，不加入registry、不改runtime完整內容數。U06-M／T IN_PROGRESS，其他未開始，人工NOT_RUN。下一步接續作者稿產生50真題＋15獨立check，再真WAV與插畫／整合。既有工程ec8419a已push，完整目標未完成。

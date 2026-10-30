@@ -1,0 +1,50 @@
+{
+  "version": "u08-art-2-draft",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "assets": [
+    {
+      "id": "u08-transport-v2",
+      "src": "/assets/img/u08/transport-v2.webp",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 513466,
+      "sha256": "2a066837909906602d1c11f0a852cf2ba222833720ec852890fcf3c9229e89ec",
+      "originalPngSha256": "a0a305749fc87702ffc7e51fbabd1bc3470a7938cdf3df0fc9ac307e73cbe18d",
+      "encoding": "WebP quality 0.9, original dimensions, browser Canvas encoder; no composition changes",
+      "columns": 2,
+      "rows": 2,
+      "source": "Original image generated with built-in image_gen, 2026-10-30",
+      "humanReview": "NOT_RUN",
+      "reviewStatus": "DRAFT",
+      "promptFile": "docs/content/U08/art-prompt.md",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
+    }
+  ]
+}

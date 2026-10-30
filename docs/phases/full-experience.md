@@ -1,71 +1,40 @@
 # 完整體驗持續交接
 
-2026-10-30。使用者目標：「把所有的 phase 都全部實作完成，我想直接體驗完全體版本」。goal ACTIVE，未完成。project.md範圍更新授權跨P2～P5工程／草稿預覽，沒有取消真人／教材／實機／兒童gate。不能以缺同一項人審停止全部獨立工程，也不能將草稿標COMPLETE。
+2026-10-30。使用者目標：「把所有的phase都全部實作完成，我想直接體驗完全體版本」。goal ACTIVE，尚未完成。project.md已授權跨P2～P5獨立工程與隔離草稿預覽；真人內容、音訊、視覺、實機與兒童gate仍須真實證據，不因缺同一項人審停止其他可推進工作。
 
-## 工作樹與提交
+## 工作樹與授權
 
-- `/home/yyy/workspace/Japanese101-p2`，branch `phase/full-experience`；原P1 checkout勿碰。所有本次未提交修改均本session工作。
-- PR57已merge9c415fd1a690228838fbfab0afdc8a4e5ef92436，CI40911695545全綠。
-- 後續draft PR58：https://github.com/dannythreeka/Japanese101/pull/58 ，不要自動merge／正式發布。
-- 最新已push工具ecb6c257443d2677736d549cce17a33730c36a07；其CI40937397439發現Firefox領獎導覽競態，正在修正。前93a5dbda648fa8bc6637cdade3a5a1647e3d997c（首四課與fixture）CI40934773054建置／Chromium／Firefox成功，WebKit取消；前3982b5cc42e00a933c80da7e8e3a4cf3dadc17bc為U03。CI40930288466建置及三引擎success；前3289f0（U02）CI40925952499亦全綠。更早4f02a5c是假名先修檢核。
-- U04／首四課整合／fixture已提交93a5dbd；本批P4-02工具狀態以git log/status確認；最終產品測試紀錄在docs/phases/P3/acceptance.md。不要拿舊commit CI替代新變更。
+`/home/yyy/workspace/Japanese101-p2`，branch `phase/full-experience`；原P1 checkout勿碰。PR57已merge9c415fd1a690228838fbfab0afdc8a4e5ef92436。後續Draft PR58：https://github.com/dannythreeka/Japanese101/pull/58 ，已授權commit／push／維護PR，未授權合併PR58或正式發布。本次所有未提交修改均本session工程，仍先查git status保留其他工作。
 
-## 實際工程狀態
+最近已push662be67e8cee41e1ce5b06fdaa6518588b34e2cf（P4-03-R1先修及舊存檔升版）。其CI41005544031已查Test & Build／Chromium／Firefox success，WebKit最後仍in_progress。之後提交與CI查git log及當前遠端；不要拿此舊CI替代U08／離線新修正的結果。歷史測試／失敗在各Phase acceptance與git，這份維持最新恢復基準。
 
-- P2工程與預覽可玩；U01既有149筆人審、P2人工／實機gate原狀。
-- P3-01：平片各46教學46practice46獨立詞語check。完整合法作答才允許略過先修，不捏造教學時間或穩定能力；359筆人審NOT_RUN。
-- U01～04實際4單元（加假名共6pack），100唯一詞20漢字12文法16閱讀24聽力200練習。U02～04各65題候選、10教學、16真WAV、原創四格圖，各135人審NOT_RUN。達工程內容量不等於P3 gate。
-- 所有pack都有道館入口。各單元battle/check/plans隔離；世界／金幣／裝備依玩家共用，exportJourney匯出該玩家全單元而非只目前unit；報告按unit顯示實際教學時間與Attempt。
-- media.ts集中實際音訊／圖片，introductions.ts集中各課介紹；未知單元不回退U01。inventory盤點真實內容與來源hash，release會拒絕缺人審及未做的U05～24。
-- 本批246單元／30檔、39 Chromium P2/P3整合PASS（8.0m）；39後修改U04提示為位置／存在用語、補fixture代碼／gradeBand／provenance，最終7項針對重驗全PASS（2.0m），位置提示圖已檢視。沒有改戰鬥經濟數字。
-- P3-03：九人試用材料與空名額、匿名本機fixture工具。prepare建立新context，40合成起始金幣、零作答；拒絕覆寫，快照可購物裝備。headful、實體平板fixture、招募、同意與真試用NOT_RUN。
+## 實際交付
 
-## 接續工作
+- P0／P1沿用使用者已驗證狀態；P2小鎮自由移動、三入口、日語戰鬥、世界／回合保存、金幣receipt、商店與角色／夥伴裝備、家長報告已有可玩隔離預覽。P2真人與實體平板gate未自行補PASS。
+- 實際八課U01～08：200首次引入詞、40漢字、24文法、32閱讀、48聽力材料、400practice；另每課15check候選。兩份假名各46教學／46practice／46詞語check，共10實際pack。U02～08各10教學16真WAV與原創四格插畫；U01原9教學14WAV。所有單元可到教學／道館／報告，未知ID不回退U01。
+- 假名略過資格只能由完整合法check得出，不寫假教學時間或穩定掌握。五題族／48h／跨兩日／4/5首次無提示能力門檻未改。世界、金幣與裝備按玩家共用，教材battle／check／studyPlan按unit隔離；exportJourney匯出整位玩家，報告按unit。
+- P4-02工具按真pack檢查配額／14題型／去重／來源hash／skill／簽核；75能力24有候選，51缺口＝15共通＋36未製作文法。1094教材素材審核0真人核准，另359假名ledger；不是已核准教材。
+- P4-03-R1：U01 u01-3-draft、U06 u06-2-draft修正先修漂移；舊ledger原文封存。真d35221c舊UI存檔兩引擎6PASS，保留答案／20coin／裝備／交易，歸檔舊plan與未完戰鬥再重開。G03不能繞G02。詳P4/evidence/prerequisite-upgrade.json。
+- P4-04教材與routes分載，catalog／白名單一致性；硬性每chunk500000 bytes、單課初載JS900000 bytes預算。最新index439788、U06初載729454。不是FPS或實機效能證明。
+- U08原創交通圖已修正電車後端完整，最終transport-v2.webp513466 bytes、16WAV3740384 bytes。八課離線包581素材42604828 bytes，PWA637entries約42.5MiB。P4-04-R1修掉SW.ready固定8秒誤報，改可取消生命週期、真失敗及顯式重試，準備狀態有中日文；詳P4 acceptance。
+- P3九人試用材料與匿名fixture已備，尚無真人招募／同意／實際試用。fixture用新context、40合成起始coin、零作答，拒覆寫，不能假裝真人或實機結果。
+- P5已有三卷結構／題族隔離verifier、純狀態機、DB交易／冪等命令、raw報告規則，均只測試fixture，不是正式MA/MB/MC或完整UI。29表完整備份／還原、跨玩家與來源校驗、預覽變更拒絕／原子回滾，以及三種可靠JSON匯出、安全等待更新已有工程證據。
 
-1. U04已commit/push93a5dbd並更新draft PR58；查CI40934773054。本批P4-02工具與新task P4-GAP-01保存／提交狀態看git log；先讀P4/handoff再接續。
-2. P4-02工具已實作完整配額／14題型／skill五題族缺口／逐項hash簽核。報告curriculum-coverage.json：75節點12有候選63缺口，554筆簽核全未核准；P4-GAP-01補15共通skill的primary practice/check，P4 task總146項。下一步開始真實補題，不能宣稱共通skill已覆蓋。
-3. 製作U05～24真實原創內容與音訊；不能只換人名／選項來灌family。P4總量600詞100漢字60文法96閱讀144聽力1200practice，人工審核未完成仍DRAFT。
-4. P5三份原創80題卷（25/30/25，20/40/30分鐘）及互相／練習題族隔離；時鐘／中斷／冪等交卷、raw報告、7日兩卷指標、完整備份還原、安全SW更新。
-5. 真人／實機、九人及18人14天試用只能記真實結果；不自動招募、買服務或發訊息。仍有大量獨立工程，不把goal標BLOCKED或COMPLETE。
+## 下一步
+
+1. 先讀P4/handoff.md與acceptance最新段，確認U08及離線修正最後瀏覽器批次狀態／commit／push。308單元／43檔、lint／typecheck／build已通過；首次16測試15PASS／1Firefox就緒失敗，修後整批6項成功但SIGTERM中止，已分批承接，不宣稱中止批次全綠。
+2. U09～24真實原創教材，單元50practice與15check分開；加上P4-GAP-01共通15技能的primary練習／五獨立check題族，不能換名重排灌family。24課配額600詞100漢字60文法96閱讀144聽力1200practice不變。先看U09作者來源是否已保存，再做完整出題／音訊／圖／整合／操作。
+3. 真MA/MB/MC各80題，25/30/25分區、20/40/30分鐘，彼此及練習題族隔離；實際計時／中斷／冪等交卷UI、播放器／音訊／報告與瀏覽器驗證仍待做。
+4. 真人日語、音訊／視覺、實體iPad／Android、九人試用與十八人14天試用只記真實結果，不招募、購買或發送訊息。仍有大量獨立工程，不能標goal COMPLETE或BLOCKED。
 
 ## 恢復命令與主機限制
 
-Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`；default Node26不符合repo。
-`npm test`、`npm run typecheck`、`npm run lint`、`npm run validate:journey`、`npm run validate:units`、`npm run validate:kana`。
-`VITE_P2_REVIEW_PREVIEW=1 npm run build`；`P0_E2E_PORT=4248 npm run test:e2e -- e2e/p3-u04.spec.ts e2e/p3-curriculum.spec.ts e2e/p3-fixture.spec.ts --project=chromium`。
-需要spawn/browser/network用平台範圍核准require_escalated；禁止改交易主機apt、kernel、Broadcom、WiFi、Tailscale、交易排程或重啟。WebKit依賴只在CI隔離runner裝。
-push：`git -c credential.helper= -c 'credential.helper=!python3 /tmp/japanese101-recovery/git-credential.py' -c credential.useHttpPath=true push origin phase/full-experience`。沿用已授權token不輸出；別用固定推p2的/tmp/j101-push-p2.py。
-trace／report在ignored test-results、playwright-report；選定截圖在docs/phases/P3/evidence。作者稿拒覆APPROVED內容；音訊只在稿／檔hash吻合時重用，不重產已成功檔。
+Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`，default Node26不符合repo。`npm test`、`npm run typecheck`、`npm run lint`、`npm run validate:journey`、`npm run validate:units`、`npm run validate:kana`、`npm run validate:packs`。新課同步registry／loader／catalog／media／art／introductions／labels，執行`node --import tsx scripts/pack-catalog.ts --write`及`node --import tsx scripts/unit-inventory.ts --write`。
 
-## 2026-10-30 接續更新：U05與導覽
+`VITE_P2_REVIEW_PREVIEW=1 npm run build`，缺旗標則沒有preview路由。`P0_E2E_PORT=4268 npm run test:e2e -- e2e/p4-u08.spec.ts --project=chromium --project=firefox`；trace與各小批報告在/tmp/japanese101-recovery，最新索引見Phase evidence。先確認舊程序已終止，不因觀察timeout重啟，也不在瀏覽器測試中改dist。
 
-U05已完成工程草稿（真25詞5漢字3文法4閱讀6聽力50題＋15check、16WAV、原創人數圖），135人審NOT_RUN。全課目前5課＋2假名pack，125詞250practice，75節點15候選完整／60缺口，689人審0有效。257單元、Chromium5、Firefox7新課與回歸通過；P4/acceptance有來源／步驟／證據。
+需spawn／browser／network使用平台require_escalated範圍核准；預設sandbox會對spawnSync回EPERM。WebKit依賴只在CI隔離runner裝。禁止變更主機apt、kernel、Broadcom、WiFi、Tailscale、交易排程或重啟；不輸出憑證。
 
-CI ecb6c25 Firefox發現真實領獎非同步導覽競態（59/60）；已新增P2-09-R2真交易延遲測試，修正前重現、修正後Chromium／FirefoxPASS，不再把已進家長區的使用者拉回舊小鎮。最新提交SHA請git log確認。
+push用既有安全helper：`git -c credential.helper= -c 'credential.helper=!python3 /tmp/japanese101-recovery/git-credential.py' -c credential.useHttpPath=true push origin phase/full-experience`。保留分支與Draft PR，不自動合併／正式發布。
 
-下一批正在獨立實作P5：docs/design/MOCK_EXAM_SPEC.md重新查官方20/40/30並訂自有25/30/25分配；src/mock藍圖、隔離檢查器與狀態機尚未接UI，沒有實際模擬卷，不能當完成。U06～24／共通15skill、P5保存／UI／備份／人審仍要繼續。
-
-## P5工程批次（2026-10-30）
-
-U05／導航已push4d928ccf68cbbd921ae0ac617fd76f16db184967，CI40941122926建置與Chromium成功、其餘進行中。P5-01／02／03提前工程：官方來源藍圖、題族／材料隔離檢查、固定計時狀態機、raw與B/C首次七日指標、DB v9新增mockSessions／mockCommandReceipts與原子保存。284單元、後補12相關測試、型別lintbuild通過；兩引擎真實v8升級與導航總四項PASS，見P5 acceptance。
-
-下一步P5-04完整備份還原；目前journey-export-v1不含mock表，不應接真實mockUI前略過。所有mock合成題僅test-fixtures，沒有實際MA／MB／MC，沒有操作介面。U06～24、共通15skill與真人驗收仍未完成，goal ACTIVE不要停止。最新commit/push看git log，PR保持draft。
-
-
-2026-10-30 完整備份接續：P5-04 IN_PROGRESS，src/backup schema/service與家長PIN後FullBackup UI已實作；29表包括mock與原始legacy，全域ID／profile／引用檢查、預覽後變動拒絕、明確同ID取代、原子歸檔與回滾。7核心及Chromium四項操作通過，五寬度／200%／鍵盤截圖已檢視，最終Firefox與單元結果見P5 acceptance。上一批已push f9dcc50，CI40943000160建置／Chromium／Firefox成功、WebKit最後查仍進行中。
-
-下一步仍須安全SW更新：現有vite.config.ts registerType autoUpdate可能打斷未提交作答，需改成延後啟用且驗證多分頁、下載失敗、斷網及舊cache保存；不能清DB或自動強制重載。接著回到U06～24真實內容、15共通skill延後check、三份真mock與UI。不要停在工程函式，goal仍ACTIVE。PR58保持draft。Node22；npx vitest run src/backup、npm test/typecheck/lint；VITE_P2_REVIEW_PREVIEW=1 npm run build；Playwright e2e/p5-backup.spec.ts。測試用隔離context，不操作真實孩子資料。提交SHA以git log為準。
-
-安全SW工程接續：原生註冊、等待全部舊client關閉、無SKIP_WAITING／自動reload；家長區更新訊息。Chromium實際Workbox生命週期18.0s PASS，備份四項回歸PASS，U05下載後停止origin冷啟真音訊25.3s PASS。跨部署內容變版、其他引擎與實機仍待驗，P5-04 IN_PROGRESS。下一步U06～24與共通skill、真MA/B/C及模擬UI；不得把內容／人審欠項算完成。
-
-2026-10-30 U06開始：scripts/author-u06-base.py與docs/content/U06/source-draft.json交付25不重複新詞、5新漢字、G16～18、10教學、4閱讀、6聽力文字。production-plan固定14題型與素材預定題ID；尚無真題／音訊／插畫，不加入registry、不改runtime完整內容數。U06-M／T IN_PROGRESS，其他未開始，人工NOT_RUN。下一步接續作者稿產生50真題＋15獨立check，再真WAV與插畫／整合。既有工程ec8419a已push，完整目標未完成。
-
-U06完整工程接續：50真練習＋15check、16真WAV、原創水／麵包／湯／牛奶圖已整合可玩preview。六課150詞300practice，18能力候選完整57缺口、824人審0核准。292單元及型別lintbuild、Chromium四項1.8m PASS；Firefox最終見acceptance。U06-M/T/Q1/Q2/A IN_REVIEW、V BLOCKED、I IN_PROGRESS。不要重跑base覆蓋來源，請用author-u06.py。另ec8419 CI發現備份320px在FF/WK溢出6px，正在讀真CI證據定位；先修後再承接U07與共通15skill／真MA/B/C／mockUI。goal ACTIVE。
-
-P4-04提前工程：課程metadata＋各課lazy import、明確pack、不再隱性載U01；舊route也lazy。index439123bytes、U06首次JS722211bytes、單chunk500000硬性build guard。catalog需新增課後執行pack-catalog.ts --write及validate:packs，CI會核對。兩引擎載入／503重開／延遲切換六項PASS，294單元＋三相關PASS。完整Chromium79項跑在session4992、port4258，原第7項生命週期setup等待失敗，已修等待實際setup或已恢復canvas，針對兩引擎各20次資源歸零PASS；原全套最後結果待取。U07作者稿／65題與真音訊／蘋果圖正獨立製作，未註冊，不要在session4992結束前改runtime或重建dist。工程與U07分批提交。
-
-載入優化最終：完整Chromium78PASS／1舊setup等待競態FAIL（23.1m），該case修正後兩引擎20次進出／零RAF／零timers PASS；其他78項產品驗證有效。新載入六項與294單元＋三相關、型別lint及439k build通過。下一步先修Firefox下載：CI trace點擊後還有44s但無download，延後anchor dispatch100ms已在現版重現；JourneyReport與LegacyBackup立即revokeObjectURL，FullBackup已延後，需統一可靠下載helper並真實驗證。U07已65題＋16WAV＋蘋果圖完成素材，尚未registry／loader／catalog／media註冊；要整合後再跑操作。session4992已終止，不重跑79整套，除非後續實質改動需再擴驗。
-
-下載修正最終：三種匯出共用downloadJSON，anchor掛DOM且blob/link延後一秒清理；延後100ms原生派送的兩引擎四項真下載與JSON讀回PASS，Firefox原U02流程／完整備份等九項PASS。typecheck/lint/build與500k guard通過。session33497、48145皆已成功終止，不重跑；恢復先查git log。本批提交後即可接U07註冊：作者65題、16WAV、426556-byte蘋果圖已實際製作但未進registry／loader／catalog／media；e2e/p4-u07.spec.ts已準備。U08～24與共通skill／真mock／人審仍未做，goal ACTIVE。
-
-U07整合：50真練習＋15候選、16WAV、蘋果圖已接9pack，七課175詞350practice、21候選54缺口、959人審0核准。初輪兩引擎14PASS；目視發現不均勻圖格，改DOM依manifest.frameWindows（非編輯位圖），297單元及型別lintbuild／500k guard通過，兩引擎補10PASS，四格FF實圖已逐張檢視。舊U04相容測試session46024結果待取。U08作者來源已25詞5漢字10教學4閱讀6聽力稿，未出題／音訊／圖／註冊。接續P4-03-R1：local prerequisites U01G02/G03、U06G16與已核能力圖不一致，U01教學G03也少G02；需保留舊稿／review、採新draft版本與來源hash，不能悄改已發布版本。先保存U07，再修此缺口與新增防回歸檢查。
+最新驗證：上述分批接續已完成，合計21個不同browser/case均PASS（Chrome11／Firefox10），詳P4/evidence/u08-engineering.json。原中止批次保留真狀態，非22全綠；剩餘Firefox7項已PASS（1.5m），延後ready與離線2PASS，精確假名題兩引擎2PASS。相關runtime已驗證，接續教材與mock工作。

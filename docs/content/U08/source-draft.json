@@ -1,0 +1,4605 @@
+{
+  "id": "U08",
+  "version": "u08-1-draft",
+  "title": "交通與目的地：小鎮出發的約定",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "vocabulary": [
+    {
+      "id": "U08-V01",
+      "text": "いく",
+      "reading": "いく",
+      "meaning": "去"
+    },
+    {
+      "id": "U08-V02",
+      "text": "くる",
+      "reading": "くる",
+      "meaning": "來"
+    },
+    {
+      "id": "U08-V03",
+      "text": "かえる",
+      "reading": "かえる",
+      "meaning": "回去；回家"
+    },
+    {
+      "id": "U08-V04",
+      "text": "あるいて",
+      "reading": "あるいて",
+      "meaning": "步行；以固定搭配あるいて行きます學習"
+    },
+    {
+      "id": "U08-V05",
+      "text": "のる",
+      "reading": "のる",
+      "meaning": "搭乘"
+    },
+    {
+      "id": "U08-V06",
+      "text": "おりる",
+      "reading": "おりる",
+      "meaning": "下車；下交通工具"
+    },
+    {
+      "id": "U08-V07",
+      "text": "でんしゃ",
+      "reading": "でんしゃ",
+      "meaning": "電車"
+    },
+    {
+      "id": "U08-V08",
+      "text": "バス",
+      "reading": "バス",
+      "meaning": "公車"
+    },
+    {
+      "id": "U08-V09",
+      "text": "じてんしゃ",
+      "reading": "じてんしゃ",
+      "meaning": "腳踏車"
+    },
+    {
+      "id": "U08-V10",
+      "text": "くるま",
+      "reading": "くるま",
+      "meaning": "汽車"
+    },
+    {
+      "id": "U08-V11",
+      "text": "タクシー",
+      "reading": "タクシー",
+      "meaning": "計程車"
+    },
+    {
+      "id": "U08-V12",
+      "text": "ひこうき",
+      "reading": "ひこうき",
+      "meaning": "飛機"
+    },
+    {
+      "id": "U08-V13",
+      "text": "ふね",
+      "reading": "ふね",
+      "meaning": "船"
+    },
+    {
+      "id": "U08-V14",
+      "text": "ちかてつ",
+      "reading": "ちかてつ",
+      "meaning": "地下鐵"
+    },
+    {
+      "id": "U08-V15",
+      "text": "きっぷ",
+      "reading": "きっぷ",
+      "meaning": "車票／船票等票券"
+    },
+    {
+      "id": "U08-V16",
+      "text": "びょういん",
+      "reading": "びょういん",
+      "meaning": "醫院"
+    },
+    {
+      "id": "U08-V17",
+      "text": "ぎんこう",
+      "reading": "ぎんこう",
+      "meaning": "銀行"
+    },
+    {
+      "id": "U08-V18",
+      "text": "ゆうびんきょく",
+      "reading": "ゆうびんきょく",
+      "meaning": "郵局"
+    },
+    {
+      "id": "U08-V19",
+      "text": "としょかん",
+      "reading": "としょかん",
+      "meaning": "圖書館"
+    },
+    {
+      "id": "U08-V20",
+      "text": "くうこう",
+      "reading": "くうこう",
+      "meaning": "機場"
+    },
+    {
+      "id": "U08-V21",
+      "text": "バスてい",
+      "reading": "バスてい",
+      "meaning": "公車站"
+    },
+    {
+      "id": "U08-V22",
+      "text": "いりぐち",
+      "reading": "いりぐち",
+      "meaning": "入口"
+    },
+    {
+      "id": "U08-V23",
+      "text": "でぐち",
+      "reading": "でぐち",
+      "meaning": "出口"
+    },
+    {
+      "id": "U08-V24",
+      "text": "いっしょに",
+      "reading": "いっしょに",
+      "meaning": "一起"
+    },
+    {
+      "id": "U08-V25",
+      "text": "だれと",
+      "reading": "だれと",
+      "meaning": "和誰；詢問同行者的固定問法"
+    }
+  ],
+  "kanji": [
+    {
+      "id": "U08-K01",
+      "text": "行",
+      "reading": "い",
+      "meaning": "去；行きます的行讀い"
+    },
+    {
+      "id": "U08-K02",
+      "text": "来",
+      "reading": "き",
+      "meaning": "來；来ます的来讀き"
+    },
+    {
+      "id": "U08-K03",
+      "text": "車",
+      "reading": "くるま",
+      "meaning": "汽車"
+    },
+    {
+      "id": "U08-K04",
+      "text": "入",
+      "reading": "いり",
+      "meaning": "進入；入口的入讀いり"
+    },
+    {
+      "id": "U08-K05",
+      "text": "出",
+      "reading": "で",
+      "meaning": "出去；出口的出讀で"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G22",
+      "title": "場所へ／に行きます：目的地",
+      "prerequisites": [
+        "K-HIRA",
+        "G21"
+      ]
+    },
+    {
+      "id": "G23",
+      "title": "交通工具で行きます：移動方法",
+      "prerequisites": [
+        "K-HIRA",
+        "G22"
+      ]
+    },
+    {
+      "id": "G24",
+      "title": "人と行きます：同行的人",
+      "prerequisites": [
+        "K-HIRA",
+        "G23"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "U08-R01",
+      "text": "わたしは としょかんへ 行きます。バスで 行きます。あねと 行きます。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U08-R02",
+      "text": "ともだちは ぎんこうへ 行きます。車で 行きます。わたしは えきへ あるいて 行きます。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U08-R03",
+      "text": "あさです。わたしと あには 学校へ 行きます。きょうは バスで 行きません。じてんしゃで 行きます。ははは びょういんへ 行きます。ははは タクシーで 行きます。わたしは ははと 行きません。",
+      "skillId": "R-MID"
+    },
+    {
+      "id": "U08-R04",
+      "text": "きょうの よてい\nあに：学校／じてんしゃ\nあね：としょかん／バス\nはは：びょういん／タクシー\nわたし：えき／あるいて",
+      "skillId": "R-INFO"
+    }
+  ],
+  "listening": [
+    {
+      "id": "U08-L01",
+      "script": "としょかんへいきます。あねと、ばすでいきます。ぎんこうへはいきません。",
+      "audioSrc": "/assets/audio/u08/listening-01.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U08-L02",
+      "script": "えきへいきます。きょうは、でんしゃでいきません。あるいていきます。",
+      "audioSrc": "/assets/audio/u08/listening-02.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U08-L03",
+      "script": "わたしは、ともだちと、がっこうへいきます。あには、ひとりで、としょかんへいきます。",
+      "audioSrc": "/assets/audio/u08/listening-03.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U08-L04",
+      "script": "ははは、びょういんへ、たくしーでいきます。あねは、ぎんこうへ、ばすでいきます。",
+      "audioSrc": "/assets/audio/u08/listening-04.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U08-L05",
+      "script": "いどうのほうほうです。いちばん。ばすでいきます。にばん。くるまでいきます。さんばん。でんしゃでいきます。よんばん。じてんしゃでいきます。",
+      "audioSrc": "/assets/audio/u08/listening-05.wav",
+      "skillId": "L-EXPR",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U08-L06",
+      "script": "だれといきますか。",
+      "audioSrc": "/assets/audio/u08/listening-06.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "U08-teach-words-1",
+      "title": "來去與步行",
+      "titleJa": "いく・くる・あるいて",
+      "body": "いく：去\nくる：來\nかえる：回去；回家\nあるいて：步行；以固定搭配あるいて行きます學習\nのる：搭乘\n行きます＝いきます，来ます＝きます，帰ります＝かえります。以說話者目前位置區分「去」與「來」。あるいて行きます是本課固定搭配，不說あるいてで行きます。",
+      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "example": "いく",
+      "translation": "去",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "いく。くる。かえる。あるいて。のる。",
+      "audioSrc": "/assets/audio/u08/U08-teach-words-1.wav",
+      "vocabularyIds": [
+        "U08-V01",
+        "U08-V02",
+        "U08-V03",
+        "U08-V04",
+        "U08-V05"
+      ]
+    },
+    {
+      "id": "U08-teach-words-2",
+      "title": "搭乘與常見交通",
+      "titleJa": "のりものとおりる",
+      "body": "おりる：下車；下交通工具\nでんしゃ：電車\nバス：公車\nじてんしゃ：腳踏車\nくるま：汽車\n電車、公車、腳踏車與汽車分開辨識。おりる表示離開搭乘的交通工具，與のる相反。",
+      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "example": "おりる",
+      "translation": "下車；下交通工具",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "おりる。でんしゃ。バス。じてんしゃ。くるま。",
+      "audioSrc": "/assets/audio/u08/U08-teach-words-2.wav",
+      "vocabularyIds": [
+        "U08-V06",
+        "U08-V07",
+        "U08-V08",
+        "U08-V09",
+        "U08-V10"
+      ]
+    },
+    {
+      "id": "U08-teach-words-3",
+      "title": "票券與其他交通",
+      "titleJa": "きっぷとほかののりもの",
+      "body": "タクシー：計程車\nひこうき：飛機\nふね：船\nちかてつ：地下鐵\nきっぷ：車票／船票等票券\nタクシー、ひこうき、ふね、ちかてつ是不同移動工具。きっぷ是票券，不是車輛名稱。",
+      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "example": "タクシー",
+      "translation": "計程車",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "タクシー。ひこうき。ふね。ちかてつ。きっぷ。",
+      "audioSrc": "/assets/audio/u08/U08-teach-words-3.wav",
+      "vocabularyIds": [
+        "U08-V11",
+        "U08-V12",
+        "U08-V13",
+        "U08-V14",
+        "U08-V15"
+      ]
+    },
+    {
+      "id": "U08-teach-words-4",
+      "title": "小鎮外的目的地",
+      "titleJa": "いくところ",
+      "body": "びょういん：醫院\nぎんこう：銀行\nゆうびんきょく：郵局\nとしょかん：圖書館\nくうこう：機場\nびょういん有小ょう，表示醫院。這課只談虛構居民去哪裡，不詢問孩子的住址、實際移動路線或定位。",
+      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "example": "びょういん",
+      "translation": "醫院",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "びょういん。ぎんこう。ゆうびんきょく。としょかん。くうこう。",
+      "audioSrc": "/assets/audio/u08/U08-teach-words-4.wav",
+      "vocabularyIds": [
+        "U08-V16",
+        "U08-V17",
+        "U08-V18",
+        "U08-V19",
+        "U08-V20"
+      ]
+    },
+    {
+      "id": "U08-teach-words-5",
+      "title": "集合與出入口",
+      "titleJa": "いっしょに・いりぐち・でぐち",
+      "body": "バスてい：公車站\nいりぐち：入口\nでぐち：出口\nいっしょに：一起\nだれと：和誰；詢問同行者的固定問法\n入口＝いりぐち，出口＝でぐち；文字標示要分清楚，不從門在圖片的左右位置猜。だれと問和誰一起去，不是在問去哪裡。",
+      "bodyJa": "ことばのいみと、いくところをたしかめましょう。",
+      "example": "バスてい",
+      "translation": "公車站",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "バスてい。いりぐち。でぐち。いっしょに。だれと。",
+      "audioSrc": "/assets/audio/u08/U08-teach-words-5.wav",
+      "vocabularyIds": [
+        "U08-V21",
+        "U08-V22",
+        "U08-V23",
+        "U08-V24",
+        "U08-V25"
+      ]
+    },
+    {
+      "id": "U08-teach-kanji",
+      "title": "看懂來去與出入口",
+      "titleJa": "いく・くる・いりぐち・でぐち",
+      "body": "行きます＝いきます、来ます＝きます、車＝くるま、入口＝いりぐち、出口＝でぐち。\n本課行讀い、来讀き，指的是這兩個完整詞形，不把所有複合詞都讀成一樣。入口的入讀いり，出口的出讀で，後面口在這些詞裡讀ぐち。\n這裡來去指故事人物的移動，不要求孩子真的出門。",
+      "bodyJa": "いきます、きます、くるま、いりぐち、でぐち。よみかたをたしかめましょう。",
+      "example": "入口と 出口",
+      "translation": "入口與出口。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "audioScript": "いきます。きます。くるま。いりぐち。でぐち。いりぐちははいるところ、でぐちはでるところです。",
+      "audioSrc": "/assets/audio/u08/U08-teach-kanji.wav",
+      "kanjiIds": [
+        "U08-K01",
+        "U08-K02",
+        "U08-K03",
+        "U08-K04",
+        "U08-K05"
+      ],
+      "prerequisites": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ]
+    },
+    {
+      "id": "U08-teach-G22",
+      "title": "說清楚目的地",
+      "titleJa": "どこへいきますか",
+      "body": "「場所へ行きます」和「場所に行きます」都可表達去某個目的地。へ作助詞讀え。\nえきへ行きます／えきに行きます：兩者都可以，本課不把其中一個當錯誤選項。\n「どこへ行きますか」問去哪裡；「なんじに行きますか」問時間，不能混在一起。\n行きます與来ます以說話位置為準；這課的目的地問答先用行きます。",
+      "bodyJa": "えきへいきます。えきにいきます。どちらも、いくところをつたえます。じょしのへは、えとよみます。",
+      "example": "としょかんへ 行きます。",
+      "translation": "去圖書館。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G22"
+      ],
+      "audioScript": "えきへいきます。えきにいきます。どこへいきますか。としょかんへいきます。",
+      "audioSrc": "/assets/audio/u08/U08-teach-G22.wav",
+      "grammarIds": [
+        "G22"
+      ],
+      "prerequisites": [
+        "U08-teach-kanji"
+      ]
+    },
+    {
+      "id": "U08-teach-G23",
+      "title": "說明怎麼去",
+      "titleJa": "なにでいきますか",
+      "body": "「交通工具で行きます」說明移動方法。バスで行きます＝搭公車去；でんしゃで行きます＝搭電車去。\n這裡で是方法，不是目的地；「バスへ行きます」不是同樣的意思。\n步行用固定搭配「あるいて行きます」，不加で。\n「学校へ バスで 行きます」同時說目的地與方法；題目只依文字／聲音，不猜孩子的真實交通習慣。",
+      "bodyJa": "バスでいきます。でんしゃでいきます。あるいていきます。",
+      "example": "学校へ バスで 行きます。",
+      "translation": "搭公車去學校。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G23"
+      ],
+      "audioScript": "がっこうへばすでいきます。としょかんへでんしゃでいきます。えきへあるいていきます。なにでいきますか。ばすでいきます。",
+      "audioSrc": "/assets/audio/u08/U08-teach-G23.wav",
+      "grammarIds": [
+        "G23"
+      ],
+      "prerequisites": [
+        "U08-teach-G22"
+      ]
+    },
+    {
+      "id": "U08-teach-G24",
+      "title": "介紹同行的人",
+      "titleJa": "だれといきますか",
+      "body": "「人と行きます」說明和誰一起去。あねと行きます＝和姊姊一起去。\n「だれと行きますか」問同行者；「なにで行きますか」問方法；「どこへ行きますか」問目的地。\n「ともだちと バスで 学校へ 行きます」裡，ともだちは同行者、バス是方法、学校是目的地。\n「ともだちと」中的と不表示朋友變成交通工具；區分人と與工具で。ひとりで行きます表示獨自去，是本課一起認識的固定搭配。",
+      "bodyJa": "あねといきます。だれといきますか。ともだちといきます。",
+      "example": "ともだちと 学校へ 行きます。",
+      "translation": "和朋友一起去學校。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G24"
+      ],
+      "audioScript": "あねといきます。ともだちとがっこうへいきます。だれといきますか。ともだちといきます。ひとりでいきます。",
+      "audioSrc": "/assets/audio/u08/U08-teach-G24.wav",
+      "grammarIds": [
+        "G24"
+      ],
+      "prerequisites": [
+        "U08-teach-G23"
+      ]
+    },
+    {
+      "id": "U08-teach-context",
+      "title": "把誰、去哪裡、怎麼去分開",
+      "titleJa": "だれと・どこへ・なにで",
+      "body": "讀行程卡時，先分同行者、目的地、方法三欄，不把交通工具當目的地或人物。\n表格同時有多個居民時，要先核對人物，再取正確那一列。\n「先去銀行，再去車站」只在題目明確說順序時按順序讀；沒有寫的目的地、時間或同伴不能自行加上。\n插畫只是教學場景，不表示地圖新增車站或多座城鎮。",
+      "bodyJa": "だれと、どこへ、なにでいくか、わけてたしかめましょう。",
+      "example": "あねと／としょかんへ／バスで",
+      "translation": "和姊姊／去圖書館／搭公車。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "R-SHORT",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-KEY",
+        "L-EXPR",
+        "L-RESP"
+      ],
+      "audioScript": "あねと、としょかんへ、ばすでいきます。だれと、どこへ、なにでいくかをたしかめましょう。",
+      "audioSrc": "/assets/audio/u08/U08-teach-context.wav",
+      "prerequisites": [
+        "U08-teach-G24"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "U08-Q01",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q01",
+      "itemFamilyId": "U08-F-read-go",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「行きます」の読み方は？",
+      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q01-o1",
+          "text": "きます"
+        },
+        {
+          "id": "U08-Q01-o2",
+          "text": "かえります"
+        },
+        {
+          "id": "U08-Q01-o3",
+          "text": "のみます"
+        },
+        {
+          "id": "U08-Q01-o0",
+          "text": "いきます"
+        }
+      ],
+      "answer": [
+        "U08-Q01-o0"
+      ],
+      "explanation": "行きます讀いきます，行的部分讀い。",
+      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q01-o1": "這是来ます。",
+        "U08-Q01-o2": "這是帰ります。",
+        "U08-Q01-o3": "這是飲みます。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U08-Q02",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q02",
+      "itemFamilyId": "U08-F-read-come",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「来ます」の読み方は？",
+      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q02-o2",
+          "text": "みます"
+        },
+        {
+          "id": "U08-Q02-o3",
+          "text": "きります"
+        },
+        {
+          "id": "U08-Q02-o0",
+          "text": "きます"
+        },
+        {
+          "id": "U08-Q02-o1",
+          "text": "いきます"
+        }
+      ],
+      "answer": [
+        "U08-Q02-o0"
+      ],
+      "explanation": "来ます讀きます。",
+      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q02-o1": "這是行きます。",
+        "U08-Q02-o2": "這是見ます。",
+        "U08-Q02-o3": "不是来ます的讀法。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U08-Q03",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q03",
+      "itemFamilyId": "U08-F-read-car",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「車」の読み方は？",
+      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q03-o3",
+          "text": "ふね"
+        },
+        {
+          "id": "U08-Q03-o0",
+          "text": "くるま"
+        },
+        {
+          "id": "U08-Q03-o1",
+          "text": "でんしゃ"
+        },
+        {
+          "id": "U08-Q03-o2",
+          "text": "きっぷ"
+        }
+      ],
+      "answer": [
+        "U08-Q03-o0"
+      ],
+      "explanation": "單獨的車在本課讀くるま。",
+      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q03-o1": "電車是另一個完整詞。",
+        "U08-Q03-o2": "這是票券。",
+        "U08-Q03-o3": "這是船。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U08-Q04",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q04",
+      "itemFamilyId": "U08-F-read-exit",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「出口」の読み方は？",
+      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q04-o0",
+          "text": "でぐち"
+        },
+        {
+          "id": "U08-Q04-o1",
+          "text": "いりぐち"
+        },
+        {
+          "id": "U08-Q04-o2",
+          "text": "くうこう"
+        },
+        {
+          "id": "U08-Q04-o3",
+          "text": "でんしゃ"
+        }
+      ],
+      "answer": [
+        "U08-Q04-o0"
+      ],
+      "explanation": "出口讀でぐち，出的部分讀で。",
+      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q04-o1": "這是入口。",
+        "U08-Q04-o2": "這是機場。",
+        "U08-Q04-o3": "這是電車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U08-Q05",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q05",
+      "itemFamilyId": "U08-F-write-go",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「いきます」對應哪個寫法？",
+      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q05-o1",
+          "text": "来ます"
+        },
+        {
+          "id": "U08-Q05-o2",
+          "text": "行ます"
+        },
+        {
+          "id": "U08-Q05-o3",
+          "text": "入りきます"
+        },
+        {
+          "id": "U08-Q05-o0",
+          "text": "行きます"
+        }
+      ],
+      "answer": [
+        "U08-Q05-o0"
+      ],
+      "explanation": "行後面接きます。",
+      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q05-o1": "這讀きます。",
+        "U08-Q05-o2": "漏掉送り仮名き。",
+        "U08-Q05-o3": "不是いきます的寫法。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U08-Q06",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q06",
+      "itemFamilyId": "U08-F-write-come",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「きます」對應哪個寫法？",
+      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q06-o2",
+          "text": "来きます"
+        },
+        {
+          "id": "U08-Q06-o3",
+          "text": "車ます"
+        },
+        {
+          "id": "U08-Q06-o0",
+          "text": "来ます"
+        },
+        {
+          "id": "U08-Q06-o1",
+          "text": "行きます"
+        }
+      ],
+      "answer": [
+        "U08-Q06-o0"
+      ],
+      "explanation": "来接ます，合起來讀きます。",
+      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q06-o1": "這讀いきます。",
+        "U08-Q06-o2": "多了一個き。",
+        "U08-Q06-o3": "不是きます的寫法。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U08-Q07",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q07",
+      "itemFamilyId": "U08-F-write-entrance",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「いりぐち」是哪個標示？",
+      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q07-o3",
+          "text": "来口"
+        },
+        {
+          "id": "U08-Q07-o0",
+          "text": "入口"
+        },
+        {
+          "id": "U08-Q07-o1",
+          "text": "出口"
+        },
+        {
+          "id": "U08-Q07-o2",
+          "text": "車"
+        }
+      ],
+      "answer": [
+        "U08-Q07-o0"
+      ],
+      "explanation": "入口是進入的口，讀いりぐち。",
+      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q07-o1": "這讀でぐち。",
+        "U08-Q07-o2": "這讀くるま。",
+        "U08-Q07-o3": "不是入口的寫法。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U08-Q08",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q08",
+      "itemFamilyId": "U08-F-write-exit",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「でぐち」是哪個標示？",
+      "promptJa": "よみかたや、かきかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q08-o0",
+          "text": "出口"
+        },
+        {
+          "id": "U08-Q08-o1",
+          "text": "入口"
+        },
+        {
+          "id": "U08-Q08-o2",
+          "text": "出車"
+        },
+        {
+          "id": "U08-Q08-o3",
+          "text": "行口"
+        }
+      ],
+      "answer": [
+        "U08-Q08-o0"
+      ],
+      "explanation": "出口讀でぐち，不依門在左右判定。",
+      "explanationJa": "ならったかんじと、ことばをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q08-o1": "這是いりぐち。",
+        "U08-Q08-o2": "不是出口的寫法。",
+        "U08-Q08-o3": "不是出口的寫法。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U08-Q09",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q09",
+      "itemFamilyId": "U08-F-ticket-not-vehicle",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「きっぷ」指哪一項？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q09-o1",
+          "text": "汽車本身。"
+        },
+        {
+          "id": "U08-Q09-o2",
+          "text": "機場。"
+        },
+        {
+          "id": "U08-Q09-o3",
+          "text": "一起去的人。"
+        },
+        {
+          "id": "U08-Q09-o0",
+          "text": "搭乘交通工具的票券。"
+        }
+      ],
+      "answer": [
+        "U08-Q09-o0"
+      ],
+      "explanation": "きっぷ是票券，不是車輛。",
+      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "distractorReasons": {
+        "U08-Q09-o1": "汽車是くるま。",
+        "U08-Q09-o2": "機場是くうこう。",
+        "U08-Q09-o3": "きっぷ不是人物。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U08-Q10",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q10",
+      "itemFamilyId": "U08-F-hospital-not-bank",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "故事說人物要去「びょういん」。目的地是哪裡？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q10-o2",
+          "text": "郵局"
+        },
+        {
+          "id": "U08-Q10-o3",
+          "text": "公車站"
+        },
+        {
+          "id": "U08-Q10-o0",
+          "text": "醫院"
+        },
+        {
+          "id": "U08-Q10-o1",
+          "text": "銀行"
+        }
+      ],
+      "answer": [
+        "U08-Q10-o0"
+      ],
+      "explanation": "びょういん有小ょう，表示醫院。",
+      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "distractorReasons": {
+        "U08-Q10-o1": "銀行是ぎんこう。",
+        "U08-Q10-o2": "郵局是ゆうびんきょく。",
+        "U08-Q10-o3": "公車站是バスてい。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U08-Q11",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q11",
+      "itemFamilyId": "U08-F-getting-off",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「おりる」表示什麼動作？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q11-o3",
+          "text": "一起走。"
+        },
+        {
+          "id": "U08-Q11-o0",
+          "text": "下車；離開搭乘的交通工具。"
+        },
+        {
+          "id": "U08-Q11-o1",
+          "text": "上車。"
+        },
+        {
+          "id": "U08-Q11-o2",
+          "text": "買票。"
+        }
+      ],
+      "answer": [
+        "U08-Q11-o0"
+      ],
+      "explanation": "おりる與のる表示相反的搭乘動作。",
+      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "distractorReasons": {
+        "U08-Q11-o1": "上車是のる。",
+        "U08-Q11-o2": "不是買票這個動作。",
+        "U08-Q11-o3": "不是いっしょに的意思。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U08-Q12",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q12",
+      "itemFamilyId": "U08-F-airport-not-plane",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「くうこう」是哪一種地方？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q12-o0",
+          "text": "機場"
+        },
+        {
+          "id": "U08-Q12-o1",
+          "text": "飛機"
+        },
+        {
+          "id": "U08-Q12-o2",
+          "text": "地下鐵"
+        },
+        {
+          "id": "U08-Q12-o3",
+          "text": "車票"
+        }
+      ],
+      "answer": [
+        "U08-Q12-o0"
+      ],
+      "explanation": "くうこう是地方，ひこうき是交通工具。",
+      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "distractorReasons": {
+        "U08-Q12-o1": "飛機是ひこうき，不是地方。",
+        "U08-Q12-o2": "地下鐵是ちかてつ。",
+        "U08-Q12-o3": "車票是きっぷ。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U08-Q13",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q13",
+      "itemFamilyId": "U08-F-walking-phrase",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「あるいて 行きます」說的是？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q13-o1",
+          "text": "搭公車前往。"
+        },
+        {
+          "id": "U08-Q13-o2",
+          "text": "搭船前往。"
+        },
+        {
+          "id": "U08-Q13-o3",
+          "text": "一定和朋友同行。"
+        },
+        {
+          "id": "U08-Q13-o0",
+          "text": "步行前往。"
+        }
+      ],
+      "answer": [
+        "U08-Q13-o0"
+      ],
+      "explanation": "あるいて行きます是步行前往的固定搭配。",
+      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "distractorReasons": {
+        "U08-Q13-o1": "公車用バスで。",
+        "U08-Q13-o2": "船用ふねで。",
+        "U08-Q13-o3": "沒有交代同行者。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U08-Q14",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q14",
+      "itemFamilyId": "U08-F-together-meaning",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「いっしょに」意思是？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q14-o2",
+          "text": "獨自一人"
+        },
+        {
+          "id": "U08-Q14-o3",
+          "text": "車票"
+        },
+        {
+          "id": "U08-Q14-o0",
+          "text": "一起"
+        },
+        {
+          "id": "U08-Q14-o1",
+          "text": "出口"
+        }
+      ],
+      "answer": [
+        "U08-Q14-o0"
+      ],
+      "explanation": "いっしょに表示一起。",
+      "explanationJa": "ことばが、ひと、ばしょ、もの、することのどれか、たしかめましょう。",
+      "distractorReasons": {
+        "U08-Q14-o1": "出口是でぐち。",
+        "U08-Q14-o2": "ひとりで才表示獨自。",
+        "U08-Q14-o3": "車票是きっぷ。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U08-Q15",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q15",
+      "itemFamilyId": "U08-F-paraphrase-transport",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「学校へ バスで 行きます。」意思最接近？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q15-o3",
+          "text": "步行去學校。"
+        },
+        {
+          "id": "U08-Q15-o0",
+          "text": "搭公車去學校。"
+        },
+        {
+          "id": "U08-Q15-o1",
+          "text": "去公車裡讀書。"
+        },
+        {
+          "id": "U08-Q15-o2",
+          "text": "和公車一起去學校。"
+        }
+      ],
+      "answer": [
+        "U08-Q15-o0"
+      ],
+      "explanation": "学校へ是目的地，バスで是方法。",
+      "explanationJa": "ことばと、ぶんぜんたいのいみをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q15-o1": "バスで在這裡是移動方法。",
+        "U08-Q15-o2": "同行者不是公車。",
+        "U08-Q15-o3": "方法明說バス。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U08-Q16",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q16",
+      "itemFamilyId": "U08-F-paraphrase-companion",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「あねと としょかんへ 行きます。」意思最接近？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q16-o0",
+          "text": "和姊姊去圖書館。"
+        },
+        {
+          "id": "U08-Q16-o1",
+          "text": "姊姊是一種交通工具。"
+        },
+        {
+          "id": "U08-Q16-o2",
+          "text": "獨自去銀行。"
+        },
+        {
+          "id": "U08-Q16-o3",
+          "text": "已從圖書館回家。"
+        }
+      ],
+      "answer": [
+        "U08-Q16-o0"
+      ],
+      "explanation": "あねと表示和姊姊，圖書館是目的地。",
+      "explanationJa": "ことばと、ぶんぜんたいのいみをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q16-o1": "と標出同行者。",
+        "U08-Q16-o2": "人物與地方都不符。",
+        "U08-Q16-o3": "原句沒有回家的意思。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U08-Q17",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q17",
+      "itemFamilyId": "U08-F-paraphrase-entry-exit",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「入口と 出口」指哪一組？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q17-o1",
+          "text": "兩個一定都能進入的口。"
+        },
+        {
+          "id": "U08-Q17-o2",
+          "text": "銀行與郵局。"
+        },
+        {
+          "id": "U08-Q17-o3",
+          "text": "電車與公車。"
+        },
+        {
+          "id": "U08-Q17-o0",
+          "text": "進入的口與離開的口。"
+        }
+      ],
+      "answer": [
+        "U08-Q17-o0"
+      ],
+      "explanation": "標示說明出入用途，不是交通方式。",
+      "explanationJa": "ことばと、ぶんぜんたいのいみをたしかめましょう。",
+      "distractorReasons": {
+        "U08-Q17-o1": "出口是離開的口。",
+        "U08-Q17-o2": "不是兩個機構。",
+        "U08-Q17-o3": "不是兩種交通工具。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U08-Q18",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q18",
+      "itemFamilyId": "U08-F-destination-slot",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「としょかん（　）行きます。」本課哪個選項可標目的地？",
+      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q18-o2",
+          "text": "が"
+        },
+        {
+          "id": "U08-Q18-o3",
+          "text": "の"
+        },
+        {
+          "id": "U08-Q18-o0",
+          "text": "へ"
+        },
+        {
+          "id": "U08-Q18-o1",
+          "text": "を"
+        }
+      ],
+      "answer": [
+        "U08-Q18-o0"
+      ],
+      "explanation": "場所へ行きます；に也可，但本題選項沒有に。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-Q18-o1": "這裡不是動作對象。",
+        "U08-Q18-o2": "這裡不是主語位置。",
+        "U08-Q18-o3": "不能用所有關係接行きます。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-Q19",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q19",
+      "itemFamilyId": "U08-F-destination-question",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "想問對方要去哪裡，應選哪一句？",
+      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q19-o3",
+          "text": "なにで 行きますか。"
+        },
+        {
+          "id": "U08-Q19-o0",
+          "text": "どこへ 行きますか。"
+        },
+        {
+          "id": "U08-Q19-o1",
+          "text": "なんじに 行きますか。"
+        },
+        {
+          "id": "U08-Q19-o2",
+          "text": "だれと 行きますか。"
+        }
+      ],
+      "answer": [
+        "U08-Q19-o0"
+      ],
+      "explanation": "どこへ問目的地。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-Q19-o1": "這問時間。",
+        "U08-Q19-o2": "這問同行者。",
+        "U08-Q19-o3": "這問方法。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-Q20",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q20",
+      "itemFamilyId": "U08-F-transport-slot",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「でんしゃ（　）行きます。」要表達搭電車去，選哪個？",
+      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q20-o0",
+          "text": "で"
+        },
+        {
+          "id": "U08-Q20-o1",
+          "text": "へ"
+        },
+        {
+          "id": "U08-Q20-o2",
+          "text": "と"
+        },
+        {
+          "id": "U08-Q20-o3",
+          "text": "の"
+        }
+      ],
+      "answer": [
+        "U08-Q20-o0"
+      ],
+      "explanation": "交通工具で行きます。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-Q20-o1": "へ標目的地，意思不同。",
+        "U08-Q20-o2": "本課交通方法用で。",
+        "U08-Q20-o3": "の不能代替這裡的方法助詞。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-Q21",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q21",
+      "itemFamilyId": "U08-F-companion-slot",
+      "primarySkillId": "G24",
+      "skillIds": [
+        "G24"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「ともだち（　）行きます。」要表達和朋友去，選哪個？",
+      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q21-o1",
+          "text": "で"
+        },
+        {
+          "id": "U08-Q21-o2",
+          "text": "を"
+        },
+        {
+          "id": "U08-Q21-o3",
+          "text": "の"
+        },
+        {
+          "id": "U08-Q21-o0",
+          "text": "と"
+        }
+      ],
+      "answer": [
+        "U08-Q21-o0"
+      ],
+      "explanation": "人と行きます，表示同行者。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-Q21-o1": "不能把朋友當交通方法。",
+        "U08-Q21-o2": "不是動作對象。",
+        "U08-Q21-o3": "本句不是所有關係。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-Q22",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q22",
+      "itemFamilyId": "U08-F-walking-no-extra-de",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "哪一句正確表達步行去車站？",
+      "promptJa": "じょしや、しつもんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q22-o2",
+          "text": "えきへ あるいてと 行きます。"
+        },
+        {
+          "id": "U08-Q22-o3",
+          "text": "えきへ バスで 行きます。"
+        },
+        {
+          "id": "U08-Q22-o0",
+          "text": "えきへ あるいて 行きます。"
+        },
+        {
+          "id": "U08-Q22-o1",
+          "text": "えきへ あるいてで 行きます。"
+        }
+      ],
+      "answer": [
+        "U08-Q22-o0"
+      ],
+      "explanation": "あるいて行きます是已教的固定搭配。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-Q22-o1": "固定搭配あるいて後不加で。",
+        "U08-Q22-o2": "と不是步行的接法。",
+        "U08-Q22-o3": "這是搭公車，非步行。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-Q23",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q23",
+      "itemFamilyId": "U08-F-order-destination-first",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "請依「我→目的地→動作」排列，表達我去圖書館。",
+      "promptJa": "していのじゅんにならべましょう。",
+      "choices": [
+        {
+          "id": "U08-Q23-o2",
+          "text": "行きます。"
+        },
+        {
+          "id": "U08-Q23-o0",
+          "text": "わたしは"
+        },
+        {
+          "id": "U08-Q23-o1",
+          "text": "としょかんへ"
+        }
+      ],
+      "answer": [
+        "U08-Q23-o0",
+        "U08-Q23-o1",
+        "U08-Q23-o2"
+      ],
+      "explanation": "依題目指定順序，は標主題、へ標目的地。",
+      "explanationJa": "していのじゅんに、ひと、ばしょ、ほうほうをならべましょう。",
+      "distractorReasons": {},
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U08-Q24",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q24",
+      "itemFamilyId": "U08-F-order-method-last",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "請依「目的地→方法→動作」排列，表達搭公車去學校。",
+      "promptJa": "していのじゅんにならべましょう。",
+      "choices": [
+        {
+          "id": "U08-Q24-o0",
+          "text": "学校へ"
+        },
+        {
+          "id": "U08-Q24-o1",
+          "text": "バスで"
+        },
+        {
+          "id": "U08-Q24-o2",
+          "text": "行きます。"
+        }
+      ],
+      "answer": [
+        "U08-Q24-o0",
+        "U08-Q24-o1",
+        "U08-Q24-o2"
+      ],
+      "explanation": "依指定順序，目的地在前、方法在後。",
+      "explanationJa": "していのじゅんに、ひと、ばしょ、ほうほうをならべましょう。",
+      "distractorReasons": {},
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U08-Q25",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q25",
+      "itemFamilyId": "U08-F-order-companion-first",
+      "primarySkillId": "G24",
+      "skillIds": [
+        "G24"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "請依「同行者→目的地→動作」排列，表達和姊姊去銀行。",
+      "promptJa": "していのじゅんにならべましょう。",
+      "choices": [
+        {
+          "id": "U08-Q25-o1",
+          "text": "ぎんこうへ"
+        },
+        {
+          "id": "U08-Q25-o2",
+          "text": "行きます。"
+        },
+        {
+          "id": "U08-Q25-o0",
+          "text": "あねと"
+        }
+      ],
+      "answer": [
+        "U08-Q25-o0",
+        "U08-Q25-o1",
+        "U08-Q25-o2"
+      ],
+      "explanation": "と放在同行者後，へ放在目的地後。",
+      "explanationJa": "していのじゅんに、ひと、ばしょ、ほうほうをならべましょう。",
+      "distractorReasons": {},
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U08-Q26",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q26",
+      "itemFamilyId": "U08-F-context-destination-response",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "居民說：としょかんへ行きます。你要記下目的地，應記哪項？",
+      "promptJa": "ばめんにあうこたえをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q26-o2",
+          "text": "あね"
+        },
+        {
+          "id": "U08-Q26-o3",
+          "text": "三時"
+        },
+        {
+          "id": "U08-Q26-o0",
+          "text": "としょかん"
+        },
+        {
+          "id": "U08-Q26-o1",
+          "text": "バス"
+        }
+      ],
+      "answer": [
+        "U08-Q26-o0"
+      ],
+      "explanation": "へ前面的としょかん是目的地。",
+      "explanationJa": "だれと、どこへ、なにで、をわけましょう。",
+      "distractorReasons": {
+        "U08-Q26-o1": "原句沒有說方法。",
+        "U08-Q26-o2": "原句沒有說同行者。",
+        "U08-Q26-o3": "原句沒有說時間。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U08-Q27",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q27",
+      "itemFamilyId": "U08-F-context-method-question",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "旅伴只想知道怎麼去，你應回答哪一句？",
+      "promptJa": "ばめんにあうこたえをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q27-o3",
+          "text": "三時に 行きます。"
+        },
+        {
+          "id": "U08-Q27-o0",
+          "text": "じてんしゃで 行きます。"
+        },
+        {
+          "id": "U08-Q27-o1",
+          "text": "学校へ 行きます。"
+        },
+        {
+          "id": "U08-Q27-o2",
+          "text": "ともだちと 行きます。"
+        }
+      ],
+      "answer": [
+        "U08-Q27-o0"
+      ],
+      "explanation": "じてんしゃで明確回答方法。",
+      "explanationJa": "だれと、どこへ、なにで、をわけましょう。",
+      "distractorReasons": {
+        "U08-Q27-o1": "只回答目的地。",
+        "U08-Q27-o2": "只回答同行者。",
+        "U08-Q27-o3": "只回答時間。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U08-Q28",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q28",
+      "itemFamilyId": "U08-F-context-alone",
+      "primarySkillId": "G24",
+      "skillIds": [
+        "G24"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "故事人物明說ひとりで行きます。哪一項符合？",
+      "promptJa": "ばめんにあうこたえをえらびましょう。",
+      "choices": [
+        {
+          "id": "U08-Q28-o0",
+          "text": "他是獨自去。"
+        },
+        {
+          "id": "U08-Q28-o1",
+          "text": "他和朋友一起去。"
+        },
+        {
+          "id": "U08-Q28-o2",
+          "text": "他一定步行。"
+        },
+        {
+          "id": "U08-Q28-o3",
+          "text": "他一定去銀行。"
+        }
+      ],
+      "answer": [
+        "U08-Q28-o0"
+      ],
+      "explanation": "ひとりで是獨自前往，不能推論方法或地方。",
+      "explanationJa": "だれと、どこへ、なにで、をわけましょう。",
+      "distractorReasons": {
+        "U08-Q28-o1": "與ひとりで不符。",
+        "U08-Q28-o2": "獨自不代表步行。",
+        "U08-Q28-o3": "沒有提供目的地。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U08-Q29",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q29",
+      "itemFamilyId": "U08-F-library-companion",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "說話者和誰去圖書館？",
+      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q29-o1",
+          "text": "あに"
+        },
+        {
+          "id": "U08-Q29-o2",
+          "text": "ともだち"
+        },
+        {
+          "id": "U08-Q29-o3",
+          "text": "ひとり"
+        },
+        {
+          "id": "U08-Q29-o0",
+          "text": "あね"
+        }
+      ],
+      "answer": [
+        "U08-Q29-o0"
+      ],
+      "explanation": "あねと行きます。",
+      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "distractorReasons": {
+        "U08-Q29-o1": "原文不是哥哥。",
+        "U08-Q29-o2": "原文不是朋友。",
+        "U08-Q29-o3": "有明說和姊姊。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U08-R01",
+      "material": "わたしは としょかんへ 行きます。バスで 行きます。あねと 行きます。"
+    },
+    {
+      "id": "U08-Q30",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q30",
+      "itemFamilyId": "U08-F-narrator-method",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "說話者怎麼去車站？",
+      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q30-o2",
+          "text": "でんしゃで"
+        },
+        {
+          "id": "U08-Q30-o3",
+          "text": "バスで"
+        },
+        {
+          "id": "U08-Q30-o0",
+          "text": "あるいて"
+        },
+        {
+          "id": "U08-Q30-o1",
+          "text": "車で"
+        }
+      ],
+      "answer": [
+        "U08-Q30-o0"
+      ],
+      "explanation": "わたしはえきへあるいて行きます。",
+      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "distractorReasons": {
+        "U08-Q30-o1": "這是朋友的移動方法。",
+        "U08-Q30-o2": "原文沒有說搭電車。",
+        "U08-Q30-o3": "原文沒有說搭公車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U08-R02",
+      "material": "ともだちは ぎんこうへ 行きます。車で 行きます。わたしは えきへ あるいて 行きます。"
+    },
+    {
+      "id": "U08-Q31",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q31",
+      "itemFamilyId": "U08-F-school-pair-method",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "說話者與哥哥今天怎麼去學校？",
+      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q31-o3",
+          "text": "あるいて"
+        },
+        {
+          "id": "U08-Q31-o0",
+          "text": "じてんしゃで"
+        },
+        {
+          "id": "U08-Q31-o1",
+          "text": "バスで"
+        },
+        {
+          "id": "U08-Q31-o2",
+          "text": "タクシーで"
+        }
+      ],
+      "answer": [
+        "U08-Q31-o0"
+      ],
+      "explanation": "きょうはバスで行きません，じてんしゃで行きます。",
+      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "distractorReasons": {
+        "U08-Q31-o1": "今天明說不搭公車。",
+        "U08-Q31-o2": "這是媽媽的方法。",
+        "U08-Q31-o3": "原文沒有說步行上學。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U08-R03",
+      "material": "あさです。わたしと あには 学校へ 行きます。きょうは バスで 行きません。じてんしゃで 行きます。ははは びょういんへ 行きます。ははは タクシーで 行きます。わたしは ははと 行きません。"
+    },
+    {
+      "id": "U08-Q32",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q32",
+      "itemFamilyId": "U08-F-mother-separate",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "依短文，哪一項是正確的？",
+      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q32-o0",
+          "text": "媽媽搭計程車去醫院，說話者不和她去。"
+        },
+        {
+          "id": "U08-Q32-o1",
+          "text": "大家一起搭計程車去醫院。"
+        },
+        {
+          "id": "U08-Q32-o2",
+          "text": "媽媽騎腳踏車去學校。"
+        },
+        {
+          "id": "U08-Q32-o3",
+          "text": "說話者與哥哥搭公車去學校。"
+        }
+      ],
+      "answer": [
+        "U08-Q32-o0"
+      ],
+      "explanation": "分別讀人物、目的地與交通方法。",
+      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "distractorReasons": {
+        "U08-Q32-o1": "わたしはははと行きません。",
+        "U08-Q32-o2": "把兩組人物資訊交換。",
+        "U08-Q32-o3": "文中否定今天搭公車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U08-R03",
+      "material": "あさです。わたしと あには 学校へ 行きます。きょうは バスで 行きません。じてんしゃで 行きます。ははは びょういんへ 行きます。ははは タクシーで 行きます。わたしは ははと 行きません。"
+    },
+    {
+      "id": "U08-Q33",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q33",
+      "itemFamilyId": "U08-F-table-sister-method",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "行程表裡，姊姊去圖書館用哪個方法？",
+      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q33-o1",
+          "text": "じてんしゃ"
+        },
+        {
+          "id": "U08-Q33-o2",
+          "text": "タクシー"
+        },
+        {
+          "id": "U08-Q33-o3",
+          "text": "あるいて"
+        },
+        {
+          "id": "U08-Q33-o0",
+          "text": "バス"
+        }
+      ],
+      "answer": [
+        "U08-Q33-o0"
+      ],
+      "explanation": "あね那一列是としょかん／バス。",
+      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "distractorReasons": {
+        "U08-Q33-o1": "這是哥哥的方法。",
+        "U08-Q33-o2": "這是媽媽的方法。",
+        "U08-Q33-o3": "這是說話者的方法。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U08-R04",
+      "material": "きょうの よてい\nあに：学校／じてんしゃ\nあね：としょかん／バス\nはは：びょういん／タクシー\nわたし：えき／あるいて"
+    },
+    {
+      "id": "U08-Q34",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q34",
+      "itemFamilyId": "U08-F-table-walker-destination",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "表格中步行的那位，目的地是哪裡？",
+      "promptJa": "ひとと、いくところと、ほうほうをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q34-o2",
+          "text": "としょかん"
+        },
+        {
+          "id": "U08-Q34-o3",
+          "text": "びょういん"
+        },
+        {
+          "id": "U08-Q34-o0",
+          "text": "えき"
+        },
+        {
+          "id": "U08-Q34-o1",
+          "text": "学校"
+        }
+      ],
+      "answer": [
+        "U08-Q34-o0"
+      ],
+      "explanation": "あるいて出現在わたし那一列，目的地是えき。",
+      "explanationJa": "ぶんやひょうの、おなじひとのじょうほうをあわせましょう。",
+      "distractorReasons": {
+        "U08-Q34-o1": "這一列用腳踏車。",
+        "U08-Q34-o2": "這一列搭公車。",
+        "U08-Q34-o3": "這一列搭計程車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U08-R04",
+      "material": "きょうの よてい\nあに：学校／じてんしゃ\nあね：としょかん／バス\nはは：びょういん／タクシー\nわたし：えき／あるいて"
+    },
+    {
+      "id": "U08-Q35",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q35",
+      "itemFamilyId": "U08-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽完約定，人物要去哪裡？",
+      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q35-o3",
+          "text": "くうこう"
+        },
+        {
+          "id": "U08-Q35-o0",
+          "text": "としょかん"
+        },
+        {
+          "id": "U08-Q35-o1",
+          "text": "ぎんこう"
+        },
+        {
+          "id": "U08-Q35-o2",
+          "text": "びょういん"
+        }
+      ],
+      "answer": [
+        "U08-Q35-o0"
+      ],
+      "explanation": "としょかんへいきます。",
+      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "distractorReasons": {
+        "U08-Q35-o1": "音訊說不去銀行。",
+        "U08-Q35-o2": "未說去醫院。",
+        "U08-Q35-o3": "未說去機場。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U08-L01",
+      "audioSrc": "/assets/audio/u08/listening-01.wav"
+    },
+    {
+      "id": "U08-Q36",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q36",
+      "itemFamilyId": "U08-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "同一個約定，要用哪個方法前往？",
+      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q36-o0",
+          "text": "バスで"
+        },
+        {
+          "id": "U08-Q36-o1",
+          "text": "車で"
+        },
+        {
+          "id": "U08-Q36-o2",
+          "text": "でんしゃで"
+        },
+        {
+          "id": "U08-Q36-o3",
+          "text": "ひとりで"
+        }
+      ],
+      "answer": [
+        "U08-Q36-o0"
+      ],
+      "explanation": "あねと、ばすでいきます。",
+      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "distractorReasons": {
+        "U08-Q36-o1": "音訊不是くるま。",
+        "U08-Q36-o2": "音訊不是でんしゃ。",
+        "U08-Q36-o3": "這是獨自，不是交通工具。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U08-L01",
+      "audioSrc": "/assets/audio/u08/listening-01.wav"
+    },
+    {
+      "id": "U08-Q37",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q37",
+      "itemFamilyId": "U08-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，今天要怎樣去車站？",
+      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q37-o1",
+          "text": "搭電車"
+        },
+        {
+          "id": "U08-Q37-o2",
+          "text": "搭船"
+        },
+        {
+          "id": "U08-Q37-o3",
+          "text": "搭計程車"
+        },
+        {
+          "id": "U08-Q37-o0",
+          "text": "步行"
+        }
+      ],
+      "answer": [
+        "U08-Q37-o0"
+      ],
+      "explanation": "きょうはでんしゃでいきません，あるいていきます。",
+      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "distractorReasons": {
+        "U08-Q37-o1": "今天明說不搭電車。",
+        "U08-Q37-o2": "未說搭船。",
+        "U08-Q37-o3": "未說搭計程車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U08-L02",
+      "audioSrc": "/assets/audio/u08/listening-02.wav"
+    },
+    {
+      "id": "U08-Q38",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q38",
+      "itemFamilyId": "U08-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "哪張行程卡符合音訊？",
+      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q38-o2",
+          "text": "目的地：車站；方法：電車。"
+        },
+        {
+          "id": "U08-Q38-o3",
+          "text": "目的地：機場；方法：飛機。"
+        },
+        {
+          "id": "U08-Q38-o0",
+          "text": "目的地：車站；方法：步行。"
+        },
+        {
+          "id": "U08-Q38-o1",
+          "text": "目的地：圖書館；方法：步行。"
+        }
+      ],
+      "answer": [
+        "U08-Q38-o0"
+      ],
+      "explanation": "把えき與あるいて配成同一個行程。",
+      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "distractorReasons": {
+        "U08-Q38-o1": "地方錯了。",
+        "U08-Q38-o2": "方法與否定句不符。",
+        "U08-Q38-o3": "沒有這個行程。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U08-L02",
+      "audioSrc": "/assets/audio/u08/listening-02.wav"
+    },
+    {
+      "id": "U08-Q39",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q39",
+      "itemFamilyId": "U08-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "哥哥要去哪裡？",
+      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q39-o3",
+          "text": "ゆうびんきょく"
+        },
+        {
+          "id": "U08-Q39-o0",
+          "text": "としょかん"
+        },
+        {
+          "id": "U08-Q39-o1",
+          "text": "学校"
+        },
+        {
+          "id": "U08-Q39-o2",
+          "text": "ぎんこう"
+        }
+      ],
+      "answer": [
+        "U08-Q39-o0"
+      ],
+      "explanation": "あにはひとりでとしょかんへいきます。",
+      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "distractorReasons": {
+        "U08-Q39-o1": "這是說話者的目的地。",
+        "U08-Q39-o2": "未提到去銀行。",
+        "U08-Q39-o3": "未提到去郵局。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U08-L03",
+      "audioSrc": "/assets/audio/u08/listening-03.wav"
+    },
+    {
+      "id": "U08-Q40",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q40",
+      "itemFamilyId": "U08-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "說話者和誰去學校？",
+      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q40-o0",
+          "text": "ともだち"
+        },
+        {
+          "id": "U08-Q40-o1",
+          "text": "あに"
+        },
+        {
+          "id": "U08-Q40-o2",
+          "text": "はは"
+        },
+        {
+          "id": "U08-Q40-o3",
+          "text": "ひとり"
+        }
+      ],
+      "answer": [
+        "U08-Q40-o0"
+      ],
+      "explanation": "わたしはともだちとがっこうへいきます。",
+      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "distractorReasons": {
+        "U08-Q40-o1": "哥哥自己去圖書館。",
+        "U08-Q40-o2": "音訊沒有這個同行者。",
+        "U08-Q40-o3": "說話者不是獨自。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U08-L03",
+      "audioSrc": "/assets/audio/u08/listening-03.wav"
+    },
+    {
+      "id": "U08-Q41",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q41",
+      "itemFamilyId": "U08-F-listening-04",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "媽媽去醫院用哪個方法？",
+      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q41-o1",
+          "text": "バス"
+        },
+        {
+          "id": "U08-Q41-o2",
+          "text": "じてんしゃ"
+        },
+        {
+          "id": "U08-Q41-o3",
+          "text": "でんしゃ"
+        },
+        {
+          "id": "U08-Q41-o0",
+          "text": "タクシー"
+        }
+      ],
+      "answer": [
+        "U08-Q41-o0"
+      ],
+      "explanation": "はははびょういんへたくしーでいきます。",
+      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "distractorReasons": {
+        "U08-Q41-o1": "公車是姊姊的方法。",
+        "U08-Q41-o2": "音訊未說腳踏車。",
+        "U08-Q41-o3": "音訊未說電車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U08-L04",
+      "audioSrc": "/assets/audio/u08/listening-04.wav"
+    },
+    {
+      "id": "U08-Q42",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q42",
+      "itemFamilyId": "U08-F-listening-04",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "姊姊的行程是哪一組？",
+      "promptJa": "おとをきいて、ひとといくところをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-Q42-o2",
+          "text": "ぎんこう／タクシー"
+        },
+        {
+          "id": "U08-Q42-o3",
+          "text": "としょかん／バス"
+        },
+        {
+          "id": "U08-Q42-o0",
+          "text": "ぎんこう／バス"
+        },
+        {
+          "id": "U08-Q42-o1",
+          "text": "びょういん／タクシー"
+        }
+      ],
+      "answer": [
+        "U08-Q42-o0"
+      ],
+      "explanation": "あねはぎんこうへばすでいきます。",
+      "explanationJa": "だれのはなしなのか、さいごまでききましょう。",
+      "distractorReasons": {
+        "U08-Q42-o1": "這是媽媽的行程。",
+        "U08-Q42-o2": "把媽媽的方法混過來。",
+        "U08-Q42-o3": "姊姊的目的地不是圖書館。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U08-L04",
+      "audioSrc": "/assets/audio/u08/listening-04.wav"
+    },
+    {
+      "id": "U08-Q43",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q43",
+      "itemFamilyId": "U08-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個說法。哪個說法的方法符合圖片？",
+      "promptJa": "えとおとをくらべましょう。のりものがあうのは、どれですか。",
+      "choices": [
+        {
+          "id": "U08-Q43-o3",
+          "text": "第4個說法"
+        },
+        {
+          "id": "U08-Q43-o0",
+          "text": "第1個說法"
+        },
+        {
+          "id": "U08-Q43-o1",
+          "text": "第2個說法"
+        },
+        {
+          "id": "U08-Q43-o2",
+          "text": "第3個說法"
+        }
+      ],
+      "answer": [
+        "U08-Q43-o0"
+      ],
+      "explanation": "圖片是公車，符合第1個說法。",
+      "explanationJa": "えののりものと、きいたほうほうをくらべましょう。",
+      "distractorReasons": {
+        "U08-Q43-o1": "這個說法的交通工具不是圖片中的公車。",
+        "U08-Q43-o2": "這個說法的交通工具不是圖片中的公車。",
+        "U08-Q43-o3": "這個說法的交通工具不是圖片中的公車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U08-L05",
+      "audioSrc": "/assets/audio/u08/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u08/transport-v2.webp",
+        "cell": 0,
+        "alt": {
+          "zh": "一輛完整可見的公車，周圍沒有其他車輛。",
+          "ja": "バスがみえます。"
+        }
+      }
+    },
+    {
+      "id": "U08-Q44",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q44",
+      "itemFamilyId": "U08-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個說法。哪個說法的方法符合圖片？",
+      "promptJa": "えとおとをくらべましょう。のりものがあうのは、どれですか。",
+      "choices": [
+        {
+          "id": "U08-Q44-o0",
+          "text": "第3個說法"
+        },
+        {
+          "id": "U08-Q44-o1",
+          "text": "第1個說法"
+        },
+        {
+          "id": "U08-Q44-o2",
+          "text": "第2個說法"
+        },
+        {
+          "id": "U08-Q44-o3",
+          "text": "第4個說法"
+        }
+      ],
+      "answer": [
+        "U08-Q44-o0"
+      ],
+      "explanation": "圖片是電車，符合第3個說法。",
+      "explanationJa": "えののりものと、きいたほうほうをくらべましょう。",
+      "distractorReasons": {
+        "U08-Q44-o1": "這個說法的交通工具不是圖片中的電車。",
+        "U08-Q44-o2": "這個說法的交通工具不是圖片中的電車。",
+        "U08-Q44-o3": "這個說法的交通工具不是圖片中的電車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U08-L05",
+      "audioSrc": "/assets/audio/u08/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u08/transport-v2.webp",
+        "cell": 1,
+        "alt": {
+          "zh": "一輛完整可見的電車，周圍沒有其他車輛。",
+          "ja": "でんしゃがみえます。"
+        }
+      }
+    },
+    {
+      "id": "U08-Q45",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q45",
+      "itemFamilyId": "U08-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個說法。哪個說法的方法符合圖片？",
+      "promptJa": "えとおとをくらべましょう。のりものがあうのは、どれですか。",
+      "choices": [
+        {
+          "id": "U08-Q45-o1",
+          "text": "第1個說法"
+        },
+        {
+          "id": "U08-Q45-o2",
+          "text": "第3個說法"
+        },
+        {
+          "id": "U08-Q45-o3",
+          "text": "第4個說法"
+        },
+        {
+          "id": "U08-Q45-o0",
+          "text": "第2個說法"
+        }
+      ],
+      "answer": [
+        "U08-Q45-o0"
+      ],
+      "explanation": "圖片是汽車，符合第2個說法。",
+      "explanationJa": "えののりものと、きいたほうほうをくらべましょう。",
+      "distractorReasons": {
+        "U08-Q45-o1": "這個說法的交通工具不是圖片中的汽車。",
+        "U08-Q45-o2": "這個說法的交通工具不是圖片中的汽車。",
+        "U08-Q45-o3": "這個說法的交通工具不是圖片中的汽車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U08-L05",
+      "audioSrc": "/assets/audio/u08/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u08/transport-v2.webp",
+        "cell": 2,
+        "alt": {
+          "zh": "一輛完整可見的汽車，周圍沒有其他車輛。",
+          "ja": "車がみえます。"
+        }
+      }
+    },
+    {
+      "id": "U08-Q46",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q46",
+      "itemFamilyId": "U08-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個說法。哪個說法的方法符合圖片？",
+      "promptJa": "えとおとをくらべましょう。のりものがあうのは、どれですか。",
+      "choices": [
+        {
+          "id": "U08-Q46-o2",
+          "text": "第2個說法"
+        },
+        {
+          "id": "U08-Q46-o3",
+          "text": "第3個說法"
+        },
+        {
+          "id": "U08-Q46-o0",
+          "text": "第4個說法"
+        },
+        {
+          "id": "U08-Q46-o1",
+          "text": "第1個說法"
+        }
+      ],
+      "answer": [
+        "U08-Q46-o0"
+      ],
+      "explanation": "圖片是腳踏車，符合第4個說法。",
+      "explanationJa": "えののりものと、きいたほうほうをくらべましょう。",
+      "distractorReasons": {
+        "U08-Q46-o1": "這個說法的交通工具不是圖片中的腳踏車。",
+        "U08-Q46-o2": "這個說法的交通工具不是圖片中的腳踏車。",
+        "U08-Q46-o3": "這個說法的交通工具不是圖片中的腳踏車。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U08-L05",
+      "audioSrc": "/assets/audio/u08/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u08/transport-v2.webp",
+        "cell": 3,
+        "alt": {
+          "zh": "一輛完整可見的腳踏車，周圍沒有其他車輛。",
+          "ja": "じてんしゃがみえます。"
+        }
+      }
+    },
+    {
+      "id": "U08-Q47",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q47",
+      "itemFamilyId": "U08-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：人物要和姊姊出發。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U08-Q47-o3",
+          "text": "三時に 行きます。"
+        },
+        {
+          "id": "U08-Q47-o0",
+          "text": "あねと 行きます。"
+        },
+        {
+          "id": "U08-Q47-o1",
+          "text": "バスで 行きます。"
+        },
+        {
+          "id": "U08-Q47-o2",
+          "text": "学校へ 行きます。"
+        }
+      ],
+      "answer": [
+        "U08-Q47-o0"
+      ],
+      "explanation": "だれと問同行者，應回答姊姊。",
+      "explanationJa": "いっしょにいくひとをこたえましょう。",
+      "distractorReasons": {
+        "U08-Q47-o1": "這只回答方法。",
+        "U08-Q47-o2": "這只回答目的地。",
+        "U08-Q47-o3": "這只回答時間。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U08-L06",
+      "audioSrc": "/assets/audio/u08/listening-06.wav"
+    },
+    {
+      "id": "U08-Q48",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q48",
+      "itemFamilyId": "U08-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：人物和朋友一起去。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U08-Q48-o0",
+          "text": "ともだちと 行きます。"
+        },
+        {
+          "id": "U08-Q48-o1",
+          "text": "としょかんへ 行きます。"
+        },
+        {
+          "id": "U08-Q48-o2",
+          "text": "車で 行きます。"
+        },
+        {
+          "id": "U08-Q48-o3",
+          "text": "ひとりで 行きます。"
+        }
+      ],
+      "answer": [
+        "U08-Q48-o0"
+      ],
+      "explanation": "和朋友同行，用ともだちと。",
+      "explanationJa": "いっしょにいくひとをこたえましょう。",
+      "distractorReasons": {
+        "U08-Q48-o1": "這回答目的地。",
+        "U08-Q48-o2": "這回答方法。",
+        "U08-Q48-o3": "與設定的朋友同行不符。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U08-L06",
+      "audioSrc": "/assets/audio/u08/listening-06.wav"
+    },
+    {
+      "id": "U08-Q49",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q49",
+      "itemFamilyId": "U08-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：故事人物這次獨自前往。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U08-Q49-o1",
+          "text": "あにと 行きます。"
+        },
+        {
+          "id": "U08-Q49-o2",
+          "text": "あるいて 行きます。"
+        },
+        {
+          "id": "U08-Q49-o3",
+          "text": "えきへ 行きます。"
+        },
+        {
+          "id": "U08-Q49-o0",
+          "text": "ひとりで 行きます。"
+        }
+      ],
+      "answer": [
+        "U08-Q49-o0"
+      ],
+      "explanation": "ひとりで說明沒有同行者。",
+      "explanationJa": "いっしょにいくひとをこたえましょう。",
+      "distractorReasons": {
+        "U08-Q49-o1": "設定沒有哥哥同行。",
+        "U08-Q49-o2": "這只說方法，不表示獨自。",
+        "U08-Q49-o3": "這只說地方。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U08-L06",
+      "audioSrc": "/assets/audio/u08/listening-06.wav"
+    },
+    {
+      "id": "U08-Q50",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-Q50",
+      "itemFamilyId": "U08-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：人物要和媽媽一起去。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U08-Q50-o2",
+          "text": "バスていへ 行きます。"
+        },
+        {
+          "id": "U08-Q50-o3",
+          "text": "でんしゃで 行きます。"
+        },
+        {
+          "id": "U08-Q50-o0",
+          "text": "ははと 行きます。"
+        },
+        {
+          "id": "U08-Q50-o1",
+          "text": "ははは タクシーで 行きます。"
+        }
+      ],
+      "answer": [
+        "U08-Q50-o0"
+      ],
+      "explanation": "ははと直接回答同行者是媽媽。",
+      "explanationJa": "いっしょにいくひとをこたえましょう。",
+      "distractorReasons": {
+        "U08-Q50-o1": "只說媽媽的方法，沒有回答自己和誰去。",
+        "U08-Q50-o2": "這是目的地。",
+        "U08-Q50-o3": "這是方法。"
+      },
+      "hint": "先分清楚目的地（へ／に）、方法（交通工具で／あるいて）、同行者（人と）；同一個人的資訊要對在一起。",
+      "hintJa": "どこへ、なにで、だれと、をわけて、おなじひとのじょうほうをあわせましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U08-L06",
+      "audioSrc": "/assets/audio/u08/listening-06.wav"
+    },
+    {
+      "id": "U08-C01",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C01",
+      "itemFamilyId": "U08-CHECK-valid-alternatives",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "兩位居民分別說「えきへ行きます」「えきに行きます」。哪個判斷正確？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C01-o1",
+          "text": "只有へ合法。"
+        },
+        {
+          "id": "U08-C01-o2",
+          "text": "只有に合法。"
+        },
+        {
+          "id": "U08-C01-o3",
+          "text": "兩句都表示獨自去。"
+        },
+        {
+          "id": "U08-C01-o0",
+          "text": "兩句都能把車站當成目的地。"
+        }
+      ],
+      "answer": [
+        "U08-C01-o0"
+      ],
+      "explanation": "へ／に都可配行きます表目的地，不能排除另一合法形式。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C01-o1": "本課に也可標目的地。",
+        "U08-C01-o2": "本課へ也可標目的地。",
+        "U08-C01-o3": "兩句都沒有交代同行者。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C02",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C02",
+      "itemFamilyId": "U08-CHECK-particle-pronunciation",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "要朗讀「学校へ行きます」中的助詞へ，應讀什麼？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C02-o2",
+          "text": "に"
+        },
+        {
+          "id": "U08-C02-o3",
+          "text": "で"
+        },
+        {
+          "id": "U08-C02-o0",
+          "text": "え"
+        },
+        {
+          "id": "U08-C02-o1",
+          "text": "へ"
+        }
+      ],
+      "answer": [
+        "U08-C02-o0"
+      ],
+      "explanation": "へ作目的地助詞時讀え。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C02-o1": "此處へ作助詞，讀え。",
+        "U08-C02-o2": "不能把字換成另一個合法目的地助詞。",
+        "U08-C02-o3": "這不是へ的讀法。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C03",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C03",
+      "itemFamilyId": "U08-CHECK-movement-viewpoint",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "說話者在學校，對家裡的朋友說「学校へ来ますか」。這個來的方向如何理解？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C03-o3",
+          "text": "一定是問搭什麼車。"
+        },
+        {
+          "id": "U08-C03-o0",
+          "text": "問朋友是否朝說話者所在的學校來。"
+        },
+        {
+          "id": "U08-C03-o1",
+          "text": "問說話者是否回朋友家。"
+        },
+        {
+          "id": "U08-C03-o2",
+          "text": "一定是問朋友幾點出發。"
+        }
+      ],
+      "answer": [
+        "U08-C03-o0"
+      ],
+      "explanation": "来ます以說話者這裡為參照；學校是朝向的地方。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C03-o1": "把動作主體與方向交換。",
+        "U08-C03-o2": "沒有時間問詞。",
+        "U08-C03-o3": "沒有方法問詞。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C04",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C04",
+      "itemFamilyId": "U08-CHECK-destination-not-arrival-proof",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "行程卡只有「ぎんこうへ行きます」。能確認哪一項？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C04-o0",
+          "text": "行程的目的地是銀行，但未證明已經抵達。"
+        },
+        {
+          "id": "U08-C04-o1",
+          "text": "已經抵達銀行。"
+        },
+        {
+          "id": "U08-C04-o2",
+          "text": "一定已從銀行回家。"
+        },
+        {
+          "id": "U08-C04-o3",
+          "text": "一定搭公車。"
+        }
+      ],
+      "answer": [
+        "U08-C04-o0"
+      ],
+      "explanation": "へ行きます可交代行程目的地，不能自添抵達狀態。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C04-o1": "行程描述不證明已到達。",
+        "U08-C04-o2": "沒有回家資訊。",
+        "U08-C04-o3": "沒有方法資訊。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C05",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C05",
+      "itemFamilyId": "U08-CHECK-negative-place-scope",
+      "primarySkillId": "G22",
+      "skillIds": [
+        "G22"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "人物只說「びょういんへ行きません」。可以確定什麼？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C05-o1",
+          "text": "一定去銀行。"
+        },
+        {
+          "id": "U08-C05-o2",
+          "text": "一定哪裡都不去。"
+        },
+        {
+          "id": "U08-C05-o3",
+          "text": "已經到醫院了。"
+        },
+        {
+          "id": "U08-C05-o0",
+          "text": "不去醫院；還不知道其他目的地。"
+        }
+      ],
+      "answer": [
+        "U08-C05-o0"
+      ],
+      "explanation": "否定只限制明說的目的地，不自行推論其他行程。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C05-o1": "沒有說替代目的地。",
+        "U08-C05-o2": "否定醫院不等於否定所有地方。",
+        "U08-C05-o3": "不是原句提供的資訊。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C06",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C06",
+      "itemFamilyId": "U08-CHECK-tool-vs-companion-repair",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「バスと行きます」想表達搭公車去，怎樣改正最合適？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C06-o2",
+          "text": "バスの行きます。"
+        },
+        {
+          "id": "U08-C06-o3",
+          "text": "バスが行きます。"
+        },
+        {
+          "id": "U08-C06-o0",
+          "text": "バスで行きます。"
+        },
+        {
+          "id": "U08-C06-o1",
+          "text": "バスへ行きます。"
+        }
+      ],
+      "answer": [
+        "U08-C06-o0"
+      ],
+      "explanation": "方法用で；不能把工具改成同行者。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C06-o1": "改成以公車為目的地，不同意思。",
+        "U08-C06-o2": "不是本課句型。",
+        "U08-C06-o3": "變成公車本身是主體。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C07",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C07",
+      "itemFamilyId": "U08-CHECK-shared-destination-different-method",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "甲：学校へバスで行きます。乙：学校へあるいて行きます。兩人有什麼相同與不同？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C07-o3",
+          "text": "兩人一定同時抵達。"
+        },
+        {
+          "id": "U08-C07-o0",
+          "text": "目的地相同，方法不同。"
+        },
+        {
+          "id": "U08-C07-o1",
+          "text": "方法相同，目的地不同。"
+        },
+        {
+          "id": "U08-C07-o2",
+          "text": "兩人一定同行。"
+        }
+      ],
+      "answer": [
+        "U08-C07-o0"
+      ],
+      "explanation": "分别比對学校へ與バスで／あるいて。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C07-o1": "把兩個欄位顛倒。",
+        "U08-C07-o2": "沒有說一起走。",
+        "U08-C07-o3": "沒有時間資訊。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C08",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C08",
+      "itemFamilyId": "U08-CHECK-transport-not-location",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「としょかんへでんしゃで行きます」中的でんしゃで，主要告訴我們什麼？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C08-o0",
+          "text": "前往的方法，不是圖書館位在電車裡。"
+        },
+        {
+          "id": "U08-C08-o1",
+          "text": "圖書館就在電車內。"
+        },
+        {
+          "id": "U08-C08-o2",
+          "text": "電車是同行者的名字。"
+        },
+        {
+          "id": "U08-C08-o3",
+          "text": "圖書館的價格。"
+        }
+      ],
+      "answer": [
+        "U08-C08-o0"
+      ],
+      "explanation": "交通工具で行きます說方法，不能改成目的地位置。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C08-o1": "方法助詞不能當位置說明。",
+        "U08-C08-o2": "這裡指交通工具。",
+        "U08-C08-o3": "沒有價格句。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C09",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C09",
+      "itemFamilyId": "U08-CHECK-method-unknown",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "人物只說「あねとくうこうへ行きます」。能知道怎樣去嗎？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C09-o1",
+          "text": "一定搭飛機。"
+        },
+        {
+          "id": "U08-C09-o2",
+          "text": "一定搭公車。"
+        },
+        {
+          "id": "U08-C09-o3",
+          "text": "一定步行。"
+        },
+        {
+          "id": "U08-C09-o0",
+          "text": "不能，知道同行者與地方，還沒說方法。"
+        }
+      ],
+      "answer": [
+        "U08-C09-o0"
+      ],
+      "explanation": "目的地是機場不代表搭飛機前往機場。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C09-o1": "機場是目的地，不能推論到機場的方法。",
+        "U08-C09-o2": "沒有提供這個方法。",
+        "U08-C09-o3": "沒有提供這個方法。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C10",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C10",
+      "itemFamilyId": "U08-CHECK-multiple-legs",
+      "primarySkillId": "G23",
+      "skillIds": [
+        "G23"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "行程有兩段：先步行到車站，接著搭電車去圖書館。哪組日語摘要同時符合？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C10-o2",
+          "text": "えきへあるいて行きます／としょかんへあるいて行きます。"
+        },
+        {
+          "id": "U08-C10-o3",
+          "text": "えきへでんしゃで行きます／としょかんへでんしゃで行きます。"
+        },
+        {
+          "id": "U08-C10-o0",
+          "text": "えきへあるいて行きます／としょかんへでんしゃで行きます。"
+        },
+        {
+          "id": "U08-C10-o1",
+          "text": "えきへでんしゃで行きます／としょかんへあるいて行きます。"
+        }
+      ],
+      "answer": [
+        "U08-C10-o0"
+      ],
+      "explanation": "把目的地與方法綁回各自的路段，保留あるいて及でんしゃで兩種接法。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C10-o1": "把兩段的方法交換。",
+        "U08-C10-o2": "漏掉後段搭電車的資訊。",
+        "U08-C10-o3": "把後段方法也套到前段。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C11",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C11",
+      "itemFamilyId": "U08-CHECK-person-tool-boundaries",
+      "primarySkillId": "G24",
+      "skillIds": [
+        "G24"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「ともだちと車で行きます」中的ともだち和車各是什麼角色？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C11-o3",
+          "text": "朋友是車的名字。"
+        },
+        {
+          "id": "U08-C11-o0",
+          "text": "朋友是同行者，汽車是方法。"
+        },
+        {
+          "id": "U08-C11-o1",
+          "text": "朋友是方法，汽車是同行者。"
+        },
+        {
+          "id": "U08-C11-o2",
+          "text": "朋友是目的地，汽車是時間。"
+        }
+      ],
+      "answer": [
+        "U08-C11-o0"
+      ],
+      "explanation": "人と和交通工具で是不同欄位。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C11-o1": "交換了と與で的角色。",
+        "U08-C11-o2": "兩者都不符句型。",
+        "U08-C11-o3": "沒有這種設定。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C12",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C12",
+      "itemFamilyId": "U08-CHECK-companion-not-entourage",
+      "primarySkillId": "G24",
+      "skillIds": [
+        "G24"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "只知道「あねと行きます」，能確定朋友也同行嗎？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C12-o0",
+          "text": "不能；已知姊姊同行，朋友的情況沒說。"
+        },
+        {
+          "id": "U08-C12-o1",
+          "text": "能，朋友一定同行。"
+        },
+        {
+          "id": "U08-C12-o2",
+          "text": "能，朋友一定不同行。"
+        },
+        {
+          "id": "U08-C12-o3",
+          "text": "能，姊姊一定獨自去。"
+        }
+      ],
+      "answer": [
+        "U08-C12-o0"
+      ],
+      "explanation": "肯定一位同行者，不自動肯定或排除其他人。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C12-o1": "不能增加沒說的人。",
+        "U08-C12-o2": "原句也沒有排除朋友。",
+        "U08-C12-o3": "與と同行不符。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C13",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C13",
+      "itemFamilyId": "U08-CHECK-who-vs-how-relevance",
+      "primarySkillId": "G24",
+      "skillIds": [
+        "G24"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "對方問「だれと行きますか」，只回答「バスで」少了什麼？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C13-o1",
+          "text": "還沒說巴士顏色。"
+        },
+        {
+          "id": "U08-C13-o2",
+          "text": "還沒報價格。"
+        },
+        {
+          "id": "U08-C13-o3",
+          "text": "還沒說要買幾張票。"
+        },
+        {
+          "id": "U08-C13-o0",
+          "text": "還沒說和誰一起去。"
+        }
+      ],
+      "answer": [
+        "U08-C13-o0"
+      ],
+      "explanation": "交通方法沒有回答同行者。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C13-o1": "不是問題需要的資訊。",
+        "U08-C13-o2": "だれと不問價格。",
+        "U08-C13-o3": "不是原問題。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C14",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C14",
+      "itemFamilyId": "U08-CHECK-alone-not-walking",
+      "primarySkillId": "G24",
+      "skillIds": [
+        "G24"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「ひとりで行きます」能推論「一定あるいて行きます」嗎？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C14-o2",
+          "text": "可以，獨自一定搭電車。"
+        },
+        {
+          "id": "U08-C14-o3",
+          "text": "可以，獨自代表和哥哥一起。"
+        },
+        {
+          "id": "U08-C14-o0",
+          "text": "不能，獨自去仍可能使用不同方法。"
+        },
+        {
+          "id": "U08-C14-o1",
+          "text": "可以，獨自一定只能步行。"
+        }
+      ],
+      "answer": [
+        "U08-C14-o0"
+      ],
+      "explanation": "ひとりで限制同行情況，不指定移動工具。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C14-o1": "把人數情況當方法。",
+        "U08-C14-o2": "同樣沒有方法資訊。",
+        "U08-C14-o3": "與ひとりで矛盾。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U08-C15",
+      "version": "1",
+      "unitId": "U08",
+      "itemId": "U08-C15",
+      "itemFamilyId": "U08-CHECK-independent-person-binding",
+      "primarySkillId": "G24",
+      "skillIds": [
+        "G24"
+      ],
+      "teachingIds": [
+        "U08-teach-words-1",
+        "U08-teach-words-2",
+        "U08-teach-words-3",
+        "U08-teach-words-4",
+        "U08-teach-words-5",
+        "U08-teach-kanji",
+        "U08-teach-G22",
+        "U08-teach-G23",
+        "U08-teach-G24",
+        "U08-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "行程有兩列：甲和媽媽去郵局；乙獨自去銀行。日語摘要哪句正確描述甲？",
+      "promptJa": "ぶんのいみと、わかることをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U08-C15-o3",
+          "text": "ひとりで ぎんこうへ 行きます。"
+        },
+        {
+          "id": "U08-C15-o0",
+          "text": "ははと ゆうびんきょくへ 行きます。"
+        },
+        {
+          "id": "U08-C15-o1",
+          "text": "ひとりで ゆうびんきょくへ 行きます。"
+        },
+        {
+          "id": "U08-C15-o2",
+          "text": "ははと ぎんこうへ 行きます。"
+        }
+      ],
+      "answer": [
+        "U08-C15-o0"
+      ],
+      "explanation": "先對人物，再把同行者與目的地放回同一列。",
+      "explanationJa": "いくところ、ほうほう、いっしょにいくひとをわけましょう。",
+      "distractorReasons": {
+        "U08-C15-o1": "拿乙的同行情況套到甲。",
+        "U08-C15-o2": "拿乙的目的地套到甲。",
+        "U08-C15-o3": "這是乙的摘要。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U08 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    }
+  ]
+}

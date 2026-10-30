@@ -1,29 +1,32 @@
 # P4 恢復
 
-先讀../full-experience.md、project.md、tasks.md、本目錄progress／acceptance。工作樹Japanese101-p2，phase/full-experience，draft PR58。goal仍ACTIVE，完整體驗尚未完成。
+2026-10-30，goal ACTIVE，完整體驗未完成。先讀project.md、tasks.md、本目錄acceptance.md及../full-experience.md。本檔維護最新恢復狀態；歷史測試與失敗保留acceptance及git，不依舊進度段落重做已交付教材。
 
-P4-02工具工程已寫：src/content/coverage.ts與review-audit.ts、scripts/unit-inventory.ts整合；report docs/content/curriculum-coverage.json。75節點12有候選、63缺口，554內容／素材簽核NOT_RUN；另359假名ledger不混入。最終15項相關單元測試、型別、lint及CLI真實draft／release拒絕已通過，見acceptance。保存／commit／push狀態請查git log/status。
+工作樹`/home/yyy/workspace/Japanese101-p2`，branch `phase/full-experience`，Draft PR58。原P1 checkout勿碰。已push先修修正662be67；之後交付狀態以git log/status為準，不自動merge／正式發布。
 
-P4-GAP-01新增共通15技能的主測量與延後check，P4總146tasks，prompt同步。下一步依報告補實際題目與素材，同時製作U05～24，每課原創50practice＋真正五題族check，不用換名灌數。未做人審仍DRAFT／IN_REVIEW。
+## 已有工程
 
-`npm run validate:units`同時查數量、素材、skill與簽核。`node --import tsx scripts/unit-inventory.ts --write`更新機器報告與新單元ledger（不動U01原格式）；`npm run validate:units:release`應拒絕現有缺口。大篇release輸出可寫本機/tmp後只摘統計，不刪錯誤。
+- 實際U01～08八課，另兩份假名pack，共10pack；200新詞40漢字24文法32閱讀48聽力400practice。U02～08各10教學、50practice＋15check、16真WAV與原創四格圖；U01保留原9教學／14WAV。
+- P4-02工具：全課數量、14題型、跨單元去重、技能primary practice／五check題族、逐筆來源hash／reviewer／日期檢查。75能力24有候選，51缺口（15共通＋36未製作文法）；1094筆教材／素材審核0真人核准，另359假名ledger。
+- P4-03-R1：U01 u01-3-draft、U06 u06-2-draft先修對齊P0，舊ledger封存。d35221c真操作舊存檔兩引擎6PASS：答案、20coin、帽裝備及交易不變，舊plan／未完戰鬥歸檔後安全重開；G03不可跳G02。見evidence/prerequisite-upgrade.json，勿在新版重跑capture腳本覆蓋舊fixture。
+- P4-04：各課lazy import／白名單與catalog一致性、舊routes按需載入、500000-byte chunk／單課900000-byte實際JS預算；不是FPS證明。新增教材需同步registry／loader／catalog／media／art／introductions／labels。
+- U08完整作者稿、16WAV3740384 bytes，最終原創transport-v2.webp513466 bytes。初圖電車尾端裁掉，已內建image_gen修成完整單節；原PNG保留，初版WebP只留本機不加入offline包。每格627平方，實際四格圖已檢視。
+- U08測試發現P4-04-R1：等待ServiceWorker.ready固定8秒會在有效慢安裝時誤報；真trace尚無手動素材請求，延後真ready承諾10秒在舊版穩定重現。現改為可取消的實際生命週期等待、真失敗回報與可重試註冊，新增準備狀態；不增加測試timeout。最終操作結果見acceptance。
 
-不要修改已APPROVED稿；不要把候選題族數當人工語意獨立驗證。不要動交易主機apt／kernel／網路。先讀最新交接與commit，不重做U01～04／假名工程。
+## 接續與檢查
 
-最新U05工程已寫並驗證：25詞5漢字3文法50practice＋15check，16WAV、人數原創圖。能力報告目前15候選完整／60缺口、689簽核0有效。P2-09-R2領獎導覽競態修正同批保存，257單元、Chromium5與Firefox7通過；詳acceptance。P5藍圖／題族檢查器與狀態機正另批開發，未接UI或聲稱卷已製作。U06～24與15共通skill仍有獨立工作。
+1. 先查git log/status及acceptance最新段落，確認U08／P4-04-R1已保存。308單元／43檔、lint、typecheck、build已通過；瀏覽器批次若仍有活session，先poll相同handle或查實際程序，不重建dist中斷驗收。
+2. U08首輪15PASS／1Firefox離線ready失敗；修正後大批次已完成6項，但以SIGTERM中止，未產生全套完成報告。不可稱22全綠。分批保留各實際結果，見acceptance／本機/tmp/japanese101-recovery/u08-*.log。
+3. U09～24原創教材，以及P4-GAP-01共通15技能仍需實作。每課50practice與check分開，不能機械換人名灌family。24課總配額600詞100漢字60文法96閱讀144聽力1200practice不變。
+4. P5有mock schema／純狀態機／DB／報告與隔離題庫verifier，僅fixtures，不是三份正式卷或完整mock UI；29表完整備份與可靠下載／安全等待更新已寫。仍須MA/MB/MC各80真題、25/30/25分區20/40/30分鐘、實際播放器與報告／瀏覽器驗證。
+5. 不因人審缺失停掉其餘獨立工程；也不把工程證據當task DONE或Phase COMPLETE。U08-M/T/Q1/Q2/A IN_REVIEW，V BLOCKED缺非原作者真人，I IN_PROGRESS。P3九人試用、P5十八人14天、實機／真人視覺與音訊gate均未通過。
 
-2026-10-30 U06開始：scripts/author-u06-base.py與docs/content/U06/source-draft.json交付25不重複新詞、5新漢字、G16～18、10教學、4閱讀、6聽力文字。production-plan固定14題型與素材預定題ID；尚無真題／音訊／插畫，不加入registry、不改runtime完整內容數。U06-M／T IN_PROGRESS，其他未開始，人工NOT_RUN。下一步接續作者稿產生50真題＋15獨立check，再真WAV與插畫／整合。既有工程ec8419a已push，完整目標未完成。
+## 命令與限制
 
-U06完整工程接續：50真練習＋15check、16真WAV、原創水／麵包／湯／牛奶圖已整合可玩preview。六課150詞300practice，18能力候選完整57缺口、824人審0核准。292單元及型別lintbuild、Chromium四項1.8m PASS；Firefox最終見acceptance。U06-M/T/Q1/Q2/A IN_REVIEW、V BLOCKED、I IN_PROGRESS。不要重跑base覆蓋來源，請用author-u06.py。另ec8419 CI發現備份320px在FF/WK溢出6px，正在讀真CI證據定位；先修後再承接U07與共通15skill／真MA/B/C／mockUI。goal ACTIVE。
+Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`。`npm test`、`npm run lint`、`npm run typecheck`、`npm run validate:journey`、`npm run validate:units`、`npm run validate:packs`。`node --import tsx scripts/unit-inventory.ts --write`更新真實盤點；release應拒絕缺課／缺人審，不修改門檻。
 
-P4-04提前工程：課程metadata＋各課lazy import、明確pack、不再隱性載U01；舊route也lazy。index439123bytes、U06首次JS722211bytes、單chunk500000硬性build guard。catalog需新增課後執行pack-catalog.ts --write及validate:packs，CI會核對。兩引擎載入／503重開／延遲切換六項PASS，294單元＋三相關PASS。完整Chromium79項跑在session4992、port4258，原第7項生命週期setup等待失敗，已修等待實際setup或已恢復canvas，針對兩引擎各20次資源歸零PASS；原全套最後結果待取。U07作者稿／65題與真音訊／蘋果圖正獨立製作，未註冊，不要在session4992結束前改runtime或重建dist。工程與U07分批提交。
+`VITE_P2_REVIEW_PREVIEW=1 npm run build`，少此旗標preview routes不存在。`P0_E2E_PORT=4268 npm run test:e2e -- e2e/p4-u08.spec.ts e2e/p4-offline-readiness.spec.ts --project=chromium --project=firefox`。兩引擎與實體平板分開記錄；WebKit依賴僅裝CI隔離runner。需要spawn／browser／network用平台範圍核准require_escalated；預設sandbox會對spawnSync回EPERM。
 
-載入優化最終：完整Chromium78PASS／1舊setup等待競態FAIL（23.1m），該case修正後兩引擎20次進出／零RAF／零timers PASS；其他78項產品驗證有效。新載入六項與294單元＋三相關、型別lint及439k build通過。下一步先修Firefox下載：CI trace點擊後還有44s但無download，延後anchor dispatch100ms已在現版重現；JourneyReport與LegacyBackup立即revokeObjectURL，FullBackup已延後，需統一可靠下載helper並真實驗證。U07已65題＋16WAV＋蘋果圖完成素材，尚未registry／loader／catalog／media註冊；要整合後再跑操作。session4992已終止，不重跑79整套，除非後續實質改動需再擴驗。
+不要重產已成功WAV；產生器只在腳本／檔hash一致時重用。author-u08.py為完整作者稿；base拒絕覆寫已有65題。禁止動交易主機apt、kernel、Broadcom、WiFi、Tailscale、交易排程或重啟；不輸出憑證，不自動merge PR58或正式發布。
 
-最新保存：載入優化已commit d35fa60，尚未push（前一已push0d440eb）。完整Chromium已結束78PASS／1舊setup等待競態FAIL（23.1m）；該case修正後Chromium／Firefox各20次零RAF／timers PASS。U07已65題、16真WAV、蘋果圖426556 bytes，source、production-plan、author-u07.py與art-prompt已寫，尚未註冊runtime。等P5下載修正驗證及提交後，再加u07.ts／registry／loader／media／introductions／labels，跑pack-catalog.ts --write、unit-inventory.ts --write與e2e/p4-u07.spec.ts（已準備未跑）。下一步U08～24／共通15skill、真mock與UI。
-
-下載修正最終：三種匯出共用downloadJSON，anchor掛DOM且blob/link延後一秒清理；延後100ms原生派送的兩引擎四項真下載與JSON讀回PASS，Firefox原U02流程／完整備份等九項PASS。typecheck/lint/build與500k guard通過。session33497、48145皆已成功終止，不重跑；恢復先查git log。本批提交後即可接U07註冊：作者65題、16WAV、426556-byte蘋果圖已實際製作但未進registry／loader／catalog／media；e2e/p4-u07.spec.ts已準備。U08～24與共通skill／真mock／人審仍未做，goal ACTIVE。
-
-U07整合：50真練習＋15候選、16WAV、蘋果圖已接9pack，七課175詞350practice、21候選54缺口、959人審0核准。初輪兩引擎14PASS；目視發現不均勻圖格，改DOM依manifest.frameWindows（非編輯位圖），297單元及型別lintbuild／500k guard通過，兩引擎補10PASS，四格FF實圖已逐張檢視。舊U04相容測試session46024結果待取。U08作者來源已25詞5漢字10教學4閱讀6聽力稿，未出題／音訊／圖／註冊。接續P4-03-R1：local prerequisites U01G02/G03、U06G16與已核能力圖不一致，U01教學G03也少G02；需保留舊稿／review、採新draft版本與來源hash，不能悄改已發布版本。先保存U07，再修此缺口與新增防回歸檢查。
-
-2026-10-30 P4-03-R1工程完成：U01升u01-3-draft、U06升u06-2-draft，依既有P0先修圖修四處漂移，舊ledger原文封存，新增全課grammar／教學鏈檢查。d35221c真UI舊存檔已兩引擎6PASS，保留四筆Attempt、20coin、帽裝備與交易，歸檔舊plan／未完戰鬥後安全重開；302單元PASS。trace／hash／命令見acceptance與evidence/prerequisite-upgrade.json。勿重跑capture覆寫舊fixture；不更動已完成工程或真人狀態。下一步U08完整65題／16WAV／原創交通插畫／註冊，再續U09～24／共通15skill／真模擬考及UI。P4-03主task仍TODO，959審核0真人核准，goal ACTIVE。
+最新驗證：上述分批接續已完成，合計21個不同browser/case均PASS（Chrome11／Firefox10），詳P4/evidence/u08-engineering.json。原中止批次保留真狀態，非22全綠；剩餘Firefox7項已PASS（1.5m），延後ready與離線2PASS，精確假名題兩引擎2PASS。相關runtime已驗證，接續教材與mock工作。

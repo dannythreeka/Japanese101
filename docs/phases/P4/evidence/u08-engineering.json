@@ -1,0 +1,229 @@
+{
+  "date": "2026-10-30",
+  "tasks": [
+    "U08-M",
+    "U08-T",
+    "U08-Q1",
+    "U08-Q2",
+    "U08-A",
+    "U08-I",
+    "P4-04-R1"
+  ],
+  "engineeringOwner": "Codex",
+  "humanReviewer": null,
+  "baseline": "662be67e8cee41e1ce5b06fdaa6518588b34e2cf",
+  "scope": "working-source hashes below; delivery-only changes are documentation and evidence",
+  "build": {
+    "flag": "VITE_P2_REVIEW_PREVIEW=1",
+    "indexSha256": "1f773368a5fd7919324396cd0099bbf329e296fb38793eba0255799a992bb0de",
+    "maxChunkBytes": 439788,
+    "maxChunkLimit": 500000,
+    "u06InitialJavaScriptBytes": 729454,
+    "u06InitialLimit": 900000,
+    "offlineAssets": 581,
+    "offlineBytes": 42604828,
+    "pwaEntries": 637
+  },
+  "sources": {
+    "src/content/packs/u08.json": "637d5d3468f27a1d0dff72f966964332c9daa5c1e986217897ef626b0cdaecd5",
+    "scripts/author-u08.py": "568502b7edd9fbad16d43ff6a032593537bf68dc009342e65b6f5a12a899323b",
+    "scripts/author-u08-base.py": "562dbfff7b5044bbc008a6dd1cea81848ca1c51ae65231ff493e8deb83e5829d",
+    "src/components/OfflinePack.tsx": "f1cb1fafee596dfe9d311483a457167c437a63605d004171ddd439d922621c34",
+    "src/lib/appUpdates.ts": "2ff1d3b4378ccc037ce8192bbda319158a2169fc9d63d92cb881fab70576238e",
+    "src/lib/i18n.ts": "3c6fc799e7bf73e3150d9a4536f4f23f4c399ac3f461d99f5bcf0e914872096f",
+    "e2e/p4-u08.spec.ts": "29ba3fe4af5d144567e1c08b902b792fcae37f512aa2bcf0743a7c58dd5cbdef",
+    "e2e/p4-offline-readiness.spec.ts": "c00f8d078556665b76d97c91e493d8e7e83dc045f8dd61730a32465472730aa1",
+    "public/assets/img/u08/manifest.json": "62081008df586a1e82b626859ef28ae944114fbf5eb2d7e300cb26f0a9440150",
+    "public/assets/audio/u08/manifest.json": "76966787997d42bd47ab832ddf84459f9a04935ea5f9442c5f6de25e5707dd73"
+  },
+  "unitTests": {
+    "passed": 308,
+    "files": 43,
+    "durationSeconds": 43.54
+  },
+  "browser": {
+    "distinctPassingCases": 21,
+    "engines": {
+      "chromium": "145.0.7632.6",
+      "firefox": "146.0.1"
+    },
+    "cases": [
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-offline-readiness.spec.ts:4:1 › a slow real offline-app activation does not falsely reject a valid download (23.7s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-browser-final.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:5:1 › opening U06 loads only its content; menus expose other real units without downloading their questions (1.5s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-browser-final.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:21:1 › a failed content chunk gives a recoverable state and a deliberate reload retries without creating attempts (1.9s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-browser-final.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:31:1 › switching units while their chunk is delayed cannot render or save the old unit (1.0s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-browser-final.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:8:1 › U08 four strands save real attempts, retain illustrated feedback and export into the correct parent unit (15.5s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-browser-final.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:37:1 › U08 reviewer can play all six real listening tracks without creating learner answers (35.6s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-browser-final.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:48:3 › U08 complete offline pack › download includes new artwork, then a stopped origin can cold-open U08 teaching, illustration and listening (36.7s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-chrome-rest.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:68:1 › U08 illustrated transport-match practice gives a relevant hint and retains hinted evidence (15.9s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-chrome-rest.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:88:1 › U08 four actual vehicle crops remain complete and separately recognizable (2.9s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-chrome-rest.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p5-update.spec.ts:9:1 › a waiting update and failed installation preserve unsubmitted work until every old client closes (19.4s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-chrome-rest.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-offline-readiness.spec.ts:4:1 › a slow real offline-app activation does not falsely reject a valid download (44.8s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-offline.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:48:3 › U08 complete offline pack › download includes new artwork, then a stopped origin can cold-open U08 teaching, illustration and listening (48.4s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-offline.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u08.spec.ts:97:1 › U08 transport grammar uses the taught kana and saves the actual method answer (5.1s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-kana-browser.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:97:1 › U08 transport grammar uses the taught kana and saves the actual method answer (7.3s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-kana-browser.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:5:1 › opening U06 loads only its content; menus expose other real units without downloading their questions (3.2s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-rest.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:21:1 › a failed content chunk gives a recoverable state and a deliberate reload retries without creating attempts (2.4s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-rest.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:31:1 › switching units while their chunk is delayed cannot render or save the old unit (1.3s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-rest.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:8:1 › U08 four strands save real attempts, retain illustrated feedback and export into the correct parent unit (17.6s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-rest.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:37:1 › U08 reviewer can play all six real listening tracks without creating learner answers (36.6s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-rest.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:68:1 › U08 illustrated transport-match practice gives a relevant hint and retains hinted evidence (16.2s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-rest.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u08.spec.ts:88:1 › U08 four actual vehicle crops remain complete and separately recognizable (2.9s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u08-firefox-rest.log"
+      }
+    ],
+    "batches": [
+      {
+        "log": "/tmp/japanese101-recovery/u08-browser-final.log",
+        "sha256": "7109b55f2813e4acc1e075c7c62ec13173e3e5ddfebc9576fde3c17222209aa0",
+        "passingCases": 6,
+        "wholeBatch": "INTERRUPTED after six completed cases"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/u08-chrome-rest.log",
+        "sha256": "ff052cfbda0c1428a0c018fa070456eab89b678d89a5be4b3f5f821d304b09b0",
+        "passingCases": 4,
+        "wholeBatch": "4 passed + incorrect Chinese-vs-Japanese test assertion failed; corrected case separately reverified"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/u08-firefox-offline.log",
+        "sha256": "ccb89bbac31e1159fb351dc5bb9f9a5d5537deb63fca31c2e713205a2e7951aa",
+        "passingCases": 2,
+        "wholeBatch": "  2 passed (1.8m)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/u08-kana-browser.log",
+        "sha256": "242f352bf745fc80474440452871b1dcf18cf41a87f7644b958271fed3b64727",
+        "passingCases": 2,
+        "wholeBatch": "  2 passed (19.1s)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/u08-firefox-rest.log",
+        "sha256": "e469d0440a157a5c307b42555ad6cda77041fa3ce2f91a4e6733e7694501cc8f",
+        "passingCases": 7,
+        "wholeBatch": "  7 passed (1.5m)"
+      }
+    ],
+    "limits": [
+      "These are 21 distinct cases across batches, not a completed all-repository suite",
+      "The 22-case batch was interrupted by SIGTERM after six finished passes",
+      "P5 update lifecycle is Chromium only; Firefox/WebKit lifecycle harness remains NOT_RUN",
+      "No physical device or human approval"
+    ]
+  },
+  "review": {
+    "unitRows": 135,
+    "allCurriculumRows": 1094,
+    "validHumanMetadata": 0
+  },
+  "knownPriorFailures": [
+    "Initial natural Firefox offline test failed before any manual asset requests; fixed eight-second serviceWorker.ready deadline",
+    "Delaying the real ready promise by ten seconds deterministically reproduced the old failure",
+    "Initial image clipped the rear of the train; image_gen refinement shows one complete railcar",
+    "Missing frameWindows was rejected by validation; added four actual 627-square frames",
+    "New kana test wrongly rejected Chinese explanatory 電車; scoped assertion to quoted Japanese stem, then both engines saved actual G23 attempt"
+  ]
+}

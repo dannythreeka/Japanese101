@@ -89,6 +89,21 @@ describe('actual curriculum inventory',()=>{
     expect(pack.questions.filter(q=>q.typeId==='T13').map(q=>q.image?.cell)).toEqual([0,1,2,3])
     expect(pack.reviewStatus).toBe('DRAFT')
   })
+  it('adds U08 with new transport content and five separate candidate families per new grammar',()=>{
+    const packs=availablePacks.filter(p=>/^U0[1-8]$/.test(p.id)),pack=packs.find(p=>p.id==='U08')!
+    expect(packs).toHaveLength(8);expect(curriculumErrors(packs,blueprint.units)).toEqual([])
+    expect(pack.questions.filter(q=>q.partition==='practice')).toHaveLength(50)
+    expect(pack.questions.filter(q=>q.partition==='check')).toHaveLength(15)
+    const coverage=curriculumCoverage(packs,blueprint.skills);expect(coverage.errors).toEqual([])
+    for(const id of ['G22','G23','G24'])expect(coverage.skills.find(s=>s.id===id)?.eligibleFamilies).toHaveLength(5)
+    for(const track of pack.listening)expect(new Set(pack.questions.filter(q=>q.audioId===track.id).map(q=>q.itemFamilyId)).size).toBe(1)
+    expect(pack.questions.filter(q=>q.typeId==='T13').map(q=>q.image?.cell)).toEqual([0,1,2,3])
+    // Destination particles are alternatives, not each other's invalid distractor.
+    const destinationSlot=pack.questions.find(q=>q.itemFamilyId==='U08-F-destination-slot')!
+    expect(destinationSlot.choices.find(c=>c.id===destinationSlot.answer[0])?.text).toBe('へ')
+    expect(destinationSlot.choices.some(c=>c.text==='に')).toBe(false)
+    expect(pack.reviewStatus).toBe('DRAFT')
+  })
   it('rejects unused listening, wrong skills, unsupported practice types and untranslated instructions',()=>{
     const copy=structuredClone(u02);copy.questions=copy.questions.filter(q=>q.audioId!=='U02-L06')
     copy.questions[0].skillIds=['not-in-blueprint'];copy.questions[0].promptJa='';copy.questions[0].typeId='T99'

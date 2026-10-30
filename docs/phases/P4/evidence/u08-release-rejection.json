@@ -1,0 +1,38 @@
+{
+  "task": "U08-V / P4 gates",
+  "command": "node --import tsx scripts/unit-inventory.ts --release",
+  "exitCode": 1,
+  "assertion": "unapproved content, uncovered skills and missing U09–24 are still rejected",
+  "review": {
+    "items": 1094,
+    "validMetadata": 0
+  },
+  "coverage": {
+    "skills": 75,
+    "withCandidateCoverage": 24,
+    "withGaps": 51,
+    "mechanicalDuplicateGroups": 0
+  },
+  "missingUnits": [
+    "U09",
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U18",
+    "U19",
+    "U20",
+    "U21",
+    "U22",
+    "U23",
+    "U24"
+  ],
+  "errors": 1180,
+  "outputSha256": "a91d8020bef1edcae1f5e1299483b831d298152ec4f391afe4669195e80abc83",
+  "fullOutput": "/tmp/japanese101-recovery/u08-release-check.json",
+  "humanApproval": false
+}

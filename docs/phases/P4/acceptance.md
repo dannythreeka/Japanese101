@@ -95,3 +95,19 @@ U07圖格最終相容：舊U04帶圖提示作答Chromium／Firefox兩項PASS（3
 - 失敗紀錄：預設sandbox spawnSync回EPERM，限定提權執行CLI及完整單元後PASS；第一輪建置漏VITE_P2_REVIEW_PREVIEW而無preview路由，已停止該無效測試、正確重建並清理此輪殘留4264 server；不把無效輪報PASS。沒有改timeout或刪斷言。
 
 重現：Node22；`VITE_P2_REVIEW_PREVIEW=1 npm run build`，`P0_E2E_PORT=4264 npx playwright test e2e/p4-prerequisites.spec.ts --project=chromium --project=firefox`。舊fixture只能從d35221c相符build重建；capture腳本拒絕覆寫，不在新版重跑。
+
+## U08及P4-04-R1：交通教材、真離線就緒（2026-10-30）
+
+baseline662be67e8cee41e1ce5b06fdaa6518588b34e2cf＋本批來源，owner／測試Codex。最終source／dist hash、逐case與批次log在evidence/u08-engineering.json；後續提交僅記錄／未註冊U09來源，不改已測runtime。Chromium145.0.7632.6、Firefox146.0.1，桌面模擬，不是實體平板。preview flag VITE_P2_REVIEW_PREVIEW=1。
+
+- U08完整25新詞、5新漢字行来車入出、G22～24、10教學、4閱讀、6聽力、50practice＋15check。16真WAV3740384 bytes，腳本／hash／來源完整；原創四車圖經image_gen修成完整單節電車，最終transport-v2.webp513466 bytes。教學／題幹用でんしゃ，避免把未教電字加到方法測量；中文解說仍可寫電車。へ／に目的地皆合法，不把另一個當錯項。
+- 已接registry／loader／catalog／media／art／introductions／labels，10pack含兩假名＋八課：200詞40字24文法32閱讀48聽力400practice。75能力24有候選、51缺口；1094教材／素材審核0有效，U08共135NOT_RUN。U08-M/T/Q1/Q2/A IN_REVIEW，V BLOCKED缺真人，I IN_PROGRESS，不是正式task DONE。
+- 308單元／43檔PASS（43.54s）、typecheck／lint／素材／catalog／preview build通過。離線581資產42604828 bytes；PWA637entries43558.63KiB。最大chunk439788/500000，U06初次JS729454/900000，沒有擴大預算。
+- 最終21個不同browser/case通過，分批累積：Chromium11、Firefox10。兩引擎各完成四主線真Attempt→刷新解說→領獎→PIN→按單元報告／真JSON匯出、六段真音訊播放且審閱不寫Attempt、插畫提示作答留下hintUsed、四格裁切、G23假名題實際作答、下載後停止來源／斷網／關頁冷啟教學與音訊／圖片，以及三項按需載入回歸。兩引擎各另驗延後真ready承諾仍下載成功。Chromium額外重驗P5 waiting／失敗更新保留未交答案、所有舊client關閉才啟用。Firefox／WebKit的更新lifecycle harness仍未執行，不偽稱全引擎通過。
+- 320／390／768／1024／1440題目無橫向溢出；Codex已實際檢視320題目、768提示、Chrome／FF共8張車輛裁圖，以及兩引擎768離線準備狀態。車輛與輪子完整、沒有鄰格、圖文與按鈕可讀；證據evidence/u08-*.png及offline-preparing-*-768.png。真人視覺與實機NOT_RUN。
+
+P4-04-R1故障與證據：首輪16項15PASS／1FF離線失敗，trace只有28請求且最後是offline-manifest，尚無手動素材下載，UI已顯示error。產品先等SW.ready固定8秒，完整42.6MB precache可能仍在合法安裝；用延後真ready結果10秒（不偽造ready或媒體）在舊build穩定重現FAIL。現以實際註冊／worker狀態等待，真正初裝失敗可回報、下次明確重試可重註冊，已有active worker的更新失敗不撤掉離線能力；畫面顯示準備狀態，關閉／離頁可取消。五項單元覆蓋慢就緒、abort、真register拒絕、舊active更新失敗、明確retry。修後FF延後ready及停止來源冷啟2PASS（1.8m），Chrome同類通過；未改60秒完成斷言、未虛構下載完成。
+
+其他失敗如實保留：原創首圖電車後端被裁，已生成v2並實際看8格；初manifest少frameWindows被validator拒絕，補真格窗後PASS。修後22項大批次完成6項即收到SIGTERM，原因未確認，沒有當成完整全綠；確認runner已終止，清理自己殘留preview後分批接續。另新測試錯把中文「搭電車」當日文題幹，調整為精確檢查引號內「でんしゃ（」，不是刪除日文要求；兩引擎G23真作答2PASS（19.1s）。各失敗與成功log／trace索引見JSON。
+
+恢復：Node22；`VITE_P2_REVIEW_PREVIEW=1 npm run build`。`P0_E2E_PORT=4268 npx playwright test e2e/p4-u08.spec.ts e2e/p4-offline-readiness.spec.ts e2e/p4-pack-loading.spec.ts --project=chromium --project=firefox`；P5更新另跑`e2e/p5-update.spec.ts --project=chromium`。較大trace不入git，保存/tmp/japanese101-recovery/p4-u08-*並有hash／case索引；截圖與資料證據已納入提交。

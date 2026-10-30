@@ -1,0 +1,96 @@
+{
+  "unitId": "U09",
+  "status": "DRAFT",
+  "prerequisites": [
+    "U08"
+  ],
+  "typeCounts": {
+    "T01": 4,
+    "T02": 4,
+    "T03": 6,
+    "T04": 3,
+    "T05": 5,
+    "T06": 3,
+    "T07": 3,
+    "T08": 2,
+    "T09": 2,
+    "T10": 2,
+    "T11": 4,
+    "T12": 4,
+    "T13": 4,
+    "T14": 4
+  },
+  "readingQuestions": {
+    "U09-R01": [
+      "U09-Q29"
+    ],
+    "U09-R02": [
+      "U09-Q30"
+    ],
+    "U09-R03": [
+      "U09-Q31",
+      "U09-Q32"
+    ],
+    "U09-R04": [
+      "U09-Q33",
+      "U09-Q34"
+    ]
+  },
+  "listeningQuestions": {
+    "U09-L01": [
+      "U09-Q35",
+      "U09-Q36"
+    ],
+    "U09-L02": [
+      "U09-Q37",
+      "U09-Q38"
+    ],
+    "U09-L03": [
+      "U09-Q39",
+      "U09-Q40"
+    ],
+    "U09-L04": [
+      "U09-Q41",
+      "U09-Q42"
+    ],
+    "U09-L05": [
+      "U09-Q43",
+      "U09-Q44",
+      "U09-Q45",
+      "U09-Q46"
+    ],
+    "U09-L06": [
+      "U09-Q47",
+      "U09-Q48",
+      "U09-Q49",
+      "U09-Q50"
+    ]
+  },
+  "plannedCheckFamilies": {
+    "G25": [
+      "U09-CHECK-place-versus-destination",
+      "U09-CHECK-two-de-roles",
+      "U09-CHECK-existence-vs-activity",
+      "U09-CHECK-action-without-place",
+      "U09-CHECK-actor-place-binding"
+    ],
+    "G26": [
+      "U09-CHECK-question-boundary",
+      "U09-CHECK-partial-bounds-compare",
+      "U09-CHECK-within-interval",
+      "U09-CHECK-repair-reversed-boundaries",
+      "U09-CHECK-interval-not-all-day"
+    ],
+    "G27": [
+      "U09-CHECK-no-fixed-percentage",
+      "U09-CHECK-negative-strength",
+      "U09-CHECK-today-not-habit-proof",
+      "U09-CHECK-frequency-question-relevance",
+      "U09-CHECK-frequency-action-binding"
+    ]
+  },
+  "questionsAuthored": 65,
+  "audioProduced": 16,
+  "artProduced": 1,
+  "humanReview": "NOT_RUN"
+}

@@ -1,0 +1,81 @@
+{
+  "unitId": "U02",
+  "version": "u02-1-draft",
+  "mode": "isolated draft structure",
+  "skills": [
+    {
+      "id": "G04",
+      "prerequisites": [
+        "K-HIRA",
+        "G03"
+      ],
+      "teaching": [
+        "U02-teach-G04"
+      ],
+      "practice": [
+        "U02-Q18",
+        "U02-Q19",
+        "U02-Q23",
+        "U02-Q28"
+      ],
+      "checkFamilies": [
+        "U02-CHECK-locate-from-reference",
+        "U02-CHECK-viewpoint-switch",
+        "U02-CHECK-repair-standalone",
+        "U02-CHECK-distance-dialogue",
+        "U02-CHECK-two-object-contrast"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G05",
+      "prerequisites": [
+        "K-HIRA",
+        "G04"
+      ],
+      "teaching": [
+        "U02-teach-G05"
+      ],
+      "practice": [
+        "U02-Q20",
+        "U02-Q22",
+        "U02-Q24",
+        "U02-Q27"
+      ],
+      "checkFamilies": [
+        "U02-CHECK-locate-nounphrase",
+        "U02-CHECK-nounphrase-viewpoint",
+        "U02-CHECK-repair-nounphrase",
+        "U02-CHECK-omitted-object-name",
+        "U02-CHECK-distance-three-labels"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G06",
+      "prerequisites": [
+        "K-HIRA",
+        "G05"
+      ],
+      "teaching": [
+        "U02-teach-G06"
+      ],
+      "practice": [
+        "U02-Q21",
+        "U02-Q25",
+        "U02-Q26"
+      ],
+      "checkFamilies": [
+        "U02-CHECK-infer-owner",
+        "U02-CHECK-owner-perspective",
+        "U02-CHECK-repair-possession",
+        "U02-CHECK-ownership-negation",
+        "U02-CHECK-owner-matrix"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    }
+  ],
+  "audio": 16,
+  "images": 1,
+  "reviewItems": 135
+}

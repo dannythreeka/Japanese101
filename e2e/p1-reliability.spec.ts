@@ -185,6 +185,7 @@ test('20 game entries/leaves release animation frames and timers in the same doc
   await createPlayer(page,'P1-life')
   for(let i=0;i<20;i++){
     await page.evaluate(()=>{location.hash='/play/kana-catch'})
+    await expect(page.getByRole('heading',{name:'接住假名！',exact:true}).or(page.locator('canvas'))).toBeVisible()
     if(await page.getByText('怎麼玩？',{exact:true}).isVisible())await page.getByRole('button').nth(1).click()
     const setup=page.getByRole('button').filter({hasText:'平假名'})
     if(await setup.count())await setup.first().click()

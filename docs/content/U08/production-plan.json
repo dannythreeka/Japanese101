@@ -1,0 +1,96 @@
+{
+  "unitId": "U08",
+  "status": "DRAFT",
+  "prerequisites": [
+    "U07"
+  ],
+  "typeCounts": {
+    "T01": 4,
+    "T02": 4,
+    "T03": 6,
+    "T04": 3,
+    "T05": 5,
+    "T06": 3,
+    "T07": 3,
+    "T08": 2,
+    "T09": 2,
+    "T10": 2,
+    "T11": 4,
+    "T12": 4,
+    "T13": 4,
+    "T14": 4
+  },
+  "questionsAuthored": 65,
+  "audioProduced": 16,
+  "artProduced": 1,
+  "humanReview": "NOT_RUN",
+  "readingQuestions": {
+    "U08-R01": [
+      "U08-Q29"
+    ],
+    "U08-R02": [
+      "U08-Q30"
+    ],
+    "U08-R03": [
+      "U08-Q31",
+      "U08-Q32"
+    ],
+    "U08-R04": [
+      "U08-Q33",
+      "U08-Q34"
+    ]
+  },
+  "listeningQuestions": {
+    "U08-L01": [
+      "U08-Q35",
+      "U08-Q36"
+    ],
+    "U08-L02": [
+      "U08-Q37",
+      "U08-Q38"
+    ],
+    "U08-L03": [
+      "U08-Q39",
+      "U08-Q40"
+    ],
+    "U08-L04": [
+      "U08-Q41",
+      "U08-Q42"
+    ],
+    "U08-L05": [
+      "U08-Q43",
+      "U08-Q44",
+      "U08-Q45",
+      "U08-Q46"
+    ],
+    "U08-L06": [
+      "U08-Q47",
+      "U08-Q48",
+      "U08-Q49",
+      "U08-Q50"
+    ]
+  },
+  "plannedCheckFamilies": {
+    "G22": [
+      "U08-CHECK-valid-alternatives",
+      "U08-CHECK-particle-pronunciation",
+      "U08-CHECK-movement-viewpoint",
+      "U08-CHECK-destination-not-arrival-proof",
+      "U08-CHECK-negative-place-scope"
+    ],
+    "G23": [
+      "U08-CHECK-tool-vs-companion-repair",
+      "U08-CHECK-shared-destination-different-method",
+      "U08-CHECK-transport-not-location",
+      "U08-CHECK-method-unknown",
+      "U08-CHECK-multiple-legs"
+    ],
+    "G24": [
+      "U08-CHECK-person-tool-boundaries",
+      "U08-CHECK-companion-not-entourage",
+      "U08-CHECK-who-vs-how-relevance",
+      "U08-CHECK-alone-not-walking",
+      "U08-CHECK-independent-person-binding"
+    ]
+  }
+}

@@ -2,6 +2,7 @@ import 'fake-indexeddb/auto'
 import { beforeEach, afterEach, describe, expect, it, vi } from 'vitest'
 import { db, resetProfileProgress, setActiveProfileId } from './index'
 import { JourneyRepository } from './journey'
+import type { BattleSession } from './journey-models'
 import { CATALOG_VERSION } from '../economy/catalog'
 import { BATTLE_RULES_VERSION, initialCombat, resolveTurn } from '../battle/rules'
 import { findPath, near, town, walkable } from '../world/map'
@@ -273,5 +274,64 @@ describe('P2-05 spaced review version recovery',()=>{
     expect((await repo.exportJourney('B')).data.backups).toEqual([])
     await repo.openStudy('A',1,day,'Asia/Taipei');expect((await repo.exportJourney('A')).data.backups).toHaveLength(1)
     expect((await repo.state('A')).attempts).toHaveLength(4);expect((await repo.state('A')).coins).toBe(0)
+  })
+})
+
+
+describe('P3-02 multiple unit isolation',()=>{
+  function secondPack():UnitPack {
+    return {...structuredClone(pack),id:'U02',questions:pack.questions.map(q=>({...q,unitId:'U02'}))}
+  }
+  it('keeps separate unfinished battles even when content versions and question IDs match',async()=>{
+    const first=await start();const second=new JourneyRepository(secondPack())
+    await second.openStudy('A');await second.teach('A','teach')
+    const other=await second.startBattle('A')
+    expect(other.id).not.toBe(first.id)
+    expect((await repo.state('A')).battles.map(b=>b.id)).toEqual([first.id])
+    expect((await second.state('A')).battles.map(b=>b.id)).toEqual([other.id])
+    await expect(repo.chooseMove('A',other.id,'attack')).rejects.toThrow('version')
+    await expect(second.chooseMove('A',first.id,'attack')).rejects.toThrow('version')
+    expect((await repo.startBattle('A')).id).toBe(first.id)
+    expect((await second.startBattle('A')).id).toBe(other.id)
+  })
+  it('recovers only the affected unit and preserves the other unit battle byte for byte',async()=>{
+    const first=await start();const second=new JourneyRepository(secondPack())
+    await second.openStudy('A');await second.teach('A','teach');const other=await second.startBattle('A')
+    await db.battleSessions.update(first.id,{contentVersion:'obsolete'})
+    await repo.recoverVersions('A')
+    expect(await db.battleSessions.get(other.id)).toEqual(other)
+    expect((await db.battleSessions.get(first.id))?.phase).toBe('finished')
+    const backups=await db.migrationBackups.toArray()
+    const archived=backups.flatMap(b=>b.tables.battleSessions ?? []) as BattleSession[]
+    expect(archived.map(b=>b.id)).toContain(first.id)
+    expect(archived.map(b=>b.id)).not.toContain(other.id)
+  })
+  it('rejects cross-unit checks and never archives another unit check during recovery',async()=>{
+    const checkPack={...structuredClone(pack),questions:pack.questions.map(q=>({...q,partition:'check' as const,hintPolicy:'none' as const}))}
+    const firstRepo=new JourneyRepository(checkPack)
+    const second=new JourneyRepository({...checkPack,id:'U02',questions:checkPack.questions.map(q=>({...q,unitId:'U02'}))})
+    for(const r of [firstRepo,second]){await r.openStudy('A');await r.teach('A','teach')}
+    const first=await firstRepo.startCheck('A');const other=await second.startCheck('A')
+    await expect(firstRepo.submitCheck('A',other.id,0,{answerIds:['a'],hintUsed:false,audioPlayCount:0,responseMs:1})).rejects.toThrow('version')
+    await db.learningChecks.update(first.id,{contentVersion:'obsolete'});await firstRepo.recoverVersions('A')
+    expect(await db.learningChecks.get(other.id)).toEqual(other)
+    expect((await second.state('A')).checks.map(c=>c.id)).toEqual([other.id])
+    expect(await db.learningAttempts.count()).toBe(0)
+  })
+})
+
+describe('P3-02 complete player export across units',()=>{
+  it('includes every unit battle and check even when exported from U01, while excluding other players',async()=>{
+    const first=await start('A');await start('B')
+    const secondPack={...structuredClone(pack),id:'U02',questions:pack.questions.map(q=>({...q,unitId:'U02'}))}
+    const second=new JourneyRepository(secondPack);await second.openStudy('A');await second.teach('A','teach');const other=await second.startBattle('A')
+    const checkRepo=new JourneyRepository({...secondPack,questions:secondPack.questions.map(q=>({...q,partition:'check' as const,hintPolicy:'none' as const}))})
+    const check=await checkRepo.startCheck('A')
+    const backup=await repo.exportJourney('A')
+    expect(backup.data.battles.map(b=>b.id).sort()).toEqual([first.id,other.id].sort())
+    expect(backup.data.checks.map(c=>c.id)).toEqual([check.id])
+    expect(backup.data.plans.map(p=>p.unitId).sort()).toEqual(['U01','U02'])
+    expect(backup.data.battles.every(b=>b.profileId==='A')).toBe(true)
+    expect((await second.exportJourney('A')).data).toEqual(backup.data)
   })
 })

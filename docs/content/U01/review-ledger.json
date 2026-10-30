@@ -1,5 +1,5 @@
 {
-  "unitVersion": "u01-2-draft",
+  "unitVersion": "u01-3-draft",
   "author": "Codex",
   "status": "NOT_RUN",
   "instructions": "由實際非原作者填寫；修改後hash需重審；不把AI初審當真人結果。",
@@ -7,7 +7,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "949edf5e2bac605cf54a4e871b024612a0f9fa16338397a148086623a7d40160",
       "reviewer": null,
       "reviewedAt": null,
@@ -17,7 +17,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "29a435ee2c3d0f9af4192748c659a73666f1faa659f153686e201f126f096398",
       "reviewer": null,
       "reviewedAt": null,
@@ -27,7 +27,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V03",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "438f8741f6b98a51c20b3cdba2850e83e920d096366c27568c63251ab771eaf5",
       "reviewer": null,
       "reviewedAt": null,
@@ -37,7 +37,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V04",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "14536316563a8b4ecd27664b62b0ab6fa31e9f62bb18b5dc1d32b46aef80cdd5",
       "reviewer": null,
       "reviewedAt": null,
@@ -47,7 +47,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V05",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "da48346f3445c1000312294bb787c3c1c061bbff89a45ff2df636a14669a0150",
       "reviewer": null,
       "reviewedAt": null,
@@ -57,7 +57,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V06",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "7fea24f2fbc46a725a0cea49ca9a2cb2e05fef9382d0d86b1a547ba866a150fd",
       "reviewer": null,
       "reviewedAt": null,
@@ -67,7 +67,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V07",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "2a2fff6019cc32b765f215ef9cfe6c96a7cba5368fa6cb7817f3d100b15e579e",
       "reviewer": null,
       "reviewedAt": null,
@@ -77,7 +77,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V08",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b5e7a49a10fd1fb4591dd19765f58f90ad0eaf2e96dacb269cb3fea3ae2c843b",
       "reviewer": null,
       "reviewedAt": null,
@@ -87,7 +87,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V09",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b561de2a25b0741b5ae1dd3fbc493ed9c4f0df319a56e21c237554b80ed413f6",
       "reviewer": null,
       "reviewedAt": null,
@@ -97,7 +97,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V10",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "198495921eddfa38328f26c583811c77ecb3573f20cfb75c11b471f26cb476cb",
       "reviewer": null,
       "reviewedAt": null,
@@ -107,7 +107,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V11",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "a857c0d5942246d43429c247084cdfd93074495d0a760a5bb3f9f59dfedeb520",
       "reviewer": null,
       "reviewedAt": null,
@@ -117,7 +117,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V12",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "0e52d76c72100ed797a49eb3271a4a21227b7fdddf202a8b9b8c17577df493cb",
       "reviewer": null,
       "reviewedAt": null,
@@ -127,7 +127,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V13",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "a4511b6fb0cc191773e8d49765eb786cb493273128c8f03b3ef1f54b899ffb02",
       "reviewer": null,
       "reviewedAt": null,
@@ -137,7 +137,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V14",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "d3230c1041f4229a5bcbbb1ce1e5dccae2e2454064412215bd1fd06567ecc7a3",
       "reviewer": null,
       "reviewedAt": null,
@@ -147,7 +147,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V15",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "c706bd349f8083ae88220ce191f6d238dd1f2c49ef73c9dab8c425bcef49458f",
       "reviewer": null,
       "reviewedAt": null,
@@ -157,7 +157,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V16",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "ce36ed9197a935eacd1ed49b22106996de98ad418bf278af3a5fcbca7c651051",
       "reviewer": null,
       "reviewedAt": null,
@@ -167,7 +167,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V17",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "d2349fcb8932b132bd09f0ff05abb26d02d2d7536642d1c6244abec7bf56584f",
       "reviewer": null,
       "reviewedAt": null,
@@ -177,7 +177,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V18",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "4690980b7f16f80eca530a67af05853ba3504e74ed2470772bffc489ed8359f9",
       "reviewer": null,
       "reviewedAt": null,
@@ -187,7 +187,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V19",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "5a40ada8fe0ca20cec9bb871fab5606ac405c440d1425f430c664317329c1d3e",
       "reviewer": null,
       "reviewedAt": null,
@@ -197,7 +197,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V20",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "2f4c1b2405462610803f8afd541798be6bbb9a4b9d95a97dc85086afd8ba6215",
       "reviewer": null,
       "reviewedAt": null,
@@ -207,7 +207,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V21",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "531f84bb80e805f7ae1bb29e2ab94a6b415c5a53ded60ce814045d1a17e5eef5",
       "reviewer": null,
       "reviewedAt": null,
@@ -217,7 +217,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V22",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "3e898670d0613da84786340e1adbca38961fd3beebb02ea1f10452ae0c97b63d",
       "reviewer": null,
       "reviewedAt": null,
@@ -227,7 +227,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V23",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "2f2035d9c6c4341bbd63ba2e869df018e7a2cf62401ff59d3dfcf202b94dab99",
       "reviewer": null,
       "reviewedAt": null,
@@ -237,7 +237,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V24",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "1c03679d89c740e11f179f02eb2373b10fb6e16f8c4654eba0087ce6f985dcd7",
       "reviewer": null,
       "reviewedAt": null,
@@ -247,7 +247,7 @@
     {
       "kind": "vocabulary",
       "id": "U01-V25",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "ed388023d0eedd8a1350803ea9faeaf02ce19cab0b790a76b25148fc956fec57",
       "reviewer": null,
       "reviewedAt": null,
@@ -257,7 +257,7 @@
     {
       "kind": "kanji",
       "id": "U01-K01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "0b654bbca7e9b6334fc68d70d0dcb7d6a49c1da28f598730bc1d3da6a4b6a0d3",
       "reviewer": null,
       "reviewedAt": null,
@@ -267,7 +267,7 @@
     {
       "kind": "kanji",
       "id": "U01-K02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "cc62e2da72534df487fef529c09f3addb1a1c254c7b7b4c5e12c52823264df6a",
       "reviewer": null,
       "reviewedAt": null,
@@ -277,7 +277,7 @@
     {
       "kind": "kanji",
       "id": "U01-K03",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "8b7022b0d233be8717749af9c2b592c94120e299062745ff55b0a326034e3d50",
       "reviewer": null,
       "reviewedAt": null,
@@ -287,7 +287,7 @@
     {
       "kind": "kanji",
       "id": "U01-K04",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "2f2dd900b470538424f8647749a92107619a6e4f47f58a74084dbb1ea8425e38",
       "reviewer": null,
       "reviewedAt": null,
@@ -297,7 +297,7 @@
     {
       "kind": "kanji",
       "id": "U01-K05",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "025fd98c0b9ddf6708286d0ade489cd25340d5ddf123d47478abe9b15ac408d6",
       "reviewer": null,
       "reviewedAt": null,
@@ -307,7 +307,7 @@
     {
       "kind": "grammar",
       "id": "G01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b6689fca94e7b659b68a40fc810c2c9547bafab373fa8bdb3028fb5f4f130fdc",
       "reviewer": null,
       "reviewedAt": null,
@@ -317,8 +317,8 @@
     {
       "kind": "grammar",
       "id": "G02",
-      "version": "u01-2-draft",
-      "sha256": "fbb46fe3a26a1b11d08e50787b9b4e849680052f29e3982f8f098847ff0711c7",
+      "version": "u01-3-draft",
+      "sha256": "254ff1a5b3f035f78b5e88802705d726303d88764eab78ede2b04f8b728bab0a",
       "reviewer": null,
       "reviewedAt": null,
       "result": "NOT_RUN",
@@ -327,8 +327,8 @@
     {
       "kind": "grammar",
       "id": "G03",
-      "version": "u01-2-draft",
-      "sha256": "501544ae3cd4e246dd63581fd8e8372977303a8e348a0635a558feaf31288dd4",
+      "version": "u01-3-draft",
+      "sha256": "2f6aedea6b3b67799111b4442099cf126b153aa425f0a2d784d1ff8688466b3f",
       "reviewer": null,
       "reviewedAt": null,
       "result": "NOT_RUN",
@@ -337,7 +337,7 @@
     {
       "kind": "teaching",
       "id": "teach-words-1",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "a8758de6af6c524231c6e464109c795ba7bb746d09b1958d8e0daf28f4cfff1d",
       "reviewer": null,
       "reviewedAt": null,
@@ -347,7 +347,7 @@
     {
       "kind": "teaching",
       "id": "teach-words-2",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "da6ef2d73e34bb12dd4949f5edfbeb7b97fff3c339fa67511fb871304974e8aa",
       "reviewer": null,
       "reviewedAt": null,
@@ -357,7 +357,7 @@
     {
       "kind": "teaching",
       "id": "teach-words-3",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b992d050a13c9c1fd40ac71f78326ecc5ce6fbaaef511c8669dbbe39187802d8",
       "reviewer": null,
       "reviewedAt": null,
@@ -367,7 +367,7 @@
     {
       "kind": "teaching",
       "id": "teach-words-4",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "34b50d63de28b47b538fd8f49a6a6909653f044be3f0a3bbb1a6fe5e766e052c",
       "reviewer": null,
       "reviewedAt": null,
@@ -377,7 +377,7 @@
     {
       "kind": "teaching",
       "id": "teach-kanji",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "7c4e9bf8454fdcd674fc416942ed7cc952af4059d37c32b17677a6e6a2588ecd",
       "reviewer": null,
       "reviewedAt": null,
@@ -387,7 +387,7 @@
     {
       "kind": "teaching",
       "id": "teach-G01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "72796d6c69076c72b3e45007c5c9412ec6bee7cd821c8b63236f0c214ea9ce40",
       "reviewer": null,
       "reviewedAt": null,
@@ -397,7 +397,7 @@
     {
       "kind": "teaching",
       "id": "teach-G02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "dc759b5f915ed93a8a1b163135555f84143246e499b448e7d2af94ccd18b7680",
       "reviewer": null,
       "reviewedAt": null,
@@ -407,8 +407,8 @@
     {
       "kind": "teaching",
       "id": "teach-G03",
-      "version": "u01-2-draft",
-      "sha256": "631872bc242e82d1a126f2797ad1e35703541400043e9821e7ab7f98cb294003",
+      "version": "u01-3-draft",
+      "sha256": "084162dbff4d6901b5e487a5b61d0725d596e11650a45e8f7d807409c315238d",
       "reviewer": null,
       "reviewedAt": null,
       "result": "NOT_RUN",
@@ -417,7 +417,7 @@
     {
       "kind": "teaching",
       "id": "teach-story",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "add12b3fc57f3ffa2bcffc0f4593fd28ce5fb49b5218b648b461980af87b113f",
       "reviewer": null,
       "reviewedAt": null,
@@ -427,7 +427,7 @@
     {
       "kind": "reading",
       "id": "U01-R01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "5722a46f12b1a72d61fadcbd5b7d651846b8f46b2f2396fc68cf67900bfc4740",
       "reviewer": null,
       "reviewedAt": null,
@@ -437,7 +437,7 @@
     {
       "kind": "reading",
       "id": "U01-R02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "8ddee4d144943decab6fd4baa75ed117fefa2dbd7316fbee9c66b63b4e1c4ca0",
       "reviewer": null,
       "reviewedAt": null,
@@ -447,7 +447,7 @@
     {
       "kind": "reading",
       "id": "U01-R03",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "d07043f28111c7c282332bc02f3ecbaf92682fe76f54fa66992a98e0feed5053",
       "reviewer": null,
       "reviewedAt": null,
@@ -457,7 +457,7 @@
     {
       "kind": "reading",
       "id": "U01-R04",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "69f749a2e321249bb32a1dd96c4307c9a79a538463ae6343a1632ff38513f1e7",
       "reviewer": null,
       "reviewedAt": null,
@@ -467,7 +467,7 @@
     {
       "kind": "listening-script",
       "id": "U01-L01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "3a0a64549af6c129fca30ef1c59f2f3feeefd63a7671c3c2b0d256954f04b27f",
       "reviewer": null,
       "reviewedAt": null,
@@ -477,7 +477,7 @@
     {
       "kind": "listening-script",
       "id": "U01-L02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "8a6182d8639a4e3527e084643b5ec6d370cefdb25c36460fdb167373f2f60826",
       "reviewer": null,
       "reviewedAt": null,
@@ -487,7 +487,7 @@
     {
       "kind": "listening-script",
       "id": "U01-L03",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b8c4d1661f5d5b531957402c88c8727d133dfb1f92bc5a6cb00693308b2aae8d",
       "reviewer": null,
       "reviewedAt": null,
@@ -497,7 +497,7 @@
     {
       "kind": "listening-script",
       "id": "U01-L04",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "2233fbd9d772c5862cfcce02de4b1ac7ba007d7e6995b582bc622bd5dd267b19",
       "reviewer": null,
       "reviewedAt": null,
@@ -507,7 +507,7 @@
     {
       "kind": "listening-script",
       "id": "U01-L05",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "28f5d6af81a1d64b45d63f6dac763152b33392fee477ec42aa9d0f958a470554",
       "reviewer": null,
       "reviewedAt": null,
@@ -517,7 +517,7 @@
     {
       "kind": "listening-script",
       "id": "U01-L06",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b2bebb0797465cdf10aa43b6fd7a516314ad5daf80200fb403d92a8fc502f759",
       "reviewer": null,
       "reviewedAt": null,
@@ -527,7 +527,7 @@
     {
       "kind": "question",
       "id": "U01-Q01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "6d10061200a5e2b23166320d57796d5e1e7713ec5e6cab976409da5173687da2",
       "reviewer": null,
       "reviewedAt": null,
@@ -537,7 +537,7 @@
     {
       "kind": "question",
       "id": "U01-Q02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "22e2eb19559a73c7954101da43e1af65cc0724ebb74a19acd7787f9a9f40a956",
       "reviewer": null,
       "reviewedAt": null,
@@ -547,7 +547,7 @@
     {
       "kind": "question",
       "id": "U01-Q03",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "21aa892c15bac764f959fd3e3cde14a5f18915a3bc9d49fb3ff6b51bfcb9ef7b",
       "reviewer": null,
       "reviewedAt": null,
@@ -557,7 +557,7 @@
     {
       "kind": "question",
       "id": "U01-Q04",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "882f49dcfa02c7d0ed484d1d73171b8670d5517a51c1d4815321164a482e189f",
       "reviewer": null,
       "reviewedAt": null,
@@ -567,7 +567,7 @@
     {
       "kind": "question",
       "id": "U01-Q05",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "468dfaecf70b9da1e8fef51b5d8af176e60db78f34f297d42041294b36cd61dc",
       "reviewer": null,
       "reviewedAt": null,
@@ -577,7 +577,7 @@
     {
       "kind": "question",
       "id": "U01-Q06",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "1e43b7d2949e2efee7c024da0b2914984dbe11c9a25bf11f6a2e63931e3f1755",
       "reviewer": null,
       "reviewedAt": null,
@@ -587,7 +587,7 @@
     {
       "kind": "question",
       "id": "U01-Q07",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "f8bfc216aad510ce2e8b4e5fc15cd3efc1a74e613912043deb0498266b26db69",
       "reviewer": null,
       "reviewedAt": null,
@@ -597,7 +597,7 @@
     {
       "kind": "question",
       "id": "U01-Q08",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "74cb181addf9fdea75943079ffcc6321e4b9178a6e35ab5989348dde60c25fd2",
       "reviewer": null,
       "reviewedAt": null,
@@ -607,7 +607,7 @@
     {
       "kind": "question",
       "id": "U01-Q09",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "ab7d35f0beaea5b1f4ca452096932c209a4984c261be696d542ad893b6c02ff4",
       "reviewer": null,
       "reviewedAt": null,
@@ -617,7 +617,7 @@
     {
       "kind": "question",
       "id": "U01-Q10",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "76967cfaf5702fefe15a908d46c0f49c93b466a5e13357e717edfb31158d7552",
       "reviewer": null,
       "reviewedAt": null,
@@ -627,7 +627,7 @@
     {
       "kind": "question",
       "id": "U01-Q11",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "fe586fdf82653d5256a40115cbd877254f95e814f2fded1a310fd6242405269a",
       "reviewer": null,
       "reviewedAt": null,
@@ -637,7 +637,7 @@
     {
       "kind": "question",
       "id": "U01-Q12",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "693ddcd86e2b3c59f9b69cdd7232996e79016d3a236e905ed7e5e454f5557b73",
       "reviewer": null,
       "reviewedAt": null,
@@ -647,7 +647,7 @@
     {
       "kind": "question",
       "id": "U01-Q13",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "c3b59da3f8e70b0e05a9588797afd7a1bf167027f98bdaa7d4d76e45d61b18cd",
       "reviewer": null,
       "reviewedAt": null,
@@ -657,7 +657,7 @@
     {
       "kind": "question",
       "id": "U01-Q14",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "3e98ae194422b6657de90a7d28b11c4970ce191ff900b644c9cb262aec166e8f",
       "reviewer": null,
       "reviewedAt": null,
@@ -667,7 +667,7 @@
     {
       "kind": "question",
       "id": "U01-Q15",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "a9e00222e70a75838b19bd1994818fe1a9ddd16d348afcd1cb8f359b8eb57da5",
       "reviewer": null,
       "reviewedAt": null,
@@ -677,7 +677,7 @@
     {
       "kind": "question",
       "id": "U01-Q16",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "f6ebec130b52bcaeb8ba1f9e074be0480fd7726f8c8f77c2000f8bda0c982407",
       "reviewer": null,
       "reviewedAt": null,
@@ -687,7 +687,7 @@
     {
       "kind": "question",
       "id": "U01-Q17",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "8e5f6b7e4ef65d4c499caf405f6a436030b1110a90e37313580b0dcd6c33636a",
       "reviewer": null,
       "reviewedAt": null,
@@ -697,7 +697,7 @@
     {
       "kind": "question",
       "id": "U01-Q18",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "48dff12353bd6e7804df4dd53a4c14b4c94a9f88927ca295677c6a581ce529a7",
       "reviewer": null,
       "reviewedAt": null,
@@ -707,7 +707,7 @@
     {
       "kind": "question",
       "id": "U01-Q19",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "f880794a3c421b6d7c779679bc3c012ebe587e5e7b497dbfdb866c7a61771c43",
       "reviewer": null,
       "reviewedAt": null,
@@ -717,7 +717,7 @@
     {
       "kind": "question",
       "id": "U01-Q20",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "9a79390cab20bd0a4c57146a80b1cf7f59dc4fe176849ba1eaee583cefac2800",
       "reviewer": null,
       "reviewedAt": null,
@@ -727,7 +727,7 @@
     {
       "kind": "question",
       "id": "U01-Q21",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "c2d4e425a34d21e08a284a3457e49c6c6a2454df4ad186204c24ffbfe9e1c7f1",
       "reviewer": null,
       "reviewedAt": null,
@@ -737,7 +737,7 @@
     {
       "kind": "question",
       "id": "U01-Q22",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "f4c85e3a49986c59c597a5546ba0be476d0c493511a0886c90a04b7bed9e6234",
       "reviewer": null,
       "reviewedAt": null,
@@ -747,7 +747,7 @@
     {
       "kind": "question",
       "id": "U01-Q23",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "34fca390176ca207cd1e944e4dfbd8a23961dee68278bea6db9fcaac08aa2a72",
       "reviewer": null,
       "reviewedAt": null,
@@ -757,7 +757,7 @@
     {
       "kind": "question",
       "id": "U01-Q24",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "74cf34b977a73bd28f02560e344c70f3110cef6d0f443337702d2c70b7d67a8f",
       "reviewer": null,
       "reviewedAt": null,
@@ -767,7 +767,7 @@
     {
       "kind": "question",
       "id": "U01-Q25",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "127a9c87805c169902c2207549aedb197454bcc5aa58b4671807294656155631",
       "reviewer": null,
       "reviewedAt": null,
@@ -777,7 +777,7 @@
     {
       "kind": "question",
       "id": "U01-Q26",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "c501ca15e15224b0683b5d31927cc527b81780019f0074d0cade0f7ccd67052a",
       "reviewer": null,
       "reviewedAt": null,
@@ -787,7 +787,7 @@
     {
       "kind": "question",
       "id": "U01-Q27",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "534556eebe8a69050e2d7213e232a746ee88277c5839e7fc69dccfb04d3489fe",
       "reviewer": null,
       "reviewedAt": null,
@@ -797,7 +797,7 @@
     {
       "kind": "question",
       "id": "U01-Q28",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "fe1c3d13aca33b06f641cfecaa637ecf1f5554d54476fd8e1a411c835ca7e2a8",
       "reviewer": null,
       "reviewedAt": null,
@@ -807,7 +807,7 @@
     {
       "kind": "question",
       "id": "U01-Q29",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "413d6cfce43999bea4df30bf79fb11a32cf8e1dbcec51b97983be45eb50ace9f",
       "reviewer": null,
       "reviewedAt": null,
@@ -817,7 +817,7 @@
     {
       "kind": "question",
       "id": "U01-Q30",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "e15a5bb06a1ca87a2ba0fa2b62d20034dfdcd2474d43e79cd85748a478425e3f",
       "reviewer": null,
       "reviewedAt": null,
@@ -827,7 +827,7 @@
     {
       "kind": "question",
       "id": "U01-Q31",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "234b75a8262559dbc4bb1cf63dd3a8f6e517f2b533dd6cfb67aaf449faff9d8f",
       "reviewer": null,
       "reviewedAt": null,
@@ -837,7 +837,7 @@
     {
       "kind": "question",
       "id": "U01-Q32",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "85f9e413c51eddf9e134a82b37c9ad2013847a14904987491974967c3dff0cd1",
       "reviewer": null,
       "reviewedAt": null,
@@ -847,7 +847,7 @@
     {
       "kind": "question",
       "id": "U01-Q33",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "1c6934d5f1e547843e3ef11603ac809438911cb58bf0853f64672d8576048d77",
       "reviewer": null,
       "reviewedAt": null,
@@ -857,7 +857,7 @@
     {
       "kind": "question",
       "id": "U01-Q34",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "ade6d07b358a366c9faf7c5362b62ad96080fa6af7637c10c6f436ed21f32a6c",
       "reviewer": null,
       "reviewedAt": null,
@@ -867,7 +867,7 @@
     {
       "kind": "question",
       "id": "U01-Q35",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "da4b8e5c1a8cfcfec549a91efc746bd83fa883dafc5aee3385a735d0d7bbd58d",
       "reviewer": null,
       "reviewedAt": null,
@@ -877,7 +877,7 @@
     {
       "kind": "question",
       "id": "U01-Q36",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "80e6f33bb62b3718c648a0037bbd00fb52213ccea491d864a3ec74fcad33b56a",
       "reviewer": null,
       "reviewedAt": null,
@@ -887,7 +887,7 @@
     {
       "kind": "question",
       "id": "U01-Q37",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "ce9bce6aa796541075d789eafc4e3dd52fb45ac6da27b405159fd56329b36cd1",
       "reviewer": null,
       "reviewedAt": null,
@@ -897,7 +897,7 @@
     {
       "kind": "question",
       "id": "U01-Q38",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "8cf98712697ba7ae8496fbe3e4f2671e808832b1c63304c3037218d9c4687f11",
       "reviewer": null,
       "reviewedAt": null,
@@ -907,7 +907,7 @@
     {
       "kind": "question",
       "id": "U01-Q39",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "8af09aa59b6717451710f5efaed234fde72605f7b5475ccd31deb151e6b94ab5",
       "reviewer": null,
       "reviewedAt": null,
@@ -917,7 +917,7 @@
     {
       "kind": "question",
       "id": "U01-Q40",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "c052a18bced45ba6950e53cfc98fd03a131516d7d7cc56ca11464ce7b0fd1637",
       "reviewer": null,
       "reviewedAt": null,
@@ -927,7 +927,7 @@
     {
       "kind": "question",
       "id": "U01-Q41",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "ab2c80970ef3c4b5481c9174e8cb3a9a39b82aee27275673ca2e84b1ca5ee609",
       "reviewer": null,
       "reviewedAt": null,
@@ -937,7 +937,7 @@
     {
       "kind": "question",
       "id": "U01-Q42",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "6c7c77573e788274b60275293ad392b4eae22dbac62d23d3d2b7d1490ecdb218",
       "reviewer": null,
       "reviewedAt": null,
@@ -947,7 +947,7 @@
     {
       "kind": "question",
       "id": "U01-Q43",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "ea381f803db6610c8db04762d92a68e23dddd3da53a233780e12336cb56609f5",
       "reviewer": null,
       "reviewedAt": null,
@@ -957,7 +957,7 @@
     {
       "kind": "question",
       "id": "U01-Q44",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "fbe8b8c9da988109534c34ec1bf887e83ecf28b4a46aad6814c326df98fb0b84",
       "reviewer": null,
       "reviewedAt": null,
@@ -967,7 +967,7 @@
     {
       "kind": "question",
       "id": "U01-Q45",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "d67291db6a0041d2f620a7d2023fda7aef0df4784d2f7854115b9d5fa87cdaae",
       "reviewer": null,
       "reviewedAt": null,
@@ -977,7 +977,7 @@
     {
       "kind": "question",
       "id": "U01-Q46",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b06a7df0d12b583e68605e56edad9e339ee7deda998abd2db56a6d0c60b87b08",
       "reviewer": null,
       "reviewedAt": null,
@@ -987,7 +987,7 @@
     {
       "kind": "question",
       "id": "U01-Q47",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b530d19d7861767b4670f26298ff7b37bc9f963e56735266896731d44915b96a",
       "reviewer": null,
       "reviewedAt": null,
@@ -997,7 +997,7 @@
     {
       "kind": "question",
       "id": "U01-Q48",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "dbaa35fcecf77a73a7c345d9351c329393eb5ffde423030cb0bdcbe198d1551e",
       "reviewer": null,
       "reviewedAt": null,
@@ -1007,7 +1007,7 @@
     {
       "kind": "question",
       "id": "U01-Q49",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "27ef47a18051b572759a4e5c64fc8d3966b3fe8ea3bac3bd40cb95a46ab86fb8",
       "reviewer": null,
       "reviewedAt": null,
@@ -1017,7 +1017,7 @@
     {
       "kind": "question",
       "id": "U01-Q50",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "14d41e6b21b4312e0e66d685d72a201370e4c740c12ffc4be9c40c9ede368ff4",
       "reviewer": null,
       "reviewedAt": null,
@@ -1027,7 +1027,7 @@
     {
       "kind": "question",
       "id": "U01-C01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "41926dbc2b3f80d555efa0fa5879255d4e23a27db667c4f684d0be8ebae09154",
       "reviewer": null,
       "reviewedAt": null,
@@ -1037,7 +1037,7 @@
     {
       "kind": "question",
       "id": "U01-C02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "c6a4f0071770d27601f8bdebf6dc3a5cba474c8f42f7c81570a14df84564a659",
       "reviewer": null,
       "reviewedAt": null,
@@ -1047,7 +1047,7 @@
     {
       "kind": "question",
       "id": "U01-C03",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "cafd292e13b1c839181f7808095938529d3df0cd2d663c394429444bbe0c96f6",
       "reviewer": null,
       "reviewedAt": null,
@@ -1057,7 +1057,7 @@
     {
       "kind": "question",
       "id": "U01-C04",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "d2c2413aa06d3959cc770080b1321d157267a8cd3fd2e3f2dd477bf354266c94",
       "reviewer": null,
       "reviewedAt": null,
@@ -1067,7 +1067,7 @@
     {
       "kind": "question",
       "id": "U01-C05",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b966de04336dbd9a4575f1dd3b400aee69a232686eb61bbd8b289dae480ec369",
       "reviewer": null,
       "reviewedAt": null,
@@ -1077,7 +1077,7 @@
     {
       "kind": "question",
       "id": "U01-C06",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "d55f637a7b832382aa394a7e0aac53f56399e15c943d97ec635699ca25a0276f",
       "reviewer": null,
       "reviewedAt": null,
@@ -1087,7 +1087,7 @@
     {
       "kind": "question",
       "id": "U01-C07",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "4eb1afe7034daf39a1c71c913e2cb5b587f7d4f8df57c31eecfdd73fac59db79",
       "reviewer": null,
       "reviewedAt": null,
@@ -1097,7 +1097,7 @@
     {
       "kind": "question",
       "id": "U01-C08",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "49d272db18c2b5ffa44b336e0fb1587f84fad6c7a0e486768242f2b92589764a",
       "reviewer": null,
       "reviewedAt": null,
@@ -1107,7 +1107,7 @@
     {
       "kind": "question",
       "id": "U01-C09",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "f380df0269e6307781967b24fc4a945e7b00d14098f8cd5d994c69eecf47368f",
       "reviewer": null,
       "reviewedAt": null,
@@ -1117,7 +1117,7 @@
     {
       "kind": "question",
       "id": "U01-C10",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "3132b348b08f34b9a15da9355b0aad90f767585925c641803e3a2338fecf9ae8",
       "reviewer": null,
       "reviewedAt": null,
@@ -1127,7 +1127,7 @@
     {
       "kind": "question",
       "id": "U01-C11",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "00bb3af5ce3a833d8c8099f64a031d957bfb79cb55b8566a0e1a76704dd59948",
       "reviewer": null,
       "reviewedAt": null,
@@ -1137,7 +1137,7 @@
     {
       "kind": "question",
       "id": "U01-C12",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "d18da674c9977194581db05a8356f99c00694cc92e4cac11a7b5f4f61ae0bce1",
       "reviewer": null,
       "reviewedAt": null,
@@ -1147,7 +1147,7 @@
     {
       "kind": "question",
       "id": "U01-C13",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "1e9979a41a19f3b4894ac17d62d5ad5dd8cb58842b4064fdb685490a0aaa984e",
       "reviewer": null,
       "reviewedAt": null,
@@ -1157,7 +1157,7 @@
     {
       "kind": "question",
       "id": "U01-C14",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "277d431d64831a2a944c57e1ffd9f1c7c326206df93747a9373ccc7b636fcc22",
       "reviewer": null,
       "reviewedAt": null,
@@ -1167,7 +1167,7 @@
     {
       "kind": "question",
       "id": "U01-C15",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "33a94bbde7efd23b22ebf7cb8fcf8e53d2059fa32a689948d6f0812d2ef6d74d",
       "reviewer": null,
       "reviewedAt": null,
@@ -1177,7 +1177,7 @@
     {
       "kind": "audio",
       "id": "U01-L01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "5be1b677eaa3fcc01c7d9511c7af272ef847e689b2ec00f51b6da3d6f4bf3f02",
       "reviewer": null,
       "reviewedAt": null,
@@ -1187,7 +1187,7 @@
     {
       "kind": "audio",
       "id": "U01-L02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "b6e27025fc5685130d91bf7b9d4eefc85d1a7f8b09524bccb9b9e11383398562",
       "reviewer": null,
       "reviewedAt": null,
@@ -1197,7 +1197,7 @@
     {
       "kind": "audio",
       "id": "U01-L03",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "771f11ba00e4f2e7d8fdbc12935e79681d563420f1820569bc8349afe19b893b",
       "reviewer": null,
       "reviewedAt": null,
@@ -1207,7 +1207,7 @@
     {
       "kind": "audio",
       "id": "U01-L04",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "cdf1f671029e5892ee3d5ec3639545890ae1ae5b11e9d55341a788249f4b7fdc",
       "reviewer": null,
       "reviewedAt": null,
@@ -1217,7 +1217,7 @@
     {
       "kind": "audio",
       "id": "U01-L05",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "4a902767ca1629352a059ff29b84c3ca4bcd5fac8f64b0487c4cdc943141ca7a",
       "reviewer": null,
       "reviewedAt": null,
@@ -1227,7 +1227,7 @@
     {
       "kind": "audio",
       "id": "U01-L06",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "8e8bd46e828e0370c279249a1d786e03cbd09814c82b9a8c3aae033f1c957d85",
       "reviewer": null,
       "reviewedAt": null,
@@ -1237,7 +1237,7 @@
     {
       "kind": "audio",
       "id": "teach-words-1",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "a44afb76ad3b540ca53614875805b376f3a91ffda8a66c560dad5fcd0a4304ae",
       "reviewer": null,
       "reviewedAt": null,
@@ -1247,7 +1247,7 @@
     {
       "kind": "audio",
       "id": "teach-words-2",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "ed6473e58194d8df004ea0bd74c0402c290f8799fcb681d877b7231dfffb1d37",
       "reviewer": null,
       "reviewedAt": null,
@@ -1257,7 +1257,7 @@
     {
       "kind": "audio",
       "id": "teach-words-3",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "6f5564a93a6bade5b88a89a7fa7477669018177b69a22f77dcced39d73cea7db",
       "reviewer": null,
       "reviewedAt": null,
@@ -1267,7 +1267,7 @@
     {
       "kind": "audio",
       "id": "teach-words-4",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "44915aedd53a50f10685597459517de24293f335759f2e8417c8f493f889a7c1",
       "reviewer": null,
       "reviewedAt": null,
@@ -1277,7 +1277,7 @@
     {
       "kind": "audio",
       "id": "teach-kanji",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "76e997a8416d2dce2ceb70398a99a8ce2a1b1c1ca7933b5933ee6b754ff1c413",
       "reviewer": null,
       "reviewedAt": null,
@@ -1287,7 +1287,7 @@
     {
       "kind": "audio",
       "id": "teach-G01",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "6e8d5fffd725f2a69949d5f87816a88c4c0e505e2fe0b70a42fd4b46be49c43d",
       "reviewer": null,
       "reviewedAt": null,
@@ -1297,7 +1297,7 @@
     {
       "kind": "audio",
       "id": "teach-G02",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "12f9713bd3183ba180caad6a1886bebccaa771664cb133add24bdff5b753ec01",
       "reviewer": null,
       "reviewedAt": null,
@@ -1307,7 +1307,7 @@
     {
       "kind": "audio",
       "id": "teach-G03",
-      "version": "u01-2-draft",
+      "version": "u01-3-draft",
       "sha256": "089ea1e2fbb5e0d23448913d5175812cd941e2d6c5ae9977a34e9f154d0a9b82",
       "reviewer": null,
       "reviewedAt": null,

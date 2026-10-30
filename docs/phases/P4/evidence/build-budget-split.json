@@ -1,0 +1,231 @@
+{
+  "scope": "individual minified JavaScript chunks; not total offline media",
+  "limitBytes": 500000,
+  "assets": [
+    {
+      "file": "index-UUOKQbBP.js",
+      "bytes": 439123,
+      "gzipBytes": 140793
+    },
+    {
+      "file": "ContentReview-DtpkC0Ve.js",
+      "bytes": 122096,
+      "gzipBytes": 33680
+    },
+    {
+      "file": "u01-BZ06JXtr.js",
+      "bytes": 109898,
+      "gzipBytes": 15801
+    },
+    {
+      "file": "u02-CTuxeukZ.js",
+      "bytes": 106548,
+      "gzipBytes": 16936
+    },
+    {
+      "file": "u06-BrpDa-PW.js",
+      "bytes": 105207,
+      "gzipBytes": 13943
+    },
+    {
+      "file": "u05-CIohk1N-.js",
+      "bytes": 100943,
+      "gzipBytes": 15094
+    },
+    {
+      "file": "u04-Bv96oZ68.js",
+      "bytes": 100897,
+      "gzipBytes": 14696
+    },
+    {
+      "file": "u03-BcLDCK5U.js",
+      "bytes": 100382,
+      "gzipBytes": 15138
+    },
+    {
+      "file": "scenes-CRu2xI3j.js",
+      "bytes": 66284,
+      "gzipBytes": 10420
+    },
+    {
+      "file": "vocabulary-OdqLAx0x.js",
+      "bytes": 45569,
+      "gzipBytes": 5992
+    },
+    {
+      "file": "JourneyEntry-BUiNQ48B.js",
+      "bytes": 40832,
+      "gzipBytes": 13043
+    },
+    {
+      "file": "journey-BAYRCY6v.js",
+      "bytes": 32292,
+      "gzipBytes": 9122
+    },
+    {
+      "file": "FullBackup-CV72j9Vg.js",
+      "bytes": 24904,
+      "gzipBytes": 9290
+    },
+    {
+      "file": "KanaCatchGame-BHp_fAde.js",
+      "bytes": 21897,
+      "gzipBytes": 6961
+    },
+    {
+      "file": "ParentDashboard-Cef2aMc5.js",
+      "bytes": 19636,
+      "gzipBytes": 5437
+    },
+    {
+      "file": "LevelComplete-DupgHvg1.js",
+      "bytes": 18777,
+      "gzipBytes": 6962
+    },
+    {
+      "file": "AdventureMap-BT7jTplj.js",
+      "bytes": 14260,
+      "gzipBytes": 4845
+    },
+    {
+      "file": "KanaWriteGame-tO1E2FYT.js",
+      "bytes": 14210,
+      "gzipBytes": 4971
+    },
+    {
+      "file": "Character-DZbn3Cdf.js",
+      "bytes": 12479,
+      "gzipBytes": 3955
+    },
+    {
+      "file": "PetAvatar-CcTS4_2m.js",
+      "bytes": 10512,
+      "gzipBytes": 2610
+    },
+    {
+      "file": "PlayScreen-D4bKnX2K.js",
+      "bytes": 10290,
+      "gzipBytes": 3240
+    },
+    {
+      "file": "text-BWo-zZVy.js",
+      "bytes": 9841,
+      "gzipBytes": 4193
+    },
+    {
+      "file": "audio-CBiFnocv.js",
+      "bytes": 9566,
+      "gzipBytes": 3681
+    },
+    {
+      "file": "JourneyReport-BEr2a1u9.js",
+      "bytes": 8634,
+      "gzipBytes": 4047
+    },
+    {
+      "file": "contracts-DSjBxHEl.js",
+      "bytes": 7824,
+      "gzipBytes": 2461
+    },
+    {
+      "file": "LevelEntry-Btm2rr6t.js",
+      "bytes": 7091,
+      "gzipBytes": 2623
+    },
+    {
+      "file": "KotodamaGame-BbzzBMDJ.js",
+      "bytes": 6848,
+      "gzipBytes": 2636
+    },
+    {
+      "file": "ChoicePractice-CJ6hIlc2.js",
+      "bytes": 5680,
+      "gzipBytes": 2101
+    },
+    {
+      "file": "DakutenDragGame-BJvMvMV5.js",
+      "bytes": 5121,
+      "gzipBytes": 2138
+    },
+    {
+      "file": "FlashCardDeck-BkCeIuT0.js",
+      "bytes": 4961,
+      "gzipBytes": 2074
+    },
+    {
+      "file": "HomeScreen-5tlpTAOE.js",
+      "bytes": 4594,
+      "gzipBytes": 1867
+    },
+    {
+      "file": "journey-ui-DeoTTMus.js",
+      "bytes": 3540,
+      "gzipBytes": 1417
+    },
+    {
+      "file": "kana-B6GF2kt1.js",
+      "bytes": 3107,
+      "gzipBytes": 1674
+    },
+    {
+      "file": "ProfileCreate-Deq-pI1L.js",
+      "bytes": 2507,
+      "gzipBytes": 1117
+    },
+    {
+      "file": "KanaGallery-DJLQ9CSv.js",
+      "bytes": 2358,
+      "gzipBytes": 1052
+    },
+    {
+      "file": "OfflinePack-Cm8Cef6q.js",
+      "bytes": 2311,
+      "gzipBytes": 1215
+    },
+    {
+      "file": "mic-KpGQ9lWP.js",
+      "bytes": 2205,
+      "gzipBytes": 1048
+    },
+    {
+      "file": "loader-DZd1Sv2z.js",
+      "bytes": 2112,
+      "gzipBytes": 1013
+    },
+    {
+      "file": "ProfileSelector-B-Iqq9OO.js",
+      "bytes": 2094,
+      "gzipBytes": 895
+    },
+    {
+      "file": "UiReview-CkpJl4Or.js",
+      "bytes": 1631,
+      "gzipBytes": 782
+    },
+    {
+      "file": "catalog-Cnt6mP_v.js",
+      "bytes": 1003,
+      "gzipBytes": 596
+    },
+    {
+      "file": "SpeakButton-CeICDQTb.js",
+      "bytes": 985,
+      "gzipBytes": 621
+    },
+    {
+      "file": "useAdventureChallenge-DPpy7YyJ.js",
+      "bytes": 667,
+      "gzipBytes": 359
+    },
+    {
+      "file": "KanaMatchGame-DwtpGDA4.js",
+      "bytes": 161,
+      "gzipBytes": 155
+    },
+    {
+      "file": "ListenQuiz-BU_l-EK8.js",
+      "bytes": 161,
+      "gzipBytes": 155
+    }
+  ]
+}

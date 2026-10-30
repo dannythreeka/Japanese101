@@ -1,0 +1,41 @@
+{
+  "fixture": {
+    "schema": "japanese101-p3-fixture-v1",
+    "mode": "ENGINEERING_REHEARSAL",
+    "participantCode": "B-1",
+    "gradeBand": 2,
+    "origin": "http://127.0.0.1:4250",
+    "unitId": "U01",
+    "profileId": "player",
+    "openingCoins": 40,
+    "coinSource": "SYNTHETIC_FIXTURE_OPENING_BALANCE_NOT_EARNED",
+    "learningAttemptsSeeded": 0,
+    "teachingCardsSeeded": 0,
+    "humanConsent": "NOT_RUN",
+    "humanTrial": "NOT_RUN",
+    "createdAt": "2026-10-29T18:50:28.091Z",
+    "commit": "3982b5cc42e00a933c80da7e8e3a4cf3dadc17bc",
+    "workingTreeDirty": true,
+    "previewDeclaredCommit": "3982b5cc42e00a933c80da7e8e3a4cf3dadc17bc",
+    "previewIndexSha256": "9d2942e4d4face5a20c6cc6560d9e68a7b6b5a9c77b32cfef94ea17e1bf82c7e",
+    "browser": "145.0.7632.6",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    }
+  },
+  "fileModes": {
+    "fixture.json": "0o600",
+    "storage.json": "0o600"
+  },
+  "storeCounts": {
+    "battleSessions": 0,
+    "coinLedger": 0,
+    "coinWallets": 1,
+    "learningAttempts": 0,
+    "learningChecks": 0,
+    "studyPlans": 1
+  },
+  "storageSha256": "ab1180bc87777c62252c9e5ebd5a0ca902c976fa6777f1fe47be389e3fc21640",
+  "scope": "Headless CLI engineering rehearsal; no human participant, consent or headful trial; full storage stays in local /tmp only"
+}

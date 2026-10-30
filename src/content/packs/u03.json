@@ -1,0 +1,4627 @@
+{
+  "id": "U03",
+  "version": "u03-1-draft",
+  "title": "時間與日常：一起安排小鎮的一天",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "vocabulary": [
+    {
+      "id": "U03-V01",
+      "text": "いち",
+      "reading": "いち",
+      "meaning": "1"
+    },
+    {
+      "id": "U03-V02",
+      "text": "に",
+      "reading": "に",
+      "meaning": "2"
+    },
+    {
+      "id": "U03-V03",
+      "text": "さん",
+      "reading": "さん",
+      "meaning": "3"
+    },
+    {
+      "id": "U03-V04",
+      "text": "よん",
+      "reading": "よん",
+      "meaning": "4"
+    },
+    {
+      "id": "U03-V05",
+      "text": "ご",
+      "reading": "ご",
+      "meaning": "5"
+    },
+    {
+      "id": "U03-V06",
+      "text": "ろく",
+      "reading": "ろく",
+      "meaning": "6"
+    },
+    {
+      "id": "U03-V07",
+      "text": "なな",
+      "reading": "なな",
+      "meaning": "7"
+    },
+    {
+      "id": "U03-V08",
+      "text": "はち",
+      "reading": "はち",
+      "meaning": "8"
+    },
+    {
+      "id": "U03-V09",
+      "text": "きゅう",
+      "reading": "きゅう",
+      "meaning": "9"
+    },
+    {
+      "id": "U03-V10",
+      "text": "じゅう",
+      "reading": "じゅう",
+      "meaning": "10"
+    },
+    {
+      "id": "U03-V11",
+      "text": "あさ",
+      "reading": "あさ",
+      "meaning": "早上"
+    },
+    {
+      "id": "U03-V12",
+      "text": "ひる",
+      "reading": "ひる",
+      "meaning": "中午／白天"
+    },
+    {
+      "id": "U03-V13",
+      "text": "よる",
+      "reading": "よる",
+      "meaning": "晚上"
+    },
+    {
+      "id": "U03-V14",
+      "text": "いま",
+      "reading": "いま",
+      "meaning": "現在"
+    },
+    {
+      "id": "U03-V15",
+      "text": "まいにち",
+      "reading": "まいにち",
+      "meaning": "每天"
+    },
+    {
+      "id": "U03-V16",
+      "text": "じ",
+      "reading": "じ",
+      "meaning": "點鐘"
+    },
+    {
+      "id": "U03-V17",
+      "text": "ふん",
+      "reading": "ふん",
+      "meaning": "分鐘；數字不同會讀ふん或ぷん"
+    },
+    {
+      "id": "U03-V18",
+      "text": "はん",
+      "reading": "はん",
+      "meaning": "半；半點是30分"
+    },
+    {
+      "id": "U03-V19",
+      "text": "きょう",
+      "reading": "きょう",
+      "meaning": "今天"
+    },
+    {
+      "id": "U03-V20",
+      "text": "おきる",
+      "reading": "おきる",
+      "meaning": "起床；禮貌說法おきます"
+    },
+    {
+      "id": "U03-V21",
+      "text": "ねる",
+      "reading": "ねる",
+      "meaning": "睡覺；禮貌說法ねます"
+    },
+    {
+      "id": "U03-V22",
+      "text": "たべる",
+      "reading": "たべる",
+      "meaning": "吃；禮貌說法たべます"
+    },
+    {
+      "id": "U03-V23",
+      "text": "のむ",
+      "reading": "のむ",
+      "meaning": "喝；禮貌說法のみます"
+    },
+    {
+      "id": "U03-V24",
+      "text": "よむ",
+      "reading": "よむ",
+      "meaning": "讀；禮貌說法よみます"
+    },
+    {
+      "id": "U03-V25",
+      "text": "べんきょうする",
+      "reading": "べんきょうする",
+      "meaning": "學習；禮貌說法べんきょうします"
+    }
+  ],
+  "kanji": [
+    {
+      "id": "U03-K01",
+      "text": "時",
+      "reading": "じ",
+      "meaning": "點鐘"
+    },
+    {
+      "id": "U03-K02",
+      "text": "分",
+      "reading": "ふん／ぷん",
+      "meaning": "分鐘；依前面數字選讀音"
+    },
+    {
+      "id": "U03-K03",
+      "text": "半",
+      "reading": "はん",
+      "meaning": "半"
+    },
+    {
+      "id": "U03-K04",
+      "text": "朝",
+      "reading": "あさ",
+      "meaning": "早上"
+    },
+    {
+      "id": "U03-K05",
+      "text": "夜",
+      "reading": "よる",
+      "meaning": "晚上"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G07",
+      "title": "時刻：N時N分です",
+      "prerequisites": [
+        "K-HIRA",
+        "G06"
+      ]
+    },
+    {
+      "id": "G08",
+      "title": "動詞ます／ません",
+      "prerequisites": [
+        "K-HIRA",
+        "G07"
+      ]
+    },
+    {
+      "id": "G09",
+      "title": "時間に動詞",
+      "prerequisites": [
+        "K-HIRA",
+        "G08"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "U03-R01",
+      "text": "アキは まいにち 朝6時に おきます。7時に たべます。夜9時に ねます。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U03-R02",
+      "text": "アキは 朝6時半に おきます。7時に たべます。8時に べんきょうします。夜は べんきょうしません。夜9時に ねます。ユイは 朝7時に おきます。8時に たべます。夜8時半に ねます。",
+      "skillId": "R-MID"
+    },
+    {
+      "id": "U03-R03",
+      "text": "小鎮活動表\nアキ｜7:00｜たべます\nユイ｜7:00｜おきます\nアキ｜8:00｜べんきょうします\nユイ｜8:00｜たべます\nリク｜8:00｜よみます",
+      "skillId": "R-INFO"
+    },
+    {
+      "id": "U03-R04",
+      "text": "リク：きょうは 朝7時に おきます。8時に べんきょうします。\nアキ：夜も べんきょうしますか。\nリク：いいえ、夜は べんきょうしません。夜8時に よみます。9時に ねます。",
+      "skillId": "R-MID"
+    }
+  ],
+  "listening": [
+    {
+      "id": "U03-L01",
+      "script": "いまは、しちじです。アキは、しちじにたべます。はちじにべんきょうします。",
+      "audioSrc": "/assets/audio/u03/listening-01.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U03-L02",
+      "script": "ユイは、あさろくじはんにおきます。しちじはんにたべます。よるくじにねます。",
+      "audioSrc": "/assets/audio/u03/listening-02.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U03-L03",
+      "script": "リクは、よるはべんきょうしません。よるはちじによみます。くじにねます。",
+      "audioSrc": "/assets/audio/u03/listening-03.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U03-L04",
+      "script": "アキは、あさろくじにおきます。しちじにたべます。はちじによみます。よるくじにねます。",
+      "audioSrc": "/assets/audio/u03/listening-04.wav",
+      "skillId": "L-EXPR",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U03-L05",
+      "script": "なんじに、おきますか。",
+      "audioSrc": "/assets/audio/u03/listening-05.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U03-L06",
+      "script": "よる、べんきょうしますか。",
+      "audioSrc": "/assets/audio/u03/listening-06.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "U03-teach-words-1",
+      "title": "數字1到5",
+      "titleJa": "1から5",
+      "body": "いち：1\nに：2\nさん：3\nよん：4\nご：5",
+      "bodyJa": "ことばをきいて、いみをたしかめよう。",
+      "example": "いち",
+      "translation": "動作詞在對話中先練習禮貌說法，不必一次背所有變化。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "いち。に。さん。よん。ご。",
+      "audioSrc": "/assets/audio/u03/U03-teach-words-1.wav",
+      "vocabularyIds": [
+        "U03-V01",
+        "U03-V02",
+        "U03-V03",
+        "U03-V04",
+        "U03-V05"
+      ]
+    },
+    {
+      "id": "U03-teach-words-2",
+      "title": "數字6到10",
+      "titleJa": "6から10",
+      "body": "ろく：6\nなな：7\nはち：8\nきゅう：9\nじゅう：10",
+      "bodyJa": "ことばをきいて、いみをたしかめよう。",
+      "example": "ろく",
+      "translation": "動作詞在對話中先練習禮貌說法，不必一次背所有變化。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "ろく。なな。はち。きゅう。じゅう。",
+      "audioSrc": "/assets/audio/u03/U03-teach-words-2.wav",
+      "vocabularyIds": [
+        "U03-V06",
+        "U03-V07",
+        "U03-V08",
+        "U03-V09",
+        "U03-V10"
+      ]
+    },
+    {
+      "id": "U03-teach-words-3",
+      "title": "一天的時段",
+      "titleJa": "いちにち",
+      "body": "あさ：早上\nひる：中午／白天\nよる：晚上\nいま：現在\nまいにち：每天",
+      "bodyJa": "ことばをきいて、いみをたしかめよう。",
+      "example": "あさ",
+      "translation": "動作詞在對話中先練習禮貌說法，不必一次背所有變化。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "あさ。ひる。よる。いま。まいにち。",
+      "audioSrc": "/assets/audio/u03/U03-teach-words-3.wav",
+      "vocabularyIds": [
+        "U03-V11",
+        "U03-V12",
+        "U03-V13",
+        "U03-V14",
+        "U03-V15"
+      ]
+    },
+    {
+      "id": "U03-teach-words-4",
+      "title": "時刻小工具",
+      "titleJa": "じこくのことば",
+      "body": "じ：點鐘\nふん：分鐘；數字不同會讀ふん或ぷん\nはん：半；半點是30分\nきょう：今天\n分的讀音要和數字一起聽，例如5分（ごふん）、10分（じゅっぷん）。",
+      "bodyJa": "ことばをきいて、いみをたしかめよう。",
+      "example": "じ",
+      "translation": "動作詞在對話中先練習禮貌說法，不必一次背所有變化。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "じ。ふん。はん。きょう。",
+      "audioSrc": "/assets/audio/u03/U03-teach-words-4.wav",
+      "vocabularyIds": [
+        "U03-V16",
+        "U03-V17",
+        "U03-V18",
+        "U03-V19"
+      ]
+    },
+    {
+      "id": "U03-teach-words-5",
+      "title": "每天會做的事",
+      "titleJa": "まいにちすること",
+      "body": "おきる：起床；禮貌說法おきます\nねる：睡覺；禮貌說法ねます\nたべる：吃；禮貌說法たべます\nのむ：喝；禮貌說法のみます\nよむ：讀；禮貌說法よみます\nべんきょうする：學習；禮貌說法べんきょうします",
+      "bodyJa": "ことばをきいて、いみをたしかめよう。",
+      "example": "おきます",
+      "translation": "動作詞在對話中先練習禮貌說法，不必一次背所有變化。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "おきます。ねます。たべます。のみます。よみます。べんきょうします。",
+      "audioSrc": "/assets/audio/u03/U03-teach-words-5.wav",
+      "vocabularyIds": [
+        "U03-V20",
+        "U03-V21",
+        "U03-V22",
+        "U03-V23",
+        "U03-V24",
+        "U03-V25"
+      ]
+    },
+    {
+      "id": "U03-teach-kanji",
+      "title": "時刻與早晚的漢字",
+      "titleJa": "じこくとあさよる",
+      "body": "時（じ）表示點鐘；分（ふん／ぷん）表示分鐘；半（はん）表示半。朝（あさ）是早上，夜（よる）是晚上。\n7時半＝7時30分。時、分、半跟數字一起讀。",
+      "bodyJa": "時は「じ」、半は「はん」、朝は「あさ」、夜は「よる」です。分は、すうじといっしょにききましょう。",
+      "example": "朝（あさ）7時（じ）半（はん）／夜（よる）9時（じ）",
+      "translation": "早上七點半／晚上九點。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "audioScript": "じ。ごふん。じゅっぷん。はん。あさ。よる。",
+      "audioSrc": "/assets/audio/u03/U03-teach-kanji.wav",
+      "kanjiIds": [
+        "U03-K01",
+        "U03-K02",
+        "U03-K03",
+        "U03-K04",
+        "U03-K05"
+      ],
+      "prerequisites": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ]
+    },
+    {
+      "id": "U03-teach-G07",
+      "title": "讀出現在幾點",
+      "titleJa": "なんじですか",
+      "body": "數字＋時＋分鐘＋です。整點可以不說分。\n正例：7:30＝7時半です；8:15＝8時15分です。\n4時讀よじ、7時讀しちじ、9時讀くじ；不是よんじ、ななじ、きゅうじ。\n1～12時：いちじ、にじ、さんじ、よじ、ごじ、ろくじ、しちじ、はちじ、くじ、じゅうじ、じゅういちじ、じゅうにじ。\n本課會用的分鐘：1分いっぷん、5分ごふん、10分じゅっぷん、15分じゅうごふん、30分さんじゅっぷん。\n反例：7:30不是8時半，先看小時再看分鐘。「半」就是30分。",
+      "bodyJa": "すうじに「じ」をつけます。4じはよじ、7じはしちじ、9じはくじです。「はん」は30ぷんです。",
+      "example": "いまは 7時（じ）半（はん）です。",
+      "translation": "現在是七點半。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G07",
+        "K-CONTRAST"
+      ],
+      "audioScript": "いちじ。にじ。さんじ。よじ。ごじ。ろくじ。しちじ。はちじ。くじ。じゅうじ。じゅういちじ。じゅうにじ。いっぷん。ごふん。じゅっぷん。じゅうごふん。さんじゅっぷん。しちじはんです。",
+      "audioSrc": "/assets/audio/u03/U03-teach-G07.wav",
+      "grammarIds": [
+        "G07"
+      ],
+      "prerequisites": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ]
+    },
+    {
+      "id": "U03-teach-G08",
+      "title": "有做、沒有做",
+      "titleJa": "ます・ません",
+      "body": "禮貌說「會做／要做」用ます；「不做」用ません。\n先學整個常用說法：おきる→おきます、ねる→ねます、たべる→たべます、のむ→のみます、よむ→よみます、べんきょうする→べんきょうします。\n正例：べんきょうします（學習）；べんきょうしません（不學習）。たべます（吃）；たべません（不吃）。\n反例：「たべませんです」多加了です，這裡只說たべません。\nます／ません放在動作句尾，不改變句中的人。",
+      "bodyJa": "することは「ます」、しないことは「ません」です。「たべます」「たべません」。さいごに「です」をつけません。",
+      "example": "きょうは べんきょうします。よるは べんきょうしません。",
+      "translation": "今天要學習；晚上不學習。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G08"
+      ],
+      "audioScript": "おきます。おきません。ねます。ねません。たべます。たべません。のみます。のみません。よみます。よみません。べんきょうします。べんきょうしません。",
+      "audioSrc": "/assets/audio/u03/U03-teach-G08.wav",
+      "grammarIds": [
+        "G08"
+      ],
+      "prerequisites": [
+        "U03-teach-G07"
+      ]
+    },
+    {
+      "id": "U03-teach-G09",
+      "title": "在幾點做什麼",
+      "titleJa": "じこくにすること",
+      "body": "明確時刻＋に＋動作。\n正例：6時に おきます；9時に ねます。半點也可以：7時半に たべます。\n反例：「7時で おきます」不符合本課指定時刻的說法，應用に。\n「きょう」「まいにち」這類時間詞後面通常不加に：まいにち 6時に おきます。\n前面可以補「あさ」或「よる」，幫助分清楚早晚。",
+      "bodyJa": "するじこくのあとに「に」をつけます。「6じにおきます」「9じにねます」。「まいにち」のあとには、にをつけません。",
+      "example": "まいにち 朝（あさ）6時（じ）に おきます。",
+      "translation": "每天早上六點起床。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G09"
+      ],
+      "audioScript": "まいにち、あさろくじにおきます。しちじはんにたべます。よるくじにねます。",
+      "audioSrc": "/assets/audio/u03/U03-teach-G09.wav",
+      "grammarIds": [
+        "G09"
+      ],
+      "prerequisites": [
+        "U03-teach-G08"
+      ]
+    },
+    {
+      "id": "U03-teach-story",
+      "title": "看懂小鎮行程表",
+      "titleJa": "まちのよてい",
+      "body": "小秋＝アキ、小唯＝ユイ、小陸＝リク。\nなんじですか＝幾點；なんじに＝在幾點；はい＝是；いいえ＝不是。\n確認安排時，先看人物，再看時間與動作。相同時刻可能是不同人的不同活動，不能只看數字就選。\n○表示會做，×表示不做；表上的時間使用數字，音訊會用日語讀出。",
+      "bodyJa": "だれが、なんじに、なにをするかをみましょう。まるはします、ばつはしません。",
+      "example": "アキ：なんじに ねますか。ユイ：9時（じ）に ねます。",
+      "translation": "小秋：你幾點睡？小唯：九點睡。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "R-SHORT",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-KEY",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "audioScript": "なんじですか。なんじにねますか。くじにねます。はい、たべます。いいえ、たべません。",
+      "audioSrc": "/assets/audio/u03/U03-teach-story.wav",
+      "prerequisites": [
+        "U03-teach-G09"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "U03-Q01",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q01",
+      "itemFamilyId": "U03-F-kanji-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "這一課的「朝」怎麼讀？",
+      "promptJa": "このかの「朝」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U03-Q01-o1",
+          "text": "よる"
+        },
+        {
+          "id": "U03-Q01-o2",
+          "text": "ひる"
+        },
+        {
+          "id": "U03-Q01-o3",
+          "text": "いま"
+        },
+        {
+          "id": "U03-Q01-o0",
+          "text": "あさ"
+        }
+      ],
+      "answer": [
+        "U03-Q01-o0"
+      ],
+      "explanation": "本課「朝」讀作「あさ」。",
+      "explanationJa": "ここでは「あさ」とよみます。",
+      "distractorReasons": {
+        "U03-Q01-o1": "よる是夜。",
+        "U03-Q01-o2": "ひる是白天／中午。",
+        "U03-Q01-o3": "いま是現在。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U03-Q02",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q02",
+      "itemFamilyId": "U03-F-kanji-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "這一課的「夜」怎麼讀？",
+      "promptJa": "このかの「夜」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U03-Q02-o2",
+          "text": "はん"
+        },
+        {
+          "id": "U03-Q02-o3",
+          "text": "じ"
+        },
+        {
+          "id": "U03-Q02-o0",
+          "text": "よる"
+        },
+        {
+          "id": "U03-Q02-o1",
+          "text": "あさ"
+        }
+      ],
+      "answer": [
+        "U03-Q02-o0"
+      ],
+      "explanation": "本課「夜」讀作「よる」。",
+      "explanationJa": "ここでは「よる」とよみます。",
+      "distractorReasons": {
+        "U03-Q02-o1": "あさ是朝。",
+        "U03-Q02-o2": "はん是半。",
+        "U03-Q02-o3": "じ是時。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U03-Q03",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q03",
+      "itemFamilyId": "U03-F-kanji-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "這一課的「半」怎麼讀？",
+      "promptJa": "このかの「半」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U03-Q03-o3",
+          "text": "あさ"
+        },
+        {
+          "id": "U03-Q03-o0",
+          "text": "はん"
+        },
+        {
+          "id": "U03-Q03-o1",
+          "text": "ふん"
+        },
+        {
+          "id": "U03-Q03-o2",
+          "text": "よる"
+        }
+      ],
+      "answer": [
+        "U03-Q03-o0"
+      ],
+      "explanation": "本課「半」讀作「はん」。",
+      "explanationJa": "ここでは「はん」とよみます。",
+      "distractorReasons": {
+        "U03-Q03-o1": "ふん是分的讀音之一。",
+        "U03-Q03-o2": "よる是夜。",
+        "U03-Q03-o3": "あさ是朝。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U03-Q04",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q04",
+      "itemFamilyId": "U03-F-kanji-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "這一課的「時」怎麼讀？",
+      "promptJa": "このかの「時」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U03-Q04-o0",
+          "text": "じ"
+        },
+        {
+          "id": "U03-Q04-o1",
+          "text": "ふん"
+        },
+        {
+          "id": "U03-Q04-o2",
+          "text": "はん"
+        },
+        {
+          "id": "U03-Q04-o3",
+          "text": "に"
+        }
+      ],
+      "answer": [
+        "U03-Q04-o0"
+      ],
+      "explanation": "本課「時」讀作「じ」。",
+      "explanationJa": "ここでは「じ」とよみます。",
+      "distractorReasons": {
+        "U03-Q04-o1": "ふん表示分鐘，不是點鐘。",
+        "U03-Q04-o2": "はん表示半。",
+        "U03-Q04-o3": "に是數字2或助詞，不是這個漢字。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U03-Q05",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q05",
+      "itemFamilyId": "U03-F-kanji-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「あさ」的正確漢字是哪一個？",
+      "promptJa": "「あさ」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U03-Q05-o1",
+          "text": "夜"
+        },
+        {
+          "id": "U03-Q05-o2",
+          "text": "時"
+        },
+        {
+          "id": "U03-Q05-o3",
+          "text": "半"
+        },
+        {
+          "id": "U03-Q05-o0",
+          "text": "朝"
+        }
+      ],
+      "answer": [
+        "U03-Q05-o0"
+      ],
+      "explanation": "對應的漢字是「朝」。",
+      "explanationJa": "ただしいかんじは「朝」です。",
+      "distractorReasons": {
+        "U03-Q05-o1": "夜是晚上。",
+        "U03-Q05-o2": "時表示點鐘。",
+        "U03-Q05-o3": "半不是早上。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U03-Q06",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q06",
+      "itemFamilyId": "U03-F-kanji-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「よる」的正確漢字是哪一個？",
+      "promptJa": "「よる」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U03-Q06-o2",
+          "text": "分"
+        },
+        {
+          "id": "U03-Q06-o3",
+          "text": "時"
+        },
+        {
+          "id": "U03-Q06-o0",
+          "text": "夜"
+        },
+        {
+          "id": "U03-Q06-o1",
+          "text": "朝"
+        }
+      ],
+      "answer": [
+        "U03-Q06-o0"
+      ],
+      "explanation": "對應的漢字是「夜」。",
+      "explanationJa": "ただしいかんじは「夜」です。",
+      "distractorReasons": {
+        "U03-Q06-o1": "朝是早上。",
+        "U03-Q06-o2": "分是分鐘。",
+        "U03-Q06-o3": "時是點鐘。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U03-Q07",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q07",
+      "itemFamilyId": "U03-F-kanji-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「はん」的正確漢字是哪一個？",
+      "promptJa": "「はん」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U03-Q07-o3",
+          "text": "人"
+        },
+        {
+          "id": "U03-Q07-o0",
+          "text": "半"
+        },
+        {
+          "id": "U03-Q07-o1",
+          "text": "分"
+        },
+        {
+          "id": "U03-Q07-o2",
+          "text": "本"
+        }
+      ],
+      "answer": [
+        "U03-Q07-o0"
+      ],
+      "explanation": "對應的漢字是「半」。",
+      "explanationJa": "ただしいかんじは「半」です。",
+      "distractorReasons": {
+        "U03-Q07-o1": "分讀ふん或ぷん，不是はん。",
+        "U03-Q07-o2": "本是書。",
+        "U03-Q07-o3": "人不是半。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U03-Q08",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q08",
+      "itemFamilyId": "U03-F-kanji-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「5ふん中的ふん」的正確漢字是哪一個？",
+      "promptJa": "「5ふんのふん」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U03-Q08-o0",
+          "text": "分"
+        },
+        {
+          "id": "U03-Q08-o1",
+          "text": "時"
+        },
+        {
+          "id": "U03-Q08-o2",
+          "text": "半"
+        },
+        {
+          "id": "U03-Q08-o3",
+          "text": "文"
+        }
+      ],
+      "answer": [
+        "U03-Q08-o0"
+      ],
+      "explanation": "對應的漢字是「分」。",
+      "explanationJa": "ただしいかんじは「分」です。",
+      "distractorReasons": {
+        "U03-Q08-o1": "時是點鐘。",
+        "U03-Q08-o2": "半是30分，不是分鐘的單位。",
+        "U03-Q08-o3": "文是句子，讀ぶん。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U03-Q09",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q09",
+      "itemFamilyId": "U03-F-routine-meaning",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "朋友問此刻的時刻，「現在」應用哪個詞？",
+      "promptJa": "このしゅんかんのことばは、どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q09-o1",
+          "text": "まいにち"
+        },
+        {
+          "id": "U03-Q09-o2",
+          "text": "よる"
+        },
+        {
+          "id": "U03-Q09-o3",
+          "text": "はん"
+        },
+        {
+          "id": "U03-Q09-o0",
+          "text": "いま"
+        }
+      ],
+      "answer": [
+        "U03-Q09-o0"
+      ],
+      "explanation": "いま表示現在這一刻。",
+      "explanationJa": "このどうさやじかんは「いま」です。",
+      "distractorReasons": {
+        "U03-Q09-o1": "まいにち是每天。",
+        "U03-Q09-o2": "よる只表示晚上。",
+        "U03-Q09-o3": "はん表示半。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U03-Q10",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q10",
+      "itemFamilyId": "U03-F-routine-meaning",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "一件事每天都會做，可以用哪個時間詞？",
+      "promptJa": "どのひにもすることです。どのことばをつかいますか。",
+      "choices": [
+        {
+          "id": "U03-Q10-o2",
+          "text": "いま"
+        },
+        {
+          "id": "U03-Q10-o3",
+          "text": "じ"
+        },
+        {
+          "id": "U03-Q10-o0",
+          "text": "まいにち"
+        },
+        {
+          "id": "U03-Q10-o1",
+          "text": "きょう"
+        }
+      ],
+      "answer": [
+        "U03-Q10-o0"
+      ],
+      "explanation": "まいにち表示每天。",
+      "explanationJa": "このどうさやじかんは「まいにち」です。",
+      "distractorReasons": {
+        "U03-Q10-o1": "きょう只有今天。",
+        "U03-Q10-o2": "いま只有現在。",
+        "U03-Q10-o3": "じ是點鐘單位。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U03-Q11",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q11",
+      "itemFamilyId": "U03-F-routine-meaning",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "鬧鐘響了，孩子從床上坐起來，要描述哪個動作？",
+      "promptJa": "あさ、めをあけて、ベッドからでます。どのことばですか。",
+      "choices": [
+        {
+          "id": "U03-Q11-o3",
+          "text": "よむ"
+        },
+        {
+          "id": "U03-Q11-o0",
+          "text": "おきる"
+        },
+        {
+          "id": "U03-Q11-o1",
+          "text": "ねる"
+        },
+        {
+          "id": "U03-Q11-o2",
+          "text": "のむ"
+        }
+      ],
+      "answer": [
+        "U03-Q11-o0"
+      ],
+      "explanation": "おきる表示起床。",
+      "explanationJa": "このどうさやじかんは「おきる」です。",
+      "distractorReasons": {
+        "U03-Q11-o1": "ねる是睡覺。",
+        "U03-Q11-o2": "のむ是喝。",
+        "U03-Q11-o3": "よむ是讀。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U03-Q12",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q12",
+      "itemFamilyId": "U03-F-routine-meaning",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "晚上累了，孩子躺好閉上眼睛，要描述哪個動作？",
+      "promptJa": "よる、ベッドでやすむどうさです。どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q12-o0",
+          "text": "ねる"
+        },
+        {
+          "id": "U03-Q12-o1",
+          "text": "おきる"
+        },
+        {
+          "id": "U03-Q12-o2",
+          "text": "たべる"
+        },
+        {
+          "id": "U03-Q12-o3",
+          "text": "べんきょうする"
+        }
+      ],
+      "answer": [
+        "U03-Q12-o0"
+      ],
+      "explanation": "ねる表示睡覺。",
+      "explanationJa": "このどうさやじかんは「ねる」です。",
+      "distractorReasons": {
+        "U03-Q12-o1": "おきる是起床。",
+        "U03-Q12-o2": "たべる是吃。",
+        "U03-Q12-o3": "べんきょうする是學習。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U03-Q13",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q13",
+      "itemFamilyId": "U03-F-routine-meaning",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "想了解書裡的故事，需要做哪個動作？",
+      "promptJa": "ほんのぶんをみるどうさです。どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q13-o1",
+          "text": "のむ"
+        },
+        {
+          "id": "U03-Q13-o2",
+          "text": "ねる"
+        },
+        {
+          "id": "U03-Q13-o3",
+          "text": "たべる"
+        },
+        {
+          "id": "U03-Q13-o0",
+          "text": "よむ"
+        }
+      ],
+      "answer": [
+        "U03-Q13-o0"
+      ],
+      "explanation": "よむ表示閱讀。",
+      "explanationJa": "このどうさやじかんは「よむ」です。",
+      "distractorReasons": {
+        "U03-Q13-o1": "のむ是喝，不是讀。",
+        "U03-Q13-o2": "ねる是睡。",
+        "U03-Q13-o3": "たべる是吃。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U03-Q14",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q14",
+      "itemFamilyId": "U03-F-routine-meaning",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "拿起杯子喝一口，應用哪個動作詞？",
+      "promptJa": "コップをくちにはこびます。どのことばですか。",
+      "choices": [
+        {
+          "id": "U03-Q14-o2",
+          "text": "おきる"
+        },
+        {
+          "id": "U03-Q14-o3",
+          "text": "ねる"
+        },
+        {
+          "id": "U03-Q14-o0",
+          "text": "のむ"
+        },
+        {
+          "id": "U03-Q14-o1",
+          "text": "よむ"
+        }
+      ],
+      "answer": [
+        "U03-Q14-o0"
+      ],
+      "explanation": "のむ表示喝。",
+      "explanationJa": "このどうさやじかんは「のむ」です。",
+      "distractorReasons": {
+        "U03-Q14-o1": "よむ是閱讀。",
+        "U03-Q14-o2": "おきる是起床。",
+        "U03-Q14-o3": "ねる是睡覺。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U03-Q15",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q15",
+      "itemFamilyId": "U03-F-half-hour-equivalence",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「7時半」和哪個時間一樣？",
+      "promptJa": "7じはんとおなじじこくは、どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q15-o3",
+          "text": "8:30"
+        },
+        {
+          "id": "U03-Q15-o0",
+          "text": "7:30"
+        },
+        {
+          "id": "U03-Q15-o1",
+          "text": "7:05"
+        },
+        {
+          "id": "U03-Q15-o2",
+          "text": "7:15"
+        }
+      ],
+      "answer": [
+        "U03-Q15-o0"
+      ],
+      "explanation": "半點就是該小時過30分。",
+      "explanationJa": "はんは、30ぷんです。",
+      "distractorReasons": {
+        "U03-Q15-o1": "半不是5分。",
+        "U03-Q15-o2": "半不是15分。",
+        "U03-Q15-o3": "小時不同。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U03-Q16",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q16",
+      "itemFamilyId": "U03-F-daily-paraphrase",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「まいにち おきます」的意思最接近哪一句？",
+      "promptJa": "まいにちおきます、は、どんないみですか。",
+      "choices": [
+        {
+          "id": "U03-Q16-o0",
+          "text": "每天起床"
+        },
+        {
+          "id": "U03-Q16-o1",
+          "text": "只在今天起床"
+        },
+        {
+          "id": "U03-Q16-o2",
+          "text": "現在要睡覺"
+        },
+        {
+          "id": "U03-Q16-o3",
+          "text": "每天吃飯"
+        }
+      ],
+      "answer": [
+        "U03-Q16-o0"
+      ],
+      "explanation": "まいにち是每天，おきます是起床的禮貌說法。",
+      "explanationJa": "まいにちは、どのひも、といういみです。",
+      "distractorReasons": {
+        "U03-Q16-o1": "まいにち不是只有今天。",
+        "U03-Q16-o2": "動作相反，時間也不同。",
+        "U03-Q16-o3": "動作是おきる，不是たべる。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U03-Q17",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q17",
+      "itemFamilyId": "U03-F-study-paraphrase",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「べんきょうする」最接近哪一種意思？",
+      "promptJa": "べんきょうする、は、どんないみですか。",
+      "choices": [
+        {
+          "id": "U03-Q17-o1",
+          "text": "睡一覺"
+        },
+        {
+          "id": "U03-Q17-o2",
+          "text": "喝一口飲料"
+        },
+        {
+          "id": "U03-Q17-o3",
+          "text": "早上醒來"
+        },
+        {
+          "id": "U03-Q17-o0",
+          "text": "學習功課或新知識"
+        }
+      ],
+      "answer": [
+        "U03-Q17-o0"
+      ],
+      "explanation": "べんきょうする表示學習。",
+      "explanationJa": "あたらしいことをまなぶことです。",
+      "distractorReasons": {
+        "U03-Q17-o1": "睡覺是ねる。",
+        "U03-Q17-o2": "喝是のむ。",
+        "U03-Q17-o3": "起床是おきる。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U03-Q18",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q18",
+      "itemFamilyId": "U03-F-time-expression",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "螢幕顯示4:30，正確讀法是哪個？",
+      "promptJa": "4:30を、どうよみますか。",
+      "choices": [
+        {
+          "id": "U03-Q18-o2",
+          "text": "しちじはんです。"
+        },
+        {
+          "id": "U03-Q18-o3",
+          "text": "よじごふんです。"
+        },
+        {
+          "id": "U03-Q18-o0",
+          "text": "よじはんです。"
+        },
+        {
+          "id": "U03-Q18-o1",
+          "text": "よんじはんです。"
+        }
+      ],
+      "answer": [
+        "U03-Q18-o0"
+      ],
+      "explanation": "4時讀よじ，30分可說はん。",
+      "explanationJa": "4じはよじ、30ぷんははんです。",
+      "distractorReasons": {
+        "U03-Q18-o1": "4時讀よじ，不是よんじ。",
+        "U03-Q18-o2": "しちじ是7時。",
+        "U03-Q18-o3": "ごふん是5分，不是30分。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-Q19",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q19",
+      "itemFamilyId": "U03-F-time-expression",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "現在9:15，哪句能說出這個時刻？",
+      "promptJa": "いまは9:15です。どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q19-o3",
+          "text": "ごじ じゅうごふんです。"
+        },
+        {
+          "id": "U03-Q19-o0",
+          "text": "くじ じゅうごふんです。"
+        },
+        {
+          "id": "U03-Q19-o1",
+          "text": "きゅうじ じゅうごふんです。"
+        },
+        {
+          "id": "U03-Q19-o2",
+          "text": "くじはんです。"
+        }
+      ],
+      "answer": [
+        "U03-Q19-o0"
+      ],
+      "explanation": "9時讀くじ，15分讀じゅうごふん。",
+      "explanationJa": "くじ、じゅうごふんです。",
+      "distractorReasons": {
+        "U03-Q19-o1": "9時讀くじ。",
+        "U03-Q19-o2": "はん是30分。",
+        "U03-Q19-o3": "ごじ是5時。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-Q20",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q20",
+      "itemFamilyId": "U03-F-positive-negative",
+      "primarySkillId": "G08",
+      "skillIds": [
+        "G08"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "小陸今天不學習。句子要怎麼說？",
+      "promptJa": "リクは、きょうべんきょうしないよていです。どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q20-o0",
+          "text": "きょうは べんきょうしません。"
+        },
+        {
+          "id": "U03-Q20-o1",
+          "text": "きょうは べんきょうします。"
+        },
+        {
+          "id": "U03-Q20-o2",
+          "text": "きょうは べんきょうしませんです。"
+        },
+        {
+          "id": "U03-Q20-o3",
+          "text": "きょうは ねます。"
+        }
+      ],
+      "answer": [
+        "U03-Q20-o0"
+      ],
+      "explanation": "不做動作，用ません。",
+      "explanationJa": "しないときは「ません」をつかいます。",
+      "distractorReasons": {
+        "U03-Q20-o1": "ます是會做，與不學習相反。",
+        "U03-Q20-o2": "ません後面不再加です。",
+        "U03-Q20-o3": "這句說睡覺，沒有表達不學習。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-Q21",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q21",
+      "itemFamilyId": "U03-F-time-particle",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "請補完整：「6時＿＿ おきます」。",
+      "promptJa": "「6じ＿＿おきます」をかんせいさせましょう。",
+      "choices": [
+        {
+          "id": "U03-Q21-o1",
+          "text": "で"
+        },
+        {
+          "id": "U03-Q21-o2",
+          "text": "の"
+        },
+        {
+          "id": "U03-Q21-o3",
+          "text": "か"
+        },
+        {
+          "id": "U03-Q21-o0",
+          "text": "に"
+        }
+      ],
+      "answer": [
+        "U03-Q21-o0"
+      ],
+      "explanation": "明確時刻後加に，再接動作。",
+      "explanationJa": "じこくのあとに、にをつけます。",
+      "distractorReasons": {
+        "U03-Q21-o1": "本課指定動作時刻用に。",
+        "U03-Q21-o2": "の不能這樣接動作。",
+        "U03-Q21-o3": "か不是指定動作時間的助詞。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-Q22",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q22",
+      "itemFamilyId": "U03-F-daily-time",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "哪句把「每天七點半吃飯」說清楚？",
+      "promptJa": "まいにち、7じはんにたべます。どのぶんですか。",
+      "choices": [
+        {
+          "id": "U03-Q22-o2",
+          "text": "まいにち 7時半の たべます。"
+        },
+        {
+          "id": "U03-Q22-o3",
+          "text": "まいにち 8時半に たべます。"
+        },
+        {
+          "id": "U03-Q22-o0",
+          "text": "まいにち 7時半に たべます。"
+        },
+        {
+          "id": "U03-Q22-o1",
+          "text": "まいにちに 7時半 たべます。"
+        }
+      ],
+      "answer": [
+        "U03-Q22-o0"
+      ],
+      "explanation": "まいにち不用に，7時半後用に。",
+      "explanationJa": "まいにち、7じはんに、たべます、です。",
+      "distractorReasons": {
+        "U03-Q22-o1": "まいにち後通常不加に，明確時刻後才加。",
+        "U03-Q22-o2": "動作時刻後不用の。",
+        "U03-Q22-o3": "時間變成8點半。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-Q23",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q23",
+      "itemFamilyId": "U03-F-time-order",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "請排出「現在是八點十五分」。",
+      "promptJa": "いまのじこく、8:15のぶんをつくりましょう。",
+      "choices": [
+        {
+          "id": "U03-Q23-o3",
+          "text": "です"
+        },
+        {
+          "id": "U03-Q23-o0",
+          "text": "いまは"
+        },
+        {
+          "id": "U03-Q23-o1",
+          "text": "8時"
+        },
+        {
+          "id": "U03-Q23-o2",
+          "text": "15分"
+        }
+      ],
+      "answer": [
+        "U03-Q23-o0",
+        "U03-Q23-o1",
+        "U03-Q23-o2",
+        "U03-Q23-o3"
+      ],
+      "explanation": "先說いまは，再說小時、分鐘，最後です。",
+      "explanationJa": "いまは、8じ、15ふん、です、のじゅんばんです。",
+      "distractorReasons": {},
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U03-Q24",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q24",
+      "itemFamilyId": "U03-F-negative-order",
+      "primarySkillId": "G08",
+      "skillIds": [
+        "G08"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "請排出「小唯晚上不學習」。",
+      "promptJa": "ユイは、よるべんきょうしません。ぶんをつくりましょう。",
+      "choices": [
+        {
+          "id": "U03-Q24-o0",
+          "text": "ユイは"
+        },
+        {
+          "id": "U03-Q24-o1",
+          "text": "よる"
+        },
+        {
+          "id": "U03-Q24-o2",
+          "text": "べんきょう"
+        },
+        {
+          "id": "U03-Q24-o3",
+          "text": "しません"
+        }
+      ],
+      "answer": [
+        "U03-Q24-o0",
+        "U03-Q24-o1",
+        "U03-Q24-o2",
+        "U03-Q24-o3"
+      ],
+      "explanation": "人物與時段後面，用べんきょうしません結尾。",
+      "explanationJa": "ユイは、よる、べんきょう、しません、です。",
+      "distractorReasons": {},
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U03-Q25",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q25",
+      "itemFamilyId": "U03-F-action-time-order",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "請排出「我每天六點起床」。",
+      "promptJa": "わたしの、まいにちのよていをつくりましょう。",
+      "choices": [
+        {
+          "id": "U03-Q25-o1",
+          "text": "まいにち"
+        },
+        {
+          "id": "U03-Q25-o2",
+          "text": "6時に"
+        },
+        {
+          "id": "U03-Q25-o3",
+          "text": "おきます"
+        },
+        {
+          "id": "U03-Q25-o0",
+          "text": "わたしは"
+        }
+      ],
+      "answer": [
+        "U03-Q25-o0",
+        "U03-Q25-o1",
+        "U03-Q25-o2",
+        "U03-Q25-o3"
+      ],
+      "explanation": "わたしは作主題，まいにち說頻率，6時に說動作時刻。",
+      "explanationJa": "わたしは、まいにち、6じに、おきます、のじゅんばんです。",
+      "distractorReasons": {},
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U03-Q26",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q26",
+      "itemFamilyId": "U03-F-night-text-negation",
+      "primarySkillId": "G08",
+      "skillIds": [
+        "G08"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "依小陸後來的回答，晚上「べんきょう＿＿」。",
+      "promptJa": "リクのこたえでは、よるは「べんきょう＿＿」。",
+      "choices": [
+        {
+          "id": "U03-Q26-o2",
+          "text": "です"
+        },
+        {
+          "id": "U03-Q26-o3",
+          "text": "に"
+        },
+        {
+          "id": "U03-Q26-o0",
+          "text": "しません"
+        },
+        {
+          "id": "U03-Q26-o1",
+          "text": "します"
+        }
+      ],
+      "answer": [
+        "U03-Q26-o0"
+      ],
+      "explanation": "小陸明確說晚上不學習。",
+      "explanationJa": "リクは、よるはべんきょうしません。",
+      "distractorReasons": {
+        "U03-Q26-o1": "小陸用いいえ否定晚上學習。",
+        "U03-Q26-o2": "べんきょう後面這裡要接動作形式。",
+        "U03-Q26-o3": "に不是這個句子的動詞結尾。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07",
+      "materialId": "U03-R04",
+      "material": "リク：きょうは 朝7時に おきます。8時に べんきょうします。\nアキ：夜も べんきょうしますか。\nリク：いいえ、夜は べんきょうしません。夜8時に よみます。9時に ねます。"
+    },
+    {
+      "id": "U03-Q27",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q27",
+      "itemFamilyId": "U03-F-schedule-text-time",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "要保留原文安排，「ユイは 8時＿＿ たべます」缺哪個字？",
+      "promptJa": "ユイのよていです。「8じ＿＿たべます」。",
+      "choices": [
+        {
+          "id": "U03-Q27-o3",
+          "text": "も"
+        },
+        {
+          "id": "U03-Q27-o0",
+          "text": "に"
+        },
+        {
+          "id": "U03-Q27-o1",
+          "text": "の"
+        },
+        {
+          "id": "U03-Q27-o2",
+          "text": "か"
+        }
+      ],
+      "answer": [
+        "U03-Q27-o0"
+      ],
+      "explanation": "8時是明確的動作時刻，用に。",
+      "explanationJa": "8じに、たべます、です。",
+      "distractorReasons": {
+        "U03-Q27-o1": "指定動作時刻不用の。",
+        "U03-Q27-o2": "か不連接時刻和動作。",
+        "U03-Q27-o3": "原文不是也在8點做同件事。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07",
+      "materialId": "U03-R02",
+      "material": "アキは 朝6時半に おきます。7時に たべます。8時に べんきょうします。夜は べんきょうしません。夜9時に ねます。ユイは 朝7時に おきます。8時に たべます。夜8時半に ねます。"
+    },
+    {
+      "id": "U03-Q28",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q28",
+      "itemFamilyId": "U03-F-half-text-equivalence",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "把小秋起床的「6時半」改成有「分」的說法，哪個一樣？",
+      "promptJa": "アキのおきる6じはんを、ふんでいいましょう。",
+      "choices": [
+        {
+          "id": "U03-Q28-o0",
+          "text": "6時30分"
+        },
+        {
+          "id": "U03-Q28-o1",
+          "text": "6時15分"
+        },
+        {
+          "id": "U03-Q28-o2",
+          "text": "7時30分"
+        },
+        {
+          "id": "U03-Q28-o3",
+          "text": "6時5分"
+        }
+      ],
+      "answer": [
+        "U03-Q28-o0"
+      ],
+      "explanation": "半就是30分，6時不改變。",
+      "explanationJa": "6じはんは、6じ30ぷんです。",
+      "distractorReasons": {
+        "U03-Q28-o1": "半是30分，不是15分。",
+        "U03-Q28-o2": "改變了小時。",
+        "U03-Q28-o3": "半不是5分。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07",
+      "materialId": "U03-R02",
+      "material": "アキは 朝6時半に おきます。7時に たべます。8時に べんきょうします。夜は べんきょうしません。夜9時に ねます。ユイは 朝7時に おきます。8時に たべます。夜8時半に ねます。"
+    },
+    {
+      "id": "U03-Q29",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q29",
+      "itemFamilyId": "U03-F-aki-short-day",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "小秋每天早上幾點起床？",
+      "promptJa": "アキは、あさなんじにおきますか。",
+      "choices": [
+        {
+          "id": "U03-Q29-o1",
+          "text": "7時"
+        },
+        {
+          "id": "U03-Q29-o2",
+          "text": "9時"
+        },
+        {
+          "id": "U03-Q29-o3",
+          "text": "6時半"
+        },
+        {
+          "id": "U03-Q29-o0",
+          "text": "6時"
+        }
+      ],
+      "answer": [
+        "U03-Q29-o0"
+      ],
+      "explanation": "第一句說朝6時におきます。",
+      "explanationJa": "あさ6じにおきます。",
+      "distractorReasons": {
+        "U03-Q29-o1": "7時是吃飯。",
+        "U03-Q29-o2": "9時是晚上睡覺。",
+        "U03-Q29-o3": "原文沒有半。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U03-R01",
+      "material": "アキは まいにち 朝6時に おきます。7時に たべます。夜9時に ねます。"
+    },
+    {
+      "id": "U03-Q30",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q30",
+      "itemFamilyId": "U03-F-aki-short-day",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "文中「夜9時」安排哪一件事？",
+      "promptJa": "よる9じに、なにをしますか。",
+      "choices": [
+        {
+          "id": "U03-Q30-o2",
+          "text": "たべます"
+        },
+        {
+          "id": "U03-Q30-o3",
+          "text": "べんきょうします"
+        },
+        {
+          "id": "U03-Q30-o0",
+          "text": "ねます"
+        },
+        {
+          "id": "U03-Q30-o1",
+          "text": "おきます"
+        }
+      ],
+      "answer": [
+        "U03-Q30-o0"
+      ],
+      "explanation": "最後一句說夜9時にねます。",
+      "explanationJa": "よる9じにねます。",
+      "distractorReasons": {
+        "U03-Q30-o1": "起床是早上6時。",
+        "U03-Q30-o2": "吃飯是7時。",
+        "U03-Q30-o3": "短文沒有這項安排。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U03-R01",
+      "material": "アキは まいにち 朝6時に おきます。7時に たべます。夜9時に ねます。"
+    },
+    {
+      "id": "U03-Q31",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q31",
+      "itemFamilyId": "U03-F-two-children-comparison",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "比較兩個人的安排，誰較早睡？",
+      "promptJa": "ふたりのねるじこくをくらべましょう。はやいのはだれですか。",
+      "choices": [
+        {
+          "id": "U03-Q31-o3",
+          "text": "沒有睡覺時間"
+        },
+        {
+          "id": "U03-Q31-o0",
+          "text": "ユイ"
+        },
+        {
+          "id": "U03-Q31-o1",
+          "text": "アキ"
+        },
+        {
+          "id": "U03-Q31-o2",
+          "text": "兩人同時"
+        }
+      ],
+      "answer": [
+        "U03-Q31-o0"
+      ],
+      "explanation": "小唯8時半，比小秋9時早。",
+      "explanationJa": "ユイは8じはん、アキは9じです。",
+      "distractorReasons": {
+        "U03-Q31-o1": "小秋9時，小唯8時半，小唯較早。",
+        "U03-Q31-o2": "9時與8時半不同。",
+        "U03-Q31-o3": "兩人都寫了睡覺時間。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U03-R02",
+      "material": "アキは 朝6時半に おきます。7時に たべます。8時に べんきょうします。夜は べんきょうしません。夜9時に ねます。ユイは 朝7時に おきます。8時に たべます。夜8時半に ねます。"
+    },
+    {
+      "id": "U03-Q32",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q32",
+      "itemFamilyId": "U03-F-riku-correction",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "小秋問晚上是否也學習，小陸否定後說晚上8點做什麼？",
+      "promptJa": "アキのしつもんのあと、リクはよる8じになにをするといいましたか。",
+      "choices": [
+        {
+          "id": "U03-Q32-o0",
+          "text": "よみます"
+        },
+        {
+          "id": "U03-Q32-o1",
+          "text": "べんきょうします"
+        },
+        {
+          "id": "U03-Q32-o2",
+          "text": "おきます"
+        },
+        {
+          "id": "U03-Q32-o3",
+          "text": "ねます"
+        }
+      ],
+      "answer": [
+        "U03-Q32-o0"
+      ],
+      "explanation": "要接著讀回答後面的安排：8時よみます、9時ねます。",
+      "explanationJa": "8じによんで、9じにねます。",
+      "distractorReasons": {
+        "U03-Q32-o1": "小陸否定了晚上學習。",
+        "U03-Q32-o2": "起床是早上7時。",
+        "U03-Q32-o3": "睡覺是9時，不是8時。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U03-R04",
+      "material": "リク：きょうは 朝7時に おきます。8時に べんきょうします。\nアキ：夜も べんきょうしますか。\nリク：いいえ、夜は べんきょうしません。夜8時に よみます。9時に ねます。"
+    },
+    {
+      "id": "U03-Q33",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q33",
+      "itemFamilyId": "U03-F-town-schedule-table",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "在8:00會吃飯的是誰？",
+      "promptJa": "8じにたべるひとは、だれですか。",
+      "choices": [
+        {
+          "id": "U03-Q33-o1",
+          "text": "アキ"
+        },
+        {
+          "id": "U03-Q33-o2",
+          "text": "リク"
+        },
+        {
+          "id": "U03-Q33-o3",
+          "text": "せんせい"
+        },
+        {
+          "id": "U03-Q33-o0",
+          "text": "ユイ"
+        }
+      ],
+      "answer": [
+        "U03-Q33-o0"
+      ],
+      "explanation": "同時找8:00和たべます，對應小唯。",
+      "explanationJa": "8じとたべますのぎょうは、ユイです。",
+      "distractorReasons": {
+        "U03-Q33-o1": "小秋8時學習，7時才吃飯。",
+        "U03-Q33-o2": "小陸8時讀書。",
+        "U03-Q33-o3": "表中沒有老師。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U03-R03",
+      "material": "小鎮活動表\nアキ｜7:00｜たべます\nユイ｜7:00｜おきます\nアキ｜8:00｜べんきょうします\nユイ｜8:00｜たべます\nリク｜8:00｜よみます"
+    },
+    {
+      "id": "U03-Q34",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q34",
+      "itemFamilyId": "U03-F-town-schedule-table",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "小秋8:00安排哪個活動？",
+      "promptJa": "アキの8じのよていは、どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q34-o2",
+          "text": "よみます"
+        },
+        {
+          "id": "U03-Q34-o3",
+          "text": "おきます"
+        },
+        {
+          "id": "U03-Q34-o0",
+          "text": "べんきょうします"
+        },
+        {
+          "id": "U03-Q34-o1",
+          "text": "たべます"
+        }
+      ],
+      "answer": [
+        "U03-Q34-o0"
+      ],
+      "explanation": "找到アキ和8:00兩個條件。",
+      "explanationJa": "アキは8じにべんきょうします。",
+      "distractorReasons": {
+        "U03-Q34-o1": "小秋吃飯是7時。",
+        "U03-Q34-o2": "8時讀書的是小陸。",
+        "U03-Q34-o3": "7時起床的是小唯。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U03-R03",
+      "material": "小鎮活動表\nアキ｜7:00｜たべます\nユイ｜7:00｜おきます\nアキ｜8:00｜べんきょうします\nユイ｜8:00｜たべます\nリク｜8:00｜よみます"
+    },
+    {
+      "id": "U03-Q35",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q35",
+      "itemFamilyId": "U03-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "依音訊的現在時刻，小秋接下來該做哪個活動？",
+      "promptJa": "いまのじこくに、アキはなにをしますか。",
+      "choices": [
+        {
+          "id": "U03-Q35-o3",
+          "text": "おきます"
+        },
+        {
+          "id": "U03-Q35-o0",
+          "text": "たべます"
+        },
+        {
+          "id": "U03-Q35-o1",
+          "text": "べんきょうします"
+        },
+        {
+          "id": "U03-Q35-o2",
+          "text": "ねます"
+        }
+      ],
+      "answer": [
+        "U03-Q35-o0"
+      ],
+      "explanation": "現在是7時，7時的安排是吃飯。",
+      "explanationJa": "いま7じで、7じにたべます。",
+      "distractorReasons": {
+        "U03-Q35-o1": "學習安排在8時，現在是7時。",
+        "U03-Q35-o2": "音訊沒有安排此時睡覺。",
+        "U03-Q35-o3": "沒有說7時起床。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U03-L01",
+      "audioSrc": "/assets/audio/u03/listening-01.wav"
+    },
+    {
+      "id": "U03-Q36",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q36",
+      "itemFamilyId": "U03-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "如果現在是早上6:30，小唯按行程要做什麼？",
+      "promptJa": "あさ6じはんです。ユイはなにをしますか。",
+      "choices": [
+        {
+          "id": "U03-Q36-o0",
+          "text": "おきます"
+        },
+        {
+          "id": "U03-Q36-o1",
+          "text": "たべます"
+        },
+        {
+          "id": "U03-Q36-o2",
+          "text": "ねます"
+        },
+        {
+          "id": "U03-Q36-o3",
+          "text": "よみます"
+        }
+      ],
+      "answer": [
+        "U03-Q36-o0"
+      ],
+      "explanation": "6時半的活動是起床。",
+      "explanationJa": "6じはんにおきます。",
+      "distractorReasons": {
+        "U03-Q36-o1": "吃飯在7時半。",
+        "U03-Q36-o2": "睡覺在晚上9時。",
+        "U03-Q36-o3": "這段沒有說讀書。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U03-L02",
+      "audioSrc": "/assets/audio/u03/listening-02.wav"
+    },
+    {
+      "id": "U03-Q37",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q37",
+      "itemFamilyId": "U03-F-listening-03",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "小陸要照晚上的安排，在8:00該做什麼？",
+      "promptJa": "よる8じです。リクはなにをしますか。",
+      "choices": [
+        {
+          "id": "U03-Q37-o1",
+          "text": "べんきょうします"
+        },
+        {
+          "id": "U03-Q37-o2",
+          "text": "ねます"
+        },
+        {
+          "id": "U03-Q37-o3",
+          "text": "たべます"
+        },
+        {
+          "id": "U03-Q37-o0",
+          "text": "よみます"
+        }
+      ],
+      "answer": [
+        "U03-Q37-o0"
+      ],
+      "explanation": "晚上8時讀書，9時睡。",
+      "explanationJa": "8じによみます。",
+      "distractorReasons": {
+        "U03-Q37-o1": "音訊先說晚上不學習。",
+        "U03-Q37-o2": "9時才睡覺。",
+        "U03-Q37-o3": "沒有說8時吃飯。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U03-L03",
+      "audioSrc": "/assets/audio/u03/listening-03.wav"
+    },
+    {
+      "id": "U03-Q38",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q38",
+      "itemFamilyId": "U03-F-listening-04",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "夜裡9:00到了，小秋接下來按計畫做什麼？",
+      "promptJa": "よる9じになりました。アキはなにをしますか。",
+      "choices": [
+        {
+          "id": "U03-Q38-o2",
+          "text": "たべます"
+        },
+        {
+          "id": "U03-Q38-o3",
+          "text": "よみます"
+        },
+        {
+          "id": "U03-Q38-o0",
+          "text": "ねます"
+        },
+        {
+          "id": "U03-Q38-o1",
+          "text": "おきます"
+        }
+      ],
+      "answer": [
+        "U03-Q38-o0"
+      ],
+      "explanation": "最後一項是夜9時睡覺。",
+      "explanationJa": "さいごは、よる9じにねます。",
+      "distractorReasons": {
+        "U03-Q38-o1": "6時才起床。",
+        "U03-Q38-o2": "7時吃飯。",
+        "U03-Q38-o3": "8時讀書。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U03-L04",
+      "audioSrc": "/assets/audio/u03/listening-04.wav"
+    },
+    {
+      "id": "U03-Q39",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q39",
+      "itemFamilyId": "U03-F-listening-01",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "音訊裡，小秋幾點開始學習？",
+      "promptJa": "アキは、なんじにべんきょうしますか。",
+      "choices": [
+        {
+          "id": "U03-Q39-o3",
+          "text": "9時"
+        },
+        {
+          "id": "U03-Q39-o0",
+          "text": "8時"
+        },
+        {
+          "id": "U03-Q39-o1",
+          "text": "7時"
+        },
+        {
+          "id": "U03-Q39-o2",
+          "text": "8時半"
+        }
+      ],
+      "answer": [
+        "U03-Q39-o0"
+      ],
+      "explanation": "音訊說はちじにべんきょうします。",
+      "explanationJa": "8じにべんきょうします。",
+      "distractorReasons": {
+        "U03-Q39-o1": "7時是現在及吃飯時間。",
+        "U03-Q39-o2": "音訊沒有半。",
+        "U03-Q39-o3": "沒有說9時學習。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U03-L01",
+      "audioSrc": "/assets/audio/u03/listening-01.wav"
+    },
+    {
+      "id": "U03-Q40",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q40",
+      "itemFamilyId": "U03-F-listening-02",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "小唯吃飯的時刻是哪個？",
+      "promptJa": "ユイは、なんじにたべますか。",
+      "choices": [
+        {
+          "id": "U03-Q40-o0",
+          "text": "7時半"
+        },
+        {
+          "id": "U03-Q40-o1",
+          "text": "6時半"
+        },
+        {
+          "id": "U03-Q40-o2",
+          "text": "7時"
+        },
+        {
+          "id": "U03-Q40-o3",
+          "text": "9時"
+        }
+      ],
+      "answer": [
+        "U03-Q40-o0"
+      ],
+      "explanation": "音訊是しちじはんにたべます。",
+      "explanationJa": "7じはんにたべます。",
+      "distractorReasons": {
+        "U03-Q40-o1": "那是起床時間。",
+        "U03-Q40-o2": "漏了半。",
+        "U03-Q40-o3": "那是晚上睡覺時間。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U03-L02",
+      "audioSrc": "/assets/audio/u03/listening-02.wav"
+    },
+    {
+      "id": "U03-Q41",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q41",
+      "itemFamilyId": "U03-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "小陸晚上明確說不做什麼？",
+      "promptJa": "リクは、よるなにをしませんか。",
+      "choices": [
+        {
+          "id": "U03-Q41-o1",
+          "text": "閱讀"
+        },
+        {
+          "id": "U03-Q41-o2",
+          "text": "睡覺"
+        },
+        {
+          "id": "U03-Q41-o3",
+          "text": "起床"
+        },
+        {
+          "id": "U03-Q41-o0",
+          "text": "べんきょう"
+        }
+      ],
+      "answer": [
+        "U03-Q41-o0"
+      ],
+      "explanation": "べんきょうしません的ません是否定。",
+      "explanationJa": "べんきょうしません、といっています。",
+      "distractorReasons": {
+        "U03-Q41-o1": "他8時會讀書。",
+        "U03-Q41-o2": "他9時會睡覺。",
+        "U03-Q41-o3": "這段未特別說不會起床，明確否定的是學習。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U03-L03",
+      "audioSrc": "/assets/audio/u03/listening-03.wav"
+    },
+    {
+      "id": "U03-Q42",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q42",
+      "itemFamilyId": "U03-F-listening-04",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "小秋起床與吃飯的時間依序是哪一組？",
+      "promptJa": "アキのおきるじこく、たべるじこくのじゅんです。",
+      "choices": [
+        {
+          "id": "U03-Q42-o2",
+          "text": "6時、8時"
+        },
+        {
+          "id": "U03-Q42-o3",
+          "text": "8時、9時"
+        },
+        {
+          "id": "U03-Q42-o0",
+          "text": "6時、7時"
+        },
+        {
+          "id": "U03-Q42-o1",
+          "text": "7時、6時"
+        }
+      ],
+      "answer": [
+        "U03-Q42-o0"
+      ],
+      "explanation": "先6時起床，再7時吃飯。",
+      "explanationJa": "6じにおきて、7じにたべます。",
+      "distractorReasons": {
+        "U03-Q42-o1": "順序反了。",
+        "U03-Q42-o2": "8時是讀書。",
+        "U03-Q42-o3": "這是讀書與睡覺時間。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U03-L04",
+      "audioSrc": "/assets/audio/u03/listening-04.wav"
+    },
+    {
+      "id": "U03-Q43",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q43",
+      "itemFamilyId": "U03-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看起床的圖，再聽小秋的安排，哪句能介紹這個活動？",
+      "promptJa": "おきるえです。アキのよていにあうぶんは、どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q43-o3",
+          "text": "9時に たべます。"
+        },
+        {
+          "id": "U03-Q43-o0",
+          "text": "6時に おきます。"
+        },
+        {
+          "id": "U03-Q43-o1",
+          "text": "7時に おきます。"
+        },
+        {
+          "id": "U03-Q43-o2",
+          "text": "6時に ねます。"
+        }
+      ],
+      "answer": [
+        "U03-Q43-o0"
+      ],
+      "explanation": "圖中起床，音訊說6時起床。",
+      "explanationJa": "6じにおきます。",
+      "distractorReasons": {
+        "U03-Q43-o1": "音訊起床是6時。",
+        "U03-Q43-o2": "圖中是起床，不是睡覺。",
+        "U03-Q43-o3": "動作和時間都不符合。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U03-L04",
+      "audioSrc": "/assets/audio/u03/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u03/daily-routine.webp",
+        "cell": 0,
+        "alt": {
+          "zh": "孩子早上起床伸懶腰。",
+          "ja": "あさ、おきているこども。"
+        }
+      }
+    },
+    {
+      "id": "U03-Q44",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q44",
+      "itemFamilyId": "U03-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看吃飯的圖，再聽小秋的安排，哪句合適？",
+      "promptJa": "たべるえです。アキのよていにあうぶんは、どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q44-o0",
+          "text": "7時に たべます。"
+        },
+        {
+          "id": "U03-Q44-o1",
+          "text": "7時に よみます。"
+        },
+        {
+          "id": "U03-Q44-o2",
+          "text": "8時に たべます。"
+        },
+        {
+          "id": "U03-Q44-o3",
+          "text": "9時に ねます。"
+        }
+      ],
+      "answer": [
+        "U03-Q44-o0"
+      ],
+      "explanation": "圖中吃飯，音訊說7時吃飯。",
+      "explanationJa": "7じにたべます。",
+      "distractorReasons": {
+        "U03-Q44-o1": "圖中在吃飯，不是讀書。",
+        "U03-Q44-o2": "音訊吃飯是7時。",
+        "U03-Q44-o3": "這句是睡覺安排，不符合圖。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U03-L04",
+      "audioSrc": "/assets/audio/u03/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u03/daily-routine.webp",
+        "cell": 1,
+        "alt": {
+          "zh": "孩子坐在餐桌前吃早餐。",
+          "ja": "あさ、たべているこども。"
+        }
+      }
+    },
+    {
+      "id": "U03-Q45",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q45",
+      "itemFamilyId": "U03-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看讀書的圖，再聽小秋的安排，哪句合適？",
+      "promptJa": "よむえです。アキのよていにあうぶんは、どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q45-o1",
+          "text": "8時に のみます。"
+        },
+        {
+          "id": "U03-Q45-o2",
+          "text": "7時に よみます。"
+        },
+        {
+          "id": "U03-Q45-o3",
+          "text": "6時に ねます。"
+        },
+        {
+          "id": "U03-Q45-o0",
+          "text": "8時に よみます。"
+        }
+      ],
+      "answer": [
+        "U03-Q45-o0"
+      ],
+      "explanation": "よみます是讀；音訊安排8時。",
+      "explanationJa": "8じによみます。",
+      "distractorReasons": {
+        "U03-Q45-o1": "のみます是喝，不是閱讀。",
+        "U03-Q45-o2": "7時是吃飯。",
+        "U03-Q45-o3": "動作與時間都不符合。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U03-L04",
+      "audioSrc": "/assets/audio/u03/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u03/daily-routine.webp",
+        "cell": 2,
+        "alt": {
+          "zh": "孩子坐在書桌前讀書。",
+          "ja": "ほんをよんでいるこども。"
+        }
+      }
+    },
+    {
+      "id": "U03-Q46",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q46",
+      "itemFamilyId": "U03-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看睡覺的圖，再聽小秋的安排，哪句合適？",
+      "promptJa": "ねるえです。アキのよていにあうぶんは、どれですか。",
+      "choices": [
+        {
+          "id": "U03-Q46-o2",
+          "text": "夜9時に おきます。"
+        },
+        {
+          "id": "U03-Q46-o3",
+          "text": "夜8時に たべます。"
+        },
+        {
+          "id": "U03-Q46-o0",
+          "text": "夜9時に ねます。"
+        },
+        {
+          "id": "U03-Q46-o1",
+          "text": "朝6時に ねます。"
+        }
+      ],
+      "answer": [
+        "U03-Q46-o0"
+      ],
+      "explanation": "睡覺時間是夜9時。",
+      "explanationJa": "よる9じにねます。",
+      "distractorReasons": {
+        "U03-Q46-o1": "早上6時安排起床。",
+        "U03-Q46-o2": "圖中是睡覺，不是起床。",
+        "U03-Q46-o3": "動作與時間都不符合。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U03-L04",
+      "audioSrc": "/assets/audio/u03/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u03/daily-routine.webp",
+        "cell": 3,
+        "alt": {
+          "zh": "孩子晚上躺在床上睡覺。",
+          "ja": "よる、ねているこども。"
+        }
+      }
+    },
+    {
+      "id": "U03-Q47",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q47",
+      "itemFamilyId": "U03-F-listening-05",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你每天6:30起床。聽完朋友的問題，選合適回答。",
+      "promptJa": "あなたは6じはんにおきます。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U03-Q47-o3",
+          "text": "6時半ですか。"
+        },
+        {
+          "id": "U03-Q47-o0",
+          "text": "6時半に おきます。"
+        },
+        {
+          "id": "U03-Q47-o1",
+          "text": "はい、ねます。"
+        },
+        {
+          "id": "U03-Q47-o2",
+          "text": "9時に ねます。"
+        }
+      ],
+      "answer": [
+        "U03-Q47-o0"
+      ],
+      "explanation": "問なんじにおきますか，要回答起床時刻。",
+      "explanationJa": "おきるじこくをこたえます。",
+      "distractorReasons": {
+        "U03-Q47-o1": "對方問幾點起床，不是問是否睡覺。",
+        "U03-Q47-o2": "回答了睡覺時間，沒有回答起床。",
+        "U03-Q47-o3": "這是反問，不是回答自己的安排。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U03-L05",
+      "audioSrc": "/assets/audio/u03/listening-05.wav"
+    },
+    {
+      "id": "U03-Q48",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q48",
+      "itemFamilyId": "U03-F-listening-05",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你今天7:00起床。聽完問題，哪句能直接回答？",
+      "promptJa": "あなたは7じにおきます。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U03-Q48-o0",
+          "text": "7時に おきます。"
+        },
+        {
+          "id": "U03-Q48-o1",
+          "text": "7時に たべます。"
+        },
+        {
+          "id": "U03-Q48-o2",
+          "text": "7時半に おきます。"
+        },
+        {
+          "id": "U03-Q48-o3",
+          "text": "いいえ、よみません。"
+        }
+      ],
+      "answer": [
+        "U03-Q48-o0"
+      ],
+      "explanation": "時間是7時，動作是おきます。",
+      "explanationJa": "7じにおきます、とこたえます。",
+      "distractorReasons": {
+        "U03-Q48-o1": "動作錯成吃飯。",
+        "U03-Q48-o2": "多了半，時間不同。",
+        "U03-Q48-o3": "沒有回答起床時刻。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U03-L05",
+      "audioSrc": "/assets/audio/u03/listening-05.wav"
+    },
+    {
+      "id": "U03-Q49",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q49",
+      "itemFamilyId": "U03-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你今晚確實會學習。聽完問題，怎麼回答？",
+      "promptJa": "あなたはよるべんきょうします。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U03-Q49-o1",
+          "text": "いいえ、べんきょうしません。"
+        },
+        {
+          "id": "U03-Q49-o2",
+          "text": "はい、べんきょうしません。"
+        },
+        {
+          "id": "U03-Q49-o3",
+          "text": "7時です。"
+        },
+        {
+          "id": "U03-Q49-o0",
+          "text": "はい、べんきょうします。"
+        }
+      ],
+      "answer": [
+        "U03-Q49-o0"
+      ],
+      "explanation": "會做這件事，用はい與ます。",
+      "explanationJa": "しますので、はい、べんきょうします、です。",
+      "distractorReasons": {
+        "U03-Q49-o1": "與會學習的設定相反。",
+        "U03-Q49-o2": "はい與後面否定不一致。",
+        "U03-Q49-o3": "只說時刻，未回答是否學習。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U03-L06",
+      "audioSrc": "/assets/audio/u03/listening-06.wav"
+    },
+    {
+      "id": "U03-Q50",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-Q50",
+      "itemFamilyId": "U03-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你今晚不學習。聽完問題，怎麼回答？",
+      "promptJa": "あなたはよるべんきょうしません。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U03-Q50-o2",
+          "text": "いいえ、べんきょうします。"
+        },
+        {
+          "id": "U03-Q50-o3",
+          "text": "はい、べんきょうしませんです。"
+        },
+        {
+          "id": "U03-Q50-o0",
+          "text": "いいえ、べんきょうしません。"
+        },
+        {
+          "id": "U03-Q50-o1",
+          "text": "はい、べんきょうします。"
+        }
+      ],
+      "answer": [
+        "U03-Q50-o0"
+      ],
+      "explanation": "不做這件事，用いいえ與ません。",
+      "explanationJa": "しませんので、いいえ、べんきょうしません、です。",
+      "distractorReasons": {
+        "U03-Q50-o1": "與不學習的設定相反。",
+        "U03-Q50-o2": "いいえ與後面肯定不一致。",
+        "U03-Q50-o3": "否定後多加です，且肯否不一致。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U03-L06",
+      "audioSrc": "/assets/audio/u03/listening-06.wav"
+    },
+    {
+      "id": "U03-C01",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C01",
+      "itemFamilyId": "U03-CHECK-clock-to-speech",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "電子鐘是11:05。哪一句讀對小時與分鐘？",
+      "promptJa": "11:05をよみましょう。",
+      "choices": [
+        {
+          "id": "U03-C01-o1",
+          "text": "じゅうじ ごふんです。"
+        },
+        {
+          "id": "U03-C01-o2",
+          "text": "じゅういちじ じゅうごふんです。"
+        },
+        {
+          "id": "U03-C01-o3",
+          "text": "いちじ ごふんです。"
+        },
+        {
+          "id": "U03-C01-o0",
+          "text": "じゅういちじ ごふんです。"
+        }
+      ],
+      "answer": [
+        "U03-C01-o0"
+      ],
+      "explanation": "11時是じゅういちじ，5分是ごふん。",
+      "explanationJa": "11じ5ふんです。",
+      "distractorReasons": {
+        "U03-C01-o1": "漏了小時的いち。",
+        "U03-C01-o2": "這是11:15。",
+        "U03-C01-o3": "這是1:05。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C02",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C02",
+      "itemFamilyId": "U03-CHECK-speech-to-display",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「じゅうにじ じゅっぷんです」對應哪個電子鐘？",
+      "promptJa": "じゅうにじじゅっぷんです。すうじでは、どれですか。",
+      "choices": [
+        {
+          "id": "U03-C02-o2",
+          "text": "10:12"
+        },
+        {
+          "id": "U03-C02-o3",
+          "text": "12:30"
+        },
+        {
+          "id": "U03-C02-o0",
+          "text": "12:10"
+        },
+        {
+          "id": "U03-C02-o1",
+          "text": "12:01"
+        }
+      ],
+      "answer": [
+        "U03-C02-o0"
+      ],
+      "explanation": "じゅうにじ是12時，じゅっぷん是10分。",
+      "explanationJa": "12じ10ぷんです。",
+      "distractorReasons": {
+        "U03-C02-o1": "いっぷん才是1分。",
+        "U03-C02-o2": "把小時與分鐘對調了。",
+        "U03-C02-o3": "半才是30分。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C03",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C03",
+      "itemFamilyId": "U03-CHECK-half-equivalence-check",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "行程寫「10時30分」。改用「半」時哪句保持相同時刻？",
+      "promptJa": "10じ30ぷんを、はんでいいましょう。",
+      "choices": [
+        {
+          "id": "U03-C03-o3",
+          "text": "9時半です。"
+        },
+        {
+          "id": "U03-C03-o0",
+          "text": "10時半です。"
+        },
+        {
+          "id": "U03-C03-o1",
+          "text": "11時半です。"
+        },
+        {
+          "id": "U03-C03-o2",
+          "text": "10時15分です。"
+        }
+      ],
+      "answer": [
+        "U03-C03-o0"
+      ],
+      "explanation": "半等於30分，仍是10時。",
+      "explanationJa": "30ぷんは、はんです。",
+      "distractorReasons": {
+        "U03-C03-o1": "小時不變，不要加一。",
+        "U03-C03-o2": "15分不是半。",
+        "U03-C03-o3": "小時不變，不要減一。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C04",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C04",
+      "itemFamilyId": "U03-CHECK-repair-hour-reading",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "同學把4:01說成「よんじいっぷん」。哪個修正保留原本時刻？",
+      "promptJa": "4:01のよみかたをなおしましょう。",
+      "choices": [
+        {
+          "id": "U03-C04-o0",
+          "text": "よじ いっぷんです。"
+        },
+        {
+          "id": "U03-C04-o1",
+          "text": "よじ じゅっぷんです。"
+        },
+        {
+          "id": "U03-C04-o2",
+          "text": "よんじ いっぷんです。"
+        },
+        {
+          "id": "U03-C04-o3",
+          "text": "よじはんです。"
+        }
+      ],
+      "answer": [
+        "U03-C04-o0"
+      ],
+      "explanation": "4時讀よじ；1分仍讀いっぷん。",
+      "explanationJa": "4じは、よじです。",
+      "distractorReasons": {
+        "U03-C04-o1": "變成4:10。",
+        "U03-C04-o2": "4時要讀よじ。",
+        "U03-C04-o3": "變成4:30。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C05",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C05",
+      "itemFamilyId": "U03-CHECK-clock-conversation",
+      "primarySkillId": "G07",
+      "skillIds": [
+        "G07"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "朋友問「いま、なんじですか」。你看到時鐘9:00。選能直接回答的句子。",
+      "promptJa": "いま9:00です。なんじですか。",
+      "choices": [
+        {
+          "id": "U03-C05-o1",
+          "text": "くじに ねます。"
+        },
+        {
+          "id": "U03-C05-o2",
+          "text": "きゅうじです。"
+        },
+        {
+          "id": "U03-C05-o3",
+          "text": "くじはんです。"
+        },
+        {
+          "id": "U03-C05-o0",
+          "text": "くじです。"
+        }
+      ],
+      "answer": [
+        "U03-C05-o0"
+      ],
+      "explanation": "現在9時，直接用くじです回答。",
+      "explanationJa": "いまは、くじです。",
+      "distractorReasons": {
+        "U03-C05-o1": "這是睡覺安排，不是直接報現在時刻。",
+        "U03-C05-o2": "9時讀くじ。",
+        "U03-C05-o3": "多了30分。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C06",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C06",
+      "itemFamilyId": "U03-CHECK-negate-same-action",
+      "primarySkillId": "G08",
+      "skillIds": [
+        "G08"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "原句「きょう、のみます」。改成今天不喝，要保留同一個動作。",
+      "promptJa": "のみますを、しないことにかえましょう。",
+      "choices": [
+        {
+          "id": "U03-C06-o2",
+          "text": "きょう、のみます。"
+        },
+        {
+          "id": "U03-C06-o3",
+          "text": "きょう、のみませんです。"
+        },
+        {
+          "id": "U03-C06-o0",
+          "text": "きょう、のみません。"
+        },
+        {
+          "id": "U03-C06-o1",
+          "text": "きょう、よみません。"
+        }
+      ],
+      "answer": [
+        "U03-C06-o0"
+      ],
+      "explanation": "のみます改成のみません，意思是不喝。",
+      "explanationJa": "のみません、にかえます。",
+      "distractorReasons": {
+        "U03-C06-o1": "變成不讀。",
+        "U03-C06-o2": "沒有改成否定。",
+        "U03-C06-o3": "ません後不加です。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C07",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C07",
+      "itemFamilyId": "U03-CHECK-restore-positive-action",
+      "primarySkillId": "G08",
+      "skillIds": [
+        "G08"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "原句「ほんを よみません」。現在改成會讀，選正確說法。",
+      "promptJa": "よみませんを、することにかえましょう。",
+      "choices": [
+        {
+          "id": "U03-C07-o3",
+          "text": "ほんを よみますです。"
+        },
+        {
+          "id": "U03-C07-o0",
+          "text": "ほんを よみます。"
+        },
+        {
+          "id": "U03-C07-o1",
+          "text": "ほんを のみます。"
+        },
+        {
+          "id": "U03-C07-o2",
+          "text": "ほんを よみません。"
+        }
+      ],
+      "answer": [
+        "U03-C07-o0"
+      ],
+      "explanation": "よみません是不讀；よみます表示會讀。",
+      "explanationJa": "よみます、にかえます。",
+      "distractorReasons": {
+        "U03-C07-o1": "動作錯成喝。",
+        "U03-C07-o2": "仍是否定。",
+        "U03-C07-o3": "ます後不再加です。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C08",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C08",
+      "itemFamilyId": "U03-CHECK-table-action-status",
+      "primarySkillId": "G08",
+      "skillIds": [
+        "G08"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "活動表：たべる○／べんきょうする×。哪組句子符合兩個記號？",
+      "promptJa": "たべるはまる、べんきょうするはばつです。",
+      "choices": [
+        {
+          "id": "U03-C08-o0",
+          "text": "たべます。べんきょうしません。"
+        },
+        {
+          "id": "U03-C08-o1",
+          "text": "たべません。べんきょうします。"
+        },
+        {
+          "id": "U03-C08-o2",
+          "text": "たべます。べんきょうします。"
+        },
+        {
+          "id": "U03-C08-o3",
+          "text": "たべません。べんきょうしません。"
+        }
+      ],
+      "answer": [
+        "U03-C08-o0"
+      ],
+      "explanation": "○用ます，×用ません。",
+      "explanationJa": "たべます。べんきょうしません。",
+      "distractorReasons": {
+        "U03-C08-o1": "兩個記號都反了。",
+        "U03-C08-o2": "學習是×。",
+        "U03-C08-o3": "吃是○。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C09",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C09",
+      "itemFamilyId": "U03-CHECK-negative-response-consistency",
+      "primarySkillId": "G08",
+      "skillIds": [
+        "G08"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "對方問「きょう、べんきょうしますか」。你今天不學習，哪個回答前後一致？",
+      "promptJa": "きょうはべんきょうしません。こたえましょう。",
+      "choices": [
+        {
+          "id": "U03-C09-o1",
+          "text": "はい、べんきょうしません。"
+        },
+        {
+          "id": "U03-C09-o2",
+          "text": "いいえ、べんきょうします。"
+        },
+        {
+          "id": "U03-C09-o3",
+          "text": "はい、べんきょうします。"
+        },
+        {
+          "id": "U03-C09-o0",
+          "text": "いいえ、べんきょうしません。"
+        }
+      ],
+      "answer": [
+        "U03-C09-o0"
+      ],
+      "explanation": "不學習，用いいえ加べんきょうしません。",
+      "explanationJa": "いいえ、べんきょうしません、とこたえます。",
+      "distractorReasons": {
+        "U03-C09-o1": "はい與否定答案不一致。",
+        "U03-C09-o2": "後面變成會學習。",
+        "U03-C09-o3": "與不學習的情境相反。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C10",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C10",
+      "itemFamilyId": "U03-CHECK-remove-extra-copula",
+      "primarySkillId": "G08",
+      "skillIds": [
+        "G08"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "寫給朋友的句子是「よるは ねませんです」。只改句尾使禮貌否定正確。",
+      "promptJa": "ねませんです、をなおしましょう。",
+      "choices": [
+        {
+          "id": "U03-C10-o2",
+          "text": "よるは ねませんです。"
+        },
+        {
+          "id": "U03-C10-o3",
+          "text": "よるは おきません。"
+        },
+        {
+          "id": "U03-C10-o0",
+          "text": "よるは ねません。"
+        },
+        {
+          "id": "U03-C10-o1",
+          "text": "よるは ねます。"
+        }
+      ],
+      "answer": [
+        "U03-C10-o0"
+      ],
+      "explanation": "動詞否定用ません就完整，不再加です。",
+      "explanationJa": "ませんのあとに、ですをつけません。",
+      "distractorReasons": {
+        "U03-C10-o1": "否定變成肯定。",
+        "U03-C10-o2": "多餘的です仍在。",
+        "U03-C10-o3": "換成另一個動作了。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C11",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C11",
+      "itemFamilyId": "U03-CHECK-time-particle-repair",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "句子「8時で よみます」要表達八點閱讀。只修正時間後的助詞。",
+      "promptJa": "8じによむことを、ただしくかきましょう。",
+      "choices": [
+        {
+          "id": "U03-C11-o3",
+          "text": "8時か よみます。"
+        },
+        {
+          "id": "U03-C11-o0",
+          "text": "8時に よみます。"
+        },
+        {
+          "id": "U03-C11-o1",
+          "text": "8時の よみます。"
+        },
+        {
+          "id": "U03-C11-o2",
+          "text": "8時で よみます。"
+        }
+      ],
+      "answer": [
+        "U03-C11-o0"
+      ],
+      "explanation": "明確時刻8時後加に。",
+      "explanationJa": "8じのあとに、にをつけます。",
+      "distractorReasons": {
+        "U03-C11-o1": "の不能這樣接動作。",
+        "U03-C11-o2": "指定動作時刻使用に。",
+        "U03-C11-o3": "か不表示動作的時刻。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C12",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C12",
+      "itemFamilyId": "U03-CHECK-assemble-time-action",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "order",
+      "prompt": "把「在十點學習」排成禮貌句。",
+      "promptJa": "10じにべんきょうするぶんをつくりましょう。",
+      "choices": [
+        {
+          "id": "U03-C12-o0",
+          "text": "10時"
+        },
+        {
+          "id": "U03-C12-o1",
+          "text": "に"
+        },
+        {
+          "id": "U03-C12-o2",
+          "text": "べんきょうします。"
+        }
+      ],
+      "answer": [
+        "U03-C12-o0",
+        "U03-C12-o1",
+        "U03-C12-o2"
+      ],
+      "explanation": "先說時刻，再用に連接動作。",
+      "explanationJa": "じこくのあとに「に」、さいごにどうさをおきます。",
+      "distractorReasons": {},
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U03-C13",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C13",
+      "itemFamilyId": "U03-CHECK-relative-and-specific-time",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「まいにち＿＿ 6時＿＿ おきます」。兩個空格依序怎麼填？",
+      "promptJa": "まいにちと6じのあとをかんがえましょう。",
+      "choices": [
+        {
+          "id": "U03-C13-o1",
+          "text": "に／に"
+        },
+        {
+          "id": "U03-C13-o2",
+          "text": "に／不加助詞"
+        },
+        {
+          "id": "U03-C13-o3",
+          "text": "不加助詞／の"
+        },
+        {
+          "id": "U03-C13-o0",
+          "text": "不加助詞／に"
+        }
+      ],
+      "answer": [
+        "U03-C13-o0"
+      ],
+      "explanation": "まいにち直接使用，明確時刻6時後用に。",
+      "explanationJa": "まいにち、6じにおきます。",
+      "distractorReasons": {
+        "U03-C13-o1": "まいにち後通常不加に。",
+        "U03-C13-o2": "本課指定時刻要用に，まいにち不用。",
+        "U03-C13-o3": "の不能這樣連接動作。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C14",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C14",
+      "itemFamilyId": "U03-CHECK-answer-time-not-clock",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "行程寫「睡覺：8:30」。朋友問「なんじに ねますか」。選出完整回答。",
+      "promptJa": "8:30にねます。なんじにねますか。",
+      "choices": [
+        {
+          "id": "U03-C14-o2",
+          "text": "8時に ねます。"
+        },
+        {
+          "id": "U03-C14-o3",
+          "text": "いま8時半です。"
+        },
+        {
+          "id": "U03-C14-o0",
+          "text": "8時半に ねます。"
+        },
+        {
+          "id": "U03-C14-o1",
+          "text": "8時半に おきます。"
+        }
+      ],
+      "answer": [
+        "U03-C14-o0"
+      ],
+      "explanation": "睡覺時刻8時半後加に，再說ねます。",
+      "explanationJa": "8じはんにねます。",
+      "distractorReasons": {
+        "U03-C14-o1": "動作錯成起床。",
+        "U03-C14-o2": "漏了半。",
+        "U03-C14-o3": "這是在報現在時刻，沒有說睡覺安排。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U03-C15",
+      "version": "1",
+      "unitId": "U03",
+      "itemId": "U03-C15",
+      "itemFamilyId": "U03-CHECK-match-person-schedule",
+      "primarySkillId": "G09",
+      "skillIds": [
+        "G09"
+      ],
+      "teachingIds": [
+        "U03-teach-words-1",
+        "U03-teach-words-2",
+        "U03-teach-words-3",
+        "U03-teach-words-4",
+        "U03-teach-words-5",
+        "U03-teach-kanji",
+        "U03-teach-G07",
+        "U03-teach-G08",
+        "U03-teach-G09",
+        "U03-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "小唯：7:30吃飯；小秋：7:00讀書。哪句正確介紹小唯的安排？",
+      "promptJa": "ユイは7:30にたべます。ユイのよていをえらびましょう。",
+      "choices": [
+        {
+          "id": "U03-C15-o3",
+          "text": "ユイは 7時半の たべます。"
+        },
+        {
+          "id": "U03-C15-o0",
+          "text": "ユイは 7時半に たべます。"
+        },
+        {
+          "id": "U03-C15-o1",
+          "text": "ユイは 7時に よみます。"
+        },
+        {
+          "id": "U03-C15-o2",
+          "text": "ユイは 7時半に よみます。"
+        }
+      ],
+      "answer": [
+        "U03-C15-o0"
+      ],
+      "explanation": "先找人物，再確認時間與動作；時刻後用に。",
+      "explanationJa": "ユイは7じはんにたべます。",
+      "distractorReasons": {
+        "U03-C15-o1": "套用了小秋的安排。",
+        "U03-C15-o2": "小唯的動作是吃飯。",
+        "U03-C15-o3": "時間接動作用に。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U03 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    }
+  ]
+}

@@ -1,16 +1,15 @@
 import { useState } from 'react'
-import type { Attempt } from '../../content/contracts'
+import type { Attempt, UnitPack } from '../../content/contracts'
 import type { BattleSession, CoinLedger } from '../../db/journey-models'
 import type { Move } from '../../battle/rules'
 import { enemyIntent } from '../../battle/rules'
 import { Button, Progress, StatePanel } from '../../components/ui/journey-ui'
-import { u01Question } from '../../content/packs/u01'
 import { summarize } from '../../learning/rules'
 import QuestionPlayer, { type AnswerInput } from './QuestionPlayer'
 import Character from './Character'
 import { useJourneyText } from './text'
 
-export default function BattleScene({battle,attempts,receipt,reviewDate,pending,onChoose,onSubmit,onContinue,onClaim,onRetreat,onReturn,onPause}: {battle:BattleSession;attempts:Attempt[];receipt?:CoinLedger;reviewDate?:string;pending:boolean;onChoose:(move:Move)=>void;onSubmit:(input:AnswerInput)=>Promise<void>;onContinue:()=>void;onClaim:()=>void;onRetreat:()=>void;onReturn:()=>void;onPause:()=>void}){
+export default function BattleScene({pack,battle,attempts,receipt,reviewDate,pending,onChoose,onSubmit,onContinue,onClaim,onRetreat,onReturn,onPause}: {pack:UnitPack;battle:BattleSession;attempts:Attempt[];receipt?:CoinLedger;reviewDate?:string;pending:boolean;onChoose:(move:Move)=>void;onSubmit:(input:AnswerInput)=>Promise<void>;onContinue:()=>void;onClaim:()=>void;onRetreat:()=>void;onReturn:()=>void;onPause:()=>void}){
   const {lang,t}=useJourneyText();const [collapsed,setCollapsed]=useState(false)
   const shown=battle.phase==='feedback' && battle.feedbackBefore ? battle.feedbackBefore:battle
   const attempt=battle.phase==='feedback' ? attempts.find(a=>a.id===battle.lastAttemptId):undefined
@@ -29,7 +28,7 @@ export default function BattleScene({battle,attempts,receipt,reviewDate,pending,
         <p className="journey-muted">{lang==='zh'?'答對傷害：攻擊 8、防守 4、夥伴技 12。防守不論答案都減半本回合敵方傷害；夥伴技每場限一次。裝備減傷最多 2。':'せいかいのダメージ：こうげき8、まもる4、なかまのわざ12。まもると、こたえにかかわらずてきのダメージはんぶん。なかまのわざは1かい。そうびのけいげんはさいだい2。'}</p>
         {battle.partnerUsed && <p className="journey-muted">{t('partnerUsed')}</p>}
       </>}
-      {(battle.phase==='question' || battle.phase==='feedback') && battle.currentQuestionId && <QuestionPlayer key={`${battle.id}:${battle.turn}`} question={u01Question(battle.currentQuestionId)} attempt={attempt} onSubmit={onSubmit} onContinue={onContinue}/>}
+      {(battle.phase==='question' || battle.phase==='feedback') && battle.currentQuestionId && <QuestionPlayer key={`${battle.id}:${battle.turn}`} question={pack.questions.find(q=>q.id===battle.currentQuestionId)!} attempt={attempt} onSubmit={onSubmit} onContinue={onContinue}/>}
       {battle.phase==='finished' && <StatePanel state="success" title={battle.status==='won' ? t('victory'):t('ended')}>
         <p>{t('preserved')}</p><p>{t('sample')}：{section.total} · {lang==='zh'?'用過提示':'ヒント'} {section.hinted}</p>{reviewDate && <p>{lang==='zh'?'導師下次邀請複習：':'つぎのふくしゅうのおさそい：'}{reviewDate}</p>}
         {battle.endReason==='questions-complete' && <p>{lang==='zh'?'這次可用的已教題目都練習過了，先回道館認識更多內容吧。':'まなんだもんだいはここまで。どうじょうで、あたらしいことをまなぼう。'}</p>}

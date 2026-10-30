@@ -1,0 +1,1120 @@
+{
+  "unitId": "U03",
+  "version": "u03-1-draft",
+  "reviewStatus": "DRAFT",
+  "items": [
+    {
+      "id": "U03-V01",
+      "kind": "vocabulary",
+      "sha256": "8decc446e280e6c965bf5e75a41a88416111d9eff1a9d291b70b17a9ec9c7cb0",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V02",
+      "kind": "vocabulary",
+      "sha256": "61ff31f6ee4d7bdadb2076820a5e0ea73ac51e072fa13f79614e6be71092dea7",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V03",
+      "kind": "vocabulary",
+      "sha256": "8c36aa2be46b6c13b6ece683e3dc242417a074c3c29435de38903f23e1dd17c4",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V04",
+      "kind": "vocabulary",
+      "sha256": "13b6b3de56df4b95a035d4c82e78b5c12159d5815986a1e1cc4e99ed33e0f70d",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V05",
+      "kind": "vocabulary",
+      "sha256": "8fe760bf57250e72cb6e80317ab30cf1800b4fb8767944184803da4940ecb765",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V06",
+      "kind": "vocabulary",
+      "sha256": "07ad1f417751b13c65cc9a776f0d2461a3b98efdecdb0af071673760eac76876",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V07",
+      "kind": "vocabulary",
+      "sha256": "3fb288ba9c3329447187c12ea61738bd47b6c2e1658f844fc1f98360da23a52f",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V08",
+      "kind": "vocabulary",
+      "sha256": "d88aa1db2071fcf9a90a6e06b537a29a5773fdb4b6958b1595254cbc91a5143d",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V09",
+      "kind": "vocabulary",
+      "sha256": "73b85135691d292ac3fb09538396c597bcdfca4d64940aa442f5607b69adb95c",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V10",
+      "kind": "vocabulary",
+      "sha256": "5d9512d96cb9c39f2e50cd6bc34a8b33d6d4966a14b68dfba2cfece65390b1fa",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V11",
+      "kind": "vocabulary",
+      "sha256": "21683116f3595e1125355bcb35e03f614c1b74b736c0469e58368e07b0f9cff3",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V12",
+      "kind": "vocabulary",
+      "sha256": "ff8766337e9bc956249dbd66e8e2ca44a12aa10442e275d69069473f40e9b567",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V13",
+      "kind": "vocabulary",
+      "sha256": "97b40a4817b94fa0f362c163d33da9466e7e3b2eeeb0b14ea35562a94a83b7db",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V14",
+      "kind": "vocabulary",
+      "sha256": "869ce70219293c85eddde30336c7f750e279028c8a46b8d835d8088d0e591408",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V15",
+      "kind": "vocabulary",
+      "sha256": "78b1b40f1a5a945b94117cbac70aa8e9ff32a14313206270385c8654e4d1e884",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V16",
+      "kind": "vocabulary",
+      "sha256": "dab492775ba1d17c535b18a2d9cefbc7ae124b42405b2cef2b18b34d7a5718c7",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V17",
+      "kind": "vocabulary",
+      "sha256": "62fd195ae1a76d018a9e1ce500f6961682b9fe8af580c6dac112376d52aa49d6",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V18",
+      "kind": "vocabulary",
+      "sha256": "87af820249be21539d1c28f8e8cdaa79ea2645d936310b9a9799fa7125d11eb2",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V19",
+      "kind": "vocabulary",
+      "sha256": "fb5a808892dc0050f7756d4a174a54c38af5eb651dcdacca5e86f47272b5941d",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V20",
+      "kind": "vocabulary",
+      "sha256": "470307d62b62367be50313868ff0ab7d3070056142b4c8e04beecbaa83f91c01",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V21",
+      "kind": "vocabulary",
+      "sha256": "3139a7f9e374e5dc1dde1cd84f48f6c8aefe28f2ef1419cee7ade1ea870f0cb8",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V22",
+      "kind": "vocabulary",
+      "sha256": "4049bfe4c56b49c346e26a73dc72c662902f2c30a9598e0ad94c1b842143e7d0",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V23",
+      "kind": "vocabulary",
+      "sha256": "6784bb366945a309310713f95e888ec40cb4e1412d7ff35d02a76f5c24592ada",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V24",
+      "kind": "vocabulary",
+      "sha256": "4cc39553598785694c3b6bf2ccb326a13eb92da90f06f98f2ef4c08f1d9fd20f",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-V25",
+      "kind": "vocabulary",
+      "sha256": "d245f231d1706a9feb586f0bc4dceda7a5ba6734aeab89cbcefc58fe6cc8f7d2",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-K01",
+      "kind": "kanji",
+      "sha256": "8ac0506ff7be087a6f00e7ae0a7b689c2eb4f0bb896c8aaeb87778ff91b2872b",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-K02",
+      "kind": "kanji",
+      "sha256": "399c3537ca8b220ff2a2c9e0aa0b070efbe7ae6d5cbd52950d421e36a480692d",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-K03",
+      "kind": "kanji",
+      "sha256": "856bca908b16033ed47e9777b0bd133c0f3cfaaf74b63b80ca6d7c4342b96989",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-K04",
+      "kind": "kanji",
+      "sha256": "2a80c989c630494399f26f27da570a141767fb2a66fc147235b24f1d8722ce45",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-K05",
+      "kind": "kanji",
+      "sha256": "80a3d4883657a8534035993cf405590847be29403f8009b5997155a315c7b54f",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "G07",
+      "kind": "grammar",
+      "sha256": "408441f099b41d8f4de6c58c289f5d0d4788a51dc04e88228604bec2405c05a1",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "G08",
+      "kind": "grammar",
+      "sha256": "926737a80ffb03516fdb333d73ab55b87f5d06b10f2716e1d7f38623c02ce76b",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "G09",
+      "kind": "grammar",
+      "sha256": "3509b92ba5914555d01369063c85fb82bc25d728cf0f64ff5b6741ff9b9e4fb5",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-words-1",
+      "kind": "teaching",
+      "sha256": "2212a8346da7371c136542c15f4ee4d5d69e0f4f05632d8d739481993cc6a1c0",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-words-2",
+      "kind": "teaching",
+      "sha256": "2400625f5dec309e27305e15537804521add15f72367cc942a11ed2a2add287e",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-words-3",
+      "kind": "teaching",
+      "sha256": "af221ab91a8d6df18783c21622de2447e359bdf89e8a0e2a1687e5d51f6a79ea",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-words-4",
+      "kind": "teaching",
+      "sha256": "2ccdadef1ed52c5646b60a3da1431b99c25b5a10c4df027aa90bec49c4391d64",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-words-5",
+      "kind": "teaching",
+      "sha256": "ac448667424121da49b17b66ae0b8374ff03a78693caa015cb2b2cece33fc5fe",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-kanji",
+      "kind": "teaching",
+      "sha256": "4932ec2717b229e36194e03cd2a6133739456ef6a9aa54d192fcbc9a805072b8",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-G07",
+      "kind": "teaching",
+      "sha256": "2d0e94ef8a3ddb17b1e20199e2891ec15e5b1c63aafa7c9f6e9d2f96598e2c8f",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-G08",
+      "kind": "teaching",
+      "sha256": "c0ac339a4d84afa1df5d532582a5d529f616fc57d1cfd46c96027462c62ba121",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-G09",
+      "kind": "teaching",
+      "sha256": "b171a0f6ea90c5ed91f39a0262f8c0cbbe4bd9a3766672fae6b9ff42b7d35383",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-teach-story",
+      "kind": "teaching",
+      "sha256": "4591cb792296f0fd56c0008c91dafec748350774badeb2322b4ecab5f2d307de",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-R01",
+      "kind": "readings",
+      "sha256": "2dc549a0e1109426dbeda3408cab66b83e57f877950dde0a1726830d4e94158c",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-R02",
+      "kind": "readings",
+      "sha256": "dde73e0030e373dd992f586ac436eaf71de4e5eca69557eef8cd372a714f99c7",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-R03",
+      "kind": "readings",
+      "sha256": "cabb28918f7df7550c4fcb7ddc0e7c530677c094e2a464e3c3df6b5dfd007f79",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-R04",
+      "kind": "readings",
+      "sha256": "e0a60959bf503f495951623771e9526aa539be0c89e70ec28836a8fbf107715e",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-L01",
+      "kind": "listening",
+      "sha256": "13086481fbefadbf93c4067d0c32b1ff6be2dc9699fb98927889b666c26f4323",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-L02",
+      "kind": "listening",
+      "sha256": "b4a9981756017885e181a8f7de61118c47496d5238c589cd1389e4cc6d40fa4c",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-L03",
+      "kind": "listening",
+      "sha256": "028be6efe3b9fbc5cf44a882d0e4832a91e246d41d3785368b029be5f5662640",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-L04",
+      "kind": "listening",
+      "sha256": "2011633c9e9f153396bad799442bdf8dff91b4deff31a2637f01fa59d92226d2",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-L05",
+      "kind": "listening",
+      "sha256": "c92cfb24f8583d5a866d63eeeaef7b5bfe3c421b71dea11436fbabb45dadcff2",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-L06",
+      "kind": "listening",
+      "sha256": "d31b8475cbbf41dbeb1df2cbf1dd17fb7ea277d2c8da3f2d200e4525348af2b4",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q01",
+      "kind": "questions",
+      "sha256": "5421b34874e673502aed0595b7642d821531baf748724fb7f910b1069dac567b",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q02",
+      "kind": "questions",
+      "sha256": "31526116d677119eae66911c1e31b0f705e33fcdd2587e313b43358a6cfc1f87",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q03",
+      "kind": "questions",
+      "sha256": "7eead8bd156564a100c387a701466abebb6afd42b6b6fe3e0297fe4ec4694802",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q04",
+      "kind": "questions",
+      "sha256": "c7ba909fa31fb204015d2d37e12f05844ac1ae7e67387fbaa18d9da52cb35bf2",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q05",
+      "kind": "questions",
+      "sha256": "e82c064018019c0aea70bc4ad6f16d61391ed86c791e138c984ac7c82812a241",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q06",
+      "kind": "questions",
+      "sha256": "9c1824e6dd89cafb9fe827074c429ca3e2afd3bd474a215f16b8f5e3d3d32b95",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q07",
+      "kind": "questions",
+      "sha256": "bbbf18d54f7ae2ce9074acc3143d0fa0a92d92630c1b207c63a04b26a9490e15",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q08",
+      "kind": "questions",
+      "sha256": "2146afcc60cf02178bdd3f2c2e3804e570f50490e92d765c2809f0ebf7c4cccc",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q09",
+      "kind": "questions",
+      "sha256": "ccbf43abf2db691d1770596204944b86da02ea1160cc2457f7fbf2b29c70adfb",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q10",
+      "kind": "questions",
+      "sha256": "6ad84bfedb3a01b168e73c06afb97f37f63dc710e62537000d91ae50d5fbafeb",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q11",
+      "kind": "questions",
+      "sha256": "26444bc84608c2ee1b12825a5cbaac3c279b110468dfb6ebc4f4d8e9b3ccc703",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q12",
+      "kind": "questions",
+      "sha256": "0a800ecc2edcf28d896003eae3ae434c1df6c575aeab08d314ae9a921fa898ad",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q13",
+      "kind": "questions",
+      "sha256": "102e2be0d3c37c4f54ec1c3708cde50001324fa56d35488f7584bcc4172a8b5b",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q14",
+      "kind": "questions",
+      "sha256": "5b92b60af23d5898955878b8f8a6af8e17defe0e5f7cb8f2ac6bf286a35cd8f7",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q15",
+      "kind": "questions",
+      "sha256": "037ee6287a68b8b3c361082c1836ebb0be0b767ebb9cf83f7b05cac654efbe1f",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q16",
+      "kind": "questions",
+      "sha256": "d5572bb5c61f8bf4f353266dfe1897d10181432cb0a2845e7b1c8d1f78c813dd",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q17",
+      "kind": "questions",
+      "sha256": "847830bbcf87af59ecfd276f1a1787c7aeb55b5b1661882fb92020b23f1b0247",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q18",
+      "kind": "questions",
+      "sha256": "0376bc48d3dd30a754d1717f799249f3e356351209359223124a4f73440d5f9b",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q19",
+      "kind": "questions",
+      "sha256": "7ab6aacdfe8b38d4668c02c5b017c3ac33a640b176c8eb2ff2a03860f4776fad",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q20",
+      "kind": "questions",
+      "sha256": "dd29c827c55c477cc99e2df64b3268606a8d6f7ca7803e5ca8a3650ff8eaef30",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q21",
+      "kind": "questions",
+      "sha256": "4e98f29eb058ad676f3ec33f306227e69fba3b81ec0cc3b3096a0f2ba3ea1629",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q22",
+      "kind": "questions",
+      "sha256": "c47831560d39c4fee828db3cd573da156f925c4451b67104e6b32184fe6f6a08",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q23",
+      "kind": "questions",
+      "sha256": "1f3714eaebaff8a6de01f301ef419a556a37c4459f5f6385b8b5b6cc607a75d3",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q24",
+      "kind": "questions",
+      "sha256": "be3aa21354441f116b9c797e4770c6e40b8009ada4628101dc32702c500d313c",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q25",
+      "kind": "questions",
+      "sha256": "446a4f5209c43830e706db5ebd9128ca32ff9eee87ab150a68f30d2f0e9b888e",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q26",
+      "kind": "questions",
+      "sha256": "83b66f682092d23fe0c443ca6ab0bf0798c1ffab85495a81b49f49db8150b51a",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q27",
+      "kind": "questions",
+      "sha256": "01f9321b61ee6923173d87b125f57a8e7b166218ce2ec4e4d7a81abceb47bbf7",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q28",
+      "kind": "questions",
+      "sha256": "5e18428cb131de1576ce90906f45c81a85c6f9d0f257c19d71d4b894a8f48b28",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q29",
+      "kind": "questions",
+      "sha256": "686cf6c661a14f20d9568a95747fed256447c0685ea684ae74ce55954004f706",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q30",
+      "kind": "questions",
+      "sha256": "4d68443d401811c7b79fcfcfbf954da0c20d115baea18f0f27f5ee56ad49b49a",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q31",
+      "kind": "questions",
+      "sha256": "eef0cce239be0d3b557f2dc23a4b9ed27e1add0d8a2bbb3b90911446ab16b1cb",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q32",
+      "kind": "questions",
+      "sha256": "72c3c1b95fc364b60274a365fb66062bff0daf5669bd3531f37d3076110b1f85",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q33",
+      "kind": "questions",
+      "sha256": "2dad6d1cf76f778a7a89b65c04340a746d8718fcb0d448b3d20e898a334a80f6",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q34",
+      "kind": "questions",
+      "sha256": "84bbf355e5b3ac75ddec86e18e90547ed3897ffb5c01f8f1a354838861c7f69c",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q35",
+      "kind": "questions",
+      "sha256": "6d6876eb4018ac343f94bb4bae89bbe7342ebcb6e18f18d53e2b48aa40ba37a4",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q36",
+      "kind": "questions",
+      "sha256": "68f64039d801b6c77671bfba349f00bbb61f5a136834877a40f74d1eeb31cc07",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q37",
+      "kind": "questions",
+      "sha256": "f7ae7145bba066543a60385b01b261fa436852df6a8a8a7a61cb0177aaecf5cd",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q38",
+      "kind": "questions",
+      "sha256": "175b181435b5624bffe40d33da83902ce3cb6ba878ae713ec3f3c12707034479",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q39",
+      "kind": "questions",
+      "sha256": "8173897f55c135418f8e0dd215f3a8e168393f44f65734f2e8989ec5ae7ad270",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q40",
+      "kind": "questions",
+      "sha256": "41a80992179e9c190118b7570e69ff2ce2230811b7322428880a833c95f740a8",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q41",
+      "kind": "questions",
+      "sha256": "2f708a9b3edae9af0db40ae46c2093b9e8d39b51064077b54e6bec47ab44ba88",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q42",
+      "kind": "questions",
+      "sha256": "5ae6123b5165773f400a407f4005baa18593a55299e23119918ef9548ff592df",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q43",
+      "kind": "questions",
+      "sha256": "8adf7d8925fd3b8f15a99bc5f24cd8b23e776f85467e1d74f7fd88cbca06ed77",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q44",
+      "kind": "questions",
+      "sha256": "7f4e11e6fa219c35fda9cdcad804d0aa2acdbea81ba25bca56ee2dfb3622cb67",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q45",
+      "kind": "questions",
+      "sha256": "ae7db73669a198221ab560017ebf5e367df000191de34e7c19d873615789dfb4",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q46",
+      "kind": "questions",
+      "sha256": "04ddb985d2d36798aae83cbc15effdc592cc1124823eef33fd60927e381ed45c",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q47",
+      "kind": "questions",
+      "sha256": "55c6c33ac7059d08e947cf1128056562ab263296f213c10c473795e2eedff7aa",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q48",
+      "kind": "questions",
+      "sha256": "a9d8c95a8d28624b01a3a5f1a76b41c4f5fd998f06533752664fda472adf4902",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q49",
+      "kind": "questions",
+      "sha256": "73fe3e580c2ef4d14785efda74ddd24e090b34eab9989d752f1ffb8ab14084a6",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-Q50",
+      "kind": "questions",
+      "sha256": "541cd5da6ce9898dce88515abb37efa92db0c4101be4a05a557383cacd016495",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C01",
+      "kind": "questions",
+      "sha256": "14af49cec5c9884730814dfae49492f54c8653aa590b86f76d07d68f1f736912",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C02",
+      "kind": "questions",
+      "sha256": "8a8ad7fe66eb6a97f1aaafeb32a301d51417d9be49a6da783279a5dcb987be2a",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C03",
+      "kind": "questions",
+      "sha256": "9c4b7cb7a586ce823b59b7f7380f8e486b5f121b19dfa439a8a22584fa2d5bed",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C04",
+      "kind": "questions",
+      "sha256": "ab6f47683382adad5035ee86bb204e17414fc019c963ca447f6d3d924feb5622",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C05",
+      "kind": "questions",
+      "sha256": "2aa1d6f0304827ffd2373a03543381cc3667fbc64b86e7c4186c8661a9a5f28d",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C06",
+      "kind": "questions",
+      "sha256": "f607e07cd07a6c29567f392d42eff98dbb5aecddd4bdf139bdfb2eed720c155b",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C07",
+      "kind": "questions",
+      "sha256": "bee6e2cacaf46c85ba46bea96f84a74589773584454fba2b86f8609c39518905",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C08",
+      "kind": "questions",
+      "sha256": "8c4c7fe3a4dfc16972aef5d168f0c071c5dd65d6abcd17250f473c1a4a831c6d",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C09",
+      "kind": "questions",
+      "sha256": "4ce9ea96a289984a1ff8f2a3a905890fd0b23a8f9024246d15bf46c185990b8b",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C10",
+      "kind": "questions",
+      "sha256": "e3e588f70ab1c5e8383aef53d2604e20b7a5b116f2952c5699536c5edc759453",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C11",
+      "kind": "questions",
+      "sha256": "a78f89023858c8fdb8817aa35d25a3ca81855864956c16d1d15e5c0aa74fff7a",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C12",
+      "kind": "questions",
+      "sha256": "3326b6ff5b7c63eaf2ce815ab84681662562f9508f87e43ecefae2019e3d9fe1",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C13",
+      "kind": "questions",
+      "sha256": "39e5ab9d97b9a1d0a45ebc0059a3e445278ee2a7d741887ace9aba9c12bcd753",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C14",
+      "kind": "questions",
+      "sha256": "c5889c9c87bf7e83d2b0bef3ea56e64f743a0761cc1ee84f84ceb46139c8b3ca",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "U03-C15",
+      "kind": "questions",
+      "sha256": "b3dd3481dc902962ec7258a0a1b97b9808f101836dd2b91032666613d191dad7",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/listening-01.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/listening-01.wav",
+      "script": "いまは、しちじです。アキは、しちじにたべます。はちじにべんきょうします。",
+      "sha256": "72caeca6e61b3a8f3c1a6500b64e6152889c88ff6913deff9c2c95ff2a6136bf",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/listening-02.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/listening-02.wav",
+      "script": "ユイは、あさろくじはんにおきます。しちじはんにたべます。よるくじにねます。",
+      "sha256": "06efab1bdf27e36a09e49523a61d5ed76a5c0a463d18b30c538b2d54f23bc31a",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/listening-03.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/listening-03.wav",
+      "script": "リクは、よるはべんきょうしません。よるはちじによみます。くじにねます。",
+      "sha256": "ec42c44e13e0978edeaa36cfeeeb80c2a4552b74766611e09673d8c05bcb2b5a",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/listening-04.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/listening-04.wav",
+      "script": "アキは、あさろくじにおきます。しちじにたべます。はちじによみます。よるくじにねます。",
+      "sha256": "b2df4e95268d500c96ee71a088d47cd413d092f55215b504360fd57a327e9d02",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/listening-05.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/listening-05.wav",
+      "script": "なんじに、おきますか。",
+      "sha256": "3fcfd2e3fed91fe62c119f8c5fbc52585f1272a9502179a510ac3f38682c3a28",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/listening-06.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/listening-06.wav",
+      "script": "よる、べんきょうしますか。",
+      "sha256": "5a5ae5afb9e06e06dd3335ee88b1b25694ff48d9905614d842eb37434f16da3d",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-words-1.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-words-1.wav",
+      "script": "いち。に。さん。よん。ご。",
+      "sha256": "3f0918819123ee57bbada93e99a5f5d747a61544c596da390ffe1a6262b676f2",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-words-2.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-words-2.wav",
+      "script": "ろく。なな。はち。きゅう。じゅう。",
+      "sha256": "d0167ec0f66aeb65e5d5678438d93fe1c213ee285cd4d17800458bf3b682be2d",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-words-3.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-words-3.wav",
+      "script": "あさ。ひる。よる。いま。まいにち。",
+      "sha256": "97d10f0beb68c543da107c8d555b3b50555aa4fead2279dcdf271d655f3b0b60",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-words-4.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-words-4.wav",
+      "script": "じ。ふん。はん。きょう。",
+      "sha256": "3923c4879ef8b6b0b4a615370d0ea6980a61900102a20ba9119c4d9eb84ddb38",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-words-5.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-words-5.wav",
+      "script": "おきます。ねます。たべます。のみます。よみます。べんきょうします。",
+      "sha256": "6cec41e2e595337b1f06443f4fe6cf3a0a17063b10dfa917e6e3669de8d1ed25",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-kanji.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-kanji.wav",
+      "script": "じ。ごふん。じゅっぷん。はん。あさ。よる。",
+      "sha256": "cfc85b051c5e7cc50681b9ff589c892497f8edf2026b6048da9477e36b87f70a",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-G07.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-G07.wav",
+      "script": "いちじ。にじ。さんじ。よじ。ごじ。ろくじ。しちじ。はちじ。くじ。じゅうじ。じゅういちじ。じゅうにじ。いっぷん。ごふん。じゅっぷん。じゅうごふん。さんじゅっぷん。しちじはんです。",
+      "sha256": "11adf9d66b607218a7460ac6adb8b5dd9c45c9310b35ee34bacce942efbaabdf",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-G08.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-G08.wav",
+      "script": "おきます。おきません。ねます。ねません。たべます。たべません。のみます。のみません。よみます。よみません。べんきょうします。べんきょうしません。",
+      "sha256": "047f207ad925f16a3b1d8a420d6df4afb4ce680456c673ad811ddeaad1bc6441",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-G09.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-G09.wav",
+      "script": "まいにち、あさろくじにおきます。しちじはんにたべます。よるくじにねます。",
+      "sha256": "08bfeeb11d3c413a5c66dbf99cafcd6a58f5e640860b24d5bb250ed05f81ca88",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "audio:/assets/audio/u03/U03-teach-story.wav",
+      "kind": "audio",
+      "src": "/assets/audio/u03/U03-teach-story.wav",
+      "script": "なんじですか。なんじにねますか。くじにねます。はい、たべます。いいえ、たべません。",
+      "sha256": "28e5bdf9b9192dfef2427ae711e4e0c84dd880608f7080b30dce93b863bdb054",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    },
+    {
+      "id": "image:/assets/img/u03/daily-routine.webp",
+      "kind": "image",
+      "src": "/assets/img/u03/daily-routine.webp",
+      "sha256": "43dabce8153deb6c881639f8d2cd01e489b3598bcc063d7503b30f85583130e7",
+      "status": "NOT_RUN",
+      "reviewer": null,
+      "reviewedAt": null
+    }
+  ]
+}

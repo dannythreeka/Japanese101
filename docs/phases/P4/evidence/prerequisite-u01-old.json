@@ -1,0 +1,448 @@
+{
+  "provenance": {
+    "kind": "isolated automated UI fixture, not a human test or content approval",
+    "build": {
+      "sha": "d35221c850d92c3b41a1010d2fadba3617e24ec6"
+    },
+    "unitId": "U01",
+    "contentVersion": "u01-2-draft",
+    "steps": "Teach actual cards, answer four actual T01 items, win 60 coins, buy/equip 40-coin hat, start unfinished battle, parent PIN full export"
+  },
+  "backup": {
+    "payload": {
+      "format": "japanese101-backup-v1",
+      "schemaVersion": 9,
+      "exportedAt": 1793335417404,
+      "contentVersions": {
+        "KANA-HIRA": "kana-2-draft",
+        "KANA-KATA": "kana-2-draft",
+        "U01": "u01-2-draft",
+        "U02": "u02-1-draft",
+        "U03": "u03-1-draft",
+        "U04": "u04-1-draft",
+        "U05": "u05-1-draft",
+        "U06": "u06-1-draft",
+        "U07": "u07-1-draft"
+      },
+      "activeProfileId": "player",
+      "tables": {
+        "profiles": [
+          {
+            "profile_id": "player",
+            "name": "プレイヤー",
+            "avatar_emoji": "🦊",
+            "created_at": 1793335412199,
+            "last_played": 1793335412199
+          }
+        ],
+        "pets": [
+          {
+            "petId": "player",
+            "species": "fox",
+            "level": 1,
+            "xp": 0,
+            "evolutionStage": 0,
+            "unlockedCosmetics": [],
+            "collection": [],
+            "lastPlayed": "2026-10-30T04:43:32.661Z"
+          }
+        ],
+        "adventureProgress": [
+          {
+            "id": "player",
+            "current_level_id": "lv_00_tamago",
+            "completed_levels": {},
+            "unlocked_regions": [],
+            "collected_medals": []
+          }
+        ],
+        "playerProgress": [],
+        "playerSessions": [],
+        "preferences": [],
+        "wallets": [],
+        "gameCheckpoints": [],
+        "levelSessions": [],
+        "rewardReceipts": [],
+        "dailyClaims": [],
+        "learningAttempts": [
+          {
+            "id": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39:turn-1",
+            "profileId": "player",
+            "sessionId": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39",
+            "questionInstanceId": "turn-1",
+            "itemId": "U01-Q01",
+            "itemVersion": "2",
+            "itemFamilyId": "U01-F-kanji-reading",
+            "skillIds": [
+              "K-SCRIPT"
+            ],
+            "primarySkillId": "K-SCRIPT",
+            "mode": "practice",
+            "firstAnswerCorrect": true,
+            "outcome": "correct",
+            "hintUsed": false,
+            "retryCount": 0,
+            "audioPlayCount": 0,
+            "responseMs": 112,
+            "submittedAt": "2026-10-30T04:43:35.837Z",
+            "answerIds": [
+              "U01-Q01-o0"
+            ]
+          },
+          {
+            "id": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39:turn-2",
+            "profileId": "player",
+            "sessionId": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39",
+            "questionInstanceId": "turn-2",
+            "itemId": "U01-Q02",
+            "itemVersion": "2",
+            "itemFamilyId": "U01-F-kanji-reading",
+            "skillIds": [
+              "K-SCRIPT"
+            ],
+            "primarySkillId": "K-SCRIPT",
+            "mode": "practice",
+            "firstAnswerCorrect": true,
+            "outcome": "correct",
+            "hintUsed": false,
+            "retryCount": 0,
+            "audioPlayCount": 0,
+            "responseMs": 77,
+            "submittedAt": "2026-10-30T04:43:36.101Z",
+            "answerIds": [
+              "U01-Q02-o0"
+            ]
+          },
+          {
+            "id": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39:turn-3",
+            "profileId": "player",
+            "sessionId": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39",
+            "questionInstanceId": "turn-3",
+            "itemId": "U01-Q03",
+            "itemVersion": "2",
+            "itemFamilyId": "U01-F-kanji-reading",
+            "skillIds": [
+              "K-SCRIPT"
+            ],
+            "primarySkillId": "K-SCRIPT",
+            "mode": "practice",
+            "firstAnswerCorrect": true,
+            "outcome": "correct",
+            "hintUsed": false,
+            "retryCount": 0,
+            "audioPlayCount": 0,
+            "responseMs": 101,
+            "submittedAt": "2026-10-30T04:43:36.402Z",
+            "answerIds": [
+              "U01-Q03-o0"
+            ]
+          },
+          {
+            "id": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39:turn-4",
+            "profileId": "player",
+            "sessionId": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39",
+            "questionInstanceId": "turn-4",
+            "itemId": "U01-Q04",
+            "itemVersion": "2",
+            "itemFamilyId": "U01-F-kanji-reading",
+            "skillIds": [
+              "K-SCRIPT"
+            ],
+            "primarySkillId": "K-SCRIPT",
+            "mode": "practice",
+            "firstAnswerCorrect": true,
+            "outcome": "correct",
+            "hintUsed": false,
+            "retryCount": 0,
+            "audioPlayCount": 0,
+            "responseMs": 80,
+            "submittedAt": "2026-10-30T04:43:36.651Z",
+            "answerIds": [
+              "U01-Q04-o0"
+            ]
+          }
+        ],
+        "worldCheckpoints": [],
+        "studyPlans": [
+          {
+            "profileId": "player",
+            "unitId": "U01",
+            "contentVersion": "u01-2-draft",
+            "taughtCards": [
+              "teach-words-1",
+              "teach-words-2",
+              "teach-words-3",
+              "teach-words-4",
+              "teach-kanji",
+              "teach-G01",
+              "teach-G02",
+              "teach-G03",
+              "teach-story"
+            ],
+            "taughtAt": {
+              "V-CONTEXT": 1793335413269,
+              "K-HIRA": 1793335413269,
+              "V-PARA": 1793335414002,
+              "K-SCRIPT": 1793335414256,
+              "G01": 1793335414503,
+              "G-ORDER": 1793335414503,
+              "G-TEXT": 1793335414503,
+              "G02": 1793335414755,
+              "G03": 1793335415004,
+              "R-SHORT": 1793335415233,
+              "R-MID": 1793335415233,
+              "R-INFO": 1793335415233,
+              "L-TASK": 1793335415233,
+              "L-KEY": 1793335415233,
+              "L-EXPR": 1793335415233,
+              "L-RESP": 1793335415233
+            },
+            "date": "2026-10-30",
+            "timeZone": "Asia/Taipei",
+            "gradeBand": 1,
+            "questionIds": [
+              "U01-Q01",
+              "U01-Q02",
+              "U01-Q03",
+              "U01-Q04",
+              "U01-Q05",
+              "U01-Q06",
+              "U01-Q07",
+              "U01-Q08",
+              "U01-Q09",
+              "U01-Q10",
+              "U01-Q11",
+              "U01-Q12",
+              "U01-Q13",
+              "U01-Q14",
+              "U01-Q15",
+              "U01-Q16",
+              "U01-Q17",
+              "U01-Q18",
+              "U01-Q19",
+              "U01-Q20",
+              "U01-Q21",
+              "U01-Q22",
+              "U01-Q23",
+              "U01-Q24",
+              "U01-Q25",
+              "U01-Q26",
+              "U01-Q27",
+              "U01-Q28",
+              "U01-Q29",
+              "U01-Q30",
+              "U01-Q31",
+              "U01-Q32",
+              "U01-Q33",
+              "U01-Q34",
+              "U01-Q35",
+              "U01-Q36",
+              "U01-Q37",
+              "U01-Q38",
+              "U01-Q39",
+              "U01-Q40",
+              "U01-Q41",
+              "U01-Q42",
+              "U01-Q43",
+              "U01-Q44",
+              "U01-Q45",
+              "U01-Q46",
+              "U01-Q47",
+              "U01-Q48",
+              "U01-Q49",
+              "U01-Q50"
+            ],
+            "updatedAt": 1793335417001
+          }
+        ],
+        "skillReviews": [
+          {
+            "level": 0,
+            "dueDate": "2026-10-31",
+            "lastAttemptId": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39:turn-4",
+            "learningVersion": "learning-v1.1-spaced",
+            "profileId": "player",
+            "skillId": "K-SCRIPT",
+            "timeZone": "Asia/Taipei"
+          }
+        ],
+        "battleSessions": [
+          {
+            "playerHp": 40,
+            "enemyHp": 30,
+            "turn": 1,
+            "partnerUsed": false,
+            "status": "active",
+            "id": "80eb22e2-500d-4169-ba72-988a35ca7494",
+            "profileId": "player",
+            "unitId": "U01",
+            "challengeId": "U01:dojo",
+            "contentVersion": "u01-2-draft",
+            "rulesVersion": "battle-rules-v0.1",
+            "phase": "choosing",
+            "questionIds": [
+              "U01-Q01",
+              "U01-Q02",
+              "U01-Q03",
+              "U01-Q04",
+              "U01-Q05",
+              "U01-Q06",
+              "U01-Q07",
+              "U01-Q08",
+              "U01-Q09",
+              "U01-Q10",
+              "U01-Q11",
+              "U01-Q12",
+              "U01-Q13",
+              "U01-Q14",
+              "U01-Q15",
+              "U01-Q16",
+              "U01-Q17",
+              "U01-Q18",
+              "U01-Q19",
+              "U01-Q20",
+              "U01-Q21",
+              "U01-Q22",
+              "U01-Q23",
+              "U01-Q24",
+              "U01-Q25",
+              "U01-Q26",
+              "U01-Q27",
+              "U01-Q28",
+              "U01-Q29",
+              "U01-Q30",
+              "U01-Q31",
+              "U01-Q32",
+              "U01-Q33",
+              "U01-Q34",
+              "U01-Q35",
+              "U01-Q36",
+              "U01-Q37",
+              "U01-Q38",
+              "U01-Q39",
+              "U01-Q40",
+              "U01-Q41",
+              "U01-Q42",
+              "U01-Q43",
+              "U01-Q44",
+              "U01-Q45",
+              "U01-Q46",
+              "U01-Q47",
+              "U01-Q48",
+              "U01-Q49",
+              "U01-Q50"
+            ],
+            "loadoutSnapshot": [
+              "gear-travel-hat"
+            ],
+            "createdAt": 1793335417001,
+            "updatedAt": 1793335417001
+          },
+          {
+            "playerHp": 24,
+            "enemyHp": 0,
+            "turn": 4,
+            "partnerUsed": false,
+            "status": "won",
+            "id": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39",
+            "profileId": "player",
+            "unitId": "U01",
+            "challengeId": "U01:dojo",
+            "contentVersion": "u01-2-draft",
+            "rulesVersion": "battle-rules-v0.1",
+            "phase": "finished",
+            "questionIds": [
+              "U01-Q01",
+              "U01-Q02",
+              "U01-Q03",
+              "U01-Q04"
+            ],
+            "loadoutSnapshot": [],
+            "createdAt": 1793335415486,
+            "updatedAt": 1793335416728,
+            "move": "attack",
+            "currentQuestionId": "U01-Q04",
+            "feedbackBefore": {
+              "playerHp": 24,
+              "enemyHp": 6
+            },
+            "lastAttemptId": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39:turn-4"
+          }
+        ],
+        "coinWallets": [
+          {
+            "profileId": "player",
+            "balance": 20
+          }
+        ],
+        "coinLedger": [
+          {
+            "id": "purchase:1aee4e1b-5160-449d-972a-c577f70a390f",
+            "profileId": "player",
+            "kind": "purchase",
+            "amount": -40,
+            "balanceAfter": 20,
+            "purchaseId": "1aee4e1b-5160-449d-972a-c577f70a390f",
+            "createdAt": 1793335416974
+          },
+          {
+            "id": "win:8f356a32-ce56-4c5b-b3b5-6144a4a19b39",
+            "profileId": "player",
+            "kind": "reward",
+            "amount": 60,
+            "balanceAfter": 60,
+            "battleId": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39",
+            "createdAt": 1793335416827
+          }
+        ],
+        "inventory": [
+          {
+            "profileId": "player",
+            "itemId": "gear-travel-hat",
+            "purchaseId": "1aee4e1b-5160-449d-972a-c577f70a390f",
+            "acquiredAt": 1793335416972
+          }
+        ],
+        "equipment": [
+          {
+            "profileId": "player",
+            "slots": {
+              "head": "gear-travel-hat"
+            }
+          }
+        ],
+        "purchaseReceipts": [
+          {
+            "id": "1aee4e1b-5160-449d-972a-c577f70a390f",
+            "profileId": "player",
+            "itemId": "gear-travel-hat",
+            "catalogVersion": "economy-v0.1",
+            "price": 40,
+            "createdAt": 1793335416974
+          }
+        ],
+        "firstWins": [
+          {
+            "profileId": "player",
+            "challengeId": "U01:dojo",
+            "battleId": "8f356a32-ce56-4c5b-b3b5-6144a4a19b39"
+          }
+        ],
+        "learningChecks": [],
+        "mockSessions": [],
+        "mockCommandReceipts": [],
+        "catalogVersions": [
+          {
+            "id": "active",
+            "version": "economy-v0.1",
+            "revision": 1
+          }
+        ],
+        "migrationBackups": [],
+        "progress": [],
+        "sessions": []
+      }
+    },
+    "sha256": "f051aa3f981d608d849acdfad0dc860ae0435311ee1f7957bb86377c8e2bc161"
+  }
+}

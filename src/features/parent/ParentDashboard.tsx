@@ -15,6 +15,7 @@ import type { Profile } from '../../types/profile'
 
 const LESSONS = lessonData()
 const JourneyReport=lazy(()=>import('../journey/JourneyReport'))
+const FullBackup=lazy(()=>import('./FullBackup'))
 
 const DEFAULT_PIN = '1234'
 const PIN_KEY = 'parentPin'
@@ -200,6 +201,7 @@ export default function ParentDashboard() {
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 p-4 pt-6">
       <LegacyBackup />
       <div className="max-w-lg mx-auto flex flex-col gap-6">
+        {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <Suspense fallback={<p role="status">正在讀取備份工具…</p>}><FullBackup/></Suspense>}
         {(import.meta.env.DEV || import.meta.env.VITE_P2_REVIEW_PREVIEW === '1') && <Suspense fallback={<p role="status">正在讀取學習摘要…</p>}><JourneyReport key={profileId} profileId={profileId} profileName={profiles.find(p=>p.profile_id===profileId)?.name}/></Suspense>}
 
         <div className="flex items-center gap-3">
@@ -311,12 +313,12 @@ export default function ParentDashboard() {
             {/* 7-day chart */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
               <h2 className="text-2xl font-bold text-gray-700">{t('parentWeekly')}</h2>
-              <div className="flex items-end gap-2 h-24">
+              <div className="grid grid-cols-7 items-end gap-2 h-24">
                 {dayCounts.map(day => (
-                  <div key={day.label} className="flex-1 flex flex-col items-center gap-1">
+                  <div key={day.label} className="min-w-0 flex flex-col items-center gap-1">
                     <div className="w-full bg-purple-300 rounded-t-lg transition-all"
                       style={{ height: `${(day.count / maxCount) * 64}px`, minHeight: day.count > 0 ? '8px' : '2px' }} />
-                    <span className="text-xs text-gray-500">{day.label}</span>
+                    <span className="w-full min-w-0 text-center text-xs text-gray-500" style={{overflowWrap:'anywhere'}}>{day.label}</span>
                   </div>
                 ))}
               </div>

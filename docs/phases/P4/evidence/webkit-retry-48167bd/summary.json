@@ -1,0 +1,30 @@
+{
+  "task": "P4-04-R2",
+  "status": "TODO; investigation captured, not fixed",
+  "headCommit": "48167bddeedffc89f356025a7014de4ed0a2989d",
+  "ciMergeCommit": "f47358ef9d725a240df656a477726435bb049ec7",
+  "runId": 41011202850,
+  "jobId": 123917910919,
+  "artifactId": 12959052210,
+  "artifactBytes": 1929669141,
+  "browser": "webkit",
+  "result": {
+    "passed": 100,
+    "failed": 1,
+    "skipped": 1,
+    "durationMinutes": 33.2
+  },
+  "case": "e2e/p4-pack-loading.spec.ts:21 deliberate retry after a 503 chunk failure",
+  "observed": [
+    "Error panel appears after deliberate reload; expected dojo remains absent",
+    "Trace records two Service Worker blocked messages, confirming the second document lifecycle",
+    "Only one u06-CufE9goI.js request is recorded; it returned 503 text/plain before reload; no second unit request appears"
+  ],
+  "hypothesis": "WebKit reuses a failed resource/module across reload; not yet verified by a minimal reproduction",
+  "files": {
+    "error-context.md": "d1e5b7ebdbb7b1cc5bd1d6f29ed5a5e164e090ad725a3193b346918f66e19a38",
+    "test-failed-1.png": "c7f0463c2afb045cb222a5f6ba090090dcdd442cab6fbb0ebb5f9868031af4b6",
+    "trace.zip": "369e561efa92ab9bf5ccbf2718fa7bbca7d401c5e9561c3cb20a34eb7564de94"
+  },
+  "download": "Read ZIP central directory and only three selected entries by HTTP Range; per-entry size/CRC verified; GitHub credentials not forwarded to signed blob origin"
+}

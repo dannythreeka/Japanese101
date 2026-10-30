@@ -1,0 +1,81 @@
+{
+  "unitId": "U06",
+  "version": "u06-2-draft",
+  "mode": "isolated draft structure",
+  "skills": [
+    {
+      "id": "G16",
+      "prerequisites": [
+        "K-HIRA",
+        "G15"
+      ],
+      "teaching": [
+        "U06-teach-G16"
+      ],
+      "practice": [
+        "U06-Q18",
+        "U06-Q19",
+        "U06-Q23",
+        "U06-Q26"
+      ],
+      "checkFamilies": [
+        "U06-CHECK-repair-case-marking",
+        "U06-CHECK-identify-object-not-topic",
+        "U06-CHECK-negation-object",
+        "U06-CHECK-verb-selection-transfer",
+        "U06-CHECK-question-answer-object"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G17",
+      "prerequisites": [
+        "K-HIRA",
+        "G16"
+      ],
+      "teaching": [
+        "U06-teach-G17"
+      ],
+      "practice": [
+        "U06-Q20",
+        "U06-Q21",
+        "U06-Q24",
+        "U06-Q27"
+      ],
+      "checkFamilies": [
+        "U06-CHECK-inference-boundary",
+        "U06-CHECK-preference-owner",
+        "U06-CHECK-like-vs-request",
+        "U06-CHECK-negative-preference-proof",
+        "U06-CHECK-repair-preference-particle"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G18",
+      "prerequisites": [
+        "K-HIRA",
+        "G17"
+      ],
+      "teaching": [
+        "U06-teach-G18"
+      ],
+      "practice": [
+        "U06-Q22",
+        "U06-Q25",
+        "U06-Q28"
+      ],
+      "checkFamilies": [
+        "U06-CHECK-request-not-received",
+        "U06-CHECK-request-recipient",
+        "U06-CHECK-repair-request-case",
+        "U06-CHECK-availability-request",
+        "U06-CHECK-keep-requested-object"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    }
+  ],
+  "audio": 16,
+  "images": 1,
+  "reviewItems": 135
+}

@@ -1,0 +1,4595 @@
+{
+  "id": "U04",
+  "version": "u04-1-draft",
+  "title": "位置與存在：在小鎮找到你",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "vocabulary": [
+    {
+      "id": "U04-V01",
+      "text": "うえ",
+      "reading": "うえ",
+      "meaning": "上面"
+    },
+    {
+      "id": "U04-V02",
+      "text": "した",
+      "reading": "した",
+      "meaning": "下面"
+    },
+    {
+      "id": "U04-V03",
+      "text": "なか",
+      "reading": "なか",
+      "meaning": "裡面"
+    },
+    {
+      "id": "U04-V04",
+      "text": "そと",
+      "reading": "そと",
+      "meaning": "外面"
+    },
+    {
+      "id": "U04-V05",
+      "text": "まえ",
+      "reading": "まえ",
+      "meaning": "前面"
+    },
+    {
+      "id": "U04-V06",
+      "text": "うしろ",
+      "reading": "うしろ",
+      "meaning": "後面"
+    },
+    {
+      "id": "U04-V07",
+      "text": "みぎ",
+      "reading": "みぎ",
+      "meaning": "右邊"
+    },
+    {
+      "id": "U04-V08",
+      "text": "ひだり",
+      "reading": "ひだり",
+      "meaning": "左邊"
+    },
+    {
+      "id": "U04-V09",
+      "text": "となり",
+      "reading": "となり",
+      "meaning": "旁邊／相鄰"
+    },
+    {
+      "id": "U04-V10",
+      "text": "ちかく",
+      "reading": "ちかく",
+      "meaning": "附近"
+    },
+    {
+      "id": "U04-V11",
+      "text": "あいだ",
+      "reading": "あいだ",
+      "meaning": "中間"
+    },
+    {
+      "id": "U04-V12",
+      "text": "ここ",
+      "reading": "ここ",
+      "meaning": "這裡，靠說話者"
+    },
+    {
+      "id": "U04-V13",
+      "text": "そこ",
+      "reading": "そこ",
+      "meaning": "那裡，靠聽話者"
+    },
+    {
+      "id": "U04-V14",
+      "text": "あそこ",
+      "reading": "あそこ",
+      "meaning": "那裡，離雙方都遠"
+    },
+    {
+      "id": "U04-V15",
+      "text": "どこ",
+      "reading": "どこ",
+      "meaning": "哪裡"
+    },
+    {
+      "id": "U04-V16",
+      "text": "へや",
+      "reading": "へや",
+      "meaning": "房間"
+    },
+    {
+      "id": "U04-V17",
+      "text": "にわ",
+      "reading": "にわ",
+      "meaning": "庭院"
+    },
+    {
+      "id": "U04-V18",
+      "text": "こうえん",
+      "reading": "こうえん",
+      "meaning": "公園"
+    },
+    {
+      "id": "U04-V19",
+      "text": "えき",
+      "reading": "えき",
+      "meaning": "車站"
+    },
+    {
+      "id": "U04-V20",
+      "text": "みせ",
+      "reading": "みせ",
+      "meaning": "商店"
+    },
+    {
+      "id": "U04-V21",
+      "text": "トイレ",
+      "reading": "トイレ",
+      "meaning": "廁所"
+    },
+    {
+      "id": "U04-V22",
+      "text": "ベッド",
+      "reading": "ベッド",
+      "meaning": "床"
+    },
+    {
+      "id": "U04-V23",
+      "text": "テレビ",
+      "reading": "テレビ",
+      "meaning": "電視"
+    },
+    {
+      "id": "U04-V24",
+      "text": "ある",
+      "reading": "ある",
+      "meaning": "有／存在，用於物品；禮貌形あります"
+    },
+    {
+      "id": "U04-V25",
+      "text": "いる",
+      "reading": "いる",
+      "meaning": "有／在，用於人或動物；禮貌形います"
+    }
+  ],
+  "kanji": [
+    {
+      "id": "U04-K01",
+      "text": "上",
+      "reading": "うえ",
+      "meaning": "上面"
+    },
+    {
+      "id": "U04-K02",
+      "text": "下",
+      "reading": "した",
+      "meaning": "下面"
+    },
+    {
+      "id": "U04-K03",
+      "text": "中",
+      "reading": "なか",
+      "meaning": "裡面"
+    },
+    {
+      "id": "U04-K04",
+      "text": "外",
+      "reading": "そと",
+      "meaning": "外面"
+    },
+    {
+      "id": "U04-K05",
+      "text": "前",
+      "reading": "まえ",
+      "meaning": "前面"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G10",
+      "title": "人／動物います，物品あります",
+      "prerequisites": [
+        "K-HIRA",
+        "G09"
+      ]
+    },
+    {
+      "id": "G11",
+      "title": "場所にNがあります／います",
+      "prerequisites": [
+        "K-HIRA",
+        "G10"
+      ]
+    },
+    {
+      "id": "G12",
+      "title": "Nは場所にあります／います",
+      "prerequisites": [
+        "K-HIRA",
+        "G11"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "U04-R01",
+      "text": "へやに つくえと いすが あります。ほんは いすの上に あります。ねこは つくえの下に います。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U04-R02",
+      "text": "いぬは にわに います。にわは へやの外に あります。せんせいは きょうしつに います。かばんは へやのはこの中に あります。いぬは へやには いません。",
+      "skillId": "R-MID"
+    },
+    {
+      "id": "U04-R03",
+      "text": "小鎮位置表\nみせ｜えきのとなり\nこうえん｜みせのうしろ\nトイレ｜こうえんの中\nせんせい｜こうえん",
+      "skillId": "R-INFO"
+    },
+    {
+      "id": "U04-R04",
+      "text": "ユイ：かばんは どこに ありますか。いすの上ですか。\nアキ：いいえ。はこは つくえの みぎに あります。かばんは そのはこの中に あります。\nユイ：ねこは どこに いますか。\nアキ：つくえの下に います。",
+      "skillId": "R-MID"
+    }
+  ],
+  "listening": [
+    {
+      "id": "U04-L01",
+      "script": "ねこは、つくえのしたにいます。ほんは、いすのうえにあります。",
+      "audioSrc": "/assets/audio/u04/listening-01.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U04-L02",
+      "script": "いぬは、にわにいます。ともだちは、へやのなかにいます。いぬは、へやにはいません。",
+      "audioSrc": "/assets/audio/u04/listening-02.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U04-L03",
+      "script": "みせは、えきのとなりにあります。こうえんは、みせのうしろにあります。せんせいは、こうえんにいます。",
+      "audioSrc": "/assets/audio/u04/listening-03.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U04-L04",
+      "script": "ねこは、つくえのしたにいます。いぬは、ドアのまえにいます。ほんは、つくえのうえにあります。かばんは、はこのなかにあります。",
+      "audioSrc": "/assets/audio/u04/listening-04.wav",
+      "skillId": "L-EXPR",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U04-L05",
+      "script": "ねこは、どこにいますか。",
+      "audioSrc": "/assets/audio/u04/listening-05.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U04-L06",
+      "script": "はこのなかに、なにがありますか。",
+      "audioSrc": "/assets/audio/u04/listening-06.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "U04-teach-words-1",
+      "title": "上下裡外與前面",
+      "titleJa": "うえ・した・なか・そと・まえ",
+      "body": "うえ：上面\nした：下面\nなか：裡面\nそと：外面\nまえ：前面",
+      "bodyJa": "ことばをきいて、ばしょやものをたしかめよう。",
+      "example": "うえ",
+      "translation": "上面",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "うえ。した。なか。そと。まえ。",
+      "audioSrc": "/assets/audio/u04/U04-teach-words-1.wav",
+      "vocabularyIds": [
+        "U04-V01",
+        "U04-V02",
+        "U04-V03",
+        "U04-V04",
+        "U04-V05"
+      ]
+    },
+    {
+      "id": "U04-teach-words-2",
+      "title": "後面與附近",
+      "titleJa": "うしろ・みぎ・ひだり・となり・ちかく",
+      "body": "うしろ：後面\nみぎ：右邊\nひだり：左邊\nとなり：旁邊／相鄰\nちかく：附近\nみぎ／ひだり先確定共同面向；相鄰才是となり，只說附近用ちかく。",
+      "bodyJa": "ことばをきいて、ばしょやものをたしかめよう。",
+      "example": "うしろ",
+      "translation": "後面",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "うしろ。みぎ。ひだり。となり。ちかく。",
+      "audioSrc": "/assets/audio/u04/U04-teach-words-2.wav",
+      "vocabularyIds": [
+        "U04-V06",
+        "U04-V07",
+        "U04-V08",
+        "U04-V09",
+        "U04-V10"
+      ]
+    },
+    {
+      "id": "U04-teach-words-3",
+      "title": "指向哪裡",
+      "titleJa": "ばしょをさすことば",
+      "body": "あいだ：中間\nここ：這裡，靠說話者\nそこ：那裡，靠聽話者\nあそこ：那裡，離雙方都遠\nどこ：哪裡\nここ靠我、そこ靠你、あそこ離我們都遠。兩者中間可說AとBのあいだ；と在這裡把兩個地方連起來。",
+      "bodyJa": "ことばをきいて、ばしょやものをたしかめよう。",
+      "example": "あいだ",
+      "translation": "中間",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "あいだ。ここ。そこ。あそこ。どこ。",
+      "audioSrc": "/assets/audio/u04/U04-teach-words-3.wav",
+      "vocabularyIds": [
+        "U04-V11",
+        "U04-V12",
+        "U04-V13",
+        "U04-V14",
+        "U04-V15"
+      ]
+    },
+    {
+      "id": "U04-teach-words-4",
+      "title": "小鎮裡的地方",
+      "titleJa": "まちのばしょ",
+      "body": "へや：房間\nにわ：庭院\nこうえん：公園\nえき：車站\nみせ：商店",
+      "bodyJa": "ことばをきいて、ばしょやものをたしかめよう。",
+      "example": "へや",
+      "translation": "房間",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "へや。にわ。こうえん。えき。みせ。",
+      "audioSrc": "/assets/audio/u04/U04-teach-words-4.wav",
+      "vocabularyIds": [
+        "U04-V16",
+        "U04-V17",
+        "U04-V18",
+        "U04-V19",
+        "U04-V20"
+      ]
+    },
+    {
+      "id": "U04-teach-words-5",
+      "title": "看得到的物品與生命",
+      "titleJa": "ものとひと・どうぶつ",
+      "body": "トイレ：廁所\nベッド：床\nテレビ：電視\nある：有／存在，用於物品；禮貌形あります\nいる：有／在，用於人或動物；禮貌形います",
+      "bodyJa": "ことばをきいて、ばしょやものをたしかめよう。",
+      "example": "トイレ",
+      "translation": "廁所",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "トイレ。ベッド。テレビ。あります。います。",
+      "audioSrc": "/assets/audio/u04/U04-teach-words-5.wav",
+      "vocabularyIds": [
+        "U04-V21",
+        "U04-V22",
+        "U04-V23",
+        "U04-V24",
+        "U04-V25"
+      ]
+    },
+    {
+      "id": "U04-teach-kanji",
+      "title": "把位置讀出來",
+      "titleJa": "ばしょのかんじ",
+      "body": "上（うえ）、下（した）、中（なか）、外（そと）、前（まえ）。\n物品＋の＋位置：つくえの上＝桌子上面；はこの中＝箱子裡。\n這一課使用位置的讀音，不能把「上」讀成うしろ。",
+      "bodyJa": "上はうえ、下はした、中はなか、外はそと、前はまえです。",
+      "example": "つくえの 上（うえ）／はこの 中（なか）",
+      "translation": "桌子上面／箱子裡面。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "audioScript": "うえ。した。なか。そと。まえ。つくえのうえ。はこのなか。",
+      "audioSrc": "/assets/audio/u04/U04-teach-kanji.wav",
+      "kanjiIds": [
+        "U04-K01",
+        "U04-K02",
+        "U04-K03",
+        "U04-K04",
+        "U04-K05"
+      ],
+      "prerequisites": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ]
+    },
+    {
+      "id": "U04-teach-G10",
+      "title": "有人、有動物、有東西",
+      "titleJa": "います・あります",
+      "body": "人或動物用います；物品用あります。\n正例：ねこが います（有貓）；ほんが あります（有書）。\n反例：ほんがいます把書當成人或動物，應說ほんがあります。\n沒有動物用いません；沒有物品用ありません。不要把あります改成ありますません。\nだれ表示誰，なに表示什麼；質問「なにが ありますか」詢問有什麼物品。",
+      "bodyJa": "ひととどうぶつには、います。ものには、あります。ねこがいます。ほんがあります。",
+      "example": "いぬが います。かばんが あります。",
+      "translation": "有狗；有書包。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G10"
+      ],
+      "audioScript": "ねこがいます。いぬがいます。せんせいがいます。ほんがあります。かばんがあります。ねこはいません。ほんはありません。",
+      "audioSrc": "/assets/audio/u04/U04-teach-G10.wav",
+      "grammarIds": [
+        "G10"
+      ],
+      "prerequisites": [
+        "U04-teach-kanji"
+      ]
+    },
+    {
+      "id": "U04-teach-G11",
+      "title": "先說地方，再介紹有什麼",
+      "titleJa": "ばしょに、なにがありますか",
+      "body": "場所＋に＋人／物＋が＋います／あります。\n正例：にわに いぬが います；つくえの上に ほんが あります。\n場所後面用に；介紹存在的人或物用が。\n反例：にわが いぬに います，把兩個助詞的位置反了。先找哪裡、再找有誰。",
+      "bodyJa": "ばしょに、ひとやものが、います・あります。",
+      "example": "へやに せんせいが います。",
+      "translation": "房間裡有老師。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G11"
+      ],
+      "audioScript": "にわに、いぬがいます。つくえのうえに、ほんがあります。へやに、せんせいがいます。",
+      "audioSrc": "/assets/audio/u04/U04-teach-G11.wav",
+      "grammarIds": [
+        "G11"
+      ],
+      "prerequisites": [
+        "U04-teach-G10"
+      ]
+    },
+    {
+      "id": "U04-teach-G12",
+      "title": "先說要找的東西，再說在哪裡",
+      "titleJa": "どこにありますか",
+      "body": "人／物＋は＋場所＋に＋います／あります。\n正例：ねこは つくえの下に います；かばんは はこの中に あります。\n問法：ほんは どこに ありますか（書在哪裡？）。\n反例：ねこはつくえの下があります，少了場所後的に，也選錯あります。\n先說尋找對象，用は；用に標位置，最後依對象決定います或あります。",
+      "bodyJa": "さがすひとやものを、はでしめします。つぎに、ばしょに、います・あります。",
+      "example": "ほんは いすの 上（うえ）に あります。",
+      "translation": "書在椅子上。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G12"
+      ],
+      "audioScript": "ねこは、つくえのしたにいます。かばんは、はこのなかにあります。ほんは、どこにありますか。いすのうえにあります。",
+      "audioSrc": "/assets/audio/u04/U04-teach-G12.wav",
+      "grammarIds": [
+        "G12"
+      ],
+      "prerequisites": [
+        "U04-teach-G11"
+      ]
+    },
+    {
+      "id": "U04-teach-story",
+      "title": "找到對象，再確認位置",
+      "titleJa": "だれ・なに・どこ",
+      "body": "表格中的左欄是對象、右欄是位置。\n尋物先看是誰／什麼，再看在哪裡。同一個房間裡，書可以在桌上，貓可以在桌下。\n門前表示門在動物後方；箱子中表示箱壁包住物品下半部。不要只因東西彼此靠近就判成裡面。\nねこはどこですか也能問貓在哪裡，完整回答可用ねこは～にいます。\n注意：同樣是問位置，最後仍依人／動物或物品選對存在動詞。",
+      "bodyJa": "なにをさがすかを、さきにたしかめます。つぎに、ばしょをみましょう。",
+      "example": "ねこは どこに いますか。つくえの 下（した）に います。",
+      "translation": "貓在哪裡？在桌子下面。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "R-SHORT",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-KEY",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "audioScript": "ねこは、どこにいますか。つくえのしたにいます。ほんは、どこにありますか。いすのうえにあります。",
+      "audioSrc": "/assets/audio/u04/U04-teach-story.wav",
+      "prerequisites": [
+        "U04-teach-G12"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "U04-Q01",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q01",
+      "itemFamilyId": "U04-F-position-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "位置的「上」怎麼讀？",
+      "promptJa": "ばしょの「上」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U04-Q01-o1",
+          "text": "した"
+        },
+        {
+          "id": "U04-Q01-o2",
+          "text": "なか"
+        },
+        {
+          "id": "U04-Q01-o3",
+          "text": "そと"
+        },
+        {
+          "id": "U04-Q01-o0",
+          "text": "うえ"
+        }
+      ],
+      "answer": [
+        "U04-Q01-o0"
+      ],
+      "explanation": "表示位置時，「上」讀「うえ」。",
+      "explanationJa": "ここでは「うえ」とよみます。",
+      "distractorReasons": {
+        "U04-Q01-o1": "した是下。",
+        "U04-Q01-o2": "なか是中。",
+        "U04-Q01-o3": "そと是外。"
+      },
+      "hint": "回想教學卡中位置漢字的讀音，先排除意思相反的選項。",
+      "hintJa": "ばしょのかんじのよみかたを、おもいだそう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U04-Q02",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q02",
+      "itemFamilyId": "U04-F-position-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "位置的「下」怎麼讀？",
+      "promptJa": "ばしょの「下」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U04-Q02-o2",
+          "text": "まえ"
+        },
+        {
+          "id": "U04-Q02-o3",
+          "text": "なか"
+        },
+        {
+          "id": "U04-Q02-o0",
+          "text": "した"
+        },
+        {
+          "id": "U04-Q02-o1",
+          "text": "うえ"
+        }
+      ],
+      "answer": [
+        "U04-Q02-o0"
+      ],
+      "explanation": "表示位置時，「下」讀「した」。",
+      "explanationJa": "ここでは「した」とよみます。",
+      "distractorReasons": {
+        "U04-Q02-o1": "うえ是上。",
+        "U04-Q02-o2": "まえ是前。",
+        "U04-Q02-o3": "なか是中。"
+      },
+      "hint": "回想教學卡中位置漢字的讀音，先排除意思相反的選項。",
+      "hintJa": "ばしょのかんじのよみかたを、おもいだそう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U04-Q03",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q03",
+      "itemFamilyId": "U04-F-position-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "位置的「中」怎麼讀？",
+      "promptJa": "ばしょの「中」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U04-Q03-o3",
+          "text": "した"
+        },
+        {
+          "id": "U04-Q03-o0",
+          "text": "なか"
+        },
+        {
+          "id": "U04-Q03-o1",
+          "text": "そと"
+        },
+        {
+          "id": "U04-Q03-o2",
+          "text": "うえ"
+        }
+      ],
+      "answer": [
+        "U04-Q03-o0"
+      ],
+      "explanation": "表示位置時，「中」讀「なか」。",
+      "explanationJa": "ここでは「なか」とよみます。",
+      "distractorReasons": {
+        "U04-Q03-o1": "そと是外。",
+        "U04-Q03-o2": "うえ是上。",
+        "U04-Q03-o3": "した是下。"
+      },
+      "hint": "回想教學卡中位置漢字的讀音，先排除意思相反的選項。",
+      "hintJa": "ばしょのかんじのよみかたを、おもいだそう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U04-Q04",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q04",
+      "itemFamilyId": "U04-F-position-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "位置的「外」怎麼讀？",
+      "promptJa": "ばしょの「外」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U04-Q04-o0",
+          "text": "そと"
+        },
+        {
+          "id": "U04-Q04-o1",
+          "text": "なか"
+        },
+        {
+          "id": "U04-Q04-o2",
+          "text": "まえ"
+        },
+        {
+          "id": "U04-Q04-o3",
+          "text": "うえ"
+        }
+      ],
+      "answer": [
+        "U04-Q04-o0"
+      ],
+      "explanation": "表示位置時，「外」讀「そと」。",
+      "explanationJa": "ここでは「そと」とよみます。",
+      "distractorReasons": {
+        "U04-Q04-o1": "なか是中。",
+        "U04-Q04-o2": "まえ是前。",
+        "U04-Q04-o3": "うえ是上。"
+      },
+      "hint": "回想教學卡中位置漢字的讀音，先排除意思相反的選項。",
+      "hintJa": "ばしょのかんじのよみかたを、おもいだそう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U04-Q05",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q05",
+      "itemFamilyId": "U04-F-position-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「まえ」表示位置，要用哪個漢字？",
+      "promptJa": "ばしょの「まえ」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q05-o1",
+          "text": "上"
+        },
+        {
+          "id": "U04-Q05-o2",
+          "text": "中"
+        },
+        {
+          "id": "U04-Q05-o3",
+          "text": "下"
+        },
+        {
+          "id": "U04-Q05-o0",
+          "text": "前"
+        }
+      ],
+      "answer": [
+        "U04-Q05-o0"
+      ],
+      "explanation": "正確漢字是「前」。",
+      "explanationJa": "ただしいかんじは「前」です。",
+      "distractorReasons": {
+        "U04-Q05-o1": "上讀うえ。",
+        "U04-Q05-o2": "中讀なか。",
+        "U04-Q05-o3": "下讀した。"
+      },
+      "hint": "回想教學卡中位置漢字的讀音，先排除意思相反的選項。",
+      "hintJa": "ばしょのかんじのよみかたを、おもいだそう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U04-Q06",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q06",
+      "itemFamilyId": "U04-F-position-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「なか」表示位置，要用哪個漢字？",
+      "promptJa": "ばしょの「なか」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q06-o2",
+          "text": "前"
+        },
+        {
+          "id": "U04-Q06-o3",
+          "text": "上"
+        },
+        {
+          "id": "U04-Q06-o0",
+          "text": "中"
+        },
+        {
+          "id": "U04-Q06-o1",
+          "text": "外"
+        }
+      ],
+      "answer": [
+        "U04-Q06-o0"
+      ],
+      "explanation": "正確漢字是「中」。",
+      "explanationJa": "ただしいかんじは「中」です。",
+      "distractorReasons": {
+        "U04-Q06-o1": "外讀そと。",
+        "U04-Q06-o2": "前讀まえ。",
+        "U04-Q06-o3": "上讀うえ。"
+      },
+      "hint": "回想教學卡中位置漢字的讀音，先排除意思相反的選項。",
+      "hintJa": "ばしょのかんじのよみかたを、おもいだそう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U04-Q07",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q07",
+      "itemFamilyId": "U04-F-position-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「そと」表示位置，要用哪個漢字？",
+      "promptJa": "ばしょの「そと」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q07-o3",
+          "text": "前"
+        },
+        {
+          "id": "U04-Q07-o0",
+          "text": "外"
+        },
+        {
+          "id": "U04-Q07-o1",
+          "text": "中"
+        },
+        {
+          "id": "U04-Q07-o2",
+          "text": "下"
+        }
+      ],
+      "answer": [
+        "U04-Q07-o0"
+      ],
+      "explanation": "正確漢字是「外」。",
+      "explanationJa": "ただしいかんじは「外」です。",
+      "distractorReasons": {
+        "U04-Q07-o1": "中是裡面。",
+        "U04-Q07-o2": "下讀した。",
+        "U04-Q07-o3": "前讀まえ。"
+      },
+      "hint": "回想教學卡中位置漢字的讀音，先排除意思相反的選項。",
+      "hintJa": "ばしょのかんじのよみかたを、おもいだそう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U04-Q08",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q08",
+      "itemFamilyId": "U04-F-position-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「した」表示位置，要用哪個漢字？",
+      "promptJa": "ばしょの「した」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q08-o0",
+          "text": "下"
+        },
+        {
+          "id": "U04-Q08-o1",
+          "text": "上"
+        },
+        {
+          "id": "U04-Q08-o2",
+          "text": "外"
+        },
+        {
+          "id": "U04-Q08-o3",
+          "text": "中"
+        }
+      ],
+      "answer": [
+        "U04-Q08-o0"
+      ],
+      "explanation": "正確漢字是「下」。",
+      "explanationJa": "ただしいかんじは「下」です。",
+      "distractorReasons": {
+        "U04-Q08-o1": "上讀うえ。",
+        "U04-Q08-o2": "外讀そと。",
+        "U04-Q08-o3": "中讀なか。"
+      },
+      "hint": "回想教學卡中位置漢字的讀音，先排除意思相反的選項。",
+      "hintJa": "ばしょのかんじのよみかたを、おもいだそう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U04-Q09",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q09",
+      "itemFamilyId": "U04-F-place-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "地點在說話者腳邊，說「這裡」用哪個詞？",
+      "promptJa": "はなすひとのすぐそばのばしょです。",
+      "choices": [
+        {
+          "id": "U04-Q09-o1",
+          "text": "そこ"
+        },
+        {
+          "id": "U04-Q09-o2",
+          "text": "あそこ"
+        },
+        {
+          "id": "U04-Q09-o3",
+          "text": "どこ"
+        },
+        {
+          "id": "U04-Q09-o0",
+          "text": "ここ"
+        }
+      ],
+      "answer": [
+        "U04-Q09-o0"
+      ],
+      "explanation": "靠說話者的地方是ここ。",
+      "explanationJa": "このばしょは「ここ」です。",
+      "distractorReasons": {
+        "U04-Q09-o1": "そこ靠聽話者。",
+        "U04-Q09-o2": "あそこ離雙方都遠。",
+        "U04-Q09-o3": "どこ是問哪裡。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U04-Q10",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q10",
+      "itemFamilyId": "U04-F-place-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "地點在聽話者身旁，說話者離它較遠，要用哪個詞？",
+      "promptJa": "きくひとのすぐそばのばしょです。",
+      "choices": [
+        {
+          "id": "U04-Q10-o2",
+          "text": "あそこ"
+        },
+        {
+          "id": "U04-Q10-o3",
+          "text": "なか"
+        },
+        {
+          "id": "U04-Q10-o0",
+          "text": "そこ"
+        },
+        {
+          "id": "U04-Q10-o1",
+          "text": "ここ"
+        }
+      ],
+      "answer": [
+        "U04-Q10-o0"
+      ],
+      "explanation": "靠聽話者的地方是そこ。",
+      "explanationJa": "このばしょは「そこ」です。",
+      "distractorReasons": {
+        "U04-Q10-o1": "ここ靠說話者。",
+        "U04-Q10-o2": "あそこ離雙方都遠。",
+        "U04-Q10-o3": "なか只說裡面。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U04-Q11",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q11",
+      "itemFamilyId": "U04-F-place-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "兩人指向遠方、離雙方都遠的地方，要用哪個詞？",
+      "promptJa": "ふたりからはなれたばしょです。",
+      "choices": [
+        {
+          "id": "U04-Q11-o3",
+          "text": "まえ"
+        },
+        {
+          "id": "U04-Q11-o0",
+          "text": "あそこ"
+        },
+        {
+          "id": "U04-Q11-o1",
+          "text": "ここ"
+        },
+        {
+          "id": "U04-Q11-o2",
+          "text": "そこ"
+        }
+      ],
+      "answer": [
+        "U04-Q11-o0"
+      ],
+      "explanation": "遠離雙方的地方用あそこ。",
+      "explanationJa": "このばしょは「あそこ」です。",
+      "distractorReasons": {
+        "U04-Q11-o1": "ここ靠說話者。",
+        "U04-Q11-o2": "そこ靠聽話者。",
+        "U04-Q11-o3": "まえ只表示前面。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U04-Q12",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q12",
+      "itemFamilyId": "U04-F-place-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "兩間建築緊挨著，相鄰的關係用哪個詞？",
+      "promptJa": "ふたつのたてものが、すぐよこにならんでいます。",
+      "choices": [
+        {
+          "id": "U04-Q12-o0",
+          "text": "となり"
+        },
+        {
+          "id": "U04-Q12-o1",
+          "text": "うしろ"
+        },
+        {
+          "id": "U04-Q12-o2",
+          "text": "なか"
+        },
+        {
+          "id": "U04-Q12-o3",
+          "text": "うえ"
+        }
+      ],
+      "answer": [
+        "U04-Q12-o0"
+      ],
+      "explanation": "緊挨著、相鄰用となり。",
+      "explanationJa": "このばしょは「となり」です。",
+      "distractorReasons": {
+        "U04-Q12-o1": "うしろ是後方。",
+        "U04-Q12-o2": "なか是裡面。",
+        "U04-Q12-o3": "うえ是上方。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U04-Q13",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q13",
+      "itemFamilyId": "U04-F-place-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "想搭車，要找「車站」這個地方。日語是哪個詞？",
+      "promptJa": "でんしゃにのるばしょのことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q13-o1",
+          "text": "へや"
+        },
+        {
+          "id": "U04-Q13-o2",
+          "text": "ベッド"
+        },
+        {
+          "id": "U04-Q13-o3",
+          "text": "テレビ"
+        },
+        {
+          "id": "U04-Q13-o0",
+          "text": "えき"
+        }
+      ],
+      "answer": [
+        "U04-Q13-o0"
+      ],
+      "explanation": "えき就是車站。",
+      "explanationJa": "このばしょは「えき」です。",
+      "distractorReasons": {
+        "U04-Q13-o1": "へや是房間。",
+        "U04-Q13-o2": "ベッド是床。",
+        "U04-Q13-o3": "テレビ是電視。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U04-Q14",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q14",
+      "itemFamilyId": "U04-F-place-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "地點在兩個參照物之間，應用哪個位置詞？",
+      "promptJa": "ふたつのものにはさまれたばしょです。",
+      "choices": [
+        {
+          "id": "U04-Q14-o2",
+          "text": "うしろ"
+        },
+        {
+          "id": "U04-Q14-o3",
+          "text": "ちかく"
+        },
+        {
+          "id": "U04-Q14-o0",
+          "text": "あいだ"
+        },
+        {
+          "id": "U04-Q14-o1",
+          "text": "そと"
+        }
+      ],
+      "answer": [
+        "U04-Q14-o0"
+      ],
+      "explanation": "あいだ表示中間，需確認兩個參照物。",
+      "explanationJa": "このばしょは「あいだ」です。",
+      "distractorReasons": {
+        "U04-Q14-o1": "そと是外面。",
+        "U04-Q14-o2": "うしろ是後面。",
+        "U04-Q14-o3": "ちかく只說附近，未必在兩者之間。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U04-Q15",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q15",
+      "itemFamilyId": "U04-F-near-not-adjacent",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「えきのちかく」只確定哪件事？",
+      "promptJa": "えきのちかく、からわかることは、どれですか。",
+      "choices": [
+        {
+          "id": "U04-Q15-o3",
+          "text": "一定在車站後面"
+        },
+        {
+          "id": "U04-Q15-o0",
+          "text": "在車站附近"
+        },
+        {
+          "id": "U04-Q15-o1",
+          "text": "一定緊貼車站旁邊"
+        },
+        {
+          "id": "U04-Q15-o2",
+          "text": "一定在車站裡面"
+        }
+      ],
+      "answer": [
+        "U04-Q15-o0"
+      ],
+      "explanation": "ちかく描述附近，不能自行增加更精確位置。",
+      "explanationJa": "ちかくは、ばしょがはなれていないことです。",
+      "distractorReasons": {
+        "U04-Q15-o1": "ちかく不保證相鄰。",
+        "U04-Q15-o2": "なか才是裡面。",
+        "U04-Q15-o3": "うしろ才是後面。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U04-Q16",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q16",
+      "itemFamilyId": "U04-F-inside-box",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「はこの中」的意思是哪個？",
+      "promptJa": "はこのなか、のいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q16-o0",
+          "text": "箱子裡面"
+        },
+        {
+          "id": "U04-Q16-o1",
+          "text": "箱子外面"
+        },
+        {
+          "id": "U04-Q16-o2",
+          "text": "箱子上方"
+        },
+        {
+          "id": "U04-Q16-o3",
+          "text": "箱子後面"
+        }
+      ],
+      "answer": [
+        "U04-Q16-o0"
+      ],
+      "explanation": "中讀なか，表示被箱子包圍的內部。",
+      "explanationJa": "なかは、そとではありません。",
+      "distractorReasons": {
+        "U04-Q16-o1": "外面是そと。",
+        "U04-Q16-o2": "上方是うえ。",
+        "U04-Q16-o3": "後面是うしろ。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U04-Q17",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q17",
+      "itemFamilyId": "U04-F-ask-location",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "想問一個地方在哪裡，「哪裡」的日語是哪個？",
+      "promptJa": "ばしょをたずねることばは、どれですか。",
+      "choices": [
+        {
+          "id": "U04-Q17-o1",
+          "text": "ここ"
+        },
+        {
+          "id": "U04-Q17-o2",
+          "text": "そこ"
+        },
+        {
+          "id": "U04-Q17-o3",
+          "text": "あいだ"
+        },
+        {
+          "id": "U04-Q17-o0",
+          "text": "どこ"
+        }
+      ],
+      "answer": [
+        "U04-Q17-o0"
+      ],
+      "explanation": "どこ用來詢問位置。",
+      "explanationJa": "どこで、ばしょをたずねます。",
+      "distractorReasons": {
+        "U04-Q17-o1": "ここ是指出這裡，沒有問問題。",
+        "U04-Q17-o2": "そこ是指出那裡。",
+        "U04-Q17-o3": "あいだ是中間。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U04-Q18",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q18",
+      "itemFamilyId": "U04-F-animate-choice",
+      "primarySkillId": "G10",
+      "skillIds": [
+        "G10"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「ねこが＿＿」。有一隻貓，要填哪個說法？",
+      "promptJa": "ねこが＿＿。あうことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q18-o2",
+          "text": "ですか"
+        },
+        {
+          "id": "U04-Q18-o3",
+          "text": "ねます"
+        },
+        {
+          "id": "U04-Q18-o0",
+          "text": "います"
+        },
+        {
+          "id": "U04-Q18-o1",
+          "text": "あります"
+        }
+      ],
+      "answer": [
+        "U04-Q18-o0"
+      ],
+      "explanation": "動物的存在用います。",
+      "explanationJa": "どうぶつには、いますをつかいます。",
+      "distractorReasons": {
+        "U04-Q18-o1": "貓是動物，用います。",
+        "U04-Q18-o2": "這不是本題表示存在的形式。",
+        "U04-Q18-o3": "這表示睡覺，不是有貓。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-Q19",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q19",
+      "itemFamilyId": "U04-F-inanimate-choice",
+      "primarySkillId": "G10",
+      "skillIds": [
+        "G10"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「テレビが＿＿」。有一台電視，要填哪個說法？",
+      "promptJa": "テレビが＿＿。あうことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q19-o3",
+          "text": "よみます"
+        },
+        {
+          "id": "U04-Q19-o0",
+          "text": "あります"
+        },
+        {
+          "id": "U04-Q19-o1",
+          "text": "います"
+        },
+        {
+          "id": "U04-Q19-o2",
+          "text": "おきます"
+        }
+      ],
+      "answer": [
+        "U04-Q19-o0"
+      ],
+      "explanation": "物品的存在用あります。",
+      "explanationJa": "ものには、ありますをつかいます。",
+      "distractorReasons": {
+        "U04-Q19-o1": "電視是物品，用あります。",
+        "U04-Q19-o2": "這是起床，不是存在。",
+        "U04-Q19-o3": "這是閱讀，不是存在。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-Q20",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q20",
+      "itemFamilyId": "U04-F-location-then-subject",
+      "primarySkillId": "G11",
+      "skillIds": [
+        "G11"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「にわ＿＿いぬ＿＿います」。助詞依序是哪一組？",
+      "promptJa": "にわといぬのあとに、あうことばをいれましょう。",
+      "choices": [
+        {
+          "id": "U04-Q20-o0",
+          "text": "に／が"
+        },
+        {
+          "id": "U04-Q20-o1",
+          "text": "が／に"
+        },
+        {
+          "id": "U04-Q20-o2",
+          "text": "の／が"
+        },
+        {
+          "id": "U04-Q20-o3",
+          "text": "に／の"
+        }
+      ],
+      "answer": [
+        "U04-Q20-o0"
+      ],
+      "explanation": "先說地點に，再說對象がいます。",
+      "explanationJa": "にわに、いぬがいます。",
+      "distractorReasons": {
+        "U04-Q20-o1": "地點與存在對象的位置反了。",
+        "U04-Q20-o2": "這裡地點後用に。",
+        "U04-Q20-o3": "介紹存在對象用が。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-Q21",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q21",
+      "itemFamilyId": "U04-F-topic-location",
+      "primarySkillId": "G12",
+      "skillIds": [
+        "G12"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "書在椅子上。哪句保留書作為主題？",
+      "promptJa": "ほんのばしょを、ほんは、ではじめましょう。",
+      "choices": [
+        {
+          "id": "U04-Q21-o1",
+          "text": "ほんは いすの上に います。"
+        },
+        {
+          "id": "U04-Q21-o2",
+          "text": "ほんは いすの下に あります。"
+        },
+        {
+          "id": "U04-Q21-o3",
+          "text": "ほんは いすの上が あります。"
+        },
+        {
+          "id": "U04-Q21-o0",
+          "text": "ほんは いすの上に あります。"
+        }
+      ],
+      "answer": [
+        "U04-Q21-o0"
+      ],
+      "explanation": "ほんは指出主題，いすの上に指出位置，物品用あります。",
+      "explanationJa": "ほんは、いすのうえにあります。",
+      "distractorReasons": {
+        "U04-Q21-o1": "書是物品，用あります。",
+        "U04-Q21-o2": "位置錯成下面。",
+        "U04-Q21-o3": "場所後應用に。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-Q22",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q22",
+      "itemFamilyId": "U04-F-animal-location",
+      "primarySkillId": "G12",
+      "skillIds": [
+        "G12"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "狗在門前，哪句正確？",
+      "promptJa": "いぬのばしょは、ドアのまえです。",
+      "choices": [
+        {
+          "id": "U04-Q22-o2",
+          "text": "いぬは ドアの中に います。"
+        },
+        {
+          "id": "U04-Q22-o3",
+          "text": "いぬは ドアの前の います。"
+        },
+        {
+          "id": "U04-Q22-o0",
+          "text": "いぬは ドアの前に います。"
+        },
+        {
+          "id": "U04-Q22-o1",
+          "text": "いぬは ドアの前に あります。"
+        }
+      ],
+      "answer": [
+        "U04-Q22-o0"
+      ],
+      "explanation": "狗用います，門前用ドアの前に。",
+      "explanationJa": "いぬは、ドアのまえにいます。",
+      "distractorReasons": {
+        "U04-Q22-o1": "狗是動物，用います。",
+        "U04-Q22-o2": "位置錯成門裡面。",
+        "U04-Q22-o3": "位置接存在動詞應用に。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-Q23",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q23",
+      "itemFamilyId": "U04-F-order-inanimate",
+      "primarySkillId": "G-ORDER",
+      "skillIds": [
+        "G-ORDER"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「有書包」的句子。",
+      "promptJa": "かばんがあることを、ぶんにしましょう。",
+      "choices": [
+        {
+          "id": "U04-Q23-o2",
+          "text": "あります。"
+        },
+        {
+          "id": "U04-Q23-o0",
+          "text": "かばん"
+        },
+        {
+          "id": "U04-Q23-o1",
+          "text": "が"
+        }
+      ],
+      "answer": [
+        "U04-Q23-o0",
+        "U04-Q23-o1",
+        "U04-Q23-o2"
+      ],
+      "explanation": "對象かばん，後面用が與あります。",
+      "explanationJa": "かばん、が、あります、のじゅんです。",
+      "distractorReasons": {},
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U04-Q24",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q24",
+      "itemFamilyId": "U04-F-order-place-first",
+      "primarySkillId": "G-ORDER",
+      "skillIds": [
+        "G-ORDER"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「房間裡有老師」。",
+      "promptJa": "へやにせんせいがいるぶんをつくりましょう。",
+      "choices": [
+        {
+          "id": "U04-Q24-o0",
+          "text": "へやに"
+        },
+        {
+          "id": "U04-Q24-o1",
+          "text": "せんせいが"
+        },
+        {
+          "id": "U04-Q24-o2",
+          "text": "います。"
+        }
+      ],
+      "answer": [
+        "U04-Q24-o0",
+        "U04-Q24-o1",
+        "U04-Q24-o2"
+      ],
+      "explanation": "地點へやに，對象せんせいが，人用います。",
+      "explanationJa": "へやに、せんせいが、います。",
+      "distractorReasons": {},
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U04-Q25",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q25",
+      "itemFamilyId": "U04-F-order-topic-first",
+      "primarySkillId": "G-ORDER",
+      "skillIds": [
+        "G-ORDER"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "用「ねこは」開頭，排出貓在桌子下的句子。",
+      "promptJa": "ねこは、ではじめましょう。",
+      "choices": [
+        {
+          "id": "U04-Q25-o1",
+          "text": "つくえの下に"
+        },
+        {
+          "id": "U04-Q25-o2",
+          "text": "います。"
+        },
+        {
+          "id": "U04-Q25-o0",
+          "text": "ねこは"
+        }
+      ],
+      "answer": [
+        "U04-Q25-o0",
+        "U04-Q25-o1",
+        "U04-Q25-o2"
+      ],
+      "explanation": "主題後接地點，動物用います。",
+      "explanationJa": "ねこは、つくえのしたに、います。",
+      "distractorReasons": {},
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U04-Q26",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q26",
+      "itemFamilyId": "U04-F-text-book-existence",
+      "primarySkillId": "G-TEXT",
+      "skillIds": [
+        "G-TEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "房間介紹：「へやに つくえが あります。つくえの上に ほんが＿＿。」",
+      "promptJa": "へやのしょうかいをかんせいさせましょう。",
+      "choices": [
+        {
+          "id": "U04-Q26-o2",
+          "text": "おきます"
+        },
+        {
+          "id": "U04-Q26-o3",
+          "text": "たべます"
+        },
+        {
+          "id": "U04-Q26-o0",
+          "text": "あります"
+        },
+        {
+          "id": "U04-Q26-o1",
+          "text": "います"
+        }
+      ],
+      "answer": [
+        "U04-Q26-o0"
+      ],
+      "explanation": "後句介紹桌上的書，仍用あります。",
+      "explanationJa": "ほんはものなので、「あります」をつかいます。",
+      "distractorReasons": {
+        "U04-Q26-o1": "書是物品。",
+        "U04-Q26-o2": "這是起床。",
+        "U04-Q26-o3": "這是吃。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U04-Q27",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q27",
+      "itemFamilyId": "U04-F-text-dog-absence",
+      "primarySkillId": "G-TEXT",
+      "skillIds": [
+        "G-TEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "對話：「いぬは へやに いますか。」「いいえ、へやには＿＿。にわに います。」",
+      "promptJa": "いぬはにわにいます。へやについてこたえましょう。",
+      "choices": [
+        {
+          "id": "U04-Q27-o3",
+          "text": "です"
+        },
+        {
+          "id": "U04-Q27-o0",
+          "text": "いません"
+        },
+        {
+          "id": "U04-Q27-o1",
+          "text": "います"
+        },
+        {
+          "id": "U04-Q27-o2",
+          "text": "ありません"
+        }
+      ],
+      "answer": [
+        "U04-Q27-o0"
+      ],
+      "explanation": "狗不在房間，用いません。",
+      "explanationJa": "いぬはへやにはいません。",
+      "distractorReasons": {
+        "U04-Q27-o1": "和いいえ及位置描述矛盾。",
+        "U04-Q27-o2": "否定動物存在仍用いません。",
+        "U04-Q27-o3": "沒有表達不在。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U04-Q28",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q28",
+      "itemFamilyId": "U04-F-text-known-bag",
+      "primarySkillId": "G-TEXT",
+      "skillIds": [
+        "G-TEXT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "小唯問書包在哪。小秋回答：「かばんは はこの中＿＿あります。」",
+      "promptJa": "かばんのばしょをこたえましょう。",
+      "choices": [
+        {
+          "id": "U04-Q28-o0",
+          "text": "に"
+        },
+        {
+          "id": "U04-Q28-o1",
+          "text": "が"
+        },
+        {
+          "id": "U04-Q28-o2",
+          "text": "の"
+        },
+        {
+          "id": "U04-Q28-o3",
+          "text": "か"
+        }
+      ],
+      "answer": [
+        "U04-Q28-o0"
+      ],
+      "explanation": "はこの中是地點，後接にあります。",
+      "explanationJa": "はこのなかにあります。",
+      "distractorReasons": {
+        "U04-Q28-o1": "這裡要標出位置，用に。",
+        "U04-Q28-o2": "の不這樣接あります。",
+        "U04-Q28-o3": "か不能代替位置助詞。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U04-Q29",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q29",
+      "itemFamilyId": "U04-F-room-find-cat",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "依短文，要找貓應看哪裡？",
+      "promptJa": "ねこはどこにいますか。",
+      "choices": [
+        {
+          "id": "U04-Q29-o1",
+          "text": "椅子上面"
+        },
+        {
+          "id": "U04-Q29-o2",
+          "text": "桌子上面"
+        },
+        {
+          "id": "U04-Q29-o3",
+          "text": "箱子裡面"
+        },
+        {
+          "id": "U04-Q29-o0",
+          "text": "桌子下面"
+        }
+      ],
+      "answer": [
+        "U04-Q29-o0"
+      ],
+      "explanation": "短文最後一句是ねこはつくえの下にいます。",
+      "explanationJa": "ねこはつくえのしたです。",
+      "distractorReasons": {
+        "U04-Q29-o1": "那裡放書。",
+        "U04-Q29-o2": "短文說下。",
+        "U04-Q29-o3": "短文沒有這樣說。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U04-R01",
+      "material": "へやに つくえと いすが あります。ほんは いすの上に あります。ねこは つくえの下に います。"
+    },
+    {
+      "id": "U04-Q30",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q30",
+      "itemFamilyId": "U04-F-room-find-book",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "依短文，椅子上面有什麼？",
+      "promptJa": "いすのうえに、なにがありますか。",
+      "choices": [
+        {
+          "id": "U04-Q30-o2",
+          "text": "書包"
+        },
+        {
+          "id": "U04-Q30-o3",
+          "text": "電視"
+        },
+        {
+          "id": "U04-Q30-o0",
+          "text": "書"
+        },
+        {
+          "id": "U04-Q30-o1",
+          "text": "貓"
+        }
+      ],
+      "answer": [
+        "U04-Q30-o0"
+      ],
+      "explanation": "ほん是書，在椅子上。",
+      "explanationJa": "いすのうえにほんがあります。",
+      "distractorReasons": {
+        "U04-Q30-o1": "貓在桌下。",
+        "U04-Q30-o2": "文中未說有書包。",
+        "U04-Q30-o3": "文中未說有電視。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U04-R01",
+      "material": "へやに つくえと いすが あります。ほんは いすの上に あります。ねこは つくえの下に います。"
+    },
+    {
+      "id": "U04-Q31",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q31",
+      "itemFamilyId": "U04-F-inside-outside-inference",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "綜合庭院與房間的關係，哪句符合狗的位置？",
+      "promptJa": "いぬとへやのかんけいは、どれですか。",
+      "choices": [
+        {
+          "id": "U04-Q31-o3",
+          "text": "狗在房間裡"
+        },
+        {
+          "id": "U04-Q31-o0",
+          "text": "狗在房間外面的庭院"
+        },
+        {
+          "id": "U04-Q31-o1",
+          "text": "狗在教室內"
+        },
+        {
+          "id": "U04-Q31-o2",
+          "text": "狗在房間的箱子裡"
+        }
+      ],
+      "answer": [
+        "U04-Q31-o0"
+      ],
+      "explanation": "狗在庭院，庭院在房間外；兩句需一起看。",
+      "explanationJa": "いぬはにわ、にわはへやのそとです。",
+      "distractorReasons": {
+        "U04-Q31-o1": "教室裡是老師。",
+        "U04-Q31-o2": "箱子裡是書包。",
+        "U04-Q31-o3": "短文最後明確否定。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U04-R02",
+      "material": "いぬは にわに います。にわは へやの外に あります。せんせいは きょうしつに います。かばんは へやのはこの中に あります。いぬは へやには いません。"
+    },
+    {
+      "id": "U04-Q32",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q32",
+      "itemFamilyId": "U04-F-resolve-referred-box",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "小秋說「そのはこ」，指哪個箱子？",
+      "promptJa": "そのはこは、どのはこですか。",
+      "choices": [
+        {
+          "id": "U04-Q32-o0",
+          "text": "桌子右邊的箱子"
+        },
+        {
+          "id": "U04-Q32-o1",
+          "text": "椅子上面的箱子"
+        },
+        {
+          "id": "U04-Q32-o2",
+          "text": "桌子下面的箱子"
+        },
+        {
+          "id": "U04-Q32-o3",
+          "text": "桌子左邊的箱子"
+        }
+      ],
+      "answer": [
+        "U04-Q32-o0"
+      ],
+      "explanation": "そのはこ接回前句的つくえのみぎにあるはこ。",
+      "explanationJa": "つくえのみぎのはこです。",
+      "distractorReasons": {
+        "U04-Q32-o1": "對話未說有這個箱子。",
+        "U04-Q32-o2": "桌下是貓。",
+        "U04-Q32-o3": "方向是みぎ。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U04-R04",
+      "material": "ユイ：かばんは どこに ありますか。いすの上ですか。\nアキ：いいえ。はこは つくえの みぎに あります。かばんは そのはこの中に あります。\nユイ：ねこは どこに いますか。\nアキ：つくえの下に います。"
+    },
+    {
+      "id": "U04-Q33",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q33",
+      "itemFamilyId": "U04-F-town-table",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "照位置表，要找廁所應到哪裡？",
+      "promptJa": "トイレはどこにありますか。",
+      "choices": [
+        {
+          "id": "U04-Q33-o1",
+          "text": "車站後面"
+        },
+        {
+          "id": "U04-Q33-o2",
+          "text": "商店裡面"
+        },
+        {
+          "id": "U04-Q33-o3",
+          "text": "房間外面"
+        },
+        {
+          "id": "U04-Q33-o0",
+          "text": "公園裡面"
+        }
+      ],
+      "answer": [
+        "U04-Q33-o0"
+      ],
+      "explanation": "トイレ的右欄是こうえんの中。",
+      "explanationJa": "トイレはこうえんのなかです。",
+      "distractorReasons": {
+        "U04-Q33-o1": "表格沒有這個關係。",
+        "U04-Q33-o2": "表格寫公園裡。",
+        "U04-Q33-o3": "表格沒有房間。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U04-R03",
+      "material": "小鎮位置表\nみせ｜えきのとなり\nこうえん｜みせのうしろ\nトイレ｜こうえんの中\nせんせい｜こうえん"
+    },
+    {
+      "id": "U04-Q34",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q34",
+      "itemFamilyId": "U04-F-town-table",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "老師在公園。依表格，公園在商店哪一邊？",
+      "promptJa": "こうえんは、みせのどこですか。",
+      "choices": [
+        {
+          "id": "U04-Q34-o2",
+          "text": "裡面"
+        },
+        {
+          "id": "U04-Q34-o3",
+          "text": "上面"
+        },
+        {
+          "id": "U04-Q34-o0",
+          "text": "後面"
+        },
+        {
+          "id": "U04-Q34-o1",
+          "text": "前面"
+        }
+      ],
+      "answer": [
+        "U04-Q34-o0"
+      ],
+      "explanation": "公園對應みせのうしろ。",
+      "explanationJa": "こうえんはみせのうしろです。",
+      "distractorReasons": {
+        "U04-Q34-o1": "まえ才是前面。",
+        "U04-Q34-o2": "なか才是裡面。",
+        "U04-Q34-o3": "うえ才是上面。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U04-R03",
+      "material": "小鎮位置表\nみせ｜えきのとなり\nこうえん｜みせのうしろ\nトイレ｜こうえんの中\nせんせい｜こうえん"
+    },
+    {
+      "id": "U04-Q35",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q35",
+      "itemFamilyId": "U04-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽完安排，你要拿書，應先看哪裡？",
+      "promptJa": "ほんをさがします。どこをみますか。",
+      "choices": [
+        {
+          "id": "U04-Q35-o3",
+          "text": "門前"
+        },
+        {
+          "id": "U04-Q35-o0",
+          "text": "椅子上"
+        },
+        {
+          "id": "U04-Q35-o1",
+          "text": "桌子下"
+        },
+        {
+          "id": "U04-Q35-o2",
+          "text": "箱子裡"
+        }
+      ],
+      "answer": [
+        "U04-Q35-o0"
+      ],
+      "explanation": "ほんはいすの上にあります。",
+      "explanationJa": "いすのうえをみます。",
+      "distractorReasons": {
+        "U04-Q35-o1": "那是貓的位置。",
+        "U04-Q35-o2": "音訊沒說書在箱內。",
+        "U04-Q35-o3": "音訊沒說門前有書。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U04-L01",
+      "audioSrc": "/assets/audio/u04/listening-01.wav"
+    },
+    {
+      "id": "U04-Q36",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q36",
+      "itemFamilyId": "U04-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你要找狗，依音訊應到哪裡？",
+      "promptJa": "いぬをさがします。どこですか。",
+      "choices": [
+        {
+          "id": "U04-Q36-o0",
+          "text": "庭院"
+        },
+        {
+          "id": "U04-Q36-o1",
+          "text": "房間裡"
+        },
+        {
+          "id": "U04-Q36-o2",
+          "text": "書桌上"
+        },
+        {
+          "id": "U04-Q36-o3",
+          "text": "教室裡"
+        }
+      ],
+      "answer": [
+        "U04-Q36-o0"
+      ],
+      "explanation": "狗在庭院，朋友才在房間。",
+      "explanationJa": "いぬはにわにいます。",
+      "distractorReasons": {
+        "U04-Q36-o1": "音訊明確說狗不在房間。",
+        "U04-Q36-o2": "沒有這個安排。",
+        "U04-Q36-o3": "沒有這個安排。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U04-L02",
+      "audioSrc": "/assets/audio/u04/listening-02.wav"
+    },
+    {
+      "id": "U04-Q37",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q37",
+      "itemFamilyId": "U04-F-listening-03",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你要找老師，依音訊應去哪個地方？",
+      "promptJa": "せんせいをさがします。どこですか。",
+      "choices": [
+        {
+          "id": "U04-Q37-o1",
+          "text": "車站"
+        },
+        {
+          "id": "U04-Q37-o2",
+          "text": "商店裡"
+        },
+        {
+          "id": "U04-Q37-o3",
+          "text": "房間"
+        },
+        {
+          "id": "U04-Q37-o0",
+          "text": "公園"
+        }
+      ],
+      "answer": [
+        "U04-Q37-o0"
+      ],
+      "explanation": "せんせいはこうえんにいます。",
+      "explanationJa": "こうえんでせんせいをさがします。",
+      "distractorReasons": {
+        "U04-Q37-o1": "音訊說老師在公園。",
+        "U04-Q37-o2": "商店只是公園的位置參照。",
+        "U04-Q37-o3": "音訊未說老師在房間。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U04-L03",
+      "audioSrc": "/assets/audio/u04/listening-03.wav"
+    },
+    {
+      "id": "U04-Q38",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q38",
+      "itemFamilyId": "U04-F-listening-04",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你要拿書包，依音訊應先查看哪裡？",
+      "promptJa": "かばんをさがします。どこですか。",
+      "choices": [
+        {
+          "id": "U04-Q38-o2",
+          "text": "桌子下面"
+        },
+        {
+          "id": "U04-Q38-o3",
+          "text": "門前"
+        },
+        {
+          "id": "U04-Q38-o0",
+          "text": "箱子裡面"
+        },
+        {
+          "id": "U04-Q38-o1",
+          "text": "桌子上面"
+        }
+      ],
+      "answer": [
+        "U04-Q38-o0"
+      ],
+      "explanation": "かばんははこの中にあります。",
+      "explanationJa": "はこのなかをみます。",
+      "distractorReasons": {
+        "U04-Q38-o1": "那是書的位置。",
+        "U04-Q38-o2": "那是貓的位置。",
+        "U04-Q38-o3": "那是狗的位置。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U04-L04",
+      "audioSrc": "/assets/audio/u04/listening-04.wav"
+    },
+    {
+      "id": "U04-Q39",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q39",
+      "itemFamilyId": "U04-F-listening-01",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "音訊裡，貓在桌子的哪一邊？",
+      "promptJa": "ねこはつくえのどこにいますか。",
+      "choices": [
+        {
+          "id": "U04-Q39-o3",
+          "text": "右邊"
+        },
+        {
+          "id": "U04-Q39-o0",
+          "text": "下面"
+        },
+        {
+          "id": "U04-Q39-o1",
+          "text": "上面"
+        },
+        {
+          "id": "U04-Q39-o2",
+          "text": "前面"
+        }
+      ],
+      "answer": [
+        "U04-Q39-o0"
+      ],
+      "explanation": "した表示下面。",
+      "explanationJa": "つくえのしたです。",
+      "distractorReasons": {
+        "U04-Q39-o1": "音訊是した。",
+        "U04-Q39-o2": "まえ才是前面。",
+        "U04-Q39-o3": "みぎ才是右邊。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U04-L01",
+      "audioSrc": "/assets/audio/u04/listening-01.wav"
+    },
+    {
+      "id": "U04-Q40",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q40",
+      "itemFamilyId": "U04-F-listening-02",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "音訊裡，朋友在哪裡？",
+      "promptJa": "ともだちはどこにいますか。",
+      "choices": [
+        {
+          "id": "U04-Q40-o0",
+          "text": "房間裡面"
+        },
+        {
+          "id": "U04-Q40-o1",
+          "text": "庭院"
+        },
+        {
+          "id": "U04-Q40-o2",
+          "text": "房間外面"
+        },
+        {
+          "id": "U04-Q40-o3",
+          "text": "公園"
+        }
+      ],
+      "answer": [
+        "U04-Q40-o0"
+      ],
+      "explanation": "ともだちはへやのなかにいます。",
+      "explanationJa": "へやのなかです。",
+      "distractorReasons": {
+        "U04-Q40-o1": "庭院裡是狗。",
+        "U04-Q40-o2": "音訊說なか。",
+        "U04-Q40-o3": "音訊沒有說公園。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U04-L02",
+      "audioSrc": "/assets/audio/u04/listening-02.wav"
+    },
+    {
+      "id": "U04-Q41",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q41",
+      "itemFamilyId": "U04-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "音訊裡，商店在哪個地方旁邊？",
+      "promptJa": "みせは、なにのとなりにありますか。",
+      "choices": [
+        {
+          "id": "U04-Q41-o1",
+          "text": "教室"
+        },
+        {
+          "id": "U04-Q41-o2",
+          "text": "房間"
+        },
+        {
+          "id": "U04-Q41-o3",
+          "text": "廁所"
+        },
+        {
+          "id": "U04-Q41-o0",
+          "text": "車站"
+        }
+      ],
+      "answer": [
+        "U04-Q41-o0"
+      ],
+      "explanation": "みせはえきのとなりにあります。",
+      "explanationJa": "えきのとなりです。",
+      "distractorReasons": {
+        "U04-Q41-o1": "沒有說教室。",
+        "U04-Q41-o2": "沒有說房間。",
+        "U04-Q41-o3": "沒有說廁所。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U04-L03",
+      "audioSrc": "/assets/audio/u04/listening-03.wav"
+    },
+    {
+      "id": "U04-Q42",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q42",
+      "itemFamilyId": "U04-F-listening-04",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "音訊裡，在門前的是誰？",
+      "promptJa": "ドアのまえに、なにがいますか。",
+      "choices": [
+        {
+          "id": "U04-Q42-o2",
+          "text": "老師"
+        },
+        {
+          "id": "U04-Q42-o3",
+          "text": "朋友"
+        },
+        {
+          "id": "U04-Q42-o0",
+          "text": "狗"
+        },
+        {
+          "id": "U04-Q42-o1",
+          "text": "貓"
+        }
+      ],
+      "answer": [
+        "U04-Q42-o0"
+      ],
+      "explanation": "いぬはドアのまえにいます。",
+      "explanationJa": "いぬです。",
+      "distractorReasons": {
+        "U04-Q42-o1": "貓在桌下。",
+        "U04-Q42-o2": "沒有說老師在門前。",
+        "U04-Q42-o3": "沒有說朋友在門前。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U04-L04",
+      "audioSrc": "/assets/audio/u04/listening-04.wav"
+    },
+    {
+      "id": "U04-Q43",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q43",
+      "itemFamilyId": "U04-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看貓的圖片，再聽介紹，哪句同時符合？",
+      "promptJa": "ねこのえとおとにあうぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q43-o3",
+          "text": "いぬは つくえの下に います。"
+        },
+        {
+          "id": "U04-Q43-o0",
+          "text": "ねこは つくえの下に います。"
+        },
+        {
+          "id": "U04-Q43-o1",
+          "text": "ねこは つくえの上に います。"
+        },
+        {
+          "id": "U04-Q43-o2",
+          "text": "ねこは つくえの下に あります。"
+        }
+      ],
+      "answer": [
+        "U04-Q43-o0"
+      ],
+      "explanation": "貓在桌子下方，用います。",
+      "explanationJa": "ねこはつくえのしたにいます。",
+      "distractorReasons": {
+        "U04-Q43-o1": "圖與音訊都指桌下。",
+        "U04-Q43-o2": "動物用います。",
+        "U04-Q43-o3": "圖中是貓。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U04-L04",
+      "audioSrc": "/assets/audio/u04/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u04/positions.webp",
+        "cell": 0,
+        "alt": {
+          "zh": "貓在桌子下方，桌面在貓上方。",
+          "ja": "ねこはつくえのした。"
+        }
+      }
+    },
+    {
+      "id": "U04-Q44",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q44",
+      "itemFamilyId": "U04-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看狗與門的位置，再聽介紹，哪句符合？",
+      "promptJa": "いぬのえとおとにあうぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q44-o0",
+          "text": "いぬは ドアの前に います。"
+        },
+        {
+          "id": "U04-Q44-o1",
+          "text": "いぬは ドアのうしろに います。"
+        },
+        {
+          "id": "U04-Q44-o2",
+          "text": "いぬは ドアの前に あります。"
+        },
+        {
+          "id": "U04-Q44-o3",
+          "text": "ねこは ドアの前に います。"
+        }
+      ],
+      "answer": [
+        "U04-Q44-o0"
+      ],
+      "explanation": "狗坐在門前，門在牠後面。",
+      "explanationJa": "いぬはドアのまえにいます。",
+      "distractorReasons": {
+        "U04-Q44-o1": "門在狗後方，狗在門前。",
+        "U04-Q44-o2": "動物用います。",
+        "U04-Q44-o3": "圖中是狗。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U04-L04",
+      "audioSrc": "/assets/audio/u04/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u04/positions.webp",
+        "cell": 1,
+        "alt": {
+          "zh": "狗坐在關著的門前，門在狗後方。",
+          "ja": "いぬはドアのまえ。"
+        }
+      }
+    },
+    {
+      "id": "U04-Q45",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q45",
+      "itemFamilyId": "U04-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看書與桌面，再聽介紹，哪句符合？",
+      "promptJa": "ほんのえとおとにあうぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q45-o1",
+          "text": "ほんは つくえの下に あります。"
+        },
+        {
+          "id": "U04-Q45-o2",
+          "text": "ほんは つくえの上に います。"
+        },
+        {
+          "id": "U04-Q45-o3",
+          "text": "かばんは つくえの上に あります。"
+        },
+        {
+          "id": "U04-Q45-o0",
+          "text": "ほんは つくえの上に あります。"
+        }
+      ],
+      "answer": [
+        "U04-Q45-o0"
+      ],
+      "explanation": "書平放在桌面上，用あります。",
+      "explanationJa": "ほんはつくえのうえにあります。",
+      "distractorReasons": {
+        "U04-Q45-o1": "書接觸桌面，在上方。",
+        "U04-Q45-o2": "物品用あります。",
+        "U04-Q45-o3": "圖中是書，不是書包。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U04-L04",
+      "audioSrc": "/assets/audio/u04/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u04/positions.webp",
+        "cell": 2,
+        "alt": {
+          "zh": "藍色書本平放在桌面上。",
+          "ja": "ほんはつくえのうえ。"
+        }
+      }
+    },
+    {
+      "id": "U04-Q46",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q46",
+      "itemFamilyId": "U04-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看書包與箱子，再聽介紹，哪句符合？",
+      "promptJa": "かばんのえとおとにあうぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-Q46-o2",
+          "text": "かばんは はこの中に います。"
+        },
+        {
+          "id": "U04-Q46-o3",
+          "text": "ほんは はこの中に あります。"
+        },
+        {
+          "id": "U04-Q46-o0",
+          "text": "かばんは はこの中に あります。"
+        },
+        {
+          "id": "U04-Q46-o1",
+          "text": "かばんは はこの外に あります。"
+        }
+      ],
+      "answer": [
+        "U04-Q46-o0"
+      ],
+      "explanation": "書包在箱內，不因提把露出就變成在箱外。",
+      "explanationJa": "かばんははこのなかにあります。",
+      "distractorReasons": {
+        "U04-Q46-o1": "箱壁圍住書包下方，書包在箱內。",
+        "U04-Q46-o2": "物品用あります。",
+        "U04-Q46-o3": "圖中是書包。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U04-L04",
+      "audioSrc": "/assets/audio/u04/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u04/positions.webp",
+        "cell": 3,
+        "alt": {
+          "zh": "書包在敞開的箱子裡。",
+          "ja": "かばんははこのなか。"
+        }
+      }
+    },
+    {
+      "id": "U04-Q47",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q47",
+      "itemFamilyId": "U04-F-listening-05",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你看到貓在床上。聽完問題，選合適的完整回答。",
+      "promptJa": "ねこはベッドのうえです。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U04-Q47-o3",
+          "text": "はこの中に います。"
+        },
+        {
+          "id": "U04-Q47-o0",
+          "text": "ベッドの上に います。"
+        },
+        {
+          "id": "U04-Q47-o1",
+          "text": "ベッドの上に あります。"
+        },
+        {
+          "id": "U04-Q47-o2",
+          "text": "はい、あります。"
+        }
+      ],
+      "answer": [
+        "U04-Q47-o0"
+      ],
+      "explanation": "問貓在哪，答床上にいます。",
+      "explanationJa": "ベッドのうえにいます、とこたえます。",
+      "distractorReasons": {
+        "U04-Q47-o1": "貓用います。",
+        "U04-Q47-o2": "沒有回答哪裡，且動詞不合。",
+        "U04-Q47-o3": "位置與情境不符。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U04-L05",
+      "audioSrc": "/assets/audio/u04/listening-05.wav"
+    },
+    {
+      "id": "U04-Q48",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q48",
+      "itemFamilyId": "U04-F-listening-05",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "你看到貓在房間裡。聽完問題，選合適回答。",
+      "promptJa": "ねこはへやのなかです。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U04-Q48-o0",
+          "text": "へやの中に います。"
+        },
+        {
+          "id": "U04-Q48-o1",
+          "text": "へやの外に います。"
+        },
+        {
+          "id": "U04-Q48-o2",
+          "text": "へやの中に あります。"
+        },
+        {
+          "id": "U04-Q48-o3",
+          "text": "ほんが あります。"
+        }
+      ],
+      "answer": [
+        "U04-Q48-o0"
+      ],
+      "explanation": "房間裡用へやの中，動物用います。",
+      "explanationJa": "へやのなかにいます。",
+      "distractorReasons": {
+        "U04-Q48-o1": "位置錯成外面。",
+        "U04-Q48-o2": "貓是動物。",
+        "U04-Q48-o3": "問的是貓的位置，不是有書。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U04-L05",
+      "audioSrc": "/assets/audio/u04/listening-05.wav"
+    },
+    {
+      "id": "U04-Q49",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q49",
+      "itemFamilyId": "U04-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "箱子裡只有一本書。聽完問題，怎麼回答？",
+      "promptJa": "はこのなかに、ほんがあります。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U04-Q49-o1",
+          "text": "ほんが います。"
+        },
+        {
+          "id": "U04-Q49-o2",
+          "text": "かばんが あります。"
+        },
+        {
+          "id": "U04-Q49-o3",
+          "text": "はこの中に あります。"
+        },
+        {
+          "id": "U04-Q49-o0",
+          "text": "ほんが あります。"
+        }
+      ],
+      "answer": [
+        "U04-Q49-o0"
+      ],
+      "explanation": "對方問箱中有什麼，需說ほんがあります。",
+      "explanationJa": "ほんがあることをこたえます。",
+      "distractorReasons": {
+        "U04-Q49-o1": "書是物品。",
+        "U04-Q49-o2": "情境說只有書。",
+        "U04-Q49-o3": "只重述位置，沒有說是什麼物品。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U04-L06",
+      "audioSrc": "/assets/audio/u04/listening-06.wav"
+    },
+    {
+      "id": "U04-Q50",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-Q50",
+      "itemFamilyId": "U04-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "箱子裡只有一個書包。聽完問題，怎麼回答？",
+      "promptJa": "はこのなかに、かばんがあります。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U04-Q50-o2",
+          "text": "ほんが あります。"
+        },
+        {
+          "id": "U04-Q50-o3",
+          "text": "ドアの前に います。"
+        },
+        {
+          "id": "U04-Q50-o0",
+          "text": "かばんが あります。"
+        },
+        {
+          "id": "U04-Q50-o1",
+          "text": "かばんが います。"
+        }
+      ],
+      "answer": [
+        "U04-Q50-o0"
+      ],
+      "explanation": "說出書包かばん，再用あります。",
+      "explanationJa": "かばんがあります。",
+      "distractorReasons": {
+        "U04-Q50-o1": "書包是物品。",
+        "U04-Q50-o2": "情境說只有書包。",
+        "U04-Q50-o3": "沒有回答箱中有什麼。"
+      },
+      "hint": "先找要說明的人、動物或物品，再確認位置；需要時比較います與あります。",
+      "hintJa": "ひと・どうぶつ・ものと、ばしょをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U04-L06",
+      "audioSrc": "/assets/audio/u04/listening-06.wav"
+    },
+    {
+      "id": "U04-C01",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C01",
+      "itemFamilyId": "U04-CHECK-classify-new-person",
+      "primarySkillId": "G10",
+      "skillIds": [
+        "G10"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "公園有人。介紹「ともだち」，哪個動詞適合？",
+      "promptJa": "ともだちが＿＿。あうことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-C01-o1",
+          "text": "あります"
+        },
+        {
+          "id": "U04-C01-o2",
+          "text": "よみます"
+        },
+        {
+          "id": "U04-C01-o3",
+          "text": "ねます"
+        },
+        {
+          "id": "U04-C01-o0",
+          "text": "います"
+        }
+      ],
+      "answer": [
+        "U04-C01-o0"
+      ],
+      "explanation": "人或動物用います。",
+      "explanationJa": "ひとには、いますをつかいます。",
+      "distractorReasons": {
+        "U04-C01-o1": "朋友是人。",
+        "U04-C01-o2": "這是閱讀，不是表示有人。",
+        "U04-C01-o3": "這是睡覺，不是表示有人。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C02",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C02",
+      "itemFamilyId": "U04-CHECK-repair-inanimate-existence",
+      "primarySkillId": "G10",
+      "skillIds": [
+        "G10"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "句子「はこがいます」把物品當成動物了。怎麼修正？",
+      "promptJa": "はこがいます、をなおしましょう。",
+      "choices": [
+        {
+          "id": "U04-C02-o2",
+          "text": "はこが ありません。"
+        },
+        {
+          "id": "U04-C02-o3",
+          "text": "はこが おきます。"
+        },
+        {
+          "id": "U04-C02-o0",
+          "text": "はこが あります。"
+        },
+        {
+          "id": "U04-C02-o1",
+          "text": "はこが います。"
+        }
+      ],
+      "answer": [
+        "U04-C02-o0"
+      ],
+      "explanation": "保留有箱子的意思，改用あります。",
+      "explanationJa": "ものには、ありますをつかいます。",
+      "distractorReasons": {
+        "U04-C02-o1": "仍把物品當人或動物。",
+        "U04-C02-o2": "改成沒有箱子，與原意不同。",
+        "U04-C02-o3": "おきます不是表示物品存在。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C03",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C03",
+      "itemFamilyId": "U04-CHECK-absence-of-animal",
+      "primarySkillId": "G10",
+      "skillIds": [
+        "G10"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "情境是「沒有貓」，哪句完整且正確？",
+      "promptJa": "ねこがいないことをつたえましょう。",
+      "choices": [
+        {
+          "id": "U04-C03-o3",
+          "text": "ねこは いませんです。"
+        },
+        {
+          "id": "U04-C03-o0",
+          "text": "ねこは いません。"
+        },
+        {
+          "id": "U04-C03-o1",
+          "text": "ねこは ありません。"
+        },
+        {
+          "id": "U04-C03-o2",
+          "text": "ねこは います。"
+        }
+      ],
+      "answer": [
+        "U04-C03-o0"
+      ],
+      "explanation": "動物不存在用いません。",
+      "explanationJa": "ねこはいません、といいます。",
+      "distractorReasons": {
+        "U04-C03-o1": "動物的否定用いません。",
+        "U04-C03-o2": "變成有貓。",
+        "U04-C03-o3": "ません後不加です。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C04",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C04",
+      "itemFamilyId": "U04-CHECK-absence-of-object",
+      "primarySkillId": "G10",
+      "skillIds": [
+        "G10"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "情境是「沒有電視」，哪句正確？",
+      "promptJa": "テレビがないことをつたえましょう。",
+      "choices": [
+        {
+          "id": "U04-C04-o0",
+          "text": "テレビは ありません。"
+        },
+        {
+          "id": "U04-C04-o1",
+          "text": "テレビは いません。"
+        },
+        {
+          "id": "U04-C04-o2",
+          "text": "テレビは あります。"
+        },
+        {
+          "id": "U04-C04-o3",
+          "text": "テレビは ありますません。"
+        }
+      ],
+      "answer": [
+        "U04-C04-o0"
+      ],
+      "explanation": "あります的否定是ありません。",
+      "explanationJa": "テレビはありません。",
+      "distractorReasons": {
+        "U04-C04-o1": "電視是物品。",
+        "U04-C04-o2": "變成有電視。",
+        "U04-C04-o3": "ありません才是正確否定。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C05",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C05",
+      "itemFamilyId": "U04-CHECK-two-category-table",
+      "primarySkillId": "G10",
+      "skillIds": [
+        "G10"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "清單：老師○、椅子○。哪一組存在句同時正確？",
+      "promptJa": "せんせいもいすもみえます。ぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U04-C05-o1",
+          "text": "せんせいが あります。いすが います。"
+        },
+        {
+          "id": "U04-C05-o2",
+          "text": "せんせいが います。いすが います。"
+        },
+        {
+          "id": "U04-C05-o3",
+          "text": "せんせいが ありません。いすが あります。"
+        },
+        {
+          "id": "U04-C05-o0",
+          "text": "せんせいが います。いすが あります。"
+        }
+      ],
+      "answer": [
+        "U04-C05-o0"
+      ],
+      "explanation": "老師用います，椅子用あります。",
+      "explanationJa": "せんせいはひと、いすはものです。",
+      "distractorReasons": {
+        "U04-C05-o1": "人與物品的動詞都反了。",
+        "U04-C05-o2": "椅子是物品。",
+        "U04-C05-o3": "老師是人，且清單顯示有人。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C06",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C06",
+      "itemFamilyId": "U04-CHECK-construct-place-first",
+      "primarySkillId": "G11",
+      "skillIds": [
+        "G11"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "介紹房間裡有電視，指定用「へやに」開頭。選正確句。",
+      "promptJa": "へやに、ではじめて、テレビをしょうかいしましょう。",
+      "choices": [
+        {
+          "id": "U04-C06-o2",
+          "text": "へやに テレビの あります。"
+        },
+        {
+          "id": "U04-C06-o3",
+          "text": "へやに テレビは ありません。"
+        },
+        {
+          "id": "U04-C06-o0",
+          "text": "へやに テレビが あります。"
+        },
+        {
+          "id": "U04-C06-o1",
+          "text": "へやに テレビが います。"
+        }
+      ],
+      "answer": [
+        "U04-C06-o0"
+      ],
+      "explanation": "場所に＋物品が＋あります。",
+      "explanationJa": "へやにテレビがあります。",
+      "distractorReasons": {
+        "U04-C06-o1": "電視用あります。",
+        "U04-C06-o2": "介紹存在對象用が。",
+        "U04-C06-o3": "變成沒有電視。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C07",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C07",
+      "itemFamilyId": "U04-CHECK-repair-transposed-particles",
+      "primarySkillId": "G11",
+      "skillIds": [
+        "G11"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「こうえんが せんせいに います」想說公園有老師。哪句修正正確？",
+      "promptJa": "こうえんにせんせいがいるぶんに、なおしましょう。",
+      "choices": [
+        {
+          "id": "U04-C07-o3",
+          "text": "こうえんの せんせいに います。"
+        },
+        {
+          "id": "U04-C07-o0",
+          "text": "こうえんに せんせいが います。"
+        },
+        {
+          "id": "U04-C07-o1",
+          "text": "こうえんが せんせいに います。"
+        },
+        {
+          "id": "U04-C07-o2",
+          "text": "こうえんに せんせいが あります。"
+        }
+      ],
+      "answer": [
+        "U04-C07-o0"
+      ],
+      "explanation": "地點後に、人後が，最後います。",
+      "explanationJa": "こうえんに、せんせいが、います。",
+      "distractorReasons": {
+        "U04-C07-o1": "助詞仍反了。",
+        "U04-C07-o2": "老師是人。",
+        "U04-C07-o3": "沒有正確標示地點與存在對象。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C08",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C08",
+      "itemFamilyId": "U04-CHECK-box-contents-question",
+      "primarySkillId": "G11",
+      "skillIds": [
+        "G11"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "朋友問「はこの中に、なにがありますか」。你看到裡面是尺。哪句回應題目？",
+      "promptJa": "はこのなかにじょうぎがあります。こたえましょう。",
+      "choices": [
+        {
+          "id": "U04-C08-o0",
+          "text": "はこの中に じょうぎが あります。"
+        },
+        {
+          "id": "U04-C08-o1",
+          "text": "はこの中に じょうぎが います。"
+        },
+        {
+          "id": "U04-C08-o2",
+          "text": "はこの上に じょうぎが あります。"
+        },
+        {
+          "id": "U04-C08-o3",
+          "text": "じょうぎに はこが あります。"
+        }
+      ],
+      "answer": [
+        "U04-C08-o0"
+      ],
+      "explanation": "箱內是地點，尺是存在的物品。",
+      "explanationJa": "はこのなかにじょうぎがあります。",
+      "distractorReasons": {
+        "U04-C08-o1": "尺是物品。",
+        "U04-C08-o2": "位置換成箱子上。",
+        "U04-C08-o3": "地點與對象反了。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C09",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C09",
+      "itemFamilyId": "U04-CHECK-two-place-contrast",
+      "primarySkillId": "G11",
+      "skillIds": [
+        "G11"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "庭院有貓，房間有狗。哪句介紹庭院的情況？",
+      "promptJa": "にわはねこ、へやはいぬです。にわをしょうかいしましょう。",
+      "choices": [
+        {
+          "id": "U04-C09-o1",
+          "text": "にわに いぬが います。"
+        },
+        {
+          "id": "U04-C09-o2",
+          "text": "にわに ねこが あります。"
+        },
+        {
+          "id": "U04-C09-o3",
+          "text": "へやに ねこが います。"
+        },
+        {
+          "id": "U04-C09-o0",
+          "text": "にわに ねこが います。"
+        }
+      ],
+      "answer": [
+        "U04-C09-o0"
+      ],
+      "explanation": "先選庭院，再選貓，用います。",
+      "explanationJa": "にわにねこがいます。",
+      "distractorReasons": {
+        "U04-C09-o1": "套用了房間的對象。",
+        "U04-C09-o2": "貓是動物。",
+        "U04-C09-o3": "地點換成房間。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C10",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C10",
+      "itemFamilyId": "U04-CHECK-order-introduction",
+      "primarySkillId": "G11",
+      "skillIds": [
+        "G11"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "order",
+      "prompt": "以「ベッドの下に」開頭，排出床下有箱子的句子。",
+      "promptJa": "ベッドのしたに、ではじめましょう。",
+      "choices": [
+        {
+          "id": "U04-C10-o1",
+          "text": "はこが"
+        },
+        {
+          "id": "U04-C10-o2",
+          "text": "あります。"
+        },
+        {
+          "id": "U04-C10-o0",
+          "text": "ベッドの下に"
+        }
+      ],
+      "answer": [
+        "U04-C10-o0",
+        "U04-C10-o1",
+        "U04-C10-o2"
+      ],
+      "explanation": "先地點，再用が介紹箱子，物品用あります。",
+      "explanationJa": "ばしょ、もの、あります、のじゅんです。",
+      "distractorReasons": {},
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U04-C11",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C11",
+      "itemFamilyId": "U04-CHECK-known-teacher-location",
+      "primarySkillId": "G12",
+      "skillIds": [
+        "G12"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "正在找老師。已知老師在車站，哪句以老師為主題說出位置？",
+      "promptJa": "せんせいは、ではじめて、えきにいることをつたえましょう。",
+      "choices": [
+        {
+          "id": "U04-C11-o3",
+          "text": "えきは せんせいに います。"
+        },
+        {
+          "id": "U04-C11-o0",
+          "text": "せんせいは えきに います。"
+        },
+        {
+          "id": "U04-C11-o1",
+          "text": "せんせいは えきに あります。"
+        },
+        {
+          "id": "U04-C11-o2",
+          "text": "せんせいは えきが います。"
+        }
+      ],
+      "answer": [
+        "U04-C11-o0"
+      ],
+      "explanation": "せんせいは＋えきに＋います。",
+      "explanationJa": "せんせいはえきにいます。",
+      "distractorReasons": {
+        "U04-C11-o1": "老師是人。",
+        "U04-C11-o2": "場所後用に。",
+        "U04-C11-o3": "主題和位置反了。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C12",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C12",
+      "itemFamilyId": "U04-CHECK-change-topic-preserve-fact",
+      "primarySkillId": "G12",
+      "skillIds": [
+        "G12"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「はこの上に ノートが あります」。改用「ノートは」開頭，保持原意。",
+      "promptJa": "ノートは、ではじめて、おなじことをいいましょう。",
+      "choices": [
+        {
+          "id": "U04-C12-o0",
+          "text": "ノートは はこの上に あります。"
+        },
+        {
+          "id": "U04-C12-o1",
+          "text": "ノートは はこの中に あります。"
+        },
+        {
+          "id": "U04-C12-o2",
+          "text": "ノートは はこの上に います。"
+        },
+        {
+          "id": "U04-C12-o3",
+          "text": "ノートは はこの下に あります。"
+        }
+      ],
+      "answer": [
+        "U04-C12-o0"
+      ],
+      "explanation": "改變介紹順序，但上方位置與物品動詞不變。",
+      "explanationJa": "ノートははこのうえにあります。",
+      "distractorReasons": {
+        "U04-C12-o1": "位置改成裡面。",
+        "U04-C12-o2": "筆記本是物品。",
+        "U04-C12-o3": "位置改成下面。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C13",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C13",
+      "itemFamilyId": "U04-CHECK-order-known-animal",
+      "primarySkillId": "G12",
+      "skillIds": [
+        "G12"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "order",
+      "prompt": "以「いぬは」開頭，排出狗在椅子旁邊。",
+      "promptJa": "いぬは、ではじめて、いすのとなりにいることをつたえましょう。",
+      "choices": [
+        {
+          "id": "U04-C13-o1",
+          "text": "いすのとなりに"
+        },
+        {
+          "id": "U04-C13-o2",
+          "text": "います。"
+        },
+        {
+          "id": "U04-C13-o0",
+          "text": "いぬは"
+        }
+      ],
+      "answer": [
+        "U04-C13-o0",
+        "U04-C13-o1",
+        "U04-C13-o2"
+      ],
+      "explanation": "先主題，再位置に，最後動物的います。",
+      "explanationJa": "いぬは、いすのとなりに、います。",
+      "distractorReasons": {},
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U04-C14",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C14",
+      "itemFamilyId": "U04-CHECK-trace-nested-location",
+      "primarySkillId": "G12",
+      "skillIds": [
+        "G12"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "筆記本在箱內，箱子在床下。要精確介紹筆記本的直接位置，選哪句？",
+      "promptJa": "ノートははこのなか、はこはベッドのしたです。ノートのばしょをいいましょう。",
+      "choices": [
+        {
+          "id": "U04-C14-o2",
+          "text": "ノートは ベッドの上に あります。"
+        },
+        {
+          "id": "U04-C14-o3",
+          "text": "ノートは はこの中に います。"
+        },
+        {
+          "id": "U04-C14-o0",
+          "text": "ノートは はこの中に あります。"
+        },
+        {
+          "id": "U04-C14-o1",
+          "text": "ノートは はこの上に あります。"
+        }
+      ],
+      "answer": [
+        "U04-C14-o0"
+      ],
+      "explanation": "問題問筆記本的直接位置，先找它所在的箱內。",
+      "explanationJa": "ノートははこのなかにあります。",
+      "distractorReasons": {
+        "U04-C14-o1": "直接位置是箱內。",
+        "U04-C14-o2": "沒有在床上。",
+        "U04-C14-o3": "筆記本是物品。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U04-C15",
+      "version": "1",
+      "unitId": "U04",
+      "itemId": "U04-C15",
+      "itemFamilyId": "U04-CHECK-reply-location-question",
+      "primarySkillId": "G12",
+      "skillIds": [
+        "G12"
+      ],
+      "teachingIds": [
+        "U04-teach-words-1",
+        "U04-teach-words-2",
+        "U04-teach-words-3",
+        "U04-teach-words-4",
+        "U04-teach-words-5",
+        "U04-teach-kanji",
+        "U04-teach-G10",
+        "U04-teach-G11",
+        "U04-teach-G12",
+        "U04-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "朋友問「ペンはどこにありますか」。筆在桌子左邊。哪句完整回答？",
+      "promptJa": "ペンはつくえのひだりです。こたえましょう。",
+      "choices": [
+        {
+          "id": "U04-C15-o3",
+          "text": "ペンは つくえのひだりが あります。"
+        },
+        {
+          "id": "U04-C15-o0",
+          "text": "ペンは つくえのひだりに あります。"
+        },
+        {
+          "id": "U04-C15-o1",
+          "text": "ペンは つくえのみぎに あります。"
+        },
+        {
+          "id": "U04-C15-o2",
+          "text": "ペンは つくえのひだりに います。"
+        }
+      ],
+      "answer": [
+        "U04-C15-o0"
+      ],
+      "explanation": "筆作主題，左邊ひだり＋に，物品あります。",
+      "explanationJa": "ペンはつくえのひだりにあります。",
+      "distractorReasons": {
+        "U04-C15-o1": "方向反了。",
+        "U04-C15-o2": "筆是物品。",
+        "U04-C15-o3": "場所後用に。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U04 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    }
+  ]
+}

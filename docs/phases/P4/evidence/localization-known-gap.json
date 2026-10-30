@@ -1,0 +1,24 @@
+{
+  "task": "P4-03-R2",
+  "status": "RESOLVED_FOR_U08_AUTHOR_DRAFT; remaining curriculum audit IN_PROGRESS",
+  "sourceUnit": "U08",
+  "sourceVersion": "u08-1-draft",
+  "itemId": "U08-Q47",
+  "prompt": "設定：人物要和姊姊出發。聽問題，選合適回答。",
+  "promptJa": "せっていをみて、しつもんにこたえましょう。",
+  "issue": "Japanese replacement omits the Chinese setting that the character travels with her older sister; no other question UI renders that setting",
+  "verifiedReplacementExample": {
+    "unitId": "U09",
+    "itemId": "U09-Q47",
+    "prompt": "設定：九點開始，十點結束。聽問題，選合適回答。",
+    "promptJa": "九時にはじめ、十時におわります。おとで、なにをきかれたかたしかめて、こたえましょう。",
+    "explanationJa": "なんじからですか、は、はじまりをきいています。九時からです、があいます。"
+  },
+  "humanReviewer": null,
+  "resolution": {
+    "version": "u08-2-draft",
+    "promptJa": "あねと行くよていです。おとのしつもんにあうこたえをえらびましょう。",
+    "humanApproval": false,
+    "remaining": "Audit U01–U07 prompt/teaching/feedback semantics, plus U09 choice/translation metadata; all actual human approval remains required"
+  }
+}

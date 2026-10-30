@@ -4,7 +4,7 @@ function entries(dir, prefix='') {
   return readdirSync(dir,{withFileTypes:true}).sort((a,b)=>a.name.localeCompare(b.name)).flatMap(entry=>{
     const path=`${prefix}${entry.name}`
     if(entry.isDirectory())return entries(`${dir}/${entry.name}`,`${path}/`)
-    if(!/\.(wav|svg|mp3|webp)$/.test(path) && !['assets/img/journey/manifest.json','assets/audio/u01/manifest.json','assets/audio/world/manifest.json'].includes(path))return []
+    if(!/\.(wav|svg|mp3|webp|png)$/.test(path) && !/^assets\/(img|audio)\/.+\/manifest\.json$/.test(path))return []
     const buffer=readFileSync(`${dir}/${entry.name}`)
     return [{path,bytes:buffer.byteLength,sha256:createHash('sha256').update(buffer).digest('hex')}]
   })

@@ -1,0 +1,50 @@
+{
+  "version": "u03-art-1-draft",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "assets": [
+    {
+      "id": "u03-daily-routine",
+      "src": "/assets/img/u03/daily-routine.webp",
+      "sha256": "43dabce8153deb6c881639f8d2cd01e489b3598bcc063d7503b30f85583130e7",
+      "bytes": 412212,
+      "columns": 2,
+      "rows": 2,
+      "source": "Original image generated with built-in image_gen, 2026-10-30",
+      "humanReview": "NOT_RUN",
+      "promptFile": "docs/content/U03/art-prompt.md",
+      "width": 1254,
+      "height": 1254,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ],
+      "originalPngSha256": "4d8115eefcb06726c6a7ec71cba0dfc801442ba07427f8ff59e33580a4e754ac",
+      "encoding": "WebP quality 0.9, original dimensions, browser Canvas encoder; no composition changes"
+    }
+  ]
+}

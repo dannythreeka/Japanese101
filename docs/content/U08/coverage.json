@@ -1,0 +1,81 @@
+{
+  "unitId": "U08",
+  "version": "u08-2-draft",
+  "mode": "isolated draft structure",
+  "skills": [
+    {
+      "id": "G22",
+      "prerequisites": [
+        "K-HIRA",
+        "G21"
+      ],
+      "teaching": [
+        "U08-teach-G22"
+      ],
+      "practice": [
+        "U08-Q18",
+        "U08-Q19",
+        "U08-Q23",
+        "U08-Q26"
+      ],
+      "checkFamilies": [
+        "U08-CHECK-valid-alternatives",
+        "U08-CHECK-particle-pronunciation",
+        "U08-CHECK-movement-viewpoint",
+        "U08-CHECK-destination-not-arrival-proof",
+        "U08-CHECK-negative-place-scope"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G23",
+      "prerequisites": [
+        "K-HIRA",
+        "G22"
+      ],
+      "teaching": [
+        "U08-teach-G23"
+      ],
+      "practice": [
+        "U08-Q20",
+        "U08-Q22",
+        "U08-Q24",
+        "U08-Q27"
+      ],
+      "checkFamilies": [
+        "U08-CHECK-tool-vs-companion-repair",
+        "U08-CHECK-shared-destination-different-method",
+        "U08-CHECK-transport-not-location",
+        "U08-CHECK-method-unknown",
+        "U08-CHECK-multiple-legs"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G24",
+      "prerequisites": [
+        "K-HIRA",
+        "G23"
+      ],
+      "teaching": [
+        "U08-teach-G24"
+      ],
+      "practice": [
+        "U08-Q21",
+        "U08-Q25",
+        "U08-Q28"
+      ],
+      "checkFamilies": [
+        "U08-CHECK-person-tool-boundaries",
+        "U08-CHECK-companion-not-entourage",
+        "U08-CHECK-who-vs-how-relevance",
+        "U08-CHECK-alone-not-walking",
+        "U08-CHECK-independent-person-binding"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    }
+  ],
+  "audio": 16,
+  "images": 1,
+  "reviewItems": 135
+}

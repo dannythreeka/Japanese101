@@ -1,0 +1,35 @@
+{
+  "exitCode": 1,
+  "command": "node --import tsx scripts/unit-inventory.ts --release",
+  "review": {
+    "items": 1229,
+    "validMetadata": 0
+  },
+  "coverage": {
+    "skills": 75,
+    "withCandidateCoverage": 27,
+    "withGaps": 48,
+    "mechanicalDuplicateGroups": 0
+  },
+  "missingUnits": [
+    "U10",
+    "U11",
+    "U12",
+    "U13",
+    "U14",
+    "U15",
+    "U16",
+    "U17",
+    "U18",
+    "U19",
+    "U20",
+    "U21",
+    "U22",
+    "U23",
+    "U24"
+  ],
+  "errors": 1314,
+  "outputSha256": "24c8c178927353e734c1706848b11461a4e4e8fa368753d1bafafbab70e7bd9e",
+  "output": "/tmp/japanese101-recovery/u09-release.json",
+  "assertion": "Unapproved U09 and existing units, missing skills and U10–24 still reject release"
+}

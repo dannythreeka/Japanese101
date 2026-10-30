@@ -1,0 +1,69 @@
+{
+  "task": "P4-03-R1",
+  "date": "2026-10-30",
+  "owner": "Codex",
+  "reviewer": null,
+  "status": "ENGINEERING_VERIFIED; human curriculum gate remains NOT_RUN",
+  "baseline": "d35221c850d92c3b41a1010d2fadba3617e24ec6",
+  "testedChange": "working source hashes below; remaining changes in delivery are records and archived review ledgers",
+  "build": {
+    "previewFlag": "VITE_P2_REVIEW_PREVIEW=1",
+    "indexSha256": "55ea4b9adb6bc1bfa171485141ca8d5e77667e36707162203f9e20938f02a691",
+    "maximumJavaScriptBytes": 439136,
+    "limitBytes": 500000
+  },
+  "sources": {
+    "src/content/packs/u01.json": "8ff12fb35b528dc3048efb3844fe7723d8b4def5fc0be0987160ac3c068b6267",
+    "src/content/packs/u06.json": "94b5b74c5ce78cf368b8400abbdb0b02028cc56de5f0f98d314e77925b7730e6",
+    "src/content/inventory.ts": "07011c34220e152dc60b57b19a6b45268bd2feb9a15e728ae175933c1aebde8d",
+    "src/content/contracts.ts": "0e9ed94ab39c2eecf3a4c800288ee44affc28550cd599d9f8faa34348358990a",
+    "scripts/unit-inventory.ts": "ab03e2842a9aa67eba291014d09ddfae947dc7ca174946535a06c0d752c05dfb",
+    "e2e/p4-prerequisites.spec.ts": "12bd9c0bba893cb34e55adf3a0f1ad011165334196db41940e9ddfecea675120",
+    "docs/phases/P4/evidence/prerequisite-u01-old.json": "6e251a076281212f33636cf664507f2bb342eefd0ee866be6327f78bb2ee6a20",
+    "docs/phases/P4/evidence/prerequisite-u06-old.json": "53e08be1bd266bf65122723239e6dd445b904062354e3cbfa298fa3bb0f912fc"
+  },
+  "tests": {
+    "unit": {
+      "passed": 302,
+      "files": 42,
+      "durationSeconds": 31.01
+    },
+    "browser": {
+      "chromium": 3,
+      "firefox": 3,
+      "totalPassed": 6,
+      "durationSeconds": 31.3,
+      "report": "/tmp/japanese101-recovery/p4-prerequisites-fixed-report",
+      "traces": "/tmp/japanese101-recovery/p4-prerequisites-fixed-results"
+    },
+    "negativeBeforeFix": [
+      "U01/G02 differs from ability graph",
+      "U01/G03 differs from ability graph",
+      "U01/teach-G03 bypasses G02",
+      "U06/G16 differs from ability graph"
+    ],
+    "originalFixture": {
+      "build": "d35221c850d92c3b41a1010d2fadba3617e24ec6",
+      "procedure": "real isolated UI teaching, four answers, win 60 coins, buy/equip 40-coin hat, start next battle, parent full export"
+    },
+    "assertions": [
+      "original answers byte-for-byte equal",
+      "wallet, inventory, equipment, purchase, rewards and skillReviews unchanged",
+      "old finished win unchanged",
+      "old unfinished battle archived then retreated/version-recovery",
+      "old studyPlan archived then reset to new content version",
+      "refresh does not create a second archive",
+      "G03 cannot be acknowledged before G02"
+    ]
+  },
+  "limitations": [
+    "Automated desktop browsers, not a physical tablet",
+    "No human Japanese or content approval",
+    "No layout or artwork changes in this repair"
+  ],
+  "failedAttempts": [
+    "Default sandbox spawnSync child processes returned EPERM; scoped rerun passed",
+    "Initial build omitted preview flag; tests could not reach preview routes, stopped and rebuilt with required flag",
+    "Stopped test left its own preview server on 4264; verified exact process and cleaned it before rerun"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "version": "u02-art-1-draft",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "assets": [
+    {
+      "id": "u02-classroom-contexts",
+      "src": "/assets/img/u02/classroom-contexts.webp",
+      "sha256": "7ab70c732d01650b627d575dde3807b8ee6aafc37279ccf9d224c5867a7c7c1b",
+      "bytes": 385050,
+      "columns": 2,
+      "rows": 2,
+      "source": "Original image generated with built-in image_gen, 2026-10-30",
+      "humanReview": "NOT_RUN",
+      "promptFile": "docs/content/U02/art-prompt.md",
+      "width": 1254,
+      "height": 1254,
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ],
+      "originalPngSha256": "dd2636bfe1b8e638c0ff33b7ab9714f33daa58ec872bc4f25abe760655a0ede1",
+      "encoding": "WebP quality 0.9, original dimensions, browser Canvas encoder; no composition changes"
+    }
+  ]
+}

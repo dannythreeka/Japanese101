@@ -1,0 +1,10 @@
+participant_code,grade_band,recruitment_status,parent_consent_verified,child_assent_verified,scheduled_at,consent_record_reference
+A-1,"小一～二",NOT_RECRUITED,NOT_RUN,NOT_RUN,,
+A-2,"小一～二",NOT_RECRUITED,NOT_RUN,NOT_RUN,,
+A-3,"小一～二",NOT_RECRUITED,NOT_RUN,NOT_RUN,,
+B-1,"小三～四",NOT_RECRUITED,NOT_RUN,NOT_RUN,,
+B-2,"小三～四",NOT_RECRUITED,NOT_RUN,NOT_RUN,,
+B-3,"小三～四",NOT_RECRUITED,NOT_RUN,NOT_RUN,,
+C-1,"小五～六",NOT_RECRUITED,NOT_RUN,NOT_RUN,,
+C-2,"小五～六",NOT_RECRUITED,NOT_RUN,NOT_RUN,,
+C-3,"小五～六",NOT_RECRUITED,NOT_RUN,NOT_RUN,,

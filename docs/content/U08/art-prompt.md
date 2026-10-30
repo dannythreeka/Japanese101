@@ -1,0 +1,13 @@
+# U08 交通方法原創插畫
+
+2026-10-30，內建image_gen，沿用imagegen skill。DRAFT；真人適齡與視覺審核NOT_RUN。
+
+提示：Create ONE original premium watercolor and gouache illustration sheet for a children's Japanese travel-journal learning app, suitable for tablet use. Square canvas divided into exactly 2 by 2 equal square panels by broad straight warm ivory paper gutters precisely centered horizontally and vertically. Each panel contains exactly one complete, unmistakable vehicle, with generous padding, all wheels and roof visible: TOP LEFT one small yellow public city BUS, side three-quarter view, boxy passenger body, many tall windows, two visible wheels. TOP RIGHT one light-blue modern electric passenger TRAIN carriage on a short section of rails, clearly a train with rail wheels and a cab, no bus features, no steam locomotive. BOTTOM LEFT one coral red compact passenger CAR, clearly smaller than a bus, four-door body, two visible wheels. BOTTOM RIGHT one teal BICYCLE, exactly two wheels and pedals, no motor. Warm quiet Japanese small-town surroundings as subtle watercolor washes, gentle natural light, handcrafted fine ink edges and textured paper, visually coherent sophisticated original picture-book illustration. No riders, no people, no faces, no text, no letters, no numbers, no logos, no traffic signs, no second vehicles anywhere, no vector icons, no emoji, no photographic collage. The educational purpose is recognizing transport methods by listening; each panel must be self-contained and unambiguous when cropped alone. Keep the division at exact half width and half height.
+
+原圖：/home/yyy/.codex/generated_images/01a11a3e-53ab-7cc1-aed1-1d87205f3fc8/exec-366521ab-6115-40b8-82ca-05002001dd69.png；1254平方。只做原尺寸quality0.9 WebP編碼，590238 bytes，來源與產物hash見public/assets/img/u08/manifest.json；無構圖／像素編輯。
+
+Codex已實際檢視生成圖：左上公車、右上電車（有軌道／架空線）、左下汽車、右下腳踏車，四個完整且無其他車輛或文字。互動產品每次只用DOM裁一格；聽力順序公車／汽車／電車／腳踏車，不能依格子位置直接猜全部答案。alt只描述可見車種，不提正確說法序號。實際瀏覽器裁切與平板寬度檢查另記P4 acceptance，不以原圖生成成功代替UI檢視。
+
+工程目視後的修訂：初稿電車左端被裁掉，未把它當最終合格圖。內建image_gen只要求修正右上格為更短的單節完整電車、左右均留邊界，並保留其餘三車與水彩構圖；無文字／多人／第二車輛。修訂提示要求：EXACTLY ONE SHORT SELF-CONTAINED single-car electric local passenger railcar with its complete front AND complete rear ends fully visible INSIDE this panel; substantially shorter and smaller with clear left/right background margins; no connected carriage offscreen.
+
+最終原圖exec-98e19b2a-821e-4694-aa88-63b96a582f5d.png在同一generated_images目錄，1254平方；最終產品public/assets/img/u08/transport-v2.webp，513466 bytes，manifest u08-art-2-draft。Codex目視確認電車前後兩端與轉向架完整，其他車輛各自完整；四格frameWindows各627平方。初版WebP只留本機/tmp/japanese101-recovery/u08-transport-initial.webp，不混入離線包；原始兩張PNG均保留。實際UI四格圖另外保存並檢視，不把生成圖目視當人工簽核。

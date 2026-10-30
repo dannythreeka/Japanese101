@@ -1,11 +1,14 @@
-import { useEffect, useRef, useState } from 'react'
-import { useNavigate, useSearchParams } from 'react-router-dom'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { AudioControl, Button, Dialog, Progress, StatePanel } from '../../components/ui/journey-ui'
 import OfflinePack from '../../components/OfflinePack'
 import { setActiveProfileId } from '../../db'
-import { u01 } from '../../content/packs/u01'
+import type { UnitPack } from '../../content/contracts'
+import {unitIntroduction} from '../../content/packs/introductions'
+import { packCatalog as availablePacks } from '../../content/packs/loader'
 import { CATALOG_VERSION } from '../../economy/catalog'
 import {currentBattle,currentCheck,currentWorld} from '../../db/journey-compatibility'
+import {eligibleTeachingIds} from '../../learning/placement'
 import { localDay, summarize } from '../../learning/rules'
 import { stopJourneyAudio } from '../../lib/journeyAudio'
 import { stopSpeaking } from '../../lib/tts'
@@ -23,9 +26,13 @@ import WelcomeSetup from './WelcomeSetup'
 import './journey.css'
 
 type Panel='journal'|'places'|'profiles'|'pause'|'welcome'|null
-export default function JourneyScreen(){
+export default function JourneyScreen({pack:u01}:{pack:UnitPack}){
   const {lang,t}=useJourneyText();const navigate=useNavigate();const [params,setParams]=useSearchParams()
-  const {profileId,repo,data,setData,profile,profiles,pet,error,setError,pending,perform,reload,retry}=useJourney()
+  const location=useLocation();const activeRoute=useRef<string|null>(null)
+  // A durable write may finish after the user leaves. Its old callback must not replace the newer route.
+  useLayoutEffect(()=>{activeRoute.current=location.key;return()=>{activeRoute.current=null}},[location.key])
+  const routeIsCurrent=()=>activeRoute.current===location.key
+  const {profileId,repo,data,setData,profile,profiles,pet,error,setError,pending,perform,reload,retry}=useJourney(u01)
   const [panel,setPanel]=useState<Panel>(null);const [resident,setResident]=useState<Destination|null>(null);const [line,setLine]=useState(0)
   const [teachingIndex,setTeachingIndex]=useState(0);const [notice,setNotice]=useState('')
   const [clock,setClock]=useState(()=>Date.now())
@@ -33,7 +40,7 @@ export default function JourneyScreen(){
   const failedWorld=useRef<{position:Point;facing:Facing}|null>(null)
   const entering=useRef(false);const purchaseIds=useRef(new Map<string,string>())
   const scene=params.get('scene') ?? 'town';const id=params.get('id')
-  const go=(scene:string,id?:string)=>{setPanel(null);setParams(scene==='town' ? {}:{scene,...(id ? {id}:{})})}
+  const go=(scene:string,id?:string)=>{if(!routeIsCurrent())return;setPanel(null);setParams({...(u01.id==='U01'?{}:{unit:u01.id}),...(scene==='town'?{}:{scene}),...(id?{id}:{})})}
   useEffect(()=>{stopJourneyAudio();stopSpeaking();return ()=>{stopJourneyAudio();stopSpeaking()}},[scene,profileId])
   useEffect(()=>{const update=()=>{void reload().catch(()=>setError('unavailable'))};window.addEventListener('focus',update);return()=>window.removeEventListener('focus',update)},[reload,setError])
   useEffect(()=>{const timer=setInterval(()=>setClock(Date.now()),30000);return()=>clearInterval(timer)},[])
@@ -46,6 +53,7 @@ export default function JourneyScreen(){
     entering.current=true
     void perform(async()=>{
       const world=await repo.saveWorld(profileId,position,facing,destination.id)
+      if(!routeIsCurrent())return
       setData(old=>old ? {...old,world}:old)
       setWarp(value=>value+1)
       if(destination.kind==='npc'){setPanel(null);setLine(0);setResident(destination)}
@@ -67,11 +75,12 @@ export default function JourneyScreen(){
   const items=Object.values(data.equipment)
   const today=localDay(clock,data.study.timeZone)
   const summary=summarize(data.attempts.filter(a=>localDay(Date.parse(a.submittedAt),data.study!.timeZone)===today))
-  const due=data.reviews.filter(r=>r.dueDate<=today)
-  const eligible=u01.questions.some(q=>q.partition==='practice' && q.teachingIds.every(id=>data.study!.taughtCards.includes(id)))
+  const due=data.reviews.filter(r=>r.dueDate<=today && u01.questions.some(q=>q.skillIds.includes(r.skillId)))
+  const eligibleCards=eligibleTeachingIds(u01,data.study.taughtCards,data.placementSkills)
+  const eligible=u01.questions.some(q=>q.partition==='practice' && q.teachingIds.every(id=>eligibleCards.includes(id)))
   const checkEligible=u01.questions.some(q=>q.partition==='check' && q.teachingIds.every(id=>data.study!.taughtCards.includes(id)))
   const worldOutdated=data.world && !currentWorld(data.world)
-  const welcomeOpen=panel==='welcome' || !data.study.onboarding && !data.attempts.length && !data.study.taughtCards.length && scene==='town'
+  const welcomeOpen=panel==='welcome' || u01.id==='U01' && !data.study.onboarding && !data.attempts.length && !data.study.taughtCards.length && scene==='town'
   const startBattle=()=>{if(resumeBattle){go('battle',resumeBattle.id);return}void perform(async()=>{const battle=await repo.startBattle(profileId);go('battle',battle.id)})}
   const startCheck=()=>{void perform(async()=>{const check=await repo.startCheck(profileId);go('check',check.id)})}
   return <JourneyPetContext.Provider value={pet}><main className="journey journey-shell" lang={lang==='ja'?'ja':'zh-Hant'}>
@@ -79,7 +88,7 @@ export default function JourneyScreen(){
       <Button variant="quiet" onClick={()=>useAppStore.getState().setUiLang(lang==='zh'?'ja':'zh')}>{lang==='zh'?'日本語':'繁體中文'}</Button>
       <Button variant="quiet" onClick={()=>setPanel('profiles')}>{t('profiles')}</Button><Button variant="quiet" onClick={()=>navigate('/parent')}>{t('parent')}</Button>
     </div></header>
-    {u01.reviewStatus!=='APPROVED' && <details className="journey-preview-banner"><summary>{t('preview')}</summary><p>{t('previewDetail')}</p><a href="#/__review/content">{lang==='zh'?'開啟教材與美術審閱':'きょうざいとイラストのかくにん'}</a></details>}
+    {u01.reviewStatus!=='APPROVED' && <details className="journey-preview-banner"><summary>{t('preview')}</summary><p>{t('previewDetail')}</p><a href={`#/__review/content?unit=${u01.id}`}>{lang==='zh'?'開啟教材與美術審閱':'きょうざいとイラストのかくにん'}</a></details>}
     {error && <StatePanel state="storage-error" title={error==='catalog' ? t('catalogChanged'):error==='conflict' ? t('changed'):error==='refresh' ? t('refreshError'):error==='version' ? t('versionError'):t('storageError')} action={t(error==='catalog'?'reload':error==='conflict'?'close':'retry')} onAction={()=>{if(error==='conflict'){setError(null);return}if(error==='catalog'){window.location.reload();return}const checkpoint=failedWorld.current;if(checkpoint)void perform(()=>persist(checkpoint.position,checkpoint.facing));else retry()}}>{error!=='catalog' && error!=='conflict' && error!=='refresh' && <p>{t('storageDetail')}</p>}</StatePanel>}
     <p role="status">{notice}</p>
     {scene==='town' && <>
@@ -87,13 +96,14 @@ export default function JourneyScreen(){
       {worldOutdated ? <StatePanel state="retryable-error" title={t('versionError')} action={t('continueJourney')} onAction={()=>{void perform(()=>repo.recoverWorld(profileId))}}/>:<WorldScene key={`${data.world?.worldVersion ?? WORLD_VERSION}:${warp}`} initialPosition={data.world?.position ?? town.spawn} initialFacing={data.world?.facing ?? 'down'} items={items} paused={!!panel || !!resident || pending || !!error || welcomeOpen} onPersist={persist} onEnter={enter} onPause={()=>setPanel('pause')}/>}
     </>}
     {scene==='dojo' && <section className="journey-body journey-stack"><div className="journey-content-header"><h1>{t('dojo')}</h1><Button variant="secondary" onClick={()=>go('town')}>{t('returnTown')}</Button></div>
-      <div className="journey-mentor"><img src={`${import.meta.env.BASE_URL}assets/img/journey/mentor.webp`} alt=""/><div><h2>{lang==='zh'?'歡迎，旅行者。':'ようこそ、たびびとさん。'}</h2><p>{t('unitGoal')}</p><p>{t('learnFirst')}</p><p>{t('noDeadline')}</p></div></div>
-      <div className="journey-actions"><Button onClick={()=>go('learn')}>{t('teach')}</Button><Button disabled={pending || !eligible} onClick={startBattle}>{resumeBattle ? t('resume'):t('practice')}</Button><Button variant="secondary" disabled={pending || !checkEligible} onClick={startCheck}>{unfinishedCheck ? t('resume'):t('check')}</Button><Button variant="quiet" onClick={()=>navigate('/play/gallery')}>{lang==='zh'?'先認識五十音':'かなをみる'}</Button></div>
+      <nav aria-label={lang==='zh'?'選擇教材':'きょうざいをえらぶ'} className="journey-actions">{availablePacks.map(pack=><Link key={pack.id} className="journey-button journey-button--secondary" aria-current={u01.id===pack.id?'page':undefined} to={`/preview/adventure?unit=${pack.id}&scene=dojo`}>{pack.id.startsWith('U') ? `${pack.id} · `:''}{pack.title}</Link>)}</nav><div className="journey-mentor"><img src={`${import.meta.env.BASE_URL}assets/img/journey/mentor.webp`} alt=""/><div><h2>{lang==='zh'?'歡迎，旅行者。':'ようこそ、たびびとさん。'}</h2><p>{u01.id.startsWith('U') ? `${u01.id} · `:''}{u01.title}</p><p>{unitIntroduction(u01.id,lang)}</p><p>{t('learnFirst')}</p><p>{t('noDeadline')}</p></div></div>
+      <div className="journey-actions"><Button onClick={()=>go('learn')}>{t('teach')}</Button><Button disabled={pending || !eligible} onClick={startBattle}>{resumeBattle ? t('resume'):t('practice')}</Button><Button variant="secondary" disabled={pending || !checkEligible && !unfinishedCheck} onClick={startCheck}>{unfinishedCheck ? t('resume'):t('check')}</Button><Button variant="quiet" onClick={()=>navigate('/preview/adventure?unit=KANA-HIRA&scene=learn')}>{lang==='zh'?'先認識五十音':'かなをみる'}</Button></div>
+      {u01.id.startsWith('KANA-') && <details className="journey-card"><summary style={{minHeight:64,padding:12}}>{lang==='zh'?'已經會了？先試試先修檢核':'もうしっている？ たしかめよう'}</summary><p>{lang==='zh'?'每次最多五個字，可以暫停續做。完成後，答對的字可直接練習；這不是長期掌握判定。':'いちどに5もじまで。とちゅうでやめてもつづけられます。できたもじは、れんしゅうへすすめます。'}</p><div className="journey-actions">{Array.from({length:Math.ceil(u01.teaching.length/5)},(_,group)=><Button key={group} variant="secondary" disabled={pending} onClick={()=>{void perform(async()=>{const check=await repo.startKanaPlacement(profileId,group);go('check',check.id)})}}>{u01.teaching.slice(group*5,group*5+5).map(c=>c.example).join('・')}</Button>)}</div><p>{lang==='zh'?`先修檢核通過 ${data.placementSkills.length} / 46 字`:`たしかめたもじ ${data.placementSkills.length} / 46`}</p></details>}
       {!eligible && <p>{t('learnFirst')}</p>}
     </section>}
-    {scene==='learn' && <TeachingScene study={data.study} index={teachingIndex} onIndex={setTeachingIndex} onTeach={id=>{void perform(()=>repo.teach(profileId,id))}} onBack={()=>go('dojo')} pending={pending}/>}
-    {scene==='battle' && (battle ? <BattleScene battle={battle} attempts={data.attempts} reviewDate={data.reviews.filter(r=>data.attempts.some(a=>a.sessionId===battle.id && a.primarySkillId===r.skillId)).map(r=>r.dueDate).sort()[0]} receipt={data.ledger.find(l=>l.battleId===battle.id)} pending={pending} onReturn={()=>{setNotice('');go('town')}} onPause={()=>{stopJourneyAudio();stopSpeaking();setPanel('pause')}} onChoose={move=>{void perform(async()=>{await repo.chooseMove(profileId,battle.id,move)})}} onSubmit={input=>saveAnswerAndRefresh(()=>repo.submitTurn(profileId,battle.id,battle.turn,input),reload)} onContinue={()=>{void perform(async()=>{await repo.continueBattle(profileId,battle.id,battle.turn)})}} onClaim={()=>{void perform(async()=>{const receipt=await repo.reward(profileId,battle.id);setNotice(`${t('claimed')} +${receipt.amount}`);go('town')})}} onRetreat={()=>{void perform(async()=>{await repo.retreat(profileId,battle.id);go('dojo')})}}/>:<StatePanel state="retryable-error" title={t('error')} action={t('returnTown')} onAction={()=>go('town')}/>)}
-    {scene==='check' && (check ? <CheckScene check={check} attempts={data.attempts} pending={pending} onSubmit={input=>saveAnswerAndRefresh(()=>repo.submitCheck(profileId,check.id,check.index,input),reload)} onContinue={()=>{void perform(async()=>{await repo.continueCheck(profileId,check.id,check.index)})}} onFinish={()=>{void perform(async()=>{await repo.finishCheck(profileId,check.id);go('town')})}}/>:<StatePanel state="retryable-error" title={t('error')} action={t('returnTown')} onAction={()=>go('town')}/>)}
+    {scene==='learn' && <TeachingScene pack={u01} study={data.study} index={teachingIndex} onIndex={setTeachingIndex} onTeach={id=>{void perform(()=>repo.teach(profileId,id))}} onBack={()=>go('dojo')} pending={pending}/>}
+    {scene==='battle' && (battle ? <BattleScene pack={u01} battle={battle} attempts={data.attempts} reviewDate={data.reviews.filter(r=>data.attempts.some(a=>a.sessionId===battle.id && a.primarySkillId===r.skillId)).map(r=>r.dueDate).sort()[0]} receipt={data.ledger.find(l=>l.battleId===battle.id)} pending={pending} onReturn={()=>{setNotice('');go('town')}} onPause={()=>{stopJourneyAudio();stopSpeaking();setPanel('pause')}} onChoose={move=>{void perform(async()=>{await repo.chooseMove(profileId,battle.id,move)})}} onSubmit={input=>saveAnswerAndRefresh(()=>repo.submitTurn(profileId,battle.id,battle.turn,input),reload)} onContinue={()=>{void perform(async()=>{await repo.continueBattle(profileId,battle.id,battle.turn)})}} onClaim={()=>{void perform(async()=>{const receipt=await repo.reward(profileId,battle.id);setNotice(`${t('claimed')} +${receipt.amount}`);go('town')})}} onRetreat={()=>{void perform(async()=>{await repo.retreat(profileId,battle.id);go('dojo')})}}/>:<StatePanel state="retryable-error" title={t('error')} action={t('returnTown')} onAction={()=>go('town')}/>)}
+    {scene==='check' && (check ? <CheckScene pack={u01} onPause={()=>go('dojo')} check={check} attempts={data.attempts} pending={pending} onSubmit={input=>saveAnswerAndRefresh(()=>repo.submitCheck(profileId,check.id,check.index,input),reload)} onContinue={()=>{void perform(async()=>{await repo.continueCheck(profileId,check.id,check.index)})}} onFinish={()=>{void perform(async()=>{await repo.finishCheck(profileId,check.id);go('town')})}}/>:<StatePanel state="retryable-error" title={t('error')} action={t('returnTown')} onAction={()=>go('town')}/>)}
     {(scene==='shop' || scene==='bag') && <ShopScene bag={scene==='bag'} coins={data.coins} inventory={data.inventory} equipment={data.equipment} pending={pending || error==='catalog'} locked={!!activeBattle} onBack={()=>go('town')} onBuy={itemId=>{
       const purchaseId=purchaseIds.current.get(itemId) ?? crypto.randomUUID();purchaseIds.current.set(itemId,purchaseId)
       void perform(async()=>{const result=await repo.purchase(profileId,itemId,purchaseId,CATALOG_VERSION);purchaseIds.current.delete(itemId);setNotice(t(result==='already-owned'?'owned':'saved'))})

@@ -15,14 +15,20 @@
     "server": "tsx server/index.ts",
     "server:dev": "tsx watch server/index.ts",
     "typecheck": "tsc -b --pretty false",
-    "postbuild": "node scripts/build-version.mjs",
+    "postbuild": "node scripts/build-version.mjs && node scripts/check-build-budget.mjs",
     "test:e2e": "playwright test",
     "validate:blueprint": "node scripts/blueprint.mjs && node --test scripts/blueprint.test.mjs",
     "prebuild": "node scripts/offline-manifest.mjs",
     "validate:journey": "tsx scripts/validate-journey.ts",
     "validate:journey:release": "tsx scripts/validate-journey.ts --release",
     "gen:voice:u01": "tsx scripts/generate-u01-audio.ts",
-    "gen:voice:world": "tsx scripts/generate-world-audio.ts"
+    "gen:voice:world": "tsx scripts/generate-world-audio.ts",
+    "validate:kana": "tsx scripts/kana-inventory.ts",
+    "validate:kana:release": "tsx scripts/kana-inventory.ts --release",
+    "validate:units": "tsx scripts/unit-inventory.ts",
+    "validate:units:release": "tsx scripts/unit-inventory.ts --release",
+    "gen:voice:unit": "tsx scripts/generate-unit-audio.ts",
+    "validate:packs": "tsx scripts/pack-catalog.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.0",

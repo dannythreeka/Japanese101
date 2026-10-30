@@ -1,0 +1,50 @@
+{
+  "unitId": "U07",
+  "status": "DRAFT",
+  "prerequisites": [
+    "U06"
+  ],
+  "typeCounts": {
+    "T01": 4,
+    "T02": 4,
+    "T03": 6,
+    "T04": 3,
+    "T05": 5,
+    "T06": 3,
+    "T07": 3,
+    "T08": 2,
+    "T09": 2,
+    "T10": 2,
+    "T11": 4,
+    "T12": 4,
+    "T13": 4,
+    "T14": 4
+  },
+  "questionsAuthored": 65,
+  "audioProduced": 16,
+  "artProduced": 1,
+  "humanReview": "NOT_RUN",
+  "plannedCheckFamilies": {
+    "G19": [
+      "U07-CHECK-remaining-order",
+      "U07-CHECK-quantity-range",
+      "U07-CHECK-scope-all",
+      "U07-CHECK-people-vs-objects",
+      "U07-CHECK-bind-two-orders"
+    ],
+    "G20": [
+      "U07-CHECK-counter-contrast",
+      "U07-CHECK-one-pencil-sound",
+      "U07-CHECK-one-book-sound",
+      "U07-CHECK-repair-flat-counter",
+      "U07-CHECK-keep-object-not-unit-word"
+    ],
+    "G21": [
+      "U07-CHECK-price-answer-question",
+      "U07-CHECK-count-answer-question",
+      "U07-CHECK-change-not-selling-price",
+      "U07-CHECK-avoid-invented-price",
+      "U07-CHECK-same-price-different-count"
+    ]
+  }
+}

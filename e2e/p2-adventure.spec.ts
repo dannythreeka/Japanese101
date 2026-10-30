@@ -251,7 +251,7 @@ test('long reading battle supports all five widths, scene collapse, keyboard and
   expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);await page.screenshot({path:info.outputPath('reading-battle-text200.png'),fullPage:true});expect(await records(page,'learningAttempts')).toEqual([])
 })
 test('review console exposes all content and gear directions without granting approval or writing attempts',async({page})=>{
-  await page.goto('/#/__review/content');await expect(page.getByRole('heading',{name:'U01 教材與美術審閱',exact:true})).toBeVisible();await page.getByRole('combobox').selectOption('U01-Q43');await expect(page.getByRole('img',{name:'兩位孩子在小鎮相遇。',exact:true})).toBeVisible()
+  await page.goto('/#/__review/content');await expect(page.getByRole('heading',{name:'U01 教材與美術審閱',exact:true})).toBeVisible();await page.getByRole('combobox',{name:'選擇題目',exact:true}).selectOption('U01-Q43');await expect(page.getByRole('img',{name:'兩位孩子在小鎮相遇。',exact:true})).toBeVisible()
   for(const name of ['帽子','背包','圍巾','up'])await page.getByRole('button',{name,exact:true}).click()
   expect(await records(page,'learningAttempts')).toEqual([]);expect(await records(page,'inventory')).toEqual([]);expect(await records(page,'coinLedger')).toEqual([])
   expect(pack.reviewStatus).toBe('DRAFT')

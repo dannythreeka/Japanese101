@@ -1,0 +1,4595 @@
+{
+  "id": "U05",
+  "version": "u05-1-draft",
+  "title": "家庭：認識小鎮的新朋友",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "vocabulary": [
+    {
+      "id": "U05-V01",
+      "text": "ちち",
+      "reading": "ちち",
+      "meaning": "自己的父親"
+    },
+    {
+      "id": "U05-V02",
+      "text": "はは",
+      "reading": "はは",
+      "meaning": "自己的母親"
+    },
+    {
+      "id": "U05-V03",
+      "text": "あに",
+      "reading": "あに",
+      "meaning": "自己的哥哥"
+    },
+    {
+      "id": "U05-V04",
+      "text": "あね",
+      "reading": "あね",
+      "meaning": "自己的姊姊"
+    },
+    {
+      "id": "U05-V05",
+      "text": "おとうと",
+      "reading": "おとうと",
+      "meaning": "弟弟"
+    },
+    {
+      "id": "U05-V06",
+      "text": "いもうと",
+      "reading": "いもうと",
+      "meaning": "妹妹"
+    },
+    {
+      "id": "U05-V07",
+      "text": "そふ",
+      "reading": "そふ",
+      "meaning": "自己的祖父／外祖父"
+    },
+    {
+      "id": "U05-V08",
+      "text": "そぼ",
+      "reading": "そぼ",
+      "meaning": "自己的祖母／外祖母"
+    },
+    {
+      "id": "U05-V09",
+      "text": "おとうさん",
+      "reading": "おとうさん",
+      "meaning": "別人的父親；也可用來叫爸爸"
+    },
+    {
+      "id": "U05-V10",
+      "text": "おかあさん",
+      "reading": "おかあさん",
+      "meaning": "別人的母親；也可用來叫媽媽"
+    },
+    {
+      "id": "U05-V11",
+      "text": "おにいさん",
+      "reading": "おにいさん",
+      "meaning": "別人的哥哥；也可用來叫哥哥"
+    },
+    {
+      "id": "U05-V12",
+      "text": "おねえさん",
+      "reading": "おねえさん",
+      "meaning": "別人的姊姊；也可用來叫姊姊"
+    },
+    {
+      "id": "U05-V13",
+      "text": "おじいさん",
+      "reading": "おじいさん",
+      "meaning": "別人的祖父；也可稱呼老爺爺"
+    },
+    {
+      "id": "U05-V14",
+      "text": "おばあさん",
+      "reading": "おばあさん",
+      "meaning": "別人的祖母；也可稱呼老奶奶"
+    },
+    {
+      "id": "U05-V15",
+      "text": "かぞく",
+      "reading": "かぞく",
+      "meaning": "家人／家庭"
+    },
+    {
+      "id": "U05-V16",
+      "text": "きょうだい",
+      "reading": "きょうだい",
+      "meaning": "兄弟姊妹的合稱"
+    },
+    {
+      "id": "U05-V17",
+      "text": "おとこのこ",
+      "reading": "おとこのこ",
+      "meaning": "男孩"
+    },
+    {
+      "id": "U05-V18",
+      "text": "おんなのこ",
+      "reading": "おんなのこ",
+      "meaning": "女孩"
+    },
+    {
+      "id": "U05-V19",
+      "text": "こども",
+      "reading": "こども",
+      "meaning": "孩子"
+    },
+    {
+      "id": "U05-V20",
+      "text": "おとな",
+      "reading": "おとな",
+      "meaning": "大人"
+    },
+    {
+      "id": "U05-V21",
+      "text": "おじ",
+      "reading": "おじ",
+      "meaning": "自己的叔伯舅等男性長輩"
+    },
+    {
+      "id": "U05-V22",
+      "text": "おば",
+      "reading": "おば",
+      "meaning": "自己的姑姨等女性長輩"
+    },
+    {
+      "id": "U05-V23",
+      "text": "いとこ",
+      "reading": "いとこ",
+      "meaning": "堂兄弟姊妹／表兄弟姊妹"
+    },
+    {
+      "id": "U05-V24",
+      "text": "りょうしん",
+      "reading": "りょうしん",
+      "meaning": "雙親"
+    },
+    {
+      "id": "U05-V25",
+      "text": "なんにん",
+      "reading": "なんにん",
+      "meaning": "幾個人"
+    }
+  ],
+  "kanji": [
+    {
+      "id": "U05-K01",
+      "text": "父",
+      "reading": "ちち",
+      "meaning": "自己的父親"
+    },
+    {
+      "id": "U05-K02",
+      "text": "母",
+      "reading": "はは",
+      "meaning": "自己的母親"
+    },
+    {
+      "id": "U05-K03",
+      "text": "兄",
+      "reading": "あに",
+      "meaning": "自己的哥哥"
+    },
+    {
+      "id": "U05-K04",
+      "text": "姉",
+      "reading": "あね",
+      "meaning": "自己的姊姊"
+    },
+    {
+      "id": "U05-K05",
+      "text": "子",
+      "reading": "こ",
+      "meaning": "孩子；こども常寫成子ども"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G13",
+      "title": "人＋と：列出人物",
+      "prerequisites": [
+        "K-HIRA",
+        "G12"
+      ]
+    },
+    {
+      "id": "G14",
+      "title": "人数：一人・二人・N人",
+      "prerequisites": [
+        "K-HIRA",
+        "G13"
+      ]
+    },
+    {
+      "id": "G15",
+      "title": "Nがいます：介紹家人",
+      "prerequisites": [
+        "K-HIRA",
+        "G14"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "U05-R01",
+      "text": "わたしは ハルです。あねが 一人 います。あねは がくせいです。おとうとは いません。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U05-R02",
+      "text": "ミオです。かぞくは 三人です。ははと そぼと わたしです。そぼは いま にわに います。ははは へやに います。わたしも へやに います。にわには ねこも います。ねこは 人のかずには いれません。",
+      "skillId": "R-MID"
+    },
+    {
+      "id": "U05-R03",
+      "text": "小鎮居民介紹表\nハル｜あね 一人｜おとうと いません\nユイ｜あに 一人・いもうと 一人\nソラ｜きょうだい いません\nアキ｜おとうと 二人",
+      "skillId": "R-INFO"
+    },
+    {
+      "id": "U05-R04",
+      "text": "ユイ：きょうだいが いますか。\nアキ：はい、おとうとが 二人 います。\nユイ：おにいさんは いますか。\nアキ：いいえ、あには いません。おとうとは がくせいです。わたしも がくせいです。",
+      "skillId": "R-MID"
+    }
+  ],
+  "listening": [
+    {
+      "id": "U05-L01",
+      "script": "あねが、ひとりいます。おとうとは、いません。",
+      "audioSrc": "/assets/audio/u05/listening-01.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U05-L02",
+      "script": "こうえんに、ははとそぼがいます。ははは、あかいかばんをもっています。そぼは、あおいかばんをもっています。あおいかばんのひとを、さがしてください。",
+      "audioSrc": "/assets/audio/u05/listening-02.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U05-L03",
+      "script": "かぞくは、よにんです。ちちと、ははと、いもうとと、わたしです。",
+      "audioSrc": "/assets/audio/u05/listening-03.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U05-L04",
+      "script": "ひとり。ふたり。さんにん。よにん。",
+      "audioSrc": "/assets/audio/u05/listening-04.wav",
+      "skillId": "L-EXPR",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U05-L05",
+      "script": "きょうだいが、いますか。",
+      "audioSrc": "/assets/audio/u05/listening-05.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U05-L06",
+      "script": "かぞくは、なんにんですか。",
+      "audioSrc": "/assets/audio/u05/listening-06.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "U05-teach-words-1",
+      "title": "介紹自己的家人",
+      "titleJa": "じぶんのかぞく",
+      "body": "ちち：自己的父親\nはは：自己的母親\nあに：自己的哥哥\nあね：自己的姊姊\nおとうと：弟弟\n對外介紹自己的爸爸用ちち，媽媽用はは。弟弟與妹妹沒有あに／あね的年長意思。",
+      "bodyJa": "ことばをきいて、よびかたをたしかめよう。",
+      "example": "ちち",
+      "translation": "自己的父親",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "ちち。はは。あに。あね。おとうと。",
+      "audioSrc": "/assets/audio/u05/U05-teach-words-1.wav",
+      "vocabularyIds": [
+        "U05-V01",
+        "U05-V02",
+        "U05-V03",
+        "U05-V04",
+        "U05-V05"
+      ]
+    },
+    {
+      "id": "U05-teach-words-2",
+      "title": "祖父母與稱呼",
+      "titleJa": "そふ・そぼとよびかた",
+      "body": "いもうと：妹妹\nそふ：自己的祖父／外祖父\nそぼ：自己的祖母／外祖母\nおとうさん：別人的父親；也可用來叫爸爸\nおかあさん：別人的母親；也可用來叫媽媽\n叫爸爸可以說おとうさん；對朋友談自己的爸爸用ちち。不同情境的用法要分開。",
+      "bodyJa": "ことばをきいて、よびかたをたしかめよう。",
+      "example": "いもうと",
+      "translation": "妹妹",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "いもうと。そふ。そぼ。おとうさん。おかあさん。",
+      "audioSrc": "/assets/audio/u05/U05-teach-words-2.wav",
+      "vocabularyIds": [
+        "U05-V06",
+        "U05-V07",
+        "U05-V08",
+        "U05-V09",
+        "U05-V10"
+      ]
+    },
+    {
+      "id": "U05-teach-words-3",
+      "title": "禮貌稱呼與家人",
+      "titleJa": "かぞくのことば",
+      "body": "おにいさん：別人的哥哥；也可用來叫哥哥\nおねえさん：別人的姊姊；也可用來叫姊姊\nおじいさん：別人的祖父；也可稱呼老爺爺\nおばあさん：別人的祖母；也可稱呼老奶奶\nかぞく：家人／家庭\n外觀無法證明誰和誰是一家人。稱呼依故事的介紹，不能看衣服猜關係。每個家庭的組成都可能不同。",
+      "bodyJa": "ことばをきいて、よびかたをたしかめよう。",
+      "example": "おにいさん",
+      "translation": "別人的哥哥；也可用來叫哥哥",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "おにいさん。おねえさん。おじいさん。おばあさん。かぞく。",
+      "audioSrc": "/assets/audio/u05/U05-teach-words-3.wav",
+      "vocabularyIds": [
+        "U05-V11",
+        "U05-V12",
+        "U05-V13",
+        "U05-V14",
+        "U05-V15"
+      ]
+    },
+    {
+      "id": "U05-teach-words-4",
+      "title": "兄弟姊妹與大人小孩",
+      "titleJa": "きょうだい・こども・おとな",
+      "body": "きょうだい：兄弟姊妹的合稱\nおとこのこ：男孩\nおんなのこ：女孩\nこども：孩子\nおとな：大人\nきょうだい可以包括姊妹，不只男生。子ども讀こども；這裡的子讀こ。",
+      "bodyJa": "ことばをきいて、よびかたをたしかめよう。",
+      "example": "きょうだい",
+      "translation": "兄弟姊妹的合稱",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "きょうだい。おとこのこ。おんなのこ。こども。おとな。",
+      "audioSrc": "/assets/audio/u05/U05-teach-words-4.wav",
+      "vocabularyIds": [
+        "U05-V16",
+        "U05-V17",
+        "U05-V18",
+        "U05-V19",
+        "U05-V20"
+      ]
+    },
+    {
+      "id": "U05-teach-words-5",
+      "title": "親戚與人數",
+      "titleJa": "しんせきとにんずう",
+      "body": "おじ：自己的叔伯舅等男性長輩\nおば：自己的姑姨等女性長輩\nいとこ：堂兄弟姊妹／表兄弟姊妹\nりょうしん：雙親\nなんにん：幾個人\nなんにん詢問人數，不是名字。這課只介紹虛構居民；不必寫自己的家人或透露私人資料。",
+      "bodyJa": "ことばをきいて、よびかたをたしかめよう。",
+      "example": "おじ",
+      "translation": "自己的叔伯舅等男性長輩",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "おじ。おば。いとこ。りょうしん。なんにん。",
+      "audioSrc": "/assets/audio/u05/U05-teach-words-5.wav",
+      "vocabularyIds": [
+        "U05-V21",
+        "U05-V22",
+        "U05-V23",
+        "U05-V24",
+        "U05-V25"
+      ]
+    },
+    {
+      "id": "U05-teach-kanji",
+      "title": "把家人的稱呼讀出來",
+      "titleJa": "かぞくのかんじ",
+      "body": "父＝ちち、母＝はは、兄＝あに、姉＝あね、子＝こ。\n子ども＝こども。\n這課先讀對外介紹自己家人的稱呼。父在お父さん裡讀とう，不是把所有父都讀ちち。",
+      "bodyJa": "父はちち、母ははは、兄はあに、姉はあね。子どもの子は、こです。",
+      "example": "父（ちち）と 母（はは）",
+      "translation": "自己的爸爸和媽媽。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "audioScript": "ちち。はは。あに。あね。こ。こども。",
+      "audioSrc": "/assets/audio/u05/U05-teach-kanji.wav",
+      "kanjiIds": [
+        "U05-K01",
+        "U05-K02",
+        "U05-K03",
+        "U05-K04",
+        "U05-K05"
+      ],
+      "prerequisites": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ]
+    },
+    {
+      "id": "U05-teach-G13",
+      "title": "把人物連起來",
+      "titleJa": "ひととひとをつなぐ",
+      "body": "列出兩個人用AとB：あにとあね＝哥哥和姊姊。\n三個人可說AとBとC；也可用頓號列出，最後用と。\n正例：ちちと ははが います。兩人都在。\n反例：ちちの はは表示爸爸的媽媽，不是爸爸和媽媽。の表示關係，と列出成員。\nと在這裡表示「和」，不表示年齡或人數。",
+      "bodyJa": "あにとあね。ちちとはは。とで、ひとをならべます。",
+      "example": "あにと あねと わたし",
+      "translation": "哥哥、姊姊和我。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G13"
+      ],
+      "audioScript": "あにとあね。ちちとははがいます。あにとあねとわたし。ちちのははは、そぼです。",
+      "audioSrc": "/assets/audio/u05/U05-teach-G13.wav",
+      "grammarIds": [
+        "G13"
+      ],
+      "prerequisites": [
+        "U05-teach-kanji"
+      ]
+    },
+    {
+      "id": "U05-teach-G14",
+      "title": "人數有兩個特別讀音",
+      "titleJa": "ひとり・ふたり",
+      "body": "一人＝ひとり、二人＝ふたり；不是いちにん／ににん。\n三人＝さんにん、四人＝よにん、五人＝ごにん、六人＝ろくにん。四人不是よんにん。\n人（にん）用來數人，不把貓狗算進人數。\n質問：なんにんですか。回答：三人です。\n家族は四人です計算的是故事中全部家人；如果名單含說話者，要把わたし也算進去。",
+      "bodyJa": "ひとり、ふたり、さんにん、よにん、ごにん、ろくにん。ひとをかぞえます。",
+      "example": "ちちと ははと わたし。三人（さんにん）です。",
+      "translation": "爸爸、媽媽和我，共三人。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G14"
+      ],
+      "audioScript": "ひとり。ふたり。さんにん。よにん。ごにん。ろくにん。なんにんですか。さんにんです。",
+      "audioSrc": "/assets/audio/u05/U05-teach-G14.wav",
+      "grammarIds": [
+        "G14"
+      ],
+      "prerequisites": [
+        "U05-teach-G13"
+      ]
+    },
+    {
+      "id": "U05-teach-G15",
+      "title": "介紹故事裡的家人",
+      "titleJa": "かぞくをしょうかいする",
+      "body": "「あねが います」表示有姊姊。家人是人，用います。\n「あねが 一人 います」表示有一位姊姊；人數放在が之後、います之前。\n沒有弟弟可說「おとうとは いません」。\n問「きょうだいが いますか」是在問有沒有兄弟姊妹；回答有時可再介紹「あにが います」。\n不要用あります介紹人，也不要把「あねがいます」解讀為自己的名字叫あね。",
+      "bodyJa": "あねがひとりいます。おとうとはいません。かぞくは、ひとです。いますをつかいます。",
+      "example": "いもうとが 二人（ふたり）います。",
+      "translation": "有兩個妹妹。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G15"
+      ],
+      "audioScript": "あねがひとりいます。いもうとがふたりいます。おとうとはいません。きょうだいがいますか。はい、あにがいます。",
+      "audioSrc": "/assets/audio/u05/U05-teach-G15.wav",
+      "grammarIds": [
+        "G15"
+      ],
+      "prerequisites": [
+        "U05-teach-G14"
+      ]
+    },
+    {
+      "id": "U05-teach-story",
+      "title": "只用故事的線索介紹",
+      "titleJa": "おはなしのひとをしょうかいしよう",
+      "body": "先看說話者是誰，再讀家人名單與人數。\n表格把名字、稱呼、數量放在不同欄；不要把名單之外的人加進去。\n聽「だれ」找人物，聽「なんにん」找人數；聽到否定いません，要排除那位家人。\n聽力任務的輔助用語：もっています＝拿著；さがしてください＝請找出；も＝也。看到あかい／あおい，回想前課的紅色／藍色。\n插畫只用來數看得到的人；不能憑年齡、性別或服裝認定親屬關係。\n每種家庭都值得尊重；本課只問虛構角色。",
+      "bodyJa": "だれのおはなしか、なんにんいるかをたしかめます。えでは、みえるひとだけをかぞえましょう。",
+      "example": "アキ：そぼと わたし。二人です。",
+      "translation": "小秋說：奶奶和我，兩個人。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "R-SHORT",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-KEY",
+        "L-EXPR",
+        "L-RESP",
+        "G-ORDER",
+        "G-TEXT"
+      ],
+      "audioScript": "だれですか。そぼです。なんにんですか。ふたりです。そぼとわたしです。",
+      "audioSrc": "/assets/audio/u05/U05-teach-story.wav",
+      "prerequisites": [
+        "U05-teach-G15"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "U05-Q01",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q01",
+      "itemFamilyId": "U05-F-own-family-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "對朋友介紹自己的家人，「父」怎麼讀？",
+      "promptJa": "じぶんのかぞくの「父」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U05-Q01-o1",
+          "text": "はは"
+        },
+        {
+          "id": "U05-Q01-o2",
+          "text": "あに"
+        },
+        {
+          "id": "U05-Q01-o3",
+          "text": "あね"
+        },
+        {
+          "id": "U05-Q01-o0",
+          "text": "ちち"
+        }
+      ],
+      "answer": [
+        "U05-Q01-o0"
+      ],
+      "explanation": "介紹自己的家人時，「父」讀ちち。",
+      "explanationJa": "ここでは、ちちとよみます。",
+      "distractorReasons": {
+        "U05-Q01-o1": "はは是母。",
+        "U05-Q01-o2": "あに是兄。",
+        "U05-Q01-o3": "あね是姉。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U05-Q02",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q02",
+      "itemFamilyId": "U05-F-own-family-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "對朋友介紹自己的家人，「母」怎麼讀？",
+      "promptJa": "じぶんのかぞくの「母」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U05-Q02-o2",
+          "text": "あね"
+        },
+        {
+          "id": "U05-Q02-o3",
+          "text": "こ"
+        },
+        {
+          "id": "U05-Q02-o0",
+          "text": "はは"
+        },
+        {
+          "id": "U05-Q02-o1",
+          "text": "ちち"
+        }
+      ],
+      "answer": [
+        "U05-Q02-o0"
+      ],
+      "explanation": "介紹自己的家人時，「母」讀はは。",
+      "explanationJa": "ここでは、ははとよみます。",
+      "distractorReasons": {
+        "U05-Q02-o1": "ちち是父。",
+        "U05-Q02-o2": "あね是姉。",
+        "U05-Q02-o3": "こ是子。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U05-Q03",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q03",
+      "itemFamilyId": "U05-F-own-family-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "對朋友介紹自己的家人，「兄」怎麼讀？",
+      "promptJa": "じぶんのかぞくの「兄」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U05-Q03-o3",
+          "text": "はは"
+        },
+        {
+          "id": "U05-Q03-o0",
+          "text": "あに"
+        },
+        {
+          "id": "U05-Q03-o1",
+          "text": "あね"
+        },
+        {
+          "id": "U05-Q03-o2",
+          "text": "ちち"
+        }
+      ],
+      "answer": [
+        "U05-Q03-o0"
+      ],
+      "explanation": "介紹自己的家人時，「兄」讀あに。",
+      "explanationJa": "ここでは、あにとよみます。",
+      "distractorReasons": {
+        "U05-Q03-o1": "あね是姉。",
+        "U05-Q03-o2": "ちち是父。",
+        "U05-Q03-o3": "はは是母。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U05-Q04",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q04",
+      "itemFamilyId": "U05-F-own-family-reading",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "對朋友介紹自己的家人，「姉」怎麼讀？",
+      "promptJa": "じぶんのかぞくの「姉」は、なんとよみますか。",
+      "choices": [
+        {
+          "id": "U05-Q04-o0",
+          "text": "あね"
+        },
+        {
+          "id": "U05-Q04-o1",
+          "text": "あに"
+        },
+        {
+          "id": "U05-Q04-o2",
+          "text": "こ"
+        },
+        {
+          "id": "U05-Q04-o3",
+          "text": "はは"
+        }
+      ],
+      "answer": [
+        "U05-Q04-o0"
+      ],
+      "explanation": "介紹自己的家人時，「姉」讀あね。",
+      "explanationJa": "ここでは、あねとよみます。",
+      "distractorReasons": {
+        "U05-Q04-o1": "あに是兄。",
+        "U05-Q04-o2": "こ是子。",
+        "U05-Q04-o3": "はは是母。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U05-Q05",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q05",
+      "itemFamilyId": "U05-F-own-family-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「ちち」要選哪個漢字？",
+      "promptJa": "「ちち」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q05-o1",
+          "text": "母"
+        },
+        {
+          "id": "U05-Q05-o2",
+          "text": "兄"
+        },
+        {
+          "id": "U05-Q05-o3",
+          "text": "姉"
+        },
+        {
+          "id": "U05-Q05-o0",
+          "text": "父"
+        }
+      ],
+      "answer": [
+        "U05-Q05-o0"
+      ],
+      "explanation": "ちち對應「父」。",
+      "explanationJa": "ただしいかんじは「父」です。",
+      "distractorReasons": {
+        "U05-Q05-o1": "母是はは。",
+        "U05-Q05-o2": "兄是あに。",
+        "U05-Q05-o3": "姉是あね。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U05-Q06",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q06",
+      "itemFamilyId": "U05-F-own-family-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「はは」要選哪個漢字？",
+      "promptJa": "「はは」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q06-o2",
+          "text": "子"
+        },
+        {
+          "id": "U05-Q06-o3",
+          "text": "兄"
+        },
+        {
+          "id": "U05-Q06-o0",
+          "text": "母"
+        },
+        {
+          "id": "U05-Q06-o1",
+          "text": "父"
+        }
+      ],
+      "answer": [
+        "U05-Q06-o0"
+      ],
+      "explanation": "はは對應「母」。",
+      "explanationJa": "ただしいかんじは「母」です。",
+      "distractorReasons": {
+        "U05-Q06-o1": "父是ちち。",
+        "U05-Q06-o2": "子是こ。",
+        "U05-Q06-o3": "兄是あに。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U05-Q07",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q07",
+      "itemFamilyId": "U05-F-own-family-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「あに」要選哪個漢字？",
+      "promptJa": "「あに」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q07-o3",
+          "text": "父"
+        },
+        {
+          "id": "U05-Q07-o0",
+          "text": "兄"
+        },
+        {
+          "id": "U05-Q07-o1",
+          "text": "姉"
+        },
+        {
+          "id": "U05-Q07-o2",
+          "text": "母"
+        }
+      ],
+      "answer": [
+        "U05-Q07-o0"
+      ],
+      "explanation": "あに對應「兄」。",
+      "explanationJa": "ただしいかんじは「兄」です。",
+      "distractorReasons": {
+        "U05-Q07-o1": "姉是あね。",
+        "U05-Q07-o2": "母是はは。",
+        "U05-Q07-o3": "父是ちち。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U05-Q08",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q08",
+      "itemFamilyId": "U05-F-own-family-writing",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「こ」要選哪個漢字？",
+      "promptJa": "「こ」のかんじをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q08-o0",
+          "text": "子"
+        },
+        {
+          "id": "U05-Q08-o1",
+          "text": "父"
+        },
+        {
+          "id": "U05-Q08-o2",
+          "text": "母"
+        },
+        {
+          "id": "U05-Q08-o3",
+          "text": "兄"
+        }
+      ],
+      "answer": [
+        "U05-Q08-o0"
+      ],
+      "explanation": "こ對應「子」。",
+      "explanationJa": "ただしいかんじは「子」です。",
+      "distractorReasons": {
+        "U05-Q08-o1": "父不是こ。",
+        "U05-Q08-o2": "母不是こ。",
+        "U05-Q08-o3": "兄不是こ。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U05-Q09",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q09",
+      "itemFamilyId": "U05-F-family-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "介紹自己年紀較小的男性手足，用哪個詞？",
+      "promptJa": "じぶんより、としがしたの、おとこのきょうだいです。",
+      "choices": [
+        {
+          "id": "U05-Q09-o1",
+          "text": "あに"
+        },
+        {
+          "id": "U05-Q09-o2",
+          "text": "あね"
+        },
+        {
+          "id": "U05-Q09-o3",
+          "text": "そふ"
+        },
+        {
+          "id": "U05-Q09-o0",
+          "text": "おとうと"
+        }
+      ],
+      "answer": [
+        "U05-Q09-o0"
+      ],
+      "explanation": "弟弟是おとうと。",
+      "explanationJa": "ここでは、おとうとです。",
+      "distractorReasons": {
+        "U05-Q09-o1": "あに是年長的哥哥。",
+        "U05-Q09-o2": "あね是年長的姊姊。",
+        "U05-Q09-o3": "そふ是祖父。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U05-Q10",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q10",
+      "itemFamilyId": "U05-F-family-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "介紹自己年紀較小的女性手足，用哪個詞？",
+      "promptJa": "じぶんより、としがしたの、おんなのきょうだいです。",
+      "choices": [
+        {
+          "id": "U05-Q10-o2",
+          "text": "そぼ"
+        },
+        {
+          "id": "U05-Q10-o3",
+          "text": "あに"
+        },
+        {
+          "id": "U05-Q10-o0",
+          "text": "いもうと"
+        },
+        {
+          "id": "U05-Q10-o1",
+          "text": "あね"
+        }
+      ],
+      "answer": [
+        "U05-Q10-o0"
+      ],
+      "explanation": "妹妹是いもうと。",
+      "explanationJa": "ここでは、いもうとです。",
+      "distractorReasons": {
+        "U05-Q10-o1": "あね是年長的姊姊。",
+        "U05-Q10-o2": "そぼ是祖母。",
+        "U05-Q10-o3": "あに是哥哥。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U05-Q11",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q11",
+      "itemFamilyId": "U05-F-family-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "對朋友談「我的祖母」，用哪個詞？",
+      "promptJa": "ともだちに、じぶんのははのははをしょうかいします。",
+      "choices": [
+        {
+          "id": "U05-Q11-o3",
+          "text": "おとうと"
+        },
+        {
+          "id": "U05-Q11-o0",
+          "text": "そぼ"
+        },
+        {
+          "id": "U05-Q11-o1",
+          "text": "そふ"
+        },
+        {
+          "id": "U05-Q11-o2",
+          "text": "あね"
+        }
+      ],
+      "answer": [
+        "U05-Q11-o0"
+      ],
+      "explanation": "自己的祖母或外祖母用そぼ。",
+      "explanationJa": "ここでは、そぼです。",
+      "distractorReasons": {
+        "U05-Q11-o1": "そふ是祖父。",
+        "U05-Q11-o2": "あね是姊姊。",
+        "U05-Q11-o3": "おとうとは弟弟。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U05-Q12",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q12",
+      "itemFamilyId": "U05-F-family-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "對朋友談「我的祖父」，用哪個詞？",
+      "promptJa": "ともだちに、じぶんのちちのちちをしょうかいします。",
+      "choices": [
+        {
+          "id": "U05-Q12-o0",
+          "text": "そふ"
+        },
+        {
+          "id": "U05-Q12-o1",
+          "text": "そぼ"
+        },
+        {
+          "id": "U05-Q12-o2",
+          "text": "いもうと"
+        },
+        {
+          "id": "U05-Q12-o3",
+          "text": "はは"
+        }
+      ],
+      "answer": [
+        "U05-Q12-o0"
+      ],
+      "explanation": "自己的祖父或外祖父用そふ。",
+      "explanationJa": "ここでは、そふです。",
+      "distractorReasons": {
+        "U05-Q12-o1": "そぼ是祖母。",
+        "U05-Q12-o2": "いもうと是妹妹。",
+        "U05-Q12-o3": "はは是母親。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U05-Q13",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q13",
+      "itemFamilyId": "U05-F-family-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "想問有幾個人，疑問詞是哪個？",
+      "promptJa": "ひとのかずを、たずねます。",
+      "choices": [
+        {
+          "id": "U05-Q13-o1",
+          "text": "なまえ"
+        },
+        {
+          "id": "U05-Q13-o2",
+          "text": "どこ"
+        },
+        {
+          "id": "U05-Q13-o3",
+          "text": "だれ"
+        },
+        {
+          "id": "U05-Q13-o0",
+          "text": "なんにん"
+        }
+      ],
+      "answer": [
+        "U05-Q13-o0"
+      ],
+      "explanation": "なんにん詢問人數。",
+      "explanationJa": "ここでは、なんにんです。",
+      "distractorReasons": {
+        "U05-Q13-o1": "なまえ是名字。",
+        "U05-Q13-o2": "どこ是位置。",
+        "U05-Q13-o3": "だれ是誰，不問數量。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U05-Q14",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q14",
+      "itemFamilyId": "U05-F-family-vocabulary",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "故事中的是一位成年人，不是小孩，應用哪個詞？",
+      "promptJa": "こどもではなく、せいじんです。",
+      "choices": [
+        {
+          "id": "U05-Q14-o2",
+          "text": "おんなのこ"
+        },
+        {
+          "id": "U05-Q14-o3",
+          "text": "おとこのこ"
+        },
+        {
+          "id": "U05-Q14-o0",
+          "text": "おとな"
+        },
+        {
+          "id": "U05-Q14-o1",
+          "text": "こども"
+        }
+      ],
+      "answer": [
+        "U05-Q14-o0"
+      ],
+      "explanation": "おとな表示大人。",
+      "explanationJa": "ここでは、おとなです。",
+      "distractorReasons": {
+        "U05-Q14-o1": "こども是孩子。",
+        "U05-Q14-o2": "おんなのこ是女孩。",
+        "U05-Q14-o3": "おとこのこ是男孩。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U05-Q15",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q15",
+      "itemFamilyId": "U05-F-sibling-inclusive",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「きょうだい」可以包含哪一組？",
+      "promptJa": "きょうだいに、ふくまれるのはどれですか。",
+      "choices": [
+        {
+          "id": "U05-Q15-o3",
+          "text": "老師和學生"
+        },
+        {
+          "id": "U05-Q15-o0",
+          "text": "哥哥和姊姊"
+        },
+        {
+          "id": "U05-Q15-o1",
+          "text": "爸爸和媽媽"
+        },
+        {
+          "id": "U05-Q15-o2",
+          "text": "祖父和祖母"
+        }
+      ],
+      "answer": [
+        "U05-Q15-o0"
+      ],
+      "explanation": "きょうだい包括兄弟姊妹，不只男生。",
+      "explanationJa": "あにもあねも、きょうだいです。",
+      "distractorReasons": {
+        "U05-Q15-o1": "那是りょうしん。",
+        "U05-Q15-o2": "不是自己的手足。",
+        "U05-Q15-o3": "不是家人稱呼。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U05-Q16",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q16",
+      "itemFamilyId": "U05-F-parent-pair",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「りょうしん」表示哪一組人？",
+      "promptJa": "りょうしんは、だれとだれですか。",
+      "choices": [
+        {
+          "id": "U05-Q16-o0",
+          "text": "父親和母親"
+        },
+        {
+          "id": "U05-Q16-o1",
+          "text": "哥哥和妹妹"
+        },
+        {
+          "id": "U05-Q16-o2",
+          "text": "祖父和祖母"
+        },
+        {
+          "id": "U05-Q16-o3",
+          "text": "自己和朋友"
+        }
+      ],
+      "answer": [
+        "U05-Q16-o0"
+      ],
+      "explanation": "りょうしん就是雙親。",
+      "explanationJa": "ちちとははです。",
+      "distractorReasons": {
+        "U05-Q16-o1": "這是手足。",
+        "U05-Q16-o2": "這是祖父母。",
+        "U05-Q16-o3": "不表示雙親。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U05-Q17",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q17",
+      "itemFamilyId": "U05-F-cousin-meaning",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「いとこ」指哪種親人？",
+      "promptJa": "いとこは、どのひとですか。",
+      "choices": [
+        {
+          "id": "U05-Q17-o1",
+          "text": "自己的父親"
+        },
+        {
+          "id": "U05-Q17-o2",
+          "text": "自己的妹妹"
+        },
+        {
+          "id": "U05-Q17-o3",
+          "text": "自己的祖父"
+        },
+        {
+          "id": "U05-Q17-o0",
+          "text": "叔伯姑姨舅的孩子"
+        }
+      ],
+      "answer": [
+        "U05-Q17-o0"
+      ],
+      "explanation": "堂、表兄弟姊妹都可以用いとこ。",
+      "explanationJa": "おじやおばの、こどもです。",
+      "distractorReasons": {
+        "U05-Q17-o1": "父親是ちち。",
+        "U05-Q17-o2": "妹妹是いもうと。",
+        "U05-Q17-o3": "祖父是そふ。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U05-Q18",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q18",
+      "itemFamilyId": "U05-F-list-two",
+      "primarySkillId": "G13",
+      "skillIds": [
+        "G13"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "想說「父親和母親」，ちち＿＿はは的空格應填？",
+      "promptJa": "ちち、そして、ははです。ことばをつなぎましょう。",
+      "choices": [
+        {
+          "id": "U05-Q18-o2",
+          "text": "に"
+        },
+        {
+          "id": "U05-Q18-o3",
+          "text": "は"
+        },
+        {
+          "id": "U05-Q18-o0",
+          "text": "と"
+        },
+        {
+          "id": "U05-Q18-o1",
+          "text": "の"
+        }
+      ],
+      "answer": [
+        "U05-Q18-o0"
+      ],
+      "explanation": "と把兩人列在一起。",
+      "explanationJa": "ちちとははです。",
+      "distractorReasons": {
+        "U05-Q18-o1": "ちちのはは會變成父親的媽媽。",
+        "U05-Q18-o2": "不是列出兩人的連接詞。",
+        "U05-Q18-o3": "這裡需要並列兩人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-Q19",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q19",
+      "itemFamilyId": "U05-F-list-three",
+      "primarySkillId": "G13",
+      "skillIds": [
+        "G13"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "哥哥、姊姊和我，哪個名單完整？",
+      "promptJa": "あに、あね、わたしの、さんにんです。",
+      "choices": [
+        {
+          "id": "U05-Q19-o3",
+          "text": "あねと わたし"
+        },
+        {
+          "id": "U05-Q19-o0",
+          "text": "あにと あねと わたし"
+        },
+        {
+          "id": "U05-Q19-o1",
+          "text": "あにの あねの わたし"
+        },
+        {
+          "id": "U05-Q19-o2",
+          "text": "あにと わたし"
+        }
+      ],
+      "answer": [
+        "U05-Q19-o0"
+      ],
+      "explanation": "三個人都要列出，用と連起來。",
+      "explanationJa": "あにとあねとわたしです。",
+      "distractorReasons": {
+        "U05-Q19-o1": "の不表示三人並列。",
+        "U05-Q19-o2": "少了姊姊。",
+        "U05-Q19-o3": "少了哥哥。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-Q20",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q20",
+      "itemFamilyId": "U05-F-read-two",
+      "primarySkillId": "G14",
+      "skillIds": [
+        "G14"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「二人」的正確讀音是哪個？",
+      "promptJa": "二人の、よみかたをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q20-o0",
+          "text": "ふたり"
+        },
+        {
+          "id": "U05-Q20-o1",
+          "text": "ににん"
+        },
+        {
+          "id": "U05-Q20-o2",
+          "text": "ひとり"
+        },
+        {
+          "id": "U05-Q20-o3",
+          "text": "よにん"
+        }
+      ],
+      "answer": [
+        "U05-Q20-o0"
+      ],
+      "explanation": "一人ひとり、二人ふたり有特別讀音。",
+      "explanationJa": "二人は、ふたりです。",
+      "distractorReasons": {
+        "U05-Q20-o1": "二人的特別讀音是ふたり。",
+        "U05-Q20-o2": "這是一人。",
+        "U05-Q20-o3": "這是四人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-Q21",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q21",
+      "itemFamilyId": "U05-F-count-speaker",
+      "primarySkillId": "G14",
+      "skillIds": [
+        "G14"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「そぼと わたしです」。這個名單有幾個人？",
+      "promptJa": "そぼとわたしは、なんにんですか。",
+      "choices": [
+        {
+          "id": "U05-Q21-o1",
+          "text": "一人"
+        },
+        {
+          "id": "U05-Q21-o2",
+          "text": "三人"
+        },
+        {
+          "id": "U05-Q21-o3",
+          "text": "四人"
+        },
+        {
+          "id": "U05-Q21-o0",
+          "text": "二人"
+        }
+      ],
+      "answer": [
+        "U05-Q21-o0"
+      ],
+      "explanation": "祖母一人、自己一人，共二人。",
+      "explanationJa": "そぼとわたしで、ふたりです。",
+      "distractorReasons": {
+        "U05-Q21-o1": "わたし也要算。",
+        "U05-Q21-o2": "名單只有兩人。",
+        "U05-Q21-o3": "不能加故事未提到的人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-Q22",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q22",
+      "itemFamilyId": "U05-F-introduce-sister",
+      "primarySkillId": "G15",
+      "skillIds": [
+        "G15"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "要介紹有一位姊姊，哪句正確？",
+      "promptJa": "あねが、ひとりいます。あうぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q22-o2",
+          "text": "あねが 二人 います。"
+        },
+        {
+          "id": "U05-Q22-o3",
+          "text": "あねは いません。"
+        },
+        {
+          "id": "U05-Q22-o0",
+          "text": "あねが 一人 います。"
+        },
+        {
+          "id": "U05-Q22-o1",
+          "text": "あねが 一人 あります。"
+        }
+      ],
+      "answer": [
+        "U05-Q22-o0"
+      ],
+      "explanation": "人物用います，人數放在が後。",
+      "explanationJa": "あねがひとりいます。",
+      "distractorReasons": {
+        "U05-Q22-o1": "家人是人，用います。",
+        "U05-Q22-o2": "人數不符。",
+        "U05-Q22-o3": "這表示沒有姊姊。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-Q23",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q23",
+      "itemFamilyId": "U05-F-order-members",
+      "primarySkillId": "G-ORDER",
+      "skillIds": [
+        "G-ORDER"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「母親和祖母」。",
+      "promptJa": "ははとそぼを、ならべましょう。",
+      "choices": [
+        {
+          "id": "U05-Q23-o2",
+          "text": "そぼ"
+        },
+        {
+          "id": "U05-Q23-o0",
+          "text": "はは"
+        },
+        {
+          "id": "U05-Q23-o1",
+          "text": "と"
+        }
+      ],
+      "answer": [
+        "U05-Q23-o0",
+        "U05-Q23-o1",
+        "U05-Q23-o2"
+      ],
+      "explanation": "と把兩人並列。",
+      "explanationJa": "ならべたぶんを、もういちどよみましょう。",
+      "distractorReasons": {},
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U05-Q24",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q24",
+      "itemFamilyId": "U05-F-order-siblings",
+      "primarySkillId": "G-ORDER",
+      "skillIds": [
+        "G-ORDER"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「有兩個弟弟」。",
+      "promptJa": "おとうとがふたりいるぶんをつくりましょう。",
+      "choices": [
+        {
+          "id": "U05-Q24-o0",
+          "text": "おとうとが"
+        },
+        {
+          "id": "U05-Q24-o1",
+          "text": "二人"
+        },
+        {
+          "id": "U05-Q24-o2",
+          "text": "います。"
+        }
+      ],
+      "answer": [
+        "U05-Q24-o0",
+        "U05-Q24-o1",
+        "U05-Q24-o2"
+      ],
+      "explanation": "人物が＋人數＋います。",
+      "explanationJa": "ならべたぶんを、もういちどよみましょう。",
+      "distractorReasons": {},
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U05-Q25",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q25",
+      "itemFamilyId": "U05-F-order-total",
+      "primarySkillId": "G-ORDER",
+      "skillIds": [
+        "G-ORDER"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「家人有三個人」。",
+      "promptJa": "かぞくのにんずうをつたえましょう。",
+      "choices": [
+        {
+          "id": "U05-Q25-o1",
+          "text": "三人"
+        },
+        {
+          "id": "U05-Q25-o2",
+          "text": "です。"
+        },
+        {
+          "id": "U05-Q25-o0",
+          "text": "かぞくは"
+        }
+      ],
+      "answer": [
+        "U05-Q25-o0",
+        "U05-Q25-o1",
+        "U05-Q25-o2"
+      ],
+      "explanation": "家族は為主題，三人是人數。",
+      "explanationJa": "ならべたぶんを、もういちどよみましょう。",
+      "distractorReasons": {},
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U05-Q26",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q26",
+      "itemFamilyId": "U05-F-text-negative",
+      "primarySkillId": "G-TEXT",
+      "skillIds": [
+        "G-TEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「あにが いますか。」「いいえ、あには＿＿。」",
+      "promptJa": "いいえ、のあとのぶんをかんせいしましょう。",
+      "choices": [
+        {
+          "id": "U05-Q26-o2",
+          "text": "あります"
+        },
+        {
+          "id": "U05-Q26-o3",
+          "text": "ありません"
+        },
+        {
+          "id": "U05-Q26-o0",
+          "text": "いません"
+        },
+        {
+          "id": "U05-Q26-o1",
+          "text": "います"
+        }
+      ],
+      "answer": [
+        "U05-Q26-o0"
+      ],
+      "explanation": "沒有哥哥用いません。",
+      "explanationJa": "あにはいません。",
+      "distractorReasons": {
+        "U05-Q26-o1": "和いいえ矛盾。",
+        "U05-Q26-o2": "人不能用あります。",
+        "U05-Q26-o3": "否定人的存在用いません。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U05-Q27",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q27",
+      "itemFamilyId": "U05-F-text-list-total",
+      "primarySkillId": "G-TEXT",
+      "skillIds": [
+        "G-TEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「かぞくは 三人です。ははと そぼと＿＿です。」說話者也在名單裡。",
+      "promptJa": "はなしているひとも、かぞくのひとりです。",
+      "choices": [
+        {
+          "id": "U05-Q27-o3",
+          "text": "ねこ"
+        },
+        {
+          "id": "U05-Q27-o0",
+          "text": "わたし"
+        },
+        {
+          "id": "U05-Q27-o1",
+          "text": "はは"
+        },
+        {
+          "id": "U05-Q27-o2",
+          "text": "そぼ"
+        }
+      ],
+      "answer": [
+        "U05-Q27-o0"
+      ],
+      "explanation": "要加上說話者自己，三人名單才完整。",
+      "explanationJa": "ははとそぼとわたしです。",
+      "distractorReasons": {
+        "U05-Q27-o1": "母親已列出，不重複。",
+        "U05-Q27-o2": "祖母已列出，不重複。",
+        "U05-Q27-o3": "ねこ不是人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U05-Q28",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q28",
+      "itemFamilyId": "U05-F-text-own-vs-other",
+      "primarySkillId": "G-TEXT",
+      "skillIds": [
+        "G-TEXT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "朋友問「おねえさんは がくせいですか」。回答「はい、＿＿は がくせいです。」",
+      "promptJa": "じぶんのかぞくについて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U05-Q28-o0",
+          "text": "あね"
+        },
+        {
+          "id": "U05-Q28-o1",
+          "text": "あに"
+        },
+        {
+          "id": "U05-Q28-o2",
+          "text": "そぼ"
+        },
+        {
+          "id": "U05-Q28-o3",
+          "text": "ちち"
+        }
+      ],
+      "answer": [
+        "U05-Q28-o0"
+      ],
+      "explanation": "對外介紹自己的姊姊可用あね。",
+      "explanationJa": "はい、あねはがくせいです。",
+      "distractorReasons": {
+        "U05-Q28-o1": "問題問姊姊不是哥哥。",
+        "U05-Q28-o2": "問題不是問祖母。",
+        "U05-Q28-o3": "問題不是問父親。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U05-Q29",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q29",
+      "itemFamilyId": "U05-F-haru-sibling",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "依短文，ハル有哪位手足？",
+      "promptJa": "ハルさんには、だれがいますか。",
+      "choices": [
+        {
+          "id": "U05-Q29-o1",
+          "text": "兩位姊姊"
+        },
+        {
+          "id": "U05-Q29-o2",
+          "text": "一位弟弟"
+        },
+        {
+          "id": "U05-Q29-o3",
+          "text": "一位哥哥"
+        },
+        {
+          "id": "U05-Q29-o0",
+          "text": "一位姊姊"
+        }
+      ],
+      "answer": [
+        "U05-Q29-o0"
+      ],
+      "explanation": "あねが一人います。",
+      "explanationJa": "あねがひとりいます。",
+      "distractorReasons": {
+        "U05-Q29-o1": "短文說一人。",
+        "U05-Q29-o2": "短文明確說沒有弟弟。",
+        "U05-Q29-o3": "短文沒有這樣介紹。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U05-R01",
+      "material": "わたしは ハルです。あねが 一人 います。あねは がくせいです。おとうとは いません。"
+    },
+    {
+      "id": "U05-Q30",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q30",
+      "itemFamilyId": "U05-F-haru-absence",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "短文中，哪個說法被明確否定？",
+      "promptJa": "おはなしに、いないとかいてあるひとは、だれですか。",
+      "choices": [
+        {
+          "id": "U05-Q30-o2",
+          "text": "母親"
+        },
+        {
+          "id": "U05-Q30-o3",
+          "text": "祖父"
+        },
+        {
+          "id": "U05-Q30-o0",
+          "text": "弟弟"
+        },
+        {
+          "id": "U05-Q30-o1",
+          "text": "姊姊"
+        }
+      ],
+      "answer": [
+        "U05-Q30-o0"
+      ],
+      "explanation": "おとうとはいません明確表示沒有弟弟；未提到不等於沒有。",
+      "explanationJa": "おとうとはいません。",
+      "distractorReasons": {
+        "U05-Q30-o1": "姊姊有一人。",
+        "U05-Q30-o2": "文中沒有談母親，不能當否定。",
+        "U05-Q30-o3": "文中沒有談祖父，不能當否定。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U05-R01",
+      "material": "わたしは ハルです。あねが 一人 います。あねは がくせいです。おとうとは いません。"
+    },
+    {
+      "id": "U05-Q31",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q31",
+      "itemFamilyId": "U05-F-mio-room-members",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "綜合短文，房間裡有哪些人？",
+      "promptJa": "へやにいるひとは、だれとだれですか。",
+      "choices": [
+        {
+          "id": "U05-Q31-o3",
+          "text": "祖母和貓"
+        },
+        {
+          "id": "U05-Q31-o0",
+          "text": "母親和ミオ"
+        },
+        {
+          "id": "U05-Q31-o1",
+          "text": "祖母和ミオ"
+        },
+        {
+          "id": "U05-Q31-o2",
+          "text": "母親和祖母"
+        }
+      ],
+      "answer": [
+        "U05-Q31-o0"
+      ],
+      "explanation": "はははへやに，わたしもへやに；わたし是ミオ。",
+      "explanationJa": "ははとミオさんです。",
+      "distractorReasons": {
+        "U05-Q31-o1": "祖母在庭院。",
+        "U05-Q31-o2": "祖母不在房間。",
+        "U05-Q31-o3": "這兩位在庭院，而且貓不是人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U05-R02",
+      "material": "ミオです。かぞくは 三人です。ははと そぼと わたしです。そぼは いま にわに います。ははは へやに います。わたしも へやに います。にわには ねこも います。ねこは 人のかずには いれません。"
+    },
+    {
+      "id": "U05-Q32",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q32",
+      "itemFamilyId": "U05-F-aki-all-students",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "綜合對話，明確說是學生的共有幾人？",
+      "promptJa": "がくせいだとわかるひとは、ぜんぶでなんにんですか。",
+      "choices": [
+        {
+          "id": "U05-Q32-o0",
+          "text": "三人"
+        },
+        {
+          "id": "U05-Q32-o1",
+          "text": "一人"
+        },
+        {
+          "id": "U05-Q32-o2",
+          "text": "二人"
+        },
+        {
+          "id": "U05-Q32-o3",
+          "text": "四人"
+        }
+      ],
+      "answer": [
+        "U05-Q32-o0"
+      ],
+      "explanation": "弟弟兩人，加上アキ自己，共三位學生。",
+      "explanationJa": "おとうとふたりとアキさんで、さんにんです。",
+      "distractorReasons": {
+        "U05-Q32-o1": "兩個弟弟也是學生。",
+        "U05-Q32-o2": "アキ也說自己是學生。",
+        "U05-Q32-o3": "哥哥不存在，不能加進來。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U05-R04",
+      "material": "ユイ：きょうだいが いますか。\nアキ：はい、おとうとが 二人 います。\nユイ：おにいさんは いますか。\nアキ：いいえ、あには いません。おとうとは がくせいです。わたしも がくせいです。"
+    },
+    {
+      "id": "U05-Q33",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q33",
+      "itemFamilyId": "U05-F-table-no-siblings",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "依表格，誰沒有兄弟姊妹？",
+      "promptJa": "きょうだいがいないひとは、だれですか。",
+      "choices": [
+        {
+          "id": "U05-Q33-o1",
+          "text": "ハル"
+        },
+        {
+          "id": "U05-Q33-o2",
+          "text": "ユイ"
+        },
+        {
+          "id": "U05-Q33-o3",
+          "text": "アキ"
+        },
+        {
+          "id": "U05-Q33-o0",
+          "text": "ソラ"
+        }
+      ],
+      "answer": [
+        "U05-Q33-o0"
+      ],
+      "explanation": "ソラ這列寫きょうだいいません。",
+      "explanationJa": "ソラさんです。",
+      "distractorReasons": {
+        "U05-Q33-o1": "ハル有姊姊。",
+        "U05-Q33-o2": "ユイ有哥哥與妹妹。",
+        "U05-Q33-o3": "アキ有兩個弟弟。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U05-R03",
+      "material": "小鎮居民介紹表\nハル｜あね 一人｜おとうと いません\nユイ｜あに 一人・いもうと 一人\nソラ｜きょうだい いません\nアキ｜おとうと 二人"
+    },
+    {
+      "id": "U05-Q34",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q34",
+      "itemFamilyId": "U05-F-table-two-brothers",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "依表格，誰有兩個弟弟？",
+      "promptJa": "おとうとがふたりいるのは、だれですか。",
+      "choices": [
+        {
+          "id": "U05-Q34-o2",
+          "text": "ユイ"
+        },
+        {
+          "id": "U05-Q34-o3",
+          "text": "ソラ"
+        },
+        {
+          "id": "U05-Q34-o0",
+          "text": "アキ"
+        },
+        {
+          "id": "U05-Q34-o1",
+          "text": "ハル"
+        }
+      ],
+      "answer": [
+        "U05-Q34-o0"
+      ],
+      "explanation": "アキ這列寫おとうと二人。",
+      "explanationJa": "アキさんです。",
+      "distractorReasons": {
+        "U05-Q34-o1": "ハル沒有弟弟。",
+        "U05-Q34-o2": "ユイ有哥哥和妹妹。",
+        "U05-Q34-o3": "ソラ沒有手足。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U05-R03",
+      "material": "小鎮居民介紹表\nハル｜あね 一人｜おとうと いません\nユイ｜あに 一人・いもうと 一人\nソラ｜きょうだい いません\nアキ｜おとうと 二人"
+    },
+    {
+      "id": "U05-Q35",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q35",
+      "itemFamilyId": "U05-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽居民的指示，應找哪位？",
+      "promptJa": "はなしをきいて、さがすひとをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q35-o3",
+          "text": "父親"
+        },
+        {
+          "id": "U05-Q35-o0",
+          "text": "祖母"
+        },
+        {
+          "id": "U05-Q35-o1",
+          "text": "母親"
+        },
+        {
+          "id": "U05-Q35-o2",
+          "text": "哥哥"
+        }
+      ],
+      "answer": [
+        "U05-Q35-o0"
+      ],
+      "explanation": "要找藍色書包的人，音訊說祖母拿藍色書包。",
+      "explanationJa": "あおいかばんは、そぼです。",
+      "distractorReasons": {
+        "U05-Q35-o1": "母親拿的是紅色書包。",
+        "U05-Q35-o2": "音訊未提哥哥。",
+        "U05-Q35-o3": "音訊未提父親。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U05-L02",
+      "audioSrc": "/assets/audio/u05/listening-02.wav"
+    },
+    {
+      "id": "U05-Q36",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q36",
+      "itemFamilyId": "U05-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "要照指示找人，應到哪裡？",
+      "promptJa": "どこで、さがしますか。",
+      "choices": [
+        {
+          "id": "U05-Q36-o0",
+          "text": "公園"
+        },
+        {
+          "id": "U05-Q36-o1",
+          "text": "教室"
+        },
+        {
+          "id": "U05-Q36-o2",
+          "text": "車站"
+        },
+        {
+          "id": "U05-Q36-o3",
+          "text": "商店"
+        }
+      ],
+      "answer": [
+        "U05-Q36-o0"
+      ],
+      "explanation": "音訊開頭說こうえんに。",
+      "explanationJa": "こうえんです。",
+      "distractorReasons": {
+        "U05-Q36-o1": "音訊說公園。",
+        "U05-Q36-o2": "音訊沒有說車站。",
+        "U05-Q36-o3": "音訊沒有說商店。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U05-L02",
+      "audioSrc": "/assets/audio/u05/listening-02.wav"
+    },
+    {
+      "id": "U05-Q37",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q37",
+      "itemFamilyId": "U05-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽完後要為居民寫介紹卡，哪個內容符合？",
+      "promptJa": "しょうかいのカードに、なにをかきますか。",
+      "choices": [
+        {
+          "id": "U05-Q37-o1",
+          "text": "弟弟一人"
+        },
+        {
+          "id": "U05-Q37-o2",
+          "text": "哥哥兩人"
+        },
+        {
+          "id": "U05-Q37-o3",
+          "text": "姊姊兩人"
+        },
+        {
+          "id": "U05-Q37-o0",
+          "text": "姊姊一人"
+        }
+      ],
+      "answer": [
+        "U05-Q37-o0"
+      ],
+      "explanation": "音訊是あねがひとりいます。",
+      "explanationJa": "あねがひとりいます。",
+      "distractorReasons": {
+        "U05-Q37-o1": "音訊否定弟弟。",
+        "U05-Q37-o2": "音訊未說哥哥。",
+        "U05-Q37-o3": "音訊說ひとり。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U05-L01",
+      "audioSrc": "/assets/audio/u05/listening-01.wav"
+    },
+    {
+      "id": "U05-Q38",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q38",
+      "itemFamilyId": "U05-F-listening-03",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽完後要填家人總人數，應填哪個？",
+      "promptJa": "かぞくのにんずうを、かきましょう。",
+      "choices": [
+        {
+          "id": "U05-Q38-o2",
+          "text": "二人"
+        },
+        {
+          "id": "U05-Q38-o3",
+          "text": "五人"
+        },
+        {
+          "id": "U05-Q38-o0",
+          "text": "四人"
+        },
+        {
+          "id": "U05-Q38-o1",
+          "text": "三人"
+        }
+      ],
+      "answer": [
+        "U05-Q38-o0"
+      ],
+      "explanation": "音訊開頭說よにん，名單也含自己共四人。",
+      "explanationJa": "かぞくはよにんです。",
+      "distractorReasons": {
+        "U05-Q38-o1": "說話者自己也在名單中。",
+        "U05-Q38-o2": "不只有雙親。",
+        "U05-Q38-o3": "音訊只有四人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U05-L03",
+      "audioSrc": "/assets/audio/u05/listening-03.wav"
+    },
+    {
+      "id": "U05-Q39",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q39",
+      "itemFamilyId": "U05-F-listening-01",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "音訊中的姊姊有幾位？",
+      "promptJa": "あねは、なんにんですか。",
+      "choices": [
+        {
+          "id": "U05-Q39-o3",
+          "text": "沒有"
+        },
+        {
+          "id": "U05-Q39-o0",
+          "text": "一人"
+        },
+        {
+          "id": "U05-Q39-o1",
+          "text": "二人"
+        },
+        {
+          "id": "U05-Q39-o2",
+          "text": "三人"
+        }
+      ],
+      "answer": [
+        "U05-Q39-o0"
+      ],
+      "explanation": "關鍵詞あね與ひとり。",
+      "explanationJa": "あねはひとりです。",
+      "distractorReasons": {
+        "U05-Q39-o1": "ひとり不是ふたり。",
+        "U05-Q39-o2": "不是さんにん。",
+        "U05-Q39-o3": "否定的是弟弟。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U05-L01",
+      "audioSrc": "/assets/audio/u05/listening-01.wav"
+    },
+    {
+      "id": "U05-Q40",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q40",
+      "itemFamilyId": "U05-F-listening-01",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "音訊明確說沒有哪位家人？",
+      "promptJa": "いないかぞくは、だれですか。",
+      "choices": [
+        {
+          "id": "U05-Q40-o0",
+          "text": "弟弟"
+        },
+        {
+          "id": "U05-Q40-o1",
+          "text": "姊姊"
+        },
+        {
+          "id": "U05-Q40-o2",
+          "text": "祖母"
+        },
+        {
+          "id": "U05-Q40-o3",
+          "text": "父親"
+        }
+      ],
+      "answer": [
+        "U05-Q40-o0"
+      ],
+      "explanation": "おとうとはいません。",
+      "explanationJa": "おとうとはいません。",
+      "distractorReasons": {
+        "U05-Q40-o1": "姊姊有一人。",
+        "U05-Q40-o2": "音訊未說，不能推論。",
+        "U05-Q40-o3": "音訊未說，不能推論。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U05-L01",
+      "audioSrc": "/assets/audio/u05/listening-01.wav"
+    },
+    {
+      "id": "U05-Q41",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q41",
+      "itemFamilyId": "U05-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "總共四人的名單中，哪位是說話者的手足？",
+      "promptJa": "はなしているひとのきょうだいは、だれですか。",
+      "choices": [
+        {
+          "id": "U05-Q41-o1",
+          "text": "哥哥"
+        },
+        {
+          "id": "U05-Q41-o2",
+          "text": "姊姊"
+        },
+        {
+          "id": "U05-Q41-o3",
+          "text": "弟弟"
+        },
+        {
+          "id": "U05-Q41-o0",
+          "text": "妹妹"
+        }
+      ],
+      "answer": [
+        "U05-Q41-o0"
+      ],
+      "explanation": "名單裡有いもうと。",
+      "explanationJa": "いもうとです。",
+      "distractorReasons": {
+        "U05-Q41-o1": "名單沒有哥哥。",
+        "U05-Q41-o2": "名單沒有姊姊。",
+        "U05-Q41-o3": "名單沒有弟弟。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U05-L03",
+      "audioSrc": "/assets/audio/u05/listening-03.wav"
+    },
+    {
+      "id": "U05-Q42",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q42",
+      "itemFamilyId": "U05-F-listening-02",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "誰拿紅色書包？",
+      "promptJa": "あかいかばんは、だれのかばんですか。",
+      "choices": [
+        {
+          "id": "U05-Q42-o2",
+          "text": "哥哥"
+        },
+        {
+          "id": "U05-Q42-o3",
+          "text": "妹妹"
+        },
+        {
+          "id": "U05-Q42-o0",
+          "text": "母親"
+        },
+        {
+          "id": "U05-Q42-o1",
+          "text": "祖母"
+        }
+      ],
+      "answer": [
+        "U05-Q42-o0"
+      ],
+      "explanation": "はははあかいかばん。",
+      "explanationJa": "ははのかばんです。",
+      "distractorReasons": {
+        "U05-Q42-o1": "祖母拿藍色。",
+        "U05-Q42-o2": "音訊沒有哥哥。",
+        "U05-Q42-o3": "音訊沒有妹妹。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U05-L02",
+      "audioSrc": "/assets/audio/u05/listening-02.wav"
+    },
+    {
+      "id": "U05-Q43",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q43",
+      "itemFamilyId": "U05-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽四種人數的讀音，選出符合這張圖的一個。",
+      "promptJa": "えのひとのかずにあうことばを、えらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q43-o3",
+          "text": "よにん"
+        },
+        {
+          "id": "U05-Q43-o0",
+          "text": "ひとり"
+        },
+        {
+          "id": "U05-Q43-o1",
+          "text": "ふたり"
+        },
+        {
+          "id": "U05-Q43-o2",
+          "text": "さんにん"
+        }
+      ],
+      "answer": [
+        "U05-Q43-o0"
+      ],
+      "explanation": "圖中有1個人，讀ひとり；不需要猜誰是家人。",
+      "explanationJa": "えには、ひとりいます。",
+      "distractorReasons": {
+        "U05-Q43-o1": "圖中只有一人。",
+        "U05-Q43-o2": "不是三人。",
+        "U05-Q43-o3": "不是四人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U05-L04",
+      "audioSrc": "/assets/audio/u05/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u05/people-counts.webp",
+        "cell": 0,
+        "alt": {
+          "zh": "花園中清楚可見一個人；只看人數，不推測親屬關係。",
+          "ja": "ひとりいます。"
+        }
+      }
+    },
+    {
+      "id": "U05-Q44",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q44",
+      "itemFamilyId": "U05-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽四種人數的讀音，選出符合這張圖的一個。",
+      "promptJa": "えのひとのかずにあうことばを、えらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q44-o0",
+          "text": "ふたり"
+        },
+        {
+          "id": "U05-Q44-o1",
+          "text": "ひとり"
+        },
+        {
+          "id": "U05-Q44-o2",
+          "text": "さんにん"
+        },
+        {
+          "id": "U05-Q44-o3",
+          "text": "よにん"
+        }
+      ],
+      "answer": [
+        "U05-Q44-o0"
+      ],
+      "explanation": "圖中有2個人，讀ふたり；不需要猜誰是家人。",
+      "explanationJa": "えには、ふたりいます。",
+      "distractorReasons": {
+        "U05-Q44-o1": "圖中有兩人。",
+        "U05-Q44-o2": "不是三人。",
+        "U05-Q44-o3": "不是四人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U05-L04",
+      "audioSrc": "/assets/audio/u05/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u05/people-counts.webp",
+        "cell": 1,
+        "alt": {
+          "zh": "花園中清楚可見兩個人；只看人數，不推測親屬關係。",
+          "ja": "ふたりいます。"
+        }
+      }
+    },
+    {
+      "id": "U05-Q45",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q45",
+      "itemFamilyId": "U05-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽四種人數的讀音，選出符合這張圖的一個。",
+      "promptJa": "えのひとのかずにあうことばを、えらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q45-o1",
+          "text": "ひとり"
+        },
+        {
+          "id": "U05-Q45-o2",
+          "text": "ふたり"
+        },
+        {
+          "id": "U05-Q45-o3",
+          "text": "よにん"
+        },
+        {
+          "id": "U05-Q45-o0",
+          "text": "さんにん"
+        }
+      ],
+      "answer": [
+        "U05-Q45-o0"
+      ],
+      "explanation": "圖中有3個人，讀さんにん；不需要猜誰是家人。",
+      "explanationJa": "えには、さんにんいます。",
+      "distractorReasons": {
+        "U05-Q45-o1": "不是一人。",
+        "U05-Q45-o2": "不是兩人。",
+        "U05-Q45-o3": "不是四人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U05-L04",
+      "audioSrc": "/assets/audio/u05/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u05/people-counts.webp",
+        "cell": 2,
+        "alt": {
+          "zh": "花園中清楚可見三個人；只看人數，不推測親屬關係。",
+          "ja": "さんにんいます。"
+        }
+      }
+    },
+    {
+      "id": "U05-Q46",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q46",
+      "itemFamilyId": "U05-F-listening-04",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽四種人數的讀音，選出符合這張圖的一個。",
+      "promptJa": "えのひとのかずにあうことばを、えらびましょう。",
+      "choices": [
+        {
+          "id": "U05-Q46-o2",
+          "text": "ふたり"
+        },
+        {
+          "id": "U05-Q46-o3",
+          "text": "さんにん"
+        },
+        {
+          "id": "U05-Q46-o0",
+          "text": "よにん"
+        },
+        {
+          "id": "U05-Q46-o1",
+          "text": "ひとり"
+        }
+      ],
+      "answer": [
+        "U05-Q46-o0"
+      ],
+      "explanation": "圖中有4個人，讀よにん；不需要猜誰是家人。",
+      "explanationJa": "えには、よにんいます。",
+      "distractorReasons": {
+        "U05-Q46-o1": "不是一人。",
+        "U05-Q46-o2": "不是兩人。",
+        "U05-Q46-o3": "不是三人。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U05-L04",
+      "audioSrc": "/assets/audio/u05/listening-04.wav",
+      "image": {
+        "src": "/assets/img/u05/people-counts.webp",
+        "cell": 3,
+        "alt": {
+          "zh": "花園中清楚可見四個人；只看人數，不推測親屬關係。",
+          "ja": "よにんいます。"
+        }
+      }
+    },
+    {
+      "id": "U05-Q47",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q47",
+      "itemFamilyId": "U05-F-listening-05",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：有一位哥哥。聽問題，選合適回答。",
+      "promptJa": "あにがひとりいます。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U05-Q47-o3",
+          "text": "こうえんです。"
+        },
+        {
+          "id": "U05-Q47-o0",
+          "text": "はい、あにが 一人 います。"
+        },
+        {
+          "id": "U05-Q47-o1",
+          "text": "いいえ、いません。"
+        },
+        {
+          "id": "U05-Q47-o2",
+          "text": "三時です。"
+        }
+      ],
+      "answer": [
+        "U05-Q47-o0"
+      ],
+      "explanation": "問有沒有手足，回答有並介紹哥哥。",
+      "explanationJa": "はい、あにがひとりいます。",
+      "distractorReasons": {
+        "U05-Q47-o1": "設定是有哥哥。",
+        "U05-Q47-o2": "不是問時間。",
+        "U05-Q47-o3": "不是問位置。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U05-L05",
+      "audioSrc": "/assets/audio/u05/listening-05.wav"
+    },
+    {
+      "id": "U05-Q48",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q48",
+      "itemFamilyId": "U05-F-listening-05",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：沒有兄弟姊妹。聽問題，選合適回答。",
+      "promptJa": "きょうだいはいません。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U05-Q48-o0",
+          "text": "いいえ、いません。"
+        },
+        {
+          "id": "U05-Q48-o1",
+          "text": "はい、あねが います。"
+        },
+        {
+          "id": "U05-Q48-o2",
+          "text": "わたしは ハルです。"
+        },
+        {
+          "id": "U05-Q48-o3",
+          "text": "ほんが あります。"
+        }
+      ],
+      "answer": [
+        "U05-Q48-o0"
+      ],
+      "explanation": "沒有手足用いいえ、いません。",
+      "explanationJa": "いいえ、いません。",
+      "distractorReasons": {
+        "U05-Q48-o1": "與設定不符。",
+        "U05-Q48-o2": "不是問名字。",
+        "U05-Q48-o3": "不是問有什麼物品。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U05-L05",
+      "audioSrc": "/assets/audio/u05/listening-05.wav"
+    },
+    {
+      "id": "U05-Q49",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q49",
+      "itemFamilyId": "U05-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：故事中的家人共有三位。聽問題，選合適回答。",
+      "promptJa": "かぞくはさんにんです。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U05-Q49-o1",
+          "text": "三時です。"
+        },
+        {
+          "id": "U05-Q49-o2",
+          "text": "ハルです。"
+        },
+        {
+          "id": "U05-Q49-o3",
+          "text": "はい、います。"
+        },
+        {
+          "id": "U05-Q49-o0",
+          "text": "三人です。"
+        }
+      ],
+      "answer": [
+        "U05-Q49-o0"
+      ],
+      "explanation": "なんにん問人數，回答三人。",
+      "explanationJa": "さんにんです。",
+      "distractorReasons": {
+        "U05-Q49-o1": "這是時間。",
+        "U05-Q49-o2": "這是名字。",
+        "U05-Q49-o3": "沒有回答人數。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U05-L06",
+      "audioSrc": "/assets/audio/u05/listening-06.wav"
+    },
+    {
+      "id": "U05-Q50",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-Q50",
+      "itemFamilyId": "U05-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：故事中的家人是祖父和說話者。聽問題，選合適回答。",
+      "promptJa": "そふとわたしです。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U05-Q50-o2",
+          "text": "二時です。"
+        },
+        {
+          "id": "U05-Q50-o3",
+          "text": "そふは にわです。"
+        },
+        {
+          "id": "U05-Q50-o0",
+          "text": "二人です。"
+        },
+        {
+          "id": "U05-Q50-o1",
+          "text": "一人です。"
+        }
+      ],
+      "answer": [
+        "U05-Q50-o0"
+      ],
+      "explanation": "祖父加自己，共二人。",
+      "explanationJa": "ふたりです。",
+      "distractorReasons": {
+        "U05-Q50-o1": "說話者自己也要算。",
+        "U05-Q50-o2": "這是時間。",
+        "U05-Q50-o3": "位置沒有回答人數。"
+      },
+      "hint": "先確認是誰在介紹、稱呼的是哪位家人；數人時把說話者算進去，只計算人。",
+      "hintJa": "だれのかぞくか、よびかたとひとのかずを、たしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U05-L06",
+      "audioSrc": "/assets/audio/u05/listening-06.wav"
+    },
+    {
+      "id": "U05-C01",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C01",
+      "itemFamilyId": "U05-CHECK-contrast-list-possessive",
+      "primarySkillId": "G13",
+      "skillIds": [
+        "G13"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「そぼと はは」與「そぼの はは」的差別，哪個解釋正確？",
+      "promptJa": "「と」と「の」のちがいをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U05-C01-o1",
+          "text": "兩者都只指祖母"
+        },
+        {
+          "id": "U05-C01-o2",
+          "text": "兩者都列出三人"
+        },
+        {
+          "id": "U05-C01-o3",
+          "text": "前者是祖母的母親；後者列兩人"
+        },
+        {
+          "id": "U05-C01-o0",
+          "text": "前者列出祖母和母親；後者指祖母的母親"
+        }
+      ],
+      "answer": [
+        "U05-C01-o0"
+      ],
+      "explanation": "と是並列，の表示關係。",
+      "explanationJa": "とはひとをならべ、のはかんけいをしめします。",
+      "distractorReasons": {
+        "U05-C01-o1": "と會列出兩人。",
+        "U05-C01-o2": "不能自行加人。",
+        "U05-C01-o3": "兩者作用反了。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C02",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C02",
+      "itemFamilyId": "U05-CHECK-repair-list-order",
+      "primarySkillId": "G13",
+      "skillIds": [
+        "G13"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "order",
+      "prompt": "名單要寫「叔伯舅和姑姨」，請排列詞語。",
+      "promptJa": "おじとおばを、ならべましょう。",
+      "choices": [
+        {
+          "id": "U05-C02-o2",
+          "text": "おば"
+        },
+        {
+          "id": "U05-C02-o0",
+          "text": "おじ"
+        },
+        {
+          "id": "U05-C02-o1",
+          "text": "と"
+        }
+      ],
+      "answer": [
+        "U05-C02-o0",
+        "U05-C02-o1",
+        "U05-C02-o2"
+      ],
+      "explanation": "と放在兩個稱呼中間。",
+      "explanationJa": "おじ、と、おばのじゅんです。",
+      "distractorReasons": {},
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U05-C03",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C03",
+      "itemFamilyId": "U05-CHECK-recover-omitted-member",
+      "primarySkillId": "G13",
+      "skillIds": [
+        "G13"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "原名單「せんせいと そふと いとこ」。抄寫成「せんせいと いとこ」，漏了誰？",
+      "promptJa": "もとのめいぼと、くらべましょう。",
+      "choices": [
+        {
+          "id": "U05-C03-o3",
+          "text": "そぼ"
+        },
+        {
+          "id": "U05-C03-o0",
+          "text": "そふ"
+        },
+        {
+          "id": "U05-C03-o1",
+          "text": "せんせい"
+        },
+        {
+          "id": "U05-C03-o2",
+          "text": "いとこ"
+        }
+      ],
+      "answer": [
+        "U05-C03-o0"
+      ],
+      "explanation": "と分隔三位成員，比對後找出漏掉的祖父。",
+      "explanationJa": "そふがぬけています。",
+      "distractorReasons": {
+        "U05-C03-o1": "抄本保留老師。",
+        "U05-C03-o2": "抄本保留堂表手足。",
+        "U05-C03-o3": "原名單沒有祖母。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C04",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C04",
+      "itemFamilyId": "U05-CHECK-join-two-statements",
+      "primarySkillId": "G13",
+      "skillIds": [
+        "G13"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「ここに おとうとが います。ここに いもうとも います。」合併成列出兩人的句子。",
+      "promptJa": "ふたつのぶんを、ひとつにしましょう。",
+      "choices": [
+        {
+          "id": "U05-C04-o0",
+          "text": "ここに おとうとと いもうとが います。"
+        },
+        {
+          "id": "U05-C04-o1",
+          "text": "ここに おとうとの いもうとが います。"
+        },
+        {
+          "id": "U05-C04-o2",
+          "text": "ここに おとうとだけ います。"
+        },
+        {
+          "id": "U05-C04-o3",
+          "text": "ここに いもうとだけ います。"
+        }
+      ],
+      "answer": [
+        "U05-C04-o0"
+      ],
+      "explanation": "用と列出兩位已知人物，保留原本兩句的資訊。",
+      "explanationJa": "おとうとといもうとがいます。",
+      "distractorReasons": {
+        "U05-C04-o1": "の改變成關係，不再列出兩人。",
+        "U05-C04-o2": "漏掉妹妹。",
+        "U05-C04-o3": "漏掉弟弟。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C05",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C05",
+      "itemFamilyId": "U05-CHECK-list-not-age",
+      "primarySkillId": "G13",
+      "skillIds": [
+        "G13"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「おじと いとこが います。」單靠這句，能確定什麼？",
+      "promptJa": "このぶんだけで、わかることをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-C05-o1",
+          "text": "叔伯舅住在堂表手足家"
+        },
+        {
+          "id": "U05-C05-o2",
+          "text": "堂表手足比自己年長"
+        },
+        {
+          "id": "U05-C05-o3",
+          "text": "叔伯舅就是堂表手足"
+        },
+        {
+          "id": "U05-C05-o0",
+          "text": "列出了叔伯舅與堂表手足兩種稱呼"
+        }
+      ],
+      "answer": [
+        "U05-C05-o0"
+      ],
+      "explanation": "と提供並列關係，不提供年齡或住處。",
+      "explanationJa": "おじといとこを、ならべています。",
+      "distractorReasons": {
+        "U05-C05-o1": "と沒有說住處。",
+        "U05-C05-o2": "と沒有說年齡。",
+        "U05-C05-o3": "と列出成員，不是等號。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C06",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C06",
+      "itemFamilyId": "U05-CHECK-single-irregular",
+      "primarySkillId": "G14",
+      "skillIds": [
+        "G14"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "名牌寫「一人」。有人讀成いちにん，應如何修正？",
+      "promptJa": "一人のよみかたを、なおしましょう。",
+      "choices": [
+        {
+          "id": "U05-C06-o2",
+          "text": "いちにん"
+        },
+        {
+          "id": "U05-C06-o3",
+          "text": "ふたり"
+        },
+        {
+          "id": "U05-C06-o0",
+          "text": "ひとり"
+        },
+        {
+          "id": "U05-C06-o1",
+          "text": "いちひと"
+        }
+      ],
+      "answer": [
+        "U05-C06-o0"
+      ],
+      "explanation": "一人在人數表達中讀ひとり。",
+      "explanationJa": "一人はひとりです。",
+      "distractorReasons": {
+        "U05-C06-o1": "不是人數的讀法。",
+        "U05-C06-o2": "本課的一人讀ひとり。",
+        "U05-C06-o3": "這是二人。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C07",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C07",
+      "itemFamilyId": "U05-CHECK-four-counter-sound",
+      "primarySkillId": "G14",
+      "skillIds": [
+        "G14"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "要說四位人，哪個讀音正確？",
+      "promptJa": "四人のよみかたを、えらびましょう。",
+      "choices": [
+        {
+          "id": "U05-C07-o3",
+          "text": "よじ"
+        },
+        {
+          "id": "U05-C07-o0",
+          "text": "よにん"
+        },
+        {
+          "id": "U05-C07-o1",
+          "text": "よんにん"
+        },
+        {
+          "id": "U05-C07-o2",
+          "text": "しにん"
+        }
+      ],
+      "answer": [
+        "U05-C07-o0"
+      ],
+      "explanation": "四人固定讀よにん，和單獨的よん不同。",
+      "explanationJa": "四人はよにんです。",
+      "distractorReasons": {
+        "U05-C07-o1": "四接人時用よにん。",
+        "U05-C07-o2": "這裡四人不讀しにん。",
+        "U05-C07-o3": "這是四點。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C08",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C08",
+      "itemFamilyId": "U05-CHECK-exclude-nonhuman",
+      "primarySkillId": "G14",
+      "skillIds": [
+        "G14"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "房間裡有大人兩位、小孩一位、貓一隻。人有幾位？",
+      "promptJa": "おとなふたり、こどもひとり、ねこがいます。ひとはなんにんですか。",
+      "choices": [
+        {
+          "id": "U05-C08-o0",
+          "text": "三人"
+        },
+        {
+          "id": "U05-C08-o1",
+          "text": "四人"
+        },
+        {
+          "id": "U05-C08-o2",
+          "text": "二人"
+        },
+        {
+          "id": "U05-C08-o3",
+          "text": "一人"
+        }
+      ],
+      "answer": [
+        "U05-C08-o0"
+      ],
+      "explanation": "只計算兩位大人與一位小孩。",
+      "explanationJa": "ひとはさんにんです。",
+      "distractorReasons": {
+        "U05-C08-o1": "貓不能用人來計數。",
+        "U05-C08-o2": "小孩也要算人。",
+        "U05-C08-o3": "大人也要算。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C09",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C09",
+      "itemFamilyId": "U05-CHECK-match-count-question",
+      "primarySkillId": "G14",
+      "skillIds": [
+        "G14"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "活動名單要填參加的人數。應使用哪個問題？",
+      "promptJa": "さんかするひとのかずを、たずねましょう。",
+      "choices": [
+        {
+          "id": "U05-C09-o1",
+          "text": "なんじですか。"
+        },
+        {
+          "id": "U05-C09-o2",
+          "text": "だれですか。"
+        },
+        {
+          "id": "U05-C09-o3",
+          "text": "どこですか。"
+        },
+        {
+          "id": "U05-C09-o0",
+          "text": "なんにんですか。"
+        }
+      ],
+      "answer": [
+        "U05-C09-o0"
+      ],
+      "explanation": "詢問人數用なんにん。",
+      "explanationJa": "なんにんですか、とききます。",
+      "distractorReasons": {
+        "U05-C09-o1": "這問時間。",
+        "U05-C09-o2": "這問身分。",
+        "U05-C09-o3": "這問位置。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C10",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C10",
+      "itemFamilyId": "U05-CHECK-keep-speaker-count",
+      "primarySkillId": "G14",
+      "skillIds": [
+        "G14"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "居民說「わたしと、あにと、あねと、いもうとと、おとうとです」。五個稱呼都指不同人，共幾位？",
+      "promptJa": "めいぼのひとは、みんなべつのひとです。ぜんぶでなんにんですか。",
+      "choices": [
+        {
+          "id": "U05-C10-o2",
+          "text": "六人"
+        },
+        {
+          "id": "U05-C10-o3",
+          "text": "三人"
+        },
+        {
+          "id": "U05-C10-o0",
+          "text": "五人"
+        },
+        {
+          "id": "U05-C10-o1",
+          "text": "四人"
+        }
+      ],
+      "answer": [
+        "U05-C10-o0"
+      ],
+      "explanation": "把說話者與四位手足一起數，共五人。",
+      "explanationJa": "ごにんです。",
+      "distractorReasons": {
+        "U05-C10-o1": "わたし也算一人。",
+        "U05-C10-o2": "名單沒有第六人。",
+        "U05-C10-o3": "哥哥與姊姊都要計入。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C11",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C11",
+      "itemFamilyId": "U05-CHECK-count-position",
+      "primarySkillId": "G15",
+      "skillIds": [
+        "G15"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "想介紹有三個妹妹，哪句的人數位置正確？",
+      "promptJa": "いもうとのにんずうを、しょうかいしましょう。",
+      "choices": [
+        {
+          "id": "U05-C11-o3",
+          "text": "いもうとが 三人 いません。"
+        },
+        {
+          "id": "U05-C11-o0",
+          "text": "いもうとが 三人 います。"
+        },
+        {
+          "id": "U05-C11-o1",
+          "text": "いもうとが 三人 あります。"
+        },
+        {
+          "id": "U05-C11-o2",
+          "text": "いもうと 三人がです。"
+        }
+      ],
+      "answer": [
+        "U05-C11-o0"
+      ],
+      "explanation": "家人が＋人數＋います。",
+      "explanationJa": "いもうとがさんにんいます。",
+      "distractorReasons": {
+        "U05-C11-o1": "人物用います。",
+        "U05-C11-o2": "這不是介紹存在的句型。",
+        "U05-C11-o3": "這句否定，與設定不同。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C12",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C12",
+      "itemFamilyId": "U05-CHECK-correct-absence-reply",
+      "primarySkillId": "G15",
+      "skillIds": [
+        "G15"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "故事設定：沒有姊姊。別人問「おねえさんがいますか」，完整回答是哪句？",
+      "promptJa": "あねはいません。しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U05-C12-o0",
+          "text": "いいえ、あねは いません。"
+        },
+        {
+          "id": "U05-C12-o1",
+          "text": "はい、あねが います。"
+        },
+        {
+          "id": "U05-C12-o2",
+          "text": "いいえ、あねは ありません。"
+        },
+        {
+          "id": "U05-C12-o3",
+          "text": "いいえ、いもうとは いません。"
+        }
+      ],
+      "answer": [
+        "U05-C12-o0"
+      ],
+      "explanation": "回答對方問的姊姊，否定用いません。",
+      "explanationJa": "いいえ、あねはいません。",
+      "distractorReasons": {
+        "U05-C12-o1": "與設定相反。",
+        "U05-C12-o2": "人物的否定用いません。",
+        "U05-C12-o3": "改回答妹妹，沒有回答姊姊。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C13",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C13",
+      "itemFamilyId": "U05-CHECK-introduce-brother-order",
+      "primarySkillId": "G15",
+      "skillIds": [
+        "G15"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "order",
+      "prompt": "居民有一位哥哥，排出完整介紹。",
+      "promptJa": "あにがひとりいることを、つたえましょう。",
+      "choices": [
+        {
+          "id": "U05-C13-o1",
+          "text": "一人"
+        },
+        {
+          "id": "U05-C13-o2",
+          "text": "います。"
+        },
+        {
+          "id": "U05-C13-o0",
+          "text": "あにが"
+        }
+      ],
+      "answer": [
+        "U05-C13-o0",
+        "U05-C13-o1",
+        "U05-C13-o2"
+      ],
+      "explanation": "あにが為存在對象，一人為數量，最後います。",
+      "explanationJa": "あにが、ひとり、います。",
+      "distractorReasons": {},
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U05-C14",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C14",
+      "itemFamilyId": "U05-CHECK-existence-not-identity",
+      "primarySkillId": "G15",
+      "skillIds": [
+        "G15"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「おじが います。」在家人介紹中表示什麼？",
+      "promptJa": "かぞくのしょうかいの、いみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-C14-o2",
+          "text": "叔伯舅不在"
+        },
+        {
+          "id": "U05-C14-o3",
+          "text": "我有一個名叫おじ的物品"
+        },
+        {
+          "id": "U05-C14-o0",
+          "text": "有叔伯舅這樣的親人"
+        },
+        {
+          "id": "U05-C14-o1",
+          "text": "我的名字叫おじ"
+        }
+      ],
+      "answer": [
+        "U05-C14-o0"
+      ],
+      "explanation": "Nがいます用來介紹人物的存在。",
+      "explanationJa": "おじがいることを、しょうかいしています。",
+      "distractorReasons": {
+        "U05-C14-o1": "不是名字自我介紹。",
+        "U05-C14-o2": "否定要用いません。",
+        "U05-C14-o3": "人物用います，不能改成物品。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U05-C15",
+      "version": "1",
+      "unitId": "U05",
+      "itemId": "U05-C15",
+      "itemFamilyId": "U05-CHECK-distinguish-younger-older",
+      "primarySkillId": "G15",
+      "skillIds": [
+        "G15"
+      ],
+      "teachingIds": [
+        "U05-teach-words-1",
+        "U05-teach-words-2",
+        "U05-teach-words-3",
+        "U05-teach-words-4",
+        "U05-teach-words-5",
+        "U05-teach-kanji",
+        "U05-teach-G13",
+        "U05-teach-G14",
+        "U05-teach-G15",
+        "U05-teach-story"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "資訊卡寫「兄：0人；弟：2人」。哪句介紹吻合？",
+      "promptJa": "かずのカードにあう、しょうかいをえらびましょう。",
+      "choices": [
+        {
+          "id": "U05-C15-o3",
+          "text": "あにが 一人、おとうとが 一人 います。"
+        },
+        {
+          "id": "U05-C15-o0",
+          "text": "あには いません。おとうとが 二人 います。"
+        },
+        {
+          "id": "U05-C15-o1",
+          "text": "あにが 二人 います。"
+        },
+        {
+          "id": "U05-C15-o2",
+          "text": "おとうとは いません。"
+        }
+      ],
+      "answer": [
+        "U05-C15-o0"
+      ],
+      "explanation": "先核對稱呼，再分別用否定與肯定介紹。",
+      "explanationJa": "あにはいません。おとうとがふたりいます。",
+      "distractorReasons": {
+        "U05-C15-o1": "把哥哥和弟弟交換了。",
+        "U05-C15-o2": "弟弟有兩人。",
+        "U05-C15-o3": "兩種人數都與卡片不符。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U05 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    }
+  ]
+}

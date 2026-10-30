@@ -1,0 +1,50 @@
+{
+  "version": "u09-art-1-draft",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "assets": [
+    {
+      "id": "u09-activities",
+      "src": "/assets/img/u09/activities.webp",
+      "width": 1254,
+      "height": 1254,
+      "bytes": 555154,
+      "sha256": "5df29ecf3db1180062e0e160c5543ad25ec53911878142388bc6c468a348df77",
+      "originalPngSha256": "ab8ac14d8bc67dd031c0ba742db1e7b855104179e8102fa9e5c609f9208152f0",
+      "encoding": "WebP quality 0.9, original dimensions, browser Canvas encoder; no composition changes",
+      "columns": 2,
+      "rows": 2,
+      "source": "Original image generated with built-in image_gen, 2026-10-30",
+      "humanReview": "NOT_RUN",
+      "reviewStatus": "DRAFT",
+      "promptFile": "docs/content/U09/art-prompt.md",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ]
+    }
+  ]
+}

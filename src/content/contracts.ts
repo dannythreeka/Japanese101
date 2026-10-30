@@ -1,7 +1,7 @@
 /** P2 content contracts. These never contain player progress or game rewards. */
 export type LearningMode = 'practice' | 'check' | 'mock'
 export type QuestionKind = 'choice' | 'order' | 'reading' | 'audio'
-export interface Choice { id: string; text: string }
+export interface Choice { id: string; text: string; lang?:'ja'|'zh-Hant' }
 export interface Question {
   id: string
   version: string
@@ -93,6 +93,7 @@ export function questionErrors(input: unknown): string[] {
   if (!strings(input.teachingIds) || !input.teachingIds.length || !unique(input.teachingIds)) errors.push(`${label}: missing teaching prerequisites`)
   const choices = Array.isArray(input.choices) ? input.choices : []
   if (choices.length < 2 || choices.some(c => !record(c) || !nonempty(c.id) || !nonempty(c.text))) errors.push(`${label}: invalid choices`)
+  if(choices.some(c=>record(c)&&c.lang!==undefined&&(typeof c.lang!=='string'||!['ja','zh-Hant'].includes(c.lang))))errors.push(`${label}: invalid choice language`)
   const ids = choices.filter(record).map(c => String(c.id))
   if (!unique(ids)) errors.push(`${label}: duplicate choice ID`)
   if (!strings(input.answer) || !input.answer.length || !unique(input.answer) || input.answer.some(id => !ids.includes(id))) errors.push(`${label}: invalid answer`)
@@ -161,6 +162,7 @@ export function unitPackErrors(input:unknown):string[] {
   }
   errors.push(...validateQuestionBank(input.questions))
   for(const field of ['vocabulary','kanji'])for(const item of lists[field])for(const key of ['text','reading','meaning'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)
+  for(const item of lists.grammar)if(!nonempty(item.title)||!strings(item.prerequisites)||!unique(item.prerequisites))errors.push(`${item.id}: invalid grammar metadata`)
   for(const item of lists.readings)for(const key of ['text','skillId'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)
   for(const item of lists.listening){
     for(const key of ['script','audioSrc','skillId'])if(!nonempty(item[key]))errors.push(`${item.id}: missing ${key}`)

@@ -6,6 +6,8 @@ import { normalizePreferences } from './models'
 import type { ScopedProgress, ScopedSession, ProfilePreferences, MigrationBackup, GameCheckpoint, LevelSession, RewardReceipt } from './models'
 import type { Attempt } from '../content/contracts'
 import type { WorldCheckpoint, StudyPlan, SkillReview, BattleSession, CoinWallet, CoinLedger, InventoryItem, Equipment, PurchaseReceipt, FirstWin, LearningCheck, CatalogVersion } from './journey-models'
+import type {MockSession} from '../mock/session'
+import type {MockCommandReceipt} from '../mock/storage'
 
 export class AppDB extends Dexie {
   progress!: Table<ProgressRecord, string> // Original, read-only legacy-shared records.
@@ -35,6 +37,8 @@ export class AppDB extends Dexie {
   firstWins!: Table<FirstWin,[string,string]>
   learningChecks!: Table<LearningCheck,string>
   catalogVersions!: Table<CatalogVersion,string>
+  mockSessions!: Table<MockSession,string>
+  mockCommandReceipts!: Table<MockCommandReceipt,string>
   constructor(name = 'Japanese101DB') {
     super(name)
     this.version(1).stores({
@@ -101,6 +105,8 @@ export class AppDB extends Dexie {
     // v6 was already pushed as a review build: add tables with a new schema version.
     this.version(7).stores({learningChecks:'id, profileId, [profileId+unitId]'})
     this.version(8).stores({catalogVersions:'id'})
+    // Additive only: preserve every existing journey, wallet, profile and legacy record.
+    this.version(9).stores({mockSessions:'id, profileId, [profileId+paperId], status',mockCommandReceipts:'id, profileId, sessionId'})
   }
 }
 
@@ -146,7 +152,7 @@ export async function updateProfileLastPlayed(profileId: string): Promise<void> 
 }
 
 export async function resetProfileProgress(profileId: string, notify = true): Promise<void> {
-  const journey=[db.learningAttempts,db.worldCheckpoints,db.studyPlans,db.skillReviews,db.battleSessions,db.coinWallets,db.coinLedger,db.inventory,db.equipment,db.purchaseReceipts,db.firstWins,db.learningChecks]
+  const journey=[db.learningAttempts,db.worldCheckpoints,db.studyPlans,db.skillReviews,db.battleSessions,db.coinWallets,db.coinLedger,db.inventory,db.equipment,db.purchaseReceipts,db.firstWins,db.learningChecks,db.mockSessions,db.mockCommandReceipts]
   await db.transaction('rw', [db.pets, db.adventureProgress, db.playerProgress, db.playerSessions, db.gameCheckpoints, db.levelSessions, db.rewardReceipts, db.dailyClaims, db.wallets,...journey], async () => {
     for (const table of [db.playerProgress, db.playerSessions, db.gameCheckpoints, db.levelSessions, db.rewardReceipts, db.dailyClaims,...journey]) await table.where('profileId').equals(profileId).delete()
     await db.pets.delete(profileId)

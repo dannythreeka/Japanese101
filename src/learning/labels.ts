@@ -1,7 +1,21 @@
+import kana from '../data/kana.json'
 const labels:Record<string,{zh:string;ja:string}>={
   'K-SCRIPT':{zh:'漢字的讀音與字形',ja:'かんじのよみとかたち'},'V-CONTEXT':{zh:'情境中的詞義',ja:'ぶんにあうことば'},'V-PARA':{zh:'相近意思的表達',ja:'にたいみのことば'},
   'R-SHORT':{zh:'短文理解',ja:'みじかいぶんしょう'},'R-MID':{zh:'跨句理解',ja:'ぶんをつなげてよむ'},'R-INFO':{zh:'從資料找資訊',ja:'じょうほうをさがす'},
   'L-TASK':{zh:'聽懂要做的事',ja:'きいてすることをえらぶ'},'L-KEY':{zh:'聽懂關鍵資訊',ja:'だいじなことばをきく'},'L-EXPR':{zh:'符合情境的表達',ja:'ばめんにあうこたえ'},'L-RESP':{zh:'回應聽到的話',ja:'かいわへのこたえ'},
+  G07:{zh:'讀出時刻',ja:'じこくをよむ'},G08:{zh:'禮貌表達做與不做',ja:'ます・ません'},G09:{zh:'說明在幾點做什麼',ja:'じこくにすること'},
+  G10:{zh:'區分人、動物與物品的存在',ja:'います・あります'},G11:{zh:'說明一個地方有什麼',ja:'ばしょにいるひとやもの'},G12:{zh:'說明人或物品在哪裡',ja:'ひとやもののばしょ'},
+  G13:{zh:'列出故事裡的人物',ja:'ひととひとをならべる'},G14:{zh:'讀懂並數出人數',ja:'にんずうをかぞえる'},G15:{zh:'介紹故事裡的家人',ja:'かぞくをしょうかいする'},
+  G16:{zh:'說明吃喝的對象',ja:'なにをたべるか・のむか'},G17:{zh:'表達飲食喜好',ja:'すき・きらい'},G18:{zh:'向食堂請求物品',ja:'ものをたのむ'},
+  G25:{zh:'說明動作發生的地方',ja:'どこでしますか'},G26:{zh:'分清楚開始與結束',ja:'から・まで'},G27:{zh:'區分習慣與偶爾',ja:'いつも・ときどき'},
+  G22:{zh:'說明前往的目的地',ja:'どこへいきますか'},G23:{zh:'區分移動的方法',ja:'なにでいきますか'},G24:{zh:'介紹一起去的人',ja:'だれといきますか'},
+  G19:{zh:'數出一般物品的數量',ja:'ひとつからとお'},G20:{zh:'依物品選擇數法',ja:'ほん・まい・さつ'},G21:{zh:'區分價格與數量',ja:'いくら・いくつ'},
+  'G-ORDER':{zh:'排列句子中的詞語',ja:'ことばをならべる'},'G-TEXT':{zh:'依上下文選擇文法',ja:'ぶんしょうにあうぶんぽう'},
+  G04:{zh:'依距離指出物品',ja:'これ・それ・あれ'},G05:{zh:'指出哪一件物品',ja:'この・その・あの'},G06:{zh:'說明物品的主人',ja:'もののもちぬし'},
   G01:{zh:'介紹自己的身分',ja:'じぶんのみぶんをしょうかい'},G02:{zh:'詢問對方的身分',ja:'みぶんをたずねる'},G03:{zh:'表達相同的身分',ja:'おなじみぶんをつたえる'},
 }
-export const skillLabel=(skill:string,lang:'zh'|'ja')=>labels[skill]?.[lang] ?? skill
+export const skillLabel=(skill:string,lang:'zh'|'ja')=>{
+  const match=/^KANA-(HIRA|KATA):(.+)$/.exec(skill);const glyph=match&&kana.kana.find(k=>k.id===match[2]);
+  if(match&&glyph)return `${match[1]==='HIRA' ? lang==='zh'?'平假名':'ひらがな':lang==='zh'?'片假名':'カタカナ'} ${match[1]==='HIRA'?glyph.hiragana:glyph.katakana}`
+  return labels[skill]?.[lang] ?? skill
+}

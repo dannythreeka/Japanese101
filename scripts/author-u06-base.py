@@ -40,7 +40,10 @@ if __name__=='__main__':
  assert len(p['teaching'])==10 and len(p['readings'])==4 and len(p['listening'])==6
  assert [g['id'] for g in p['grammar']]==blueprint['grammarIds']
  target=Path('docs/content/U06/source-draft.json')
- if target.exists() and json.loads(target.read_text()).get('reviewStatus')=='APPROVED':raise ValueError('Refusing to overwrite approved content')
+ if target.exists():
+  previous=json.loads(target.read_text())
+  if previous.get('reviewStatus')=='APPROVED':raise ValueError('Refusing to overwrite approved content')
+  if previous.get('questions'):raise ValueError('Full question source exists; run scripts/author-u06.py instead')
  target.write_text(json.dumps(p,ensure_ascii=False,indent=2)+'\n')
  plan=dict(unitId='U06',status='DRAFT',prerequisites=blueprint['prerequisites'],typeCounts=blueprint['typeCounts'],readingQuestions={'U06-R01':['U06-Q29'],'U06-R02':['U06-Q30'],'U06-R03':['U06-Q31','U06-Q32'],'U06-R04':['U06-Q33','U06-Q34']},listeningQuestions={f'U06-L{i:02}':[f'U06-Q{n:02}' for n in ns] for i,ns in enumerate([[35,36],[37,38],[39,40],[41,42],[43,44,45,46],[47,48,49,50]],1)},plannedCheckFamilies={g['id']:5 for g in p['grammar']},questionsAuthored=0,audioProduced=0,humanReview='NOT_RUN')
  Path('docs/content/U06/production-plan.json').write_text(json.dumps(plan,ensure_ascii=False,indent=2)+'\n')

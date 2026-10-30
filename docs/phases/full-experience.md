@@ -59,3 +59,5 @@ U05／導航已push4d928ccf68cbbd921ae0ac617fd76f16db184967，CI40941122926建�
 安全SW工程接續：原生註冊、等待全部舊client關閉、無SKIP_WAITING／自動reload；家長區更新訊息。Chromium實際Workbox生命週期18.0s PASS，備份四項回歸PASS，U05下載後停止origin冷啟真音訊25.3s PASS。跨部署內容變版、其他引擎與實機仍待驗，P5-04 IN_PROGRESS。下一步U06～24與共通skill、真MA/B/C及模擬UI；不得把內容／人審欠項算完成。
 
 2026-10-30 U06開始：scripts/author-u06-base.py與docs/content/U06/source-draft.json交付25不重複新詞、5新漢字、G16～18、10教學、4閱讀、6聽力文字。production-plan固定14題型與素材預定題ID；尚無真題／音訊／插畫，不加入registry、不改runtime完整內容數。U06-M／T IN_PROGRESS，其他未開始，人工NOT_RUN。下一步接續作者稿產生50真題＋15獨立check，再真WAV與插畫／整合。既有工程ec8419a已push，完整目標未完成。
+
+U06完整工程接續：50真練習＋15check、16真WAV、原創水／麵包／湯／牛奶圖已整合可玩preview。六課150詞300practice，18能力候選完整57缺口、824人審0核准。292單元及型別lintbuild、Chromium四項1.8m PASS；Firefox最終見acceptance。U06-M/T/Q1/Q2/A IN_REVIEW、V BLOCKED、I IN_PROGRESS。不要重跑base覆蓋來源，請用author-u06.py。另ec8419 CI發現備份320px在FF/WK溢出6px，正在讀真CI證據定位；先修後再承接U07與共通15skill／真MA/B/C／mockUI。goal ACTIVE。

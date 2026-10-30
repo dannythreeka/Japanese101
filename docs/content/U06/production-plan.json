@@ -67,11 +67,29 @@
     ]
   },
   "plannedCheckFamilies": {
-    "G16": 5,
-    "G17": 5,
-    "G18": 5
+    "G16": [
+      "U06-CHECK-repair-case-marking",
+      "U06-CHECK-identify-object-not-topic",
+      "U06-CHECK-negation-object",
+      "U06-CHECK-verb-selection-transfer",
+      "U06-CHECK-question-answer-object"
+    ],
+    "G17": [
+      "U06-CHECK-inference-boundary",
+      "U06-CHECK-preference-owner",
+      "U06-CHECK-like-vs-request",
+      "U06-CHECK-negative-preference-proof",
+      "U06-CHECK-repair-preference-particle"
+    ],
+    "G18": [
+      "U06-CHECK-request-not-received",
+      "U06-CHECK-request-recipient",
+      "U06-CHECK-repair-request-case",
+      "U06-CHECK-availability-request",
+      "U06-CHECK-keep-requested-object"
+    ]
   },
-  "questionsAuthored": 0,
-  "audioProduced": 0,
+  "questionsAuthored": 65,
+  "audioProduced": 16,
   "humanReview": "NOT_RUN"
 }

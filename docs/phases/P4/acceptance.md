@@ -32,3 +32,21 @@ CI40937397439：Build、Chromium成功；Firefox59/60，U02領獎後進家長區
 完整trace/report：test-results/p4-navigation-before（修正前真正重現），test-results/p4-u05-chromium、test-results/p4-u05-firefox；對應playwright-report目錄。以上本機大檔ignored，選定圖片與重現測試已入repo。WebKit由隔離CI執行，本批結果以實際新run為準，不把舊WebKit未完成當PASS。
 
 U06作者稿批次：基準ec8419a＋本批。python3 scripts/author-u06-base.py實際PASS：25詞與5漢字各自唯一，與U01～05無首次引入重複，10教學／4閱讀／6聽力稿及G16～18吻合manifest。僅作者來源，50題與15check、16音檔、插畫、runtime操作全部NOT_RUN／NOT_PRODUCED，不影響既有可玩pack；不宣稱U06-M/T或P4 DONE。證據docs/content/U06及腳本。
+
+
+## U06 飲食完整工程草稿
+
+基準5476ccf＋本批，作者／工程操作／畫面檢視Codex；非原作者日語／音訊／真人視覺reviewer待指派。實際50practice＋15check，25新詞5漢字G16～18、10教學、4閱讀6聽力。16真WAV合計3759840 bytes，逐檔腳本／檔hash與PCM在音訊manifest；原創四格食堂插畫381886 bytes，已檢視完整原圖和768裁切畫面，水／牛奶清楚可分，麵包／湯無主物歧義。來源scripts/author-u06.py、docs/content/U06；135人審NOT_RUN。
+
+- 六課curriculumErrors PASS；14題型配額吻合；共用聽力維持同family，G16～18各五check候選，不代表語意獨立人工核准。
+- 初輪context image缺必填cell被契約拒絕；改成四題各裁切一格，聽四請求選對應順序，alt不寫正確順序。沒有放寬schema或玩家驗證。
+- inventory／journey PASS：8個真pack、19圖片、94教材＋4世界音訊；150詞300practice，75能力18候選完整／57缺口，824筆內容人審0有效。沒有假裝U07～24存在。
+- 292單元／38檔PASS（37.56s）、typecheck／lint／Preview build PASS。offline543資產，PWA565entries約34MiB；registry634k與index620k的大chunk警告仍須P4-04處理。
+- Chromium145.0.7632.6四操作PASS（1.8m）：真實教學、詞彙／文法／閱讀／聽力四次作答、feedback refresh、正確U06家長報告／匯出；六音檔實際播放且無Attempt；停止origin後冷啟教學／圖／音訊；圖像聽力提示保存hintUsed與audioPlayCount。
+- 320／390／768／1024／1440無水平頁溢出，截圖evidence/u06-context-*.png，另u06-cafeteria-request-hint-768.png；實際檢視320文字換行與768圖片／提示／選項，未以產圖成功代替檢視。測試來源e2e/p4-u06.spec.ts，trace/report在test-results/p4-u06、playwright-report/p4-u06。
+
+Firefox操作重驗進行中，最後結果待追加；真人審聽／視覺、實體平板仍NOT_RUN，U06-V BLOCKED、作者／素材IN_REVIEW、I IN_PROGRESS。測試build宣告5476ccf＋未提交修改，提交後若只有紀錄變動不影響已驗產品。
+
+另外讀取ec8419a CI40987944460：build／Chromium成功；Firefox69PASS1FAIL1SKIP、WebKit69PASS1FAIL1SKIP，同一backup320px量到326px。實際讀取CI失敗截圖／DOM，待定位修正，沒有冒稱三引擎全綠。GitHub連接器拒絕1.1GiB artifact，改用有授權的GitHub下載redirect及HTTP Range，只取ZIP目錄和兩個失敗證據檔，未下載整包或輸出憑證。
+
+U06最終Firefox146.0.1四項PASS（2.2m），來源同Chromium，trace/report在test-results/p4-u06-firefox、playwright-report/p4-u06-firefox；最終768圖像截圖已再檢視。dist/index.html SHA256 `69e2252d7d42de0b940562880a72289792fd72d3c5ea4a3b93c1c166556a7cec`。驗證後僅補紀錄與base來源防覆寫，產品未變更。七天圖表已另加回歸測試，修正前Firefox真實重現382px溢出，屬下一獨立修正批次。

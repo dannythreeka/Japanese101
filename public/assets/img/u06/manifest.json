@@ -1,0 +1,50 @@
+{
+  "version": "u06-art-1-draft",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "assets": [
+    {
+      "id": "u06-cafeteria-requests",
+      "src": "/assets/img/u06/cafeteria-requests.webp",
+      "sha256": "c8575600ba60ec055929241deee2c212bc5885d9d5c791c8191d9286be82b3a8",
+      "bytes": 381886,
+      "columns": 2,
+      "rows": 2,
+      "width": 1254,
+      "height": 1254,
+      "source": "Original image generated with built-in image_gen, 2026-10-30",
+      "humanReview": "NOT_RUN",
+      "promptFile": "docs/content/U06/art-prompt.md",
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 0,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        },
+        {
+          "x": 627,
+          "y": 627,
+          "w": 627,
+          "h": 627
+        }
+      ],
+      "originalPngSha256": "31c2524893bb1b147bbea4b2ca3410b686bb5497f95b6605a0a246f7b354214b",
+      "encoding": "WebP quality 0.9, original dimensions, browser Canvas encoder; no composition changes"
+    }
+  ]
+}

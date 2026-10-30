@@ -13,3 +13,5 @@ P4-GAP-01新增共通15技能的主測量與延後check，P4總146tasks，prompt
 最新U05工程已寫並驗證：25詞5漢字3文法50practice＋15check，16WAV、人數原創圖。能力報告目前15候選完整／60缺口、689簽核0有效。P2-09-R2領獎導覽競態修正同批保存，257單元、Chromium5與Firefox7通過；詳acceptance。P5藍圖／題族檢查器與狀態機正另批開發，未接UI或聲稱卷已製作。U06～24與15共通skill仍有獨立工作。
 
 2026-10-30 U06開始：scripts/author-u06-base.py與docs/content/U06/source-draft.json交付25不重複新詞、5新漢字、G16～18、10教學、4閱讀、6聽力文字。production-plan固定14題型與素材預定題ID；尚無真題／音訊／插畫，不加入registry、不改runtime完整內容數。U06-M／T IN_PROGRESS，其他未開始，人工NOT_RUN。下一步接續作者稿產生50真題＋15獨立check，再真WAV與插畫／整合。既有工程ec8419a已push，完整目標未完成。
+
+U06完整工程接續：50真練習＋15check、16真WAV、原創水／麵包／湯／牛奶圖已整合可玩preview。六課150詞300practice，18能力候選完整57缺口、824人審0核准。292單元及型別lintbuild、Chromium四項1.8m PASS；Firefox最終見acceptance。U06-M/T/Q1/Q2/A IN_REVIEW、V BLOCKED、I IN_PROGRESS。不要重跑base覆蓋來源，請用author-u06.py。另ec8419 CI發現備份320px在FF/WK溢出6px，正在讀真CI證據定位；先修後再承接U07與共通15skill／真MA/B/C／mockUI。goal ACTIVE。

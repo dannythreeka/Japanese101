@@ -63,6 +63,19 @@ describe('actual curriculum inventory',()=>{
     expect(pack.questions.filter(q=>q.typeId==='T13').map(q=>q.image?.cell)).toEqual([0,1,2,3])
     expect(pack.reviewStatus).toBe('DRAFT')
   })
+  it('adds a real U06 food unit without reusing first-five vocabulary or inflating delayed check families',()=>{
+    const packs=availablePacks.filter(p=>/^U0[1-6]$/.test(p.id)),pack=packs.find(p=>p.id==='U06')!
+    expect(packs).toHaveLength(6)
+    expect(curriculumErrors(packs,blueprint.units)).toEqual([])
+    expect(pack.questions.filter(q=>q.partition==='practice')).toHaveLength(50)
+    expect(pack.questions.filter(q=>q.partition==='check')).toHaveLength(15)
+    const coverage=curriculumCoverage(packs,blueprint.skills)
+    expect(coverage.errors).toEqual([])
+    for(const id of ['G16','G17','G18'])expect(coverage.skills.find(s=>s.id===id)?.eligibleFamilies).toHaveLength(5)
+    for(const clip of pack.listening)expect(new Set(pack.questions.filter(q=>q.audioId===clip.id).map(q=>q.itemFamilyId)).size).toBe(1)
+    expect(pack.questions.filter(q=>q.typeId==='T13').map(q=>q.image?.cell)).toEqual([0,1,2,3])
+    expect(pack.reviewStatus).toBe('DRAFT')
+  })
   it('rejects unused listening, wrong skills, unsupported practice types and untranslated instructions',()=>{
     const copy=structuredClone(u02);copy.questions=copy.questions.filter(q=>q.audioId!=='U02-L06')
     copy.questions[0].skillIds=['not-in-blueprint'];copy.questions[0].promptJa='';copy.questions[0].typeId='T99'

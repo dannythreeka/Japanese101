@@ -268,7 +268,7 @@
     },
     {
       "id": "U06-L05",
-      "script": "しょくどうにいます。みずをのみます。みずをください。",
+      "script": "しょくどうで、ものをたのみます。いちばん。みずをください。にばん。パンをください。さんばん。スープをください。よんばん。ぎゅうにゅうをください。",
       "audioSrc": "/assets/audio/u06/listening-05.wav",
       "skillId": "L-EXPR",
       "reviewStatus": "DRAFT"
@@ -524,5 +524,4082 @@
       ]
     }
   ],
-  "questions": []
+  "questions": [
+    {
+      "id": "U06-Q01",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q01",
+      "itemFamilyId": "U06-F-read-eat",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「食べます」の読み方はどれですか。",
+      "promptJa": "「食べます」の読み方はどれですか。",
+      "choices": [
+        {
+          "id": "U06-Q01-o1",
+          "text": "のみます"
+        },
+        {
+          "id": "U06-Q01-o2",
+          "text": "よみます"
+        },
+        {
+          "id": "U06-Q01-o3",
+          "text": "ねます"
+        },
+        {
+          "id": "U06-Q01-o0",
+          "text": "たべます"
+        }
+      ],
+      "answer": [
+        "U06-Q01-o0"
+      ],
+      "explanation": "食べます讀たべます，食的部分讀た。",
+      "explanationJa": "ことばのよみかたと、かんじをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q01-o1": "飲みます的讀音。",
+        "U06-Q01-o2": "読みます的讀音。",
+        "U06-Q01-o3": "睡覺，不是吃。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U06-Q02",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q02",
+      "itemFamilyId": "U06-F-read-drink",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「飲みます」の読み方はどれですか。",
+      "promptJa": "「飲みます」の読み方はどれですか。",
+      "choices": [
+        {
+          "id": "U06-Q02-o2",
+          "text": "おきます"
+        },
+        {
+          "id": "U06-Q02-o3",
+          "text": "よみます"
+        },
+        {
+          "id": "U06-Q02-o0",
+          "text": "のみます"
+        },
+        {
+          "id": "U06-Q02-o1",
+          "text": "たべます"
+        }
+      ],
+      "answer": [
+        "U06-Q02-o0"
+      ],
+      "explanation": "飲みます讀のみます，飲的部分讀の。",
+      "explanationJa": "ことばのよみかたと、かんじをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q02-o1": "這是食べます。",
+        "U06-Q02-o2": "這是起床。",
+        "U06-Q02-o3": "這是讀。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U06-Q03",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q03",
+      "itemFamilyId": "U06-F-read-water",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「水」の読み方はどれですか。",
+      "promptJa": "「水」の読み方はどれですか。",
+      "choices": [
+        {
+          "id": "U06-Q03-o3",
+          "text": "おちゃ"
+        },
+        {
+          "id": "U06-Q03-o0",
+          "text": "みず"
+        },
+        {
+          "id": "U06-Q03-o1",
+          "text": "さかな"
+        },
+        {
+          "id": "U06-Q03-o2",
+          "text": "にく"
+        }
+      ],
+      "answer": [
+        "U06-Q03-o0"
+      ],
+      "explanation": "本課水讀みず。",
+      "explanationJa": "ことばのよみかたと、かんじをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q03-o1": "魚的讀音。",
+        "U06-Q03-o2": "肉的讀音。",
+        "U06-Q03-o3": "茶，不是水的讀音。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U06-Q04",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q04",
+      "itemFamilyId": "U06-F-read-fish",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「魚」の読み方はどれですか。",
+      "promptJa": "「魚」の読み方はどれですか。",
+      "choices": [
+        {
+          "id": "U06-Q04-o0",
+          "text": "さかな"
+        },
+        {
+          "id": "U06-Q04-o1",
+          "text": "にく"
+        },
+        {
+          "id": "U06-Q04-o2",
+          "text": "みず"
+        },
+        {
+          "id": "U06-Q04-o3",
+          "text": "やさい"
+        }
+      ],
+      "answer": [
+        "U06-Q04-o0"
+      ],
+      "explanation": "魚讀さかな。",
+      "explanationJa": "ことばのよみかたと、かんじをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q04-o1": "肉的讀音。",
+        "U06-Q04-o2": "水的讀音。",
+        "U06-Q04-o3": "蔬菜，不是魚。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U06-Q05",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q05",
+      "itemFamilyId": "U06-F-write-meat",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「にく」に合う漢字はどれですか。",
+      "promptJa": "「にく」に合う漢字はどれですか。",
+      "choices": [
+        {
+          "id": "U06-Q05-o1",
+          "text": "魚"
+        },
+        {
+          "id": "U06-Q05-o2",
+          "text": "水"
+        },
+        {
+          "id": "U06-Q05-o3",
+          "text": "人"
+        },
+        {
+          "id": "U06-Q05-o0",
+          "text": "肉"
+        }
+      ],
+      "answer": [
+        "U06-Q05-o0"
+      ],
+      "explanation": "肉讀にく。",
+      "explanationJa": "ことばのよみかたと、かんじをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q05-o1": "讀さかな。",
+        "U06-Q05-o2": "讀みず。",
+        "U06-Q05-o3": "讀ひと，表示人。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U06-Q06",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q06",
+      "itemFamilyId": "U06-F-write-water",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「みず」に合う漢字はどれですか。",
+      "promptJa": "「みず」に合う漢字はどれですか。",
+      "choices": [
+        {
+          "id": "U06-Q06-o2",
+          "text": "肉"
+        },
+        {
+          "id": "U06-Q06-o3",
+          "text": "日"
+        },
+        {
+          "id": "U06-Q06-o0",
+          "text": "水"
+        },
+        {
+          "id": "U06-Q06-o1",
+          "text": "魚"
+        }
+      ],
+      "answer": [
+        "U06-Q06-o0"
+      ],
+      "explanation": "みず對應水。",
+      "explanationJa": "ことばのよみかたと、かんじをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q06-o1": "魚讀さかな。",
+        "U06-Q06-o2": "肉讀にく。",
+        "U06-Q06-o3": "不是水的字形。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U06-Q07",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q07",
+      "itemFamilyId": "U06-F-write-eat",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「たべます」の書き方はどれですか。",
+      "promptJa": "「たべます」の書き方はどれですか。",
+      "choices": [
+        {
+          "id": "U06-Q07-o3",
+          "text": "食みます"
+        },
+        {
+          "id": "U06-Q07-o0",
+          "text": "食べます"
+        },
+        {
+          "id": "U06-Q07-o1",
+          "text": "飲みます"
+        },
+        {
+          "id": "U06-Q07-o2",
+          "text": "読みます"
+        }
+      ],
+      "answer": [
+        "U06-Q07-o0"
+      ],
+      "explanation": "食後面接べます，合起來讀たべます。",
+      "explanationJa": "ことばのよみかたと、かんじをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q07-o1": "表示喝。",
+        "U06-Q07-o2": "表示讀。",
+        "U06-Q07-o3": "送り仮名與たべます不符。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U06-Q08",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q08",
+      "itemFamilyId": "U06-F-write-drink",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「のみます」の書き方はどれですか。",
+      "promptJa": "「のみます」の書き方はどれですか。",
+      "choices": [
+        {
+          "id": "U06-Q08-o0",
+          "text": "飲みます"
+        },
+        {
+          "id": "U06-Q08-o1",
+          "text": "食べます"
+        },
+        {
+          "id": "U06-Q08-o2",
+          "text": "飲べます"
+        },
+        {
+          "id": "U06-Q08-o3",
+          "text": "水みます"
+        }
+      ],
+      "answer": [
+        "U06-Q08-o0"
+      ],
+      "explanation": "飲接みます，合起來讀のみます。",
+      "explanationJa": "ことばのよみかたと、かんじをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q08-o1": "表示吃。",
+        "U06-Q08-o2": "不是のみます的表記。",
+        "U06-Q08-o3": "水讀みず，不能當作飲的字形。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U06-Q09",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q09",
+      "itemFamilyId": "U06-F-morning-meal",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "早上吃的那一餐，應用哪個詞？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q09-o1",
+          "text": "ひるごはん"
+        },
+        {
+          "id": "U06-Q09-o2",
+          "text": "ばんごはん"
+        },
+        {
+          "id": "U06-Q09-o3",
+          "text": "おべんとう"
+        },
+        {
+          "id": "U06-Q09-o0",
+          "text": "あさごはん"
+        }
+      ],
+      "answer": [
+        "U06-Q09-o0"
+      ],
+      "explanation": "早上的餐點是あさごはん。",
+      "explanationJa": "ことばといみをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q09-o1": "這是午餐。",
+        "U06-Q09-o2": "這是晚餐。",
+        "U06-Q09-o3": "便當不限早上。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U06-Q10",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q10",
+      "itemFamilyId": "U06-F-milk-not-juice",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "菜單寫「ぎゅうにゅう」。這是哪種飲料？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q10-o2",
+          "text": "茶"
+        },
+        {
+          "id": "U06-Q10-o3",
+          "text": "水"
+        },
+        {
+          "id": "U06-Q10-o0",
+          "text": "牛奶"
+        },
+        {
+          "id": "U06-Q10-o1",
+          "text": "果汁"
+        }
+      ],
+      "answer": [
+        "U06-Q10-o0"
+      ],
+      "explanation": "ぎゅうにゅう是牛奶。",
+      "explanationJa": "ことばといみをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q10-o1": "果汁是ジュース。",
+        "U06-Q10-o2": "茶是おちゃ。",
+        "U06-Q10-o3": "水是みず。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U06-Q11",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q11",
+      "itemFamilyId": "U06-F-lunch-box-not-time",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「おべんとう」主要告訴我們什麼？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q11-o3",
+          "text": "一種果汁"
+        },
+        {
+          "id": "U06-Q11-o0",
+          "text": "裝成便當的餐點"
+        },
+        {
+          "id": "U06-Q11-o1",
+          "text": "一定是晚餐"
+        },
+        {
+          "id": "U06-Q11-o2",
+          "text": "一定是早餐"
+        }
+      ],
+      "answer": [
+        "U06-Q11-o0"
+      ],
+      "explanation": "おべんとう是便當，沒有直接指定用餐時段。",
+      "explanationJa": "ことばといみをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q11-o1": "便當不限定晚餐。",
+        "U06-Q11-o2": "便當不限定早餐。",
+        "U06-Q11-o3": "便當不是飲料。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U06-Q12",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q12",
+      "itemFamilyId": "U06-F-fruit-category",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "下列哪個詞表示水果？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q12-o0",
+          "text": "くだもの"
+        },
+        {
+          "id": "U06-Q12-o1",
+          "text": "やさい"
+        },
+        {
+          "id": "U06-Q12-o2",
+          "text": "にく"
+        },
+        {
+          "id": "U06-Q12-o3",
+          "text": "さかな"
+        }
+      ],
+      "answer": [
+        "U06-Q12-o0"
+      ],
+      "explanation": "くだもの指水果。",
+      "explanationJa": "ことばといみをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q12-o1": "這是蔬菜。",
+        "U06-Q12-o2": "這是肉。",
+        "U06-Q12-o3": "這是魚。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U06-Q13",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q13",
+      "itemFamilyId": "U06-F-noodle-menu",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "菜單上哪個是烏龍麵？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q13-o1",
+          "text": "おにぎり"
+        },
+        {
+          "id": "U06-Q13-o2",
+          "text": "カレー"
+        },
+        {
+          "id": "U06-Q13-o3",
+          "text": "サラダ"
+        },
+        {
+          "id": "U06-Q13-o0",
+          "text": "うどん"
+        }
+      ],
+      "answer": [
+        "U06-Q13-o0"
+      ],
+      "explanation": "うどん是烏龍麵。",
+      "explanationJa": "ことばといみをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q13-o1": "這是飯糰。",
+        "U06-Q13-o2": "這是咖哩。",
+        "U06-Q13-o3": "這是沙拉。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U06-Q14",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q14",
+      "itemFamilyId": "U06-F-soup-object",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "居民要點湯，菜單上應找哪個詞？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q14-o2",
+          "text": "バナナ"
+        },
+        {
+          "id": "U06-Q14-o3",
+          "text": "パン"
+        },
+        {
+          "id": "U06-Q14-o0",
+          "text": "スープ"
+        },
+        {
+          "id": "U06-Q14-o1",
+          "text": "たまご"
+        }
+      ],
+      "answer": [
+        "U06-Q14-o0"
+      ],
+      "explanation": "湯在這份菜單寫作スープ。",
+      "explanationJa": "ことばといみをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q14-o1": "這是蛋。",
+        "U06-Q14-o2": "這是香蕉。",
+        "U06-Q14-o3": "這是麵包。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U06-Q15",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q15",
+      "itemFamilyId": "U06-F-paraphrase-like",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「りんごが 好きです。」意思最接近哪一句？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q15-o3",
+          "text": "正在吃蘋果。"
+        },
+        {
+          "id": "U06-Q15-o0",
+          "text": "喜歡蘋果。"
+        },
+        {
+          "id": "U06-Q15-o1",
+          "text": "討厭蘋果。"
+        },
+        {
+          "id": "U06-Q15-o2",
+          "text": "請給我蘋果。"
+        }
+      ],
+      "answer": [
+        "U06-Q15-o0"
+      ],
+      "explanation": "好きです表達喜好。",
+      "explanationJa": "すき、きらい、たのむことをわけましょう。",
+      "distractorReasons": {
+        "U06-Q15-o1": "嫌い才表示討厭。",
+        "U06-Q15-o2": "請求用をください。",
+        "U06-Q15-o3": "原句沒有說吃。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U06-Q16",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q16",
+      "itemFamilyId": "U06-F-paraphrase-request",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「みずを ください。」意思最接近哪一句？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q16-o0",
+          "text": "請給我水。"
+        },
+        {
+          "id": "U06-Q16-o1",
+          "text": "我喜歡水。"
+        },
+        {
+          "id": "U06-Q16-o2",
+          "text": "水在外面。"
+        },
+        {
+          "id": "U06-Q16-o3",
+          "text": "已經喝完水。"
+        }
+      ],
+      "answer": [
+        "U06-Q16-o0"
+      ],
+      "explanation": "をください是請求物品。",
+      "explanationJa": "すき、きらい、たのむことをわけましょう。",
+      "distractorReasons": {
+        "U06-Q16-o1": "好きです才表示喜歡。",
+        "U06-Q16-o2": "原句沒有位置。",
+        "U06-Q16-o3": "請求不表示完成飲用。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U06-Q17",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q17",
+      "itemFamilyId": "U06-F-paraphrase-dislike",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「やさいが 嫌いです。」在這個虛構故事中是什麼意思？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q17-o1",
+          "text": "故事人物喜歡蔬菜。"
+        },
+        {
+          "id": "U06-Q17-o2",
+          "text": "蔬菜不存在。"
+        },
+        {
+          "id": "U06-Q17-o3",
+          "text": "每個孩子都不應吃蔬菜。"
+        },
+        {
+          "id": "U06-Q17-o0",
+          "text": "故事人物不喜歡蔬菜。"
+        }
+      ],
+      "answer": [
+        "U06-Q17-o0"
+      ],
+      "explanation": "嫌い描述故事人物的個人喜好。",
+      "explanationJa": "すき、きらい、たのむことをわけましょう。",
+      "distractorReasons": {
+        "U06-Q17-o1": "與嫌い相反。",
+        "U06-Q17-o2": "沒有否定存在。",
+        "U06-Q17-o3": "個人喜好不是對他人的規定。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U06-Q18",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q18",
+      "itemFamilyId": "U06-F-object-food",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「パン（　）食べます。」選出助詞。",
+      "promptJa": "ぶんにあうことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q18-o2",
+          "text": "の"
+        },
+        {
+          "id": "U06-Q18-o3",
+          "text": "と"
+        },
+        {
+          "id": "U06-Q18-o0",
+          "text": "を"
+        },
+        {
+          "id": "U06-Q18-o1",
+          "text": "に"
+        }
+      ],
+      "answer": [
+        "U06-Q18-o0"
+      ],
+      "explanation": "を標出吃的對象。",
+      "explanationJa": "ぶんのかたちをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q18-o1": "這裡不是位置或時間。",
+        "U06-Q18-o2": "這裡不是所有關係。",
+        "U06-Q18-o3": "這裡不是並列人物。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-Q19",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q19",
+      "itemFamilyId": "U06-F-object-drink",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「おちゃを（　）。」選出「喝茶」的動作。",
+      "promptJa": "ぶんにあうことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q19-o3",
+          "text": "寝ます"
+        },
+        {
+          "id": "U06-Q19-o0",
+          "text": "飲みます"
+        },
+        {
+          "id": "U06-Q19-o1",
+          "text": "食べます"
+        },
+        {
+          "id": "U06-Q19-o2",
+          "text": "読みます"
+        }
+      ],
+      "answer": [
+        "U06-Q19-o0"
+      ],
+      "explanation": "飲料を飲みます。",
+      "explanationJa": "ぶんのかたちをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q19-o1": "茶使用喝，不是吃。",
+        "U06-Q19-o2": "這表示讀。",
+        "U06-Q19-o3": "這表示睡。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-Q20",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q20",
+      "itemFamilyId": "U06-F-like-particle",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「バナナ（　）好きです。」選出助詞。",
+      "promptJa": "ぶんにあうことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q20-o0",
+          "text": "が"
+        },
+        {
+          "id": "U06-Q20-o1",
+          "text": "を"
+        },
+        {
+          "id": "U06-Q20-o2",
+          "text": "に"
+        },
+        {
+          "id": "U06-Q20-o3",
+          "text": "と"
+        }
+      ],
+      "answer": [
+        "U06-Q20-o0"
+      ],
+      "explanation": "喜歡物品用Nが好きです。",
+      "explanationJa": "ぶんのかたちをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q20-o1": "好きです在本課用が。",
+        "U06-Q20-o2": "不是位置或時間。",
+        "U06-Q20-o3": "不是並列句。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-Q21",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q21",
+      "itemFamilyId": "U06-F-dislike-meaning",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "設定：人物不喜歡咖哩。「カレーが（　）。」",
+      "promptJa": "ぶんにあうことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q21-o1",
+          "text": "好きです"
+        },
+        {
+          "id": "U06-Q21-o2",
+          "text": "ください"
+        },
+        {
+          "id": "U06-Q21-o3",
+          "text": "飲みます"
+        },
+        {
+          "id": "U06-Q21-o0",
+          "text": "嫌いです"
+        }
+      ],
+      "answer": [
+        "U06-Q21-o0"
+      ],
+      "explanation": "嫌いです才符合不喜歡。",
+      "explanationJa": "ぶんのかたちをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q21-o1": "表示喜歡，與設定相反。",
+        "U06-Q21-o2": "請求句須用をください。",
+        "U06-Q21-o3": "表示喝，不是喜好。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-Q22",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q22",
+      "itemFamilyId": "U06-F-request-particle",
+      "primarySkillId": "G18",
+      "skillIds": [
+        "G18"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「スープ（　）ください。」請選助詞。",
+      "promptJa": "ぶんにあうことばをえらびましょう。",
+      "choices": [
+        {
+          "id": "U06-Q22-o2",
+          "text": "の"
+        },
+        {
+          "id": "U06-Q22-o3",
+          "text": "に"
+        },
+        {
+          "id": "U06-Q22-o0",
+          "text": "を"
+        },
+        {
+          "id": "U06-Q22-o1",
+          "text": "が"
+        }
+      ],
+      "answer": [
+        "U06-Q22-o0"
+      ],
+      "explanation": "請求物品用Nをください。",
+      "explanationJa": "ぶんのかたちをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q22-o1": "本課請求句不用が。",
+        "U06-Q22-o2": "不表示所有關係。",
+        "U06-Q22-o3": "不表示位置或時間。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-Q23",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q23",
+      "itemFamilyId": "U06-F-order-eat-object",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「我吃飯糰」。",
+      "promptJa": "ことばをならべましょう。",
+      "choices": [
+        {
+          "id": "U06-Q23-o2",
+          "text": "食べます。"
+        },
+        {
+          "id": "U06-Q23-o0",
+          "text": "わたしは"
+        },
+        {
+          "id": "U06-Q23-o1",
+          "text": "おにぎりを"
+        }
+      ],
+      "answer": [
+        "U06-Q23-o0",
+        "U06-Q23-o1",
+        "U06-Q23-o2"
+      ],
+      "explanation": "主題わたしは、對象おにぎりを、動作食べます。",
+      "explanationJa": "ことばをじゅんにならべましょう。",
+      "distractorReasons": {},
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U06-Q24",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q24",
+      "itemFamilyId": "U06-F-order-like-fruit",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「我喜歡水果」。",
+      "promptJa": "ことばをならべましょう。",
+      "choices": [
+        {
+          "id": "U06-Q24-o0",
+          "text": "わたしは"
+        },
+        {
+          "id": "U06-Q24-o1",
+          "text": "くだものが"
+        },
+        {
+          "id": "U06-Q24-o2",
+          "text": "好きです。"
+        }
+      ],
+      "answer": [
+        "U06-Q24-o0",
+        "U06-Q24-o1",
+        "U06-Q24-o2"
+      ],
+      "explanation": "喜好的對象使用が，最後好きです。",
+      "explanationJa": "ことばをじゅんにならべましょう。",
+      "distractorReasons": {},
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U06-Q25",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q25",
+      "itemFamilyId": "U06-F-order-food-request",
+      "primarySkillId": "G18",
+      "skillIds": [
+        "G18"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「請給我湯」。",
+      "promptJa": "ことばをならべましょう。",
+      "choices": [
+        {
+          "id": "U06-Q25-o1",
+          "text": "を"
+        },
+        {
+          "id": "U06-Q25-o2",
+          "text": "ください。"
+        },
+        {
+          "id": "U06-Q25-o0",
+          "text": "スープ"
+        }
+      ],
+      "answer": [
+        "U06-Q25-o0",
+        "U06-Q25-o1",
+        "U06-Q25-o2"
+      ],
+      "explanation": "物品後接を，再接ください。",
+      "explanationJa": "ことばをじゅんにならべましょう。",
+      "distractorReasons": {},
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U06-Q26",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q26",
+      "itemFamilyId": "U06-F-text-drink-choice",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「あさです。パンを 食べます。みずを（　）。」選出合適動作。",
+      "promptJa": "ぶんのいみと、つづきをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-Q26-o2",
+          "text": "読みます"
+        },
+        {
+          "id": "U06-Q26-o3",
+          "text": "寝ます"
+        },
+        {
+          "id": "U06-Q26-o0",
+          "text": "飲みます"
+        },
+        {
+          "id": "U06-Q26-o1",
+          "text": "食べます"
+        }
+      ],
+      "answer": [
+        "U06-Q26-o0"
+      ],
+      "explanation": "前文吃麵包，後面以飲みます表達喝水。",
+      "explanationJa": "ばめんにあうぶんをえらびましょう。",
+      "distractorReasons": {
+        "U06-Q26-o1": "水用喝。",
+        "U06-Q26-o2": "這是讀。",
+        "U06-Q26-o3": "這是睡。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U06-Q27",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q27",
+      "itemFamilyId": "U06-F-text-like-but-not-eat",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「魚が 好きです。でも、きょうは 魚を 食べません。」哪個說明正確？",
+      "promptJa": "ぶんのいみと、つづきをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-Q27-o3",
+          "text": "沒有提到喜好。"
+        },
+        {
+          "id": "U06-Q27-o0",
+          "text": "喜歡魚，但今天不吃魚。"
+        },
+        {
+          "id": "U06-Q27-o1",
+          "text": "因為討厭魚，所以永遠不吃。"
+        },
+        {
+          "id": "U06-Q27-o2",
+          "text": "今天正在吃魚。"
+        }
+      ],
+      "answer": [
+        "U06-Q27-o0"
+      ],
+      "explanation": "喜好與今天是否吃，是兩種不同資訊。",
+      "explanationJa": "ばめんにあうぶんをえらびましょう。",
+      "distractorReasons": {
+        "U06-Q27-o1": "原文明說喜歡，且只說今天。",
+        "U06-Q27-o2": "食べません是否定。",
+        "U06-Q27-o3": "好きです已表達喜好。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U06-Q28",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q28",
+      "itemFamilyId": "U06-F-text-request-next",
+      "primarySkillId": "G18",
+      "skillIds": [
+        "G18"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "食堂有湯。想請店員給湯，應接哪句？",
+      "promptJa": "ぶんのいみと、つづきをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-Q28-o0",
+          "text": "スープを ください。"
+        },
+        {
+          "id": "U06-Q28-o1",
+          "text": "スープが 好きです。"
+        },
+        {
+          "id": "U06-Q28-o2",
+          "text": "スープを 食べません。"
+        },
+        {
+          "id": "U06-Q28-o3",
+          "text": "スープは ありません。"
+        }
+      ],
+      "answer": [
+        "U06-Q28-o0"
+      ],
+      "explanation": "用をください向店員提出物品請求。",
+      "explanationJa": "ばめんにあうぶんをえらびましょう。",
+      "distractorReasons": {
+        "U06-Q28-o1": "只說喜好，還沒有提出請求。",
+        "U06-Q28-o2": "否定吃，沒有請求。",
+        "U06-Q28-o3": "與設定有供應相反。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U06-Q29",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q29",
+      "itemFamilyId": "U06-F-breakfast-drink",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "短文中的人物早餐喝什麼？",
+      "promptJa": "ぶんやメニューをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q29-o1",
+          "text": "ジュース"
+        },
+        {
+          "id": "U06-Q29-o2",
+          "text": "おちゃ"
+        },
+        {
+          "id": "U06-Q29-o3",
+          "text": "スープ"
+        },
+        {
+          "id": "U06-Q29-o0",
+          "text": "ぎゅうにゅう"
+        }
+      ],
+      "answer": [
+        "U06-Q29-o0"
+      ],
+      "explanation": "ぎゅうにゅうを飲みます是明確依據。",
+      "explanationJa": "ぶんにかいてあることをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q29-o1": "原文否定果汁。",
+        "U06-Q29-o2": "短文沒提到茶。",
+        "U06-Q29-o3": "短文沒提到湯。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U06-R01",
+      "material": "あさです。わたしは パンを 食べます。ぎゅうにゅうを 飲みます。ジュースは 飲みません。"
+    },
+    {
+      "id": "U06-Q30",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q30",
+      "itemFamilyId": "U06-F-fruit-preference",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "短文中的人物不喜歡哪一項？",
+      "promptJa": "ぶんやメニューをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q30-o2",
+          "text": "やさい"
+        },
+        {
+          "id": "U06-Q30-o3",
+          "text": "さかな"
+        },
+        {
+          "id": "U06-Q30-o0",
+          "text": "バナナ"
+        },
+        {
+          "id": "U06-Q30-o1",
+          "text": "りんご"
+        }
+      ],
+      "answer": [
+        "U06-Q30-o0"
+      ],
+      "explanation": "バナナが嫌いです直接表達不喜歡。",
+      "explanationJa": "ぶんにかいてあることをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q30-o1": "原文喜歡蘋果。",
+        "U06-Q30-o2": "短文沒提蔬菜喜好。",
+        "U06-Q30-o3": "短文沒提魚的喜好。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U06-R02",
+      "material": "わたしは りんごが 好きです。バナナが 嫌いです。きょうは りんごを 食べます。"
+    },
+    {
+      "id": "U06-Q31",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q31",
+      "itemFamilyId": "U06-F-lunch-food-vs-preference",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "人物喜歡烏龍麵，但今天實際吃什麼？",
+      "promptJa": "ぶんやメニューをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q31-o3",
+          "text": "カレー"
+        },
+        {
+          "id": "U06-Q31-o0",
+          "text": "おにぎり"
+        },
+        {
+          "id": "U06-Q31-o1",
+          "text": "うどん"
+        },
+        {
+          "id": "U06-Q31-o2",
+          "text": "パン"
+        }
+      ],
+      "answer": [
+        "U06-Q31-o0"
+      ],
+      "explanation": "最後再次確認きょうはおにぎりです。",
+      "explanationJa": "ぶんにかいてあることをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q31-o1": "是朋友今天吃的，也是自己的喜好，不是自己今天吃的。",
+        "U06-Q31-o2": "本文未說吃麵包。",
+        "U06-Q31-o3": "本文未說吃咖哩。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U06-R03",
+      "material": "ひるです。わたしと ともだちは みせに います。わたしは おにぎりを 食べます。ともだちは うどんを 食べます。わたしは みずを 飲みます。ともだちも みずを 飲みます。わたしは うどんも 好きです。でも、きょうは おにぎりです。"
+    },
+    {
+      "id": "U06-Q32",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q32",
+      "itemFamilyId": "U06-F-shared-drink",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "人物和朋友相同的餐點資訊是什麼？",
+      "promptJa": "ぶんやメニューをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q32-o0",
+          "text": "兩個人都喝水。"
+        },
+        {
+          "id": "U06-Q32-o1",
+          "text": "兩個人都吃烏龍麵。"
+        },
+        {
+          "id": "U06-Q32-o2",
+          "text": "兩個人都吃飯糰。"
+        },
+        {
+          "id": "U06-Q32-o3",
+          "text": "兩個人都喝牛奶。"
+        }
+      ],
+      "answer": [
+        "U06-Q32-o0"
+      ],
+      "explanation": "ともだちもみずを飲みます承接自己的飲料。",
+      "explanationJa": "ぶんにかいてあることをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q32-o1": "自己吃飯糰。",
+        "U06-Q32-o2": "朋友吃烏龍麵。",
+        "U06-Q32-o3": "原文飲料是水。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U06-R03",
+      "material": "ひるです。わたしと ともだちは みせに います。わたしは おにぎりを 食べます。ともだちは うどんを 食べます。わたしは みずを 飲みます。ともだちも みずを 飲みます。わたしは うどんも 好きです。でも、きょうは おにぎりです。"
+    },
+    {
+      "id": "U06-Q33",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q33",
+      "itemFamilyId": "U06-F-menu-available-pair",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "哪一組物品今天都有供應？",
+      "promptJa": "ぶんやメニューをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q33-o1",
+          "text": "おにぎりと ぎゅうにゅう"
+        },
+        {
+          "id": "U06-Q33-o2",
+          "text": "パンと ぎゅうにゅう"
+        },
+        {
+          "id": "U06-Q33-o3",
+          "text": "おにぎりと みず"
+        },
+        {
+          "id": "U06-Q33-o0",
+          "text": "パンと スープ"
+        }
+      ],
+      "answer": [
+        "U06-Q33-o0"
+      ],
+      "explanation": "麵包與湯都標あります。",
+      "explanationJa": "ぶんにかいてあることをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q33-o1": "兩者均寫ありません。",
+        "U06-Q33-o2": "牛奶未供應。",
+        "U06-Q33-o3": "飯糰未供應。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U06-R04",
+      "material": "きょうの メニュー\nパン：あります\nおにぎり：ありません\nスープ：あります\nみず：あります\nぎゅうにゅう：ありません"
+    },
+    {
+      "id": "U06-Q34",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q34",
+      "itemFamilyId": "U06-F-menu-request-water",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "想要現有的飲料，哪個請求符合菜單？",
+      "promptJa": "ぶんやメニューをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q34-o2",
+          "text": "おにぎりを ください。"
+        },
+        {
+          "id": "U06-Q34-o3",
+          "text": "パンを ください。"
+        },
+        {
+          "id": "U06-Q34-o0",
+          "text": "みずを ください。"
+        },
+        {
+          "id": "U06-Q34-o1",
+          "text": "ぎゅうにゅうを ください。"
+        }
+      ],
+      "answer": [
+        "U06-Q34-o0"
+      ],
+      "explanation": "水有供應；牛奶未供應。",
+      "explanationJa": "ぶんにかいてあることをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q34-o1": "牛奶標沒有供應。",
+        "U06-Q34-o2": "飯糰沒供應，也不是飲料。",
+        "U06-Q34-o3": "麵包不是飲料。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U06-R04",
+      "material": "きょうの メニュー\nパン：あります\nおにぎり：ありません\nスープ：あります\nみず：あります\nぎゅうにゅう：ありません"
+    },
+    {
+      "id": "U06-Q35",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q35",
+      "itemFamilyId": "U06-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，人物最後向食堂請求什麼？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q35-o3",
+          "text": "ぎゅうにゅう"
+        },
+        {
+          "id": "U06-Q35-o0",
+          "text": "パン"
+        },
+        {
+          "id": "U06-Q35-o1",
+          "text": "おにぎり"
+        },
+        {
+          "id": "U06-Q35-o2",
+          "text": "スープ"
+        }
+      ],
+      "answer": [
+        "U06-Q35-o0"
+      ],
+      "explanation": "最後說パンをください。",
+      "explanationJa": "きいたことをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q35-o1": "沒有供應，人物沒有選它。",
+        "U06-Q35-o2": "音訊未請求湯。",
+        "U06-Q35-o3": "音訊未請求牛奶。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U06-L01",
+      "audioSrc": "/assets/audio/u06/listening-01.wav"
+    },
+    {
+      "id": "U06-Q36",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q36",
+      "itemFamilyId": "U06-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，哪一項沒有供應？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q36-o0",
+          "text": "おにぎり"
+        },
+        {
+          "id": "U06-Q36-o1",
+          "text": "パン"
+        },
+        {
+          "id": "U06-Q36-o2",
+          "text": "みず"
+        },
+        {
+          "id": "U06-Q36-o3",
+          "text": "パンとみず"
+        }
+      ],
+      "answer": [
+        "U06-Q36-o0"
+      ],
+      "explanation": "おにぎりはありません。",
+      "explanationJa": "きいたことをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q36-o1": "麵包有供應。",
+        "U06-Q36-o2": "水有供應。",
+        "U06-Q36-o3": "兩者都有供應。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U06-L01",
+      "audioSrc": "/assets/audio/u06/listening-01.wav"
+    },
+    {
+      "id": "U06-Q37",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q37",
+      "itemFamilyId": "U06-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，應提供哪個飲料？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q37-o1",
+          "text": "みず"
+        },
+        {
+          "id": "U06-Q37-o2",
+          "text": "おちゃ"
+        },
+        {
+          "id": "U06-Q37-o3",
+          "text": "ジュース"
+        },
+        {
+          "id": "U06-Q37-o0",
+          "text": "ぎゅうにゅう"
+        }
+      ],
+      "answer": [
+        "U06-Q37-o0"
+      ],
+      "explanation": "最後請求ぎゅうにゅう。",
+      "explanationJa": "きいたことをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q37-o1": "音訊未請求水。",
+        "U06-Q37-o2": "音訊未請求茶。",
+        "U06-Q37-o3": "音訊未請求果汁。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U06-L02",
+      "audioSrc": "/assets/audio/u06/listening-02.wav"
+    },
+    {
+      "id": "U06-Q38",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q38",
+      "itemFamilyId": "U06-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，哪一組早餐符合內容？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q38-o2",
+          "text": "パンと ジュース"
+        },
+        {
+          "id": "U06-Q38-o3",
+          "text": "カレーと おちゃ"
+        },
+        {
+          "id": "U06-Q38-o0",
+          "text": "パンと ぎゅうにゅう"
+        },
+        {
+          "id": "U06-Q38-o1",
+          "text": "おにぎりと みず"
+        }
+      ],
+      "answer": [
+        "U06-Q38-o0"
+      ],
+      "explanation": "早餐是麵包，飲料是牛奶。",
+      "explanationJa": "きいたことをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q38-o1": "兩者都與內容不同。",
+        "U06-Q38-o2": "飲料不同。",
+        "U06-Q38-o3": "餐點與飲料都不同。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U06-L02",
+      "audioSrc": "/assets/audio/u06/listening-02.wav"
+    },
+    {
+      "id": "U06-Q39",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q39",
+      "itemFamilyId": "U06-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，今天吃什麼？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q39-o3",
+          "text": "くだもの"
+        },
+        {
+          "id": "U06-Q39-o0",
+          "text": "にく"
+        },
+        {
+          "id": "U06-Q39-o1",
+          "text": "さかな"
+        },
+        {
+          "id": "U06-Q39-o2",
+          "text": "やさい"
+        }
+      ],
+      "answer": [
+        "U06-Q39-o0"
+      ],
+      "explanation": "にくをたべます是今天的動作。",
+      "explanationJa": "きいたことをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q39-o1": "喜歡魚，但今天不吃魚。",
+        "U06-Q39-o2": "音訊未說今天吃蔬菜。",
+        "U06-Q39-o3": "音訊未說今天吃水果。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U06-L03",
+      "audioSrc": "/assets/audio/u06/listening-03.wav"
+    },
+    {
+      "id": "U06-Q40",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q40",
+      "itemFamilyId": "U06-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，人物喜歡什麼？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q40-o0",
+          "text": "さかな"
+        },
+        {
+          "id": "U06-Q40-o1",
+          "text": "にく"
+        },
+        {
+          "id": "U06-Q40-o2",
+          "text": "カレー"
+        },
+        {
+          "id": "U06-Q40-o3",
+          "text": "うどん"
+        }
+      ],
+      "answer": [
+        "U06-Q40-o0"
+      ],
+      "explanation": "さかながすきです。",
+      "explanationJa": "きいたことをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q40-o1": "有說吃肉，沒說喜歡肉。",
+        "U06-Q40-o2": "沒有提到咖哩。",
+        "U06-Q40-o3": "沒有提到烏龍麵。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U06-L03",
+      "audioSrc": "/assets/audio/u06/listening-03.wav"
+    },
+    {
+      "id": "U06-Q41",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q41",
+      "itemFamilyId": "U06-F-listening-04",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，說話者自己喜歡哪項水果？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q41-o1",
+          "text": "りんご"
+        },
+        {
+          "id": "U06-Q41-o2",
+          "text": "くだものは全部嫌い"
+        },
+        {
+          "id": "U06-Q41-o3",
+          "text": "何も分からない"
+        },
+        {
+          "id": "U06-Q41-o0",
+          "text": "バナナ"
+        }
+      ],
+      "answer": [
+        "U06-Q41-o0"
+      ],
+      "explanation": "わたしはバナナがすきです。",
+      "explanationJa": "きいたことをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q41-o1": "哥哥喜歡蘋果。",
+        "U06-Q41-o2": "沒有說全部討厭。",
+        "U06-Q41-o3": "音訊明說喜歡香蕉。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U06-L04",
+      "audioSrc": "/assets/audio/u06/listening-04.wav"
+    },
+    {
+      "id": "U06-Q42",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q42",
+      "itemFamilyId": "U06-F-listening-04",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，誰不喜歡蘋果？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q42-o2",
+          "text": "わたし"
+        },
+        {
+          "id": "U06-Q42-o3",
+          "text": "はは"
+        },
+        {
+          "id": "U06-Q42-o0",
+          "text": "あね"
+        },
+        {
+          "id": "U06-Q42-o1",
+          "text": "あに"
+        }
+      ],
+      "answer": [
+        "U06-Q42-o0"
+      ],
+      "explanation": "あねはりんごがきらいです。",
+      "explanationJa": "きいたことをたしかめましょう。",
+      "distractorReasons": {
+        "U06-Q42-o1": "哥哥喜歡蘋果。",
+        "U06-Q42-o2": "只說自己喜歡香蕉。",
+        "U06-Q42-o3": "沒有提到媽媽。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U06-L04",
+      "audioSrc": "/assets/audio/u06/listening-04.wav"
+    },
+    {
+      "id": "U06-Q43",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q43",
+      "itemFamilyId": "U06-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個請求。哪一個請求要的是圖中物品？",
+      "promptJa": "えをみて、おとをききましょう。どのたのみかたがあいますか。",
+      "choices": [
+        {
+          "id": "U06-Q43-o3",
+          "text": "第4個請求"
+        },
+        {
+          "id": "U06-Q43-o0",
+          "text": "第1個請求"
+        },
+        {
+          "id": "U06-Q43-o1",
+          "text": "第2個請求"
+        },
+        {
+          "id": "U06-Q43-o2",
+          "text": "第3個請求"
+        }
+      ],
+      "answer": [
+        "U06-Q43-o0"
+      ],
+      "explanation": "圖中的物品是水，第1個請求提到它。",
+      "explanationJa": "えのものと、たのんだものをくらべましょう。",
+      "distractorReasons": {
+        "U06-Q43-o1": "這段請求的物品不是圖中的水。",
+        "U06-Q43-o2": "這段請求的物品不是圖中的水。",
+        "U06-Q43-o3": "這段請求的物品不是圖中的水。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U06-L05",
+      "audioSrc": "/assets/audio/u06/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u06/cafeteria-requests.webp",
+        "cell": 0,
+        "alt": {
+          "zh": "食堂桌上清楚可見的水。",
+          "ja": "とうめいなみずがはいったコップ。"
+        }
+      }
+    },
+    {
+      "id": "U06-Q44",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q44",
+      "itemFamilyId": "U06-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個請求。哪一個請求要的是圖中物品？",
+      "promptJa": "えをみて、おとをききましょう。どのたのみかたがあいますか。",
+      "choices": [
+        {
+          "id": "U06-Q44-o0",
+          "text": "第2個請求"
+        },
+        {
+          "id": "U06-Q44-o1",
+          "text": "第1個請求"
+        },
+        {
+          "id": "U06-Q44-o2",
+          "text": "第3個請求"
+        },
+        {
+          "id": "U06-Q44-o3",
+          "text": "第4個請求"
+        }
+      ],
+      "answer": [
+        "U06-Q44-o0"
+      ],
+      "explanation": "圖中的物品是麵包，第2個請求提到它。",
+      "explanationJa": "えのものと、たのんだものをくらべましょう。",
+      "distractorReasons": {
+        "U06-Q44-o1": "這段請求的物品不是圖中的麵包。",
+        "U06-Q44-o2": "這段請求的物品不是圖中的麵包。",
+        "U06-Q44-o3": "這段請求的物品不是圖中的麵包。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U06-L05",
+      "audioSrc": "/assets/audio/u06/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u06/cafeteria-requests.webp",
+        "cell": 1,
+        "alt": {
+          "zh": "食堂桌上清楚可見的麵包。",
+          "ja": "さらのうえのパン。"
+        }
+      }
+    },
+    {
+      "id": "U06-Q45",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q45",
+      "itemFamilyId": "U06-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個請求。哪一個請求要的是圖中物品？",
+      "promptJa": "えをみて、おとをききましょう。どのたのみかたがあいますか。",
+      "choices": [
+        {
+          "id": "U06-Q45-o1",
+          "text": "第1個請求"
+        },
+        {
+          "id": "U06-Q45-o2",
+          "text": "第2個請求"
+        },
+        {
+          "id": "U06-Q45-o3",
+          "text": "第4個請求"
+        },
+        {
+          "id": "U06-Q45-o0",
+          "text": "第3個請求"
+        }
+      ],
+      "answer": [
+        "U06-Q45-o0"
+      ],
+      "explanation": "圖中的物品是湯，第3個請求提到它。",
+      "explanationJa": "えのものと、たのんだものをくらべましょう。",
+      "distractorReasons": {
+        "U06-Q45-o1": "這段請求的物品不是圖中的湯。",
+        "U06-Q45-o2": "這段請求的物品不是圖中的湯。",
+        "U06-Q45-o3": "這段請求的物品不是圖中的湯。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U06-L05",
+      "audioSrc": "/assets/audio/u06/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u06/cafeteria-requests.webp",
+        "cell": 2,
+        "alt": {
+          "zh": "食堂桌上清楚可見的湯。",
+          "ja": "うつわにはいったスープ。"
+        }
+      }
+    },
+    {
+      "id": "U06-Q46",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q46",
+      "itemFamilyId": "U06-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個請求。哪一個請求要的是圖中物品？",
+      "promptJa": "えをみて、おとをききましょう。どのたのみかたがあいますか。",
+      "choices": [
+        {
+          "id": "U06-Q46-o2",
+          "text": "第2個請求"
+        },
+        {
+          "id": "U06-Q46-o3",
+          "text": "第3個請求"
+        },
+        {
+          "id": "U06-Q46-o0",
+          "text": "第4個請求"
+        },
+        {
+          "id": "U06-Q46-o1",
+          "text": "第1個請求"
+        }
+      ],
+      "answer": [
+        "U06-Q46-o0"
+      ],
+      "explanation": "圖中的物品是牛奶，第4個請求提到它。",
+      "explanationJa": "えのものと、たのんだものをくらべましょう。",
+      "distractorReasons": {
+        "U06-Q46-o1": "這段請求的物品不是圖中的牛奶。",
+        "U06-Q46-o2": "這段請求的物品不是圖中的牛奶。",
+        "U06-Q46-o3": "這段請求的物品不是圖中的牛奶。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U06-L05",
+      "audioSrc": "/assets/audio/u06/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u06/cafeteria-requests.webp",
+        "cell": 3,
+        "alt": {
+          "zh": "食堂桌上清楚可見的牛奶。",
+          "ja": "しろいぎゅうにゅうがはいったコップ。"
+        }
+      }
+    },
+    {
+      "id": "U06-Q47",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q47",
+      "itemFamilyId": "U06-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：早餐吃麵包。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q47-o3",
+          "text": "七時です。"
+        },
+        {
+          "id": "U06-Q47-o0",
+          "text": "パンを 食べます。"
+        },
+        {
+          "id": "U06-Q47-o1",
+          "text": "パンが 好きです。"
+        },
+        {
+          "id": "U06-Q47-o2",
+          "text": "みずを 飲みます。"
+        }
+      ],
+      "answer": [
+        "U06-Q47-o0"
+      ],
+      "explanation": "問題問なにをたべますか，依設定回答吃麵包。",
+      "explanationJa": "なにをたべますか、にこたえましょう。",
+      "distractorReasons": {
+        "U06-Q47-o1": "問題問吃什麼，不能只回答喜好。",
+        "U06-Q47-o2": "回答喝什麼，沒有回答食物。",
+        "U06-Q47-o3": "回答時間，沒有回答食物。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U06-L06",
+      "audioSrc": "/assets/audio/u06/listening-06.wav"
+    },
+    {
+      "id": "U06-Q48",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q48",
+      "itemFamilyId": "U06-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：午餐吃飯糰。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q48-o0",
+          "text": "おにぎりを 食べます。"
+        },
+        {
+          "id": "U06-Q48-o1",
+          "text": "おにぎりを ください。"
+        },
+        {
+          "id": "U06-Q48-o2",
+          "text": "ぎゅうにゅうを 飲みます。"
+        },
+        {
+          "id": "U06-Q48-o3",
+          "text": "あさです。"
+        }
+      ],
+      "answer": [
+        "U06-Q48-o0"
+      ],
+      "explanation": "回答食物與吃的動作。",
+      "explanationJa": "なにをたべますか、にこたえましょう。",
+      "distractorReasons": {
+        "U06-Q48-o1": "是請求，不是回答自己吃什麼。",
+        "U06-Q48-o2": "是飲料動作。",
+        "U06-Q48-o3": "是時間帶。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U06-L06",
+      "audioSrc": "/assets/audio/u06/listening-06.wav"
+    },
+    {
+      "id": "U06-Q49",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q49",
+      "itemFamilyId": "U06-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：晚餐吃烏龍麵。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q49-o1",
+          "text": "うどんが 嫌いです。"
+        },
+        {
+          "id": "U06-Q49-o2",
+          "text": "おちゃを 飲みます。"
+        },
+        {
+          "id": "U06-Q49-o3",
+          "text": "みせに います。"
+        },
+        {
+          "id": "U06-Q49-o0",
+          "text": "うどんを 食べます。"
+        }
+      ],
+      "answer": [
+        "U06-Q49-o0"
+      ],
+      "explanation": "聽到問吃什麼，依設定回答烏龍麵。",
+      "explanationJa": "なにをたべますか、にこたえましょう。",
+      "distractorReasons": {
+        "U06-Q49-o1": "只表達不喜歡，與問題不同。",
+        "U06-Q49-o2": "只回答喝什麼。",
+        "U06-Q49-o3": "只回答位置。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U06-L06",
+      "audioSrc": "/assets/audio/u06/listening-06.wav"
+    },
+    {
+      "id": "U06-Q50",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-Q50",
+      "itemFamilyId": "U06-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：這餐吃咖哩。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U06-Q50-o2",
+          "text": "みずを ください。"
+        },
+        {
+          "id": "U06-Q50-o3",
+          "text": "わたしは がくせいです。"
+        },
+        {
+          "id": "U06-Q50-o0",
+          "text": "カレーを 食べます。"
+        },
+        {
+          "id": "U06-Q50-o1",
+          "text": "カレーは あります。"
+        }
+      ],
+      "answer": [
+        "U06-Q50-o0"
+      ],
+      "explanation": "食物を食べます回答這個問題。",
+      "explanationJa": "なにをたべますか、にこたえましょう。",
+      "distractorReasons": {
+        "U06-Q50-o1": "只表達存在。",
+        "U06-Q50-o2": "是在請求水。",
+        "U06-Q50-o3": "只介紹身分。"
+      },
+      "hint": "先分清楚句子在說吃喝、喜好還是請求；閱讀菜單時核對有無供應，聽力先注意人物與順序。",
+      "hintJa": "たべること、すきなこと、たのむことをわけて、ひととじゅんばんをたしかめよう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U06-L06",
+      "audioSrc": "/assets/audio/u06/listening-06.wav"
+    },
+    {
+      "id": "U06-C01",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C01",
+      "itemFamilyId": "U06-CHECK-repair-case-marking",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "抄寫「にくに 食べます」要表達吃肉，哪個修正正確？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C01-o1",
+          "text": "にくの 食べます。"
+        },
+        {
+          "id": "U06-C01-o2",
+          "text": "にくと 食べます。"
+        },
+        {
+          "id": "U06-C01-o3",
+          "text": "にくで 食べます。"
+        },
+        {
+          "id": "U06-C01-o0",
+          "text": "にくを 食べます。"
+        }
+      ],
+      "answer": [
+        "U06-C01-o0"
+      ],
+      "explanation": "修正助詞為を。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C01-o1": "の不是吃的對象助詞。",
+        "U06-C01-o2": "と未表達吃肉的對象。",
+        "U06-C01-o3": "で不是本句的對象助詞。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C02",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C02",
+      "itemFamilyId": "U06-CHECK-identify-object-not-topic",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「わたしは パンを 食べます。」哪一部分是被吃的對象？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C02-o2",
+          "text": "食べます"
+        },
+        {
+          "id": "U06-C02-o3",
+          "text": "は"
+        },
+        {
+          "id": "U06-C02-o0",
+          "text": "パン"
+        },
+        {
+          "id": "U06-C02-o1",
+          "text": "わたし"
+        }
+      ],
+      "answer": [
+        "U06-C02-o0"
+      ],
+      "explanation": "を前的パン是吃的對象。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C02-o1": "這是說話者主題。",
+        "U06-C02-o2": "這是動作。",
+        "U06-C02-o3": "這是主題助詞，不是物品。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C03",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C03",
+      "itemFamilyId": "U06-CHECK-negation-object",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「ジュースを 飲みません。」可以確定什麼？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C03-o3",
+          "text": "果汁不存在。"
+        },
+        {
+          "id": "U06-C03-o0",
+          "text": "人物不喝果汁。"
+        },
+        {
+          "id": "U06-C03-o1",
+          "text": "人物討厭果汁。"
+        },
+        {
+          "id": "U06-C03-o2",
+          "text": "人物喝果汁。"
+        }
+      ],
+      "answer": [
+        "U06-C03-o0"
+      ],
+      "explanation": "動作否定與喜好／存在不同。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C03-o1": "沒說喜好。",
+        "U06-C03-o2": "否定被讀反。",
+        "U06-C03-o3": "不是存在句。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C04",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C04",
+      "itemFamilyId": "U06-CHECK-verb-selection-transfer",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "把「魚を食べます」的對象換成「おちゃ」，動詞也要怎樣換？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C04-o0",
+          "text": "おちゃを 飲みます。"
+        },
+        {
+          "id": "U06-C04-o1",
+          "text": "おちゃを 食べます。"
+        },
+        {
+          "id": "U06-C04-o2",
+          "text": "おちゃが 好きです。"
+        },
+        {
+          "id": "U06-C04-o3",
+          "text": "おちゃは ありません。"
+        }
+      ],
+      "answer": [
+        "U06-C04-o0"
+      ],
+      "explanation": "更換對象後，選合適的喝的動作。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C04-o1": "茶用喝。",
+        "U06-C04-o2": "改成喜好，不再表達動作。",
+        "U06-C04-o3": "改成不存在。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C05",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C05",
+      "itemFamilyId": "U06-CHECK-question-answer-object",
+      "primarySkillId": "G16",
+      "skillIds": [
+        "G16"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「なにを 飲みますか。」應用哪一類回答？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C05-o1",
+          "text": "おちゃを ください。"
+        },
+        {
+          "id": "U06-C05-o2",
+          "text": "おちゃが 好きです。"
+        },
+        {
+          "id": "U06-C05-o3",
+          "text": "おちゃは たなに あります。"
+        },
+        {
+          "id": "U06-C05-o0",
+          "text": "おちゃを 飲みます。"
+        }
+      ],
+      "answer": [
+        "U06-C05-o0"
+      ],
+      "explanation": "用實際喝的物品回答飲みますか。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C05-o1": "這是請求。",
+        "U06-C05-o2": "這是喜好。",
+        "U06-C05-o3": "這是位置。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C06",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C06",
+      "itemFamilyId": "U06-CHECK-inference-boundary",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "只知道「きょうは にくを 食べません」，可否確定人物討厭肉？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C06-o2",
+          "text": "可以，人物討厭所有食物。"
+        },
+        {
+          "id": "U06-C06-o3",
+          "text": "可以，人物只喝茶。"
+        },
+        {
+          "id": "U06-C06-o0",
+          "text": "不能，句子沒有說喜好。"
+        },
+        {
+          "id": "U06-C06-o1",
+          "text": "可以，沒吃就是討厭。"
+        }
+      ],
+      "answer": [
+        "U06-C06-o0"
+      ],
+      "explanation": "沒有明說的喜好不能推論。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C06-o1": "動作否定不等於喜好。",
+        "U06-C06-o2": "更沒有全部食物的資訊。",
+        "U06-C06-o3": "沒有這項資訊。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C07",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C07",
+      "itemFamilyId": "U06-CHECK-preference-owner",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「あには やさいが 好きです。わたしは やさいが 嫌いです。」誰喜歡蔬菜？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C07-o3",
+          "text": "兩個人都不喜歡"
+        },
+        {
+          "id": "U06-C07-o0",
+          "text": "あに"
+        },
+        {
+          "id": "U06-C07-o1",
+          "text": "わたし"
+        },
+        {
+          "id": "U06-C07-o2",
+          "text": "兩個人都喜歡"
+        }
+      ],
+      "answer": [
+        "U06-C07-o0"
+      ],
+      "explanation": "分清楚各句的主題人物。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C07-o1": "自己不喜歡。",
+        "U06-C07-o2": "與自己的句子相反。",
+        "U06-C07-o3": "與哥哥的句子相反。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C08",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C08",
+      "itemFamilyId": "U06-CHECK-like-vs-request",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "哪句只表達喜好，沒有請求食物？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C08-o0",
+          "text": "サラダが 好きです。"
+        },
+        {
+          "id": "U06-C08-o1",
+          "text": "サラダを ください。"
+        },
+        {
+          "id": "U06-C08-o2",
+          "text": "サラダを 食べます。"
+        },
+        {
+          "id": "U06-C08-o3",
+          "text": "サラダは ありません。"
+        }
+      ],
+      "answer": [
+        "U06-C08-o0"
+      ],
+      "explanation": "が好きです表達喜好。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C08-o1": "這是請求。",
+        "U06-C08-o2": "這是動作。",
+        "U06-C08-o3": "這是不存在。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C09",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C09",
+      "itemFamilyId": "U06-CHECK-negative-preference-proof",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "資訊卡只寫「スープが 嫌いです」。哪項資訊符合？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C09-o1",
+          "text": "人物今天一定沒喝湯。"
+        },
+        {
+          "id": "U06-C09-o2",
+          "text": "食堂沒有湯。"
+        },
+        {
+          "id": "U06-C09-o3",
+          "text": "所有人都討厭湯。"
+        },
+        {
+          "id": "U06-C09-o0",
+          "text": "人物不喜歡湯。"
+        }
+      ],
+      "answer": [
+        "U06-C09-o0"
+      ],
+      "explanation": "只保留原句的個人喜好資訊。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C09-o1": "喜好不直接證明今天的動作。",
+        "U06-C09-o2": "喜好不是供應情況。",
+        "U06-C09-o3": "只描述這位人物。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C10",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C10",
+      "itemFamilyId": "U06-CHECK-repair-preference-particle",
+      "primarySkillId": "G17",
+      "skillIds": [
+        "G17"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "要表達喜歡便當，「おべんとうを 好きです」如何修正？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C10-o2",
+          "text": "おべんとうを ください。"
+        },
+        {
+          "id": "U06-C10-o3",
+          "text": "おべんとうを 食べます。"
+        },
+        {
+          "id": "U06-C10-o0",
+          "text": "おべんとうが 好きです。"
+        },
+        {
+          "id": "U06-C10-o1",
+          "text": "おべんとうに 好きです。"
+        }
+      ],
+      "answer": [
+        "U06-C10-o0"
+      ],
+      "explanation": "保留喜好的意思，將助詞修成が。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C10-o1": "不是本課喜好的助詞。",
+        "U06-C10-o2": "這變成請求。",
+        "U06-C10-o3": "這變成動作。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C11",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C11",
+      "itemFamilyId": "U06-CHECK-request-not-received",
+      "primarySkillId": "G18",
+      "skillIds": [
+        "G18"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「パンを ください。」能證明人物已收到麵包嗎？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C11-o3",
+          "text": "可以，表示麵包在外面。"
+        },
+        {
+          "id": "U06-C11-o0",
+          "text": "不能，只提出了請求。"
+        },
+        {
+          "id": "U06-C11-o1",
+          "text": "可以，而且已經吃完。"
+        },
+        {
+          "id": "U06-C11-o2",
+          "text": "可以，表示麵包不供應。"
+        }
+      ],
+      "answer": [
+        "U06-C11-o0"
+      ],
+      "explanation": "請求、收到與吃完是不同事件。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C11-o1": "請求沒有表示收到或吃完。",
+        "U06-C11-o2": "請求不表示供應狀態。",
+        "U06-C11-o3": "沒有位置資訊。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C12",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C12",
+      "itemFamilyId": "U06-CHECK-request-recipient",
+      "primarySkillId": "G18",
+      "skillIds": [
+        "G18"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "在食堂向店員要牛奶，哪句合適？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C12-o0",
+          "text": "ぎゅうにゅうを ください。"
+        },
+        {
+          "id": "U06-C12-o1",
+          "text": "ぎゅうにゅうが 好きです。"
+        },
+        {
+          "id": "U06-C12-o2",
+          "text": "ぎゅうにゅうを 飲みません。"
+        },
+        {
+          "id": "U06-C12-o3",
+          "text": "ぎゅうにゅうは ありません。"
+        }
+      ],
+      "answer": [
+        "U06-C12-o0"
+      ],
+      "explanation": "以物品をください向店員提出需求。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C12-o1": "只表達喜好。",
+        "U06-C12-o2": "只否定喝。",
+        "U06-C12-o3": "只表達沒有。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C13",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C13",
+      "itemFamilyId": "U06-CHECK-repair-request-case",
+      "primarySkillId": "G18",
+      "skillIds": [
+        "G18"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "點餐單寫「たまごが ください」，請選正確修正。",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C13-o1",
+          "text": "たまごに ください。"
+        },
+        {
+          "id": "U06-C13-o2",
+          "text": "たまごの ください。"
+        },
+        {
+          "id": "U06-C13-o3",
+          "text": "たまごが 好きです。"
+        },
+        {
+          "id": "U06-C13-o0",
+          "text": "たまごを ください。"
+        }
+      ],
+      "answer": [
+        "U06-C13-o0"
+      ],
+      "explanation": "物品請求用をください。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C13-o1": "不是本課請求句的助詞。",
+        "U06-C13-o2": "缺乏名詞間的關係，也不是請求句型。",
+        "U06-C13-o3": "語意改為喜好。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C14",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C14",
+      "itemFamilyId": "U06-CHECK-availability-request",
+      "primarySkillId": "G18",
+      "skillIds": [
+        "G18"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "告示只寫「みず：あります／ジュース：ありません」。哪個飲料請求符合供應？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C14-o2",
+          "text": "ぎゅうにゅうを ください。"
+        },
+        {
+          "id": "U06-C14-o3",
+          "text": "おちゃを ください。"
+        },
+        {
+          "id": "U06-C14-o0",
+          "text": "みずを ください。"
+        },
+        {
+          "id": "U06-C14-o1",
+          "text": "ジュースを ください。"
+        }
+      ],
+      "answer": [
+        "U06-C14-o0"
+      ],
+      "explanation": "選明確有供應的水，不自行補出其他飲料。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C14-o1": "果汁未供應。",
+        "U06-C14-o2": "告示沒有供應資訊。",
+        "U06-C14-o3": "告示沒有供應資訊。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U06-C15",
+      "version": "1",
+      "unitId": "U06",
+      "itemId": "U06-C15",
+      "itemFamilyId": "U06-CHECK-keep-requested-object",
+      "primarySkillId": "G18",
+      "skillIds": [
+        "G18"
+      ],
+      "teachingIds": [
+        "U06-teach-words-1",
+        "U06-teach-words-2",
+        "U06-teach-words-3",
+        "U06-teach-words-4",
+        "U06-teach-words-5",
+        "U06-teach-kanji",
+        "U06-teach-G16",
+        "U06-teach-G17",
+        "U06-teach-G18",
+        "U06-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "客人說「くだものを ください」。店員能確定哪項需求？",
+      "promptJa": "いみとぶんのかたちをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U06-C15-o3",
+          "text": "客人只要肉。"
+        },
+        {
+          "id": "U06-C15-o0",
+          "text": "客人在請求水果。"
+        },
+        {
+          "id": "U06-C15-o1",
+          "text": "客人已吃完水果。"
+        },
+        {
+          "id": "U06-C15-o2",
+          "text": "客人一定討厭蔬菜。"
+        }
+      ],
+      "answer": [
+        "U06-C15-o0"
+      ],
+      "explanation": "辨認ください前的請求對象。",
+      "explanationJa": "かいてあることだけをたしかめましょう。",
+      "distractorReasons": {
+        "U06-C15-o1": "請求不表示吃完。",
+        "U06-C15-o2": "沒有喜好資訊。",
+        "U06-C15-o3": "請求的物品被換掉。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U06 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    }
+  ]
 }

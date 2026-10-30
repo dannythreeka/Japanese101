@@ -1,0 +1,50 @@
+{
+  "version": "u07-art-1-draft",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "assets": [
+    {
+      "id": "u07-apple-counts",
+      "src": "/assets/img/u07/apple-counts.webp",
+      "sha256": "e77ceebe8eedd0047ddb9bb5612121858fb58cd662b1cab21d7fdd69620ccc68",
+      "bytes": 426556,
+      "columns": 2,
+      "rows": 2,
+      "width": 1254,
+      "height": 1254,
+      "source": "Original image generated with built-in image_gen, 2026-10-30",
+      "humanReview": "NOT_RUN",
+      "promptFile": "docs/content/U07/art-prompt.md",
+      "reviewStatus": "DRAFT",
+      "frameWindows": [
+        {
+          "x": 0,
+          "y": 0,
+          "w": 627,
+          "h": 587
+        },
+        {
+          "x": 627,
+          "y": 0,
+          "w": 627,
+          "h": 587
+        },
+        {
+          "x": 0,
+          "y": 587,
+          "w": 627,
+          "h": 667
+        },
+        {
+          "x": 627,
+          "y": 587,
+          "w": 627,
+          "h": 667
+        }
+      ],
+      "originalPngSha256": "ab59a069b438695210b340bc606e56a8862c6ca65d2f93d7d13ca49000716060",
+      "encoding": "WebP quality 0.9, original dimensions, browser Canvas encoder; no composition changes"
+    }
+  ]
+}

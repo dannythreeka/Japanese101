@@ -23,3 +23,5 @@ P4-04提前工程：課程metadata＋各課lazy import、明確pack、不再隱�
 最新保存：載入優化已commit d35fa60，尚未push（前一已push0d440eb）。完整Chromium已結束78PASS／1舊setup等待競態FAIL（23.1m）；該case修正後Chromium／Firefox各20次零RAF／timers PASS。U07已65題、16真WAV、蘋果圖426556 bytes，source、production-plan、author-u07.py與art-prompt已寫，尚未註冊runtime。等P5下載修正驗證及提交後，再加u07.ts／registry／loader／media／introductions／labels，跑pack-catalog.ts --write、unit-inventory.ts --write與e2e/p4-u07.spec.ts（已準備未跑）。下一步U08～24／共通15skill、真mock與UI。
 
 下載修正最終：三種匯出共用downloadJSON，anchor掛DOM且blob/link延後一秒清理；延後100ms原生派送的兩引擎四項真下載與JSON讀回PASS，Firefox原U02流程／完整備份等九項PASS。typecheck/lint/build與500k guard通過。session33497、48145皆已成功終止，不重跑；恢復先查git log。本批提交後即可接U07註冊：作者65題、16WAV、426556-byte蘋果圖已實際製作但未進registry／loader／catalog／media；e2e/p4-u07.spec.ts已準備。U08～24與共通skill／真mock／人審仍未做，goal ACTIVE。
+
+U07整合：50真練習＋15候選、16WAV、蘋果圖已接9pack，七課175詞350practice、21候選54缺口、959人審0核准。初輪兩引擎14PASS；目視發現不均勻圖格，改DOM依manifest.frameWindows（非編輯位圖），297單元及型別lintbuild／500k guard通過，兩引擎補10PASS，四格FF實圖已逐張檢視。舊U04相容測試session46024結果待取。U08作者來源已25詞5漢字10教學4閱讀6聽力稿，未出題／音訊／圖／註冊。接續P4-03-R1：local prerequisites U01G02/G03、U06G16與已核能力圖不一致，U01教學G03也少G02；需保留舊稿／review、採新draft版本與來源hash，不能悄改已發布版本。先保存U07，再修此缺口與新增防回歸檢查。

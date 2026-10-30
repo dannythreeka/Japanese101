@@ -1,3 +1,4 @@
+import ContextImage from './ContextImage'
 import { useRef, useState } from 'react'
 import type { Attempt, Question } from '../../content/contracts'
 import { AudioControl, Button, ChoiceCard, Feedback, StatePanel } from '../../components/ui/journey-ui'
@@ -28,7 +29,7 @@ export default function QuestionPlayer({question,attempt,onSubmit,onContinue,hid
   const chosen=(attempt?.answerIds ?? selected).map(id=>question.choices.find(c=>c.id===id)?.text ?? '').join(' ')
   return <section className="journey-stack" aria-busy={saving}>
     <h2>{lang==='ja' ? question.promptJa ?? question.prompt:question.prompt}</h2>
-    {question.image && <div role="img" aria-label={question.image.alt[lang]} style={{width:'min(100%,360px)',aspectRatio:'1',backgroundImage:`url(${import.meta.env.BASE_URL}${question.image.src.slice(1)})`,backgroundSize:'200% 200%',backgroundPosition:`${question.image.cell%2*100}% ${Math.floor(question.image.cell/2)*100}%`,borderRadius:16,justifySelf:'center'}}/>}
+    {question.image && <ContextImage image={question.image} lang={lang}/>}
     {question.material && <div className="journey-card" lang="ja" style={{whiteSpace:'pre-wrap'}}>{question.material}</div>}
     {question.audioSrc && <AudioControl src={question.audioSrc} labels={{play:t('play'),playing:t('playing'),loading:t('audioLoading'),error:t('audioError'),stop:t('stopAudio')}} onComplete={()=>setAudioPlayCount(n=>n+1)}/>}
     {question.kind==='order' ? <>

@@ -38,5 +38,10 @@
     "id": "U06",
     "title": "飲食：小鎮食堂的午餐",
     "version": "u06-1-draft"
+  },
+  {
+    "id": "U07",
+    "title": "購物數量：小鎮商店的訂單",
+    "version": "u07-1-draft"
   }
 ]

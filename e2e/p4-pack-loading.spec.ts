@@ -1,7 +1,7 @@
 import {writeFile} from 'node:fs/promises'
 import {test,expect} from '@playwright/test'
 import {records} from './helpers/unitJourney'
-const unitFile=/\/assets\/u0[1-6]-[^/]+\.js$/
+const unitFile=/\/assets\/u\d{2}-[^/]+\.js$/
 test('opening U06 loads only its content; menus expose other real units without downloading their questions',async({page,browserName})=>{
  const requested:string[]=[];page.on('request',r=>{if(unitFile.test(new URL(r.url()).pathname))requested.push(new URL(r.url()).pathname)})
  await page.goto('/#/preview/adventure?unit=U06&scene=dojo')

@@ -24,6 +24,10 @@
     {
       "id": "U06",
       "version": "u06-1-draft"
+    },
+    {
+      "id": "U07",
+      "version": "u07-1-draft"
     }
   ],
   "actualUnits": [
@@ -32,7 +36,8 @@
     "U03",
     "U04",
     "U05",
-    "U06"
+    "U06",
+    "U07"
   ],
   "questionTypes": [
     {
@@ -61,7 +66,11 @@
         "U06-Q01",
         "U06-Q02",
         "U06-Q03",
-        "U06-Q04"
+        "U06-Q04",
+        "U07-Q01",
+        "U07-Q02",
+        "U07-Q03",
+        "U07-Q04"
       ]
     },
     {
@@ -90,7 +99,11 @@
         "U06-Q05",
         "U06-Q06",
         "U06-Q07",
-        "U06-Q08"
+        "U06-Q08",
+        "U07-Q05",
+        "U07-Q06",
+        "U07-Q07",
+        "U07-Q08"
       ]
     },
     {
@@ -131,7 +144,13 @@
         "U06-Q11",
         "U06-Q12",
         "U06-Q13",
-        "U06-Q14"
+        "U06-Q14",
+        "U07-Q09",
+        "U07-Q10",
+        "U07-Q11",
+        "U07-Q12",
+        "U07-Q13",
+        "U07-Q14"
       ]
     },
     {
@@ -154,7 +173,10 @@
         "U05-Q17",
         "U06-Q15",
         "U06-Q16",
-        "U06-Q17"
+        "U06-Q17",
+        "U07-Q15",
+        "U07-Q16",
+        "U07-Q17"
       ]
     },
     {
@@ -189,7 +211,12 @@
         "U06-Q19",
         "U06-Q20",
         "U06-Q21",
-        "U06-Q22"
+        "U06-Q22",
+        "U07-Q18",
+        "U07-Q19",
+        "U07-Q20",
+        "U07-Q21",
+        "U07-Q22"
       ]
     },
     {
@@ -212,7 +239,10 @@
         "U05-Q25",
         "U06-Q23",
         "U06-Q24",
-        "U06-Q25"
+        "U06-Q25",
+        "U07-Q23",
+        "U07-Q24",
+        "U07-Q25"
       ]
     },
     {
@@ -235,7 +265,10 @@
         "U05-Q28",
         "U06-Q26",
         "U06-Q27",
-        "U06-Q28"
+        "U06-Q28",
+        "U07-Q26",
+        "U07-Q27",
+        "U07-Q28"
       ]
     },
     {
@@ -252,7 +285,9 @@
         "U05-Q29",
         "U05-Q30",
         "U06-Q29",
-        "U06-Q30"
+        "U06-Q30",
+        "U07-Q29",
+        "U07-Q30"
       ]
     },
     {
@@ -269,7 +304,9 @@
         "U05-Q31",
         "U05-Q32",
         "U06-Q31",
-        "U06-Q32"
+        "U06-Q32",
+        "U07-Q31",
+        "U07-Q32"
       ]
     },
     {
@@ -286,7 +323,9 @@
         "U05-Q33",
         "U05-Q34",
         "U06-Q33",
-        "U06-Q34"
+        "U06-Q34",
+        "U07-Q33",
+        "U07-Q34"
       ]
     },
     {
@@ -315,7 +354,11 @@
         "U06-Q35",
         "U06-Q36",
         "U06-Q37",
-        "U06-Q38"
+        "U06-Q38",
+        "U07-Q35",
+        "U07-Q36",
+        "U07-Q37",
+        "U07-Q38"
       ]
     },
     {
@@ -344,7 +387,11 @@
         "U06-Q39",
         "U06-Q40",
         "U06-Q41",
-        "U06-Q42"
+        "U06-Q42",
+        "U07-Q39",
+        "U07-Q40",
+        "U07-Q41",
+        "U07-Q42"
       ]
     },
     {
@@ -373,7 +420,11 @@
         "U06-Q43",
         "U06-Q44",
         "U06-Q45",
-        "U06-Q46"
+        "U06-Q46",
+        "U07-Q43",
+        "U07-Q44",
+        "U07-Q45",
+        "U07-Q46"
       ]
     },
     {
@@ -402,7 +453,11 @@
         "U06-Q47",
         "U06-Q48",
         "U06-Q49",
-        "U06-Q50"
+        "U06-Q50",
+        "U07-Q47",
+        "U07-Q48",
+        "U07-Q49",
+        "U07-Q50"
       ]
     }
   ],
@@ -438,6 +493,11 @@
         "U06-teach-words-3",
         "U06-teach-words-4",
         "U06-teach-words-5",
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
         "teach-words-1",
         "teach-words-2",
         "teach-words-3",
@@ -488,7 +548,12 @@
         "U06-teach-words-2",
         "U06-teach-words-3",
         "U06-teach-words-4",
-        "U06-teach-words-5"
+        "U06-teach-words-5",
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
       ],
       "practiceIds": [],
       "checkIds": [],
@@ -540,6 +605,7 @@
         "U04-teach-kanji",
         "U05-teach-kanji",
         "U06-teach-kanji",
+        "U07-teach-kanji",
         "teach-kanji"
       ],
       "practiceIds": [
@@ -590,7 +656,15 @@
         "U06-Q05",
         "U06-Q06",
         "U06-Q07",
-        "U06-Q08"
+        "U06-Q08",
+        "U07-Q01",
+        "U07-Q02",
+        "U07-Q03",
+        "U07-Q04",
+        "U07-Q05",
+        "U07-Q06",
+        "U07-Q07",
+        "U07-Q08"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -637,6 +711,11 @@
         "U06-teach-words-3",
         "U06-teach-words-4",
         "U06-teach-words-5",
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
         "teach-words-1",
         "teach-words-2",
         "teach-words-3"
@@ -677,7 +756,13 @@
         "U06-Q11",
         "U06-Q12",
         "U06-Q13",
-        "U06-Q14"
+        "U06-Q14",
+        "U07-Q09",
+        "U07-Q10",
+        "U07-Q11",
+        "U07-Q12",
+        "U07-Q13",
+        "U07-Q14"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -724,6 +809,11 @@
         "U06-teach-words-3",
         "U06-teach-words-4",
         "U06-teach-words-5",
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
         "teach-words-4"
       ],
       "practiceIds": [
@@ -744,7 +834,10 @@
         "U05-Q17",
         "U06-Q15",
         "U06-Q16",
-        "U06-Q17"
+        "U06-Q17",
+        "U07-Q15",
+        "U07-Q16",
+        "U07-Q17"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -771,6 +864,7 @@
         "U04-teach-story",
         "U05-teach-story",
         "U06-teach-context",
+        "U07-teach-context",
         "teach-story"
       ],
       "practiceIds": [
@@ -785,7 +879,9 @@
         "U05-Q29",
         "U05-Q30",
         "U06-Q29",
-        "U06-Q30"
+        "U06-Q30",
+        "U07-Q29",
+        "U07-Q30"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -812,6 +908,7 @@
         "U04-teach-story",
         "U05-teach-story",
         "U06-teach-context",
+        "U07-teach-context",
         "teach-story"
       ],
       "practiceIds": [
@@ -826,7 +923,9 @@
         "U05-Q31",
         "U05-Q32",
         "U06-Q31",
-        "U06-Q32"
+        "U06-Q32",
+        "U07-Q31",
+        "U07-Q32"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -853,6 +952,7 @@
         "U04-teach-story",
         "U05-teach-story",
         "U06-teach-context",
+        "U07-teach-context",
         "teach-story"
       ],
       "practiceIds": [
@@ -867,7 +967,9 @@
         "U05-Q33",
         "U05-Q34",
         "U06-Q33",
-        "U06-Q34"
+        "U06-Q34",
+        "U07-Q33",
+        "U07-Q34"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -894,6 +996,7 @@
         "U04-teach-story",
         "U05-teach-story",
         "U06-teach-context",
+        "U07-teach-context",
         "teach-story"
       ],
       "practiceIds": [
@@ -920,7 +1023,11 @@
         "U06-Q35",
         "U06-Q36",
         "U06-Q37",
-        "U06-Q38"
+        "U06-Q38",
+        "U07-Q35",
+        "U07-Q36",
+        "U07-Q37",
+        "U07-Q38"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -947,6 +1054,7 @@
         "U04-teach-story",
         "U05-teach-story",
         "U06-teach-context",
+        "U07-teach-context",
         "teach-story"
       ],
       "practiceIds": [
@@ -973,7 +1081,11 @@
         "U06-Q39",
         "U06-Q40",
         "U06-Q41",
-        "U06-Q42"
+        "U06-Q42",
+        "U07-Q39",
+        "U07-Q40",
+        "U07-Q41",
+        "U07-Q42"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -1000,6 +1112,7 @@
         "U04-teach-story",
         "U05-teach-story",
         "U06-teach-context",
+        "U07-teach-context",
         "teach-story"
       ],
       "practiceIds": [
@@ -1026,7 +1139,11 @@
         "U06-Q43",
         "U06-Q44",
         "U06-Q45",
-        "U06-Q46"
+        "U06-Q46",
+        "U07-Q43",
+        "U07-Q44",
+        "U07-Q45",
+        "U07-Q46"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -1053,6 +1170,7 @@
         "U04-teach-story",
         "U05-teach-story",
         "U06-teach-context",
+        "U07-teach-context",
         "teach-story"
       ],
       "practiceIds": [
@@ -1079,7 +1197,11 @@
         "U06-Q47",
         "U06-Q48",
         "U06-Q49",
-        "U06-Q50"
+        "U06-Q50",
+        "U07-Q47",
+        "U07-Q48",
+        "U07-Q49",
+        "U07-Q50"
       ],
       "checkIds": [],
       "candidateFamilies": [],
@@ -1927,19 +2049,39 @@
         "G18"
       ],
       "requiredFamilies": 5,
-      "teachingIds": [],
-      "practiceIds": [],
-      "checkIds": [],
-      "candidateFamilies": [],
-      "eligibleFamilies": [],
-      "declaredApprovedFamilies": [],
-      "missing": [
-        "teaching",
-        "primary practice",
-        "primary independent check",
-        "independent families 0/5"
+      "teachingIds": [
+        "U07-teach-G19"
       ],
-      "engineeringCoverage": "GAP",
+      "practiceIds": [
+        "U07-Q18",
+        "U07-Q19",
+        "U07-Q23",
+        "U07-Q26"
+      ],
+      "checkIds": [
+        "U07-C01",
+        "U07-C02",
+        "U07-C03",
+        "U07-C04",
+        "U07-C05"
+      ],
+      "candidateFamilies": [
+        "U07-CHECK-bind-two-orders",
+        "U07-CHECK-people-vs-objects",
+        "U07-CHECK-quantity-range",
+        "U07-CHECK-remaining-order",
+        "U07-CHECK-scope-all"
+      ],
+      "eligibleFamilies": [
+        "U07-CHECK-bind-two-orders",
+        "U07-CHECK-people-vs-objects",
+        "U07-CHECK-quantity-range",
+        "U07-CHECK-remaining-order",
+        "U07-CHECK-scope-all"
+      ],
+      "declaredApprovedFamilies": [],
+      "missing": [],
+      "engineeringCoverage": "CANDIDATES_PRESENT",
       "humanIndependentReview": "REQUIRED"
     },
     {
@@ -1950,19 +2092,39 @@
         "G19"
       ],
       "requiredFamilies": 5,
-      "teachingIds": [],
-      "practiceIds": [],
-      "checkIds": [],
-      "candidateFamilies": [],
-      "eligibleFamilies": [],
-      "declaredApprovedFamilies": [],
-      "missing": [
-        "teaching",
-        "primary practice",
-        "primary independent check",
-        "independent families 0/5"
+      "teachingIds": [
+        "U07-teach-G20"
       ],
-      "engineeringCoverage": "GAP",
+      "practiceIds": [
+        "U07-Q20",
+        "U07-Q21",
+        "U07-Q24",
+        "U07-Q27"
+      ],
+      "checkIds": [
+        "U07-C06",
+        "U07-C07",
+        "U07-C08",
+        "U07-C09",
+        "U07-C10"
+      ],
+      "candidateFamilies": [
+        "U07-CHECK-counter-contrast",
+        "U07-CHECK-keep-object-not-unit-word",
+        "U07-CHECK-one-book-sound",
+        "U07-CHECK-one-pencil-sound",
+        "U07-CHECK-repair-flat-counter"
+      ],
+      "eligibleFamilies": [
+        "U07-CHECK-counter-contrast",
+        "U07-CHECK-keep-object-not-unit-word",
+        "U07-CHECK-one-book-sound",
+        "U07-CHECK-one-pencil-sound",
+        "U07-CHECK-repair-flat-counter"
+      ],
+      "declaredApprovedFamilies": [],
+      "missing": [],
+      "engineeringCoverage": "CANDIDATES_PRESENT",
       "humanIndependentReview": "REQUIRED"
     },
     {
@@ -1973,19 +2135,38 @@
         "G20"
       ],
       "requiredFamilies": 5,
-      "teachingIds": [],
-      "practiceIds": [],
-      "checkIds": [],
-      "candidateFamilies": [],
-      "eligibleFamilies": [],
-      "declaredApprovedFamilies": [],
-      "missing": [
-        "teaching",
-        "primary practice",
-        "primary independent check",
-        "independent families 0/5"
+      "teachingIds": [
+        "U07-teach-G21"
       ],
-      "engineeringCoverage": "GAP",
+      "practiceIds": [
+        "U07-Q22",
+        "U07-Q25",
+        "U07-Q28"
+      ],
+      "checkIds": [
+        "U07-C11",
+        "U07-C12",
+        "U07-C13",
+        "U07-C14",
+        "U07-C15"
+      ],
+      "candidateFamilies": [
+        "U07-CHECK-avoid-invented-price",
+        "U07-CHECK-change-not-selling-price",
+        "U07-CHECK-count-answer-question",
+        "U07-CHECK-price-answer-question",
+        "U07-CHECK-same-price-different-count"
+      ],
+      "eligibleFamilies": [
+        "U07-CHECK-avoid-invented-price",
+        "U07-CHECK-change-not-selling-price",
+        "U07-CHECK-count-answer-question",
+        "U07-CHECK-price-answer-question",
+        "U07-CHECK-same-price-different-count"
+      ],
+      "declaredApprovedFamilies": [],
+      "missing": [],
+      "engineeringCoverage": "CANDIDATES_PRESENT",
       "humanIndependentReview": "REQUIRED"
     },
     {
@@ -2890,8 +3071,8 @@
   "errors": [],
   "summary": {
     "skills": 75,
-    "withCandidateCoverage": 18,
-    "withGaps": 57,
+    "withCandidateCoverage": 21,
+    "withGaps": 54,
     "mechanicalDuplicateGroups": 0
   },
   "limitations": [
@@ -2900,7 +3081,7 @@
     "Kana glyph placement is not silently counted as an approved delayed assessment of the aggregate kana skills."
   ],
   "reviewSummary": {
-    "items": 824,
+    "items": 959,
     "validMetadata": 0
   },
   "reviewAudit": [
@@ -13108,10 +13289,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13121,10 +13304,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13134,10 +13319,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13147,10 +13334,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13160,10 +13349,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13173,10 +13364,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13186,10 +13379,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13199,10 +13394,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13212,10 +13409,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13225,10 +13424,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13238,10 +13439,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13251,10 +13454,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13264,10 +13469,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13277,10 +13484,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13290,10 +13499,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13303,10 +13514,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13316,10 +13529,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13329,10 +13544,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13342,10 +13559,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13355,10 +13574,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13368,10 +13589,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13381,10 +13604,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13394,10 +13619,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13407,10 +13634,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13420,10 +13649,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13433,10 +13664,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13446,10 +13679,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13459,10 +13694,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13472,10 +13709,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13485,10 +13724,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13498,10 +13739,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13511,10 +13754,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13524,10 +13769,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13537,10 +13784,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13550,10 +13799,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13563,10 +13814,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13576,10 +13829,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13589,10 +13844,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13602,10 +13859,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13615,10 +13874,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13628,10 +13889,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13641,10 +13904,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13654,10 +13919,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13667,10 +13934,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13680,10 +13949,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13693,10 +13964,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13706,10 +13979,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13719,10 +13994,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13732,10 +14009,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13745,10 +14024,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13758,10 +14039,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13771,10 +14054,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13784,10 +14069,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13797,10 +14084,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13810,10 +14099,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13823,10 +14114,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13836,10 +14129,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13849,10 +14144,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13862,10 +14159,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13875,10 +14174,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13888,10 +14189,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13901,10 +14204,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13914,10 +14219,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13927,10 +14234,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13940,10 +14249,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13953,10 +14264,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13966,10 +14279,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13979,10 +14294,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -13992,10 +14309,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14005,10 +14324,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14018,10 +14339,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14031,10 +14354,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14044,10 +14369,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14057,10 +14384,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14070,10 +14399,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14083,10 +14414,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14096,10 +14429,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14109,10 +14444,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14122,10 +14459,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14135,10 +14474,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14148,10 +14489,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14161,10 +14504,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14174,10 +14519,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14187,10 +14534,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14200,10 +14549,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14213,10 +14564,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14226,10 +14579,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14239,10 +14594,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14252,10 +14609,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14265,10 +14624,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14278,10 +14639,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14291,10 +14654,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14304,10 +14669,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14317,10 +14684,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14330,10 +14699,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14343,10 +14714,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14356,10 +14729,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14369,10 +14744,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14382,10 +14759,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14395,10 +14774,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14408,10 +14789,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14421,10 +14804,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14434,10 +14819,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14447,10 +14834,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14460,10 +14849,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14473,10 +14864,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14486,10 +14879,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14499,10 +14894,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14512,10 +14909,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14525,10 +14924,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14538,10 +14939,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14551,10 +14954,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14564,10 +14969,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14577,10 +14984,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14590,10 +14999,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14603,10 +15014,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14616,10 +15029,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14629,10 +15044,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14644,10 +15061,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14659,10 +15078,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14674,10 +15095,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14689,10 +15112,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14704,10 +15129,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14719,10 +15146,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14734,10 +15163,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14749,10 +15180,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14764,10 +15197,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14779,10 +15214,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14794,10 +15231,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14809,10 +15248,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14824,10 +15265,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14839,10 +15282,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14854,10 +15299,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14869,10 +15316,12 @@
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,
-          "declaredResult": null,
+          "declaredResult": "NOT_RUN",
           "metadataValid": false,
           "problems": [
-            "MISSING_RECORD"
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
           ]
         },
         {
@@ -14880,6 +15329,1801 @@
           "kind": "image",
           "src": "/assets/img/u06/cafeteria-requests.webp",
           "sha256": "c8575600ba60ec055929241deee2c212bc5885d9d5c791c8191d9286be82b3a8",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": "NOT_RUN",
+          "metadataValid": false,
+          "problems": [
+            "NOT_APPROVED",
+            "MISSING_REVIEWER",
+            "INVALID_REVIEW_DATE"
+          ]
+        }
+      ]
+    },
+    {
+      "unitId": "U07",
+      "items": [
+        {
+          "id": "U07-V01",
+          "kind": "vocabulary",
+          "sha256": "f73a02c678b1fc7d63da58be17c5f4c9fb76fa4271392b52e0725510cca9f58c",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V02",
+          "kind": "vocabulary",
+          "sha256": "952a93e6dfea2aa5747bb20d798da2f45309c9451060ff0bb06135f75fc62e0b",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V03",
+          "kind": "vocabulary",
+          "sha256": "059df704d78a7c95a2bb1500d0ac94ff537c742cb4530871585d3eae06a323e5",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V04",
+          "kind": "vocabulary",
+          "sha256": "e9f87a963928ee7ebe7037c53cae336a503c32d48acb23a786e40aa266167f93",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V05",
+          "kind": "vocabulary",
+          "sha256": "38d4dfc8769876c50d1e6b177e5a6d3a3787190387e52ea33272675199a49487",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V06",
+          "kind": "vocabulary",
+          "sha256": "8701830dc61d7c006ca021d59d016feaf6303097451bfaf9304333873b96c0de",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V07",
+          "kind": "vocabulary",
+          "sha256": "35c52ffd2a32608264a8af6c3b2711caa98e2404f9f657d7735eabd3f15a1be8",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V08",
+          "kind": "vocabulary",
+          "sha256": "ab02215151b2a8d7b6c0345d4c7850792e78b8931d68ab91fcba793e5c6728dd",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V09",
+          "kind": "vocabulary",
+          "sha256": "c729585cf74a593129d7eafac1991e06eb3aa1efb8d63af52d645f8243974e53",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V10",
+          "kind": "vocabulary",
+          "sha256": "9bcb9327997f04d7efdd83d20fb2b22c9672371545dd8e37a4b5fcb40734c236",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V11",
+          "kind": "vocabulary",
+          "sha256": "8313395d3538faebd5b1ee0d79a8cf95ecceb5b482c7b1d07495c60245040b7a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V12",
+          "kind": "vocabulary",
+          "sha256": "cc05127f915f8b1bb2a80f30616cbf0ad7795fe84535d713d1ef40ee37514516",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V13",
+          "kind": "vocabulary",
+          "sha256": "3e858dc13b3460ecb3496a3d5eb535a4a694c630db44d7f4432877a29883c7ff",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V14",
+          "kind": "vocabulary",
+          "sha256": "5674ce15e74f766b217678193f44392941e9611ed92b55f9ac89aa7065e3cecd",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V15",
+          "kind": "vocabulary",
+          "sha256": "8cd686019592eb5260a0949a43890285730eda7b31a07b1b268f1c24f423d519",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V16",
+          "kind": "vocabulary",
+          "sha256": "5c30c951a85085d5867027c8d4620df787728d5e4c511b4afe5c2a320e448220",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V17",
+          "kind": "vocabulary",
+          "sha256": "22a3d89112638ff3ccbb92849f3193bbbed12a4c3bd1cb9cc575a36826e2eeca",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V18",
+          "kind": "vocabulary",
+          "sha256": "8e55fe8069be6342404950028659d70263336bb3b774297c0fd29f0d8a01dd96",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V19",
+          "kind": "vocabulary",
+          "sha256": "c59587116db15c5928a9345ef17b54397abf70938a230fecf16571bb69319708",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V20",
+          "kind": "vocabulary",
+          "sha256": "07ae725a3cb674e8fd948ef23d5f92459a0f4a879d497df2b345f5408dbe1faa",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V21",
+          "kind": "vocabulary",
+          "sha256": "9b183abac8377d4731e32bc1181ca08a481984cc27284b9db000cce9d9dcb2ee",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V22",
+          "kind": "vocabulary",
+          "sha256": "0d1f84d19536559ef721edfdeb9bc46bd17c667f09ee22cf94731d16313b2e3d",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V23",
+          "kind": "vocabulary",
+          "sha256": "0c1ef6ed560e145f7f9a7c2fd3b5d31587ccf6e765b8647405eae229101fc338",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V24",
+          "kind": "vocabulary",
+          "sha256": "52cd04fdcb759f2f6598cf1cfc0297128c51c69f34cd1cc384b521c87260483a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-V25",
+          "kind": "vocabulary",
+          "sha256": "99b7c98847cac939ba6bd814f899b39557d8154164db996a280b14042bc855a2",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-K01",
+          "kind": "kanji",
+          "sha256": "4f5dba860c50d59bbc384adccd268efe7a657dc54a91f22dd5fd75ece5a64c9e",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-K02",
+          "kind": "kanji",
+          "sha256": "5dd7e61ae0a6da875c63e0b0feb9cbc4e3736e05276e44b2ec8e5b01d3374feb",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-K03",
+          "kind": "kanji",
+          "sha256": "b4f562c3a864af82849be2c4661dbec190dd01b7272aff3a6ffbd64591bcc8d1",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-K04",
+          "kind": "kanji",
+          "sha256": "6c529387050ae0476a4e7b23d4657000b3911e0aae2f5c698238da0615313edb",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-K05",
+          "kind": "kanji",
+          "sha256": "4739b46c9a6956f2404a9ae405706c4a57d5be2efadcf93f7840516009e364a1",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "G19",
+          "kind": "grammar",
+          "sha256": "534a61dee6abe6237802a9dad6ae30b6c601e02a727250eb55e226a75241f0a7",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "G20",
+          "kind": "grammar",
+          "sha256": "3d4c7f83b7daca400296fced4432e12e734842f1f3f9b5525c77a82b79e27a19",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "G21",
+          "kind": "grammar",
+          "sha256": "c99996e399524ef9fa801ee024f5129221246d68e77eeb13021a5306034cd48c",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-words-1",
+          "kind": "teaching",
+          "sha256": "2ec7d2fff48dbbfd1fc7cd87d26c66759c6f889f7948c596c170efa85ce635e9",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-words-2",
+          "kind": "teaching",
+          "sha256": "d99eb3edbf5b74dcacb2b41c5ed9fc7be157718989b0c707803edc204a53a37d",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-words-3",
+          "kind": "teaching",
+          "sha256": "3a3c55753a060ca16aefdd2fc9aeab0cf3b62090a06060518add61ae9e6e37d7",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-words-4",
+          "kind": "teaching",
+          "sha256": "6799714fd490a402cf072b0995e573b5a44d7e46c008de1fb11f58393f5b8f9b",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-words-5",
+          "kind": "teaching",
+          "sha256": "147826a2db892e5ec341c8b7e3ca4fefa209eb536bbc2cdae38e1c44e3d5a795",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-kanji",
+          "kind": "teaching",
+          "sha256": "dbad425c5f449695ad7db4d0c6579d7cdf524f91bbd94e6abe067a1f714b133e",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-G19",
+          "kind": "teaching",
+          "sha256": "1949ac629eba369ed020d2ba8fe01f14e6c66f626f3e1cdf7b8556ffb93c4913",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-G20",
+          "kind": "teaching",
+          "sha256": "da5fb52fa2796a70d4a89e16dd5e96b67448969bb9a127ac10659c361415ca5d",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-G21",
+          "kind": "teaching",
+          "sha256": "a56518aab14b83760d102a3d38fe90618d558e17872214fc6576c27b815e7724",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-teach-context",
+          "kind": "teaching",
+          "sha256": "dfbb9e30777fc887dd9f017e4ceeaaf01f3959f14bda297b12fd5d2bffe11226",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-R01",
+          "kind": "readings",
+          "sha256": "9c9c6a1c4efaaa1abdf3275383e31da9dcb90e9f135dbe3aa252e37320dae0fd",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-R02",
+          "kind": "readings",
+          "sha256": "fd98beb7b90c29f5cffb0b41163f75ac68414a1dcc541f5752525f9703c6b294",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-R03",
+          "kind": "readings",
+          "sha256": "ecd28a90890922fad8d6edd296c50e4d054ac1f2812336f94132196b64ae1d1e",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-R04",
+          "kind": "readings",
+          "sha256": "0826aeed20b082d4c6a8fd6aaf032d61d460b2423703e72314e01761cc237300",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-L01",
+          "kind": "listening",
+          "sha256": "fdd8f5ea729fc81e0f17a114133be3da58218b53f9bc075a9d613fc7d03977a2",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-L02",
+          "kind": "listening",
+          "sha256": "4e79517fd68087127bd86b2b546a117f60688a160fe8ac13f3c076cdd4945f02",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-L03",
+          "kind": "listening",
+          "sha256": "7a3159379d06bb88637718a91df0d3fb02ca03d96ddaeb3fdee1a1d955e91b1e",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-L04",
+          "kind": "listening",
+          "sha256": "1a2620180922de53a97b18cec1f47e58439f630b2d254d9f56e1f06fb90f0715",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-L05",
+          "kind": "listening",
+          "sha256": "c95f7ca60503b3f9484c840703aa9fe1092e3deeb1fede8dbb2d94c969869025",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-L06",
+          "kind": "listening",
+          "sha256": "ffbed0172d3a9ce50c76fa290c7d917b3ea482217bed632906f3203270e986fe",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q01",
+          "kind": "questions",
+          "sha256": "f256857bd13201c2f76a821adde1cf9da3c521420cd831dd5141f41693966c92",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q02",
+          "kind": "questions",
+          "sha256": "a434b77e99bebd56d0cb7b54594f1348ded8ba7da96dc9052f070f3d802b2668",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q03",
+          "kind": "questions",
+          "sha256": "c8fae9beb1754abe9e85da79a0166825b3a42ffda18457a829f9c684079c37e4",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q04",
+          "kind": "questions",
+          "sha256": "9b7ba4a90caffb69878e01a581e5626ff0a05fc4dbe006a4e299604bbe8fa578",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q05",
+          "kind": "questions",
+          "sha256": "9504f2cfea0911542c3b60f866a12f5839ad73a5c5f5a54c82d688e52278c96a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q06",
+          "kind": "questions",
+          "sha256": "e0acdfafa9b54bfde9034d353246517c27b6e2c7e46b50658ead1383aed9ad0e",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q07",
+          "kind": "questions",
+          "sha256": "d48a495bee5c49f52b63af690573faec1f576e89d58f0374afedcfc23f167186",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q08",
+          "kind": "questions",
+          "sha256": "719216602f39c22845df925892062ffd56bc938c022a6665a7d4a6e0377de862",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q09",
+          "kind": "questions",
+          "sha256": "a2d58dbbc698bd2889d2b8440fd7f2e457a78238daee45cbb157fe364190896b",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q10",
+          "kind": "questions",
+          "sha256": "cf34ea09721c2f2122c275d404863995b03dadb0ecc5a11f83e0500b8ad15368",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q11",
+          "kind": "questions",
+          "sha256": "0bd8a85ecc29fb1e1d8382e0f7037e2c3ec7c3f49f744c0c49824b7f62b3ca92",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q12",
+          "kind": "questions",
+          "sha256": "f2c4fe108b8aa1bdfa32e05897f229a8239f8b7e6a5b688b0ee621cd15c89489",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q13",
+          "kind": "questions",
+          "sha256": "63bbe9c57354e7d663bf50ad00b53433e371399dfed898d57dfbb4d6fb69c67c",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q14",
+          "kind": "questions",
+          "sha256": "087cbe5717828d4c7713ed6e1f94f1e21b59e875f59af0fa265c46e7508112fe",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q15",
+          "kind": "questions",
+          "sha256": "8a8f1fa4154d9c3a40a2491f9d2ef0236cc59bebc31cb6c51681c3c2b50558d2",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q16",
+          "kind": "questions",
+          "sha256": "56c1dc41f74ae245774f9f4bc4e4d29fb49c954c0748ac85e024cf3c6396b323",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q17",
+          "kind": "questions",
+          "sha256": "ac849752a4be1b3a24a1377c00ed0d7fb5253024c44856f8dc089bdc55136d00",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q18",
+          "kind": "questions",
+          "sha256": "e1967ad1358c2eeab528b14ebbf36e1fd91f5e172094370aff4113c0130c3be0",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q19",
+          "kind": "questions",
+          "sha256": "cfdb30b042ce4e6a2943fea43eaccc6fc620a0e88f31e1551abf334727ba35c4",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q20",
+          "kind": "questions",
+          "sha256": "417abf8321a2c4bcd1c4025197ad3d4c7885cfff7d2c54735cd202714a27b64b",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q21",
+          "kind": "questions",
+          "sha256": "8eff230598bbdc23021ab8e33ee8a939d3e2f076263077b879f623cd9b9aca0c",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q22",
+          "kind": "questions",
+          "sha256": "ba38d8bf6e10c172a6c80ea1d2f6bbc8b1b1c8d1f570dd141d39fd571303e45a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q23",
+          "kind": "questions",
+          "sha256": "4662ab8ed9e02e35099730c3021a583fcf7ccf2e8544622c994d0c10e945c8a7",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q24",
+          "kind": "questions",
+          "sha256": "c1196c2841a7f44205e0a0f4868ee40cb64ae03c4250b1b937c3dede105e31a5",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q25",
+          "kind": "questions",
+          "sha256": "a91e7939365611e9fb97ad50aa5437208155930a43e7e689999794389f39c9a9",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q26",
+          "kind": "questions",
+          "sha256": "09951c0f741269efff100a59dc3a59a59a03ebec4834e3656d0e39ed65c496a0",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q27",
+          "kind": "questions",
+          "sha256": "974550a17b82b91a7cb7693d57cc9d55ff0aa027c06c00230e0a7625567672fb",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q28",
+          "kind": "questions",
+          "sha256": "eae406aa58737368aed5dcf3ef5aadb5234d53286057d4210df406c228a8e4f5",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q29",
+          "kind": "questions",
+          "sha256": "4fb5454b9adb28c5077443f15423bf19a9d9b7eb8e692aaea8c4d23265813f31",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q30",
+          "kind": "questions",
+          "sha256": "8d3cd087a993a2f9e63412ca8b6767c510a9f0bedc078be9b55a828f887b61c8",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q31",
+          "kind": "questions",
+          "sha256": "73fe805868ad38a9506507148f3b04e6f9ce2e43ea03bc9354e7776bc8df3d28",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q32",
+          "kind": "questions",
+          "sha256": "35ae5080f6f539718e4d22df4e54659c01b64ba76c37948b347b07b25a3642c0",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q33",
+          "kind": "questions",
+          "sha256": "ca1d0a1db7632c021b69a421ed489592411360f69c913df8d5bce705010dbf3d",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q34",
+          "kind": "questions",
+          "sha256": "65cbd5d202ca543b1d10e2d63f81aa6bb1b7b7a2b7265b8765938d06585945d5",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q35",
+          "kind": "questions",
+          "sha256": "02ce488fc67f8aa54fe7abdc1bca1b73627f767445cd1bd7c9886c14bea8f901",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q36",
+          "kind": "questions",
+          "sha256": "af869e0a619c6b1a5c13e3c85cef08328dfcc14c9daf3f9962d11e796b2a283a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q37",
+          "kind": "questions",
+          "sha256": "e8e3b2e4b84341c7b724d332645d3b8a0712ea49cd2dccd1a611a93739fa6a60",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q38",
+          "kind": "questions",
+          "sha256": "9f3147f63d39cc7a6078094a53a44df595ed664962b5e4bf45e47ad1769040fc",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q39",
+          "kind": "questions",
+          "sha256": "2b2bdb315cfda806d838fa272de69bbcaea4f556aa5edcaf4bcc8bf6e3976baf",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q40",
+          "kind": "questions",
+          "sha256": "003754cc4bf9972d18aa69873fad06bfbb5fa2e1e34ec8d6e140ae10c624dc25",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q41",
+          "kind": "questions",
+          "sha256": "bac63e9c421cbfe747b81dde0b4e040bd6313894fbada042a9c9f0d285c5bc6b",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q42",
+          "kind": "questions",
+          "sha256": "03ba2b95d3a0cee8a0c153349a6cc1688b73923e9cadc510f811a08bd84a94ea",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q43",
+          "kind": "questions",
+          "sha256": "0a49090e4470a7e295b557259872a2ba89ee47bd343c8e55e818ae28b562551f",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q44",
+          "kind": "questions",
+          "sha256": "73d49fd8c038696479a0c8a9d19e3fb69810a03b0f8f31f505018f9f2a34a513",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q45",
+          "kind": "questions",
+          "sha256": "286c823bb31fd6d6434145102f405aa8c80568bdd6ce9aeca1384422df78b03f",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q46",
+          "kind": "questions",
+          "sha256": "3e0b48efc8fef98848380db4d0b09a93ca4db8fbbdad0f4a67f8574ad7028e31",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q47",
+          "kind": "questions",
+          "sha256": "89543b143a8a9c9dbbdee50ffbedf364c627f328d738e9a824cdded1e6f59a92",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q48",
+          "kind": "questions",
+          "sha256": "8276377b08e0c696f9c7b5c077fd8c72ec7d048a13863ee154a290f9e6cdef9a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q49",
+          "kind": "questions",
+          "sha256": "a65501315c4b201dcc15e3a0abefcb2eeffa0cddeb6cff980562ea15ad92b362",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-Q50",
+          "kind": "questions",
+          "sha256": "5bb8a9564519704037660f9bd359475a5db8013b8eca7a745abd3cb1aeee1188",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C01",
+          "kind": "questions",
+          "sha256": "0a5e0eecd0f384a60130d0df9668ec7979701befdeb58cd30dd59a52caa66d94",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C02",
+          "kind": "questions",
+          "sha256": "2f4a7fc06e64dd83072260cb57ff4ec9ff23b7fd7a8d9a6849a7e345bbb79dbf",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C03",
+          "kind": "questions",
+          "sha256": "702077cc48f96e2695fe655c1551e7a24adf2701ad44d9c7627cb6012dd6230f",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C04",
+          "kind": "questions",
+          "sha256": "8ea0a204d3ee20cb8b713abdcffb5289f1eaad11e5a12cb1630ec3afda8eda9f",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C05",
+          "kind": "questions",
+          "sha256": "c993e57d6b0ab7a0a02da4b191b6ca865492cb2a47a14192422e211902449ca4",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C06",
+          "kind": "questions",
+          "sha256": "2c2718278eb0cef257c010f82ed9fbf5371b3561efad138fb785be2cdff39353",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C07",
+          "kind": "questions",
+          "sha256": "aaf3f43760753f9852d5380e3df250b8f38f7355235f4fbf316ab4376910e07c",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C08",
+          "kind": "questions",
+          "sha256": "c7bf2b1238f3242a2a59589a4e768e31d6deb90cb2ee5e178636766a3aa32adc",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C09",
+          "kind": "questions",
+          "sha256": "e816c5ebca2af430181b98d2023f0c24f88a7c167df9f60af17fb5cbd4fb2901",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C10",
+          "kind": "questions",
+          "sha256": "0387b027b7c0c59bfa99f2b9da94506b4ca52b33476755169cf608ea09238a38",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C11",
+          "kind": "questions",
+          "sha256": "17073b86f135ef84e6ac0f1a703c755ba3d924d5b383a3bcde4e56228c15fc4b",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C12",
+          "kind": "questions",
+          "sha256": "b63bd7ee039f2d1e165f47ffc9a03ee941435be1993f6c6b7da37ff68a3f95b2",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C13",
+          "kind": "questions",
+          "sha256": "05cec2b7dc5f07a6eedd34b72cdc514b12299e64b19e456b55c19851ba3bd10d",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C14",
+          "kind": "questions",
+          "sha256": "0c2134cb9ae6ca25df8008f844abe955be0ae90b313e8f4b9f3f0c2654584160",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "U07-C15",
+          "kind": "questions",
+          "sha256": "b20be420bad17e8e48bd397d0cb3a442f76f5bed0b093a6f125fa687b2f4ace6",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/listening-01.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/listening-01.wav",
+          "script": "えんぴつを、さんぼんください。かみを、にまいください。ほんは、かいません。",
+          "sha256": "ad439e37834e44b9b8e73c873e664e4566867c2c545581501056ec9b3a5afc0c",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/listening-02.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/listening-02.wav",
+          "script": "りんごは、みっつです。パンは、ふたつです。パンをふたつください。",
+          "sha256": "6f83f54674d8e493226a2ea32f66ce4f57b65de58c771b0c94444f264b42bc0a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/listening-03.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/listening-03.wav",
+          "script": "このノートは、ひゃくえんです。ペンは、せんえんです。ノートをかいます。",
+          "sha256": "2ddf3cc729c2b979a2bd9abba9914c58e4f4c4649f06199f8eaeead27cde8a58",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/listening-04.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/listening-04.wav",
+          "script": "わたしは、ほんをにさつかいます。あねは、ほんをいっさつかいます。",
+          "sha256": "d734f53448ed0786ac70dea24e5a0b25fad2e6f5d923e1a42555fac507250377",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/listening-05.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/listening-05.wav",
+          "script": "かずをつたえます。いちばん。りんごをみっつください。にばん。りんごをひとつください。さんばん。りんごをよっつください。よんばん。りんごをふたつください。",
+          "sha256": "3b9af4fce6c20590309b7dd0f8d15ddc5fd4d01f8fa91b23fe6773aa9e0d7e3a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/listening-06.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/listening-06.wav",
+          "script": "いくらですか。",
+          "sha256": "9d43fb9df2d94bfbd94686d6e719d7f51fd4015b187d7ca936567ed98e212987",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-words-1.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-words-1.wav",
+          "script": "かう。うる。てんいん。きゃく。いくら。",
+          "sha256": "f7e910e581b81e126aabe6d2ff00037590e2f4a651f4fb91221f148658cf3add",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-words-2.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-words-2.wav",
+          "script": "いくつ。えん。ひゃく。せん。おつり。",
+          "sha256": "d7ce4c798d93f758d02760c838c200d2613faec1ff1c1b59fde3f2aab498e5de",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-words-3.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-words-3.wav",
+          "script": "さいふ。ふくろ。レジ。おかね。ひとつ。",
+          "sha256": "af42ffc380064e1e28d7bab2ac4ace1980b97da4f02a88efa66654cac1e9b539",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-words-4.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-words-4.wav",
+          "script": "ふたつ。みっつ。よっつ。いつつ。むっつ。",
+          "sha256": "8f5b7809781b184821259182d6a3702c13a50f7a65b85b6451f400286733ca3e",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-words-5.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-words-5.wav",
+          "script": "ななつ。やっつ。ここのつ。とお。ぜんぶ。",
+          "sha256": "d721dd8426c6407f3b812e2c235fbd4389a95b027650d73928285e63831872d6",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-kanji.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-kanji.wav",
+          "script": "いち。に。さん。よん。ご。ひとつ。いっぽん。よんまい。よんさつ。",
+          "sha256": "5c79950f65707a837e0d30a782495555e993cf7f92ed8bd16c78c3107de1f3da",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-G19.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-G19.wav",
+          "script": "りんごをみっつください。パンをふたつください。ひとつ、ふたつ、みっつ、よっつ、いつつ、むっつ、ななつ、やっつ、ここのつ、とお。",
+          "sha256": "c0ef910b1744dd7f3f48508dcec5b2f418ab8eacdb1cf2d3cea5285d5746fdee",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-G20.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-G20.wav",
+          "script": "えんぴつは、いっぽん、にほん、さんぼん、よんほん、ごほん、ろっぽん、ななほん、はっぽん、きゅうほん、じゅっぽん。かみは、いちまい、にまい、さんまい。ほんは、いっさつ、にさつ、さんさつ、はっさつ、じゅっさつ。",
+          "sha256": "e23687e2ea01ec4bcfc31604ca12ceebbde3fd3b7fe21240354b08c5645fcd97",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-G21.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-G21.wav",
+          "script": "いくらですか。ひゃくえんです。いくつですか。ふたつです。ぜんぶでひゃくえんです。",
+          "sha256": "6110549dd0c2e30969e95d8682991fbd1a59b58f129b7a79c446a5b91381178a",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "audio:/assets/audio/u07/U07-teach-context.wav",
+          "kind": "audio",
+          "src": "/assets/audio/u07/U07-teach-context.wav",
+          "script": "パンはふたつ、ねだんはひゃくえんです。もの、かず、ねだんをたしかめましょう。",
+          "sha256": "f980f6bd9d99cdc57b159625b27ee3305ac027267f64949177f8b123015890dd",
+          "status": "NOT_RUN",
+          "reviewer": null,
+          "reviewedAt": null,
+          "declaredResult": null,
+          "metadataValid": false,
+          "problems": [
+            "MISSING_RECORD"
+          ]
+        },
+        {
+          "id": "image:/assets/img/u07/apple-counts.webp",
+          "kind": "image",
+          "src": "/assets/img/u07/apple-counts.webp",
+          "sha256": "e77ceebe8eedd0047ddb9bb5612121858fb58cd662b1cab21d7fdd69620ccc68",
           "status": "NOT_RUN",
           "reviewer": null,
           "reviewedAt": null,

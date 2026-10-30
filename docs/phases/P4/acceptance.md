@@ -65,3 +65,20 @@ U06最終Firefox146.0.1四項PASS（2.2m），來源同Chromium，trace/report�
 預算規範docs/design/PERFORMANCE_BUDGET.md。build宣告0d440eb＋本批，dist/index.html SHA256 `d2a5927d6bd0dcda09dd3b0bb04d09c1fa8af8df98111b35296cc7ecef86b621`。其他引擎全套／實體平板／全部24課仍未完成，P4-04 IN_PROGRESS。
 
 P4-04完整Chromium回歸最終78PASS／1FAIL（23.1m），唯一失敗為上述未等待lazy setup的舊測試；針對修正後該case兩引擎各20次PASS，原輪其餘78項不受測試等待修改影響，涵蓋L0～10三種mic狀態、離線、冒險、所有六課、全備份、升級與SW等待。未把原輪寫成79/79。最終typecheck／lint PASS；code產品與已測build不變。CI0d440 build／Chromium成功，Firefox另發現U02報告匯出無download；已下載真trace確認點擊後尚有約44秒等待，不是時間不足，另開P5-04-R2並以延後anchor dispatch100ms在修正前重現無下載。
+
+
+## U07 購物數量與實際圖格顯示
+
+基準98bb24d9ea041c6d8dd1a8545dfb75ab82de89a7＋本批。Codex作者／工程驗證／畫面檢視；非原作者日語／音訊／真人視覺reviewer待指派。實際25新詞、5新漢字（一二三四五）、G19～21、10教學、4閱讀、6聽力、50practice＋15check候選、16真WAV4035808bytes、原創蘋果圖426556bytes。175詞350practice；9真pack、20圖片、110教材＋4世界音訊；75能力21候選完整54缺口、959筆人審0有效。作者稿／素材IN_REVIEW、V BLOCKED、I IN_PROGRESS。
+
+- 初輪七課契約／去重／題型／來源引用PASS；296單元／40檔PASS（29.96s）、型別lintbuild與500k budget PASS。
+- 初輪Chromium／Firefox各七項共14PASS（4.0m）：U07四主線真實作答與feedback refresh、正確U07家長報告與匯出、六真聽力播放、停止origin後冷啟教學／圖／音訊、hintUsed保存；另分課單課JS／503重開／遲到U06不覆寫U02。證據test-results/p4-u07、playwright-report/p4-u07。
+- 五寬度320／390／768／1024／1440無水平頁溢出，evidence/u07-context-*.png；實際檢視320與768提示畫面後發現圖格切半多露出下一列背景，未以測試通過掩蓋。
+- 像素讀取定位原圖水平白隙y575～598，採分界587；資產frameWindows上h587，下y587/h667。原PNG與WebP沒有編輯；共用ContextImage改依既有裁切框顯示，均勻舊圖仍200%。art.ts僅引入小型圖格資料，不拖入全部音訊腳本。首次lint拒絕同TSX同時匯出helper，已拆至imageFrame.ts，不停用規則。
+- 補後297單元／41檔PASS（30.51s）、型別lintjourney/build/500k PASS。兩引擎重驗圖格、帶圖對戰、離線與載入預算共10PASS（2.8m），來源e2e/p4-u07.spec.ts與p4-pack-loading.spec.ts，trace/report：test-results/p4-u07-frames、playwright-report/p4-u07-frames。
+- 四格實際單獨截圖evidence/u07-frame-{0..3}-{chromium,firefox}.png，Codex已逐格檢視Firefox四張：1／2／3／4顆完整蘋果、無鄰格滲入或額外果實，畫面清楚。不是替代真人視覺／適齡簽核。
+- 新版U06首次JS727670bytes／900000內，仍只載所選題庫；最大JS439136bytes／500000內。offline562素材38339332bytes，PWA617entries約38MiB。dist/index.html SHA256 `106854d936595e261703435525312f629df9036e0d499b60a86fd5792205be34`；version.json宣告98bb24d＋本批。
+
+舊U04均勻圖格相容重驗進行中，最後結果待追加。WebKit／實機／人工審聽／真視覺仍NOT_RUN或待CI，不標P4完成。另核對先修時發現U01 G02/G03與U06 G16的local grammar prerequisites與P0能力圖不同，U01 teach-G03也少了G02；這是後續P4-03-R1，尚未修正，不把本次機械coverage說成全規格通過。
+
+U07圖格最終相容：舊U04帶圖提示作答Chromium／Firefox兩項PASS（39.2s），test-results/p4-context-compat、playwright-report/p4-context-compat；原畫面與均勻格語意保留。驗證後僅補紀錄，未改產品。

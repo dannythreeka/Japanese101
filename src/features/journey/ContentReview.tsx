@@ -1,3 +1,4 @@
+import ContextImage from './ContextImage'
 import { useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
 import { AudioControl, Button, StatePanel } from '../../components/ui/journey-ui'
@@ -23,7 +24,7 @@ function Review({pack:u01}:{pack:UnitPack}){
     <Link className="journey-button journey-button--secondary" to={`/preview/adventure?unit=${u01.id}`}>回到冒險預覽</Link>
     <section className="journey-body journey-stack"><h2>逐題核對（{u01.questions.filter(q=>q.partition==='practice').length} 練習＋{u01.questions.filter(q=>q.partition==='check').length} 檢核候選）</h2><label>選擇題目 <select aria-label="選擇題目" value={questionId} onChange={e=>setQuestionId(e.target.value)} style={{minHeight:64,padding:12,maxWidth:'100%'}}>{u01.questions.map(q=><option key={q.id} value={q.id}>{q.id} · {q.typeId ?? q.partition.toUpperCase()} · {q.kind}</option>)}</select></label>
       <article className="journey-card journey-stack"><h3>{q.id} v{q.version} · {q.primarySkillId} · {q.itemFamilyId}</h3><p>{q.prompt}</p><p lang="ja">{q.promptJa}</p>{q.material && <p lang="ja" style={{whiteSpace:'pre-wrap'}}>{q.material}</p>}
-        {q.image && <div role="img" aria-label={q.image.alt.zh} style={{width:'min(100%,360px)',aspectRatio:'1',backgroundImage:`url(${import.meta.env.BASE_URL}${q.image.src.slice(1)})`,backgroundSize:'200% 200%',backgroundPosition:`${q.image.cell%2*100}% ${Math.floor(q.image.cell/2)*100}%`}}/>}
+        {q.image && <ContextImage image={q.image} lang="zh"/>}
         {q.audioSrc && <AudioControl key={q.id} src={q.audioSrc} labels={{play:'播放音訊',playing:'播放中',loading:'載入中',error:'播放失敗，請重試。',stop:'停止播放'}} onComplete={()=>{}}/>}
         {q.choices.map(c=><p key={c.id}>{q.answer.includes(c.id)?'正解':'干擾項'}：{c.text}{q.distractorReasons[c.id] && <small style={{display:'block'}}>{q.distractorReasons[c.id]}</small>}</p>)}
         <p>正解順序：{q.answer.map(id=>q.choices.find(c=>c.id===id)?.text).join(' → ')}</p><p>{q.explanation}</p><p lang="ja">{q.explanationJa}</p><p>先修：{q.teachingIds.join('、')}；難度 {q.difficulty}；提示政策 {q.hintPolicy}</p>

@@ -1,0 +1,4605 @@
+{
+  "id": "U07",
+  "version": "u07-1-draft",
+  "title": "購物數量：小鎮商店的訂單",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "vocabulary": [
+    {
+      "id": "U07-V01",
+      "text": "かう",
+      "reading": "かう",
+      "meaning": "買"
+    },
+    {
+      "id": "U07-V02",
+      "text": "うる",
+      "reading": "うる",
+      "meaning": "賣"
+    },
+    {
+      "id": "U07-V03",
+      "text": "てんいん",
+      "reading": "てんいん",
+      "meaning": "店員"
+    },
+    {
+      "id": "U07-V04",
+      "text": "きゃく",
+      "reading": "きゃく",
+      "meaning": "客人"
+    },
+    {
+      "id": "U07-V05",
+      "text": "いくら",
+      "reading": "いくら",
+      "meaning": "多少錢"
+    },
+    {
+      "id": "U07-V06",
+      "text": "いくつ",
+      "reading": "いくつ",
+      "meaning": "幾個"
+    },
+    {
+      "id": "U07-V07",
+      "text": "えん",
+      "reading": "えん",
+      "meaning": "日圓的單位；本課為故事標價"
+    },
+    {
+      "id": "U07-V08",
+      "text": "ひゃく",
+      "reading": "ひゃく",
+      "meaning": "一百"
+    },
+    {
+      "id": "U07-V09",
+      "text": "せん",
+      "reading": "せん",
+      "meaning": "一千"
+    },
+    {
+      "id": "U07-V10",
+      "text": "おつり",
+      "reading": "おつり",
+      "meaning": "找回的零錢"
+    },
+    {
+      "id": "U07-V11",
+      "text": "さいふ",
+      "reading": "さいふ",
+      "meaning": "錢包"
+    },
+    {
+      "id": "U07-V12",
+      "text": "ふくろ",
+      "reading": "ふくろ",
+      "meaning": "袋子"
+    },
+    {
+      "id": "U07-V13",
+      "text": "レジ",
+      "reading": "レジ",
+      "meaning": "收銀台／收銀機"
+    },
+    {
+      "id": "U07-V14",
+      "text": "おかね",
+      "reading": "おかね",
+      "meaning": "錢"
+    },
+    {
+      "id": "U07-V15",
+      "text": "ひとつ",
+      "reading": "ひとつ",
+      "meaning": "一個"
+    },
+    {
+      "id": "U07-V16",
+      "text": "ふたつ",
+      "reading": "ふたつ",
+      "meaning": "兩個"
+    },
+    {
+      "id": "U07-V17",
+      "text": "みっつ",
+      "reading": "みっつ",
+      "meaning": "三個"
+    },
+    {
+      "id": "U07-V18",
+      "text": "よっつ",
+      "reading": "よっつ",
+      "meaning": "四個"
+    },
+    {
+      "id": "U07-V19",
+      "text": "いつつ",
+      "reading": "いつつ",
+      "meaning": "五個"
+    },
+    {
+      "id": "U07-V20",
+      "text": "むっつ",
+      "reading": "むっつ",
+      "meaning": "六個"
+    },
+    {
+      "id": "U07-V21",
+      "text": "ななつ",
+      "reading": "ななつ",
+      "meaning": "七個"
+    },
+    {
+      "id": "U07-V22",
+      "text": "やっつ",
+      "reading": "やっつ",
+      "meaning": "八個"
+    },
+    {
+      "id": "U07-V23",
+      "text": "ここのつ",
+      "reading": "ここのつ",
+      "meaning": "九個"
+    },
+    {
+      "id": "U07-V24",
+      "text": "とお",
+      "reading": "とお",
+      "meaning": "十個"
+    },
+    {
+      "id": "U07-V25",
+      "text": "ぜんぶ",
+      "reading": "ぜんぶ",
+      "meaning": "全部"
+    }
+  ],
+  "kanji": [
+    {
+      "id": "U07-K01",
+      "text": "一",
+      "reading": "いち",
+      "meaning": "一"
+    },
+    {
+      "id": "U07-K02",
+      "text": "二",
+      "reading": "に",
+      "meaning": "二"
+    },
+    {
+      "id": "U07-K03",
+      "text": "三",
+      "reading": "さん",
+      "meaning": "三"
+    },
+    {
+      "id": "U07-K04",
+      "text": "四",
+      "reading": "よん",
+      "meaning": "四；本課單讀よん"
+    },
+    {
+      "id": "U07-K05",
+      "text": "五",
+      "reading": "ご",
+      "meaning": "五"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G19",
+      "title": "一般物品數量：ひとつ～とお",
+      "prerequisites": [
+        "K-HIRA",
+        "G18"
+      ]
+    },
+    {
+      "id": "G20",
+      "title": "本／枚／冊：依物品選助數詞",
+      "prerequisites": [
+        "K-HIRA",
+        "G19"
+      ]
+    },
+    {
+      "id": "G21",
+      "title": "いくら／いくつ：價格與數量",
+      "prerequisites": [
+        "K-HIRA",
+        "G20"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "U07-R01",
+      "text": "パンを 二つ ください。りんごを 三つ ください。みずは かいません。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U07-R02",
+      "text": "この ノートは 百円です。わたしは ノートを かいます。ともだちは ペンを かいます。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U07-R03",
+      "text": "わたしと あねは みせに います。わたしは えんぴつを 三本 かいます。あねは かみを 三枚 かいます。ほんは かいません。えんぴつと かみは、ぜんぶで 百円です。わたし：「ふくろを ください。」",
+      "skillId": "R-MID"
+    },
+    {
+      "id": "U07-R04",
+      "text": "きょうの セット\nパン 二つ：百円\nりんご 三つ：百円\nノート 一冊：百円\nえんぴつ 二本：百円",
+      "skillId": "R-INFO"
+    }
+  ],
+  "listening": [
+    {
+      "id": "U07-L01",
+      "script": "えんぴつを、さんぼんください。かみを、にまいください。ほんは、かいません。",
+      "audioSrc": "/assets/audio/u07/listening-01.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U07-L02",
+      "script": "りんごは、みっつです。パンは、ふたつです。パンをふたつください。",
+      "audioSrc": "/assets/audio/u07/listening-02.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U07-L03",
+      "script": "このノートは、ひゃくえんです。ペンは、せんえんです。ノートをかいます。",
+      "audioSrc": "/assets/audio/u07/listening-03.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U07-L04",
+      "script": "わたしは、ほんをにさつかいます。あねは、ほんをいっさつかいます。",
+      "audioSrc": "/assets/audio/u07/listening-04.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U07-L05",
+      "script": "かずをつたえます。いちばん。りんごをみっつください。にばん。りんごをひとつください。さんばん。りんごをよっつください。よんばん。りんごをふたつください。",
+      "audioSrc": "/assets/audio/u07/listening-05.wav",
+      "skillId": "L-EXPR",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U07-L06",
+      "script": "いくらですか。",
+      "audioSrc": "/assets/audio/u07/listening-06.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "U07-teach-words-1",
+      "title": "商店裡的人與動作",
+      "titleJa": "みせのひととすること",
+      "body": "かう：買\nうる：賣\nてんいん：店員\nきゃく：客人\nいくら：多少錢\n客人買かいます，店員賣うります。同一筆交易的動作要分清楚人物。いくら問價格，不是問人數。",
+      "bodyJa": "ことばとかずをたしかめましょう。",
+      "example": "かう",
+      "translation": "買",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "かう。うる。てんいん。きゃく。いくら。",
+      "audioSrc": "/assets/audio/u07/U07-teach-words-1.wav",
+      "vocabularyIds": [
+        "U07-V01",
+        "U07-V02",
+        "U07-V03",
+        "U07-V04",
+        "U07-V05"
+      ]
+    },
+    {
+      "id": "U07-teach-words-2",
+      "title": "價格與找錢",
+      "titleJa": "ねだんとおつり",
+      "body": "いくつ：幾個\nえん：日圓的單位；本課為故事標價\nひゃく：一百\nせん：一千\nおつり：找回的零錢\n百円＝ひゃくえん、千円＝せんえん。おつり是付款後找回的錢，與商品的售價不同。本課只讀虛構標價，不需要付款。",
+      "bodyJa": "ことばとかずをたしかめましょう。",
+      "example": "いくつ",
+      "translation": "幾個",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "いくつ。えん。ひゃく。せん。おつり。",
+      "audioSrc": "/assets/audio/u07/U07-teach-words-2.wav",
+      "vocabularyIds": [
+        "U07-V06",
+        "U07-V07",
+        "U07-V08",
+        "U07-V09",
+        "U07-V10"
+      ]
+    },
+    {
+      "id": "U07-teach-words-3",
+      "title": "買物用具與一個",
+      "titleJa": "かいものとひとつ",
+      "body": "さいふ：錢包\nふくろ：袋子\nレジ：收銀台／收銀機\nおかね：錢\nひとつ：一個\nさいふ裝錢，ふくろ裝買的東西；レジ是結帳處。ひとつ的數量是一個。",
+      "bodyJa": "ことばとかずをたしかめましょう。",
+      "example": "さいふ",
+      "translation": "錢包",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "さいふ。ふくろ。レジ。おかね。ひとつ。",
+      "audioSrc": "/assets/audio/u07/U07-teach-words-3.wav",
+      "vocabularyIds": [
+        "U07-V11",
+        "U07-V12",
+        "U07-V13",
+        "U07-V14",
+        "U07-V15"
+      ]
+    },
+    {
+      "id": "U07-teach-words-4",
+      "title": "兩個到六個",
+      "titleJa": "ふたつからむっつ",
+      "body": "ふたつ：兩個\nみっつ：三個\nよっつ：四個\nいつつ：五個\nむっつ：六個\nふたつ・みっつ・よっつ・いつつ・むっつ。みっつ、よっつ、むっつ有小っ，發音要短暫停住；不是單獨數字さん／よん／ろく後直接加つ。",
+      "bodyJa": "ことばとかずをたしかめましょう。",
+      "example": "ふたつ",
+      "translation": "兩個",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "ふたつ。みっつ。よっつ。いつつ。むっつ。",
+      "audioSrc": "/assets/audio/u07/U07-teach-words-4.wav",
+      "vocabularyIds": [
+        "U07-V16",
+        "U07-V17",
+        "U07-V18",
+        "U07-V19",
+        "U07-V20"
+      ]
+    },
+    {
+      "id": "U07-teach-words-5",
+      "title": "七個到十個與全部",
+      "titleJa": "ななつからとお",
+      "body": "ななつ：七個\nやっつ：八個\nここのつ：九個\nとお：十個\nぜんぶ：全部\nななつ・やっつ・ここのつ・とお。十個讀とお，後面不再加つ；ぜんぶ表示全部，不保證數量是十。",
+      "bodyJa": "ことばとかずをたしかめましょう。",
+      "example": "ななつ",
+      "translation": "七個",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "ななつ。やっつ。ここのつ。とお。ぜんぶ。",
+      "audioSrc": "/assets/audio/u07/U07-teach-words-5.wav",
+      "vocabularyIds": [
+        "U07-V21",
+        "U07-V22",
+        "U07-V23",
+        "U07-V24",
+        "U07-V25"
+      ]
+    },
+    {
+      "id": "U07-teach-kanji",
+      "title": "讀懂數量的一到五",
+      "titleJa": "いちからごのかんじ",
+      "body": "一＝いち、二＝に、三＝さん、四＝よん、五＝ご。\n單獨數字與助數詞的讀法可能不同：一（いち），一つ（ひとつ），一本（いっぽん）。不是每個字在任何詞裡都用同一讀音。\n本課四單讀よん；四枚＝よんまい、四冊＝よんさつ。",
+      "bodyJa": "一、二、三、四、五。かぞえかたで、よみかたがかわることがあります。",
+      "example": "一、二、三、四、五",
+      "translation": "一、二、三、四、五。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "audioScript": "いち。に。さん。よん。ご。ひとつ。いっぽん。よんまい。よんさつ。",
+      "audioSrc": "/assets/audio/u07/U07-teach-kanji.wav",
+      "kanjiIds": [
+        "U07-K01",
+        "U07-K02",
+        "U07-K03",
+        "U07-K04",
+        "U07-K05"
+      ],
+      "prerequisites": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ]
+    },
+    {
+      "id": "U07-teach-G19",
+      "title": "數一般物品",
+      "titleJa": "ひとつからとお",
+      "body": "一般物品可用ひとつ、ふたつ、みっつ、よっつ、いつつ、むっつ、ななつ、やっつ、ここのつ、とお。\nりんごを三つください＝請給我三個蘋果。數量三つ放在物品を之後、ください之前。\n不要把三つ讀成さんつ，也不要把十個說成じゅうつ。\n本課用つ數一般物品，不用它數人；一個人仍是ひとり。",
+      "bodyJa": "りんごをみっつください。ひとつ、ふたつ、みっつ、よっつ、いつつ、むっつ、ななつ、やっつ、ここのつ、とお。",
+      "example": "りんごを 三つ ください。",
+      "translation": "請給我三個蘋果。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G19"
+      ],
+      "audioScript": "りんごをみっつください。パンをふたつください。ひとつ、ふたつ、みっつ、よっつ、いつつ、むっつ、ななつ、やっつ、ここのつ、とお。",
+      "audioSrc": "/assets/audio/u07/U07-teach-G19.wav",
+      "grammarIds": [
+        "G19"
+      ],
+      "prerequisites": [
+        "U07-teach-kanji"
+      ]
+    },
+    {
+      "id": "U07-teach-G20",
+      "title": "依物品選數法",
+      "titleJa": "ほん・まい・さつ",
+      "body": "長條物品用本（ほん），例如鉛筆；薄平物品用枚（まい），例如紙；裝訂的書本用冊（さつ）。這些是本課句型的助數詞。\n鉛筆：一本いっぽん、二本にほん、三本さんぼん、四本よんほん、五本ごほん、六本ろっぽん、七本ななほん、八本はっぽん、九本きゅうほん、十本じゅっぽん。\n紙：一枚いちまい、二枚にまい、三枚さんまい。\n書：一冊いっさつ、二冊にさつ、三冊さんさつ、八冊はっさつ、十冊じゅっさつ。\n本課以列出的讀法練習；其他讀法如未經真人審核確認，不作為判錯的干擾選項。\n同樣是三：三本さんぼん、三枚さんまい、三冊さんさつ，依物品形狀／用途選數法。",
+      "bodyJa": "えんぴつはほん、かみはまい、ほんはさつでかぞえます。",
+      "example": "えんぴつ 三本、かみ 三枚、ほん 三冊",
+      "translation": "三支鉛筆、三張紙、三本書。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G20"
+      ],
+      "audioScript": "えんぴつは、いっぽん、にほん、さんぼん、よんほん、ごほん、ろっぽん、ななほん、はっぽん、きゅうほん、じゅっぽん。かみは、いちまい、にまい、さんまい。ほんは、いっさつ、にさつ、さんさつ、はっさつ、じゅっさつ。",
+      "audioSrc": "/assets/audio/u07/U07-teach-G20.wav",
+      "grammarIds": [
+        "G20"
+      ],
+      "prerequisites": [
+        "U07-teach-G19"
+      ]
+    },
+    {
+      "id": "U07-teach-G21",
+      "title": "分清楚幾個與多少錢",
+      "titleJa": "いくら・いくつ",
+      "body": "いくらですか問多少錢；いくつですか問一般物品幾個。\nこのパンは、いくらですか。百円です。價格是100圓。\nパンは、いくつですか。二つです。數量是兩個。\n「百円」不是一百個，「二つ」也不是兩圓。\n「ぜんぶで百円です」指全部的總價，不等於每一個各100圓；ぜんぶで作為本課資訊讀法說明。",
+      "bodyJa": "いくらですか、はねだんです。いくつですか、はかずです。",
+      "example": "パンは 二つ、ぜんぶで 百円です。",
+      "translation": "麵包兩個，全部共100圓。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G21"
+      ],
+      "audioScript": "いくらですか。ひゃくえんです。いくつですか。ふたつです。ぜんぶでひゃくえんです。",
+      "audioSrc": "/assets/audio/u07/U07-teach-G21.wav",
+      "grammarIds": [
+        "G21"
+      ],
+      "prerequisites": [
+        "U07-teach-G20"
+      ]
+    },
+    {
+      "id": "U07-teach-context",
+      "title": "核對訂單，不猜未寫的價格",
+      "titleJa": "ちゅうもんをたしかめる",
+      "body": "ねだん＝價格。訂單先核對物品，再看數量和使用的助數詞；不同物品的數量要分開配對。若已收到一部分，再核對還少多少。題目另有最低／最高數量時，先讀清楚範圍。價目表與數量表的欄位不可混讀。\n價目表寫「パン二つ：百円」時，是兩個合計100圓；不能說每個100圓。\n聽到請求後，依原話準備物品，不自行加東西。\nえん只是故事裡的日圓單位，遊戲金幣與真實金錢不換算，課內不要求購買。",
+      "bodyJa": "もの、かず、ねだんをわけて、ちゅうもんをたしかめましょう。",
+      "example": "パン：二つ／ねだん：百円",
+      "translation": "物品是麵包，數量兩個，標價100圓。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "R-SHORT",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-KEY",
+        "L-EXPR",
+        "L-RESP"
+      ],
+      "audioScript": "パンはふたつ、ねだんはひゃくえんです。もの、かず、ねだんをたしかめましょう。",
+      "audioSrc": "/assets/audio/u07/U07-teach-context.wav",
+      "prerequisites": [
+        "U07-teach-G21"
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "U07-Q01",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q01",
+      "itemFamilyId": "U07-F-read-one",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「一」を一、二、三と数えるとき、読み方はどれですか。",
+      "promptJa": "「一」を一、二、三と数えるとき、読み方はどれですか。",
+      "choices": [
+        {
+          "id": "U07-Q01-o1",
+          "text": "に"
+        },
+        {
+          "id": "U07-Q01-o2",
+          "text": "さん"
+        },
+        {
+          "id": "U07-Q01-o3",
+          "text": "ご"
+        },
+        {
+          "id": "U07-Q01-o0",
+          "text": "いち"
+        }
+      ],
+      "answer": [
+        "U07-Q01-o0"
+      ],
+      "explanation": "單獨數字一讀いち；不在這裡測量詞的讀音。",
+      "explanationJa": "すうじとかんじをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q01-o1": "二の読み方。",
+        "U07-Q01-o2": "三の読み方。",
+        "U07-Q01-o3": "五の読み方。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U07-Q02",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q02",
+      "itemFamilyId": "U07-F-read-two",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「二」の読み方はどれですか。",
+      "promptJa": "「二」の読み方はどれですか。",
+      "choices": [
+        {
+          "id": "U07-Q02-o2",
+          "text": "さん"
+        },
+        {
+          "id": "U07-Q02-o3",
+          "text": "よん"
+        },
+        {
+          "id": "U07-Q02-o0",
+          "text": "に"
+        },
+        {
+          "id": "U07-Q02-o1",
+          "text": "いち"
+        }
+      ],
+      "answer": [
+        "U07-Q02-o0"
+      ],
+      "explanation": "二讀に。",
+      "explanationJa": "すうじとかんじをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q02-o1": "這是一。",
+        "U07-Q02-o2": "這是三。",
+        "U07-Q02-o3": "這是四。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U07-Q03",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q03",
+      "itemFamilyId": "U07-F-read-four",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "本課の数字「四」の読み方はどれですか。",
+      "promptJa": "本課の数字「四」の読み方はどれですか。",
+      "choices": [
+        {
+          "id": "U07-Q03-o3",
+          "text": "さん"
+        },
+        {
+          "id": "U07-Q03-o0",
+          "text": "よん"
+        },
+        {
+          "id": "U07-Q03-o1",
+          "text": "ご"
+        },
+        {
+          "id": "U07-Q03-o2",
+          "text": "に"
+        }
+      ],
+      "answer": [
+        "U07-Q03-o0"
+      ],
+      "explanation": "本課單獨數四用よん；不拿其他正確讀法當錯項。",
+      "explanationJa": "すうじとかんじをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q03-o1": "這是五。",
+        "U07-Q03-o2": "這是二。",
+        "U07-Q03-o3": "這是三。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U07-Q04",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q04",
+      "itemFamilyId": "U07-F-read-five",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「五」の読み方はどれですか。",
+      "promptJa": "「五」の読み方はどれですか。",
+      "choices": [
+        {
+          "id": "U07-Q04-o0",
+          "text": "ご"
+        },
+        {
+          "id": "U07-Q04-o1",
+          "text": "に"
+        },
+        {
+          "id": "U07-Q04-o2",
+          "text": "いち"
+        },
+        {
+          "id": "U07-Q04-o3",
+          "text": "さん"
+        }
+      ],
+      "answer": [
+        "U07-Q04-o0"
+      ],
+      "explanation": "五讀ご。",
+      "explanationJa": "すうじとかんじをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q04-o1": "這是二。",
+        "U07-Q04-o2": "這是一。",
+        "U07-Q04-o3": "這是三。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T01"
+    },
+    {
+      "id": "U07-Q05",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q05",
+      "itemFamilyId": "U07-F-write-one",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「いち」の数字はどれですか。",
+      "promptJa": "「いち」の数字はどれですか。",
+      "choices": [
+        {
+          "id": "U07-Q05-o1",
+          "text": "二"
+        },
+        {
+          "id": "U07-Q05-o2",
+          "text": "三"
+        },
+        {
+          "id": "U07-Q05-o3",
+          "text": "五"
+        },
+        {
+          "id": "U07-Q05-o0",
+          "text": "一"
+        }
+      ],
+      "answer": [
+        "U07-Q05-o0"
+      ],
+      "explanation": "いち對應一。",
+      "explanationJa": "すうじとかんじをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q05-o1": "這是二。",
+        "U07-Q05-o2": "這是三。",
+        "U07-Q05-o3": "這是五。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U07-Q06",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q06",
+      "itemFamilyId": "U07-F-write-three",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「さん」の数字はどれですか。",
+      "promptJa": "「さん」の数字はどれですか。",
+      "choices": [
+        {
+          "id": "U07-Q06-o2",
+          "text": "四"
+        },
+        {
+          "id": "U07-Q06-o3",
+          "text": "二"
+        },
+        {
+          "id": "U07-Q06-o0",
+          "text": "三"
+        },
+        {
+          "id": "U07-Q06-o1",
+          "text": "一"
+        }
+      ],
+      "answer": [
+        "U07-Q06-o0"
+      ],
+      "explanation": "さん對應三。",
+      "explanationJa": "すうじとかんじをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q06-o1": "這是一。",
+        "U07-Q06-o2": "這是四。",
+        "U07-Q06-o3": "這是二。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U07-Q07",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q07",
+      "itemFamilyId": "U07-F-write-four",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「よん」の数字はどれですか。",
+      "promptJa": "「よん」の数字はどれですか。",
+      "choices": [
+        {
+          "id": "U07-Q07-o3",
+          "text": "一"
+        },
+        {
+          "id": "U07-Q07-o0",
+          "text": "四"
+        },
+        {
+          "id": "U07-Q07-o1",
+          "text": "五"
+        },
+        {
+          "id": "U07-Q07-o2",
+          "text": "二"
+        }
+      ],
+      "answer": [
+        "U07-Q07-o0"
+      ],
+      "explanation": "よん對應四。",
+      "explanationJa": "すうじとかんじをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q07-o1": "這是五。",
+        "U07-Q07-o2": "這是二。",
+        "U07-Q07-o3": "這是一。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U07-Q08",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q08",
+      "itemFamilyId": "U07-F-write-five",
+      "primarySkillId": "K-SCRIPT",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「ご」の数字はどれですか。",
+      "promptJa": "「ご」の数字はどれですか。",
+      "choices": [
+        {
+          "id": "U07-Q08-o0",
+          "text": "五"
+        },
+        {
+          "id": "U07-Q08-o1",
+          "text": "三"
+        },
+        {
+          "id": "U07-Q08-o2",
+          "text": "四"
+        },
+        {
+          "id": "U07-Q08-o3",
+          "text": "二"
+        }
+      ],
+      "answer": [
+        "U07-Q08-o0"
+      ],
+      "explanation": "ご對應五。",
+      "explanationJa": "すうじとかんじをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q08-o1": "這是三。",
+        "U07-Q08-o2": "這是四。",
+        "U07-Q08-o3": "這是二。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T02"
+    },
+    {
+      "id": "U07-Q09",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q09",
+      "itemFamilyId": "U07-F-shop-worker",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "在商店工作，負責賣東西的人是誰？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q09-o1",
+          "text": "きゃく"
+        },
+        {
+          "id": "U07-Q09-o2",
+          "text": "さいふ"
+        },
+        {
+          "id": "U07-Q09-o3",
+          "text": "ふくろ"
+        },
+        {
+          "id": "U07-Q09-o0",
+          "text": "てんいん"
+        }
+      ],
+      "answer": [
+        "U07-Q09-o0"
+      ],
+      "explanation": "店員是てんいん。",
+      "explanationJa": "ばめんとことばをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q09-o1": "客人是來買東西的人。",
+        "U07-Q09-o2": "這是錢包，不是人。",
+        "U07-Q09-o3": "這是袋子，不是人。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U07-Q10",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q10",
+      "itemFamilyId": "U07-F-customer-action",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "客人付故事中的標價，把商品買下來，這個動作是什麼？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q10-o2",
+          "text": "よむ"
+        },
+        {
+          "id": "U07-Q10-o3",
+          "text": "ねる"
+        },
+        {
+          "id": "U07-Q10-o0",
+          "text": "かう"
+        },
+        {
+          "id": "U07-Q10-o1",
+          "text": "うる"
+        }
+      ],
+      "answer": [
+        "U07-Q10-o0"
+      ],
+      "explanation": "客人買商品用かう。",
+      "explanationJa": "ばめんとことばをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q10-o1": "這是賣。",
+        "U07-Q10-o2": "這是讀。",
+        "U07-Q10-o3": "這是睡。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U07-Q11",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q11",
+      "itemFamilyId": "U07-F-change-not-price",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "付款後，店員找回給客人的錢叫什麼？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q11-o3",
+          "text": "ふくろ"
+        },
+        {
+          "id": "U07-Q11-o0",
+          "text": "おつり"
+        },
+        {
+          "id": "U07-Q11-o1",
+          "text": "ねだん"
+        },
+        {
+          "id": "U07-Q11-o2",
+          "text": "レジ"
+        }
+      ],
+      "answer": [
+        "U07-Q11-o0"
+      ],
+      "explanation": "おつり是找回的零錢。",
+      "explanationJa": "ばめんとことばをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q11-o1": "這是價格，不是找零。",
+        "U07-Q11-o2": "這是收銀處。",
+        "U07-Q11-o3": "這是袋子。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U07-Q12",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q12",
+      "itemFamilyId": "U07-F-wallet-object",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "要把故事裡的錢收好，應放進哪個物品？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q12-o0",
+          "text": "さいふ"
+        },
+        {
+          "id": "U07-Q12-o1",
+          "text": "えんぴつ"
+        },
+        {
+          "id": "U07-Q12-o2",
+          "text": "りんご"
+        },
+        {
+          "id": "U07-Q12-o3",
+          "text": "おにぎり"
+        }
+      ],
+      "answer": [
+        "U07-Q12-o0"
+      ],
+      "explanation": "さいふ是錢包。",
+      "explanationJa": "ばめんとことばをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q12-o1": "鉛筆不是裝錢用具。",
+        "U07-Q12-o2": "蘋果是食物。",
+        "U07-Q12-o3": "飯糰是食物。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U07-Q13",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q13",
+      "itemFamilyId": "U07-F-thousand-value",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「せん」表示哪個數？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q13-o1",
+          "text": "100"
+        },
+        {
+          "id": "U07-Q13-o2",
+          "text": "10"
+        },
+        {
+          "id": "U07-Q13-o3",
+          "text": "1"
+        },
+        {
+          "id": "U07-Q13-o0",
+          "text": "1000"
+        }
+      ],
+      "answer": [
+        "U07-Q13-o0"
+      ],
+      "explanation": "せん是一千。",
+      "explanationJa": "ばめんとことばをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q13-o1": "這是ひゃく。",
+        "U07-Q13-o2": "這是じゅう。",
+        "U07-Q13-o3": "這是いち。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U07-Q14",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q14",
+      "itemFamilyId": "U07-F-all-not-ten",
+      "primarySkillId": "V-CONTEXT",
+      "skillIds": [
+        "V-CONTEXT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「ぜんぶ」最重要的意思是什麼？",
+      "promptJa": "ことばのいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q14-o2",
+          "text": "一定是一百圓"
+        },
+        {
+          "id": "U07-Q14-o3",
+          "text": "一定只要一個"
+        },
+        {
+          "id": "U07-Q14-o0",
+          "text": "全部"
+        },
+        {
+          "id": "U07-Q14-o1",
+          "text": "一定是十個"
+        }
+      ],
+      "answer": [
+        "U07-Q14-o0"
+      ],
+      "explanation": "ぜんぶ指所談的全部，要看實際名單或數量。",
+      "explanationJa": "ばめんとことばをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q14-o1": "全部不限定十個。",
+        "U07-Q14-o2": "全部不限定價格。",
+        "U07-Q14-o3": "全部不限定一個。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 1,
+      "typeId": "T03"
+    },
+    {
+      "id": "U07-Q15",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q15",
+      "itemFamilyId": "U07-F-paraphrase-buy",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「パンを かいます。」與哪句意思相同？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q15-o3",
+          "text": "麵包不存在。"
+        },
+        {
+          "id": "U07-Q15-o0",
+          "text": "買麵包。"
+        },
+        {
+          "id": "U07-Q15-o1",
+          "text": "賣麵包。"
+        },
+        {
+          "id": "U07-Q15-o2",
+          "text": "讀麵包。"
+        }
+      ],
+      "answer": [
+        "U07-Q15-o0"
+      ],
+      "explanation": "かいます是かう的禮貌形。",
+      "explanationJa": "かずとねだんをわけましょう。",
+      "distractorReasons": {
+        "U07-Q15-o1": "うります才表示賣。",
+        "U07-Q15-o2": "動作與かう不符。",
+        "U07-Q15-o3": "不是存在否定句。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U07-Q16",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q16",
+      "itemFamilyId": "U07-F-paraphrase-three",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「りんごを 三つ ください。」在請求什麼？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q16-o0",
+          "text": "三個蘋果。"
+        },
+        {
+          "id": "U07-Q16-o1",
+          "text": "三圓的蘋果。"
+        },
+        {
+          "id": "U07-Q16-o2",
+          "text": "三本書。"
+        },
+        {
+          "id": "U07-Q16-o3",
+          "text": "一個蘋果。"
+        }
+      ],
+      "answer": [
+        "U07-Q16-o0"
+      ],
+      "explanation": "三つ指三個物品，對象是蘋果。",
+      "explanationJa": "かずとねだんをわけましょう。",
+      "distractorReasons": {
+        "U07-Q16-o1": "三つ是數量，不是價格。",
+        "U07-Q16-o2": "物品和助數詞都不同。",
+        "U07-Q16-o3": "數量不是一。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U07-Q17",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q17",
+      "itemFamilyId": "U07-F-paraphrase-total",
+      "primarySkillId": "V-PARA",
+      "skillIds": [
+        "V-PARA"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「ぜんぶで 百円です。」與哪句意思相同？",
+      "promptJa": "おなじいみをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q17-o1",
+          "text": "每一個都是100圓。"
+        },
+        {
+          "id": "U07-Q17-o2",
+          "text": "總共有100個。"
+        },
+        {
+          "id": "U07-Q17-o3",
+          "text": "要找回100個。"
+        },
+        {
+          "id": "U07-Q17-o0",
+          "text": "全部合計100圓。"
+        }
+      ],
+      "answer": [
+        "U07-Q17-o0"
+      ],
+      "explanation": "ぜんぶで把標價範圍限定為全部合計。",
+      "explanationJa": "かずとねだんをわけましょう。",
+      "distractorReasons": {
+        "U07-Q17-o1": "全部總價不等於每個各100圓。",
+        "U07-Q17-o2": "円是價格單位。",
+        "U07-Q17-o3": "沒有說找零或個數。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T04"
+    },
+    {
+      "id": "U07-Q18",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q18",
+      "itemFamilyId": "U07-F-three-objects",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "蘋果三個，三つ應讀什麼？",
+      "promptJa": "ぶんとかぞえかたをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-Q18-o2",
+          "text": "さんにん"
+        },
+        {
+          "id": "U07-Q18-o3",
+          "text": "さんじ"
+        },
+        {
+          "id": "U07-Q18-o0",
+          "text": "みっつ"
+        },
+        {
+          "id": "U07-Q18-o1",
+          "text": "さんつ"
+        }
+      ],
+      "answer": [
+        "U07-Q18-o0"
+      ],
+      "explanation": "三つ讀みっつ。",
+      "explanationJa": "かぞえるものとしつもんをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q18-o1": "一般數量三個讀みっつ。",
+        "U07-Q18-o2": "這是三人。",
+        "U07-Q18-o3": "這是三點。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-Q19",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q19",
+      "itemFamilyId": "U07-F-ten-objects",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "一般物品十個，哪個讀法正確？",
+      "promptJa": "ぶんとかぞえかたをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-Q19-o3",
+          "text": "じゅうにん"
+        },
+        {
+          "id": "U07-Q19-o0",
+          "text": "とお"
+        },
+        {
+          "id": "U07-Q19-o1",
+          "text": "じゅうつ"
+        },
+        {
+          "id": "U07-Q19-o2",
+          "text": "とおつ"
+        }
+      ],
+      "answer": [
+        "U07-Q19-o0"
+      ],
+      "explanation": "十個的數法是とお。",
+      "explanationJa": "かぞえるものとしつもんをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q19-o1": "十個不是把じゅう直接加つ。",
+        "U07-Q19-o2": "とお後面不加つ。",
+        "U07-Q19-o3": "這是十人。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-Q20",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q20",
+      "itemFamilyId": "U07-F-paper-counter",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "「かみを 三（　）ください。」三張紙使用哪個助數詞？",
+      "promptJa": "ぶんとかぞえかたをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-Q20-o0",
+          "text": "枚"
+        },
+        {
+          "id": "U07-Q20-o1",
+          "text": "本"
+        },
+        {
+          "id": "U07-Q20-o2",
+          "text": "冊"
+        },
+        {
+          "id": "U07-Q20-o3",
+          "text": "人"
+        }
+      ],
+      "answer": [
+        "U07-Q20-o0"
+      ],
+      "explanation": "薄平的紙用枚。",
+      "explanationJa": "かぞえるものとしつもんをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q20-o1": "本用於鉛筆等長條物品。",
+        "U07-Q20-o2": "冊用於裝訂書本。",
+        "U07-Q20-o3": "人用於人數。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-Q21",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q21",
+      "itemFamilyId": "U07-F-pencil-sound",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "鉛筆三支，三本在本課讀什麼？",
+      "promptJa": "ぶんとかぞえかたをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-Q21-o1",
+          "text": "さんほん"
+        },
+        {
+          "id": "U07-Q21-o2",
+          "text": "さんまい"
+        },
+        {
+          "id": "U07-Q21-o3",
+          "text": "さんさつ"
+        },
+        {
+          "id": "U07-Q21-o0",
+          "text": "さんぼん"
+        }
+      ],
+      "answer": [
+        "U07-Q21-o0"
+      ],
+      "explanation": "三本發生音變，讀さんぼん。",
+      "explanationJa": "かぞえるものとしつもんをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q21-o1": "三本在本課的讀音是さんぼん。",
+        "U07-Q21-o2": "這是三枚。",
+        "U07-Q21-o3": "這是三冊。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-Q22",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q22",
+      "itemFamilyId": "U07-F-ask-price",
+      "primarySkillId": "G21",
+      "skillIds": [
+        "G21"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "想問商品多少錢，應問哪句？",
+      "promptJa": "ぶんとかぞえかたをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-Q22-o2",
+          "text": "なんにんですか。"
+        },
+        {
+          "id": "U07-Q22-o3",
+          "text": "どこですか。"
+        },
+        {
+          "id": "U07-Q22-o0",
+          "text": "いくらですか。"
+        },
+        {
+          "id": "U07-Q22-o1",
+          "text": "いくつですか。"
+        }
+      ],
+      "answer": [
+        "U07-Q22-o0"
+      ],
+      "explanation": "詢問價格用いくら。",
+      "explanationJa": "かぞえるものとしつもんをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q22-o1": "這問一般物品數量。",
+        "U07-Q22-o2": "這問人數。",
+        "U07-Q22-o3": "這問位置。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-Q23",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q23",
+      "itemFamilyId": "U07-F-order-fruit-quantity",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「請給我兩個蘋果」。",
+      "promptJa": "ことばをならべましょう。",
+      "choices": [
+        {
+          "id": "U07-Q23-o2",
+          "text": "ください。"
+        },
+        {
+          "id": "U07-Q23-o0",
+          "text": "りんごを"
+        },
+        {
+          "id": "U07-Q23-o1",
+          "text": "二つ"
+        }
+      ],
+      "answer": [
+        "U07-Q23-o0",
+        "U07-Q23-o1",
+        "U07-Q23-o2"
+      ],
+      "explanation": "先物品を，再數量二つ，最後ください。",
+      "explanationJa": "もの、かず、しつもんのじゅんをたしかめましょう。",
+      "distractorReasons": {},
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U07-Q24",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q24",
+      "itemFamilyId": "U07-F-order-pencil-counter",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「請給我三支鉛筆」。",
+      "promptJa": "ことばをならべましょう。",
+      "choices": [
+        {
+          "id": "U07-Q24-o0",
+          "text": "えんぴつを"
+        },
+        {
+          "id": "U07-Q24-o1",
+          "text": "三本"
+        },
+        {
+          "id": "U07-Q24-o2",
+          "text": "ください。"
+        }
+      ],
+      "answer": [
+        "U07-Q24-o0",
+        "U07-Q24-o1",
+        "U07-Q24-o2"
+      ],
+      "explanation": "えんぴつ用本，三本放在ください之前。",
+      "explanationJa": "もの、かず、しつもんのじゅんをたしかめましょう。",
+      "distractorReasons": {},
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U07-Q25",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q25",
+      "itemFamilyId": "U07-F-order-price-question",
+      "primarySkillId": "G21",
+      "skillIds": [
+        "G21"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "order",
+      "prompt": "排出「這個麵包多少錢？」。",
+      "promptJa": "ことばをならべましょう。",
+      "choices": [
+        {
+          "id": "U07-Q25-o1",
+          "text": "いくら"
+        },
+        {
+          "id": "U07-Q25-o2",
+          "text": "ですか。"
+        },
+        {
+          "id": "U07-Q25-o0",
+          "text": "この パンは"
+        }
+      ],
+      "answer": [
+        "U07-Q25-o0",
+        "U07-Q25-o1",
+        "U07-Q25-o2"
+      ],
+      "explanation": "以このパンは指定商品，用いくら詢問價格。",
+      "explanationJa": "もの、かず、しつもんのじゅんをたしかめましょう。",
+      "distractorReasons": {},
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T06"
+    },
+    {
+      "id": "U07-Q26",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q26",
+      "itemFamilyId": "U07-F-context-count-answer",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "客人問「パンは いくつですか」。桌上恰有四個麵包，選完整回答。",
+      "promptJa": "ばめんにあうぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q26-o2",
+          "text": "百円です。"
+        },
+        {
+          "id": "U07-Q26-o3",
+          "text": "四人です。"
+        },
+        {
+          "id": "U07-Q26-o0",
+          "text": "四つです。"
+        },
+        {
+          "id": "U07-Q26-o1",
+          "text": "四時です。"
+        }
+      ],
+      "answer": [
+        "U07-Q26-o0"
+      ],
+      "explanation": "いくつ問數量，一般物品四個用四つ。",
+      "explanationJa": "ものとかずとねだんをわけましょう。",
+      "distractorReasons": {
+        "U07-Q26-o1": "這是時間。",
+        "U07-Q26-o2": "這是價格。",
+        "U07-Q26-o3": "這是人數。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U07-Q27",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q27",
+      "itemFamilyId": "U07-F-context-book-counter",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "訂單是三本裝訂的書。「ほんを 三（　）ください。」",
+      "promptJa": "ばめんにあうぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q27-o3",
+          "text": "人"
+        },
+        {
+          "id": "U07-Q27-o0",
+          "text": "冊"
+        },
+        {
+          "id": "U07-Q27-o1",
+          "text": "枚"
+        },
+        {
+          "id": "U07-Q27-o2",
+          "text": "本"
+        }
+      ],
+      "answer": [
+        "U07-Q27-o0"
+      ],
+      "explanation": "書本這個名詞ほん，用冊來計數。",
+      "explanationJa": "ものとかずとねだんをわけましょう。",
+      "distractorReasons": {
+        "U07-Q27-o1": "枚用於薄平物品，不是裝訂書本。",
+        "U07-Q27-o2": "助數詞本在本課數鉛筆等長條物品。",
+        "U07-Q27-o3": "人只數人。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U07-Q28",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q28",
+      "itemFamilyId": "U07-F-context-price-vs-count",
+      "primarySkillId": "G21",
+      "skillIds": [
+        "G21"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "choice",
+      "prompt": "標示「パン二つ：百円」。對方問いくらですか，哪個回答符合？",
+      "promptJa": "ばめんにあうぶんをえらびましょう。",
+      "choices": [
+        {
+          "id": "U07-Q28-o0",
+          "text": "二つで 百円です。"
+        },
+        {
+          "id": "U07-Q28-o1",
+          "text": "二つです。"
+        },
+        {
+          "id": "U07-Q28-o2",
+          "text": "一つ 百円です。"
+        },
+        {
+          "id": "U07-Q28-o3",
+          "text": "百個です。"
+        }
+      ],
+      "answer": [
+        "U07-Q28-o0"
+      ],
+      "explanation": "價目表是兩個合計100圓，不是單個100圓。",
+      "explanationJa": "ものとかずとねだんをわけましょう。",
+      "distractorReasons": {
+        "U07-Q28-o1": "只回答數量，沒有價格。",
+        "U07-Q28-o2": "把總價誤當成單個價格。",
+        "U07-Q28-o3": "將價格改成數量。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T07"
+    },
+    {
+      "id": "U07-Q29",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q29",
+      "itemFamilyId": "U07-F-order-fruit-count",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "訂單要幾個蘋果？",
+      "promptJa": "ぶんやひょうをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q29-o1",
+          "text": "二つ"
+        },
+        {
+          "id": "U07-Q29-o2",
+          "text": "一つ"
+        },
+        {
+          "id": "U07-Q29-o3",
+          "text": "十個"
+        },
+        {
+          "id": "U07-Q29-o0",
+          "text": "三つ"
+        }
+      ],
+      "answer": [
+        "U07-Q29-o0"
+      ],
+      "explanation": "りんごを三つください是依據。",
+      "explanationJa": "ひととものとかずをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q29-o1": "二つ是麵包數量。",
+        "U07-Q29-o2": "與三つ不同。",
+        "U07-Q29-o3": "與三つ不同。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U07-R01",
+      "material": "パンを 二つ ください。りんごを 三つ ください。みずは かいません。"
+    },
+    {
+      "id": "U07-Q30",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q30",
+      "itemFamilyId": "U07-F-customer-object",
+      "primarySkillId": "R-SHORT",
+      "skillIds": [
+        "R-SHORT"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "短文中，朋友要買什麼？",
+      "promptJa": "ぶんやひょうをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q30-o2",
+          "text": "パン"
+        },
+        {
+          "id": "U07-Q30-o3",
+          "text": "りんご"
+        },
+        {
+          "id": "U07-Q30-o0",
+          "text": "ペン"
+        },
+        {
+          "id": "U07-Q30-o1",
+          "text": "ノート"
+        }
+      ],
+      "answer": [
+        "U07-Q30-o0"
+      ],
+      "explanation": "ともだちはペンをかいます。",
+      "explanationJa": "ひととものとかずをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q30-o1": "筆記本是自己買。",
+        "U07-Q30-o2": "短文沒有朋友買麵包。",
+        "U07-Q30-o3": "短文沒有朋友買蘋果。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T08",
+      "materialId": "U07-R02",
+      "material": "この ノートは 百円です。わたしは ノートを かいます。ともだちは ペンを かいます。"
+    },
+    {
+      "id": "U07-Q31",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q31",
+      "itemFamilyId": "U07-F-owner-and-counter",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "哪一組是說話者要買的物品與數量？",
+      "promptJa": "ぶんやひょうをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q31-o3",
+          "text": "えんぴつ 二本"
+        },
+        {
+          "id": "U07-Q31-o0",
+          "text": "えんぴつ 三本"
+        },
+        {
+          "id": "U07-Q31-o1",
+          "text": "かみ 三枚"
+        },
+        {
+          "id": "U07-Q31-o2",
+          "text": "ほん 三冊"
+        }
+      ],
+      "answer": [
+        "U07-Q31-o0"
+      ],
+      "explanation": "依わたしは與三本核對人物和數量。",
+      "explanationJa": "ひととものとかずをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q31-o1": "這是姊姊要買的。",
+        "U07-Q31-o2": "原文不買書。",
+        "U07-Q31-o3": "數量不是二。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U07-R03",
+      "material": "わたしと あねは みせに います。わたしは えんぴつを 三本 かいます。あねは かみを 三枚 かいます。ほんは かいません。えんぴつと かみは、ぜんぶで 百円です。わたし：「ふくろを ください。」"
+    },
+    {
+      "id": "U07-Q32",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q32",
+      "itemFamilyId": "U07-F-total-scope",
+      "primarySkillId": "R-MID",
+      "skillIds": [
+        "R-MID"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "百円在這段故事指什麼？",
+      "promptJa": "ぶんやひょうをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q32-o0",
+          "text": "鉛筆與紙全部合計的價格。"
+        },
+        {
+          "id": "U07-Q32-o1",
+          "text": "一支鉛筆的價格。"
+        },
+        {
+          "id": "U07-Q32-o2",
+          "text": "三本書的價格。"
+        },
+        {
+          "id": "U07-Q32-o3",
+          "text": "每張紙各100圓。"
+        }
+      ],
+      "answer": [
+        "U07-Q32-o0"
+      ],
+      "explanation": "えんぴつとかみは、ぜんぶで百円です。",
+      "explanationJa": "ひととものとかずをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q32-o1": "原文是全部總價。",
+        "U07-Q32-o2": "原文沒買書。",
+        "U07-Q32-o3": "原文沒有單張價格。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T09",
+      "materialId": "U07-R03",
+      "material": "わたしと あねは みせに います。わたしは えんぴつを 三本 かいます。あねは かみを 三枚 かいます。ほんは かいません。えんぴつと かみは、ぜんぶで 百円です。わたし：「ふくろを ください。」"
+    },
+    {
+      "id": "U07-Q33",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q33",
+      "itemFamilyId": "U07-F-set-three",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "哪一個100圓組合包含三個物品？",
+      "promptJa": "ぶんやひょうをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q33-o1",
+          "text": "パン 二つ"
+        },
+        {
+          "id": "U07-Q33-o2",
+          "text": "ノート 一冊"
+        },
+        {
+          "id": "U07-Q33-o3",
+          "text": "えんぴつ 二本"
+        },
+        {
+          "id": "U07-Q33-o0",
+          "text": "りんご 三つ"
+        }
+      ],
+      "answer": [
+        "U07-Q33-o0"
+      ],
+      "explanation": "表格逐列顯示蘋果三個是100圓。",
+      "explanationJa": "ひととものとかずをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q33-o1": "只有兩個。",
+        "U07-Q33-o2": "只有一本。",
+        "U07-Q33-o3": "只有兩支。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U07-R04",
+      "material": "きょうの セット\nパン 二つ：百円\nりんご 三つ：百円\nノート 一冊：百円\nえんぴつ 二本：百円"
+    },
+    {
+      "id": "U07-Q34",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q34",
+      "itemFamilyId": "U07-F-set-book",
+      "primarySkillId": "R-INFO",
+      "skillIds": [
+        "R-INFO"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "reading",
+      "prompt": "買一冊筆記本，這份表格的價格是多少？",
+      "promptJa": "ぶんやひょうをよんで、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q34-o2",
+          "text": "二円"
+        },
+        {
+          "id": "U07-Q34-o3",
+          "text": "三円"
+        },
+        {
+          "id": "U07-Q34-o0",
+          "text": "百円"
+        },
+        {
+          "id": "U07-Q34-o1",
+          "text": "千円"
+        }
+      ],
+      "answer": [
+        "U07-Q34-o0"
+      ],
+      "explanation": "ノート一冊那一列標百円。",
+      "explanationJa": "ひととものとかずをたしかめましょう。",
+      "distractorReasons": {
+        "U07-Q34-o1": "表格不是千円。",
+        "U07-Q34-o2": "把其他列的數量當價格。",
+        "U07-Q34-o3": "把蘋果數量當價格。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T10",
+      "materialId": "U07-R04",
+      "material": "きょうの セット\nパン 二つ：百円\nりんご 三つ：百円\nノート 一冊：百円\nえんぴつ 二本：百円"
+    },
+    {
+      "id": "U07-Q35",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q35",
+      "itemFamilyId": "U07-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽訂單，應準備幾支鉛筆？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q35-o3",
+          "text": "三冊"
+        },
+        {
+          "id": "U07-Q35-o0",
+          "text": "三本"
+        },
+        {
+          "id": "U07-Q35-o1",
+          "text": "二本"
+        },
+        {
+          "id": "U07-Q35-o2",
+          "text": "一本"
+        }
+      ],
+      "answer": [
+        "U07-Q35-o0"
+      ],
+      "explanation": "えんぴつをさんぼんください。",
+      "explanationJa": "だれがなにをいくつたのんだか、たしかめましょう。",
+      "distractorReasons": {
+        "U07-Q35-o1": "二是紙的數量。",
+        "U07-Q35-o2": "不是訂單的數量。",
+        "U07-Q35-o3": "冊是書本數法。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U07-L01",
+      "audioSrc": "/assets/audio/u07/listening-01.wav"
+    },
+    {
+      "id": "U07-Q36",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q36",
+      "itemFamilyId": "U07-F-listening-01",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽訂單，應準備什麼紙張數量？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q36-o0",
+          "text": "二枚"
+        },
+        {
+          "id": "U07-Q36-o1",
+          "text": "三枚"
+        },
+        {
+          "id": "U07-Q36-o2",
+          "text": "二冊"
+        },
+        {
+          "id": "U07-Q36-o3",
+          "text": "一本"
+        }
+      ],
+      "answer": [
+        "U07-Q36-o0"
+      ],
+      "explanation": "かみをにまいください。",
+      "explanationJa": "だれがなにをいくつたのんだか、たしかめましょう。",
+      "distractorReasons": {
+        "U07-Q36-o1": "三是鉛筆數量。",
+        "U07-Q36-o2": "紙不用冊。",
+        "U07-Q36-o3": "紙不用本。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U07-L01",
+      "audioSrc": "/assets/audio/u07/listening-01.wav"
+    },
+    {
+      "id": "U07-Q37",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q37",
+      "itemFamilyId": "U07-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，人物最後請求哪個物品？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q37-o1",
+          "text": "りんご"
+        },
+        {
+          "id": "U07-Q37-o2",
+          "text": "かみ"
+        },
+        {
+          "id": "U07-Q37-o3",
+          "text": "ノート"
+        },
+        {
+          "id": "U07-Q37-o0",
+          "text": "パン"
+        }
+      ],
+      "answer": [
+        "U07-Q37-o0"
+      ],
+      "explanation": "パンをふたつください是最後請求。",
+      "explanationJa": "だれがなにをいくつたのんだか、たしかめましょう。",
+      "distractorReasons": {
+        "U07-Q37-o1": "有提蘋果數量，最後請求的是麵包。",
+        "U07-Q37-o2": "沒請求紙。",
+        "U07-Q37-o3": "沒請求筆記本。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U07-L02",
+      "audioSrc": "/assets/audio/u07/listening-02.wav"
+    },
+    {
+      "id": "U07-Q38",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q38",
+      "itemFamilyId": "U07-F-listening-02",
+      "primarySkillId": "L-TASK",
+      "skillIds": [
+        "L-TASK"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，最後請求的麵包是幾個？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q38-o2",
+          "text": "一つ"
+        },
+        {
+          "id": "U07-Q38-o3",
+          "text": "十個"
+        },
+        {
+          "id": "U07-Q38-o0",
+          "text": "二つ"
+        },
+        {
+          "id": "U07-Q38-o1",
+          "text": "三つ"
+        }
+      ],
+      "answer": [
+        "U07-Q38-o0"
+      ],
+      "explanation": "パンをふたつください。",
+      "explanationJa": "だれがなにをいくつたのんだか、たしかめましょう。",
+      "distractorReasons": {
+        "U07-Q38-o1": "三個是蘋果。",
+        "U07-Q38-o2": "不是請求數量。",
+        "U07-Q38-o3": "不是請求數量。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T11",
+      "audioId": "U07-L02",
+      "audioSrc": "/assets/audio/u07/listening-02.wav"
+    },
+    {
+      "id": "U07-Q39",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q39",
+      "itemFamilyId": "U07-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，筆記本的標價是多少？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q39-o3",
+          "text": "三個"
+        },
+        {
+          "id": "U07-Q39-o0",
+          "text": "百円"
+        },
+        {
+          "id": "U07-Q39-o1",
+          "text": "千円"
+        },
+        {
+          "id": "U07-Q39-o2",
+          "text": "一円"
+        }
+      ],
+      "answer": [
+        "U07-Q39-o0"
+      ],
+      "explanation": "ノートはひゃくえんです。",
+      "explanationJa": "だれがなにをいくつたのんだか、たしかめましょう。",
+      "distractorReasons": {
+        "U07-Q39-o1": "千円是筆的價格。",
+        "U07-Q39-o2": "不是ひゃくえん。",
+        "U07-Q39-o3": "這是數量，不是價格。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U07-L03",
+      "audioSrc": "/assets/audio/u07/listening-03.wav"
+    },
+    {
+      "id": "U07-Q40",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q40",
+      "itemFamilyId": "U07-F-listening-03",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，人物買什麼？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q40-o0",
+          "text": "ノート"
+        },
+        {
+          "id": "U07-Q40-o1",
+          "text": "ペン"
+        },
+        {
+          "id": "U07-Q40-o2",
+          "text": "パン"
+        },
+        {
+          "id": "U07-Q40-o3",
+          "text": "ふくろ"
+        }
+      ],
+      "answer": [
+        "U07-Q40-o0"
+      ],
+      "explanation": "最後說ノートをかいます。",
+      "explanationJa": "だれがなにをいくつたのんだか、たしかめましょう。",
+      "distractorReasons": {
+        "U07-Q40-o1": "有報筆的價格，最後買筆記本。",
+        "U07-Q40-o2": "未提到買麵包。",
+        "U07-Q40-o3": "未提到買袋子。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U07-L03",
+      "audioSrc": "/assets/audio/u07/listening-03.wav"
+    },
+    {
+      "id": "U07-Q41",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q41",
+      "itemFamilyId": "U07-F-listening-04",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，姊姊買幾本書？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q41-o1",
+          "text": "二冊"
+        },
+        {
+          "id": "U07-Q41-o2",
+          "text": "三冊"
+        },
+        {
+          "id": "U07-Q41-o3",
+          "text": "一枚"
+        },
+        {
+          "id": "U07-Q41-o0",
+          "text": "一冊"
+        }
+      ],
+      "answer": [
+        "U07-Q41-o0"
+      ],
+      "explanation": "あねはほんをいっさつかいます。",
+      "explanationJa": "だれがなにをいくつたのんだか、たしかめましょう。",
+      "distractorReasons": {
+        "U07-Q41-o1": "這是說話者買的數量。",
+        "U07-Q41-o2": "這是兩人的合計，不是姊姊個別數量。",
+        "U07-Q41-o3": "書本不用枚。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U07-L04",
+      "audioSrc": "/assets/audio/u07/listening-04.wav"
+    },
+    {
+      "id": "U07-Q42",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q42",
+      "itemFamilyId": "U07-F-listening-04",
+      "primarySkillId": "L-KEY",
+      "skillIds": [
+        "L-KEY"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "聽音訊，說話者與姊姊合計買幾本書？",
+      "promptJa": "おとをきいて、こたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q42-o2",
+          "text": "二冊"
+        },
+        {
+          "id": "U07-Q42-o3",
+          "text": "三本"
+        },
+        {
+          "id": "U07-Q42-o0",
+          "text": "三冊"
+        },
+        {
+          "id": "U07-Q42-o1",
+          "text": "一冊"
+        }
+      ],
+      "answer": [
+        "U07-Q42-o0"
+      ],
+      "explanation": "自己兩本加姊姊一本，共三冊。",
+      "explanationJa": "だれがなにをいくつたのんだか、たしかめましょう。",
+      "distractorReasons": {
+        "U07-Q42-o1": "漏掉說話者買的兩本。",
+        "U07-Q42-o2": "漏掉姊姊的一本。",
+        "U07-Q42-o3": "本課書本助數詞用冊。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T12",
+      "audioId": "U07-L04",
+      "audioSrc": "/assets/audio/u07/listening-04.wav"
+    },
+    {
+      "id": "U07-Q43",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q43",
+      "itemFamilyId": "U07-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個請求。哪個請求的蘋果數量符合圖片？",
+      "promptJa": "えとおとをくらべましょう。りんごのかずがあうのは、どれですか。",
+      "choices": [
+        {
+          "id": "U07-Q43-o3",
+          "text": "第4個請求"
+        },
+        {
+          "id": "U07-Q43-o0",
+          "text": "第2個請求"
+        },
+        {
+          "id": "U07-Q43-o1",
+          "text": "第1個請求"
+        },
+        {
+          "id": "U07-Q43-o2",
+          "text": "第3個請求"
+        }
+      ],
+      "answer": [
+        "U07-Q43-o0"
+      ],
+      "explanation": "圖中1個蘋果，符合第2個請求。",
+      "explanationJa": "えのかずと、きいたかずをくらべましょう。",
+      "distractorReasons": {
+        "U07-Q43-o1": "這個請求的蘋果數量不是1個。",
+        "U07-Q43-o2": "這個請求的蘋果數量不是1個。",
+        "U07-Q43-o3": "這個請求的蘋果數量不是1個。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U07-L05",
+      "audioSrc": "/assets/audio/u07/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u07/apple-counts.webp",
+        "cell": 0,
+        "alt": {
+          "zh": "桌上清楚可數的1個完整蘋果。",
+          "ja": "りんごがひとつあります。"
+        }
+      }
+    },
+    {
+      "id": "U07-Q44",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q44",
+      "itemFamilyId": "U07-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個請求。哪個請求的蘋果數量符合圖片？",
+      "promptJa": "えとおとをくらべましょう。りんごのかずがあうのは、どれですか。",
+      "choices": [
+        {
+          "id": "U07-Q44-o0",
+          "text": "第4個請求"
+        },
+        {
+          "id": "U07-Q44-o1",
+          "text": "第1個請求"
+        },
+        {
+          "id": "U07-Q44-o2",
+          "text": "第2個請求"
+        },
+        {
+          "id": "U07-Q44-o3",
+          "text": "第3個請求"
+        }
+      ],
+      "answer": [
+        "U07-Q44-o0"
+      ],
+      "explanation": "圖中2個蘋果，符合第4個請求。",
+      "explanationJa": "えのかずと、きいたかずをくらべましょう。",
+      "distractorReasons": {
+        "U07-Q44-o1": "這個請求的蘋果數量不是2個。",
+        "U07-Q44-o2": "這個請求的蘋果數量不是2個。",
+        "U07-Q44-o3": "這個請求的蘋果數量不是2個。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U07-L05",
+      "audioSrc": "/assets/audio/u07/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u07/apple-counts.webp",
+        "cell": 1,
+        "alt": {
+          "zh": "桌上清楚可數的2個完整蘋果。",
+          "ja": "りんごがふたつあります。"
+        }
+      }
+    },
+    {
+      "id": "U07-Q45",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q45",
+      "itemFamilyId": "U07-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個請求。哪個請求的蘋果數量符合圖片？",
+      "promptJa": "えとおとをくらべましょう。りんごのかずがあうのは、どれですか。",
+      "choices": [
+        {
+          "id": "U07-Q45-o1",
+          "text": "第2個請求"
+        },
+        {
+          "id": "U07-Q45-o2",
+          "text": "第3個請求"
+        },
+        {
+          "id": "U07-Q45-o3",
+          "text": "第4個請求"
+        },
+        {
+          "id": "U07-Q45-o0",
+          "text": "第1個請求"
+        }
+      ],
+      "answer": [
+        "U07-Q45-o0"
+      ],
+      "explanation": "圖中3個蘋果，符合第1個請求。",
+      "explanationJa": "えのかずと、きいたかずをくらべましょう。",
+      "distractorReasons": {
+        "U07-Q45-o1": "這個請求的蘋果數量不是3個。",
+        "U07-Q45-o2": "這個請求的蘋果數量不是3個。",
+        "U07-Q45-o3": "這個請求的蘋果數量不是3個。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U07-L05",
+      "audioSrc": "/assets/audio/u07/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u07/apple-counts.webp",
+        "cell": 2,
+        "alt": {
+          "zh": "桌上清楚可數的3個完整蘋果。",
+          "ja": "りんごがみっつあります。"
+        }
+      }
+    },
+    {
+      "id": "U07-Q46",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q46",
+      "itemFamilyId": "U07-F-listening-05",
+      "primarySkillId": "L-EXPR",
+      "skillIds": [
+        "L-EXPR"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "看圖並聽四個請求。哪個請求的蘋果數量符合圖片？",
+      "promptJa": "えとおとをくらべましょう。りんごのかずがあうのは、どれですか。",
+      "choices": [
+        {
+          "id": "U07-Q46-o2",
+          "text": "第2個請求"
+        },
+        {
+          "id": "U07-Q46-o3",
+          "text": "第4個請求"
+        },
+        {
+          "id": "U07-Q46-o0",
+          "text": "第3個請求"
+        },
+        {
+          "id": "U07-Q46-o1",
+          "text": "第1個請求"
+        }
+      ],
+      "answer": [
+        "U07-Q46-o0"
+      ],
+      "explanation": "圖中4個蘋果，符合第3個請求。",
+      "explanationJa": "えのかずと、きいたかずをくらべましょう。",
+      "distractorReasons": {
+        "U07-Q46-o1": "這個請求的蘋果數量不是4個。",
+        "U07-Q46-o2": "這個請求的蘋果數量不是4個。",
+        "U07-Q46-o3": "這個請求的蘋果數量不是4個。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T13",
+      "audioId": "U07-L05",
+      "audioSrc": "/assets/audio/u07/listening-05.wav",
+      "image": {
+        "src": "/assets/img/u07/apple-counts.webp",
+        "cell": 3,
+        "alt": {
+          "zh": "桌上清楚可數的4個完整蘋果。",
+          "ja": "りんごがよっつあります。"
+        }
+      }
+    },
+    {
+      "id": "U07-Q47",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q47",
+      "itemFamilyId": "U07-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：這件商品的價格是100圓。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q47-o3",
+          "text": "パンです。"
+        },
+        {
+          "id": "U07-Q47-o0",
+          "text": "百円です。"
+        },
+        {
+          "id": "U07-Q47-o1",
+          "text": "一つです。"
+        },
+        {
+          "id": "U07-Q47-o2",
+          "text": "一人です。"
+        }
+      ],
+      "answer": [
+        "U07-Q47-o0"
+      ],
+      "explanation": "いくら問價格，用円回答。",
+      "explanationJa": "ねだんをこたえましょう。",
+      "distractorReasons": {
+        "U07-Q47-o1": "這只回答數量。",
+        "U07-Q47-o2": "這是人數。",
+        "U07-Q47-o3": "這只回答物品。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U07-L06",
+      "audioSrc": "/assets/audio/u07/listening-06.wav"
+    },
+    {
+      "id": "U07-Q48",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q48",
+      "itemFamilyId": "U07-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：這支筆標價1000圓。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q48-o0",
+          "text": "千円です。"
+        },
+        {
+          "id": "U07-Q48-o1",
+          "text": "千個です。"
+        },
+        {
+          "id": "U07-Q48-o2",
+          "text": "二時です。"
+        },
+        {
+          "id": "U07-Q48-o3",
+          "text": "ペンが 好きです。"
+        }
+      ],
+      "answer": [
+        "U07-Q48-o0"
+      ],
+      "explanation": "千円是價格，其他選項沒回答多少錢。",
+      "explanationJa": "ねだんをこたえましょう。",
+      "distractorReasons": {
+        "U07-Q48-o1": "把價格改成數量。",
+        "U07-Q48-o2": "這是時間。",
+        "U07-Q48-o3": "這是喜好。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U07-L06",
+      "audioSrc": "/assets/audio/u07/listening-06.wav"
+    },
+    {
+      "id": "U07-Q49",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q49",
+      "itemFamilyId": "U07-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：麵包兩個合計100圓。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q49-o1",
+          "text": "二つです。"
+        },
+        {
+          "id": "U07-Q49-o2",
+          "text": "一つ 百円です。"
+        },
+        {
+          "id": "U07-Q49-o3",
+          "text": "二人です。"
+        },
+        {
+          "id": "U07-Q49-o0",
+          "text": "二つで 百円です。"
+        }
+      ],
+      "answer": [
+        "U07-Q49-o0"
+      ],
+      "explanation": "保留兩個合計100圓的標價範圍。",
+      "explanationJa": "ねだんをこたえましょう。",
+      "distractorReasons": {
+        "U07-Q49-o1": "只有數量。",
+        "U07-Q49-o2": "誤改為每個100圓。",
+        "U07-Q49-o3": "這是人數。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U07-L06",
+      "audioSrc": "/assets/audio/u07/listening-06.wav"
+    },
+    {
+      "id": "U07-Q50",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-Q50",
+      "itemFamilyId": "U07-F-listening-06",
+      "primarySkillId": "L-RESP",
+      "skillIds": [
+        "L-RESP"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "practice",
+      "kind": "audio",
+      "prompt": "設定：一冊筆記本標價100圓。聽問題，選合適回答。",
+      "promptJa": "せっていをみて、しつもんにこたえましょう。",
+      "choices": [
+        {
+          "id": "U07-Q50-o2",
+          "text": "三枚です。"
+        },
+        {
+          "id": "U07-Q50-o3",
+          "text": "ノートを ください。"
+        },
+        {
+          "id": "U07-Q50-o0",
+          "text": "一冊 百円です。"
+        },
+        {
+          "id": "U07-Q50-o1",
+          "text": "一冊です。"
+        }
+      ],
+      "answer": [
+        "U07-Q50-o0"
+      ],
+      "explanation": "問價格時，同時說明一冊與100圓可完整回答。",
+      "explanationJa": "ねだんをこたえましょう。",
+      "distractorReasons": {
+        "U07-Q50-o1": "只回答數量。",
+        "U07-Q50-o2": "不是筆記本價格。",
+        "U07-Q50-o3": "這是請求，不是報價。"
+      },
+      "hint": "先核對物品，再看幾個／幾支／幾張／幾本；問いくら要找價格，問いくつ要找數量。",
+      "hintJa": "ものにあうかぞえかたをえらび、かずとねだんをわけましょう。",
+      "hintPolicy": "practice-only",
+      "audioPolicy": "required",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T14",
+      "audioId": "U07-L06",
+      "audioSrc": "/assets/audio/u07/listening-06.wav"
+    },
+    {
+      "id": "U07-C01",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C01",
+      "itemFamilyId": "U07-CHECK-remaining-order",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "訂單是りんごをみっつ。店員只給ふたつ，還少多少？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C01-o1",
+          "text": "ふたつ"
+        },
+        {
+          "id": "U07-C01-o2",
+          "text": "みっつ"
+        },
+        {
+          "id": "U07-C01-o3",
+          "text": "とお"
+        },
+        {
+          "id": "U07-C01-o0",
+          "text": "ひとつ"
+        }
+      ],
+      "answer": [
+        "U07-C01-o0"
+      ],
+      "explanation": "訂單三個、已給兩個，還少一個。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C01-o1": "這是已給的數量，不是還少的。",
+        "U07-C01-o2": "這是全部訂單，不是還少的。",
+        "U07-C01-o3": "比整份訂單還多。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C02",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C02",
+      "itemFamilyId": "U07-CHECK-quantity-range",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "這次可選至少兩個、最多四個蘋果。哪個日語數量符合範圍？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C02-o2",
+          "text": "いつつ"
+        },
+        {
+          "id": "U07-C02-o3",
+          "text": "とお"
+        },
+        {
+          "id": "U07-C02-o0",
+          "text": "みっつ"
+        },
+        {
+          "id": "U07-C02-o1",
+          "text": "ひとつ"
+        }
+      ],
+      "answer": [
+        "U07-C02-o0"
+      ],
+      "explanation": "みっつ是三個，在兩個到四個之內。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C02-o1": "一個少於下限兩個。",
+        "U07-C02-o2": "五個超過上限四個。",
+        "U07-C02-o3": "十個超過上限。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C03",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C03",
+      "itemFamilyId": "U07-CHECK-scope-all",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "盒子裡只有三個飯糰，店員把ぜんぶ交給客人。拿到幾個？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C03-o3",
+          "text": "五個"
+        },
+        {
+          "id": "U07-C03-o0",
+          "text": "三個"
+        },
+        {
+          "id": "U07-C03-o1",
+          "text": "十個"
+        },
+        {
+          "id": "U07-C03-o2",
+          "text": "一個"
+        }
+      ],
+      "answer": [
+        "U07-C03-o0"
+      ],
+      "explanation": "全部的數量由盒中實際三個決定。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C03-o1": "ぜんぶ不固定等於十。",
+        "U07-C03-o2": "只拿一個不是全部。",
+        "U07-C03-o3": "比設定的數量多。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C04",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C04",
+      "itemFamilyId": "U07-CHECK-people-vs-objects",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「人が 二つ います」想表達兩個人，應怎樣修正？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C04-o0",
+          "text": "人が 二人 います。"
+        },
+        {
+          "id": "U07-C04-o1",
+          "text": "人が 二枚 います。"
+        },
+        {
+          "id": "U07-C04-o2",
+          "text": "人が 二冊 います。"
+        },
+        {
+          "id": "U07-C04-o3",
+          "text": "人が 二本 います。"
+        }
+      ],
+      "answer": [
+        "U07-C04-o0"
+      ],
+      "explanation": "一般物品與人數使用不同數法。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C04-o1": "枚不用於人。",
+        "U07-C04-o2": "冊不用於人。",
+        "U07-C04-o3": "本不用於人。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C05",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C05",
+      "itemFamilyId": "U07-CHECK-bind-two-orders",
+      "primarySkillId": "G19",
+      "skillIds": [
+        "G19"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "注文「りんごをふたつ、パンをみっつ」。哪組物品與數量的配對都正確？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C05-o1",
+          "text": "蘋果三個、麵包兩個。"
+        },
+        {
+          "id": "U07-C05-o2",
+          "text": "蘋果五個、麵包五個。"
+        },
+        {
+          "id": "U07-C05-o3",
+          "text": "只有蘋果兩個。"
+        },
+        {
+          "id": "U07-C05-o0",
+          "text": "蘋果兩個、麵包三個。"
+        }
+      ],
+      "answer": [
+        "U07-C05-o0"
+      ],
+      "explanation": "把每一個數量綁定到它前面的物品。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C05-o1": "將兩種物品的數量交換了。",
+        "U07-C05-o2": "不能把合計數當成每種各五個。",
+        "U07-C05-o3": "漏掉了麵包。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C06",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C06",
+      "itemFamilyId": "U07-CHECK-counter-contrast",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "同樣是三，哪組助數詞與物品都正確？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C06-o2",
+          "text": "えんぴつ 三枚、かみ 三冊、ほん 三本"
+        },
+        {
+          "id": "U07-C06-o3",
+          "text": "えんぴつ 三人、かみ 三人、ほん 三人"
+        },
+        {
+          "id": "U07-C06-o0",
+          "text": "えんぴつ 三本、かみ 三枚、ほん 三冊"
+        },
+        {
+          "id": "U07-C06-o1",
+          "text": "えんぴつ 三冊、かみ 三本、ほん 三枚"
+        }
+      ],
+      "answer": [
+        "U07-C06-o0"
+      ],
+      "explanation": "長條用本、薄平用枚、裝訂書用冊。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C06-o1": "三種數法都放錯。",
+        "U07-C06-o2": "三種數法都放錯。",
+        "U07-C06-o3": "人只能數人。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C07",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C07",
+      "itemFamilyId": "U07-CHECK-one-pencil-sound",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "一本鉛筆的「一本」，本課讀什麼？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C07-o3",
+          "text": "ひとり"
+        },
+        {
+          "id": "U07-C07-o0",
+          "text": "いっぽん"
+        },
+        {
+          "id": "U07-C07-o1",
+          "text": "いちまい"
+        },
+        {
+          "id": "U07-C07-o2",
+          "text": "いっさつ"
+        }
+      ],
+      "answer": [
+        "U07-C07-o0"
+      ],
+      "explanation": "一本鉛筆讀いっぽん。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C07-o1": "這是一枚。",
+        "U07-C07-o2": "這是一冊。",
+        "U07-C07-o3": "這是一人。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C08",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C08",
+      "itemFamilyId": "U07-CHECK-one-book-sound",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "一冊裝訂書的「一冊」，本課讀什麼？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C08-o0",
+          "text": "いっさつ"
+        },
+        {
+          "id": "U07-C08-o1",
+          "text": "いっぽん"
+        },
+        {
+          "id": "U07-C08-o2",
+          "text": "いちまい"
+        },
+        {
+          "id": "U07-C08-o3",
+          "text": "ひとつ"
+        }
+      ],
+      "answer": [
+        "U07-C08-o0"
+      ],
+      "explanation": "一冊讀いっさつ。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C08-o1": "這是一本長條物品。",
+        "U07-C08-o2": "這是一枚。",
+        "U07-C08-o3": "不是題目指定冊的讀法。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C09",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C09",
+      "itemFamilyId": "U07-CHECK-repair-flat-counter",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "訂單「かみ 二本」要買兩張紙，應改成什麼？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C09-o1",
+          "text": "かみ 二冊"
+        },
+        {
+          "id": "U07-C09-o2",
+          "text": "かみ 二人"
+        },
+        {
+          "id": "U07-C09-o3",
+          "text": "かみ 二時"
+        },
+        {
+          "id": "U07-C09-o0",
+          "text": "かみ 二枚"
+        }
+      ],
+      "answer": [
+        "U07-C09-o0"
+      ],
+      "explanation": "紙張用枚，兩張是二枚。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C09-o1": "冊用裝訂書。",
+        "U07-C09-o2": "人數的助數詞不適用。",
+        "U07-C09-o3": "時是時間，不是紙張數。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C10",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C10",
+      "itemFamilyId": "U07-CHECK-keep-object-not-unit-word",
+      "primarySkillId": "G20",
+      "skillIds": [
+        "G20"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "「ほんを 二冊 かいます」中的冊在做什麼？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C10-o2",
+          "text": "表示買書的人數。"
+        },
+        {
+          "id": "U07-C10-o3",
+          "text": "表示書在哪裡。"
+        },
+        {
+          "id": "U07-C10-o0",
+          "text": "計算裝訂書本的數量。"
+        },
+        {
+          "id": "U07-C10-o1",
+          "text": "表示書的售價。"
+        }
+      ],
+      "answer": [
+        "U07-C10-o0"
+      ],
+      "explanation": "ほん是書這個名詞，冊是數量助數詞。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C10-o1": "沒有円或價格。",
+        "U07-C10-o2": "冊不用數人。",
+        "U07-C10-o3": "冊不是位置詞。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C11",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C11",
+      "itemFamilyId": "U07-CHECK-price-answer-question",
+      "primarySkillId": "G21",
+      "skillIds": [
+        "G21"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "回答「千円です」最合適的問題是哪個？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C11-o3",
+          "text": "だれですか。"
+        },
+        {
+          "id": "U07-C11-o0",
+          "text": "いくらですか。"
+        },
+        {
+          "id": "U07-C11-o1",
+          "text": "いくつですか。"
+        },
+        {
+          "id": "U07-C11-o2",
+          "text": "なんじですか。"
+        }
+      ],
+      "answer": [
+        "U07-C11-o0"
+      ],
+      "explanation": "円表示價格，所以問いくら。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C11-o1": "這問數量。",
+        "U07-C11-o2": "這問時間。",
+        "U07-C11-o3": "這問人物身分。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C12",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C12",
+      "itemFamilyId": "U07-CHECK-count-answer-question",
+      "primarySkillId": "G21",
+      "skillIds": [
+        "G21"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "回答「五つです」最合適的問題是哪個？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C12-o0",
+          "text": "いくつですか。"
+        },
+        {
+          "id": "U07-C12-o1",
+          "text": "いくらですか。"
+        },
+        {
+          "id": "U07-C12-o2",
+          "text": "どこですか。"
+        },
+        {
+          "id": "U07-C12-o3",
+          "text": "なんにんですか。"
+        }
+      ],
+      "answer": [
+        "U07-C12-o0"
+      ],
+      "explanation": "五つ是一般物品數量。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C12-o1": "這問價格。",
+        "U07-C12-o2": "這問位置。",
+        "U07-C12-o3": "這問人數，不是一般物品。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C13",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C13",
+      "itemFamilyId": "U07-CHECK-change-not-selling-price",
+      "primarySkillId": "G21",
+      "skillIds": [
+        "G21"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "客人問いくらですか，店員只說「おつりは百円です」。為何還沒完整回答？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C13-o1",
+          "text": "這已證明商品售價100圓。"
+        },
+        {
+          "id": "U07-C13-o2",
+          "text": "客人問的是人數。"
+        },
+        {
+          "id": "U07-C13-o3",
+          "text": "這表示要買100個。"
+        },
+        {
+          "id": "U07-C13-o0",
+          "text": "回答的是找零，不是商品售價。"
+        }
+      ],
+      "answer": [
+        "U07-C13-o0"
+      ],
+      "explanation": "おつり是找回的錢，與商品的價格不同。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C13-o1": "找零不能直接當售價。",
+        "U07-C13-o2": "いくら問價格。",
+        "U07-C13-o3": "円不是個數。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C14",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C14",
+      "itemFamilyId": "U07-CHECK-avoid-invented-price",
+      "primarySkillId": "G21",
+      "skillIds": [
+        "G21"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "訂單只寫「えんぴつ 二本」，能確定售價嗎？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C14-o2",
+          "text": "能，一定是百円。"
+        },
+        {
+          "id": "U07-C14-o3",
+          "text": "能，一定是千円。"
+        },
+        {
+          "id": "U07-C14-o0",
+          "text": "不能，只知道兩支鉛筆。"
+        },
+        {
+          "id": "U07-C14-o1",
+          "text": "能，一定是二円。"
+        }
+      ],
+      "answer": [
+        "U07-C14-o0"
+      ],
+      "explanation": "沒有標價不能從數量猜價格。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C14-o1": "把數量當價格。",
+        "U07-C14-o2": "沒有提供這個價格。",
+        "U07-C14-o3": "沒有提供這個價格。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    },
+    {
+      "id": "U07-C15",
+      "version": "1",
+      "unitId": "U07",
+      "itemId": "U07-C15",
+      "itemFamilyId": "U07-CHECK-same-price-different-count",
+      "primarySkillId": "G21",
+      "skillIds": [
+        "G21"
+      ],
+      "teachingIds": [
+        "U07-teach-words-1",
+        "U07-teach-words-2",
+        "U07-teach-words-3",
+        "U07-teach-words-4",
+        "U07-teach-words-5",
+        "U07-teach-kanji",
+        "U07-teach-G19",
+        "U07-teach-G20",
+        "U07-teach-G21",
+        "U07-teach-context"
+      ],
+      "partition": "check",
+      "kind": "choice",
+      "prompt": "價目表「パン二つ：百円／りんご三つ：百円」。哪個比較正確？",
+      "promptJa": "かぞえかたと、しつもんのいみをたしかめましょう。",
+      "choices": [
+        {
+          "id": "U07-C15-o3",
+          "text": "蘋果每個100圓。"
+        },
+        {
+          "id": "U07-C15-o0",
+          "text": "兩組總價相同，但物品數量不同。"
+        },
+        {
+          "id": "U07-C15-o1",
+          "text": "兩組數量相同。"
+        },
+        {
+          "id": "U07-C15-o2",
+          "text": "麵包組總價更高。"
+        }
+      ],
+      "answer": [
+        "U07-C15-o0"
+      ],
+      "explanation": "分別比較總價與數量，不把兩個欄位混在一起。",
+      "explanationJa": "もの、かず、ねだんをわけてたしかめましょう。",
+      "distractorReasons": {
+        "U07-C15-o1": "二與三不同。",
+        "U07-C15-o2": "兩組都100圓。",
+        "U07-C15-o3": "表格指三個合計100圓。"
+      },
+      "hint": "先找出題目的人物、時間與動作，再比較每一個選項。",
+      "hintJa": "ひと、じこく、することをたしかめよう。",
+      "hintPolicy": "none",
+      "audioPolicy": "optional",
+      "source": "Original authored U07 draft by Codex, 2026-10-30; not official JLPT material",
+      "reviewStatus": "DRAFT",
+      "difficulty": 2,
+      "typeId": "T05"
+    }
+  ]
+}

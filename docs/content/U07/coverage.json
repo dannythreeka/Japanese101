@@ -1,0 +1,81 @@
+{
+  "unitId": "U07",
+  "version": "u07-1-draft",
+  "mode": "isolated draft structure",
+  "skills": [
+    {
+      "id": "G19",
+      "prerequisites": [
+        "K-HIRA",
+        "G18"
+      ],
+      "teaching": [
+        "U07-teach-G19"
+      ],
+      "practice": [
+        "U07-Q18",
+        "U07-Q19",
+        "U07-Q23",
+        "U07-Q26"
+      ],
+      "checkFamilies": [
+        "U07-CHECK-remaining-order",
+        "U07-CHECK-quantity-range",
+        "U07-CHECK-scope-all",
+        "U07-CHECK-people-vs-objects",
+        "U07-CHECK-bind-two-orders"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G20",
+      "prerequisites": [
+        "K-HIRA",
+        "G19"
+      ],
+      "teaching": [
+        "U07-teach-G20"
+      ],
+      "practice": [
+        "U07-Q20",
+        "U07-Q21",
+        "U07-Q24",
+        "U07-Q27"
+      ],
+      "checkFamilies": [
+        "U07-CHECK-counter-contrast",
+        "U07-CHECK-one-pencil-sound",
+        "U07-CHECK-one-book-sound",
+        "U07-CHECK-repair-flat-counter",
+        "U07-CHECK-keep-object-not-unit-word"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    },
+    {
+      "id": "G21",
+      "prerequisites": [
+        "K-HIRA",
+        "G20"
+      ],
+      "teaching": [
+        "U07-teach-G21"
+      ],
+      "practice": [
+        "U07-Q22",
+        "U07-Q25",
+        "U07-Q28"
+      ],
+      "checkFamilies": [
+        "U07-CHECK-price-answer-question",
+        "U07-CHECK-count-answer-question",
+        "U07-CHECK-change-not-selling-price",
+        "U07-CHECK-avoid-invented-price",
+        "U07-CHECK-same-price-different-count"
+      ],
+      "delayedRule": "At least 48h after teaching, two calendar dates, at least 4/5 distinct-family first answers correct without hints; content family adequacy awaits human review"
+    }
+  ],
+  "audio": 16,
+  "images": 1,
+  "reviewItems": 135
+}

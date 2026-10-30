@@ -30,3 +30,5 @@ Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`。`npm te
 不要重產已成功WAV；產生器只在腳本／檔hash一致時重用。author-u08.py為完整作者稿；base拒絕覆寫已有65題。禁止動交易主機apt、kernel、Broadcom、WiFi、Tailscale、交易排程或重啟；不輸出憑證，不自動merge PR58或正式發布。
 
 最新驗證：上述分批接續已完成，合計21個不同browser/case均PASS（Chrome11／Firefox10），詳P4/evidence/u08-engineering.json。原中止批次保留真狀態，非22全綠；剩餘Firefox7項已PASS（1.5m），延後ready與離線2PASS，精確假名題兩引擎2PASS。相關runtime已驗證，接續教材與mock工作。
+
+U09來源已保存：scripts/author-u09-base.py與docs/content/U09/{README,source-draft,production-plan}，25不重複詞、5新漢字見聞読書話、G25～27先修與P0一致、10教學4閱讀6聽力稿；尚無50題／check／音檔／圖／runtime註冊。M/T IN_PROGRESS，其餘TODO。接續需寫完整author-u09.py，不能宣稱九課可玩或改五題族／人審門檻。前一fa15ff9為U08及離線修正；本批只加未註冊作者來源與交接，已測runtime不變。

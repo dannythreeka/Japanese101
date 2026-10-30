@@ -1,0 +1,528 @@
+{
+  "id": "U09",
+  "version": "u09-1-draft",
+  "title": "一天的活動：居民的行程手帳",
+  "reviewStatus": "DRAFT",
+  "reviewer": null,
+  "reviewedAt": null,
+  "vocabulary": [
+    {
+      "id": "U09-V01",
+      "text": "みる",
+      "reading": "みる",
+      "meaning": "看；本課用於看電影等動作"
+    },
+    {
+      "id": "U09-V02",
+      "text": "きく",
+      "reading": "きく",
+      "meaning": "聽；本課用於聽音樂"
+    },
+    {
+      "id": "U09-V03",
+      "text": "はなす",
+      "reading": "はなす",
+      "meaning": "說話；交談"
+    },
+    {
+      "id": "U09-V04",
+      "text": "かく",
+      "reading": "かく",
+      "meaning": "寫"
+    },
+    {
+      "id": "U09-V05",
+      "text": "はたらく",
+      "reading": "はたらく",
+      "meaning": "工作"
+    },
+    {
+      "id": "U09-V06",
+      "text": "やすむ",
+      "reading": "やすむ",
+      "meaning": "休息；請假"
+    },
+    {
+      "id": "U09-V07",
+      "text": "あそぶ",
+      "reading": "あそぶ",
+      "meaning": "玩"
+    },
+    {
+      "id": "U09-V08",
+      "text": "およぐ",
+      "reading": "およぐ",
+      "meaning": "游泳"
+    },
+    {
+      "id": "U09-V09",
+      "text": "さんぽする",
+      "reading": "さんぽする",
+      "meaning": "散步"
+    },
+    {
+      "id": "U09-V10",
+      "text": "そうじする",
+      "reading": "そうじする",
+      "meaning": "打掃"
+    },
+    {
+      "id": "U09-V11",
+      "text": "せんたくする",
+      "reading": "せんたくする",
+      "meaning": "洗衣服"
+    },
+    {
+      "id": "U09-V12",
+      "text": "りょうりする",
+      "reading": "りょうりする",
+      "meaning": "做菜"
+    },
+    {
+      "id": "U09-V13",
+      "text": "れんしゅうする",
+      "reading": "れんしゅうする",
+      "meaning": "練習"
+    },
+    {
+      "id": "U09-V14",
+      "text": "しゅくだい",
+      "reading": "しゅくだい",
+      "meaning": "作業"
+    },
+    {
+      "id": "U09-V15",
+      "text": "しごと",
+      "reading": "しごと",
+      "meaning": "工作；名詞"
+    },
+    {
+      "id": "U09-V16",
+      "text": "かいしゃ",
+      "reading": "かいしゃ",
+      "meaning": "公司"
+    },
+    {
+      "id": "U09-V17",
+      "text": "プール",
+      "reading": "プール",
+      "meaning": "游泳池"
+    },
+    {
+      "id": "U09-V18",
+      "text": "えいが",
+      "reading": "えいが",
+      "meaning": "電影"
+    },
+    {
+      "id": "U09-V19",
+      "text": "おんがく",
+      "reading": "おんがく",
+      "meaning": "音樂"
+    },
+    {
+      "id": "U09-V20",
+      "text": "てがみ",
+      "reading": "てがみ",
+      "meaning": "信"
+    },
+    {
+      "id": "U09-V21",
+      "text": "いつも",
+      "reading": "いつも",
+      "meaning": "總是；通常如此的習慣"
+    },
+    {
+      "id": "U09-V22",
+      "text": "ときどき",
+      "reading": "ときどき",
+      "meaning": "有時候"
+    },
+    {
+      "id": "U09-V23",
+      "text": "よく",
+      "reading": "よく",
+      "meaning": "經常；本課作頻度副詞"
+    },
+    {
+      "id": "U09-V24",
+      "text": "あまり",
+      "reading": "あまり",
+      "meaning": "不太；本課和否定動詞一起用"
+    },
+    {
+      "id": "U09-V25",
+      "text": "ぜんぜん",
+      "reading": "ぜんぜん",
+      "meaning": "完全不；本課和否定動詞一起用"
+    }
+  ],
+  "kanji": [
+    {
+      "id": "U09-K01",
+      "text": "見",
+      "reading": "み",
+      "meaning": "看；見ます的見讀み"
+    },
+    {
+      "id": "U09-K02",
+      "text": "聞",
+      "reading": "き",
+      "meaning": "聽；聞きます的聞讀き"
+    },
+    {
+      "id": "U09-K03",
+      "text": "読",
+      "reading": "よ",
+      "meaning": "讀；読みます的読讀よ"
+    },
+    {
+      "id": "U09-K04",
+      "text": "書",
+      "reading": "か",
+      "meaning": "寫；書きます的書讀か"
+    },
+    {
+      "id": "U09-K05",
+      "text": "話",
+      "reading": "はな",
+      "meaning": "說；話します的話讀はな"
+    }
+  ],
+  "grammar": [
+    {
+      "id": "G25",
+      "title": "場所でVます：動作發生的地方",
+      "prerequisites": [
+        "K-HIRA",
+        "G24"
+      ]
+    },
+    {
+      "id": "G26",
+      "title": "時點から／まで：開始與結束",
+      "prerequisites": [
+        "K-HIRA",
+        "G25"
+      ]
+    },
+    {
+      "id": "G27",
+      "title": "頻度副詞＋V：習慣與偶爾",
+      "prerequisites": [
+        "K-HIRA",
+        "G26"
+      ]
+    }
+  ],
+  "readings": [
+    {
+      "id": "U09-R01",
+      "text": "きょうは としょかんで 本を 読みます。九時から 十時まで 読みます。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U09-R02",
+      "text": "わたしは いつも うちで おんがくを 聞きます。ときどき えいがを 見ます。",
+      "skillId": "R-SHORT"
+    },
+    {
+      "id": "U09-R03",
+      "text": "きょう、あねは としょかんで 本を 読みます。九時から 十時までです。わたしは こうえんで あそびます。三時から 四時までです。あには プールで およぎます。あには よく およぎます。わたしは あまり およぎません。",
+      "skillId": "R-MID"
+    },
+    {
+      "id": "U09-R04",
+      "text": "きょうの よてい\nあね：としょかん／本を 読みます／九時から 十時まで\nわたし：こうえん／あそびます／三時から 四時まで\nはは：うち／りょうりします／五時から 六時まで",
+      "skillId": "R-INFO"
+    }
+  ],
+  "listening": [
+    {
+      "id": "U09-L01",
+      "script": "きょうは、としょかんで、ほんをよみます。くじからじゅうじまでです。じゅうじまで、ほんをよみます。",
+      "audioSrc": "/assets/audio/u09/listening-01.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U09-L02",
+      "script": "さんじからよじまで、こうえんであそびます。よじまでです。",
+      "audioSrc": "/assets/audio/u09/listening-02.wav",
+      "skillId": "L-TASK",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U09-L03",
+      "script": "あねは、いつも、うちでおんがくをききます。ときどき、えいがをみます。",
+      "audioSrc": "/assets/audio/u09/listening-03.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U09-L04",
+      "script": "あには、よく、ぷーるでおよぎます。わたしは、あまりおよぎません。ははは、ぜんぜんおよぎません。",
+      "audioSrc": "/assets/audio/u09/listening-04.wav",
+      "skillId": "L-KEY",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U09-L05",
+      "script": "することです。いちばん。てがみをかきます。にばん。そうじします。さんばん。ほんをよみます。よんばん。こうえんであそびます。",
+      "audioSrc": "/assets/audio/u09/listening-05.wav",
+      "skillId": "L-EXPR",
+      "reviewStatus": "DRAFT"
+    },
+    {
+      "id": "U09-L06",
+      "script": "なんじからですか。",
+      "audioSrc": "/assets/audio/u09/listening-06.wav",
+      "skillId": "L-RESP",
+      "reviewStatus": "DRAFT"
+    }
+  ],
+  "teaching": [
+    {
+      "id": "U09-teach-words-1",
+      "title": "看、聽、說與寫",
+      "titleJa": "みる・きく・はなす・かく",
+      "body": "みる：看；本課用於看電影等動作\nきく：聽；本課用於聽音樂\nはなす：說話；交談\nかく：寫\nはたらく：工作\n本課先認識完整詞形：みる→見ます、きく→聞きます、はなす→話します、かく→書きます、はたらく→はたらきます。不要求從這五詞自行推導所有動詞變化。聞きます在這課表示聽音樂，不先考詢問某人的另一種用法。",
+      "bodyJa": "ことばのいみと、することをたしかめましょう。",
+      "example": "みる",
+      "translation": "看；本課用於看電影等動作",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "みる。きく。はなす。かく。はたらく。",
+      "audioSrc": "/assets/audio/u09/U09-teach-words-1.wav",
+      "vocabularyIds": [
+        "U09-V01",
+        "U09-V02",
+        "U09-V03",
+        "U09-V04",
+        "U09-V05"
+      ]
+    },
+    {
+      "id": "U09-teach-words-2",
+      "title": "休息與活動",
+      "titleJa": "やすむ・あそぶ・さんぽ",
+      "body": "やすむ：休息；請假\nあそぶ：玩\nおよぐ：游泳\nさんぽする：散步\nそうじする：打掃\nやすみます是休息；あそびます是玩；およぎます是游泳；さんぽします是散步；そうじします是打掃。休息不等於懶惰，故事只描述居民，不要求孩子回報自己的家務或活動。",
+      "bodyJa": "ことばのいみと、することをたしかめましょう。",
+      "example": "やすむ",
+      "translation": "休息；請假",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "やすむ。あそぶ。およぐ。さんぽする。そうじする。",
+      "audioSrc": "/assets/audio/u09/U09-teach-words-2.wav",
+      "vocabularyIds": [
+        "U09-V06",
+        "U09-V07",
+        "U09-V08",
+        "U09-V09",
+        "U09-V10"
+      ]
+    },
+    {
+      "id": "U09-teach-words-3",
+      "title": "家務、練習與作業",
+      "titleJa": "せんたく・りょうり・れんしゅう",
+      "body": "せんたくする：洗衣服\nりょうりする：做菜\nれんしゅうする：練習\nしゅくだい：作業\nしごと：工作；名詞\nせんたくします是洗衣服，りょうりします是做菜，れんしゅうします是練習。しゅくだい與しごと是名詞；しゅくだいをします是做作業的固定搭配。",
+      "bodyJa": "ことばのいみと、することをたしかめましょう。",
+      "example": "せんたくする",
+      "translation": "洗衣服",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "せんたくする。りょうりする。れんしゅうする。しゅくだい。しごと。",
+      "audioSrc": "/assets/audio/u09/U09-teach-words-3.wav",
+      "vocabularyIds": [
+        "U09-V11",
+        "U09-V12",
+        "U09-V13",
+        "U09-V14",
+        "U09-V15"
+      ]
+    },
+    {
+      "id": "U09-teach-words-4",
+      "title": "活動的地方與物品",
+      "titleJa": "かいしゃ・プール・えいが",
+      "body": "かいしゃ：公司\nプール：游泳池\nえいが：電影\nおんがく：音樂\nてがみ：信\nかいしゃ與プール是地方；えいが與おんがく是作品或內容；てがみ是信。公司工作只出現在虛構成人的故事，不暗示孩子需要工作。",
+      "bodyJa": "ことばのいみと、することをたしかめましょう。",
+      "example": "かいしゃ",
+      "translation": "公司",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "かいしゃ。プール。えいが。おんがく。てがみ。",
+      "audioSrc": "/assets/audio/u09/U09-teach-words-4.wav",
+      "vocabularyIds": [
+        "U09-V16",
+        "U09-V17",
+        "U09-V18",
+        "U09-V19",
+        "U09-V20"
+      ]
+    },
+    {
+      "id": "U09-teach-words-5",
+      "title": "多久做一次",
+      "titleJa": "いつも・ときどき",
+      "body": "いつも：總是；通常如此的習慣\nときどき：有時候\nよく：經常；本課作頻度副詞\nあまり：不太；本課和否定動詞一起用\nぜんぜん：完全不；本課和否定動詞一起用\nいつも是經常一向如此的習慣；ときどき是有時候；よく是經常。頻度詞不在本課換成固定百分比。あまりべんきょうしません＝不太讀書，ぜんぜんおよぎません＝完全不游泳；兩詞在本課搭配否定動詞。不因一個習慣詞推斷孩子是否勤奮。",
+      "bodyJa": "ことばのいみと、することをたしかめましょう。",
+      "example": "いつも",
+      "translation": "總是；通常如此的習慣",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "V-CONTEXT",
+        "V-PARA",
+        "K-HIRA",
+        "K-KATA"
+      ],
+      "audioScript": "いつも。ときどき。よく。あまり。ぜんぜん。",
+      "audioSrc": "/assets/audio/u09/U09-teach-words-5.wav",
+      "vocabularyIds": [
+        "U09-V21",
+        "U09-V22",
+        "U09-V23",
+        "U09-V24",
+        "U09-V25"
+      ]
+    },
+    {
+      "id": "U09-teach-kanji",
+      "title": "看懂活動的漢字",
+      "titleJa": "みます・ききます・よみます・かきます・はなします",
+      "body": "見ます＝みます、聞きます＝ききます、読みます＝よみます、書きます＝かきます、話します＝はなします。\n見讀み、聞讀き、読讀よ、書讀か、話讀はな，都是這課指定詞形的讀法；後面的ます／きます／みます／します是完整詞的一部分，不能把整詞讀音全配給單個漢字。\n例：本を読みます。てがみを書きます。おんがくを聞きます。不要把読む與書く混在一起。",
+      "bodyJa": "みます、ききます、よみます、かきます、はなします。ことばをわけてよみましょう。",
+      "example": "本を 読みます。てがみを 書きます。",
+      "translation": "讀書，寫信。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "K-SCRIPT"
+      ],
+      "audioScript": "みます。ききます。よみます。かきます。はなします。ほんをよみます。てがみをかきます。",
+      "audioSrc": "/assets/audio/u09/U09-teach-kanji.wav",
+      "kanjiIds": [
+        "U09-K01",
+        "U09-K02",
+        "U09-K03",
+        "U09-K04",
+        "U09-K05"
+      ],
+      "prerequisites": [
+        "U09-teach-words-1",
+        "U09-teach-words-2",
+        "U09-teach-words-3",
+        "U09-teach-words-4",
+        "U09-teach-words-5"
+      ]
+    },
+    {
+      "id": "U09-teach-G25",
+      "title": "動作在哪裡發生",
+      "titleJa": "どこでしますか",
+      "body": "「場所でVます」表示動作發生的地方。学校でべんきょうします＝在學校學習；こうえんであそびます＝在こうえん玩。\n「学校にいます」表示人在學校；「学校でべんきょうします」表示學習發生在學校。不能用学校にべんきょうします表達同一個動作地方。\n先前「バスで行きます」的で是交通方法；這裡「こうえんであそびます」的で是動作場所，要連同名詞與動作一起理解。",
+      "bodyJa": "がっこうでべんきょうします。こうえんであそびます。するばしょをつたえます。",
+      "example": "としょかんで 本を 読みます。",
+      "translation": "在圖書館讀書。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G25"
+      ],
+      "audioScript": "がっこうでべんきょうします。こうえんであそびます。としょかんでほんをよみます。どこでべんきょうしますか。がっこうでべんきょうします。",
+      "audioSrc": "/assets/audio/u09/U09-teach-G25.wav",
+      "grammarIds": [
+        "G25"
+      ],
+      "prerequisites": [
+        "U09-teach-kanji"
+      ]
+    },
+    {
+      "id": "U09-teach-G26",
+      "title": "行程何時開始與結束",
+      "titleJa": "なんじから、なんじまで",
+      "body": "「九時から十時まで」表示從九點到十點，から標起點、まで標終點。九時から十時までべんきょうします＝從九點讀到十點。\n單獨說九時から只給開始，十時まで只給結束，不能自行補另一端。反例：九時まで十時から不能表示九點開始十點結束。\n只談同一天、時間先後清楚的行程；不以某時段讀過書推論整天沒休息或每分鐘都在讀。",
+      "bodyJa": "くじからじゅうじまで、べんきょうします。からははじまり、まではおわりです。",
+      "example": "三時から 四時まで あそびます。",
+      "translation": "從三點玩到四點。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G26"
+      ],
+      "audioScript": "くじからじゅうじまでべんきょうします。さんじからよじまであそびます。なんじからですか。くじからです。なんじまでですか。じゅうじまでです。",
+      "audioSrc": "/assets/audio/u09/U09-teach-G26.wav",
+      "grammarIds": [
+        "G26"
+      ],
+      "prerequisites": [
+        "U09-teach-G25"
+      ]
+    },
+    {
+      "id": "U09-teach-G27",
+      "title": "習慣與偶爾分開說",
+      "titleJa": "いつも・ときどき",
+      "body": "「いつも本を読みます」描述一向如此的習慣；「ときどき本を読みます」描述有時候讀。\n「よくおんがくを聞きます」表示經常聽；「あまりおよぎません」是不太游泳；「ぜんぜんおよぎません」是完全不游泳，後兩句在這課都用否定。\n反例：只聽到ときどき，不能改成每天一定做，也不能推論固定每週幾次。頻度詞不同於九時等單次時刻，不換算精確百分比。",
+      "bodyJa": "いつもほんをよみます。ときどきえいがをみます。することの、かいすうのちがいをたしかめましょう。",
+      "example": "ときどき こうえんで あそびます。",
+      "translation": "有時候在こうえん玩。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "G27"
+      ],
+      "audioScript": "いつもほんをよみます。ときどきえいがをみます。よくおんがくをききます。あまりおよぎません。ぜんぜんおよぎません。",
+      "audioSrc": "/assets/audio/u09/U09-teach-G27.wav",
+      "grammarIds": [
+        "G27"
+      ],
+      "prerequisites": [
+        "U09-teach-G26"
+      ]
+    },
+    {
+      "id": "U09-teach-context",
+      "title": "讀居民的行程手帳",
+      "titleJa": "ばしょ・じかん・いつも",
+      "body": "先核對人物，再讀動作、地方、開始與結束。行程卡可以同時有地點與時間，不把場所で當交通方法。\n「九時から十時まで」是一段時間；「いつも」是習慣頻度，不是幾點。今天安排的行程不能自動當成每天都做。\n故事只談虛構居民，不要求孩子提供住址、作息、學校名稱或家務紀錄。",
+      "bodyJa": "ひと、すること、ばしょ、じかんをわけて、よていをよみましょう。",
+      "example": "あねは としょかんで 九時から 十時まで 本を 読みます。",
+      "translation": "姊姊從九點到十點在圖書館讀書。",
+      "translationJa": "れいをみて、こえにだしてみましょう。",
+      "skillIds": [
+        "R-SHORT",
+        "R-MID",
+        "R-INFO",
+        "L-TASK",
+        "L-KEY",
+        "L-EXPR",
+        "L-RESP"
+      ],
+      "audioScript": "あねは、としょかんで、くじからじゅうじまで、ほんをよみます。ばしょと、はじまりと、おわりをたしかめましょう。",
+      "audioSrc": "/assets/audio/u09/U09-teach-context.wav",
+      "prerequisites": [
+        "U09-teach-G27"
+      ]
+    }
+  ],
+  "questions": []
+}

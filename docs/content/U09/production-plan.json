@@ -67,12 +67,30 @@
     ]
   },
   "plannedCheckFamilies": {
-    "G25": 5,
-    "G26": 5,
-    "G27": 5
+    "G25": [
+      "U09-CHECK-place-versus-destination",
+      "U09-CHECK-two-de-roles",
+      "U09-CHECK-existence-vs-activity",
+      "U09-CHECK-action-without-place",
+      "U09-CHECK-actor-place-binding"
+    ],
+    "G26": [
+      "U09-CHECK-question-boundary",
+      "U09-CHECK-partial-bounds-compare",
+      "U09-CHECK-within-interval",
+      "U09-CHECK-repair-reversed-boundaries",
+      "U09-CHECK-interval-not-all-day"
+    ],
+    "G27": [
+      "U09-CHECK-no-fixed-percentage",
+      "U09-CHECK-negative-strength",
+      "U09-CHECK-today-not-habit-proof",
+      "U09-CHECK-frequency-question-relevance",
+      "U09-CHECK-frequency-action-binding"
+    ]
   },
-  "questionsAuthored": 0,
-  "audioProduced": 0,
-  "artProduced": 0,
+  "questionsAuthored": 65,
+  "audioProduced": 16,
+  "artProduced": 1,
   "humanReview": "NOT_RUN"
 }

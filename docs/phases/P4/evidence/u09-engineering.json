@@ -1,0 +1,207 @@
+{
+  "date": "2026-10-30",
+  "baseline": "27f9eef7dc5d317afb9939338e32b84e20d866c1",
+  "owner": "Codex",
+  "humanReviewer": null,
+  "scope": "working-source hashes below; remaining delivery changes are records and documentation",
+  "sources": {
+    "src/content/packs/u09.json": "0dcb15e7c18fc0a293b871eaaa1483adb19dcb2775a0b9ffc603c16702334dd4",
+    "scripts/author-u09.py": "3573889e322278cbe1186ea8072530af7df0f6aa857eff3db67277b1739f61f5",
+    "scripts/author-u09-base.py": "7a8d9db482506bfc7344726507fd6badf3d14c860074e094295561bdc6bd22f4",
+    "scripts/u09_localization.py": "944b89713886f5edefd09548df3bedf5d9cf935fcc01b8b6166d89bed36606f9",
+    "src/features/journey/QuestionPlayer.tsx": "26bf8ad1909bed6c55b5b9c31602bc046c592f45fbb72d933b81a732d3e074a8",
+    "src/features/journey/QuestionPlayer.test.tsx": "97c01e3cfd72bf656f5f3b1591eafeeaa21102a080363d4c78d0719b75ab2315",
+    "e2e/p4-u09.spec.ts": "1b1ea016683811c5ca9bbb55ee095857a93d912b51f300c459c27d358c645a88",
+    "public/assets/audio/u09/manifest.json": "f2b0caa57604218da853a1e7977f338f39505bc4ed0b537d1d393070d6806d06",
+    "public/assets/img/u09/manifest.json": "c2606791edac34e1a247761d683d8b07a0d619fd3646066a27161faef3c1b44f"
+  },
+  "build": {
+    "flag": "VITE_P2_REVIEW_PREVIEW=1",
+    "indexSha256": "4a7c957834fe66ff4971c4f1df2ff9d80b91afac81131c2172148104a02bbfe3",
+    "maximumChunkBytes": 439788,
+    "maximumChunkLimit": 500000,
+    "u06InitialJavaScriptBytes": 730598,
+    "u06InitialLimit": 900000,
+    "offlineAssets": 600,
+    "offlineBytes": 47278244,
+    "pwaEntries": 657
+  },
+  "unitTests": {
+    "passed": 310,
+    "files": 44,
+    "durationSeconds": 46.29,
+    "afterTypeOnlyTestOptionFix": {
+      "targetedPassed": 1,
+      "durationSeconds": 3.23
+    }
+  },
+  "browser": {
+    "chromium": "145.0.7632.6",
+    "firefox": "146.0.1",
+    "distinctPassed": 18,
+    "cases": [
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:5:1 › opening U06 loads only its content; menus expose other real units without downloading their questions (2.1s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:21:1 › a failed content chunk gives a recoverable state and a deliberate reload retries without creating attempts (2.3s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-pack-loading.spec.ts:31:1 › switching units while their chunk is delayed cannot render or save the old unit (1.3s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u09.spec.ts:8:1 › U09 four strands save real attempts, retain illustrated feedback and export into the correct parent unit (22.0s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u09.spec.ts:68:1 › U09 illustrated activity-match practice gives a relevant hint and retains hinted evidence (15.4s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u09.spec.ts:88:1 › U09 four actual activity crops remain complete and separately recognizable (3.0s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u09.spec.ts:97:1 › U09 Japanese mode retains the complete setting, selection, audio gate and saved explanation (10.3s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-core.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u09.spec.ts:37:1 › U09 reviewer can play all six real listening tracks without creating learner answers (38.5s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-media.log"
+      },
+      {
+        "browser": "chromium",
+        "case": "e2e/p4-u09.spec.ts:48:3 › U09 complete offline pack › download includes new artwork, then a stopped origin can cold-open U09 teaching, illustration and listening (35.6s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-chromium-media.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:5:1 › opening U06 loads only its content; menus expose other real units without downloading their questions (3.8s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:21:1 › a failed content chunk gives a recoverable state and a deliberate reload retries without creating attempts (2.6s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-pack-loading.spec.ts:31:1 › switching units while their chunk is delayed cannot render or save the old unit (1.7s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u09.spec.ts:8:1 › U09 four strands save real attempts, retain illustrated feedback and export into the correct parent unit (25.0s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u09.spec.ts:68:1 › U09 illustrated activity-match practice gives a relevant hint and retains hinted evidence (17.7s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u09.spec.ts:88:1 › U09 four actual activity crops remain complete and separately recognizable (4.3s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u09.spec.ts:97:1 › U09 Japanese mode retains the complete setting, selection, audio gate and saved explanation (10.8s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-core.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u09.spec.ts:37:1 › U09 reviewer can play all six real listening tracks without creating learner answers (42.2s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-media.log"
+      },
+      {
+        "browser": "firefox",
+        "case": "e2e/p4-u09.spec.ts:48:3 › U09 complete offline pack › download includes new artwork, then a stopped origin can cold-open U09 teaching, illustration and listening (45.8s)",
+        "status": "PASS",
+        "log": "/tmp/japanese101-recovery/u09-firefox-media.log"
+      }
+    ],
+    "batches": [
+      {
+        "log": "/tmp/japanese101-recovery/u09-chromium-core.log",
+        "sha256": "7f9439ee7cb93a583e13f73ccb0f6359becc97f048da7f61820b98972e6e409d",
+        "result": "/tmp/japanese101-recovery/p4-u09-chromium-core-results/.last-run.json",
+        "summary": "  7 passed (1.1m)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/u09-chromium-media.log",
+        "sha256": "2a9d185a56bfc67b26ad5e5e9973826ac6809b542164214a2a66d12386dfb813",
+        "result": "/tmp/japanese101-recovery/p4-u09-chromium-media-results/.last-run.json",
+        "summary": "  2 passed (1.4m)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/u09-firefox-core.log",
+        "sha256": "b12f806b4d2edd0a04446eb52fccc96daca1744d30f3533d9535c7c7e619a96e",
+        "result": "/tmp/japanese101-recovery/p4-u09-firefox-core-results/.last-run.json",
+        "summary": "  7 passed (1.2m)"
+      },
+      {
+        "log": "/tmp/japanese101-recovery/u09-firefox-media.log",
+        "sha256": "5d1a306dfb8f88f7b517d2c88baf15210b24158d98098ee8fe077235a857c92b",
+        "result": "/tmp/japanese101-recovery/p4-u09-firefox-media-results/.last-run.json",
+        "summary": "  2 passed (1.6m)"
+      }
+    ],
+    "actualDevices": "NOT_RUN"
+  },
+  "content": {
+    "actualCurriculumUnits": 9,
+    "vocabulary": 225,
+    "kanji": 45,
+    "grammar": 27,
+    "reading": 36,
+    "listening": 54,
+    "practice": 450,
+    "unitAudioFiles": 16,
+    "unitAudioBytes": 4106464,
+    "artBytes": 555154
+  },
+  "review": {
+    "unitRows": 135,
+    "totalRows": 1229,
+    "approved": 0
+  },
+  "knownLimits": [
+    "P4-03-R2 remains open for older units with generic Japanese prompts; U09 translations are author drafts, not human approval",
+    "Chinese choices tagged as Japanese still require the recorded language-markup audit",
+    "No physical device or human Japanese/audio/visual approval"
+  ],
+  "failures": [
+    "Japanese group accessible name was the Chinese prompt; targeted test failed before repair",
+    "Build rejected the unsupported Testing Library exact option; removed it, retained exact string-name matching and reverified the affected case",
+    "U08-Q47 Japanese replacement omits its scene; retained as an explicit repair task"
+  ]
+}

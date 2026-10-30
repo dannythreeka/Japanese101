@@ -11,19 +11,19 @@
 ## 實際交付
 
 - P0／P1沿用使用者已驗證狀態；P2小鎮自由移動、三入口、日語戰鬥、世界／回合保存、金幣receipt、商店與角色／夥伴裝備、家長報告已有可玩隔離預覽。P2真人與實體平板gate未自行補PASS。
-- 實際八課U01～08：200首次引入詞、40漢字、24文法、32閱讀、48聽力材料、400practice；另每課15check候選。兩份假名各46教學／46practice／46詞語check，共10實際pack。U02～08各10教學16真WAV與原創四格插畫；U01原9教學14WAV。所有單元可到教學／道館／報告，未知ID不回退U01。
+- 實際九課U01～09：225首次引入詞、45漢字、27文法、36閱讀、54聽力材料、450practice；另每課15check候選。兩份假名各46教學／46practice／46詞語check，共10實際pack。U02～08各10教學16真WAV與原創四格插畫；U01原9教學14WAV。所有單元可到教學／道館／報告，未知ID不回退U01。
 - 假名略過資格只能由完整合法check得出，不寫假教學時間或穩定掌握。五題族／48h／跨兩日／4/5首次無提示能力門檻未改。世界、金幣與裝備按玩家共用，教材battle／check／studyPlan按unit隔離；exportJourney匯出整位玩家，報告按unit。
-- P4-02工具按真pack檢查配額／14題型／去重／來源hash／skill／簽核；75能力24有候選，51缺口＝15共通＋36未製作文法。1094教材素材審核0真人核准，另359假名ledger；不是已核准教材。
+- P4-02工具按真pack檢查配額／14題型／去重／來源hash／skill／簽核；75能力27有候選，48缺口＝15共通＋33未製作文法。1229教材素材審核0真人核准，另359假名ledger；不是已核准教材。
 - P4-03-R1：U01 u01-3-draft、U06 u06-2-draft修正先修漂移；舊ledger原文封存。真d35221c舊UI存檔兩引擎6PASS，保留答案／20coin／裝備／交易，歸檔舊plan與未完戰鬥再重開。G03不能繞G02。詳P4/evidence/prerequisite-upgrade.json。
-- P4-04教材與routes分載，catalog／白名單一致性；硬性每chunk500000 bytes、單課初載JS900000 bytes預算。最新index439788、U06初載729454。不是FPS或實機效能證明。
-- U08原創交通圖已修正電車後端完整，最終transport-v2.webp513466 bytes、16WAV3740384 bytes。八課離線包581素材42604828 bytes，PWA637entries約42.5MiB。P4-04-R1修掉SW.ready固定8秒誤報，改可取消生命週期、真失敗及顯式重試，準備狀態有中日文；詳P4 acceptance。
+- P4-04教材與routes分載，catalog／白名單一致性；硬性每chunk500000 bytes、單課初載JS900000 bytes預算。最新index439788、U06初載730598。不是FPS或實機效能證明。
+- U08原創交通圖已修正電車後端完整，最終transport-v2.webp513466 bytes、16WAV3740384 bytes。九課離線包600素材47278244 bytes，PWA657entries約47.1MiB。P4-04-R1修掉SW.ready固定8秒誤報，改可取消生命週期、真失敗及顯式重試，準備狀態有中日文；詳P4 acceptance。
 - P3九人試用材料與匿名fixture已備，尚無真人招募／同意／實際試用。fixture用新context、40合成起始coin、零作答，拒覆寫，不能假裝真人或實機結果。
 - P5已有三卷結構／題族隔離verifier、純狀態機、DB交易／冪等命令、raw報告規則，均只測試fixture，不是正式MA/MB/MC或完整UI。29表完整備份／還原、跨玩家與來源校驗、預覽變更拒絕／原子回滾，以及三種可靠JSON匯出、安全等待更新已有工程證據。
 
 ## 下一步
 
 1. 先讀P4/handoff.md與acceptance最新段，確認U08及離線修正最後瀏覽器批次狀態／commit／push。308單元／43檔、lint／typecheck／build已通過；首次16測試15PASS／1Firefox就緒失敗，修後整批6項成功但SIGTERM中止，已分批承接，不宣稱中止批次全綠。
-2. U09～24真實原創教材，單元50practice與15check分開；加上P4-GAP-01共通15技能的primary練習／五獨立check題族，不能換名重排灌family。24課配額600詞100漢字60文法96閱讀144聽力1200practice不變。先看U09作者來源是否已保存，再做完整出題／音訊／圖／整合／操作。
+2. U10～24真實原創教材，單元50practice與15check分開；加上P4-GAP-01共通15技能的primary練習／五獨立check題族，不能換名重排灌family。24課配額600詞100漢字60文法96閱讀144聽力1200practice不變。U09已完成隔離工程驗證，先讀最新P4-03-R2，再承接後續作者稿、素材與操作。
 3. 真MA/MB/MC各80題，25/30/25分區、20/40/30分鐘，彼此及練習題族隔離；實際計時／中斷／冪等交卷UI、播放器／音訊／報告與瀏覽器驗證仍待做。
 4. 真人日語、音訊／視覺、實體iPad／Android、九人試用與十八人14天試用只記真實結果，不招募、購買或發送訊息。仍有大量獨立工程，不能標goal COMPLETE或BLOCKED。
 
@@ -40,3 +40,5 @@ push用既有安全helper：`git -c credential.helper= -c 'credential.helper=!py
 最新驗證：上述分批接續已完成，合計21個不同browser/case均PASS（Chrome11／Firefox10），詳P4/evidence/u08-engineering.json。原中止批次保留真狀態，非22全綠；剩餘Firefox7項已PASS（1.5m），延後ready與離線2PASS，精確假名題兩引擎2PASS。相關runtime已驗證，接續教材與mock工作。
 
 U09來源已保存：scripts/author-u09-base.py與docs/content/U09/{README,source-draft,production-plan}，25不重複詞、5新漢字見聞読書話、G25～27先修與P0一致、10教學4閱讀6聽力稿；尚無50題／check／音檔／圖／runtime註冊。M/T IN_PROGRESS，其餘TODO。接續需寫完整author-u09.py，不能宣稱九課可玩或改五題族／人審門檻。前一fa15ff9為U08及離線修正；本批只加未註冊作者來源與交接，已測runtime不變。
+
+2026-10-30 U09工程完成：25新詞5字G25～27、50practice＋15check、16WAV4106464bytes及活動圖555154bytes已接入；九課225詞450practice。65組完整日文題幹／解析與10教學仍是待人審作者稿。播放器群組名稱跟可見題幹一致，雙語切換保留情境／選取／音訊門檻與唯一Attempt。310單元與18兩引擎case通過，見evidence/u09-engineering.json。27能力候選48缺口、1229人審0有效；P4-03-R2已記舊課泛用日文漏情境與語言標記，仍IN_PROGRESS。U09-V缺真人，其他非DONE。接續先修R2真漏項、共通15skill、U10～24、真模擬卷與UI；goal ACTIVE。

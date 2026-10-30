@@ -6,8 +6,8 @@
 
 ## 已有工程
 
-- 實際U01～08八課，另兩份假名pack，共10pack；200新詞40漢字24文法32閱讀48聽力400practice。U02～08各10教學、50practice＋15check、16真WAV與原創四格圖；U01保留原9教學／14WAV。
-- P4-02工具：全課數量、14題型、跨單元去重、技能primary practice／五check題族、逐筆來源hash／reviewer／日期檢查。75能力24有候選，51缺口（15共通＋36未製作文法）；1094筆教材／素材審核0真人核准，另359假名ledger。
+- 實際U01～09九課，另兩份假名pack，共11pack；225新詞45漢字27文法36閱讀54聽力450practice。U02～09各10教學、50practice＋15check、16真WAV與原創四格圖；U01保留原9教學／14WAV。
+- P4-02工具：全課數量、14題型、跨單元去重、技能primary practice／五check題族、逐筆來源hash／reviewer／日期檢查。75能力27有候選，48缺口（15共通＋33未製作文法）；1229筆教材／素材審核0真人核准，另359假名ledger。
 - P4-03-R1：U01 u01-3-draft、U06 u06-2-draft先修對齊P0，舊ledger封存。d35221c真操作舊存檔兩引擎6PASS：答案、20coin、帽裝備及交易不變，舊plan／未完戰鬥歸檔後安全重開；G03不可跳G02。見evidence/prerequisite-upgrade.json，勿在新版重跑capture腳本覆蓋舊fixture。
 - P4-04：各課lazy import／白名單與catalog一致性、舊routes按需載入、500000-byte chunk／單課900000-byte實際JS預算；不是FPS證明。新增教材需同步registry／loader／catalog／media／art／introductions／labels。
 - U08完整作者稿、16WAV3740384 bytes，最終原創transport-v2.webp513466 bytes。初圖電車尾端裁掉，已內建image_gen修成完整單節；原PNG保留，初版WebP只留本機不加入offline包。每格627平方，實際四格圖已檢視。
@@ -15,11 +15,11 @@
 
 ## 接續與檢查
 
-1. 先查git log/status及acceptance最新段落，確認U08／P4-04-R1已保存。308單元／43檔、lint、typecheck、build已通過；瀏覽器批次若仍有活session，先poll相同handle或查實際程序，不重建dist中斷驗收。
-2. U08首輪15PASS／1Firefox離線ready失敗；修正後大批次已完成6項，但以SIGTERM中止，未產生全套完成報告。不可稱22全綠。分批保留各實際結果，見acceptance／本機/tmp/japanese101-recovery/u08-*.log。
-3. U09～24原創教材，以及P4-GAP-01共通15技能仍需實作。每課50practice與check分開，不能機械換人名灌family。24課總配額600詞100漢字60文法96閱讀144聽力1200practice不變。
+1. 先查git log/status及acceptance最新段落，確認U08／P4-04-R1已保存。310單元／44檔、lint、typecheck、build已通過；瀏覽器批次若仍有活session，先poll相同handle或查實際程序，不重建dist中斷驗收。
+2. 歷史U08首輪15PASS／1Firefox離線ready失敗；修正後大批次已完成6項，但以SIGTERM中止，未產生全套完成報告。不可稱22全綠。分批保留各實際結果，見acceptance／本機/tmp/japanese101-recovery/u08-*.log。
+3. U10～24原創教材，以及P4-GAP-01共通15技能仍需實作。每課50practice與check分開，不能機械換人名灌family。24課總配額600詞100漢字60文法96閱讀144聽力1200practice不變。
 4. P5有mock schema／純狀態機／DB／報告與隔離題庫verifier，僅fixtures，不是三份正式卷或完整mock UI；29表完整備份與可靠下載／安全等待更新已寫。仍須MA/MB/MC各80真題、25/30/25分區20/40/30分鐘、實際播放器與報告／瀏覽器驗證。
-5. 不因人審缺失停掉其餘獨立工程；也不把工程證據當task DONE或Phase COMPLETE。U08-M/T/Q1/Q2/A IN_REVIEW，V BLOCKED缺非原作者真人，I IN_PROGRESS。P3九人試用、P5十八人14天、實機／真人視覺與音訊gate均未通過。
+5. 不因人審缺失停掉其餘獨立工程；也不把工程證據當task DONE或Phase COMPLETE。U09-M/T/Q1/Q2/A IN_REVIEW，V BLOCKED缺非原作者真人，I IN_PROGRESS。P3九人試用、P5十八人14天、實機／真人視覺與音訊gate均未通過。
 
 ## 命令與限制
 
@@ -32,3 +32,5 @@ Node22：`export PATH=/home/yyy/.nvm/versions/node/v22.23.2/bin:$PATH`。`npm te
 最新驗證：上述分批接續已完成，合計21個不同browser/case均PASS（Chrome11／Firefox10），詳P4/evidence/u08-engineering.json。原中止批次保留真狀態，非22全綠；剩餘Firefox7項已PASS（1.5m），延後ready與離線2PASS，精確假名題兩引擎2PASS。相關runtime已驗證，接續教材與mock工作。
 
 U09來源已保存：scripts/author-u09-base.py與docs/content/U09/{README,source-draft,production-plan}，25不重複詞、5新漢字見聞読書話、G25～27先修與P0一致、10教學4閱讀6聽力稿；尚無50題／check／音檔／圖／runtime註冊。M/T IN_PROGRESS，其餘TODO。接續需寫完整author-u09.py，不能宣稱九課可玩或改五題族／人審門檻。前一fa15ff9為U08及離線修正；本批只加未註冊作者來源與交接，已測runtime不變。
+
+2026-10-30 U09工程完成：25新詞5字G25～27、50practice＋15check、16WAV4106464bytes及活動圖555154bytes已接入；九課225詞450practice。65組完整日文題幹／解析與10教學仍是待人審作者稿。播放器群組名稱跟可見題幹一致，雙語切換保留情境／選取／音訊門檻與唯一Attempt。310單元與18兩引擎case通過，見evidence/u09-engineering.json。27能力候選48缺口、1229人審0有效；P4-03-R2已記舊課泛用日文漏情境與語言標記，仍IN_PROGRESS。U09-V缺真人，其他非DONE。接續先修R2真漏項、共通15skill、U10～24、真模擬卷與UI；goal ACTIVE。

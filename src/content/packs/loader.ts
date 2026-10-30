@@ -4,7 +4,7 @@ export const packCatalog:readonly {id:string;title:string;version:string}[]=cata
 const loaders:Record<string,()=>Promise<UnitPack>>={
  'KANA-HIRA':()=>import('./kana').then(m=>m.hiraganaPack),'KANA-KATA':()=>import('./kana').then(m=>m.katakanaPack),
  U01:()=>import('./u01').then(m=>m.u01),U02:()=>import('./u02').then(m=>m.u02),U03:()=>import('./u03').then(m=>m.u03),
- U04:()=>import('./u04').then(m=>m.u04),U05:()=>import('./u05').then(m=>m.u05),U06:()=>import('./u06').then(m=>m.u06),U07:()=>import('./u07').then(m=>m.u07),U08:()=>import('./u08').then(m=>m.u08),
+ U04:()=>import('./u04').then(m=>m.u04),U05:()=>import('./u05').then(m=>m.u05),U06:()=>import('./u06').then(m=>m.u06),U07:()=>import('./u07').then(m=>m.u07),U08:()=>import('./u08').then(m=>m.u08),U09:()=>import('./u09').then(m=>m.u09),
 }
 const pending=new Map<string,Promise<UnitPack>>()
 export function loadPack(id:string):Promise<UnitPack>{

@@ -1,10 +1,10 @@
 {
   "scope": "U06 dojo before parent/content review, clean isolated Chromium, service workers blocked",
   "limitBytes": 900000,
-  "totalBytes": 729454,
+  "totalBytes": 730598,
   "resources": [
     {
-      "file": "/assets/index-Dv3sqCkA.js",
+      "file": "/assets/index-CS59dMnD.js",
       "bytes": 439788
     },
     {
@@ -16,27 +16,27 @@
       "bytes": 45569
     },
     {
-      "file": "/assets/JourneyEntry-AjjbyqSh.js",
-      "bytes": 40965
+      "file": "/assets/JourneyEntry-Cd8Y4j4E.js",
+      "bytes": 41181
     },
     {
-      "file": "/assets/OfflinePack-WyYoC76M.js",
+      "file": "/assets/OfflinePack-Dh1ZMjZ4.js",
       "bytes": 2190
     },
     {
-      "file": "/assets/Character-Bbtf3deq.js",
-      "bytes": 18414
+      "file": "/assets/Character-371wD_0H.js",
+      "bytes": 19154
     },
     {
       "file": "/assets/PetAvatar-DOIMGkpP.js",
       "bytes": 10512
     },
     {
-      "file": "/assets/loader-BKBAwqRQ.js",
-      "bytes": 2487
+      "file": "/assets/loader-D6a4XD2e.js",
+      "bytes": 2675
     },
     {
-      "file": "/assets/journey-ui-BBNo_XMz.js",
+      "file": "/assets/journey-ui-C8ykDrT4.js",
       "bytes": 3540
     },
     {
@@ -44,7 +44,7 @@
       "bytes": 1003
     },
     {
-      "file": "/assets/journey-DaFKtc0d.js",
+      "file": "/assets/journey-DItM58nt.js",
       "bytes": 32292
     },
     {
@@ -52,7 +52,7 @@
       "bytes": 7948
     },
     {
-      "file": "/assets/text-DtnXfEch.js",
+      "file": "/assets/text-cNT1Wm1P.js",
       "bytes": 9841
     },
     {

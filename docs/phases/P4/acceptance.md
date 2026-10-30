@@ -111,3 +111,17 @@ P4-04-R1故障與證據：首輪16項15PASS／1FF離線失敗，trace只有28請
 其他失敗如實保留：原創首圖電車後端被裁，已生成v2並實際看8格；初manifest少frameWindows被validator拒絕，補真格窗後PASS。修後22項大批次完成6項即收到SIGTERM，原因未確認，沒有當成完整全綠；確認runner已終止，清理自己殘留preview後分批接續。另新測試錯把中文「搭電車」當日文題幹，調整為精確檢查引號內「でんしゃ（」，不是刪除日文要求；兩引擎G23真作答2PASS（19.1s）。各失敗與成功log／trace索引見JSON。
 
 恢復：Node22；`VITE_P2_REVIEW_PREVIEW=1 npm run build`。`P0_E2E_PORT=4268 npx playwright test e2e/p4-u08.spec.ts e2e/p4-offline-readiness.spec.ts e2e/p4-pack-loading.spec.ts --project=chromium --project=firefox`；P5更新另跑`e2e/p5-update.spec.ts --project=chromium`。較大trace不入git，保存/tmp/japanese101-recovery/p4-u08-*並有hash／case索引；截圖與資料證據已納入提交。
+
+## U09／P4-03-R2：活動教材與保留題意的語言切換（2026-10-30）
+
+baseline27f9eef7dc5d317afb9939338e32b84e20d866c1＋本批來源，owner／執行者Codex，真人reviewer待指派。來源／build hash及四批結果見evidence/u09-engineering.json；驗證後只補記錄，runtime不變。Chromium145.0.7632.6／Firefox146.0.1，不是實體裝置。
+
+- U09有25新詞、5漢字見聞読書話、G25場所で／G26から・まで／G27頻度、10教學、4閱讀、6聽力、50practice＋15check候選。16WAV4106464bytes，原創四活動圖555154bytes，詞／字去重與P0先修比對通過。11實際pack含兩假名＋九課：225詞45字27文法36閱讀54聽力450practice，不是24課完成。
+- u09_localization.py撰寫65組完整日文題幹／解析及10段教學，保留人物／時刻／限制；這是作者稿，不等於真人語意核准。既有U08-Q47日文缺「和姊姊」設定已開P4-03-R2，證據localization-known-gap.json；全課語意與語言標記仍待修，沒有冒稱全部改善。共用播放器的選項群組原固定中文名稱，新增測試先FAIL，現跟隨可見題幹，語言切換不清除選取。
+- 310單元／44檔PASS（46.29s），lint PASS；初build指出測試誤用Playwright exact選項，移除不支援屬性、保留Testing Library字串名稱的預設精確匹配，受影響case重跑1PASS（3.23s）。最終typecheck／preview build／素材／catalog通過，沒有放寬型別或斷言。
+- 18個browser/case全PASS，四批完整結果：Chrome核心7（1.1m）與媒體2（1.4m）；Firefox核心7（1.2m）與媒體2（1.6m）。真四主線作答→刷新解說→領獎→PIN→按unit報告／匯出；六段聽力真播放不寫Attempt；T13提示保存hintUsed、四格裁圖；下載後停止來源並斷網／關頁冷啟教學、音訊、圖片；三項分課載入回歸。
+- 日文真流程：Q47先選答案、未聽時不可提交；切日文保留九時開始／十時結束、原選取與正確群組名稱；真播放なんじから後提交唯一L-RESP正確Attempt，顯示具體日文解析；切回中文再刷新，紀錄逐字不變。截圖u09-japanese-context-768-{chromium,firefox}.png。
+- 320／390／768／1024／1440無水平溢出，兩引擎分別保存context圖。Codex實際檢視FF320、兩引擎768日文題、Chrome768插畫提示與FF四格：讀書／公園玩／寫信／打掃可辨，主要道具完整、無鄰格，時刻與選取可讀。真人視覺／適齡／實機NOT_RUN。
+- 最大chunk439788/500000，U06初載JS730598/900000，離線600資產47278244bytes、PWA657entries48250.98KiB；未改預算或宣稱FPS。75能力27候選、48缺口（15共通＋33未製作文法）；1229審核0有效，U09共135NOT_RUN。release實際exit1拒絕缺人審／能力／U10～24，見u09-release-rejection.json。
+
+U09-M/T/Q1/Q2/A IN_REVIEW，V BLOCKED缺真人，I IN_PROGRESS；P4-03-R2仍IN_PROGRESS、主gate未滿。重現：Node22，VITE_P2_REVIEW_PREVIEW=1 npm run build；核心P0_E2E_PORT=4273 npx playwright test e2e/p4-u09.spec.ts e2e/p4-pack-loading.spec.ts --project=chromium --project=firefox --grep-invert 'reviewer can play|download includes'；媒體只跑同單元--grep 'reviewer can play|download includes'。大trace／log在/tmp/japanese101-recovery/p4-u09-{chromium,firefox}-{core,media}-*，JSON有完整結果及hash，截圖與素材納入git。

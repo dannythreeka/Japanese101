@@ -2,6 +2,7 @@
 import json
 from pathlib import Path
 from content_authoring import DraftUnit
+from u09_localization import localize_teaching
 
 def make_unit():
  u=DraftUnit('U09','一天的活動：居民的行程手帳');p=u.pack
@@ -27,6 +28,7 @@ def make_unit():
  p['readings']=[dict(id='U09-R01',text='きょうは としょかんで 本を 読みます。九時から 十時まで 読みます。',skillId='R-SHORT'),dict(id='U09-R02',text='わたしは いつも うちで おんがくを 聞きます。ときどき えいがを 見ます。',skillId='R-SHORT'),dict(id='U09-R03',text='きょう、あねは としょかんで 本を 読みます。九時から 十時までです。わたしは こうえんで あそびます。三時から 四時までです。あには プールで およぎます。あには よく およぎます。わたしは あまり およぎません。',skillId='R-MID'),dict(id='U09-R04',text='きょうの よてい\nあね：としょかん／本を 読みます／九時から 十時まで\nわたし：こうえん／あそびます／三時から 四時まで\nはは：うち／りょうりします／五時から 六時まで',skillId='R-INFO')]
  scripts=[('L-TASK','きょうは、としょかんで、ほんをよみます。くじからじゅうじまでです。じゅうじまで、ほんをよみます。'),('L-TASK','さんじからよじまで、こうえんであそびます。よじまでです。'),('L-KEY','あねは、いつも、うちでおんがくをききます。ときどき、えいがをみます。'),('L-KEY','あには、よく、ぷーるでおよぎます。わたしは、あまりおよぎません。ははは、ぜんぜんおよぎません。'),('L-EXPR','することです。いちばん。てがみをかきます。にばん。そうじします。さんばん。ほんをよみます。よんばん。こうえんであそびます。'),('L-RESP','なんじからですか。')]
  p['listening']=[dict(id=f'U09-L{i:02}',script=s,audioSrc=f'/assets/audio/u09/listening-{i:02}.wav',skillId=k,reviewStatus='DRAFT') for i,(k,s) in enumerate(scripts,1)]
+ localize_teaching(p)
  return u
 
 if __name__=='__main__':

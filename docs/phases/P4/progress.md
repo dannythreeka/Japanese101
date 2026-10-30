@@ -29,3 +29,5 @@ U07整合：50真練習＋15候選、16WAV、蘋果圖已接9pack，七課175詞
 2026-10-30 U08工程完成：25新詞5字G22～24、50practice＋15check候選、16WAV3740384bytes及原創transport-v2圖已實際接入；八課200詞400practice，24能力候選51缺口、1094簽核0核准。P4-04-R1修正有效慢SW.ready被8秒誤判，保留取消／真失敗／重試；308單元與最終21不同browser/case分批PASS。原22大批SIGTERM不是全綠，原FF離線失敗已重現修正；詳acceptance與evidence/u08-engineering.json。U08人審仍NOT_RUN，V缺真人、I未正式放行。下一步U09～24、共通15skill、真MA/B/C與mockUI；goal ACTIVE。
 
 U09來源已保存：scripts/author-u09-base.py與docs/content/U09/{README,source-draft,production-plan}，25不重複詞、5新漢字見聞読書話、G25～27先修與P0一致、10教學4閱讀6聽力稿；尚無50題／check／音檔／圖／runtime註冊。M/T IN_PROGRESS，其餘TODO。接續需寫完整author-u09.py，不能宣稱九課可玩或改五題族／人審門檻。前一fa15ff9為U08及離線修正；本批只加未註冊作者來源與交接，已測runtime不變。
+
+2026-10-30 U09工程完成：25新詞5字G25～27、50practice＋15check、16WAV4106464bytes及活動圖555154bytes已接入；九課225詞450practice。65組完整日文題幹／解析與10教學仍是待人審作者稿。播放器群組名稱跟可見題幹一致，雙語切換保留情境／選取／音訊門檻與唯一Attempt。310單元與18兩引擎case通過，見evidence/u09-engineering.json。27能力候選48缺口、1229人審0有效；P4-03-R2已記舊課泛用日文漏情境與語言標記，仍IN_PROGRESS。U09-V缺真人，其他非DONE。接續先修R2真漏項、共通15skill、U10～24、真模擬卷與UI；goal ACTIVE。

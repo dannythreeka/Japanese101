@@ -51,3 +51,12 @@ Chromium真實Workbox核心生命週期測試PASS（18.0s）：同源舊版、�
 另驗U05下載完成後停止origin冷啟、插畫與真音訊PASS（25.3s），證據test-results/p5-update-offline、playwright-report/p5-update-offline。測試worker的self.registration型別原被DOM推斷為Window，改成明確worker probe型別，未改runtime。
 
 最終typecheck／lint PASS；最後修改只為測試型別與紀錄，產品build與已通過操作不變。
+
+
+## P5-04-R1 七天圖表的跨字型溢出
+
+讀取ec8419a CI40987944460的Firefox／WebKit失敗：同一320px檢查得到326px。從CI artifact以Range取出真失敗截圖／DOM；原生備份file input沒有撐開，後續Firefox元素量測發現七天日期欄的flex min-content受字型影響。以16px日期模擬較寬字型，修正前新回歸測試實際失敗，頁寬382px；證據test-results/p5-weekly-before、playwright-report/p5-weekly-before。
+
+修正只改七天圖表：七個minmax(0,1fr)欄、每欄min-width:0、日期寬度限制與必要換行；保留全部日期與字級，沒有overflow:hidden或降低驗收門檻。新測試檢查七個完整月／日字串、每個標籤無內部溢出與整頁320px界線。最終Firefox／Chromium五寬度／200%／鍵盤與寬字型回歸結果待追加。WebKit留CI驗證，不自行安裝主機套件。
+
+P5-04-R1最終：Preview build／型別通過，改動兩檔lint PASS；Chromium／Firefox五寬度／200%文字／鍵盤＋寬字型四項PASS（23.4s）；另補兩引擎圖表截圖兩項PASS（20.5s）。證據test-results/p5-weekly-fixed、playwright-report/p5-weekly-fixed及p5-weekly-visual；evidence/weekly-dates-{chromium,firefox}-320.png。實際檢視Firefox圖，七個日期完整換行、未裁切，沒有水平溢出。WebKit待新commit的CI，不能拿當地兩引擎宣稱全綠。

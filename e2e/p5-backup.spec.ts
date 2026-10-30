@@ -103,3 +103,15 @@ test('a storage failure during replacement keeps the old player and archives int
   for(const table of ['profiles','preferences','adventureProgress','migrationBackups'] as const)expect(await records(page,table)).toEqual(file.payload.tables[table])
   await backup(page).getByRole('button',{name:'確認還原',exact:true}).click();await expect(page.getByRole('dialog',{name:'資料已還原',exact:true})).toBeVisible()
 })
+
+test('weekly dates retain all seven labels at 320px with larger fallback font metrics',async({page,browserName})=>{
+  await page.setViewportSize({width:320,height:900});await parent(page)
+  const chart=page.getByRole('heading',{name:'本週',exact:true}).locator('..')
+  await expect(chart.locator('span')).toHaveCount(7)
+  // Reproduce wider CI font metrics without relying on a specific host font installation.
+  await chart.locator('span').evaluateAll(labels=>labels.forEach(label=>{label.style.fontSize='16px'}))
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth)).toBeLessThanOrEqual(320)
+  expect(await chart.locator('span').evaluateAll(labels=>labels.every(label=>label.scrollWidth<=label.clientWidth))).toBe(true)
+  for(const text of await chart.locator('span').allTextContents())expect(text).toMatch(/^\d{1,2}\/\d{1,2}$/)
+  await chart.screenshot({path:`docs/phases/P5/evidence/weekly-dates-${browserName}-320.png`})
+})

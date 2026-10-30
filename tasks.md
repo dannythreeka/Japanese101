@@ -575,6 +575,8 @@ P2-09-R2（2026-10-30，非同步導覽修正，依賴 P2-15）：CI Firefox發�
 
 - 2026-10-30 工程owner：本session Codex。完整白名單備份、schema 9／SHA-256、玩家取代預覽、跨分頁資料變動拒絕、同交易歸檔與還原、家長PIN後操作頁已實作；含mock表及legacy-shared。Chromium四項操作通過，Firefox／完整單元最終結果見P5 acceptance。安全SW更新與正式依賴P4-05尚未通過。
 
+- P5-04-R1：CI Firefox／WebKit在320px發現七天圖表日期受字型最小寬度影響，已新增寬字型回歸，修正前真實重現382px；改七等寬可換行欄位，驗證紀錄見P5 acceptance。此為既有task缺陷修正，不增加Phase task數。
+
 #### P5-05｜執行完整裝置、視覺與無障礙驗收
 
 - 狀態：**TODO**；負責：QA／UX。

@@ -16,3 +16,5 @@ Node22；npx vitest run src/mock src/db/mock.test.ts；npm run typecheck/lint/te
 進行中的SW批次（尚未提交／驗收）：main.tsx以src/lib/appUpdates.ts原生註冊，vite.config改prompt、injectRegister:false、skipWaiting:false、clientsClaim:true；沒有skipWaiting訊息或強制reload。AppUpdate家長區提示關閉所有分頁再開。e2e/p5-update.spec.ts用同源實際Workbox核心＋測試安裝失敗門檻，驗證保留未提交選項、多分頁waiting與自然啟用後保留Attempt。下一步完成build後跑該Chromium測試及p5-backup回歸，實際錯誤須修；沒有把待驗證實作標PASS。上一批備份已push a0073aa0d1c1921360a5bb1b8bebfbe605245395，291單元／型別lint、Chromium4與Firefox5通過。
 
 SW後續結果：Chromium生命週期PASS18s、U05停止origin冷啟PASS25.3s，備份四項PASS；最終型別lint看acceptance與git log。目前還沒有真MA/B/C與mock UI，下一步回到U06與共通skill內容。實機與跨真實部署仍NOT_RUN，不標P5完成。
+
+P5-04-R1新修正：ec8419 CI FF/WK 320px=326px，真證據已讀；Firefox元素探針定位七天圖表日期min-content，16px回歸修前實際382px失敗。已改等寬grid、min-width:0及標籤必要換行，最終重驗看acceptance。U06已commit95def27（292單元、兩引擎各四操作通過）；下一步推送本批，CI重驗後接U07／共通skill與真mock。

@@ -313,12 +313,12 @@ export default function ParentDashboard() {
             {/* 7-day chart */}
             <div className="rounded-3xl bg-white shadow-lg p-5 flex flex-col gap-4">
               <h2 className="text-2xl font-bold text-gray-700">{t('parentWeekly')}</h2>
-              <div className="flex items-end gap-2 h-24">
+              <div className="grid grid-cols-7 items-end gap-2 h-24">
                 {dayCounts.map(day => (
-                  <div key={day.label} className="flex-1 flex flex-col items-center gap-1">
+                  <div key={day.label} className="min-w-0 flex flex-col items-center gap-1">
                     <div className="w-full bg-purple-300 rounded-t-lg transition-all"
                       style={{ height: `${(day.count / maxCount) * 64}px`, minHeight: day.count > 0 ? '8px' : '2px' }} />
-                    <span className="text-xs text-gray-500">{day.label}</span>
+                    <span className="w-full min-w-0 text-center text-xs text-gray-500" style={{overflowWrap:'anywhere'}}>{day.label}</span>
                   </div>
                 ))}
               </div>
